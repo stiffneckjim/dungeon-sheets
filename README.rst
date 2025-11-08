@@ -5,10 +5,6 @@
 A tool to create character sheets and session notes for Dungeons and
 Dragons 5th edition (D&D 5e).
 
-.. image:: https://travis-ci.com/canismarko/dungeon-sheets.svg?branch=master
-   :target: https://travis-ci.com/canismarko/dungeon-sheets
-   :alt: Build status
-
 .. image:: https://coveralls.io/repos/github/canismarko/dungeon-sheets/badge.svg
    :target: https://coveralls.io/github/canismarko/dungeon-sheets
    :alt: Test coverage status
