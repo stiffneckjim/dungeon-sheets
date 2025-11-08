@@ -5,8 +5,16 @@
 A tool to create character sheets and session notes for Dungeons and
 Dragons 5th edition (D&D 5e).
 
-.. image:: https://coveralls.io/repos/github/canismarko/dungeon-sheets/badge.svg
-   :target: https://coveralls.io/github/canismarko/dungeon-sheets
+.. image:: https://github.com/stiffneckjim/dungeon-sheets/actions/workflows/docker.yml/badge.svg
+   :target: https://github.com/stiffneckjim/dungeon-sheets/actions/workflows/docker.yml
+   :alt: Docker Build Status
+
+.. image:: https://github.com/stiffneckjim/dungeon-sheets/actions/workflows/python-ci.yml/badge.svg
+   :target: https://github.com/stiffneckjim/dungeon-sheets/actions/workflows/python-ci.yml
+   :alt: Python CI Status
+
+.. image:: https://coveralls.io/repos/github/stiffneckjim/dungeon-sheets/badge.svg
+   :target: https://coveralls.io/github/stiffneckjim/dungeon-sheets
    :alt: Test coverage status
 
 .. image:: https://readthedocs.org/projects/dungeon-sheets/badge/?version=latest
@@ -26,13 +34,41 @@ Documentation can be found on readthedocs_.
 
 Docker
 ======
-You can run this repository directly from a container.
+You can run this repository directly from a container. The container images are automatically built and published to GitHub Container Registry (GHCR) using GitHub Actions workflows.
+
+Available Tags
+-------------
+
+- ``master``: Latest development version from the master branch
+- ``latest``: Latest stable release
+- Specific version tags (e.g. ``v0.19.0``)
+
+Running the Container
+-------------------
 
 Run the following in a directory with valid character files (such as the examples_ directory):
 
 .. code:: bash
 
-    $ docker run -it -v $(pwd):/build ghcr.io/stiffneckjim/dungeon-sheets:main
+    $ docker run -it -v $(pwd):/build ghcr.io/stiffneckjim/dungeon-sheets:master
+
+Building Locally
+--------------
+
+To build the container locally:
+
+.. code:: bash
+
+    $ docker build -t dungeon-sheets .
+
+Container Details
+--------------
+
+The container:
+
+- Is based on Ubuntu with required dependencies (pdftk, texlive) pre-installed
+- Mounts the current directory as ``/build`` to access character files
+- Includes the latest version of dungeon-sheets from the specified branch/tag
 
 
 Installation
@@ -88,7 +124,7 @@ JSON) file, which gives many attributes associated with the
 character. See examples_ for more information about the character
 descriptions.
 
-.. _examples: https://github.com/canismarko/dungeon-sheets/tree/master/examples
+.. _examples: https://github.com/stiffneckjim/dungeon-sheets/tree/master/examples
 
 The PDF's can then be generated using the ``makesheets`` command. If
 no filename is given, the current directory will be parsed and any
