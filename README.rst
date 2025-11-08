@@ -36,7 +36,7 @@ Run the following in a directory with valid character files (such as the example
 
 .. code:: bash
 
-    $ docker run -it -v $(pwd):/build ghcr.io/canismarko/dungeon-sheets:master
+    $ docker run -it -v $(pwd):/build ghcr.io/stiffneckjim/dungeon-sheets:master
 
 
 Installation
@@ -66,7 +66,7 @@ Optional External dependencies
 If **pdftk** is available, it will be used for pdf generation. If not,
 a fallback python library (pypdf) will be used. This has the
 limitation that it is not able to flatten PDF forms.
-  
+
 Different linux distributions have different names for packages. While
 pdftk is available in Debian and derivatives as **pdftk**, the package
 is not available in some RPM distributions, such as Fedora and CentOS.
