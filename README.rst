@@ -13,14 +13,6 @@ Dragons 5th edition (D&D 5e).
    :target: https://github.com/stiffneckjim/dungeon-sheets/actions/workflows/python-ci.yml
    :alt: Python CI Status
 
-.. image:: https://coveralls.io/repos/github/stiffneckjim/dungeon-sheets/badge.svg
-   :target: https://coveralls.io/github/stiffneckjim/dungeon-sheets
-   :alt: Test coverage status
-
-.. image:: https://readthedocs.org/projects/dungeon-sheets/badge/?version=latest
-   :target: https://dungeon-sheets.readthedocs.io/en/latest/?badge=latest
-   :alt: Documentation Status
-
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://github.com/psf/black
 
