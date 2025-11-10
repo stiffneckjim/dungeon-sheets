@@ -1,0 +1,190 @@
+# AI Agent Instructions for dungeon-sheets
+
+This document guides AI coding agents on effectively working with the dungeon-sheets codebase, a tool for creating D&D 5e character sheets and session notes.
+
+## Project Overview
+
+dungeon-sheets is a Python package that:
+
+- Generates character sheets and GM notes for D&D 5th Edition
+- Supports multiple output formats (PDF, ePub)
+- Handles character data from Python files and VTT JSON exports
+- Requires Python 3.9+ and uses modern Python features
+
+## Core Architecture
+
+The project follows a modular architecture with these key components:
+
+1. **Character Model** (`dungeonsheets/character.py`):
+
+   - Base `Character` class that other classes inherit from
+   - Handles core character attributes, calculated stats, and feature management
+
+2. **Content System** (`dungeonsheets/content_registry.py`, `dungeonsheets/content.py`):
+
+   - Registry pattern for D&D content (spells, items, features)
+   - Use `content_registry.register_X()` for adding new content
+
+3. **Output Generation** (`dungeonsheets/make_sheets.py`):
+   - Entry point for sheet generation via `makesheets` command
+   - Supports PDF (via pdftk/pypdf), LaTeX, and ePub formats
+
+## CI/CD Pipeline
+
+The project uses GitHub Actions for continuous integration and deployment:
+
+### Manual Workflow Triggers
+
+Both workflows support manual triggering through GitHub's UI:
+
+1. **Triggering Workflows**:
+
+   - Go to Actions tab in the repository
+   - Select the workflow (Python package or Docker)
+   - Click "Run workflow" button
+   - Choose:
+     - Branch to run against
+     - Input parameters (if any)
+
+2. **Use Cases**:
+
+   - Testing changes before committing
+   - Rebuilding failed runs
+   - Generating container images for testing
+   - Validating specific Python versions
+
+3. **Monitoring**:
+
+   ```bash
+   # Check status of PR checks
+   gh pr checks 1
+
+   # View workflow run logs
+   gh run view <run-id>
+
+   # Download artifacts from a run
+   gh run download <run-id>
+   ```
+
+### Python CI Workflow
+
+Tests run on all supported Python versions (3.9-3.12):
+
+1. **Environment Setup**:
+
+   - Installs system dependencies (pdftk, texlive)
+   - Configures Python environment
+
+   ```yaml
+   sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+   ```
+
+2. **Test Suite**:
+
+   - Runs pytest with coverage reporting
+   - Validates code style with flake8
+   - Tests example character generation
+
+   ```bash
+   pytest --cov=dungeonsheets tests/
+   flake8 dungeonsheets/ --exit-zero
+   ```
+
+3. **Output Format Validation**:
+   ```bash
+   makesheets --debug          # Standard PDF
+   makesheets --debug --fancy  # Enhanced formatting
+   makesheets --debug --output-format=epub  # ePub generation
+   ```
+
+### Docker Workflow
+
+Builds and publishes container images:
+
+1. **Multi-architecture Support**:
+
+   - Builds for amd64 and arm64
+   - Uses QEMU and Docker Buildx
+
+2. **Container Registry**:
+
+   - Publishes to GitHub Container Registry (GHCR)
+   - Tags: `main` (latest development), version tags for releases
+
+   ```bash
+   docker pull ghcr.io/stiffneckjim/dungeon-sheets:main
+   ```
+
+3. **Container Features**:
+   - Ubuntu-based with all dependencies pre-installed
+   - Mounts current directory as `/build` for character files
+   - Includes latest package version from branch/tag
+
+## Key Workflows
+
+### Testing
+
+```bash
+pip install -e ".[dev]"  # Install dev dependencies
+pytest tests/            # Run test suite
+pytest tests/ -k test_name  # Run specific test
+```
+
+### Development Setup
+
+```bash
+pip install -e "."      # Install in editable mode
+sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended  # Optional: PDF dependencies
+```
+
+## Project Conventions
+
+1. **Class Creation**:
+
+   - Character classes (Fighter, Wizard, etc.) inherit from `Character`
+   - New features should be registered via `content_registry`
+   - Example: See `dungeonsheets/classes/wizard.py`
+
+2. **Testing**:
+
+   - Tests are organized by component in `tests/`
+   - Use `TestCase` for test classes
+   - Mock external dependencies (pdftk, latex)
+
+3. **Content Addition**:
+
+   ```python
+   from dungeonsheets.content_registry import register_spell
+
+   @register_spell
+   class NewSpell:
+       """Follow existing spell pattern"""
+       pass
+   ```
+
+## Integration Points
+
+1. **PDF Generation**:
+
+   - Primary: pdftk for form filling
+   - Fallback: pypdf library
+   - LaTeX for spell pages (optional)
+
+2. **Data Import**:
+   - Python character files (primary)
+   - VTT JSON exports (supported formats in `dungeonsheets/readers.py`)
+
+## Common Pitfalls
+
+1. **PDF Generation**: Always check `pdftk` availability before using PDF-specific features
+2. **Python Files**: Character files require exact class/feature names matching registry
+3. **Dependencies**: Some features need external tools (pdftk, latex) - handle gracefully
+
+## Example Files
+
+Check these files to understand common patterns:
+
+- Basic character: `examples/wizard1.py`
+- Complex character: `examples/multiclass1.py`
+- GM notes: `examples/gm-campaign-notes.py`
+- Test patterns: `tests/test_character.py`
