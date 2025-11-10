@@ -70,6 +70,22 @@ Installation
 
     $ pip install dungeonsheets
 
+For Development
+---------------
+
+If you want to contribute or use the fancy D&D 5e LaTeX styling, clone with submodules:
+
+.. code:: bash
+
+    $ git clone https://github.com/canismarko/dungeon-sheets.git
+    $ cd dungeon-sheets
+    $ git submodule update --init --recursive
+    $ pip install -e ".[dev]"
+
+The submodule includes the `D&D 5e LaTeX template`_ for beautiful character sheets.
+
+.. _D&D 5e LaTeX template: https://github.com/rpgtex/DND-5e-LaTeX-Template
+
 .. note::
 
    Dungeon sheets requires **at least python 3.6**. This is mostly due
