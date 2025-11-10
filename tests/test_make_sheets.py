@@ -12,6 +12,8 @@ GMFILE = EG_DIR / "gm-session-notes.py"
 
 # Check if pdflatex is available
 HAS_PDFLATEX = shutil.which("pdflatex") is not None
+# Check if pdftk is available (required for fillable PDFs)
+HAS_PDFTK = shutil.which("pdftk") is not None
 
 
 class MakeSheetsTestCase(unittest.TestCase):
@@ -29,13 +31,14 @@ class MakeSheetsTestCase(unittest.TestCase):
         make_sheets.main(args=[str(CHARFILE), "--debug"])
 
     def test_make_sheets(self):
-        # Character PDF
-        make_sheets.make_sheet(sheet_file=CHARFILE)
-        # Was the PDF created?
-        self.assertTrue(
-            self.char_pdf.exists(),
-            f"Character PDF ({self.char_pdf.resolve()}) not created.",
-        )
+        # Character PDF - only test if pdftk is available
+        if HAS_PDFTK:
+            make_sheets.make_sheet(sheet_file=CHARFILE)
+            # Was the PDF created?
+            self.assertTrue(
+                self.char_pdf.exists(),
+                f"Character PDF ({self.char_pdf.resolve()}) not created.",
+            )
         # GM PDF - only test if pdflatex is available
         if HAS_PDFLATEX:
             make_sheets.make_sheet(sheet_file=GMFILE)
@@ -46,13 +49,14 @@ class MakeSheetsTestCase(unittest.TestCase):
             )
 
     def test_make_fancy_sheets(self):
-        # Character PDF
-        make_sheets.make_sheet(sheet_file=CHARFILE, fancy_decorations=True)
-        # Was the PDF created?
-        self.assertTrue(
-            self.char_pdf.exists(),
-            f"Character PDF ({self.char_pdf.resolve()}) not created.",
-        )
+        # Character PDF - only test if pdftk is available
+        if HAS_PDFTK:
+            make_sheets.make_sheet(sheet_file=CHARFILE, fancy_decorations=True)
+            # Was the PDF created?
+            self.assertTrue(
+                self.char_pdf.exists(),
+                f"Character PDF ({self.char_pdf.resolve()}) not created.",
+            )
         # GM PDF - only test if pdflatex is available
         if HAS_PDFLATEX:
             make_sheets.make_sheet(sheet_file=GMFILE, fancy_decorations=True)
