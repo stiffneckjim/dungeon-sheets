@@ -3,8 +3,18 @@ name: Docker
 on:
   push:
     branches: ["main"] # Build on push to main branch
+    paths:
+      - 'Dockerfile'
+      - 'requirements.txt'
+      - 'dungeonsheets/**'
+      - '.github/workflows/docker.yml'
   pull_request:
     branches: ["main"] # Test builds on PRs to main
+    paths:
+      - 'Dockerfile'
+      - 'requirements.txt'
+      - 'dungeonsheets/**'
+      - '.github/workflows/docker.yml'
   workflow_dispatch: # Allow manual triggering
 
 env:
