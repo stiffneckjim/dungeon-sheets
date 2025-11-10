@@ -1,6 +1,8 @@
 FROM python:3.12-slim
 
 # Install system dependencies in a single layer and clean up
+# Note: texlive-fonts-extra (~3GB) is excluded to reduce image size
+# If you need --fancy decorations, add it to this apt-get install line
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         pdftk \
