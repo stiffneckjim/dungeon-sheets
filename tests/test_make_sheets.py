@@ -1,6 +1,7 @@
 import unittest
 import os
 import shutil
+import warnings
 from pathlib import Path
 
 from dungeonsheets import make_sheets, character, monsters, random_tables
@@ -109,7 +110,10 @@ class EpubOutputTestCase(unittest.TestCase):
 
     def test_gm_file_created(self):
         # Check that a file is created once the function is run
-        make_sheets.make_gm_sheet(gm_file=GMFILE, output_format="epub")
+        # Suppress expected warnings about undefined monsters and attributes
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", UserWarning)
+            make_sheets.make_gm_sheet(gm_file=GMFILE, output_format="epub")
         self.assertTrue(self.gm_epub.exists(), f"{self.gm_epub} not created.")
 
     def test_character_file_created(self):
