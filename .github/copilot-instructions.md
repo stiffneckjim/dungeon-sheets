@@ -27,7 +27,98 @@ The project follows a modular architecture with these key components:
 
 3. **Output Generation** (`dungeonsheets/make_sheets.py`):
    - Entry point for sheet generation via `makesheets` command
-   - Supports PDF (via pdftk/pypdf) and ePub formats
+   - Supports PDF (via pdftk/pypdf), LaTeX, and ePub formats
+
+## CI/CD Pipeline
+
+The project uses GitHub Actions for continuous integration and deployment:
+
+### Manual Workflow Triggers
+
+Both workflows support manual triggering through GitHub's UI:
+
+1. **Triggering Workflows**:
+
+   - Go to Actions tab in the repository
+   - Select the workflow (Python package or Docker)
+   - Click "Run workflow" button
+   - Choose:
+     - Branch to run against
+     - Input parameters (if any)
+
+2. **Use Cases**:
+
+   - Testing changes before committing
+   - Rebuilding failed runs
+   - Generating container images for testing
+   - Validating specific Python versions
+
+3. **Monitoring**:
+
+   ```bash
+   # Check status of PR checks
+   gh pr checks 1
+
+   # View workflow run logs
+   gh run view <run-id>
+
+   # Download artifacts from a run
+   gh run download <run-id>
+   ```
+
+### Python CI Workflow
+
+Tests run on all supported Python versions (3.9-3.12):
+
+1. **Environment Setup**:
+
+   - Installs system dependencies (pdftk, texlive)
+   - Configures Python environment
+
+   ```yaml
+   sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+   ```
+
+2. **Test Suite**:
+
+   - Runs pytest with coverage reporting
+   - Validates code style with flake8
+   - Tests example character generation
+
+   ```bash
+   pytest --cov=dungeonsheets tests/
+   flake8 dungeonsheets/ --exit-zero
+   ```
+
+3. **Output Format Validation**:
+   ```bash
+   makesheets --debug          # Standard PDF
+   makesheets --debug --fancy  # Enhanced formatting
+   makesheets --debug --output-format=epub  # ePub generation
+   ```
+
+### Docker Workflow
+
+Builds and publishes container images:
+
+1. **Multi-architecture Support**:
+
+   - Builds for amd64 and arm64
+   - Uses QEMU and Docker Buildx
+
+2. **Container Registry**:
+
+   - Publishes to GitHub Container Registry (GHCR)
+   - Tags: `main` (latest development), version tags for releases
+
+   ```bash
+   docker pull ghcr.io/stiffneckjim/dungeon-sheets:main
+   ```
+
+3. **Container Features**:
+   - Ubuntu-based with all dependencies pre-installed
+   - Mounts current directory as `/build` for character files
+   - Includes latest package version from branch/tag
 
 ## Key Workflows
 
