@@ -21,7 +21,7 @@ def text_box(string):
     new_string = " ".join(string.replace("\n", r"\m").split())
     # Remove *single* line breaks, swap *multi* line breaks to single (fdf: \r)
     new_string = (
-        new_string.replace(r"\m \m", r"\r").replace(r"\m\m", r"\r").replace(r"\m", " ")
+        new_string.replace(r"\m \m", "\r").replace(r"\m\m", "\r").replace(r"\m", " ")
     )
     return new_string
 
