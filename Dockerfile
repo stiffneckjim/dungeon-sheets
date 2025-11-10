@@ -1,13 +1,25 @@
-FROM python:latest
+FROM python:3.12-slim
 
-RUN apt-get update && apt-get install -y pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+# Install system dependencies in a single layer and clean up
+# Note: texlive-fonts-extra (~3GB) is excluded to reduce image size
+# If you need --fancy decorations, add it to this apt-get install line
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        pdftk \
+        texlive-latex-base \
+        texlive-latex-extra \
+        texlive-fonts-recommended && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
+# Install Python dependencies
 RUN pip install --upgrade pip
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy application code and install
 COPY . /app
 RUN pip install --no-cache-dir -e /app
 

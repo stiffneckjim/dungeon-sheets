@@ -1,5 +1,6 @@
 import unittest
 import os
+import subprocess
 from pathlib import Path
 
 from dungeonsheets import make_sheets, character, monsters, random_tables
@@ -8,6 +9,27 @@ from dungeonsheets import make_sheets, character, monsters, random_tables
 EG_DIR = Path(__file__).parent.parent.resolve() / "examples"
 CHARFILE = EG_DIR / "rogue1.py"
 GMFILE = EG_DIR / "gm-session-notes.py"
+
+
+def check_royal_font_available():
+    """Check if Royal font (from texlive-fonts-extra) is available."""
+    try:
+        result = subprocess.run(
+            ['kpsewhich', 'Royal.sty'],
+            capture_output=True,
+            text=True,
+            timeout=5
+        )
+        return result.returncode == 0 and result.stdout.strip()
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        return False
+
+
+# Skip fancy decorations tests if Royal font is not available
+skip_if_no_royal_font = unittest.skipUnless(
+    check_royal_font_available(),
+    "Royal font not available (requires texlive-fonts-extra package)"
+)
 
 
 class MakeSheetsTestCase(unittest.TestCase):
@@ -36,6 +58,7 @@ class MakeSheetsTestCase(unittest.TestCase):
         self.assertTrue(self.gm_pdf.exists(),
                         f"GM PDF ({self.gm_pdf.resolve()}) not created.")
 
+    @skip_if_no_royal_font
     def test_make_fancy_sheets(self):
         # Character PDF
         make_sheets.make_sheet(sheet_file=CHARFILE,
