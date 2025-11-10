@@ -21,7 +21,7 @@ jobs:
     - name: Set up required system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+        sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
@@ -37,7 +37,9 @@ jobs:
       run: >
           cd examples/;
           makesheets --debug;
-          makesheets --debug --fancy;
           makesheets --debug --output-format=epub;
           cd ../;
           pytest --cov=dungeonsheets tests/
+      # Note: --fancy test removed to avoid requiring texlive-fonts-extra (saves ~3GB)
+      # The fancy decorations feature requires the Royal font from texlive-fonts-extra
+      # Users who need fancy sheets should install: apt-get install texlive-fonts-extra
