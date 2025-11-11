@@ -45,7 +45,9 @@ echo 'export PATH="/usr/local/texlive/bin/x86_64-linux:$PATH"' | sudo tee -a /et
 
 # Install required LaTeX packages
 echo "Installing LaTeX packages..."
-PACKAGES=$(bash "$(dirname "$0")/install-texlive-packages.sh")
+# Get the script directory - works both when run directly and via postCreateCommand
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PACKAGES=$(bash "$SCRIPT_DIR/install-texlive-packages.sh")
 sudo /usr/local/texlive/bin/x86_64-linux/tlmgr install $PACKAGES
 
 # Update font cache
