@@ -11,6 +11,7 @@ TEXLIVE_PACKAGES=(
     lettrine
     kpfonts
     bookman
+    courier
     gillius
     contour
     avantgar
