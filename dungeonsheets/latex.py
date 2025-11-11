@@ -33,14 +33,14 @@ class DNDTranslator(LaTeXTranslator):
         # Use regular tabular by default - we'll switch to longtable for large tables
         self.active_table = DNDTable(self, "tabular")
         self._in_large_table = False
-    
+
     def visit_table(self, node):
         """Check table size and decide whether to use onecolumn mode."""
         # Estimate table height by counting rows
         # Find tbody or rows within the table
         rows = node.traverse(condition=lambda n: n.tagname == 'row')
         num_rows = len(rows)
-        
+
         # Heuristic: if table has more than ~20 rows, it might be too tall for a column
         # A typical column can fit about 50-60 lines of text, table rows are ~2 lines each
         if num_rows > 20:
@@ -49,13 +49,13 @@ class DNDTranslator(LaTeXTranslator):
             self.active_table = DNDTable(self, "longtable")
             # Switch to onecolumn to avoid longtable/twocolumn incompatibility
             self.out.append("\n\\onecolumn\n")
-        
+
         super().visit_table(node)
-    
+
     def depart_table(self, node):
         """Restore twocolumn mode if we switched for a large table."""
         super().depart_table(node)
-        
+
         if self._in_large_table:
             # Switch back to twocolumn
             self.out.append("\\twocolumn\n")
@@ -87,7 +87,8 @@ def create_latex_pdf(
     # docutils generates \textbf{%\nText\n} which newer TeX Live doesn't like in tables
     # Replace with \textbf{Text} on a single line
     # TDO: The real fix would be to override the table generation methods in DNDTranslator.
-    tex = re.sub(r"\\textbf\{%\s*\n\s*([^\}]+?)\s*\n\s*\}", r"\\textbf{\1}", tex)
+    tex = re.sub(
+        r"\\textbf\{%\s*\n\s*([^\}]+?)\s*\n\s*\}", r"\\textbf{\1}", tex)
 
     # Create tex document
     tex_file = f"{basename}.tex"
@@ -272,8 +273,10 @@ def rst_to_latex(
         tex = tex_parts["body"]
     # Apply fancy D&D decorations
     if use_dnd_decorations:
-        tex = tex.replace(r"\begin{supertabular}[c]", r"\begin{DndLongTable}[header=]")
-        tex = tex.replace(r"\begin{supertabular}", r"\begin{DndLongTable}[header=]")
+        tex = tex.replace(
+            r"\begin{supertabular}[c]", r"\begin{DndLongTable}[header=]")
+        tex = tex.replace(r"\begin{supertabular}",
+                          r"\begin{DndLongTable}[header=]")
         tex = tex.replace(r"\end{supertabular}", r"\end{DndLongTable}")
 
         # Stretch table to the entire width of the text column.
@@ -282,7 +285,8 @@ def rst_to_latex(
         tableheader = re.findall(r"\\begin{DndLongTable}.*", tex)
         for header in tableheader:
             # Get all collumn widths, compute initial table width
-            colwidths = [width for width in re.findall(r"0\.[0-9]+", str(header))]
+            colwidths = [width for width in re.findall(
+                r"0\.[0-9]+", str(header))]
             tablewidth = 0
             for width in colwidths:
                 tablewidth += float(width)
@@ -345,9 +349,11 @@ def msavage_spell_info(char):
         + headinfo["abilities"].replace(" ", "")
         + "}"
     )
-    sc_savedc = r"\SpellSaveDC{" + fs_command + headinfo["DCs"].replace(" ", "") + "}"
+    sc_savedc = r"\SpellSaveDC{" + fs_command + \
+        headinfo["DCs"].replace(" ", "") + "}"
     sc_atk = (
-        r"\SpellAttackBonus{" + fs_command + headinfo["bonuses"].replace(" ", "") + "}"
+        r"\SpellAttackBonus{" + fs_command +
+        headinfo["bonuses"].replace(" ", "") + "}"
     )
     tex1 = "\n".join([sc_classes, sc_abilities, sc_savedc, sc_atk]) + "\n"
     spellslots = char.spell_casting_info["slots"]
@@ -369,7 +375,8 @@ def msavage_spell_info(char):
         "NinthLevelSpell",
     ]
 
-    fullcaster_sheet_spaces = dict(zip(level_names, [8, 13, 13, 13, 13, 9, 9, 9, 7, 7]))
+    fullcaster_sheet_spaces = dict(
+        zip(level_names, [8, 13, 13, 13, 13, 9, 9, 9, 7, 7]))
     halfcaster_sheet_spaces = dict(
         zip(level_names, [11, 26, 19, 19, 19, 0, 0, 0, 0, 0])
     )
@@ -471,7 +478,8 @@ def RPGtex_monster_info(char):
     # 3: Other types of actions.
     # Challenges: Some monsters only have feats, some only have actions.
     sectiontype = 0
-    sectionlist = char.split("    # ")  # Four spaces, a hash, and another space
+    # Four spaces, a hash, and another space
+    sectionlist = char.split("    # ")
     for section in sectionlist:
         # First find out what type of section we're dealing with, and
         # set sectiontype accordingly;
@@ -497,9 +505,11 @@ def RPGtex_monster_info(char):
             # Snip away begin and end description:
             section = re.sub(r"\\[a-z]+{description}\n", "", section)
             # Sub \item[{}] with \DndMonsterAction{} headers:
-            section = re.sub(r"\\item\[{(.+)\.}\]", r"\\DndMonsterAction{\1}", section)
+            section = re.sub(r"\\item\[{(.+)\.}\]",
+                             r"\\DndMonsterAction{\1}", section)
             if sectiontype == 3:  # Add section header
-                section = re.sub(r"^\n(.*)\n", r"\\DndMonsterSection{\1}", section)
+                section = re.sub(
+                    r"^\n(.*)\n", r"\\DndMonsterSection{\1}", section)
             # Remove spurious newlines from the start of the section:
             section = re.sub(r"^\n", r"", section)
             # Remove spurious newlines from the end of the section:
@@ -512,7 +522,8 @@ def RPGtex_monster_info(char):
             lines = section.splitlines()
             for line in lines:
                 if re.match(r"^\S", line):
-                    line = re.sub(r"(.+)$", r"\n\\DndMonsterSection{\1}\n", line)
+                    line = re.sub(
+                        r"(.+)$", r"\n\\DndMonsterSection{\1}\n", line)
                     subsection += line
                 else:
                     # Italicize weapon type and hit, and remove six leading spaces
@@ -524,7 +535,8 @@ def RPGtex_monster_info(char):
                     # Remove leading spaces from other lines
                     line = re.sub(r"^ {6}(.+)", r"\1\n", line)
                     # Add DndMonsterAction header for each action, and remove four leading spaces
-                    line = re.sub(r"^ {4}(\S.+)\.$", r"\\DndMonsterAction{\1}\n", line)
+                    line = re.sub(r"^ {4}(\S.+)\.$",
+                                  r"\\DndMonsterAction{\1}\n", line)
                     subsection += line
                     subsection = re.sub(r" {6}", "\n", subsection)
             # Dice

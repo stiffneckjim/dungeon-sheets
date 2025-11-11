@@ -32,25 +32,31 @@ class MarkdownTestCase(unittest.TestCase):
     )
     def test_headings(self):
         # Simple heading by itself
-        text = latex.rst_to_latex("Hello, world\n------------\n\nGoodbye, world")
+        text = latex.rst_to_latex(
+            "Hello, world\n------------\n\nGoodbye, world")
         self.assertEqual("\\section*{Hello, world}\n", text)
         # Simple heading with leading whitespace
         text = latex.rst_to_latex("    Hello, world\n    ============\n")
         self.assertEqual("\\section*{Hello, world}\n", text)
         # Heading with text after it
-        text = latex.rst_to_latex("Hello, world\n============\n\nThis is some text")
+        text = latex.rst_to_latex(
+            "Hello, world\n============\n\nThis is some text")
         self.assertEqual("\\section*{Hello, world}\n\nThis is some text", text)
         # Heading with text before it
-        text = latex.rst_to_latex("This is a paragraph\n\nHello, world\n============\n")
-        self.assertEqual("This is a paragraph\n\n\\section*{Hello, world}\n", text)
+        text = latex.rst_to_latex(
+            "This is a paragraph\n\nHello, world\n============\n")
+        self.assertEqual(
+            "This is a paragraph\n\n\\section*{Hello, world}\n", text)
         # Check that levels of headings are parsed appropriately
         text = latex.rst_to_latex("Hello, world\n^^^^^^^^^^^^\n")
         self.assertEqual("\\subsubsection*{Hello, world}\n", text)
-        text = latex.rst_to_latex("Hello, world\n^^^^^^^^^^^^\n", top_heading_level=3)
+        text = latex.rst_to_latex(
+            "Hello, world\n^^^^^^^^^^^^\n", top_heading_level=3)
         self.assertEqual("\\subparagraph*{Hello, world}\n", text)
         # This is a bad heading missing with all the underline on one line
         text = latex.rst_to_latex("Hello, world^^^^^^^^^^^^\n")
-        self.assertEqual("Hello, world\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\n", text)
+        self.assertEqual(
+            "Hello, world\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\n", text)
 
     def test_bullet_list(self):
         tex = latex.rst_to_latex("\n- Hello\n- World\n\n")
@@ -109,7 +115,7 @@ class MarkdownTestCase(unittest.TestCase):
         rows = "\n".join([f"Row{i:02d}  Val{i:02d}" for i in range(25)])
         footer = "\n=====  ====="
         table_rst = header + rows + footer
-        
+
         tex = latex.rst_to_latex(table_rst)
         # Large tables should use longtable
         self.assertIn("longtable", tex)
