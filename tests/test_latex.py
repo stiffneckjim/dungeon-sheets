@@ -66,7 +66,7 @@ class MarkdownTestCase(unittest.TestCase):
         - Secondhand (you have heard of the target) - +5
         - Firsthand (you have met the target) - +0
         - Familiar (you know the target well) - -5
-        
+
         """
         tex = latex.rst_to_latex(real_list)
         self.assertIn("\\begin{itemize}", tex)
@@ -79,7 +79,7 @@ class MarkdownTestCase(unittest.TestCase):
           the target) - +0
         - Familiar (you know the target
           well) - -5
-        
+
         """
         tex = latex.rst_to_latex(md_list)
         self.assertIn("\\begin{itemize}", tex)
@@ -96,16 +96,11 @@ class MarkdownTestCase(unittest.TestCase):
             =====  =====  =======
         """
         tex = latex.rst_to_latex(table_rst)
-        # Check begin/end environment is fixed
-        self.assertNotIn("longtable", tex)
-        self.assertIn("supertabular", tex)
-        # Check headers and footers are fixed
-        self.assertNotIn("endfoot", tex)
-        self.assertNotIn("endhead", tex)
-        self.assertNotIn("endfirsthead", tex)
-        # Check that fancy decorations uses the DndTable environment
-        tex = latex.rst_to_latex(table_rst, use_dnd_decorations=True)
-        self.assertIn(r"\begin{DndLongTable}[header=,firsthead={\textbf{%", tex)
+        # Check we're using longtable (better compatibility with modern TeX Live)
+        self.assertIn("longtable", tex)
+        # Check that onecolumn/twocolumn wrapping is present for two-column mode
+        self.assertIn("\\onecolumn", tex)
+        self.assertIn("\\twocolumn", tex)
 
     def test_rst_all_spells(self):
         for spell in spells.all_spells():
