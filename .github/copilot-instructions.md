@@ -11,6 +11,54 @@ dungeon-sheets is a Python package that:
 - Handles character data from Python files and VTT JSON exports
 - Requires Python 3.9+ and uses modern Python features
 
+## Development Workflow (GitHub Flow)
+
+This project follows the **GitHub Flow** model. All changes must be made on a feature branch before raising a pull request:
+
+1. **Create a Feature Branch**:
+
+   ```bash
+   # Ensure you're on main and up to date
+   git checkout main
+   git pull origin main
+
+   # Create a new branch with a descriptive name
+   git checkout -b feature/your-feature-name
+   # or
+   git checkout -b fix/bug-description
+   # or
+   git checkout -b perf/performance-improvement
+   ```
+
+2. **Make Changes**:
+
+   - Implement your feature or fix
+   - Write/update tests as needed
+   - Ensure all tests pass locally
+
+3. **Commit and Push**:
+
+   ```bash
+   git add .
+   git commit -m "Descriptive commit message"
+   git push origin feature/your-feature-name
+   ```
+
+4. **Create Pull Request**:
+
+   - Open a PR from your branch to `main`
+   - CI/CD workflows will automatically run
+   - Address any review feedback
+
+5. **Branch Naming Conventions**:
+   - `feature/` - New features or enhancements
+   - `fix/` - Bug fixes
+   - `perf/` - Performance improvements
+   - `docs/` - Documentation updates
+   - `refactor/` - Code refactoring
+
+**Never commit directly to `main`**. Always work on a feature branch and use pull requests for code review and CI validation.
+
 ## Core Architecture
 
 The project follows a modular architecture with these key components:
