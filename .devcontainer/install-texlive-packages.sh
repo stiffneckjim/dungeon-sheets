@@ -24,6 +24,26 @@ TEXLIVE_PACKAGES=(
     caption
     graphics-def
     epstopdf-pkg
+    # Packages required for fancy D&D decorations
+    cfr-initials        # Royal font
+    gensymb
+    was
+    hang
+    numprint
+    tcolorbox
+    environ
+    trimspaces
+    pdfcol
+    tikzfill
+    tocloft
+    titlesec
+    initials
+    keycommand
+    lipsum
+    luacolor
+    minifp
+    multitoc
+    xstring
 )
 
 # Join array with spaces
