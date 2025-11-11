@@ -37,9 +37,7 @@ jobs:
       run: >
           cd examples/;
           makesheets --debug;
+          makesheets --debug --fancy;
           makesheets --debug --output-format=epub;
           cd ../;
           pytest --cov=dungeonsheets tests/
-      # Note: --fancy test removed to avoid requiring texlive-fonts-extra (saves ~3GB)
-      # The fancy decorations feature requires the Royal font from texlive-fonts-extra
-      # Users who need fancy sheets should install: apt-get install texlive-fonts-extra
