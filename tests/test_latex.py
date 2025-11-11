@@ -96,9 +96,24 @@ class MarkdownTestCase(unittest.TestCase):
             =====  =====  =======
         """
         tex = latex.rst_to_latex(table_rst)
-        # Check we're using longtable (better compatibility with modern TeX Live)
+        # Small tables (<=20 rows) should use regular tabular
+        self.assertIn("tabular", tex)
+        # Should NOT switch to onecolumn for small tables
+        self.assertNotIn("\\onecolumn", tex)
+        self.assertNotIn("\\twocolumn", tex)
+
+    def test_large_table(self):
+        """Test that large tables (>20 rows) switch to longtable with onecolumn."""
+        # Create a table with 25 rows to trigger longtable
+        header = "=====  =====\nCol A  Col B\n=====  =====\n"
+        rows = "\n".join([f"Row{i:02d}  Val{i:02d}" for i in range(25)])
+        footer = "\n=====  ====="
+        table_rst = header + rows + footer
+        
+        tex = latex.rst_to_latex(table_rst)
+        # Large tables should use longtable
         self.assertIn("longtable", tex)
-        # Check that onecolumn/twocolumn wrapping is present for two-column mode
+        # Should switch to onecolumn for longtable compatibility
         self.assertIn("\\onecolumn", tex)
         self.assertIn("\\twocolumn", tex)
 
