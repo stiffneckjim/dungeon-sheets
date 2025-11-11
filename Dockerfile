@@ -23,8 +23,12 @@ RUN echo "Downloading TeX Live installer..." && \
     echo "TeX Live installation complete!" && \
     cd .. && rm -rf install-tl-* /tmp/texlive.profile
 
-# Add TeX Live to PATH (using fixed path from texlive.profile)
-ENV PATH="/usr/local/texlive/bin/x86_64-linux:${PATH}"
+# Add TeX Live to PATH (detect architecture: x86_64-linux or aarch64-linux)
+# Use the first directory found in /usr/local/texlive/bin/
+RUN TEXLIVE_BIN=$(find /usr/local/texlive/bin -maxdepth 1 -type d -name '*-linux' | head -1) && \
+    echo "export PATH=\"${TEXLIVE_BIN}:\$PATH\"" >> /etc/profile.d/texlive.sh && \
+    echo "Found TeX Live binaries at: ${TEXLIVE_BIN}"
+ENV PATH="/usr/local/texlive/bin/x86_64-linux:/usr/local/texlive/bin/aarch64-linux:${PATH}"
 
 # Install additional LaTeX packages and fonts
 # This layer can be modified without re-downloading/installing base TeX Live
