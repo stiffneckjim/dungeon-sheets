@@ -3,6 +3,10 @@ set -e
 
 echo "Installing dungeon-sheets development dependencies..."
 
+# Initialize git submodules
+echo "Initializing git submodules..."
+git submodule update --init --recursive
+
 # Install system dependencies
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends \
