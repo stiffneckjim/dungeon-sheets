@@ -155,6 +155,14 @@ By default, your character's spells are ordered alphabetically. If you
 would like your spellbook to be ordered by level, you can use the ``-S``
 option to do so.
 
+You can specify the paper size for generated PDFs using the ``-p`` or
+``--paper-size`` option. Available options are ``letter`` (US Letter,
+default) and ``a4`` (A4). For example:
+
+.. code:: bash
+
+    $ makesheets my_character.py --paper-size=a4
+
 If you'd like a **step-by-step walkthrough** for creating a new
 character, just run ``create-character`` from a command line and a
 helpful menu system will take care of the basics for you.
