@@ -1,8 +1,8 @@
 {
   "name": "dungeon-sheets",
   "build": {
-    "dockerfile": "Dockerfile",
-    "context": "."
+    "dockerfile": ".devcontainer/Dockerfile",
+    "context": ".."
   },
 
   "features": {

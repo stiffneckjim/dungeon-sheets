@@ -41,7 +41,10 @@ This project follows the **GitHub Flow** model. All changes must be made on a fe
    ```bash
    git add .
    git commit -m "Descriptive commit message"
-   git push origin feature/your-feature-name
+   # First push of a new branch - set upstream
+   git push -u origin feature/your-feature-name
+   # Subsequent pushes
+   git push
    ```
 
 4. **Create Pull Request**:

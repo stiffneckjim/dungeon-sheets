@@ -118,7 +118,7 @@ def create_latex_pdf(
     texinputs = [".", *module_dirs, module_root, tex_env]
     separator = ";" if isinstance(module_root, pathlib.WindowsPath) else ":"
     environment["TEXINPUTS"] = separator.join(str(path) for path in texinputs)
-    
+
     # Add font directories for XeLaTeX
     msavage_fonts = module_root / "DND-5e-LaTeX-Character-Sheet-Template" / "template" / "fonts"
     if msavage_fonts.exists():

@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     pdftk-java \
     wget \
     perl \
+    libwww-perl \
     fontconfig \
     xz-utils \
     && rm -rf /var/lib/apt/lists/*
@@ -23,7 +24,7 @@ RUN echo "Downloading TeX Live installer..." && \
 ENV PATH="/usr/local/texlive/bin/x86_64-linux:/usr/local/texlive/bin/aarch64-linux:${PATH}"
 
 # Install additional LaTeX packages
-COPY install-texlive-packages.sh /tmp/install-texlive-packages.sh
+COPY .devcontainer/install-texlive-packages.sh /tmp/install-texlive-packages.sh
 RUN echo "Configuring tlmgr..." && \
     tlmgr option -- autobackup 0 && \
     PACKAGES=$(bash /tmp/install-texlive-packages.sh) && \
