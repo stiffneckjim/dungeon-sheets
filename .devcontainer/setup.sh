@@ -1,5 +1,6 @@
 #!/bin/bash
-set -e
+set -e  # Exit on error
+set -x  # Print commands as they execute
 
 echo "Installing dungeon-sheets development dependencies..."
 
@@ -21,7 +22,12 @@ pip install -e ".[dev]"
 # Install minimal TeX Live
 echo "Installing minimal TeX Live..."
 cd /tmp
-wget -q https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+echo "Downloading TeX Live installer..."
+wget --timeout=60 --tries=3 -q https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz || {
+    echo "Failed to download TeX Live installer"
+    exit 1
+}
+echo "Extracting installer..."
 tar -xzf install-tl-unx.tar.gz
 cd install-tl-*/
 
@@ -41,11 +47,29 @@ instopt_adjustpath 1
 EOF
 
 # Install TeX Live
-sudo perl ./install-tl --profile=texlive.profile --no-interaction
+echo "Running TeX Live installer (this may take a few minutes)..."
+sudo perl ./install-tl --profile=texlive.profile --no-interaction || {
+    echo "TeX Live installation failed"
+    exit 1
+}
 
-# Add to PATH
+# Add to PATH for current shell
 export PATH="/usr/local/texlive/bin/x86_64-linux:$PATH"
-echo 'export PATH="/usr/local/texlive/bin/x86_64-linux:$PATH"' | sudo tee -a /etc/profile.d/texlive.sh
+
+# Add to /etc/profile.d for login shells
+echo 'export PATH="/usr/local/texlive/bin/x86_64-linux:$PATH"' | sudo tee /etc/profile.d/texlive.sh
+
+# Add to vscode user's .bashrc for non-login shells (VS Code terminals)
+echo 'export PATH="/usr/local/texlive/bin/x86_64-linux:$PATH"' >> ~/.bashrc
+
+# Install Kalam font for MSavage template
+echo "Installing Kalam font..."
+sudo mkdir -p /usr/share/fonts/truetype/kalam
+cd /tmp
+wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Regular.ttf
+wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Bold.ttf
+wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Light.ttf
+sudo mv Kalam-*.ttf /usr/share/fonts/truetype/kalam/
 
 # Install required LaTeX packages
 echo "Installing LaTeX packages..."
