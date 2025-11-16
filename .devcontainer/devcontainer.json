@@ -1,8 +1,10 @@
 {
   "name": "dungeon-sheets",
+  "remoteUser": "vscode",
   "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "target": "devcontainer"
   },
 
   "features": {
@@ -31,8 +33,26 @@
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true,
+        "python.formatting.blackPath": "/home/vscode/.local/bin/black",
+        "python.formatting.provider": "black",
+        "python.languageServer": "Pylance",
+        "python.linting.enabled": true,
+        "python.linting.mypyPath": "/home/vscode/.local/bin/mypy",
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintPath": "/home/vscode/.local/bin/pylint",
         "python.testing.pytestEnabled": true,
-        "python.testing.unittestEnabled": false
+        "python.testing.pytestPath": "/home/vscode/.local/bin/pytest",
+        "python.testing.unittestEnabled": false,
+        "isort.path": [
+          "/usr/local/py-utils/bin/isort"
+        ],
+        "rewrap.wrappingColumn": 88,
+        "[python]": {
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+          }
+        }
       }
     },
     "codespaces": {
@@ -46,7 +66,5 @@
 
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
-  ],
-
-  "remoteUser": "vscode"
+  ]
 }

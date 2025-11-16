@@ -1,14 +1,15 @@
-FROM python:3.12-slim
+FROM python:3.12-slim AS dungeonsheets
 
 # Install base system dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     pdftk \
-    wget \
     gnupg \
+    wget \
     xz-utils \
     perl \
     libwww-perl \
+    fontconfig \
     ca-certificates && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -46,6 +47,16 @@ RUN echo "Configuring tlmgr..." && \
     echo "LaTeX package installation complete!" && \
     rm /tmp/install-texlive-packages.sh
 
+# Install Kalam fonts for MSavage template
+RUN echo "Installing Kalam fonts..." && \
+    mkdir -p /usr/share/fonts/truetype/kalam && \
+    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Regular.ttf && \
+    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Bold.ttf && \
+    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Light.ttf && \
+    mv Kalam-*.ttf /usr/share/fonts/truetype/kalam/ && \
+    fc-cache -fv && \
+    echo "Kalam fonts installation complete!"
+
 WORKDIR /app
 
 # Install Python dependencies
@@ -61,3 +72,44 @@ WORKDIR /build
 
 ENTRYPOINT [ "python", "-m", "dungeonsheets.make_sheets" ]
 CMD [ "--fancy", "--editable", "--recursive" ]
+
+FROM dungeonsheets AS devcontainer
+
+# Install development tools and dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    curl \
+    less \
+    pipx \
+    unzip \
+    starship \
+    zsh && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Add a non-root user for development
+RUN echo "Creating vscode user" && \
+    useradd -m -s /bin/bash vscode && \
+    chown -R vscode:vscode /app /build && \
+    chsh -s /bin/zsh vscode
+
+USER vscode
+
+# Install Python development tools with pipx
+RUN echo "Installing pipx and tools" && \
+    pipx install argcomplete && \
+    pipx install black && \
+    pipx install coverage && \
+    pipx install flake8 && \
+    pipx install mypy && \
+    pipx install pyflakes && \
+    pipx install pylint && \
+    pipx install pytest
+
+# Install Node development container with fnm
+RUN echo "Installing fnm and Node.js" && \
+    curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell && \
+    ln -s /home/vscode/.local/share/fnm/fnm /home/vscode/.local/bin && \
+    /home/vscode/.local/bin/fnm install --lts
+
+WORKDIR /workspaces/dungeonsheets
