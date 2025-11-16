@@ -108,12 +108,14 @@ def create_latex_pdf(
     ]
 
     environment = os.environ.copy()
+    environment = os.environ.copy()
     tex_env = environment.get("TEXINPUTS", "")
     module_root = Path(__file__).parent / "modules/"
     module_dirs = [
         module_root / "DND-5e-LaTeX-Template",
         module_root / "DND-5e-LaTeX-Character-Sheet-Template"
     ]
+
     log.debug(f"Loading additional modules from {module_dirs}.")
     texinputs = [".", *module_dirs, module_root, tex_env]
     separator = ";" if isinstance(module_root, pathlib.WindowsPath) else ":"

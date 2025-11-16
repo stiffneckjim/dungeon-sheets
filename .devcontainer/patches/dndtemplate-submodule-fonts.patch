@@ -1,0 +1,13 @@
+--- a/dndtemplate.sty
++++ b/dndtemplate.sty
+@@ -9,7 +9,9 @@
+ \usepackage{ragged2e}
+ 
+ % DEFINE FONT FOR USER INPUTTED TEXT
+-\newfontfamily\entryfont{Kalam}[Path=template/fonts/,Extension=.ttf,UprightFont=Kalam-Regular,BoldFont=Kalam-Bold]
++% Use \currfiledir to get absolute path to the .sty file location
++% This makes the font path work both in standalone mode and as a submodule
++\newfontfamily\entryfont{Kalam}[Path=\currfiledir template/fonts/,Extension=.ttf,UprightFont=Kalam-Regular,BoldFont=Kalam-Bold]
+ 
+ % HEADER BACKGROUND COLOR AND OPACITY
+ \newrgbcolor{header-background-color}{0.87058824 0.87450981 0.87450981}
