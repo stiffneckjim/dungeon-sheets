@@ -1,39 +1,45 @@
 FROM mcr.microsoft.com/devcontainers/python:1-3.12-bookworm
 
-# Install system dependencies
+# Install system dependencies needed for TeX Live
 RUN apt-get update && apt-get install -y --no-install-recommends \
     pdftk-java \
     wget \
     perl \
     fontconfig \
+    xz-utils \
     && rm -rf /var/lib/apt/lists/*
 
-# Install TeX Live
-WORKDIR /tmp
-RUN wget -q https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
-    && tar -xzf install-tl-unx.tar.gz \
-    && cd install-tl-* \
-    && cat > texlive.profile << 'EOF'
-selected_scheme scheme-basic
-TEXDIR /usr/local/texlive
-TEXMFLOCAL /usr/local/texlive/texmf-local
-TEXMFSYSVAR /usr/local/texlive/texmf-var
-TEXMFSYSCONFIG /usr/local/texlive/texmf-config
-TEXMFVAR /root/.texlive/texmf-var
-TEXMFCONFIG /root/.texlive/texmf-config
-TEXMFHOME /root/texmf
-option_doc 0
-option_src 0
-instopt_adjustpath 1
-EOF
+# Install vanilla TeX Live with minimal scheme
+COPY texlive.profile /tmp/texlive.profile
+RUN echo "Downloading TeX Live installer..." && \
+    wget -qO- https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar -xz -C /tmp && \
+    cd /tmp/install-tl-* && \
+    echo "Installing TeX Live (this may take a few minutes)..." && \
+    ./install-tl --profile=/tmp/texlive.profile -v && \
+    echo "TeX Live installation complete!" && \
+    cd / && rm -rf /tmp/install-tl-* /tmp/texlive.profile
 
-# Run TeX Live installer
-RUN cd install-tl-* && perl ./install-tl --profile=texlive.profile --no-interaction
+# Add TeX Live to PATH for both architectures
+ENV PATH="/usr/local/texlive/bin/x86_64-linux:/usr/local/texlive/bin/aarch64-linux:${PATH}"
 
-# Cleanup
-RUN rm -rf /tmp/*
+# Install additional LaTeX packages
+COPY install-texlive-packages.sh /tmp/install-texlive-packages.sh
+RUN echo "Configuring tlmgr..." && \
+    tlmgr option -- autobackup 0 && \
+    PACKAGES=$(bash /tmp/install-texlive-packages.sh) && \
+    echo "Installing LaTeX packages: $PACKAGES" && \
+    tlmgr install $PACKAGES && \
+    echo "LaTeX package installation complete!" && \
+    rm /tmp/install-texlive-packages.sh
 
-# Add TeX Live to PATH
-ENV PATH="/usr/local/texlive/bin/x86_64-linux:${PATH}"
+# Install Kalam fonts for MSavage template
+RUN mkdir -p /usr/share/fonts/truetype/kalam && \
+    cd /tmp && \
+    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Regular.ttf && \
+    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Bold.ttf && \
+    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Light.ttf && \
+    mv Kalam-*.ttf /usr/share/fonts/truetype/kalam/ && \
+    fc-cache -fv && \
+    rm -rf /tmp/*
 
 WORKDIR /workspaces

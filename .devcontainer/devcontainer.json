@@ -1,6 +1,9 @@
 {
   "name": "dungeon-sheets",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
 
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
@@ -13,7 +16,7 @@
     }
   },
 
-  "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/setup.sh",
+  "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/post-create.sh",
 
   "customizations": {
     "vscode": {
