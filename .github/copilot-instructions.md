@@ -49,7 +49,14 @@ This project follows the **GitHub Flow** model. All changes must be made on a fe
 
 4. **Create Pull Request**:
 
-   - Open a PR from your branch to `main`
+   - Set default repository for GitHub CLI (first time only):
+     ```bash
+     gh repo set-default stiffneckjim/dungeon-sheets
+     ```
+   - Open a PR from your branch to `main`:
+     ```bash
+     gh pr create --title "Your PR title" --body "PR description" --base main
+     ```
    - CI/CD workflows will automatically run
    - Address any review feedback
 
