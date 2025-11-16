@@ -61,6 +61,13 @@
           "permissions": "write-all"
         }
       }
+    },
+    "codespaces": {
+      "repositories": {
+        "stiffneckjim/DND-5e-LaTeX-Character-Sheet-Template": {
+          "permissions": "write-all"
+        }
+      }
     }
   },
 
