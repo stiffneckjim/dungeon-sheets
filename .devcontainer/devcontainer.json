@@ -32,6 +32,13 @@
         "python.testing.pytestEnabled": true,
         "python.testing.unittestEnabled": false
       }
+    },
+    "codespaces": {
+      "repositories": {
+        "stiffneckjim/DND-5e-LaTeX-Character-Sheet-Template": {
+          "permissions": "write-all"
+        }
+      }
     }
   },
 
