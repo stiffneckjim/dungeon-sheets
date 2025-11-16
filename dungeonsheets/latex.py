@@ -107,14 +107,24 @@ def create_latex_pdf(
         str(tex_file),
     ]
 
-    environment = os.environ
+    environment = os.environ.copy()
     tex_env = environment.get("TEXINPUTS", "")
     module_root = Path(__file__).parent / "modules/"
-    module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
+    module_dirs = [
+        module_root / "DND-5e-LaTeX-Template",
+        module_root / "DND-5e-LaTeX-Character-Sheet-Template"
+    ]
     log.debug(f"Loading additional modules from {module_dirs}.")
     texinputs = [".", *module_dirs, module_root, tex_env]
     separator = ";" if isinstance(module_root, pathlib.WindowsPath) else ":"
     environment["TEXINPUTS"] = separator.join(str(path) for path in texinputs)
+    
+    # Add font directories for XeLaTeX
+    msavage_fonts = module_root / "DND-5e-LaTeX-Character-Sheet-Template" / "template" / "fonts"
+    if msavage_fonts.exists():
+        texfonts_env = environment.get("TEXFONTS", "")
+        texfonts = [str(msavage_fonts), texfonts_env] if texfonts_env else [str(msavage_fonts)]
+        environment["TEXFONTS"] = separator.join(texfonts)
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
     log.debug("LaTeX command: %s" % " ".join(tex_command_line))

@@ -4,6 +4,12 @@
 
 TEXLIVE_PACKAGES=(
     collection-latexrecommended
+    # XeLaTeX support for MSavage template
+    xetex
+    fontspec
+    kpfonts-otf         # OpenType Kp-fonts for XeLaTeX
+    pstricks            # PostScript tricks for drawing
+    # Standard packages
     xcolor
     fontaxes
     booktabs

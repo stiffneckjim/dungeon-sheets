@@ -7,6 +7,7 @@ import argparse
 import logging
 import os
 import re
+import shutil
 import subprocess
 import warnings
 from itertools import product
@@ -164,7 +165,7 @@ def make_sheet(
     output_format: str = "pdf",
     fancy_decorations: bool = False,
     debug: bool = False,
-    use_tex_template: bool = False,
+    use_tex_template: bool = True,
     spell_order: bool = False,
     paper_size: str = "letter",
 ):
@@ -369,16 +370,12 @@ def make_gm_sheet(
     # Produce the combined output depending on the format requested
     if output_format == "pdf":
         # Typeset combined LaTeX file
-        try:
-            if len(content) > 2:
-                latex.create_latex_pdf(
-                    tex="".join(content),
-                    basename=basename,
-                    keep_temp_files=debug,
-                    use_dnd_decorations=fancy_decorations,
-                )
-        except exceptions.LatexNotFoundError:
-            log.warning(f"``pdflatex`` not available. Skipping {basename}")
+        latex.create_latex_pdf(
+            tex="".join(content),
+            basename=basename,
+            keep_temp_files=debug,
+            use_dnd_decorations=fancy_decorations,
+        )
     elif output_format == "epub":
         chapters = {session_title: "".join(content)}
         # Make sheets in the epub for each party member
@@ -530,7 +527,7 @@ def make_character_content(
 
 def msavage_sheet(character, basename, debug=False, paper_size="letter"):
     """Another adaption. All changes can be easily included as options
-    in the orignal functions, though."""
+    in the original functions, though."""
 
     # Load portrait image file if present
     portrait_command = ""
@@ -570,7 +567,7 @@ def make_character_sheet(
     output_format: str = "pdf",
     fancy_decorations: bool = False,
     debug: bool = False,
-    use_tex_template: bool = False,
+    use_tex_template: bool = True,
     spell_order: bool = False,
     paper_size: str = "letter",
 ):
@@ -619,12 +616,34 @@ def make_character_sheet(
     # Typeset combined LaTeX file
     if output_format == "pdf":
         if use_tex_template:
+            # Use the msavage LaTeX template for the complete character sheet
             msavage_sheet(
                 character=character,
                 basename=char_base,
                 debug=debug,
                 paper_size=paper_size,
             )
+            # Create additional features pages
+            features_base = "{:s}_features".format(basename)
+            if len(content) > 2:
+                latex.create_latex_pdf(
+                    tex="".join(content),
+                    basename=features_base,
+                    keep_temp_files=debug,
+                    use_dnd_decorations=fancy_decorations,
+                )
+                sheets.append(features_base + ".pdf")
+                # Merge character sheet with features
+                final_pdf = f"{basename}.pdf"
+                merge_pdfs(sheets, final_pdf, clean_up=not (debug))
+                for image in character.images:
+                    insert_image_into_pdf(Path(final_pdf), *image)
+            else:
+                # No extra content, just rename the char sheet to final name
+                final_pdf = f"{basename}.pdf"
+                char_pdf_path = f"{char_base}.pdf"
+                if Path(char_pdf_path).exists():
+                    shutil.move(char_pdf_path, final_pdf)
         # Fillable PDF forms
         else:
             sheets.append(person_base + ".pdf")
@@ -636,17 +655,16 @@ def make_character_sheet(
                 basename=person_base,
                 flatten=flatten,
             )
-        if character.is_spellcaster and not (use_tex_template):
-            # Create spell sheet
-            spell_base = "{:s}_spells".format(basename)
-            created_basenames = create_spells_pdf_template(
-                character=character, basename=spell_base, flatten=flatten
-            )
-            for spell_base in created_basenames:
-                sheets.append(spell_base + ".pdf")
-        # Combined with additional LaTeX pages with detailed character info
-        features_base = "{:s}_features".format(basename)
-        try:
+            if character.is_spellcaster:
+                # Create spell sheet
+                spell_base = "{:s}_spells".format(basename)
+                created_basenames = create_spells_pdf_template(
+                    character=character, basename=spell_base, flatten=flatten
+                )
+                for spell_base in created_basenames:
+                    sheets.append(spell_base + ".pdf")
+            # Combined with additional LaTeX pages with detailed character info
+            features_base = "{:s}_features".format(basename)
             if len(content) > 2:
                 latex.create_latex_pdf(
                     tex="".join(content),
@@ -655,14 +673,11 @@ def make_character_sheet(
                     use_dnd_decorations=fancy_decorations,
                 )
                 sheets.append(features_base + ".pdf")
-                final_pdf = f"{basename}.pdf"
-                merge_pdfs(sheets, final_pdf, clean_up=not (debug))
-                for image in character.images:
-                    insert_image_into_pdf(final_pdf, *image)
-        except exceptions.LatexNotFoundError:
-            log.warning(
-                f"``pdflatex`` not available. Skipping features for {character.name}"
-            )
+            # Always merge the sheets into final PDF
+            final_pdf = f"{basename}.pdf"
+            merge_pdfs(sheets, final_pdf, clean_up=not (debug))
+            for image in character.images:
+                insert_image_into_pdf(Path(final_pdf), *image)
     elif output_format == "epub":
         epub.create_epub(
             chapters={character.name: "".join(content)},
@@ -721,7 +736,7 @@ def _build(filename, args) -> int:
             output_format=args.output_format,
             debug=args.debug,
             fancy_decorations=args.fancy_decorations,
-            use_tex_template=args.use_tex_template,
+            use_tex_template=(not args.use_fillable_pdf),
             spell_order=args.spell_order,
             paper_size=args.paper_size,
         )
@@ -780,11 +795,10 @@ def main(args=None):
         ),
     )
     parser.add_argument(
-        "--tex-template",
-        "-T",
+        "--use-fillable-pdf",
         action="store_true",
-        help="(experimental) Build character sheets using the LaTeX template instead of the fillable PDF.",
-        dest="use_tex_template",
+        help="Use the legacy fillable PDF forms instead of the LaTeX template (not recommended).",
+        dest="use_fillable_pdf",
     )
     parser.add_argument(
         "--output-format",

@@ -1,0 +1,25 @@
+% Wrapper for dndtemplate.sty that fixes font paths for submodule usage
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dndtemplate-wrapper}
+
+% Load the original dndtemplate from the submodule
+% but temporarily redefine \entryfont to use absolute paths
+\usepackage{etoolbox}
+\usepackage{fontspec}
+\usepackage{ifthen}
+\usepackage{pstricks}
+\usepackage{xstring}
+\usepackage{ragged2e}
+
+% Get the absolute path to the template fonts directory
+% This assumes the .sty file is in dungeonsheets/modules/
+\def\templatefontpath{\currfiledir DND-5e-LaTeX-Character-Sheet-Template/template/fonts/}
+
+% Define the font with absolute path
+\newfontfamily\entryfont{Kalam}[Path=\templatefontpath,Extension=.ttf,UprightFont=Kalam-Regular,BoldFont=Kalam-Bold]
+
+% Now input the rest of dndtemplate.sty, skipping the parts we've already loaded
+\makeatletter
+% Read dndtemplate.sty but skip the font definition
+\input{DND-5e-LaTeX-Character-Sheet-Template/dndtemplate-base.sty}
+\makeatother

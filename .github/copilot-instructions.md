@@ -236,3 +236,24 @@ Check these files to understand common patterns:
 - Complex character: `examples/multiclass1.py`
 - GM notes: `examples/gm-campaign-notes.py`
 - Test patterns: `tests/test_character.py`
+
+
+## Command Formatting Preference
+
+When providing terminal commands, present them individually in separate code blocks rather than grouped together. This makes it easier to copy and paste commands one at a time for execution.
+
+Example of preferred format:
+```bash
+cd /some/directory
+```
+
+```bash
+git status
+```
+
+Rather than:
+```bash
+cd /some/directory
+git status
+```
+
