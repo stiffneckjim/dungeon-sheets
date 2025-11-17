@@ -62,6 +62,83 @@ The container:
 - Mounts the current directory as ``/build`` to access character files
 - Includes the latest version of dungeon-sheets from the specified branch/tag
 
+Windows Usage
+-------------
+
+**Prerequisites:**
+
+- Docker Desktop for Windows installed and running (https://www.docker.com/products/docker-desktop/)
+- Character files ready (Python ``.py`` files or JSON exports from VTTs)
+
+**Quick Start:**
+
+1. Build the image (one-time setup):
+
+   .. code:: powershell
+
+       cd C:\path\to\dungeon-sheets
+       docker build -t dungeon-sheets .
+
+2. Or use the pre-built image (faster, no build needed):
+
+   .. code:: powershell
+
+       docker pull ghcr.io/stiffneckjim/dungeon-sheets:main
+
+**Generate Character Sheets:**
+
+Using PowerShell:
+
+.. code:: powershell
+
+    # Navigate to your character files directory
+    cd C:\DnD\Characters
+
+    # Generate fancy sheets with decorations
+    docker run -it -v ${PWD}:/build ghcr.io/stiffneckjim/dungeon-sheets:main --fancy
+
+    # Generate all sheets recursively
+    docker run -it -v ${PWD}:/build ghcr.io/stiffneckjim/dungeon-sheets:main --fancy --recursive
+
+    # Generate editable PDF forms
+    docker run -it -v ${PWD}:/build ghcr.io/stiffneckjim/dungeon-sheets:main --editable
+
+Using Command Prompt (CMD):
+
+.. code:: cmd
+
+    cd C:\DnD\Characters
+    docker run -it -v %cd%:/build ghcr.io/stiffneckjim/dungeon-sheets:main --fancy
+
+**Common Options:**
+
+- ``--fancy``: Generate sheets with D&D styling and decorations (recommended!)
+- ``--editable``: Create fillable PDF forms
+- ``--recursive``: Process all character files in subdirectories
+- ``--output-format=epub``: Generate ePub format for tablets/e-readers
+
+**Example Workflow:**
+
+.. code:: powershell
+
+    # One-time: Create folder and pull image
+    mkdir C:\DnD\MyGroup
+    docker pull ghcr.io/stiffneckjim/dungeon-sheets:main
+    
+    # Add your character .py or .json files to C:\DnD\MyGroup
+    
+    # Generate sheets before each session
+    cd C:\DnD\MyGroup
+    docker run -it -v ${PWD}:/build ghcr.io/stiffneckjim/dungeon-sheets:main --fancy --recursive
+
+The PDFs will be created in the same folder, ready to print or share!
+
+**Troubleshooting:**
+
+- Make sure Docker Desktop is running (check system tray for whale icon)
+- Enable file sharing in Docker Desktop → Settings → Resources → File Sharing
+- Use ``--debug`` flag for detailed error messages
+
 
 Installation
 ============
