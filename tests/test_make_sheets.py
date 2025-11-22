@@ -66,6 +66,46 @@ class MakeSheetsTestCase(unittest.TestCase):
         self.assertTrue(self.gm_pdf.exists(),
                         f"GM PDF ({self.gm_pdf.resolve()}) not created.")
 
+    def test_make_sheets_a4_paper(self):
+        # Character PDF with A4 paper
+        make_sheets.make_sheet(sheet_file=CHARFILE, paper_size="a4")
+        # Was the PDF created?
+        self.assertTrue(self.char_pdf.exists(),
+                        f"Character PDF ({self.char_pdf.resolve()}) not created.")
+        # GM PDF with A4 paper
+        make_sheets.make_sheet(sheet_file=GMFILE, paper_size="a4")
+        # Was the PDF created?
+        self.assertTrue(self.gm_pdf.exists(),
+                        f"GM PDF ({self.gm_pdf.resolve()}) not created.")
+
+    def test_make_sheets_letter_paper(self):
+        # Character PDF with letter paper (explicit)
+        make_sheets.make_sheet(sheet_file=CHARFILE, paper_size="letter")
+        # Was the PDF created?
+        self.assertTrue(self.char_pdf.exists(),
+                        f"Character PDF ({self.char_pdf.resolve()}) not created.")
+        # GM PDF with letter paper (explicit)
+        make_sheets.make_sheet(sheet_file=GMFILE, paper_size="letter")
+        # Was the PDF created?
+        self.assertTrue(self.gm_pdf.exists(),
+                        f"GM PDF ({self.gm_pdf.resolve()}) not created.")
+
+    def test_make_fancy_sheets_a4_paper(self):
+        # Character PDF with fancy decorations and A4 paper
+        make_sheets.make_sheet(sheet_file=CHARFILE,
+                               fancy_decorations=True,
+                               paper_size="a4")
+        # Was the PDF created?
+        self.assertTrue(self.char_pdf.exists(),
+                        f"Character PDF ({self.char_pdf.resolve()}) not created.")
+        # GM PDF with fancy decorations and A4 paper
+        make_sheets.make_sheet(sheet_file=GMFILE,
+                               fancy_decorations=True,
+                               paper_size="a4")
+        # Was the PDF created?
+        self.assertTrue(self.gm_pdf.exists(),
+                        f"GM PDF ({self.gm_pdf.resolve()}) not created.")
+
 
 class EpubOutputTestCase(unittest.TestCase):
     gm_epub = Path(f"{GMFILE.stem}.epub").resolve()

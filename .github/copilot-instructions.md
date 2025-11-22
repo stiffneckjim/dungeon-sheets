@@ -41,12 +41,22 @@ This project follows the **GitHub Flow** model. All changes must be made on a fe
    ```bash
    git add .
    git commit -m "Descriptive commit message"
-   git push origin feature/your-feature-name
+   # First push of a new branch - set upstream
+   git push -u origin feature/your-feature-name
+   # Subsequent pushes
+   git push
    ```
 
 4. **Create Pull Request**:
 
-   - Open a PR from your branch to `main`
+   - Set default repository for GitHub CLI (first time only):
+     ```bash
+     gh repo set-default stiffneckjim/dungeon-sheets
+     ```
+   - Open a PR from your branch to `main`:
+     ```bash
+     gh pr create --title "Your PR title" --body "PR description" --base main
+     ```
    - CI/CD workflows will automatically run
    - Address any review feedback
 
@@ -236,3 +246,24 @@ Check these files to understand common patterns:
 - Complex character: `examples/multiclass1.py`
 - GM notes: `examples/gm-campaign-notes.py`
 - Test patterns: `tests/test_character.py`
+
+
+## Command Formatting Preference
+
+When providing terminal commands, present them individually in separate code blocks rather than grouped together. This makes it easier to copy and paste commands one at a time for execution.
+
+Example of preferred format:
+```bash
+cd /some/directory
+```
+
+```bash
+git status
+```
+
+Rather than:
+```bash
+cd /some/directory
+git status
+```
+

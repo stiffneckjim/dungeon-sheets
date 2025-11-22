@@ -124,9 +124,9 @@ Using Command Prompt (CMD):
     # One-time: Create folder and pull image
     mkdir C:\DnD\MyGroup
     docker pull ghcr.io/stiffneckjim/dungeon-sheets:main
-    
+
     # Add your character .py or .json files to C:\DnD\MyGroup
-    
+
     # Generate sheets before each session
     cd C:\DnD\MyGroup
     docker run -it -v ${PWD}:/build ghcr.io/stiffneckjim/dungeon-sheets:main --fancy --recursive
