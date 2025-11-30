@@ -180,18 +180,32 @@ Builds and publishes container images:
 
 ## Key Workflows
 
+### Dependency Management
+
+This project uses **[uv](https://docs.astral.sh/uv/)** for fast, reliable Python package management:
+
+```bash
+uv sync              # Install all dependencies from uv.lock
+uv sync --all-extras # Install with all optional dependencies (dev, etc.)
+uv add package-name  # Add a new dependency
+uv remove package-name # Remove a dependency
+uv lock              # Update uv.lock after changing pyproject.toml
+```
+
+**Important**: Always use `uv` commands instead of `pip` for consistency. The `uv.lock` file ensures reproducible builds and is automatically used in CI/CD and devcontainers.
+
 ### Testing
 
 ```bash
-pip install -e ".[dev]"  # Install dev dependencies
-pytest tests/            # Run test suite
+uv sync --all-extras # Install dev dependencies
+pytest tests/        # Run test suite
 pytest tests/ -k test_name  # Run specific test
 ```
 
 ### Development Setup
 
 ```bash
-pip install -e "."      # Install in editable mode
+uv sync              # Install in editable mode with locked dependencies
 sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended  # Optional: PDF dependencies
 ```
 
