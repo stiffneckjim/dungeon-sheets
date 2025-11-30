@@ -1,12 +1,11 @@
 FROM mcr.microsoft.com/devcontainers/python:1-3.12-bookworm
 
 # Install system dependencies needed for TeX Live
-# gnupg \
-# xz-utils \
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     pdftk-java \
+    gnupg \
     wget \
     perl \
     libwww-perl \
@@ -20,11 +19,14 @@ RUN apt-get update && \
 # This layer is cached and only rebuilds if texlive.profile changes
 COPY texlive.profile /tmp/texlive.profile
 RUN echo "Downloading TeX Live installer..." && \
-    echo $(pwd)
-wget -qO- https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar -xz && \
+    echo $(pwd) && \
+    wget https://tex.org.uk/systems/texlive/tlnet/install-tl-unx.tar.gz && \
+    zcat < install-tl-unx.tar.gz | tar xf - && \
     cd install-tl-* && \
     echo "Installing TeX Live (this may take a few minutes)..." && \
-    ./install-tl --profile=/tmp/texlive.profile -v && \
+    perl ./install-tl -v \
+    --profile=/tmp/texlive.profile \
+    --repository https://tex.org.uk/systems/texlive/tlnet/ && \
     echo "TeX Live installation complete!" && \
     rm -rf /tmp/install-tl-* /tmp/texlive.profile
 
@@ -39,6 +41,7 @@ ENV PATH="/usr/local/texlive/bin/x86_64-linux:/usr/local/texlive/bin/aarch64-lin
 # This layer can be modified without re-downloading/installing base TeX Live
 COPY .devcontainer/install-texlive-packages.sh /tmp/install-texlive-packages.sh
 RUN echo "Configuring tlmgr..." && \
+    tlmgr init-usertree && \
     tlmgr option -- autobackup 0 && \
     PACKAGES=$(bash /tmp/install-texlive-packages.sh) && \
     echo "Installing LaTeX packages: $PACKAGES" && \
