@@ -8,6 +8,7 @@ RUN apt-get update && \
     gnupg \
     xz-utils \
     perl \
+    libwww-perl \
     ca-certificates && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -16,10 +17,14 @@ RUN apt-get update && \
 # This layer is cached and only rebuilds if texlive.profile changes
 COPY texlive.profile /tmp/texlive.profile
 RUN echo "Downloading TeX Live installer..." && \
-    wget -qO- https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar -xz && \
-    cd install-tl-* && \
+    cd /tmp/ && \
+    wget https://tex.org.uk/systems/texlive/tlnet/install-tl-unx.tar.gz && \
+    zcat < install-tl-unx.tar.gz | tar xf - && \
+    cd install-tl-2* && \
     echo "Installing TeX Live (this may take a few minutes)..." && \
-    ./install-tl --profile=/tmp/texlive.profile -v && \
+    perl ./install-tl -v \
+    --profile=/tmp/texlive.profile \
+    --repository https://tex.org.uk/systems/texlive/tlnet/ && \
     echo "TeX Live installation complete!" && \
     cd .. && rm -rf install-tl-* /tmp/texlive.profile
 
