@@ -16,7 +16,7 @@ player_name = "Teste McTestface"
 # Be sure to list Primary class first
 classes = ['Artificer']  # ex: ['Wizard'] or ['Rogue', 'Fighter']
 levels = [20]  # ex: [10] or [3, 2]
-subclasses = ["Armorer"]  # ex: ['Necromancy'] or ['Thief', None]
+subclasses = ['Armorer']  # ex: ['Necromancy'] or ['Thief', None]
 background = "Sailor"
 race = "Rock Gnome"
 alignment = "Neutral good"
@@ -35,7 +35,8 @@ charisma = 10
 
 # Select what skills you're proficient with
 # ex: skill_proficiencies = ('athletics', 'acrobatics', 'arcana')
-skill_proficiencies = ('investigation', 'sleight of hand', 'athletics', 'perception')
+skill_proficiencies = ('investigation', 'sleight of hand',
+                       'athletics', 'perception')
 
 # Any skills you have "expertise" (Bard/Rogue) in
 skill_expertise = ()
@@ -93,10 +94,20 @@ spells = spells_prepared + __spells_unprepared
 wild_shapes = ()  # Ex: ('ape', 'wolf', 'ankylosaurus')
 
 # Infusions for Artificer
-infusions = ('boots of the winding path', 'enhanced arcane focus',
-             'enhanced defense', 'enhanced weapon', 'repeating shot',
-             'homunculus servant', 'radiant weapon', 'replicate magic item',
-             'repulsion shield', 'resistant armor', 'returning weapon')
+infusions = (
+    'boots of the winding path',
+    'enhanced arcane focus',
+    'enhanced defense',
+    'enhanced weapon',
+    'repeating shot',
+    'homunculus servant',
+    'mind sharpener',
+    'radiant weapon',
+    'replicate magic item',
+    'repulsion shield',
+    'resistant armor',
+    'returning weapon'
+)
 # Ex: ('repeating shot', 'replicate magic item')
 
 # Backstory
