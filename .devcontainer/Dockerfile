@@ -1,14 +1,16 @@
-FROM python:3.12-slim AS dungeonsheets
+FROM mcr.microsoft.com/devcontainers/python:1-3.12-bookworm
 
-# Install base system dependencies
+# Install system dependencies needed for TeX Live
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    pdftk \
+    pdftk-java \
     gnupg \
     wget \
-    xz-utils \
     perl \
     libwww-perl \
+    fontconfig \
+    xz-utils \
     ca-certificates && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -17,16 +19,16 @@ RUN apt-get update && \
 # This layer is cached and only rebuilds if texlive.profile changes
 COPY texlive.profile /tmp/texlive.profile
 RUN echo "Downloading TeX Live installer..." && \
-    cd /tmp/ && \
+    echo $(pwd) && \
     wget https://tex.org.uk/systems/texlive/tlnet/install-tl-unx.tar.gz && \
     zcat < install-tl-unx.tar.gz | tar xf - && \
-    cd install-tl-2* && \
+    cd install-tl-* && \
     echo "Installing TeX Live (this may take a few minutes)..." && \
     perl ./install-tl -v \
     --profile=/tmp/texlive.profile \
     --repository https://tex.org.uk/systems/texlive/tlnet/ && \
     echo "TeX Live installation complete!" && \
-    cd .. && rm -rf install-tl-* /tmp/texlive.profile
+    rm -rf /tmp/install-tl-* /tmp/texlive.profile
 
 # Add TeX Live to PATH (detect architecture: x86_64-linux or aarch64-linux)
 # Use the first directory found in /usr/local/texlive/bin/
@@ -39,6 +41,7 @@ ENV PATH="/usr/local/texlive/bin/x86_64-linux:/usr/local/texlive/bin/aarch64-lin
 # This layer can be modified without re-downloading/installing base TeX Live
 COPY .devcontainer/install-texlive-packages.sh /tmp/install-texlive-packages.sh
 RUN echo "Configuring tlmgr..." && \
+    tlmgr init-usertree && \
     tlmgr option -- autobackup 0 && \
     PACKAGES=$(bash /tmp/install-texlive-packages.sh) && \
     echo "Installing LaTeX packages: $PACKAGES" && \
@@ -47,14 +50,14 @@ RUN echo "Configuring tlmgr..." && \
     rm /tmp/install-texlive-packages.sh
 
 # Install Kalam fonts for MSavage template
-RUN echo "Installing Kalam fonts..." && \
-    mkdir -p /usr/share/fonts/truetype/kalam && \
+RUN mkdir -p /usr/share/fonts/truetype/kalam && \
+    cd /tmp && \
     wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Regular.ttf && \
     wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Bold.ttf && \
     wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Light.ttf && \
     mv Kalam-*.ttf /usr/share/fonts/truetype/kalam/ && \
     fc-cache -fv && \
-    echo "Kalam fonts installation complete!"
+    rm -rf /tmp/*
 
 WORKDIR /app
 
@@ -71,27 +74,3 @@ WORKDIR /build
 
 ENTRYPOINT [ "python", "-m", "dungeonsheets.make_sheets" ]
 CMD [ "--fancy", "--editable", "--recursive" ]
-
-FROM dungeonsheets AS devcontainer
-
-# Install development tools and dependencies
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    curl \
-    less \
-    pipx \
-    unzip \
-    starship \
-    zsh && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-# Add a non-root user for development
-RUN echo "Creating vscode user" && \
-    useradd -m -s /bin/bash vscode && \
-    chown -R vscode:vscode /app /build && \
-    chsh -s /bin/zsh vscode
-
-USER vscode
-
-WORKDIR /workspaces/dungeonsheets

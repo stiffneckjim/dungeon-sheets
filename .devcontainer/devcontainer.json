@@ -19,6 +19,7 @@
   },
 
   "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/post-create.sh",
+  "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/post-create.sh",
 
   "customizations": {
     "vscode": {
@@ -26,6 +27,10 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-python.debugpy",
+        "ms-python.autopep8",
+        "ms-python.black-formatter",
+        "ms-azuretools.vscode-containers",
+        "ms-python.vscode-python-envs"
         "ms-python.autopep8",
         "ms-python.black-formatter",
         "ms-azuretools.vscode-containers",
