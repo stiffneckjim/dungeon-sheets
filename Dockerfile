@@ -95,21 +95,4 @@ RUN echo "Creating vscode user" && \
 
 USER vscode
 
-# Install Python development tools with pipx
-RUN echo "Installing pipx and tools" && \
-    pipx install argcomplete && \
-    pipx install black && \
-    pipx install coverage && \
-    pipx install flake8 && \
-    pipx install mypy && \
-    pipx install pyflakes && \
-    pipx install pylint && \
-    pipx install pytest
-
-# Install Node development container with fnm
-RUN echo "Installing fnm and Node.js" && \
-    curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell && \
-    ln -s /home/vscode/.local/share/fnm/fnm /home/vscode/.local/bin && \
-    /home/vscode/.local/bin/fnm install --lts
-
 WORKDIR /workspaces/dungeonsheets
