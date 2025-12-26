@@ -4,4 +4,3 @@
 [submodule "dungeonsheets/modules/DND-5e-LaTeX-Character-Sheet-Template"]
 	path = dungeonsheets/modules/DND-5e-LaTeX-Character-Sheet-Template
 	url = https://github.com/stiffneckjim/DND-5e-LaTeX-Character-Sheet-Template.git
-	branch = fix/currfiledir-font-path
