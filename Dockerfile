@@ -1,15 +1,15 @@
-FROM python:3.12-slim
+FROM python:3.12-slim AS dungeon-sheets
 
 # Install base system dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    pdftk \
-    wget \
+    ca-certificates \
     gnupg \
-    xz-utils \
-    perl \
     libwww-perl \
-    ca-certificates && \
+    pdftk \
+    perl \
+    wget \
+    xz-utils && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

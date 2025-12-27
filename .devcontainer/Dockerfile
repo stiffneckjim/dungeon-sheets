@@ -1,17 +1,16 @@
 FROM mcr.microsoft.com/devcontainers/python:1-3.12-bookworm
 
-# Install system dependencies needed for TeX Live
-
+# Install base system dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    pdftk-java \
-    gnupg \
-    wget \
-    perl \
-    libwww-perl \
+    ca-certificates \
     fontconfig \
-    xz-utils \
-    ca-certificates && \
+    gnupg \
+    libwww-perl \
+    pdftk \
+    perl \
+    wget \
+    xz-utils && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
