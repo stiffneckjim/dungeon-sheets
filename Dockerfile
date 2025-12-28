@@ -4,6 +4,7 @@ FROM python:3.12-slim AS dungeon-sheets
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     ca-certificates \
+    fontconfig \
     gnupg \
     libwww-perl \
     pdftk \
