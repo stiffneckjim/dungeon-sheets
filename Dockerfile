@@ -40,12 +40,23 @@ ENV PATH="/usr/local/texlive/bin/x86_64-linux:/usr/local/texlive/bin/aarch64-lin
 # This layer can be modified without re-downloading/installing base TeX Live
 COPY .devcontainer/install-texlive-packages.sh /tmp/install-texlive-packages.sh
 RUN echo "Configuring tlmgr..." && \
+    tlmgr init-usertree && \
     tlmgr option -- autobackup 0 && \
     PACKAGES=$(bash /tmp/install-texlive-packages.sh) && \
     echo "Installing LaTeX packages: $PACKAGES" && \
     tlmgr install $PACKAGES && \
     echo "LaTeX package installation complete!" && \
     rm /tmp/install-texlive-packages.sh
+
+# Install Kalam fonts for MSavage template
+RUN mkdir -p /usr/share/fonts/truetype/kalam && \
+    cd /tmp && \
+    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Regular.ttf && \
+    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Bold.ttf && \
+    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Light.ttf && \
+    mv Kalam-*.ttf /usr/share/fonts/truetype/kalam/ && \
+    fc-cache -fv && \
+    rm -rf /tmp/*
 
 WORKDIR /app
 
