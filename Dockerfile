@@ -1,4 +1,4 @@
-FROM python:3.12-slim AS dungeon-sheets
+FROM python:3.12-slim AS dungeon-sheets-base
 
 # Install base system dependencies
 RUN apt-get update && \
@@ -48,15 +48,7 @@ RUN echo "Configuring tlmgr..." && \
     echo "LaTeX package installation complete!" && \
     rm /tmp/install-texlive-packages.sh
 
-# Install Kalam fonts for MSavage template
-RUN mkdir -p /usr/share/fonts/truetype/kalam && \
-    cd /tmp && \
-    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Regular.ttf && \
-    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Bold.ttf && \
-    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Light.ttf && \
-    mv Kalam-*.ttf /usr/share/fonts/truetype/kalam/ && \
-    fc-cache -fv && \
-    rm -rf /tmp/*
+FROM dungeon-sheets-base AS dungeon-sheets
 
 WORKDIR /app
 
