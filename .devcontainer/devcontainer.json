@@ -6,9 +6,6 @@
   },
 
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "moby": false
-    },
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {
       "installDirectlyFromGitHubRelease": true,
@@ -38,7 +35,7 @@
     },
     "codespaces": {
       "repositories": {
-        "stiffneckjim/DND-5e-LaTeX-Character-Sheet-Template": {
+        "stiffneckjim/DND-5e-LaTeX-Template": {
           "permissions": "write-all"
         }
       }
