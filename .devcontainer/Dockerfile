@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/python:1-3.12-bookworm
+FROM python:3.12-slim AS dungeon-sheets-dev
 
 # Install base system dependencies
 RUN apt-get update && \
@@ -49,14 +49,14 @@ RUN echo "Configuring tlmgr..." && \
     rm /tmp/install-texlive-packages.sh
 
 # Install Kalam fonts for MSavage template
-RUN mkdir -p /usr/share/fonts/truetype/kalam && \
-    cd /tmp && \
-    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Regular.ttf && \
-    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Bold.ttf && \
-    wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Light.ttf && \
-    mv Kalam-*.ttf /usr/share/fonts/truetype/kalam/ && \
-    fc-cache -fv && \
-    rm -rf /tmp/*
+# RUN mkdir -p /usr/share/fonts/truetype/kalam && \
+#     cd /tmp && \
+#     wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Regular.ttf && \
+#     wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Bold.ttf && \
+#     wget -q https://github.com/google/fonts/raw/main/ofl/kalam/Kalam-Light.ttf && \
+#     mv Kalam-*.ttf /usr/share/fonts/truetype/kalam/ && \
+#     fc-cache -fv && \
+#     rm -rf /tmp/*
 
 WORKDIR /app
 
@@ -69,7 +69,19 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app
 RUN pip install --no-cache-dir -e /app
 
-WORKDIR /build
 
-ENTRYPOINT [ "python", "-m", "dungeonsheets.make_sheets" ]
-CMD [ "--fancy", "--editable", "--recursive" ]
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+# Create the user
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    #
+    # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
+    && apt-get update \
+    && apt-get install -y sudo \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
+
+USER $USERNAME
