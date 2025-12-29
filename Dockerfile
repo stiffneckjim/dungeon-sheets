@@ -65,3 +65,22 @@ WORKDIR /build
 
 ENTRYPOINT [ "python", "-m", "dungeonsheets.make_sheets" ]
 CMD [ "--fancy", "--editable", "--recursive" ]
+
+FROM dungeon-sheets-base AS dungeon-sheets-dev
+
+WORKDIR /workspace
+
+# Install Python dependencies
+RUN pip install --upgrade pip
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+# Create the user
+RUN groupadd --gid $USER_GID $USERNAME && \
+    useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
+
+USER $USERNAME

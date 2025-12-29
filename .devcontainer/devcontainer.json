@@ -1,8 +1,9 @@
 {
   "name": "dungeon-sheets",
   "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "target": "dungeon-sheets-dev"
   },
 
   "features": {
@@ -10,6 +11,11 @@
     "ghcr.io/devcontainers/features/github-cli:1": {
       "installDirectlyFromGitHubRelease": true,
       "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12",
+      "installPipx": true,
+      "toolsToInstall": "black,pylint,pytest",
     }
   },
 
