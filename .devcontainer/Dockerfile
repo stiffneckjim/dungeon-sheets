@@ -58,7 +58,7 @@ RUN echo "Configuring tlmgr..." && \
 #     fc-cache -fv && \
 #     rm -rf /tmp/*
 
-WORKDIR /app
+WORKDIR /workspace
 
 # Install Python dependencies
 RUN pip install --upgrade pip
