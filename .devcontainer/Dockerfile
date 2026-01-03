@@ -66,9 +66,8 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code and install
-COPY . /app
+COPY . /workspace
 RUN pip install --no-cache-dir -e /app
-
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
