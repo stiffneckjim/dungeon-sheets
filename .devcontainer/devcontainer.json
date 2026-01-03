@@ -10,11 +10,6 @@
     "ghcr.io/devcontainers/features/github-cli:1": {
       "installDirectlyFromGitHubRelease": true,
       "version": "latest"
-    },
-    "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.12",
-      "installPipx": true,
-      "toolsToInstall": "autopep8,black,coverage,pylint,pytest"
     }
   },
 
@@ -32,7 +27,7 @@
         "ms-vscode-remote.remote-containers"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python/current/bin/python",
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
         "python.testing.pytestEnabled": true,
         "python.testing.unittestEnabled": false
       }

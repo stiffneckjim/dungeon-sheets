@@ -53,9 +53,9 @@ FROM dungeon-sheets-base AS dungeon-sheets
 WORKDIR /app
 
 # Install Python dependencies
-RUN pip install --upgrade pip
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
 # Copy application code and install
 COPY . /app
@@ -71,6 +71,7 @@ FROM dungeon-sheets-base AS dungeon-sheets-dev
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     build-essential \
+    curl \
     git \
     openssh-client \
     sudo \
@@ -82,9 +83,9 @@ RUN apt-get update && \
 WORKDIR /workspace
 
 # Install Python dependencies
-RUN pip install --upgrade pip
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements-tests.txt ./
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements-tests.txt
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -98,3 +99,7 @@ RUN groupadd --gid $USER_GID $USERNAME && \
     chsh -s /usr/bin/zsh $USERNAME
 
 USER $USERNAME
+
+RUN curl -sS https://starship.rs/install.sh | sh -s -- --yes
+
+COPY .devcontainer/.zshrc /home/$USERNAME/.zshrc
