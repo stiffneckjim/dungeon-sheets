@@ -34,7 +34,7 @@
     },
     "codespaces": {
       "repositories": {
-        "stiffneckjim/DND-5e-LaTeX-Template": {
+        "rpgtex/DND-5e-LaTeX-Template": {
           "permissions": "write-all"
         }
       }
