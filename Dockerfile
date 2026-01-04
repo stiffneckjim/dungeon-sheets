@@ -1,15 +1,16 @@
-FROM python:3.12-slim
+FROM python:3.12-slim AS dungeon-sheets-base
 
 # Install base system dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    pdftk \
-    wget \
+    ca-certificates \
+    fontconfig \
     gnupg \
-    xz-utils \
-    perl \
     libwww-perl \
-    ca-certificates && \
+    pdftk \
+    perl \
+    wget \
+    xz-utils && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -39,6 +40,7 @@ ENV PATH="/usr/local/texlive/bin/x86_64-linux:/usr/local/texlive/bin/aarch64-lin
 # This layer can be modified without re-downloading/installing base TeX Live
 COPY .devcontainer/install-texlive-packages.sh /tmp/install-texlive-packages.sh
 RUN echo "Configuring tlmgr..." && \
+    tlmgr init-usertree && \
     tlmgr option -- autobackup 0 && \
     PACKAGES=$(bash /tmp/install-texlive-packages.sh) && \
     echo "Installing LaTeX packages: $PACKAGES" && \
@@ -46,12 +48,14 @@ RUN echo "Configuring tlmgr..." && \
     echo "LaTeX package installation complete!" && \
     rm /tmp/install-texlive-packages.sh
 
+FROM dungeon-sheets-base AS dungeon-sheets
+
 WORKDIR /app
 
 # Install Python dependencies
-RUN pip install --upgrade pip
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
 # Copy application code and install
 COPY . /app
@@ -61,3 +65,41 @@ WORKDIR /build
 
 ENTRYPOINT [ "python", "-m", "dungeonsheets.make_sheets" ]
 CMD [ "--fancy", "--editable", "--recursive" ]
+
+FROM dungeon-sheets-base AS dungeon-sheets-dev
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    git \
+    openssh-client \
+    sudo \
+    zsh && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+
+WORKDIR /workspace
+
+# Install Python dependencies
+COPY requirements-tests.txt ./
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements-tests.txt
+
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+# Create the user
+RUN groupadd --gid $USER_GID $USERNAME && \
+    useradd --uid $USER_UID --gid $USER_GID -m $USERNAME && \
+    echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME && \
+    chmod 0440 /etc/sudoers.d/$USERNAME && \
+    chsh -s /usr/bin/zsh $USERNAME
+
+USER $USERNAME
+
+RUN curl -sS https://starship.rs/install.sh | sh -s -- --yes
+
+COPY .devcontainer/.zshrc /home/$USERNAME/.zshrc
