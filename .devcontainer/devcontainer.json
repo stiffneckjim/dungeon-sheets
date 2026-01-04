@@ -1,15 +1,12 @@
 {
   "name": "dungeon-sheets",
   "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "target": "dungeon-sheets-dev"
   },
 
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "moby": false
-    },
-    "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {
       "installDirectlyFromGitHubRelease": true,
       "version": "latest"
@@ -24,10 +21,10 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-python.debugpy",
-        "ms-python.autopep8",
         "ms-python.black-formatter",
         "ms-azuretools.vscode-containers",
-        "ms-python.vscode-python-envs"
+        "ms-python.vscode-python-envs",
+        "ms-vscode-remote.remote-containers"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
@@ -37,7 +34,7 @@
     },
     "codespaces": {
       "repositories": {
-        "stiffneckjim/DND-5e-LaTeX-Character-Sheet-Template": {
+        "rpgtex/DND-5e-LaTeX-Template": {
           "permissions": "write-all"
         }
       }
