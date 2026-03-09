@@ -258,6 +258,17 @@ class BracersOfArchery(MagicItem):
     requires_attunement = True
 
 
+class GauntletsOfOgrePower(MagicItem):
+    """Your Strength score is 19 while you wear these gauntlets. They
+    have no effect on you if your Strength is already 19 or higher.
+
+    """
+    name = "Gauntlets of Ogre Power"
+    rarity = "uncommon"
+    requires_attunement = True
+    item_type = "Wondrous item"
+
+
 class NaturesMantle(MagicItem):
     """This cloak shifts color and texture to blend with the terrain
     surrounding you. While wearing the cloak, you can use it as a
