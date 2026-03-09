@@ -52,18 +52,21 @@ FROM dungeon-sheets-base AS dungeon-sheets
 
 WORKDIR /app
 
-# Install Python dependencies
-COPY requirements.txt ./
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+# Install uv for fast Python package management
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
-# Copy application code and install
+# Copy dependency files
+COPY pyproject.toml uv.lock ./
+
+# Install Python dependencies
+RUN uv sync --no-dev
+
+# Copy application code
 COPY . /app
-RUN pip install --no-cache-dir -e /app
 
 WORKDIR /build
 
-ENTRYPOINT [ "python", "-m", "dungeonsheets.make_sheets" ]
+ENTRYPOINT [ "uv", "run", "makesheets" ]
 CMD [ "--fancy", "--editable", "--recursive" ]
 
 FROM dungeon-sheets-base AS dungeon-sheets-dev
@@ -79,13 +82,16 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Install uv for fast Python package management
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
 WORKDIR /workspace
 
-# Install Python dependencies
-COPY requirements-tests.txt ./
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements-tests.txt
+# Copy dependency files
+COPY pyproject.toml uv.lock ./
+
+# Install Python dependencies including dev tools
+RUN uv sync --extra dev
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
