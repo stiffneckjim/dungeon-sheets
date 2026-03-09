@@ -109,3 +109,26 @@ USER $USERNAME
 RUN curl -sS https://starship.rs/install.sh | sh -s -- --yes
 
 COPY .devcontainer/.zshrc /home/$USERNAME/.zshrc
+
+FROM dungeon-sheets-base AS dungeon-sheets-test
+
+# Install uv for fast Python package management
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
+WORKDIR /workspace
+
+# Copy dependency files
+COPY pyproject.toml uv.lock ./
+
+# Install Python dependencies including dev tools
+RUN uv sync --extra dev
+
+# Copy test script
+COPY .devcontainer/run-tests.sh /usr/local/bin/run-tests.sh
+RUN chmod +x /usr/local/bin/run-tests.sh
+
+# Copy application code
+COPY . /workspace
+
+# Run tests
+CMD ["/usr/local/bin/run-tests.sh"]
