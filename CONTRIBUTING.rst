@@ -143,7 +143,7 @@ HTML files, run:
     cd docs/
     uv run make html
 
-The results can be found in the ``_build/html/`` foler.
+The results can be found in the ``_build/html/`` folder.
 
 Submitting Bugs
 ---------------
