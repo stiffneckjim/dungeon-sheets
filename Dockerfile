@@ -58,11 +58,14 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 # Copy dependency files
 COPY pyproject.toml uv.lock ./
 
-# Install Python dependencies
-RUN uv sync --no-dev
+# Install Python dependencies (excluding the project itself for layer caching)
+RUN uv sync --no-dev --no-install-project
 
 # Copy application code
 COPY . /app
+
+# Install the project now that sources are present
+RUN uv sync --no-dev
 
 WORKDIR /build
 
@@ -120,8 +123,8 @@ WORKDIR /workspace
 # Copy dependency files
 COPY pyproject.toml uv.lock ./
 
-# Install Python dependencies including dev tools
-RUN uv sync --extra dev
+# Install Python dependencies including dev tools (excluding the project itself for layer caching)
+RUN uv sync --extra dev --no-install-project
 
 # Copy test script
 COPY .devcontainer/run-tests.sh /usr/local/bin/run-tests.sh
@@ -129,6 +132,9 @@ RUN chmod +x /usr/local/bin/run-tests.sh
 
 # Copy application code
 COPY . /workspace
+
+# Install the project now that sources are present
+RUN uv sync --extra dev
 
 # Run tests
 CMD ["/usr/local/bin/run-tests.sh"]
