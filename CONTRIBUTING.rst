@@ -140,7 +140,7 @@ HTML files, run:
 .. code:: bash
 
     uv sync --extra dev
-	  cd docs/
+    cd docs/
     uv run make html
 
 The results can be found in the ``_build/html/`` foler.
