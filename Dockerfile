@@ -66,7 +66,7 @@ COPY . /app
 
 WORKDIR /build
 
-ENTRYPOINT [ "uv", "run", "makesheets" ]
+ENTRYPOINT [ "uv", "run", "--project", "/app", "makesheets" ]
 CMD [ "--fancy", "--editable", "--recursive" ]
 
 FROM dungeon-sheets-base AS dungeon-sheets-dev
