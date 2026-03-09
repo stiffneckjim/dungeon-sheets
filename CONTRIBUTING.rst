@@ -87,12 +87,12 @@ using *pytest*, run the following from a console:
 
 .. code:: bash
 
-	  pip install -r requirements.txt -r requirements-tests.txt
-	  pytest
+    uv sync --extra dev
+    uv run pytest
 
 You can also run a sub-set of the tests, which can be convenient for
 development. For example, to run just the tests related to dice
-mechanics, use ``pytest tests/test_dice.py``. Dungeonsheets defines
+mechanics, use ``uv run pytest tests/test_dice.py``. Dungeonsheets defines
 tests using the *unittest* package in the standard library. **For
 example**, to test a new function in the ``dungeonsheets/dice.py``
 module, modify ``tests/test_dice.py``:
@@ -139,9 +139,9 @@ HTML files, run:
 
 .. code:: bash
 
-	  pip install -r requirements.txt -r requirements-tests.txt
+    uv sync --extra dev
 	  cd docs/
-	  make html
+    uv run make html
 
 The results can be found in the ``_build/html/`` foler.
 
