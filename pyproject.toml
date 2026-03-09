@@ -60,7 +60,7 @@ package = true
 
 [tool.setuptools.package-data]
 dungeonsheets = [
-  "forms/*pdf",
+  "forms/*.pdf",
   "forms/*.tex",
   "forms/*.txt",
   "modules/DND-5e-LaTeX-Template/*",
