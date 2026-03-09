@@ -114,7 +114,7 @@ class DeckOfIllusions(MagicItem):
     The Illusion lasts until its card is moved or the Illusion is
     dispelled. When the Illusion ends, the image on its card
     disappears, and that card can't be used again.
-    
+
     +-------------------+----------------------------------+
     | Playing Card      | Illusion                         |
     +===================+==================================+
@@ -184,7 +184,7 @@ class DeckOfIllusions(MagicItem):
     +-------------------+----------------------------------+
     | Jokers (2)        | You (the deck's owner)           |
     +-------------------+----------------------------------+
-    
+
     """
     name = "Deck of Illusions"
     requires_attunement = False
@@ -196,7 +196,7 @@ class RingOfProtection(MagicItem):
 
     """You gain a +1 bonus to AC and Saving Throws while wearing this
     ring.
-    
+
     """
     name = "Ring of Protection"
     ac_bonus = 1
@@ -213,13 +213,13 @@ class CloakOfTheBat(MagicItem):
     40 feet. If you ever fail to grip the cloak's edges while flying
     in this way, or if you are no longer in dim light or darkness, you
     lose this flying speed.
-    
+
     While wearing the cloak in an area of dim light or darkness, you
     can use your action to cast polymorph on yourself, transforming
     into a bat. While you are in the form of the bat, you retain your
     Intelligence, Wisdom, and Charisma scores. The cloak can't be used
     this way again until the next dawn.
-    
+
     """
     requires_attunement = True
     name = "Cloak of the Bat"
@@ -284,7 +284,7 @@ class EagleWhistle(MagicItem):
     name = "Eagle Whistle"
     requires_attunement = False
     rarity = "rare"
-    
+
 
 class DecanterOfEndlessWater(MagicItem):
 
@@ -452,23 +452,20 @@ class SpearOfLightning(MagicItem):
 
 
 class StaffOfTheAdder(MagicItem):
-    """You can use a bonus action to speak this staff's command word and
-    throw the staff on the ground within 10 feet of you. The staff
-    becomes a giant poisonous snake under your control and acts on its
-    own initiative count. By using a bonus action to speak the command
-    word again, you return the staff to its normal form in a space
-    formerly occupied by the snake.
+    """You can use a bonus action to speak this staff's command word and make
+    the head of the staff become that of an animate poisonous snake for 1
+    minute. By using another bonus action to speak the command word again, you
+    return the staff to its normal inanimate form.
 
-    On your turn, you can mentally command the snake if it is within 60
-    feet of you and you aren't incapacitated. You decide what action
-    the snake takes and where it moves during its next turn, or you can
-    issue it a general command, such as to attack your enemies or guard
-    a location.
+    You can make a melee attack using the snake head, which has a reach of 5
+    feet. Your proficiency bonus applies to the attack roll. On a hit, the
+    target takes 1d6 piercing damage and must succeed on a DC 15 Constitution
+    saving throw or take 3d6 poison damage.
 
-    If the snake is reduced to 0 hit points, it dies and reverts to its
-    staff form. The staff then shatters and is destroyed. If the snake
-    reverts to staff form before losing all its hit points, it regains
-    all of them.
+    The snake head can be attacked while it is animate. It has an Armor Class of
+    15 and 20 hit points. If the head drops to 0 hit points, the staff is
+    destroyed. As long as it's not destroyed, the staff regains all lost hit
+    points when it reverts to its inanimate form.
 
     """
     name = "Staff of the Adder"
@@ -650,7 +647,7 @@ class PotionOfResistance(MagicItem):
     """When you drink this potion, you gain resistance to one type of
     damage for 1 hour. The DM chooses the type or determines it
     randomly from the options below.
-    
+
     +-----+-------------+
     | d10 | Damage Type |
     +=====+=============+
@@ -674,7 +671,7 @@ class PotionOfResistance(MagicItem):
     +-----+-------------+
     | 10  | Thunder     |
     +-----+-------------+
-    
+
     """
     name = "Potion of Resistance"
     rarity = "uncommon"
