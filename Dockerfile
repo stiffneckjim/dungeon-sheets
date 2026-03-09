@@ -55,14 +55,13 @@ WORKDIR /app
 # Install uv for fast Python package management
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
-# Copy dependency files
+# Copy dependency files and install deps only (project source not yet available)
 COPY pyproject.toml uv.lock ./
+RUN uv sync --no-dev --no-install-project
 
-# Install Python dependencies
-RUN uv sync --no-dev
-
-# Copy application code
+# Copy application code and install the project itself
 COPY . /app
+RUN uv sync --no-dev
 
 WORKDIR /build
 
@@ -87,11 +86,9 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
 WORKDIR /workspace
 
-# Copy dependency files
+# Copy dependency files and install deps only (project source not yet available)
 COPY pyproject.toml uv.lock ./
-
-# Install Python dependencies including dev tools
-RUN uv sync --extra dev
+RUN uv sync --extra dev --no-install-project
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -117,18 +114,17 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
 WORKDIR /workspace
 
-# Copy dependency files
+# Copy dependency files and install deps only (project source not yet available)
 COPY pyproject.toml uv.lock ./
-
-# Install Python dependencies including dev tools
-RUN uv sync --extra dev
+RUN uv sync --extra dev --no-install-project
 
 # Copy test script
 COPY .devcontainer/run-tests.sh /usr/local/bin/run-tests.sh
 RUN chmod +x /usr/local/bin/run-tests.sh
 
-# Copy application code
+# Copy application code and install the project itself
 COPY . /workspace
+RUN uv sync --extra dev
 
 # Run tests
 CMD ["/usr/local/bin/run-tests.sh"]
