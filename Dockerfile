@@ -48,12 +48,13 @@ RUN echo "Configuring tlmgr..." && \
     echo "LaTeX package installation complete!" && \
     rm /tmp/install-texlive-packages.sh
 
+# Install uv for fast Python package management (once in base image)
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
 FROM dungeon-sheets-base AS dungeon-sheets
 
 WORKDIR /app
 
-# Install uv for fast Python package management
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
 # Copy dependency files and install deps only (project source not yet available)
 COPY pyproject.toml uv.lock ./
@@ -81,8 +82,6 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install uv for fast Python package management
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
 WORKDIR /workspace
 
@@ -108,11 +107,8 @@ RUN curl -sS https://starship.rs/install.sh | sh -s -- --yes
 COPY .devcontainer/.zshrc /home/$USERNAME/.zshrc
 
 FROM dungeon-sheets-base AS dungeon-sheets-test
-
-# Install uv for fast Python package management
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
-
 WORKDIR /workspace
+
 
 # Copy dependency files and install deps only (project source not yet available)
 COPY pyproject.toml uv.lock ./
