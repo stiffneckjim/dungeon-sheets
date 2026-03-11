@@ -26,7 +26,8 @@ Documentation can be found on readthedocs_.
 
 Docker
 ======
-You can run this repository directly from a container. The container images are automatically built and published to GitHub Container Registry (GHCR) using GitHub Actions workflows.
+You can run this repository directly from a container. The container images are automatically 
+built and published to GitHub Container Registry (GHCR) using GitHub Actions workflows.
 
 Available Tags
 -------------
@@ -52,6 +53,27 @@ To build the container locally:
 .. code:: bash
 
     $ docker build -t dungeon-sheets .
+
+Running Tests with Docker
+-------------------------
+
+You can build and run the dedicated test image stage to execute the full test suite
+inside the containerized environment.
+
+Build the test stage:
+
+.. code:: bash
+
+    $ docker build --target dungeon-sheets-test -t dungeon-sheets-test .
+
+Run the test stage image:
+
+.. code:: bash
+
+    $ docker run --rm -it dungeon-sheets-test
+
+The test image runs ``.devcontainer/run-tests.sh``, which executes the project's
+test checks in the container.
 
 Container Details
 --------------
@@ -247,7 +269,7 @@ properly parsed and rendered into LaTeX or HTML::
 
   class Scrying(Spell):
     """You can see and hear a particular creature you choose that is on
-    the same plane of existence as you. The target must make a W isdom
+    the same plane of existence as you. The target must make a Wisdom
     saving throw, which is modified by how well you know the target
     and the sort of physical connection you have to it. If a target
     knows you're casting this spell, it can fail the saving throw
