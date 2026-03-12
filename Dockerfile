@@ -48,25 +48,25 @@ RUN echo "Configuring tlmgr..." && \
     echo "LaTeX package installation complete!" && \
     rm /tmp/install-texlive-packages.sh
 
+# Install uv for fast Python package management (once in base image)
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
 FROM dungeon-sheets-base AS dungeon-sheets
 
 WORKDIR /app
 
-# Install uv for fast Python package management
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
-# Copy dependency files
+# Copy dependency files and install deps only (project source not yet available)
 COPY pyproject.toml uv.lock ./
+RUN uv sync --no-dev --no-install-project
 
-# Install Python dependencies
-RUN uv sync --no-dev
-
-# Copy application code
+# Copy application code and install the project itself
 COPY . /app
+RUN uv sync --no-dev
 
 WORKDIR /build
 
-ENTRYPOINT [ "uv", "run", "makesheets" ]
+ENTRYPOINT [ "uv", "run", "--project", "/app", "makesheets" ]
 CMD [ "--fancy", "--editable", "--recursive" ]
 
 FROM dungeon-sheets-base AS dungeon-sheets-dev
@@ -82,16 +82,12 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install uv for fast Python package management
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
 WORKDIR /workspace
 
-# Copy dependency files
+# Copy dependency files and install deps only (project source not yet available)
 COPY pyproject.toml uv.lock ./
-
-# Install Python dependencies including dev tools
-RUN uv sync --extra dev
+RUN uv sync --extra dev --no-install-project
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -111,24 +107,20 @@ RUN curl -sS https://starship.rs/install.sh | sh -s -- --yes
 COPY .devcontainer/.zshrc /home/$USERNAME/.zshrc
 
 FROM dungeon-sheets-base AS dungeon-sheets-test
-
-# Install uv for fast Python package management
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
-
 WORKDIR /workspace
 
-# Copy dependency files
-COPY pyproject.toml uv.lock ./
 
-# Install Python dependencies including dev tools
-RUN uv sync --extra dev
+# Copy dependency files and install deps only (project source not yet available)
+COPY pyproject.toml uv.lock ./
+RUN uv sync --extra dev --no-install-project
 
 # Copy test script
 COPY .devcontainer/run-tests.sh /usr/local/bin/run-tests.sh
 RUN chmod +x /usr/local/bin/run-tests.sh
 
-# Copy application code
+# Copy application code and install the project itself
 COPY . /workspace
+RUN uv sync --extra dev
 
 # Run tests
 CMD ["/usr/local/bin/run-tests.sh"]
