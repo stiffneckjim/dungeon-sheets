@@ -1,6 +1,6 @@
-================
+===============
  Dungeon Sheets
-================
+===============
 
 A tool to create character sheets and session notes for Dungeons and
 Dragons 5th edition (D&D 5e).
@@ -26,18 +26,19 @@ Documentation can be found on readthedocs_.
 
 Docker
 ======
+
 You can run this repository directly from a container. The container images are automatically 
 built and published to GitHub Container Registry (GHCR) using GitHub Actions workflows.
 
 Available Tags
--------------
+--------------
 
 - ``master``: Latest development version from the master branch
 - ``latest``: Latest stable release
 - Specific version tags (e.g. ``v0.19.0``)
 
 Running the Container
--------------------
+---------------------
 
 Run the following in a directory with valid character files (such as the examples_ directory):
 
@@ -46,7 +47,7 @@ Run the following in a directory with valid character files (such as the example
     $ docker run -it -v $(pwd):/build ghcr.io/stiffneckjim/dungeon-sheets:master
 
 Building Locally
---------------
+----------------
 
 To build the container locally:
 
@@ -76,7 +77,7 @@ The test image runs ``.devcontainer/run-tests.sh``, which executes the project's
 test checks in the container.
 
 Container Details
---------------
+-----------------
 
 The container:
 
