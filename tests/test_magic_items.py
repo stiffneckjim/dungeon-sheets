@@ -4,6 +4,7 @@ import unittest
 from dungeonsheets.stats import Ability
 from dungeonsheets import magic_items
 from dungeonsheets.character import Character
+from dungeonsheets.content_registry import find_content
 
 
 class MyMagicItem(magic_items.MagicItem):
@@ -38,3 +39,13 @@ class MagicItemTests(unittest.TestCase):
         my_item.st_bonus_strength = 3
         bonus = my_item.st_bonus(ability="strength")
         self.assertEqual(bonus, 3)
+
+    def test_staff_of_the_adder_registration_and_attributes(self):
+        item_cls = find_content("staff of the adder")
+        self.assertIs(item_cls, magic_items.StaffOfTheAdder)
+
+        item = item_cls()
+        self.assertEqual(item.name, "Staff of the Adder")
+        self.assertEqual(item.rarity, "uncommon")
+        self.assertTrue(item.requires_attunement)
+        self.assertEqual(item.item_type, "Staff")
