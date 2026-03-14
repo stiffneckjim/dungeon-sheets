@@ -470,7 +470,7 @@ class SpearOfLightning(MagicItem):
 
     requires_attunement = True
     name = "Lightning Spear"
-    item_type = "weapon"
+    item_type = "Weapon"
 
 
 class StaffOfTheAdder(MagicItem):
@@ -538,7 +538,7 @@ class ShieldOfFaces(MagicItem):
 
     requires_attunement = True
     name = "Shield of Faces"
-    item_type = "shield"
+    item_type = "Shield"
 
 
 class GlovesOfThievery(MagicItem):

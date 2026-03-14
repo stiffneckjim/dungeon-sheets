@@ -45,6 +45,6 @@ class MagicItemTests(unittest.TestCase):
 
         item = item_cls()
         self.assertEqual(item.name, "Staff of the Adder")
-        self.assertEqual(item.rarity, "uncommon")
+        self.assertEqual(item.rarity, "Uncommon")
         self.assertTrue(item.requires_attunement)
         self.assertEqual(item.item_type, "Staff")
