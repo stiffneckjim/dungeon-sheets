@@ -487,12 +487,17 @@ class StaffOfTheAdder(MagicItem):
     The snake head can be attacked while it is animate. It has an Armor Class of
     15 and 20 hit points. If the head drops to 0 hit points, the staff is
     destroyed. As long as it's not destroyed, the staff regains all lost hit
-    points when it reverts to its inanimate form.
+
+    While in its normal form, the staff functions as a magic quarterstaff and
+    can be used as a melee weapon (1d6 bludgeoning damage, or 1d8 when wielded
+    with two hands).
+
+    Requires attunement by a cleric, druid, or warlock.
 
     """
 
     name = "Staff of the Adder"
-    rarity = "uncommon"
+    rarity = "Uncommon"
     requires_attunement = True
     item_type = "Staff"
 
