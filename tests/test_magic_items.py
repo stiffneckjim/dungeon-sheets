@@ -7,8 +7,7 @@ from dungeonsheets.character import Character
 from dungeonsheets.content_registry import find_content
 
 
-class MyMagicItem(magic_items.MagicItem):
-    ...
+class MyMagicItem(magic_items.MagicItem): ...
 
 
 class MagicItemTests(unittest.TestCase):
