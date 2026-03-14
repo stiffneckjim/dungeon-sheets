@@ -269,6 +269,7 @@ class GauntletsOfOgrePower(MagicItem):
     have no effect on you if your Strength is already 19 or higher.
 
     """
+
     name = "Gauntlets of Ogre Power"
     rarity = "uncommon"
     requires_attunement = True
@@ -474,7 +475,7 @@ class SpearOfLightning(MagicItem):
 
 class StaffOfTheAdder(MagicItem):
     """You can use a bonus action to speak this staff's command word and make
-    the head of the staff become that of an animate poisonous snake for 1
+    the head of the staff becomes that of an animate poisonous snake for 1
     minute. By using another bonus action to speak the command word again, you
     return the staff to its normal inanimate form.
 
@@ -489,6 +490,7 @@ class StaffOfTheAdder(MagicItem):
     points when it reverts to its inanimate form.
 
     """
+
     name = "Staff of the Adder"
     rarity = "uncommon"
     requires_attunement = True
