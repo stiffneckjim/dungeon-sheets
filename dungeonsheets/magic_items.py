@@ -451,25 +451,6 @@ class FlameTongue(MagicItem):
     name = "Flame Tongue"
     rarity = "Rare"
     requires_attunement = True
-
-
-class SpearOfLightning(MagicItem):
-    """When you hurl it and speak its Command Word, it transforms into a bolt of
-    lightning, forming a line 5 feet wide that extends out from you to a target
-    within 120 feet. Each creature in the line excluding you and the target
-    must make a DC 13 Dexterity saving throw, taking 4d6 lightning damage on a
-    failed save, and half as much damage on a successful one. The Lightning
-    Bolt turns back into a spear when it reaches the target.
-
-    Make a ranged weapon Attack against the target. On a hit, the target takes
-    damage from the spear plus 4d6 lightning damage.
-
-    The spear's property can't be used again until the next dawn. In the
-    meantime, the spear can still be used as a Magic Weapon.
-    """
-
-    requires_attunement = True
-    name = "Lightning Spear"
     item_type = "Weapon"
 
 
@@ -488,7 +469,7 @@ class JavelinOfLightning(MagicItem):
     """
 
     name = "Javelin of Lightning"
-    rarity = "Rare"
+    rarity = "Uncommon"
     requires_attunement = True
     item_type = "Weapon"
 
@@ -544,8 +525,8 @@ class BracersOfMagnetism(MagicItem):
     The magnetic effect fails if the bracers are more than 10' apart.
     """
 
-    requires_attunement = True
     name = "Bracers of Magnetism"
+    requires_attunement = True
 
 
 class ShieldOfFaces(MagicItem):
@@ -556,7 +537,6 @@ class ShieldOfFaces(MagicItem):
 
     """
 
-    requires_attunement = True
     name = "Shield of Faces"
     item_type = "Shield"
 
@@ -613,7 +593,7 @@ class PotionOfHealing(MagicItem):
 
     """
 
-    rarity = "common"
+    rarity = "Common"
     name = "Potion of Healing"
     item_type = "Potion"
 
