@@ -2,5 +2,11 @@
   "python.testing.unittestArgs": ["-v", "-s", "./tests", "-p", "test*.py"],
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
-  "python.testing.pytestArgs": ["tests"]
+  "python.testing.pytestArgs": ["tests"],
+  "chat.tools.terminal.autoApprove": {
+    "git fetch": true,
+    "git checkout": true,
+    "git merge": true,
+    "docker build": true
+  }
 }
