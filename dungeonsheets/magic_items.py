@@ -425,9 +425,9 @@ class PipeOfSmokeMonsters(MagicItem):
 
 
 class CoinsOfCommunication(MagicItem):
-    """This set of multiple coins are virtually indistinguishable from regular Gold
-    Pieces, but are connected by magic. Once per day, a holder of any of any
-    coin can whisper a single word into it, after which all coins will
+    """This set of multiple coins are virtually indistinguishable from regular
+    Gold Pieces, but are connected by magic. Once per day, a holder of any of
+    any coin can whisper a single word into it, after which all coins will
     immediately vibrate and the word will replace a word in the traditional
     Kings Message imprinted on the coin. This ability cannot be used again by
     the holder of any of the coins until the following dawn.
@@ -439,12 +439,12 @@ class CoinsOfCommunication(MagicItem):
 
 
 class FlameTongue(MagicItem):
-    """You can use a Bonus Action to speak this magic sword's Command Word, causing
-    flames to erupt from the blade. These flames shed bright light in a 40-foot
-    radius and dim light for an additional 40 feet. While the sword is ablaze,
-    it deals an extra 2d6 fire damage to any target it hits. The flames last
-    until you use a Bonus Action to speak the Command Word again or until you
-    drop or sheathe the sword
+    """You can use a Bonus Action to speak this magic sword's Command Word,
+    causing flames to erupt from the blade. These flames shed bright light in a
+    40-foot radius and dim light for an additional 40 feet. While the sword is
+    ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames
+    last until you use a Bonus Action to speak the Command Word again or until
+    you drop or sheathe the sword.
 
     """
 
@@ -460,8 +460,8 @@ class JavelinOfLightning(MagicItem):
 
     Lightning Bolt. When you throw this weapon at a target no farther than 120
     feet from you, you can forgo making a ranged attack roll and instead turn the
-    weapon into a bolt of lightning. This bolt forms a 5-foot-wide Line between
-    you and the target. The target and each other creature in the Line
+    weapon into a bolt of lightning. This bolt forms a 5-foot-wide line between
+    you and the target. The target and each other creature in the line
     (excluding you) makes a DC 13 Dexterity saving throw, taking 4d6 Lightning
     damage on a failed save or half as much damage on a successful one.
     Immediately after dealing this damage, the weapon reappears in your hand.
