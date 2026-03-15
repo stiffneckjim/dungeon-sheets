@@ -540,6 +540,7 @@ class ShieldOfFaces(MagicItem):
 
     name = "Shield of Faces"
     item_type = "Shield"
+    requires_attunement = True
 
 
 class GlovesOfThievery(MagicItem):
