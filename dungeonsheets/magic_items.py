@@ -426,11 +426,11 @@ class PipeOfSmokeMonsters(MagicItem):
 
 class CoinsOfCommunication(MagicItem):
     """This set of multiple coins are virtually indistinguishable from regular
-    Gold Pieces, but are connected by magic. Once per day, a holder of any of
-    any coin can whisper a single word into it, after which all coins will
-    immediately vibrate and the word will replace a word in the traditional
-    Kings Message imprinted on the coin. This ability cannot be used again by
-    the holder of any of the coins until the following dawn.
+    Gold Pieces, but are connected by magic. Once per day, a holder of any coin
+    can whisper a single word into it, after which all coins will immediately
+    vibrate and the word will replace a word in the traditional King's Message
+    imprinted on the coin. This ability cannot be used again by the holder of
+    any of the coins until the following dawn.
 
     """
 
@@ -462,10 +462,11 @@ class JavelinOfLightning(MagicItem):
     feet from you, you can forgo making a ranged attack roll and instead turn the
     weapon into a bolt of lightning. This bolt forms a 5-foot-wide line between
     you and the target. The target and each other creature in the line
-    (excluding you) makes a DC 13 Dexterity saving throw, taking 4d6 Lightning
-    damage on a failed save or half as much damage on a successful one.
-    Immediately after dealing this damage, the weapon reappears in your hand.
+    (excluding you) must make a DC 13 Dexterity saving throw, taking 4d6
+    Lightning damage on a failed save or half as much damage on a successful
+    one. Immediately after dealing this damage, the weapon reappears in your hand.
     This property can’t be used again until the next dawn.
+
     """
 
     name = "Javelin of Lightning"
@@ -621,7 +622,7 @@ class PotionOfGreaterHealing(PotionOfHealing):
     """
 
     name = "Potion of Greater Healing"
-    rarity = "uncommon"
+    rarity = "Uncommon"
     item_type = "Potion"
 
 
