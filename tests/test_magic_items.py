@@ -55,6 +55,6 @@ class MagicItemTests(unittest.TestCase):
 
         item = item_cls()
         self.assertEqual(item.name, "Javelin of Lightning")
-        self.assertEqual(item.rarity, "Rare")
+        self.assertEqual(item.rarity, "Uncommon")
         self.assertTrue(item.requires_attunement)
         self.assertEqual(item.item_type, "Weapon")
