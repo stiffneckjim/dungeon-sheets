@@ -48,22 +48,25 @@ RUN echo "Configuring tlmgr..." && \
     echo "LaTeX package installation complete!" && \
     rm /tmp/install-texlive-packages.sh
 
+# Install uv for fast Python package management (once in base image)
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
 FROM dungeon-sheets-base AS dungeon-sheets
 
 WORKDIR /app
 
-# Install Python dependencies
-COPY requirements.txt ./
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
 
-# Copy application code and install
+# Copy dependency files and install deps only (project source not yet available)
+COPY pyproject.toml uv.lock ./
+RUN uv sync --no-dev --no-install-project
+
+# Copy application code and install the project itself
 COPY . /app
-RUN pip install --no-cache-dir -e /app
+RUN uv sync --no-dev
 
 WORKDIR /build
 
-ENTRYPOINT [ "python", "-m", "dungeonsheets.make_sheets" ]
+ENTRYPOINT [ "uv", "run", "--project", "/app", "makesheets" ]
 CMD [ "--fancy", "--editable", "--recursive" ]
 
 FROM dungeon-sheets-base AS dungeon-sheets-dev
@@ -82,10 +85,9 @@ RUN apt-get update && \
 
 WORKDIR /workspace
 
-# Install Python dependencies
-COPY requirements-tests.txt ./
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements-tests.txt
+# Copy dependency files and install deps only (project source not yet available)
+COPY pyproject.toml uv.lock ./
+RUN uv sync --extra dev --no-install-project
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -103,3 +105,22 @@ USER $USERNAME
 RUN curl -sS https://starship.rs/install.sh | sh -s -- --yes
 
 COPY .devcontainer/.zshrc /home/$USERNAME/.zshrc
+
+FROM dungeon-sheets-base AS dungeon-sheets-test
+WORKDIR /workspace
+
+
+# Copy dependency files and install deps only (project source not yet available)
+COPY pyproject.toml uv.lock ./
+RUN uv sync --extra dev --no-install-project
+
+# Copy test script
+COPY .devcontainer/run-tests.sh /usr/local/bin/run-tests.sh
+RUN chmod +x /usr/local/bin/run-tests.sh
+
+# Copy application code and install the project itself
+COPY . /workspace
+RUN uv sync --extra dev
+
+# Run tests
+CMD ["/usr/local/bin/run-tests.sh"]

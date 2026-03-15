@@ -264,6 +264,18 @@ class BracersOfArchery(MagicItem):
     requires_attunement = True
 
 
+class GauntletsOfOgrePower(MagicItem):
+    """Your Strength score is 19 while you wear these gauntlets. They
+    have no effect on you if your Strength is already 19 or higher.
+
+    """
+
+    name = "Gauntlets of Ogre Power"
+    rarity = "uncommon"
+    requires_attunement = True
+    item_type = "Wondrous item"
+
+
 class NaturesMantle(MagicItem):
     """This cloak shifts color and texture to blend with the terrain
     surrounding you. While wearing the cloak, you can use it as a
@@ -458,7 +470,36 @@ class SpearOfLightning(MagicItem):
 
     requires_attunement = True
     name = "Lightning Spear"
-    item_type = "weapon"
+    item_type = "Weapon"
+
+
+class StaffOfTheAdder(MagicItem):
+    """You can use a bonus action to speak this staff's command word and make
+    the head of the staff becomes that of an animate poisonous snake for 1
+    minute. By using another bonus action to speak the command word again, you
+    return the staff to its normal inanimate form.
+
+    You can make a melee attack using the snake head, which has a reach of 5
+    feet. Your proficiency bonus applies to the attack roll. On a hit, the
+    target takes 1d6 piercing damage and must succeed on a DC 15 Constitution
+    saving throw or take 3d6 poison damage.
+
+    The snake head can be attacked while it is animate. It has an Armor Class of
+    15 and 20 hit points. If the head drops to 0 hit points, the staff is
+    destroyed. As long as it's not destroyed, the staff regains all lost hit
+
+    While in its normal form, the staff functions as a magic quarterstaff and
+    can be used as a melee weapon (1d6 bludgeoning damage, or 1d8 when wielded
+    with two hands).
+
+    Requires attunement by a cleric, druid, or warlock.
+
+    """
+
+    name = "Staff of the Adder"
+    rarity = "Uncommon"
+    requires_attunement = True
+    item_type = "Staff"
 
 
 class AmuletOfTheEel(MagicItem):
@@ -497,7 +538,7 @@ class ShieldOfFaces(MagicItem):
 
     requires_attunement = True
     name = "Shield of Faces"
-    item_type = "shield"
+    item_type = "Shield"
 
 
 class GlovesOfThievery(MagicItem):

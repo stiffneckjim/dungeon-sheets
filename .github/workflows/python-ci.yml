@@ -21,13 +21,14 @@ jobs:
     - name: Set up required system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get -y install pdftk wget perl fontconfig
+        sudo apt-get -y install pdftk wget perl fontconfig libwww-perl
     - name: Install minimal TeX Live
       run: |
+        # Keep this installer source and flow aligned with the Dockerfile.
         cd /tmp
-        wget -q https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-        tar -xzf install-tl-unx.tar.gz
-        cd install-tl-*/
+        wget -q https://tex.org.uk/systems/texlive/tlnet/install-tl-unx.tar.gz
+        zcat < install-tl-unx.tar.gz | tar xf -
+        cd install-tl-2*/
         cat > texlive.profile << 'EOF'
         selected_scheme scheme-basic
         TEXDIR /usr/local/texlive
@@ -41,7 +42,7 @@ jobs:
         option_src 0
         instopt_adjustpath 1
         EOF
-        sudo perl ./install-tl --profile=texlive.profile --no-interaction --repository https://mirror.ctan.org/systems/texlive/tlnet
+        sudo perl ./install-tl --profile=texlive.profile --no-interaction --repository https://tex.org.uk/systems/texlive/tlnet/
         export PATH="/usr/local/texlive/bin/x86_64-linux:$PATH"
         echo "/usr/local/texlive/bin/x86_64-linux" | sudo tee -a $GITHUB_PATH
         # Install required LaTeX packages

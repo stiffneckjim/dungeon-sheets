@@ -97,6 +97,38 @@ tests using the *unittest* package in the standard library. **For
 example**, to test a new function in the ``dungeonsheets/dice.py``
 module, modify ``tests/test_dice.py``:
 
+Running Tests with Docker
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To run the complete test suite in a Docker container (matching the CI
+environment), use the ``dungeon-sheets-test`` target:
+
+.. code:: bash
+
+    # Build the test image
+    docker build --target dungeon-sheets-test -t dungeon-sheets-test .
+
+    # Run all tests
+    docker run dungeon-sheets-test
+
+The Docker test container will:
+
+- Run flake8 linting checks
+- Test makesheets with different output formats (standard, fancy, epub)
+- Run the full pytest suite with coverage reporting
+- Display clear section headers for each test phase
+- Exit with code 0 on success, non-zero on failure
+
+You can verify success with:
+
+.. code:: bash
+
+    docker run dungeon-sheets-test && echo "✓ All tests passed!" || echo "✗ Tests failed!"
+
+This approach ensures a consistent test environment with all system
+dependencies (pdftk, texlive) properly installed, which is particularly
+useful for testing on systems where these dependencies are difficult to install.
+
 .. code-block:: python
    :caption: dice.py
 
