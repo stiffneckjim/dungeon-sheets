@@ -2,6 +2,7 @@
 *.pdf
 *.aux
 *.tex
+*.fdf
 
 # Generated epub files
 *.epub
