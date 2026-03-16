@@ -425,12 +425,12 @@ class PipeOfSmokeMonsters(MagicItem):
 
 
 class CoinsOfCommunication(MagicItem):
-    """This set of multiple coins are virtually indistinguishable from regular Gold
-    Pieces, but are connected by magic. Once per day, a holder of any of any
-    coin can whisper a single word into it, after which all coins will
-    immediately vibrate and the word will replace a word in the traditional
-    Kings Message imprinted on the coin. This ability cannot be used again by
-    the holder of any of the coins until the following dawn.
+    """This set of multiple coins are virtually indistinguishable from regular
+    Gold Pieces, but are connected by magic. Once per day, a holder of any coin
+    can whisper a single word into it, after which all coins will immediately
+    vibrate and the word will replace a word in the traditional King's Message
+    imprinted on the coin. This ability cannot be used again by the holder of
+    any of the coins until the following dawn.
 
     """
 
@@ -439,37 +439,39 @@ class CoinsOfCommunication(MagicItem):
 
 
 class FlameTongue(MagicItem):
-    """You can use a Bonus Action to speak this magic sword's Command Word, causing
-    flames to erupt from the blade. These flames shed bright light in a 40-foot
-    radius and dim light for an additional 40 feet. While the sword is ablaze,
-    it deals an extra 2d6 fire damage to any target it hits. The flames last
-    until you use a Bonus Action to speak the Command Word again or until you
-    drop or sheathe the sword
+    """You can use a Bonus Action to speak this magic sword's Command Word,
+    causing flames to erupt from the blade. These flames shed bright light in a
+    40-foot radius and dim light for an additional 40 feet. While the sword is
+    ablaze, it deals an extra 2d6 fire damage to any target it hits. The flames
+    last until you use a Bonus Action to speak the Command Word again or until
+    you drop or sheathe the sword.
 
     """
 
     name = "Flame Tongue"
     rarity = "Rare"
     requires_attunement = True
+    item_type = "Weapon"
 
 
-class SpearOfLightning(MagicItem):
-    """When you hurl it and speak its Command Word, it transforms into a bolt of
-    lightning, forming a line 5 feet wide that extends out from you to a target
-    within 120 feet. Each creature in the line excluding you and the target
-    must make a DC 13 Dexterity saving throw, taking 4d6 lightning damage on a
-    failed save, and half as much damage on a successful one. The Lightning
-    Bolt turns back into a spear when it reaches the target.
+class JavelinOfLightning(MagicItem):
+    """Each time you make an attack roll with this magic weapon and hit, you can
+    have it deal Lightning damage instead of Piercing damage.
 
-    Make a ranged weapon Attack against the target. On a hit, the target takes
-    damage from the spear plus 4d6 lightning damage.
+    Lightning Bolt. When you throw this weapon at a target no farther than 120
+    feet from you, you can forgo making a ranged attack roll and instead turn the
+    weapon into a bolt of lightning. This bolt forms a 5-foot-wide line between
+    you and the target. The target and each other creature in the line
+    (excluding you) must make a DC 13 Dexterity saving throw, taking 4d6
+    Lightning damage on a failed save or half as much damage on a successful
+    one. Immediately after dealing this damage, the weapon reappears in your hand.
+    This property can’t be used again until the next dawn.
 
-    The spear's property can't be used again until the next dawn. In the
-    meantime, the spear can still be used as a Magic Weapon.
     """
 
+    name = "Javelin of Lightning"
+    rarity = "Uncommon"
     requires_attunement = True
-    name = "Lightning Spear"
     item_type = "Weapon"
 
 
@@ -524,8 +526,8 @@ class BracersOfMagnetism(MagicItem):
     The magnetic effect fails if the bracers are more than 10' apart.
     """
 
-    requires_attunement = True
     name = "Bracers of Magnetism"
+    requires_attunement = True
 
 
 class ShieldOfFaces(MagicItem):
@@ -536,9 +538,9 @@ class ShieldOfFaces(MagicItem):
 
     """
 
-    requires_attunement = True
     name = "Shield of Faces"
     item_type = "Shield"
+    requires_attunement = True
 
 
 class GlovesOfThievery(MagicItem):
@@ -593,7 +595,7 @@ class PotionOfHealing(MagicItem):
 
     """
 
-    rarity = "common"
+    rarity = "Common"
     name = "Potion of Healing"
     item_type = "Potion"
 
@@ -621,7 +623,7 @@ class PotionOfGreaterHealing(PotionOfHealing):
     """
 
     name = "Potion of Greater Healing"
-    rarity = "uncommon"
+    rarity = "Uncommon"
     item_type = "Potion"
 
 
