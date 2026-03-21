@@ -531,10 +531,10 @@ class BracersOfMagnetism(MagicItem):
 
 
 class ShieldOfFaces(MagicItem):
-    """This +1 metallic shield has a detailed face chisled into its front surface.
-    As a bonus action, the wielder can use a bonus action to mentally command
-    the shield to adopt a new emotional state (such as "smiling", "laughing",
-    "crying", etc.)
+    """This +1 metallic shield has a detailed face chiseled into its front
+    surface. As a bonus action, the wielder can use a bonus action to mentally
+    command the shield to adopt a new emotional state (such as "smiling",
+    "laughing", "crying", etc.)
 
     """
 
