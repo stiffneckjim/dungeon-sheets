@@ -21,7 +21,6 @@ gear_weight = {
     "acid vials": 1,
     "flask of alchemist's fire": 1,
     "flasks of alchemist's fire": 1,
-    "flask of oil": 1,
     "flasks of oil": 1,
     "arrows": 1 / 20,
     "arrow": 1 / 20,
