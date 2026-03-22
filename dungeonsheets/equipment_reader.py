@@ -101,7 +101,6 @@ gear_weight = {
     "manacles": 6,
     "mess kit": 1,
     "steel mirror": 0.5,
-    "flask of oil": 1,
     "paper sheet": 0,
     "parchment": 0,
     "sheets of parchment": 0,
