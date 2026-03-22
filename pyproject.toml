@@ -3,7 +3,7 @@ name = "dungeonsheets"
 version = "0.19.0"
 description = "Dungeons and Dragons 5e Character Tools"
 authors = [{ name = "Mark Wolfman", email = "mark@magicacid.com" }]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 readme = "README.rst"
 license = { file = "LICENSE" }
 keywords = [
@@ -16,10 +16,10 @@ classifiers = [
     "Environment :: Console",
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
     "Natural Language :: English",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Games/Entertainment :: Role-Playing",
 ]
 dependencies = [

@@ -9,7 +9,7 @@ dungeon-sheets is a Python package that:
 - Generates character sheets and GM notes for D&D 5th Edition
 - Supports multiple output formats (PDF, ePub)
 - Handles character data from Python files and VTT JSON exports
-- Requires Python 3.9+ and uses modern Python features
+- Requires Python 3.10+ and uses modern Python features
 
 ## Development Workflow (GitHub Flow)
 
@@ -126,7 +126,7 @@ Both workflows support manual triggering through GitHub's UI:
 
 ### Python CI Workflow
 
-Tests run on all supported Python versions (3.9-3.12):
+Tests run on all supported Python versions (3.10-3.13):
 
 1. **Environment Setup**:
 

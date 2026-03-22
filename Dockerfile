@@ -1,4 +1,4 @@
-FROM python:3.12-slim AS dungeon-sheets-base
+FROM python:3.13-slim AS dungeon-sheets-base
 
 # Install base system dependencies
 RUN apt-get update && \

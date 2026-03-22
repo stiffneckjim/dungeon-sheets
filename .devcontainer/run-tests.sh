@@ -1,11 +1,6 @@
 #!/bin/bash
 set -e  # Exit immediately if a command exits with a non-zero status
 
-echo "======================================"
-echo "Running Flake8 linting..."
-echo "======================================"
-uv run flake8 dungeonsheets/ --exit-zero
-
 echo ""
 echo "======================================"
 echo "Testing makesheets (standard)..."
