@@ -4,7 +4,7 @@ This directory contains the VS Code Dev Container configuration for the dungeon-
 
 ## Features
 
-- **Python 3.12**: Base development environment
+- **Python 3.13**: Base development environment
 - **TeX Live**: Minimal installation with required packages for PDF generation
 - **pdftk-java**: For PDF form filling
 - **Docker-in-Docker**: Build and test Docker images within the dev container

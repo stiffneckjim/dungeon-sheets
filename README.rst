@@ -27,7 +27,7 @@ Documentation can be found on readthedocs_.
 Docker
 ======
 
-You can run this repository directly from a container. The container images are automatically 
+You can run this repository directly from a container. The container images are automatically
 built and published to GitHub Container Registry (GHCR) using GitHub Actions workflows.
 
 Available Tags
@@ -75,6 +75,60 @@ Run the test stage image:
 
 The test image runs ``.devcontainer/run-tests.sh``, which executes the project's
 test checks in the container.
+
+Running CI Builds Locally (Before Push)
+---------------------------------------
+
+To validate changes before pushing to GitHub, run the same checks used by
+the GitHub Actions workflows.
+
+Python CI workflow equivalent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is the fastest way to mirror the Python package workflow:
+
+.. code:: bash
+
+    $ docker build --target dungeon-sheets-test -t dungeon-sheets-test .
+
+.. code:: bash
+
+    $ docker run --rm -it dungeon-sheets-test
+
+This executes linting, sheet generation checks, and pytest via
+``.devcontainer/run-tests.sh``.
+
+Direct host run (optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you prefer running directly on your host instead of Docker:
+
+.. code:: bash
+
+    $ uv sync --extra dev
+
+.. code:: bash
+
+    $ bash .devcontainer/run-tests.sh
+
+Docker workflow equivalent
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To verify the Docker image build locally:
+
+.. code:: bash
+
+    $ docker build -t dungeon-sheets-local .
+
+To mirror the multi-architecture build used in GitHub Actions:
+
+.. code:: bash
+
+    $ docker buildx create --use --name ds-builder
+
+.. code:: bash
+
+    $ docker buildx build --platform linux/amd64,linux/arm64 --load -t dungeon-sheets-local .
 
 Container Details
 -----------------
@@ -188,13 +242,9 @@ The submodule includes the `D&D 5e LaTeX template`_ for beautiful character shee
 
 .. note::
 
-   Dungeon sheets requires **at least python 3.6**. This is mostly due
-   to the liberal use of f-strings_. If you want to use it with
-   previous versions of python 3, you'll probably have to replace all
-   the f-strings with the older ``.format()`` method or string
-   interpolation.
-
-.. _f-strings: https://www.python.org/dev/peps/pep-0498/
+    Dungeon sheets supports **Python 3.10 through 3.13**.
+    If you need to work with older Python versions, pin to an older
+    release of dungeon-sheets that still supports your interpreter.
 
 Optional External dependencies
 ==============================
