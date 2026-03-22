@@ -289,7 +289,7 @@ class Character(Creature):
                 subclasses.append(None)
         assert len(classes_list) == len(levels), (
             "the length of classes {:d} does not match length of levels {:d}".format(
-                len(classes), len(levels)
+                len(classes_list), len(levels)
             )
         )
         assert len(classes_list) == len(subclasses), (
