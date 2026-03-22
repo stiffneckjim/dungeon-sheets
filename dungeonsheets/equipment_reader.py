@@ -36,7 +36,7 @@ gear_weight = {
     "backpack": 5,
     "ball bearings": 2 / 1000,
     "barrel": 70,
-    "basked": 2,
+    "basket": 2,
     "bedroll": 7,
     "bell": 0,
     "blanket": 3,
