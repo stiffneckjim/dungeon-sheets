@@ -1,4 +1,4 @@
-from dungeonsheets import weapons, features
+from dungeonsheets import features, weapons
 
 
 def all_features():

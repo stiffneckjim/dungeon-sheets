@@ -49,13 +49,14 @@ class Quasit(Monster):
       or until its concentration ends (as if concentrating on a spell). Any
       equipment the quasit wears or carries is invisible with it.
     """
-    name = 'Quasit'
-    description = 'Tiny fiend, chaotic evil'
+
+    name = "Quasit"
+    description = "Tiny fiend, chaotic evil"
     challenge_rating = 1
     armor_class = 13
-    skills = 'Stealth +5'
-    senses = 'Darkvision 120 ft., Passive Perception 10'
-    languages = 'Abyssal, Common'
+    skills = "Stealth +5"
+    senses = "Darkvision 120 ft., Passive Perception 10"
+    languages = "Abyssal, Common"
     strength = Ability(5)
     dexterity = Ability(17)
     constitution = Ability(10)
@@ -68,11 +69,11 @@ class Quasit(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 7
-    hit_dice = '3d4 + 0'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "3d4 + 0"
+    condition_immunities = "poisoned"
+    damage_immunities = "poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -91,13 +92,14 @@ class Quipper(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1
       piercing damage.
     """
-    name = 'Quipper'
-    description = 'Tiny beast, unaligned'
+
+    name = "Quipper"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0
     armor_class = 13
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 8'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 8"
+    languages = ""
     strength = Ability(2)
     dexterity = Ability(16)
     constitution = Ability(9)
@@ -110,9 +112,9 @@ class Quipper(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 1
-    hit_dice = '1d4 + -1'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + -1"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

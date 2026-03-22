@@ -263,6 +263,7 @@ class HolyNimbus(Feature):
 
 # Oath of Vengeance
 
+
 class AbjureEnemy(Feature):
     """As an action, you present your holy symbol and speak a prayer of denunciation,
     using your Channel Divinity. Choose one creature within 60 feet of you that
@@ -280,8 +281,9 @@ class AbjureEnemy(Feature):
     name = "Channel Divinity: Abjure Enemy"
     source = "Paladin (Oath of Vengeance)"
 
+
 class VowOfEnmity(Feature):
-    """ As a bonus action, you can utter a vow of enmity against a creature you can
+    """As a bonus action, you can utter a vow of enmity against a creature you can
     see within 10 feet of you, using your Channel Divinity. You gain advantage on
     attack rolls against the creature for 1 minute or until it drops to 0 hit points
     or falls unconscious.
@@ -289,6 +291,7 @@ class VowOfEnmity(Feature):
 
     name = "Channel Divinity: Vow of Enmity"
     source = "Paladin (Oath of Vengeance)"
+
 
 class RelentlessAvenger(Feature):
     """By 7th level, your supernatural focus helps you close off a foe's retreat.
@@ -301,6 +304,7 @@ class RelentlessAvenger(Feature):
     name = "Relentless Avenger"
     source = "Paladin (Oath of Vengeance)"
 
+
 class SoulOfVengeance(Feature):
     """Starting at 15th level, the authority with which you speak your Vow of Enmity
     gives you greater power over your foe. When a creature under the effect of your
@@ -312,8 +316,9 @@ class SoulOfVengeance(Feature):
     name = "Soul of Vengeance"
     source = "Paladin (Oath of Vengeance)"
 
+
 class AvengingAngel(Feature):
-    """ At 20th level, you can assume the form of an angelic avenger. Using your action,
+    """At 20th level, you can assume the form of an angelic avenger. Using your action,
     you undergo a transformation. For 1 hour, you gain the following benefits:
 
         * Wings sprout from your back and grant you a flying speed of 60 feet.
@@ -326,6 +331,7 @@ class AvengingAngel(Feature):
 
     name = "Avenging Angel"
     source = "Paladin (Oath of Vengeance)"
+
 
 # Oath of the Ancients
 # Oath of Redemption

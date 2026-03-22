@@ -1,6 +1,5 @@
 from dungeonsheets.content_registry import default_content_registry
 
-
 default_content_registry.add_module(__name__)
 
 
@@ -13,7 +12,7 @@ class Infusion:
     def __str__(self):
         indicator = ("$", self.special_material)
         if indicator:
-            return self.name + f' ({"".join(indicator)})'
+            return self.name + f" ({''.join(indicator)})"
         else:
             return self.name
 

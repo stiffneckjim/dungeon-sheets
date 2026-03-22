@@ -12,18 +12,21 @@ import warnings
 from itertools import product
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
-from pypdf import PdfReader, PdfWriter
-from typing import Union, Sequence, Optional, List
+from typing import List, Optional, Sequence, Union
+
+from pypdf import PdfWriter
 
 from dungeonsheets import (
     character as _char,
-    exceptions,
-    readers,
-    latex,
+)
+from dungeonsheets import (
     epub,
-    monsters,
+    exceptions,
     forms,
+    latex,
+    monsters,
     random_tables,
+    readers,
 )
 from dungeonsheets.character import Character
 from dungeonsheets.content import Creature
@@ -72,11 +75,9 @@ class CharacterRenderer:
         character: Character,
         content_suffix: str = "tex",
         use_dnd_decorations: bool = False,
-        spell_order: bool = False
+        spell_order: bool = False,
     ):
-        template = jinja_env.get_template(
-            self.template_name.format(suffix=content_suffix)
-        )
+        template = jinja_env.get_template(self.template_name.format(suffix=content_suffix))
         return template.render(
             character=character,
             use_dnd_decorations=use_dnd_decorations,
@@ -85,15 +86,13 @@ class CharacterRenderer:
         )
 
 
-create_character_sheet_content = CharacterRenderer(
-    "character_sheet_template.{suffix}")
+create_character_sheet_content = CharacterRenderer("character_sheet_template.{suffix}")
 create_subclasses_content = CharacterRenderer("subclasses_template.{suffix}")
 create_features_content = CharacterRenderer("features_template.{suffix}")
 create_magic_items_content = CharacterRenderer("magic_items_template.{suffix}")
 create_spellbook_content = CharacterRenderer("spellbook_template.{suffix}")
 create_infusions_content = CharacterRenderer("infusions_template.{suffix}")
-create_druid_shapes_content = CharacterRenderer(
-    "druid_shapes_template.{suffix}")
+create_druid_shapes_content = CharacterRenderer("druid_shapes_template.{suffix}")
 
 
 def create_monsters_content(
@@ -142,9 +141,7 @@ def create_random_tables_content(
     )
 
 
-def create_extra_gm_content(
-    sections: Sequence, suffix: str, use_dnd_decorations: bool = False
-):
+def create_extra_gm_content(sections: Sequence, suffix: str, use_dnd_decorations: bool = False):
     """Create content for arbitrary additional text provided in a GM sheet.
 
     Parameters
@@ -308,8 +305,7 @@ def make_gm_sheet(
             new_monster = monster()
         else:
             try:
-                MyMonster = find_content(
-                    monster, valid_classes=[monsters.Monster])
+                MyMonster = find_content(monster, valid_classes=[monsters.Monster])
             except exceptions.ContentNotFound:
                 msg = f"Monster '{monster}' not found. Please add it to ``monsters.py``"
                 warnings.warn(msg)
@@ -383,9 +379,7 @@ def make_gm_sheet(
         chapters = {session_title: "".join(content)}
         # Make sheets in the epub for each party member
         for char in party:
-            char_html = make_character_content(
-                char, "html", fancy_decorations=fancy_decorations
-            )
+            char_html = make_character_content(char, "html", fancy_decorations=fancy_decorations)
             chapters[char.name] = "".join(char_html)
         # Create the combined HTML file
         epub.create_epub(
@@ -396,8 +390,7 @@ def make_gm_sheet(
         )
     else:
         raise exceptions.UnknownOutputFormat(
-            f"Unknown output format requested: {output_format}. Valid options are:"
-            " 'pdf', 'epub'"
+            f"Unknown output format requested: {output_format}. Valid options are: 'pdf', 'epub'"
         )
 
 
@@ -539,16 +532,18 @@ def msavage_sheet(character, basename, debug=False, paper_size="letter"):
             if re.search(r"" + character.portrait, str(image[0])):
                 character.images.remove(image)
                 break
-        portrait_command = r"{\centering \includegraphics[width=5.75cm,height=7.85cm,keepaspectratio]{" + \
-            character.portrait + "} \\\\ \\noindent}"
+        portrait_command = (
+            r"{\centering \includegraphics[width=5.75cm,height=7.85cm,keepaspectratio]{"
+            + character.portrait
+            + "} \\\\ \\noindent}"
+        )
 
     # Move symbol image a bit left, if applicable
     if character.symbol:
         for image in character.images:
             if re.search(r"" + character.symbol, str(image[0])):
                 character.images.remove(image)
-                character.images = [
-                    (character.symbol, 1, 488, 564, 145, 112)] + character.images
+                character.images = [(character.symbol, 1, 488, 564, 145, 112)] + character.images
                 break
 
     tex = jinja_env.get_template("MSavage_template.tex").render(
@@ -628,10 +623,8 @@ def make_character_sheet(
         # Fillable PDF forms
         else:
             sheets.append(person_base + ".pdf")
-            char_pdf = create_character_pdf_template(
-                character=character, basename=char_base, flatten=flatten
-            )
-            person_pdf = create_personality_pdf_template(
+            create_character_pdf_template(character=character, basename=char_base, flatten=flatten)
+            create_personality_pdf_template(
                 character=character,
                 basename=person_base,
                 flatten=flatten,
@@ -660,9 +653,7 @@ def make_character_sheet(
                 for image in character.images:
                     insert_image_into_pdf(final_pdf, *image)
         except exceptions.LatexNotFoundError:
-            log.warning(
-                f"``pdflatex`` not available. Skipping features for {character.name}"
-            )
+            log.warning(f"``pdflatex`` not available. Skipping features for {character.name}")
     elif output_format == "epub":
         epub.create_epub(
             chapters={character.name: "".join(content)},
@@ -672,8 +663,7 @@ def make_character_sheet(
         )
     else:
         raise exceptions.UnknownOutputFormat(
-            f"Unknown output format requested: {output_format}. Valid options are:"
-            " 'pdf', 'epub'"
+            f"Unknown output format requested: {output_format}. Valid options are: 'pdf', 'epub'"
         )
 
 
@@ -694,9 +684,7 @@ def merge_pdfs(src_filenames, dest_filename, clean_up=False):
     try:
         subprocess.call(popenargs)
     except FileNotFoundError:
-        warnings.warn(
-            f"Could not run `{PDFTK_CMD}`, using fallback.", RuntimeWarning
-        )
+        warnings.warn(f"Could not run `{PDFTK_CMD}`, using fallback.", RuntimeWarning)
 
         merger = PdfWriter()
         for pdf in src_filenames:
@@ -822,8 +810,7 @@ def main(args=None):
         valid_files = []
         if fpath.is_dir() and parse_dirs:
             for f in fpath.iterdir():
-                valid_files.extend(get_char_files(
-                    f, parse_dirs=args.recursive))
+                valid_files.extend(get_char_files(f, parse_dirs=args.recursive))
         elif fpath.suffix in known_extensions:
             valid_files.append(fpath)
         else:

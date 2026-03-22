@@ -106,6 +106,7 @@ class SlipperyMind(Feature):
     proficiency in Wisdom saving throws.
 
     """
+
     name = "Slippery Mind"
     source = "Rogue"
 
@@ -368,6 +369,7 @@ class SteadyAim(Feature):
     action, your speed is 0 until the end of the current turn.
 
     """
+
     name = "Steady Aim"
     source = "Rogue (3rd level, optional)"
 
@@ -628,7 +630,7 @@ class PsionicPower(Feature):
     a ``d6``. You have a number of these dice equal to twice your
     proficiency bonus, and they fuel various psionic powers you have,
     which are detailed below.
-    
+
     Some of your powers expend the Psionic Energy die they use, as
     specified in a power's description, and you can't use a power if
     it requires you to use a die when your dice are all expended. You
@@ -636,13 +638,13 @@ class PsionicPower(Feature):
     long rest. In addition, as a bonus action, you can regain one
     expended Psionic Energy die, but you can't do so again until you
     finish a short or long rest.
-    
+
     When you reach certain levels in this class, the size of your
     Psionic Energy dice increases: at 5th level (``d8``), 11th level
     (``dlO``), and 17th level (``d12``).
-    
+
     The powers below use your Psionic Energy dice.
-    
+
     Psi-Bolstered Knack
       When your nonpsionic training fails you, your psionic power can
       help: if you fail an ability check using a skill or tool with
@@ -664,12 +666,13 @@ class PsionicPower(Feature):
       connection at any time (no action required). You and the
       creature don't need to speak a common language to understand
       each other.
-      
+
       The first time you use this power after each long rest, you
       don't expend the Psionic Energy die. All other times you use the
       power, you expend the die.
-    
+
     """
+
     name = "Psionic Power"
     source = "Rogue (Soulknife)"
 
@@ -684,13 +687,14 @@ class PsychicBlades(Feature):
     plus the ability modifier you used for the attack roll. The blade
     vanishes immediately after it hits or misses its target, and it
     leaves no mark on its target if it deals damage.
-    
+
     After you attack with the blade, you can make a melee or ranged
     weapon attack with a second psychic blade as a bonus action on the
     same turn, provided your other hand is free to create it. The
     damage die of this bonus attack is 1d4, instead of 1d6.
 
     """
+
     name = "Psychic Blades"
     source = "Rogue (Soulknife)"
 
@@ -698,7 +702,7 @@ class PsychicBlades(Feature):
 class SoulBlades(Feature):
     """Your Psychic Blades are now an expression of your psi-suffused
     soul, giving you these powers that use your Psionic Energy dice:
-    
+
     Homing Strikes
       If you make an attack roll with your Psychic Blades and miss the
       target, you can roll one Psionic Energy die and add the number
@@ -710,8 +714,9 @@ class SoulBlades(Feature):
       at an unoccupied space you can see, up to a number of feet away
       equal to 10 times the number rolled. You then teleport to that
       space, and the blade vanishes.
-    
+
     """
+
     name = "Soul Blades"
     source = "Rogue (Soulknife)"
 
@@ -723,12 +728,13 @@ class PsychicVeil(Feature):
     effect (no action required). This invisibility ends early
     immediately after you deal damage to a creature or you force a
     creature to make a saving throw.
-    
+
     Once you use this feature, you can't do so again until you finish
     a long rest, unless you expend a Psionic Energy die to use this
     feature again.
-    
+
     """
+
     name = "Psychic Veil"
     source = "Rogue (Soulknife)"
 
@@ -747,6 +753,6 @@ class RendMind(Feature):
     again.
 
     """
+
     name = "Rend Mind"
     source = "Rogue (Soulknife)"
-    

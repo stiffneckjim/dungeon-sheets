@@ -19,14 +19,14 @@ class Rakshasa(Monster):
       The rakshasa's innate spellcasting ability is Charisma (spell save DC
       18, +10 to hit with spell attacks). The rakshasa can innately cast the
       following spells, requiring no material components:
-      
-  
-      
+
+
+
       At will: detect thoughts, disguise self, mage hand, minor illusion
-      
+
       3/day each: charm person, detect magic, invisibility, major image,
       suggestion
-      
+
       1/day each: dominate person, fly, plane shift, true seeing
 
     # Actions
@@ -42,13 +42,14 @@ class Rakshasa(Monster):
       rest. The curse lasts until it is lifted by a remove curse spell or
       similar magic.
     """
-    name = 'Rakshasa'
-    description = 'Medium fiend, lawful evil'
+
+    name = "Rakshasa"
+    description = "Medium fiend, lawful evil"
     challenge_rating = 13
     armor_class = 16
-    skills = 'Deception +10, Insight +8'
-    senses = 'Darkvision 60 ft., Passive Perception 13'
-    languages = 'Common, Infernal'
+    skills = "Deception +10, Insight +8"
+    senses = "Darkvision 60 ft., Passive Perception 13"
+    languages = "Common, Infernal"
     strength = Ability(14)
     dexterity = Ability(17)
     constitution = Ability(18)
@@ -61,11 +62,11 @@ class Rakshasa(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 110
-    hit_dice = '13d8 + 52'
-    condition_immunities = ''
-    damage_immunities = 'bludgeoning, piercing, and slashing from nonmagical weapons'
-    damage_resistances = ''
-    damage_vulnerabilities = 'piercing from magic weapons wielded by good creatures'
+    hit_dice = "13d8 + 52"
+    condition_immunities = ""
+    damage_immunities = "bludgeoning, piercing, and slashing from nonmagical weapons"
+    damage_resistances = ""
+    damage_vulnerabilities = "piercing from magic weapons wielded by good creatures"
     spells = []
 
 
@@ -82,13 +83,14 @@ class Rat(Monster):
       Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1
       piercing damage.
     """
-    name = 'Rat'
-    description = 'Tiny beast, unaligned'
+
+    name = "Rat"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0
     armor_class = 10
-    skills = ''
-    senses = 'Darkvision 30 ft., Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 30 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(2)
     dexterity = Ability(11)
     constitution = Ability(9)
@@ -101,11 +103,11 @@ class Rat(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 1
-    hit_dice = '1d4 + -1'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + -1"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -124,13 +126,14 @@ class Raven(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1
       piercing damage.
     """
-    name = 'Raven'
-    description = 'Tiny beast, unaligned'
+
+    name = "Raven"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0
     armor_class = 12
-    skills = 'Perception +3'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(2)
     dexterity = Ability(14)
     constitution = Ability(8)
@@ -143,11 +146,11 @@ class Raven(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 1
-    hit_dice = '1d4 + -1'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + -1"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -164,13 +167,14 @@ class RedDragonWyrmling(Monster):
       must make a DC l3 Dexterity saving throw, taking 24 (7d6) fire damage
       on a failed save, or half as much damage on a successful one.
     """
-    name = 'Red Dragon Wyrmling'
-    description = 'Medium dragon, chaotic evil'
+
+    name = "Red Dragon Wyrmling"
+    description = "Medium dragon, chaotic evil"
     challenge_rating = 4
     armor_class = 17
-    skills = 'Perception +4, Stealth +2'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14'
-    languages = 'Draconic'
+    skills = "Perception +4, Stealth +2"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14"
+    languages = "Draconic"
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -183,11 +187,11 @@ class RedDragonWyrmling(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 75
-    hit_dice = '10d8 + 30'
-    condition_immunities = ''
-    damage_immunities = 'fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "10d8 + 30"
+    condition_immunities = ""
+    damage_immunities = "fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -207,13 +211,14 @@ class ReefShark(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 +
       2) piercing damage.
     """
-    name = 'Reef Shark'
-    description = 'Medium beast, unaligned'
+
+    name = "Reef Shark"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.5
     armor_class = 12
-    skills = 'Perception +2'
-    senses = 'Blindsight 30 ft., Passive Perception 12'
-    languages = ''
+    skills = "Perception +2"
+    senses = "Blindsight 30 ft., Passive Perception 12"
+    languages = ""
     strength = Ability(14)
     dexterity = Ability(13)
     constitution = Ability(13)
@@ -226,11 +231,11 @@ class ReefShark(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '4d8 + 4'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "4d8 + 4"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -255,7 +260,7 @@ class Remorhaz(Monster):
       the creature is blinded and restrained, it has total cover against
       attacks and other effects outside the remorhaz, and it takes 21 (6d6)
       acid damage at the start of each of the remorhaz's turns.
-      
+
       If the remorhaz takes 30 damage or more on a single turn from a
       creature inside it, the remorhaz must succeed on a DC 15 Constitution
       saving throw at the end of that turn or regurgitate all swallowed
@@ -264,13 +269,14 @@ class Remorhaz(Monster):
       it and can escape from the corpse using 15 feet of movement, exiting
       prone.
     """
-    name = 'Remorhaz'
-    description = 'Huge monstrosity, unaligned'
+
+    name = "Remorhaz"
+    description = "Huge monstrosity, unaligned"
     challenge_rating = 11
     armor_class = 17
-    skills = ''
-    senses = 'Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(24)
     dexterity = Ability(13)
     constitution = Ability(21)
@@ -283,11 +289,11 @@ class Remorhaz(Monster):
     climb_speed = 0
     burrow_speed = 20
     hp_max = 195
-    hit_dice = '17d12 + 85'
-    condition_immunities = ''
-    damage_immunities = 'cold, fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "17d12 + 85"
+    condition_immunities = ""
+    damage_immunities = "cold, fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -306,13 +312,14 @@ class Rhinoceros(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8
       + 5) bludgeoning damage.
     """
-    name = 'Rhinoceros'
-    description = 'Large beast, unaligned'
+
+    name = "Rhinoceros"
+    description = "Large beast, unaligned"
     challenge_rating = 2
     armor_class = 11
-    skills = ''
-    senses = 'Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 11"
+    languages = ""
     strength = Ability(21)
     dexterity = Ability(8)
     constitution = Ability(15)
@@ -325,11 +332,11 @@ class Rhinoceros(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 45
-    hit_dice = '6d10 + 12'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d10 + 12"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -342,13 +349,14 @@ class RidingHorse(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 +
       3) bludgeoning damage.
     """
-    name = 'Riding Horse'
-    description = 'Large beast, unaligned'
+
+    name = "Riding Horse"
+    description = "Large beast, unaligned"
     challenge_rating = 0.25
     armor_class = 10
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = ""
     strength = Ability(16)
     dexterity = Ability(10)
     constitution = Ability(12)
@@ -361,11 +369,11 @@ class RidingHorse(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 13
-    hit_dice = '2d10 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d10 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -389,13 +397,14 @@ class Roc(Monster):
       this grapple ends, the target is restrained, and the roc can't use its
       talons on another target.
     """
-    name = 'Roc'
-    description = 'Gargantuan monstrosity, unaligned'
+
+    name = "Roc"
+    description = "Gargantuan monstrosity, unaligned"
     challenge_rating = 11
     armor_class = 15
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
-    languages = ''
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
+    languages = ""
     strength = Ability(28)
     dexterity = Ability(10)
     constitution = Ability(20)
@@ -408,11 +417,11 @@ class Roc(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 248
-    hit_dice = '16d20 + 80'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "16d20 + 80"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -451,13 +460,14 @@ class Roper(Monster):
       The roper pulls each creature grappled by it up to 25 ft. straight
       toward it.
     """
-    name = 'Roper'
-    description = 'Large monstrosity, neutral evil'
+
+    name = "Roper"
+    description = "Large monstrosity, neutral evil"
     challenge_rating = 5
     armor_class = 20
-    skills = 'Perception +6, Stealth +5'
-    senses = 'Darkvision 60 ft., Passive Perception 16'
-    languages = ''
+    skills = "Perception +6, Stealth +5"
+    senses = "Darkvision 60 ft., Passive Perception 16"
+    languages = ""
     strength = Ability(18)
     dexterity = Ability(8)
     constitution = Ability(17)
@@ -470,11 +480,11 @@ class Roper(Monster):
     climb_speed = 10
     burrow_speed = 0
     hp_max = 93
-    hit_dice = '11d10 + 33'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "11d10 + 33"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -504,13 +514,14 @@ class RugofSmothering(Monster):
       the start of each of the target's turns, the target takes 10 (2d6 + 3)
       bludgeoning damage.
     """
-    name = 'Rug of Smothering'
-    description = 'Large construct, unaligned'
+
+    name = "Rug of Smothering"
+    description = "Large construct, unaligned"
     challenge_rating = 2
     armor_class = 12
-    skills = ''
-    senses = 'Blindsight 60 ft. (blind beyond this radius), Passive Perception 6'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 60 ft. (blind beyond this radius), Passive Perception 6"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(14)
     constitution = Ability(10)
@@ -523,11 +534,11 @@ class RugofSmothering(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 33
-    hit_dice = '6d10 + 0'
-    condition_immunities = 'blinded, charmed, blinded, frightened, paralyzed, petrified, poisoned'
-    damage_immunities = 'poison, psychic'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d10 + 0"
+    condition_immunities = "blinded, charmed, blinded, frightened, paralyzed, petrified, poisoned"
+    damage_immunities = "poison, psychic"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -555,20 +566,21 @@ class RustMonster(Monster):
       touch destroys a 1-foot cube of it. If the object is being worn or
       carried by a creature, the creature can make a DC 11 Dexterity saving
       throw to avoid the rust monster's touch.
-      
+
       If the object touched is either metal armor or a metal shield being
       worn or carried, its takes a permanent and cumulative -1 penalty to
       the AC it offers. Armor reduced to an AC of 10 or a shield that drops
       to a bonus is destroyed. If the object touched is a held metal weapon,
       it rusts as described in the Rust Metal trait.
     """
-    name = 'Rust Monster'
-    description = 'Medium monstrosity, unaligned'
+
+    name = "Rust Monster"
+    description = "Medium monstrosity, unaligned"
     challenge_rating = 0.5
     armor_class = 14
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 11"
+    languages = ""
     strength = Ability(13)
     dexterity = Ability(12)
     constitution = Ability(13)
@@ -581,9 +593,9 @@ class RustMonster(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 27
-    hit_dice = '5d8 + 5'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d8 + 5"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

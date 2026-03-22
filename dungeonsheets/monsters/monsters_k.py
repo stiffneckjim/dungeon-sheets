@@ -17,9 +17,9 @@ class Kenku(Monster):
       The kenku can mimic any sounds it has heard, including voices. A
       creature that hears the sounds can tell they are imitations with
       a successful DC 14 Wisdom (Insight) check.  ACTIONS
-    
+
     # Actions
-    
+
     Shortsword.
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6
       (1d6 + 3) piercing damage.
@@ -28,13 +28,14 @@ class Kenku(Monster):
       target. Hit: 6 (1d6 + 3) piercing damage.
 
     """
-    name = 'Kenku'
-    description = 'Medium humanoid (kenku), chaotic neutral'
-    challenge_rating = 1/4
+
+    name = "Kenku"
+    description = "Medium humanoid (kenku), chaotic neutral"
+    challenge_rating = 1 / 4
     armor_class = 13
-    skills = 'Deception +4, Perception +2, Stealth +5'
-    senses = 'passive Perception 12'
-    languages = 'understands Auran and Common but speaks only through the use of its Mimicry trait'
+    skills = "Deception +4, Perception +2, Stealth +5"
+    senses = "passive Perception 12"
+    languages = "understands Auran and Common but speaks only through the use of its Mimicry trait"
     strength = Ability(10)
     dexterity = Ability(16)
     constitution = Ability(10)
@@ -47,11 +48,11 @@ class Kenku(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 13
-    hit_dice = '3d8'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d8"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -72,13 +73,14 @@ class KillerWhale(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 21 (5d6
       + 4) piercing damage.
     """
-    name = 'Killer Whale'
-    description = 'Huge beast, unaligned'
+
+    name = "Killer Whale"
+    description = "Huge beast, unaligned"
     challenge_rating = 3
     armor_class = 12
-    skills = 'Perception +3'
-    senses = 'Blindsight 120 ft., Passive Perception 13'
-    languages = ''
+    skills = "Perception +3"
+    senses = "Blindsight 120 ft., Passive Perception 13"
+    languages = ""
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(13)
@@ -91,11 +93,11 @@ class KillerWhale(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 90
-    hit_dice = '12d12 + 12'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "12d12 + 12"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -130,13 +132,14 @@ class Knight(Monster):
       it. To do so, the knight must see the attacker and be wielding a melee
       weapon.
     """
-    name = 'Knight'
-    description = 'Medium humanoid, any alignment'
+
+    name = "Knight"
+    description = "Medium humanoid, any alignment"
     challenge_rating = 3
     armor_class = 18
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = 'any one language (usually Common)'
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = "any one language (usually Common)"
     strength = Ability(16)
     dexterity = Ability(11)
     constitution = Ability(14)
@@ -149,11 +152,11 @@ class Knight(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 52
-    hit_dice = '8d8 + 16'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d8 + 16"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -177,13 +180,14 @@ class Kobold(Monster):
       Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 4
       (1d4 + 2) bludgeoning damage.
     """
-    name = 'Kobold'
-    description = 'Small humanoid, lawful evil'
+
+    name = "Kobold"
+    description = "Small humanoid, lawful evil"
     challenge_rating = 0.125
     armor_class = 12
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 8'
-    languages = 'Common, Draconic'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 8"
+    languages = "Common, Draconic"
     strength = Ability(7)
     dexterity = Ability(15)
     constitution = Ability(9)
@@ -196,11 +200,11 @@ class Kobold(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 5
-    hit_dice = '2d6 + -2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d6 + -2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -268,12 +272,13 @@ class Kraken(Monster):
       much damage on a successful one. A strong current disperses the cloud,
       which otherwise disappears at the end of the kraken's next turn.
     """
-    name = 'Kraken'
-    description = 'Gargantuan monstrosity, chaotic evil'
+
+    name = "Kraken"
+    description = "Gargantuan monstrosity, chaotic evil"
     challenge_rating = 23
     armor_class = 18
-    skills = ''
-    senses = 'Truesight 120 ft., Passive Perception 14'
+    skills = ""
+    senses = "Truesight 120 ft., Passive Perception 14"
     languages = "understands Abyssal, Celestial, Infernal, and Primordial but can't speak, telepathy 120 ft."
     strength = Ability(30)
     dexterity = Ability(11)
@@ -287,11 +292,11 @@ class Kraken(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 472
-    hit_dice = '27d20 + 189'
-    condition_immunities = 'frightened, paralyzed'
-    damage_immunities = 'lightning, bludgeoning, piercing, and slashing from nonmagical weapons'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "27d20 + 189"
+    condition_immunities = "frightened, paralyzed"
+    damage_immunities = "lightning, bludgeoning, piercing, and slashing from nonmagical weapons"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -345,6 +350,7 @@ class KuoToa(Monster):
       can't be used. A creature can pull the weapon free by taking
       an action to make a DC 11 Strength check and succeeding.
     """
+
     name = "Kuo-Toa"
     description = "Medium humanoid (kuo-toa), neutral evil"
     armor_class = 13
@@ -407,6 +413,7 @@ class KuoToaArchpriest(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit:
       5 (1d4 + 3) bludgeoning damage.
     """
+
     name = "Kuo-Toa Archpriest"
     description = "Medium humanoid (kuo-toa), neutral evil"
     armor_class = 13
@@ -425,12 +432,20 @@ class KuoToaArchpriest(Monster):
     languages = "Undercommon"
     challenge_rating = 6
     spells = [
-        "guidance", "sacred flame", "thaumaturgy",
-        "detect magic", "sanctuary", "shield of faith",
-        "hold person", "spiritual weapon",
-        "spirit guardians", "tongues",
-        "control water", "divination",
-        "mass cure wounds", "scrying",
+        "guidance",
+        "sacred flame",
+        "thaumaturgy",
+        "detect magic",
+        "sanctuary",
+        "shield of faith",
+        "hold person",
+        "spiritual weapon",
+        "spirit guardians",
+        "tongues",
+        "control water",
+        "divination",
+        "mass cure wounds",
+        "scrying",
     ]
 
 
@@ -470,6 +485,7 @@ class KuoToaMonitor(Monster):
       and the target can't take reactions until the end of the kuo-toa's
       next turn.
     """
+
     name = "Kuo-Toa Monitor"
     description = "Medium humanoid (kuo-toa), neutral evil"
     armor_class = 13
@@ -531,6 +547,7 @@ class KuoToaWhip(Monster):
       creature, it is grappled (escape DC 14). Until this grapple ends,
       the kuo-toa can't use its pincer staff on another target.
     """
+
     name = "Kuo-Toa Whip"
     description = "Medium humanoid (kuo-toa), neutral evil"
     armor_class = 11
@@ -546,5 +563,9 @@ class KuoToaWhip(Monster):
     senses = "darkvision 120 ft., passive Perception 16"
     languages = "Undercommon"
     challenge_rating = 1
-    spells = ["sacred flame", "thaumaturgy",
-              "bane", "shield of faith", ]
+    spells = [
+        "sacred flame",
+        "thaumaturgy",
+        "bane",
+        "shield of faith",
+    ]

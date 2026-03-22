@@ -39,8 +39,7 @@ dev = [
     "pytest",
     "pytest-cov",
     "coverall",
-    "flake8",
-    "black",
+    "ruff",
 ]
 
 [project.urls]
@@ -57,6 +56,35 @@ build-backend = "setuptools.build_meta"
 
 [tool.uv]
 package = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # import sorting
+]
+ignore = [
+    "E501",  # keep long narrative/table text untouched in this migration
+    "W291",  # preserve existing spacing in multiline pack description strings
+    "W293",  # retain existing blank-line whitespace in long content docstrings
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/__init__.py" = [
+    "F401",  # allow explicit re-exports
+    "F403",  # allow wildcard imports in package aggregators
+]
+"dungeonsheets/features/bloodhunter.py" = [
+    "F811",  # legacy duplicate class names are used as alternate feature definitions
+]
+"dungeonsheets/mechanics.py" = [
+    "F401",  # convenience module intentionally re-exports symbols
+]
 
 [tool.setuptools.package-data]
 dungeonsheets = [

@@ -38,8 +38,7 @@ class Nondetection(Spell):
     casting_range = "Touch"
     components = ("V", "S", "M")
     materials = (
-        "A pinch of diamond dust worth 25 gp sprinkled over the target, which the spell"
-        " consumes"
+        "A pinch of diamond dust worth 25 gp sprinkled over the target, which the spell consumes"
     )
     duration = "8 hours"
     ritual = False

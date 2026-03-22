@@ -21,13 +21,14 @@ class Eagle(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
       2) slashing damage.
     """
-    name = 'Eagle'
-    description = 'Small beast, unaligned'
+
+    name = "Eagle"
+    description = "Small beast, unaligned"
     challenge_rating = 0
     armor_class = 12
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
-    languages = ''
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
+    languages = ""
     strength = Ability(6)
     dexterity = Ability(15)
     constitution = Ability(10)
@@ -40,11 +41,11 @@ class Eagle(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 3
-    hit_dice = '1d6 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d6 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -66,13 +67,14 @@ class EarthElemental(Monster):
       Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 14 (2d8
       + 5) bludgeoning damage.
     """
-    name = 'Earth Elemental'
-    description = 'Large elemental, neutral'
+
+    name = "Earth Elemental"
+    description = "Large elemental, neutral"
     challenge_rating = 5
     armor_class = 17
-    skills = ''
-    senses = 'Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 10'
-    languages = 'Terran'
+    skills = ""
+    senses = "Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 10"
+    languages = "Terran"
     strength = Ability(20)
     dexterity = Ability(8)
     constitution = Ability(20)
@@ -85,11 +87,11 @@ class EarthElemental(Monster):
     climb_speed = 0
     burrow_speed = 30
     hp_max = 126
-    hit_dice = '12d10 + 60'
-    condition_immunities = 'exhaustion, paralyzed, petrified, poisoned, unconscious'
-    damage_immunities = 'poison'
-    damage_resistances = 'bludgeoning, piercing, and slashing from nonmagical weapons'
-    damage_vulnerabilities = 'thunder'
+    hit_dice = "12d10 + 60"
+    condition_immunities = "exhaustion, paralyzed, petrified, poisoned, unconscious"
+    damage_immunities = "poison"
+    damage_resistances = "bludgeoning, piercing, and slashing from nonmagical weapons"
+    damage_vulnerabilities = "thunder"
     spells = []
 
 
@@ -117,15 +119,16 @@ class EarthElementalMyrmidon(Monster):
     creators.
 
     """
-    name = 'Earth Elemental Myrmidon'
-    description = 'Medium elemental, neutral'
+
+    name = "Earth Elemental Myrmidon"
+    description = "Medium elemental, neutral"
     challenge_rating = 7
     armor_class = 18
-    damage_resistances = 'bludgeoning, piercing, and slashing from nonmagical weapons'
-    damage_immunities = 'poison'
-    condition_immunities = 'paralyzed, petrified, poisoned, prone'
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
+    damage_resistances = "bludgeoning, piercing, and slashing from nonmagical weapons"
+    damage_immunities = "poison"
+    condition_immunities = "paralyzed, petrified, poisoned, prone"
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
     languages = "Terran, one language of its creator's choice"
     strength = Ability(18)
     dexterity = Ability(10)
@@ -138,7 +141,7 @@ class EarthElementalMyrmidon(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 127
-    hit_dice = '17d8 + 51'
+    hit_dice = "17d8 + 51"
 
 
 class Efreeti(Monster):
@@ -152,20 +155,20 @@ class Efreeti(Monster):
       The efreeti's innate spell casting ability is Charisma (spell save DC
       15, +7 to hit with spell attacks). It can innately cast the following
       spells, requiring no material components:
-      
+
       At will: detect magic
-      
+
       3/day: enlarge/reduce, tongues
-      
+
       1/day each: conjure elemental (fire elemental only), gaseous form,
       invisibility, major image, plane shift, wall of fire
     Variant: Genie Powers.
       Genies have a variety of magical capabilities, including spells. A few
       have even greater powers that allow them to alter their appearance or
       the nature of reality.
-      
+
       Disguises.
-      
+
       Some genies can veil themselves in illusion to pass as other similarly
       shaped creatures. Such genies can innately cast the disguise self
       spell at will, often with a longer duration than is normal for that
@@ -173,9 +176,9 @@ class Efreeti(Monster):
       times per day, possibly with a longer duration than normal. Such
       genies can change only their own shape, but a rare few can use the
       spell on other creatures and objects as well.
-      
+
       Wishes.
-      
+
       The genie power to grant wishes is legendary among mortals. Only the
       most potent genies, such as those among the nobility, can do so. A
       particular genie that has this power can grant one to three wishes to
@@ -184,7 +187,7 @@ class Efreeti(Monster):
       year). and cosmic law dictates that the same genie can expend its
       limit of wishes on a specific creature only once in that creature's
       existence.
-      
+
       To be granted a wish, a creature within 60 feet of the genie states a
       desired effect to it. The genie can then cast the wish spell on the
       creature's behalf to bring about the effect. Depending on the genie's
@@ -203,13 +206,14 @@ class Efreeti(Monster):
       Ranged Spell Attack: +7 to hit, range 120 ft., one target. Hit: 17
       (5d6) fire damage.
     """
-    name = 'Efreeti'
-    description = 'Large elemental, lawful evil'
+
+    name = "Efreeti"
+    description = "Large elemental, lawful evil"
     challenge_rating = 11
     armor_class = 17
-    skills = ''
-    senses = 'Darkvision 120 ft., Passive Perception 12'
-    languages = 'Ignan'
+    skills = ""
+    senses = "Darkvision 120 ft., Passive Perception 12"
+    languages = "Ignan"
     strength = Ability(22)
     dexterity = Ability(12)
     constitution = Ability(24)
@@ -222,11 +226,11 @@ class Efreeti(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 200
-    hit_dice = '16d10 + 112'
-    condition_immunities = ''
-    damage_immunities = 'fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "16d10 + 112"
+    condition_immunities = ""
+    damage_immunities = "fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -249,13 +253,14 @@ class Elephant(Monster):
       Melee Weapon Attack: +8 to hit, reach 5 ft., one prone creature. Hit:
       22 (3d10 + 6) bludgeoning damage.
     """
-    name = 'Elephant'
-    description = 'Huge beast, unaligned'
+
+    name = "Elephant"
+    description = "Huge beast, unaligned"
     challenge_rating = 4
     armor_class = 12
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = ""
     strength = Ability(22)
     dexterity = Ability(9)
     constitution = Ability(17)
@@ -268,11 +273,11 @@ class Elephant(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 76
-    hit_dice = '8d12 + 24'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d12 + 24"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -294,13 +299,14 @@ class Elk(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one prone creature. Hit:
       8 (2d4 + 3) bludgeoning damage.
     """
-    name = 'Elk'
-    description = 'Large beast, unaligned'
+
+    name = "Elk"
+    description = "Large beast, unaligned"
     challenge_rating = 0.25
     armor_class = 10
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = ""
     strength = Ability(16)
     dexterity = Ability(10)
     constitution = Ability(12)
@@ -313,11 +319,11 @@ class Elk(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 13
-    hit_dice = '2d10 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d10 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -357,13 +363,14 @@ class Erinyes(Monster):
       it. To do so, the erinyes must see the attacker and be wielding a
       melee weapon.
     """
-    name = 'Erinyes'
-    description = 'Medium fiend, lawful evil'
+
+    name = "Erinyes"
+    description = "Medium fiend, lawful evil"
     challenge_rating = 12
     armor_class = 18
-    skills = ''
-    senses = 'Truesight 120 ft., Passive Perception 12'
-    languages = 'Infernal, telepathy 120 ft.'
+    skills = ""
+    senses = "Truesight 120 ft., Passive Perception 12"
+    languages = "Infernal, telepathy 120 ft."
     strength = Ability(18)
     dexterity = Ability(16)
     constitution = Ability(18)
@@ -376,11 +383,11 @@ class Erinyes(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 153
-    hit_dice = '18d8 + 72'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'fire, poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "18d8 + 72"
+    condition_immunities = "poisoned"
+    damage_immunities = "fire, poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -424,13 +431,14 @@ class Ettercap(Monster):
       (escape DC 12). Until this grapple ends, the target can't breathe, and
       the ettercap has advantage on attack rolls against it.
     """
-    name = 'Ettercap'
-    description = 'Medium monstrosity, neutral evil'
+
+    name = "Ettercap"
+    description = "Medium monstrosity, neutral evil"
     challenge_rating = 2
     armor_class = 13
-    skills = 'Perception +3, Stealth +4, Survival +3'
-    senses = 'Darkvision 60 ft., Passive Perception 13'
-    languages = ''
+    skills = "Perception +3, Stealth +4, Survival +3"
+    senses = "Darkvision 60 ft., Passive Perception 13"
+    languages = ""
     strength = Ability(14)
     dexterity = Ability(15)
     constitution = Ability(13)
@@ -443,11 +451,11 @@ class Ettercap(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 44
-    hit_dice = '8d8 + 8'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d8 + 8"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -473,13 +481,14 @@ class Ettin(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8
       + 5) piercing damage.
     """
-    name = 'Ettin'
-    description = 'Large giant, chaotic evil'
+
+    name = "Ettin"
+    description = "Large giant, chaotic evil"
     challenge_rating = 4
     armor_class = 12
-    skills = 'Perception +4'
-    senses = 'Darkvision 60 ft., Passive Perception 14'
-    languages = 'Giant, Orc'
+    skills = "Perception +4"
+    senses = "Darkvision 60 ft., Passive Perception 14"
+    languages = "Giant, Orc"
     strength = Ability(21)
     dexterity = Ability(8)
     constitution = Ability(17)
@@ -492,9 +501,9 @@ class Ettin(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 85
-    hit_dice = '10d10 + 30'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "10d10 + 30"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

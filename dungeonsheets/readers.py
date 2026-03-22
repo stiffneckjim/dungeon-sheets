@@ -1,17 +1,16 @@
 import importlib
-import os.path
-import warnings
 import json
-import re
-from functools import lru_cache
 import logging
+import os.path
+import re
+import warnings
+from functools import lru_cache
+from pathlib import Path
 from typing import Union
 
-from pathlib import Path
-
 from dungeonsheets import exceptions
-from dungeonsheets.magic_items import MagicItem
 from dungeonsheets.content_registry import find_content
+from dungeonsheets.magic_items import MagicItem
 
 log = logging.getLogger(__file__)
 
@@ -156,13 +155,9 @@ class Roll20CharacterReader(JSONCharacterReader):
             match = prof_re.match(obj["name"])
             if match:
                 prof_id = match.group(1)
-                prof_type = self.get_attrib(
-                    f"repeating_proficiencies_{prof_id}_prof_type"
-                )
+                prof_type = self.get_attrib(f"repeating_proficiencies_{prof_id}_prof_type")
                 if kind is None or prof_type == kind.upper():
-                    yield self.get_attrib(
-                        f"repeating_proficiencies_{prof_id}_name"
-                    ).lower()
+                    yield self.get_attrib(f"repeating_proficiencies_{prof_id}_name").lower()
 
     def equipment(self, kind=None):
         """Iterator over items in the character's inventory."""
@@ -173,9 +168,7 @@ class Roll20CharacterReader(JSONCharacterReader):
                 item_id = match.group(1)
                 item_name = self.get_attrib(match.group(0))
                 item_count = int(
-                    self.get_attrib(
-                        f"repeating_inventory_{item_id}_itemcount", default=1
-                    )
+                    self.get_attrib(f"repeating_inventory_{item_id}_itemcount", default=1)
                 )
                 # item_weight = self.get_attrib(
                 #     f"repeating_inventory_{item_id}_itemweight", default=0
@@ -206,21 +199,15 @@ class Roll20CharacterReader(JSONCharacterReader):
 
         """
         # "name": "repeating_spell-cantrip_-MEzYWPA5cUZYd4ZOvMS_spellname",
-        prof_re = re.compile(
-            "repeating_spell-(cantrip|[0-9]+)_([-0-9a-zA-Z]+)_spellname"
-        )
+        prof_re = re.compile("repeating_spell-(cantrip|[0-9]+)_([-0-9a-zA-Z]+)_spellname")
         for obj in self.json_data()["attribs"]:
             match = prof_re.match(obj["name"])
             if match:
                 level = match.group(1)
                 spell_id = match.group(2)
-                spell_name = self.get_attrib(
-                    f"repeating_spell-{level}_{spell_id}_spellname"
-                )
+                spell_name = self.get_attrib(f"repeating_spell-{level}_{spell_id}_spellname")
                 is_prepared = self.as_int(
-                    self.get_attrib(
-                        f"repeating_spell-{level}_{spell_id}_spellprepared", default=0
-                    )
+                    self.get_attrib(f"repeating_spell-{level}_{spell_id}_spellprepared", default=0)
                 )
                 if not prepared or is_prepared:
                     yield spell_name.lower()
@@ -273,9 +260,7 @@ class Roll20CharacterReader(JSONCharacterReader):
             "stealth",
             "survival",
         ]
-        skill_profs = [
-            skill for skill in skill_names if self.has_skill_proficiency(skill)
-        ]
+        skill_profs = [skill for skill in skill_names if self.has_skill_proficiency(skill)]
         char_props["skill_proficiencies"] = skill_profs
         # Other proficiencies
         char_props["weapon_proficiencies"] = self.proficiencies("weapon")
@@ -394,8 +379,7 @@ class FoundryCharacterReader(JSONCharacterReader):
         items = self.json_data()["items"]
         for item in items:
             is_valid_weapon = (
-                item["type"] == "weapon"
-                and item["name"].lower() not in self._invalid_weapons
+                item["type"] == "weapon" and item["name"].lower() not in self._invalid_weapons
             )
             if is_valid_weapon:
                 yield item["name"].lower()
@@ -404,19 +388,13 @@ class FoundryCharacterReader(JSONCharacterReader):
         items = self.json_data()["items"]
         armor_types = ["light", "medium", "heavy"]
         for item in items:
-            if (
-                item["type"] == "equipment"
-                and item["data"]["armor"]["type"] in armor_types
-            ):
+            if item["type"] == "equipment" and item["data"]["armor"]["type"] in armor_types:
                 return item["name"].lower()
 
     def shield(self):
         items = self.json_data()["items"]
         for item in items:
-            if (
-                item["type"] == "equipment"
-                and item["data"]["armor"]["type"] == "shield"
-            ):
+            if item["type"] == "equipment" and item["data"]["armor"]["type"] == "shield":
                 return item["name"].lower()
 
     def equipment(self):
@@ -440,14 +418,9 @@ class FoundryCharacterReader(JSONCharacterReader):
 
         """
         item_types = ["weapon", "armor", "equipment"]
-        items = [
-            item for item in self.json_data()["items"] if item["type"] in item_types
-        ]
-        from pprint import pprint
+        items = [item for item in self.json_data()["items"] if item["type"] in item_types]
 
-        magic_items = [
-            item for item in items if item["data"]["rarity"] not in ["Common", ""]
-        ]
+        magic_items = [item for item in items if item["data"]["rarity"] not in ["Common", ""]]
 
         # Convert magic items into classes
         def make_magic_item(data):
@@ -546,9 +519,7 @@ class FoundryCharacterReader(JSONCharacterReader):
         ]
         skill_profs = [skill for skill in skill_names if self.skill_proficiency(skill)]
         char_props["skill_proficiencies"] = skill_profs
-        skill_expertise = [
-            skill for skill in skill_names if self.skill_expertise(skill)
-        ]
+        skill_expertise = [skill for skill in skill_names if self.skill_expertise(skill)]
         char_props["skill_expertise"] = skill_expertise
         # Other proficiencies
         char_props["weapon_proficiencies"] = self.proficiencies("weapon")

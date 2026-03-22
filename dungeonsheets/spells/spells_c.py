@@ -218,9 +218,7 @@ class ChainLightning(Spell):
     casting_time = "1 action"
     casting_range = "150 feet"
     components = ("V", "S", "M")
-    materials = (
-        "A bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins"
-    )
+    materials = "A bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Evocation"
@@ -445,8 +443,7 @@ class Clairvoyance(Spell):
     casting_range = "1 mile"
     components = ("V", "S", "M")
     materials = (
-        "A focus worth at least 100 gp, either a jeweled horn for hearing or a glass"
-        " eye for seeing"
+        "A focus worth at least 100 gp, either a jeweled horn for hearing or a glass eye for seeing"
     )
     duration = "Concentration, up to 10 minutes"
     ritual = False
@@ -463,7 +460,7 @@ class Clone(Spell):
     as its vessel remains undisturbed.
 
 
-     At any time after the clone matures, if
+    At any time after the clone matures, if
     the original creature dies, its soul transfers to the clone, provided that the
     soul is free and willing to return. The clone is physically identical to the
     original and has the same personality, memories, and abilities, but none of the
@@ -1019,7 +1016,7 @@ class ConjureFey(Spell):
 class ConjureMinorElementals(Spell):
     """You summon elementals that appear in unoccupied spaces that you can see within
     range.
-     You choose one the following options for what appears:
+    You choose one the following options for what appears:
     -One elemental
     of challenge rating 2 or lower
     -Two elementals of challenge rating 1 or lower
@@ -1085,12 +1082,12 @@ class ConjureWoodlandBeings(Spell):
     within range.
 
     Choose one of the following options for what appears:
-     -  One
+    -  One
     fey creature of challenge rating 2 or lower
-     -  Two fey creatures of challenge
+    -  Two fey creatures of challenge
     rating 1 or lower
-     -  Four fey creatures of challenge rating 1/2 or lower
-     -
+    -  Four fey creatures of challenge rating 1/2 or lower
+    -
     Eight fey creatures of challenge rating 1/4 or lower
 
     A summoned creature
@@ -1240,8 +1237,7 @@ class Contingency(Spell):
     casting_range = "Self"
     components = ("V", "S", "M")
     materials = (
-        "A statuette of yourself carved from ivory and decorated with gems worth at"
-        " least 1,500 gp"
+        "A statuette of yourself carved from ivory and decorated with gems worth at least 1,500 gp"
     )
     duration = "10 days"
     ritual = False
@@ -1637,9 +1633,7 @@ class CreateOrDestroyWater(Spell):
     casting_time = "1 action"
     casting_range = "30 feet"
     components = ("V", "S", "M")
-    materials = (
-        "A drop of water if creating water or a few grains of sand if destroying it"
-    )
+    materials = "A drop of water if creating water or a few grains of sand if destroying it"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"

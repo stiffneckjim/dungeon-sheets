@@ -2,11 +2,9 @@ import re
 
 from jinja2 import Environment, PackageLoader
 
-
-from dungeonsheets.stats import mod_str, ability_mod_str, stat_abbreviation, str_to_list
 from dungeonsheets.encounter import xp_thresholds
 from dungeonsheets.monsters import challenge_rating_to_xp
-
+from dungeonsheets.stats import ability_mod_str, mod_str, stat_abbreviation, str_to_list
 
 # A dice string, with optional backticks: ``1d6 + 3``
 dice_re = re.compile(r"`*(\d+d\d+(?:\s*\+\s*\d+)?)`*")

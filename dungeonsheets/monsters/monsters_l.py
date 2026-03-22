@@ -35,13 +35,14 @@ class Lamia(Monster):
       target has disadvantage on Wisdom saving throws and all ability
       checks.
     """
-    name = 'Lamia'
-    description = 'Large monstrosity, chaotic evil'
+
+    name = "Lamia"
+    description = "Large monstrosity, chaotic evil"
     challenge_rating = 4
     armor_class = 13
-    skills = 'Deception +7, Insight +4, Stealth +3'
-    senses = 'Darkvision 60 ft., Passive Perception 12'
-    languages = 'Abyssal, Common'
+    skills = "Deception +7, Insight +4, Stealth +3"
+    senses = "Darkvision 60 ft., Passive Perception 12"
+    languages = "Abyssal, Common"
     strength = Ability(16)
     dexterity = Ability(13)
     constitution = Ability(15)
@@ -54,11 +55,11 @@ class Lamia(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 97
-    hit_dice = '13d10 + 26'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "13d10 + 26"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -79,12 +80,13 @@ class Lemure(Monster):
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 2 (1d4)
       bludgeoning damage.
     """
-    name = 'Lemure'
-    description = 'Medium fiend, lawful evil'
+
+    name = "Lemure"
+    description = "Medium fiend, lawful evil"
     challenge_rating = 0
     armor_class = 7
-    skills = ''
-    senses = 'Darkvision 120 ft., Passive Perception 10'
+    skills = ""
+    senses = "Darkvision 120 ft., Passive Perception 10"
     languages = "understands infernal but can't speak"
     strength = Ability(10)
     dexterity = Ability(5)
@@ -98,11 +100,11 @@ class Lemure(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 13
-    hit_dice = '3d8 + 0'
-    condition_immunities = 'charmed, frightened, poisoned'
-    damage_immunities = 'fire, poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "3d8 + 0"
+    condition_immunities = "charmed, frightened, poisoned"
+    damage_immunities = "fire, poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -161,13 +163,14 @@ class Lich(Monster):
       Constitution saving throw against this magic, taking 21 (6d6) necrotic
       damage on a failed save, or half as much damage on a successful one.
     """
-    name = 'Lich'
-    description = 'Medium undead, any evil alignment'
+
+    name = "Lich"
+    description = "Medium undead, any evil alignment"
     challenge_rating = 21
     armor_class = 17
-    skills = 'Arcana +18, History +12, Insight +9, Perception +9'
-    senses = 'Truesight 120 ft., Passive Perception 19'
-    languages = 'Common plus up to five other languages'
+    skills = "Arcana +18, History +12, Insight +9, Perception +9"
+    senses = "Truesight 120 ft., Passive Perception 19"
+    languages = "Common plus up to five other languages"
     strength = Ability(11)
     dexterity = Ability(16)
     constitution = Ability(16)
@@ -180,12 +183,39 @@ class Lich(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 135
-    hit_dice = '18d8 + 54'
-    condition_immunities = 'charmed, exhaustion, frightened, paralyzed, poisoned'
-    damage_immunities = 'poison, bludgeoning, piercing, and slashing from nonmagical weapons'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
-    spells = ['mage hand', 'prestidigitation', 'ray of frost', 'detect magic', 'magic missile', 'shield', 'thunderwave', 'acid arrow', 'detect thoughts', 'invisibility', 'mirror image', 'animate dead', 'counterspell', 'dispel magic', 'fireball', 'blight', 'dimension door', 'cloudkill', 'scrying', 'disintegrate', 'globe of invulnerability', 'finger of death', 'plane shift', 'dominate monster', 'power word stun', 'power word kill']
+    hit_dice = "18d8 + 54"
+    condition_immunities = "charmed, exhaustion, frightened, paralyzed, poisoned"
+    damage_immunities = "poison, bludgeoning, piercing, and slashing from nonmagical weapons"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
+    spells = [
+        "mage hand",
+        "prestidigitation",
+        "ray of frost",
+        "detect magic",
+        "magic missile",
+        "shield",
+        "thunderwave",
+        "acid arrow",
+        "detect thoughts",
+        "invisibility",
+        "mirror image",
+        "animate dead",
+        "counterspell",
+        "dispel magic",
+        "fireball",
+        "blight",
+        "dimension door",
+        "cloudkill",
+        "scrying",
+        "disintegrate",
+        "globe of invulnerability",
+        "finger of death",
+        "plane shift",
+        "dominate monster",
+        "power word stun",
+        "power word kill",
+    ]
 
 
 class Lion(Monster):
@@ -215,13 +245,14 @@ class Lion(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
       3) slashing damage.
     """
-    name = 'Lion'
-    description = 'Large beast, unaligned'
+
+    name = "Lion"
+    description = "Large beast, unaligned"
     challenge_rating = 1
     armor_class = 12
-    skills = 'Perception +3, Stealth +6'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3, Stealth +6"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(13)
@@ -234,11 +265,11 @@ class Lion(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 26
-    hit_dice = '4d10 + 4'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "4d10 + 4"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -251,13 +282,14 @@ class Lizard(Monster):
       Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1
       piercing damage.
     """
-    name = 'Lizard'
-    description = 'Tiny beast, unaligned'
+
+    name = "Lizard"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0
     armor_class = 10
-    skills = ''
-    senses = 'Darkvision 30 ft., Passive Perception 9'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 30 ft., Passive Perception 9"
+    languages = ""
     strength = Ability(2)
     dexterity = Ability(11)
     constitution = Ability(10)
@@ -270,11 +302,11 @@ class Lizard(Monster):
     climb_speed = 20
     burrow_speed = 0
     hp_max = 2
-    hit_dice = '1d4 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -302,13 +334,14 @@ class Lizardfolk(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
       2) piercing damage.
     """
-    name = 'Lizardfolk'
-    description = 'Medium humanoid, neutral'
+
+    name = "Lizardfolk"
+    description = "Medium humanoid, neutral"
     challenge_rating = 0.5
     armor_class = 15
-    skills = 'Perception +3, Stealth +4, Survival +5'
-    senses = 'Passive Perception 13'
-    languages = 'Draconic'
+    skills = "Perception +3, Stealth +4, Survival +5"
+    senses = "Passive Perception 13"
+    languages = "Draconic"
     strength = Ability(15)
     dexterity = Ability(10)
     constitution = Ability(13)
@@ -321,9 +354,9 @@ class Lizardfolk(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '4d8 + 4'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "4d8 + 4"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

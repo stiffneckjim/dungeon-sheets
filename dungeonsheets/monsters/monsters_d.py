@@ -21,13 +21,13 @@ class Dao(Monster):
       The dao's innate spellcasting ability is Charisma (spell save DC
       14, +6 to hit with spell attacks). It can innately cast the
       following spells, requiring no material components:
-      
+
       - At will: detect evil and good, detect magic, stone shape.
       - 3/day each: passwall, move earth, tongues.
       - 1/day each: conjure elemental (earth elemental only), gaseous
         form, invisibility, phantasmal killer, plane shift, wall of
         stone.
-      
+
     Sure-Footed.
       The dao has advantage on Strength and Dexterity saving throws
       made against effects that would knock it prone.
@@ -46,15 +46,16 @@ class Dao(Monster):
       check or be knocked prone.
 
     """
-    name = 'Dao'
-    description = 'Large elemental, neutral evil'
+
+    name = "Dao"
+    description = "Large elemental, neutral evil"
     challenge_rating = 11
     armor_class = 18
-    skills = ''
-    saving_throws = 'Int +5, Wis +5, Cha +6'
-    condition_immunities = 'petrified'
-    senses = 'darkvision 120ft., passive Perception 11'
-    languages = 'Terran'
+    skills = ""
+    saving_throws = "Int +5, Wis +5, Cha +6"
+    condition_immunities = "petrified"
+    senses = "darkvision 120ft., passive Perception 11"
+    languages = "Terran"
     strength = Ability(23)
     dexterity = Ability(12)
     constitution = Ability(24)
@@ -67,8 +68,21 @@ class Dao(Monster):
     climb_speed = 0
     burrow_speed = 30
     hp_max = 187
-    hit_dice = '15d10 + 105'
-    spells = ['detect evil and good', 'detect magic', 'stone shape', 'passwall', 'move earth', 'tongues', 'conjure elemental', 'gaseous form', 'invisibility', 'phantasmal killer', 'plane shift', 'wall of stone']
+    hit_dice = "15d10 + 105"
+    spells = [
+        "detect evil and good",
+        "detect magic",
+        "stone shape",
+        "passwall",
+        "move earth",
+        "tongues",
+        "conjure elemental",
+        "gaseous form",
+        "invisibility",
+        "phantasmal killer",
+        "plane shift",
+        "wall of stone",
+    ]
 
 
 class Darkmantle(Monster):
@@ -89,12 +103,12 @@ class Darkmantle(Monster):
       the attack roll, it attaches by engulfing the target's head, and the
       target is also blinded and unable to breathe while the darkmantle is
       attached in this way.
-      
+
       While attached to the target, the darkmantle can attack no other
       creature except the target but has advantage on its attack rolls. The
       darkmantle's speed also becomes 0, it can't benefit from any bonus to
       its speed, and it moves with the target.
-      
+
       A creature can detach the darkmantle by making a successful DC 13
       Strength check as an action. On its turn, the darkmantle can detach
       itself from the target by using 5 feet of movement.
@@ -107,13 +121,14 @@ class Darkmantle(Monster):
       overlaps with an area of light created by a spell of 2nd level or
       lower, the spell creating the light is dispelled.
     """
-    name = 'Darkmantle'
-    description = 'Small monstrosity, unaligned'
+
+    name = "Darkmantle"
+    description = "Small monstrosity, unaligned"
     challenge_rating = 0.5
     armor_class = 11
-    skills = 'Stealth +3'
-    senses = 'Blindsight 60 ft., Passive Perception 10'
-    languages = ''
+    skills = "Stealth +3"
+    senses = "Blindsight 60 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(16)
     dexterity = Ability(12)
     constitution = Ability(13)
@@ -126,11 +141,11 @@ class Darkmantle(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '5d6 + 5'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d6 + 5"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -155,13 +170,14 @@ class DeathDog(Monster):
       (1d10) on a failure. This reduction lasts until the disease is cured.
       The creature dies if the disease reduces its hit point maximum to 0.
     """
-    name = 'Death Dog'
-    description = 'Medium monstrosity, neutral evil'
+
+    name = "Death Dog"
+    description = "Medium monstrosity, neutral evil"
     challenge_rating = 1
     armor_class = 12
-    skills = 'Perception +5, Stealth +4'
-    senses = 'Darkvision 120 ft., Passive Perception 15'
-    languages = ''
+    skills = "Perception +5, Stealth +4"
+    senses = "Darkvision 120 ft., Passive Perception 15"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(14)
     constitution = Ability(14)
@@ -174,11 +190,11 @@ class DeathDog(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 39
-    hit_dice = '6d8 + 12'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d8 + 12"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -195,9 +211,9 @@ class DeepGnomeSvirfneblin(Monster):
       The gnome's innate spellcasting ability is Intelligence (spell save DC
       11). It can innately cast the following spells, requiring no material
       components:
-      
+
       At will: nondetection (self only)
-      
+
       1/day each: blindness/deafness, blur, disguise self
 
     # Actions
@@ -212,13 +228,14 @@ class DeepGnomeSvirfneblin(Monster):
       repeat the saving throw at the end of each of its turns, ending the
       effect on itself on a success
     """
-    name = 'Deep Gnome (Svirfneblin)'
-    description = 'Small humanoid, neutral good'
+
+    name = "Deep Gnome (Svirfneblin)"
+    description = "Small humanoid, neutral good"
     challenge_rating = 0.5
     armor_class = 15
-    skills = 'Investigation +3, Perception +2, Stealth +4'
-    senses = 'Darkvision 120 ft., Passive Perception 12'
-    languages = 'Gnomish, Terran, Undercommon'
+    skills = "Investigation +3, Perception +2, Stealth +4"
+    senses = "Darkvision 120 ft., Passive Perception 12"
+    languages = "Gnomish, Terran, Undercommon"
     strength = Ability(15)
     dexterity = Ability(14)
     constitution = Ability(14)
@@ -231,11 +248,11 @@ class DeepGnomeSvirfneblin(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 16
-    hit_dice = '3d6 + 6'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d6 + 6"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -248,13 +265,14 @@ class Deer(Monster):
       Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4)
       piercing damage.
     """
-    name = 'Deer'
-    description = 'Medium beast, unaligned'
+
+    name = "Deer"
+    description = "Medium beast, unaligned"
     challenge_rating = 0
     armor_class = 13
-    skills = ''
-    senses = 'Passive Perception 12'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 12"
+    languages = ""
     strength = Ability(11)
     dexterity = Ability(16)
     constitution = Ability(11)
@@ -267,11 +285,11 @@ class Deer(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 4
-    hit_dice = '1d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -286,9 +304,9 @@ class Deva(Monster):
       The deva's spellcasting ability is Charisma (spell save DC 17). The
       deva can innately cast the following spells, requiring only verbal
       components:
-      
+
       At will: detect evil and good
-      
+
       1/day each: commune, raise dead
     Magic Resistance.
       The deva has advantage on saving throws against spells and other
@@ -311,20 +329,21 @@ class Deva(Monster):
       form. It reverts to its true form if it dies. Any equipment it is
       wearing or carrying is absorbed or borne by the new form (the deva's
       choice).
-      
+
       In a new form, the deva retains its game statistics and ability to
       speak, but its AC, movement modes, Strength, Dexterity, and special
       senses are replaced by those of the new form, and it gains any
       statistics and capabilities (except class features, legendary actions,
       and lair actions) that the new form has but that it lacks.
     """
-    name = 'Deva'
-    description = 'Medium celestial, lawful good'
+
+    name = "Deva"
+    description = "Medium celestial, lawful good"
     challenge_rating = 10
     armor_class = 17
-    skills = 'Insight +9, Perception +9'
-    senses = 'Darkvision 120 ft., Passive Perception 19'
-    languages = 'all, telepathy 120 ft.'
+    skills = "Insight +9, Perception +9"
+    senses = "Darkvision 120 ft., Passive Perception 19"
+    languages = "all, telepathy 120 ft."
     strength = Ability(18)
     dexterity = Ability(18)
     constitution = Ability(18)
@@ -337,11 +356,11 @@ class Deva(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 136
-    hit_dice = '16d8 + 64'
-    condition_immunities = 'charmed, exhaustion, frightened'
-    damage_immunities = ''
-    damage_resistances = 'radiant'
-    damage_vulnerabilities = ''
+    hit_dice = "16d8 + 64"
+    condition_immunities = "charmed, exhaustion, frightened"
+    damage_immunities = ""
+    damage_resistances = "radiant"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -363,13 +382,14 @@ class DireWolf(Monster):
       + 3) piercing damage. If the target is a creature, it must succeed on
       a DC 13 Strength saving throw or be knocked prone.
     """
-    name = 'Dire Wolf'
-    description = 'Large beast, unaligned'
+
+    name = "Dire Wolf"
+    description = "Large beast, unaligned"
     challenge_rating = 1
     armor_class = 14
-    skills = 'Perception +3, Stealth +4'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3, Stealth +4"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(15)
@@ -382,11 +402,11 @@ class DireWolf(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 37
-    hit_dice = '5d10 + 10'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d10 + 10"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -400,25 +420,25 @@ class Djinni(Monster):
       The djinni's innate spellcasting ability is Charisma (spell save DC
       17, +9 to hit with spell attacks). It can innately cast the following
       spells, requiring no material components:
-      
-  
-      
+
+
+
       At will: detect evil and good, detect magic, thunderwave
-      
+
       3/day each: create food and water (can create wine instead of water),
       tongues, wind walk
-      
+
       1/day each: conjure elemental (air elemental only), creation, gaseous
       form, invisibility, major image, plane shift
     Variant: Genie Powers.
       Genies have a variety of magical capabilities, including spells. A few
       have even greater powers that allow them to alter their appearance or
       the nature of reality.
-      
-  
-      
+
+
+
       Disguises.
-      
+
       Some genies can veil themselves in illusion to pass as other similarly
       shaped creatures. Such genies can innately cast the disguise self
       spell at will, often with a longer duration than is normal for that
@@ -426,9 +446,9 @@ class Djinni(Monster):
       times per day, possibly with a longer duration than normal. Such
       genies can change only their own shape, but a rare few can use the
       spell on other creatures and objects as well.
-      
+
       Wishes.
-      
+
       The genie power to grant wishes is legendary among mortals. Only the
       most potent genies, such as those among the nobility, can do so. A
       particular genie that has this power can grant one to three wishes to
@@ -437,7 +457,7 @@ class Djinni(Monster):
       year). and cosmic law dictates that the same genie can expend its
       limit of wishes on a specific creature only once in that creature's
       existence.
-      
+
       To be granted a wish, a creature within 60 feet of the genie states a
       desired effect to it. The genie can then cast the wish spell on the
       creature's behalf to bring about the effect. Depending on the genie's
@@ -462,19 +482,20 @@ class Djinni(Monster):
       restrained by it. The djinni can move the whirlwind up to 60 feet as
       an action, and creatures restrained by the whirlwind move with it. The
       whirlwind ends if the djinni loses sight of it.
-      
+
       A creature can use its action to free a creature restrained by the
       whirlwind, including itself, by succeeding on a DC 18 Strength check.
       If the check succeeds, the creature is no longer restrained and moves
       to the nearest space outside the whirlwind.
     """
-    name = 'Djinni'
-    description = 'Large elemental, chaotic good'
+
+    name = "Djinni"
+    description = "Large elemental, chaotic good"
     challenge_rating = 11
     armor_class = 17
-    skills = ''
-    senses = 'Darkvision 120 ft., Passive Perception 13'
-    languages = 'Auran'
+    skills = ""
+    senses = "Darkvision 120 ft., Passive Perception 13"
+    languages = "Auran"
     strength = Ability(21)
     dexterity = Ability(15)
     constitution = Ability(22)
@@ -487,14 +508,25 @@ class Djinni(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 161
-    hit_dice = '14d10 + 84'
-    condition_immunities = ''
-    damage_immunities = 'lightning, thunder'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
-    spells = ["detect good and evil", "detect magic", "thunderwave",
-              "create food and water", "tongues", "wind walk",
-              "conjure elemental", "creation", "gaseous form", "invisibility", "major image", "plane shift"]
+    hit_dice = "14d10 + 84"
+    condition_immunities = ""
+    damage_immunities = "lightning, thunder"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
+    spells = [
+        "detect good and evil",
+        "detect magic",
+        "thunderwave",
+        "create food and water",
+        "tongues",
+        "wind walk",
+        "conjure elemental",
+        "creation",
+        "gaseous form",
+        "invisibility",
+        "major image",
+        "plane shift",
+    ]
 
 
 class Doppelganger(Monster):
@@ -532,13 +564,14 @@ class Doppelganger(Monster):
       (Insight) and Charisma (Deception, Intimidation, and Persuasion)
       checks against the target.
     """
-    name = 'Doppelganger'
-    description = 'Medium monstrosity, unaligned'
+
+    name = "Doppelganger"
+    description = "Medium monstrosity, unaligned"
     challenge_rating = 3
     armor_class = 14
-    skills = 'Deception +6, Insight +3'
-    senses = 'Darkvision 60 ft., Passive Perception 11'
-    languages = 'Common'
+    skills = "Deception +6, Insight +3"
+    senses = "Darkvision 60 ft., Passive Perception 11"
+    languages = "Common"
     strength = Ability(11)
     dexterity = Ability(18)
     constitution = Ability(14)
@@ -551,11 +584,11 @@ class Doppelganger(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 52
-    hit_dice = '8d8 + 16'
-    condition_immunities = 'charmed'
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d8 + 16"
+    condition_immunities = "charmed"
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -568,13 +601,14 @@ class DraftHorse(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d4 +
       4) bludgeoning damage.
     """
-    name = 'Draft Horse'
-    description = 'Large beast, unaligned'
+
+    name = "Draft Horse"
+    description = "Large beast, unaligned"
     challenge_rating = 0.25
     armor_class = 10
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = ""
     strength = Ability(18)
     dexterity = Ability(10)
     constitution = Ability(12)
@@ -587,11 +621,11 @@ class DraftHorse(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 19
-    hit_dice = '3d10 + 3'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d10 + 3"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -625,13 +659,14 @@ class DragonTurtle(Monster):
       on a successful one. Being underwater doesn't grant resistance against
       this damage.
     """
-    name = 'Dragon Turtle'
-    description = 'Gargantuan dragon, neutral'
+
+    name = "Dragon Turtle"
+    description = "Gargantuan dragon, neutral"
     challenge_rating = 17
     armor_class = 20
-    skills = ''
-    senses = 'Darkvision 120 ft., Passive Perception 11'
-    languages = 'Aquan, Draconic'
+    skills = ""
+    senses = "Darkvision 120 ft., Passive Perception 11"
+    languages = "Aquan, Draconic"
     strength = Ability(25)
     dexterity = Ability(10)
     constitution = Ability(20)
@@ -644,11 +679,11 @@ class DragonTurtle(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 341
-    hit_dice = '22d20 + 110'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = 'fire'
-    damage_vulnerabilities = ''
+    hit_dice = "22d20 + 110"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = "fire"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -675,13 +710,14 @@ class Dretch(Monster):
       poisoned in this way, the target can take either an action or a bonus
       action on its turn, not both, and can't take reactions.
     """
-    name = 'Dretch'
-    description = 'Small fiend, chaotic evil'
+
+    name = "Dretch"
+    description = "Small fiend, chaotic evil"
     challenge_rating = 0.25
     armor_class = 11
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 9'
-    languages = 'Abyssal, telepathy 60 ft. (works only with creatures that understand Abyssal)'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 9"
+    languages = "Abyssal, telepathy 60 ft. (works only with creatures that understand Abyssal)"
     strength = Ability(11)
     dexterity = Ability(11)
     constitution = Ability(12)
@@ -694,11 +730,11 @@ class Dretch(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 18
-    hit_dice = '4d6 + 4'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "4d6 + 4"
+    condition_immunities = "poisoned"
+    damage_immunities = "poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -712,9 +748,9 @@ class Drider(Monster):
       The drider's innate spellcasting ability is Wisdom (spell save DC 13).
       The drider can innately cast the following spells, requiring no
       material components:
-      
+
       At will: dancing lights
-      
+
       1/day each: darkness, faerie fire
     Spider Climb.
       The drider can climb difficult surfaces, including upside down on
@@ -741,13 +777,14 @@ class Drider(Monster):
       Ranged Weapon Attack: +6 to hit, range 150/600 ft., one target. Hit: 7
       (1d8 + 3) piercing damage plus 4 (1d8) poison damage.
     """
-    name = 'Drider'
-    description = 'Large monstrosity, chaotic evil'
+
+    name = "Drider"
+    description = "Large monstrosity, chaotic evil"
     challenge_rating = 6
     armor_class = 19
-    skills = 'Perception +5, Stealth +9'
-    senses = 'Darkvision 120 ft., Passive Perception 15'
-    languages = 'Elvish, Undercommon'
+    skills = "Perception +5, Stealth +9"
+    senses = "Darkvision 120 ft., Passive Perception 15"
+    languages = "Elvish, Undercommon"
     strength = Ability(16)
     dexterity = Ability(16)
     constitution = Ability(18)
@@ -760,11 +797,11 @@ class Drider(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 123
-    hit_dice = '13d10 + 52'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "13d10 + 52"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -777,9 +814,9 @@ class Drow(Monster):
     Innate Spellcasting.
       The drow's spellcasting ability is Charisma (spell save DC 11). It can
       innately cast the following spells, requiring no material components:
-      
+
       At will: dancing lights
-      
+
       1/day each: darkness, faerie fire
     Sunlight Sensitivity.
       While in sunlight, the drow has disadvantage on attack rolls, as well
@@ -798,13 +835,14 @@ class Drow(Monster):
       poisoned in this way. The target wakes up if it takes damage or if
       another creature takes an action to shake it awake.
     """
-    name = 'Drow'
-    description = 'Medium humanoid, neutral evil'
+
+    name = "Drow"
+    description = "Medium humanoid, neutral evil"
     challenge_rating = 0.25
     armor_class = 15
-    skills = 'Perception +2, Stealth +4'
-    senses = 'Darkvision 120 ft., Passive Perception 12'
-    languages = 'Elvish, Undercommon'
+    skills = "Perception +2, Stealth +4"
+    senses = "Darkvision 120 ft., Passive Perception 12"
+    languages = "Elvish, Undercommon"
     strength = Ability(10)
     dexterity = Ability(14)
     constitution = Ability(10)
@@ -817,11 +855,11 @@ class Drow(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 13
-    hit_dice = '3d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -842,13 +880,14 @@ class Druid(Monster):
       ft., one target. Hit: 3 (1d6) bludgeoning damage, or 6 (1d8 + 2)
       bludgeoning damage with shillelagh or if wielded with two hands.
     """
-    name = 'Druid'
-    description = 'Medium humanoid, any alignment'
+
+    name = "Druid"
+    description = "Medium humanoid, any alignment"
     challenge_rating = 2
     armor_class = 11
-    skills = 'Medicine +4, Nature +3, Perception +4'
-    senses = 'Passive Perception 14'
-    languages = 'Druidic plus any two languages'
+    skills = "Medicine +4, Nature +3, Perception +4"
+    senses = "Passive Perception 14"
+    languages = "Druidic plus any two languages"
     strength = Ability(10)
     dexterity = Ability(12)
     constitution = Ability(13)
@@ -861,12 +900,22 @@ class Druid(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 27
-    hit_dice = '5d8 + 5'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
-    spells = ['druidcraft', 'produce flame', 'shillelagh', 'entangle', 'longstrider', 'speak with animals', 'thunderwave', 'animal messenger', 'barkskin']
+    hit_dice = "5d8 + 5"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
+    spells = [
+        "druidcraft",
+        "produce flame",
+        "shillelagh",
+        "entangle",
+        "longstrider",
+        "speak with animals",
+        "thunderwave",
+        "animal messenger",
+        "barkskin",
+    ]
 
 
 class Dryad(Monster):
@@ -876,13 +925,13 @@ class Dryad(Monster):
       The dryad's innate spellcasting ability is Charisma (spell save DC
       14). The dryad can innately cast the following spells, requiring no
       material components:
-      
-  
-      
+
+
+
       At will: druidcraft
-      
+
       3/day each: entangle, goodberry
-      
+
       1/day each: barkskin, pass without trace, shillelagh
     Magic Resistance.
       The dryad has advantage on saving throws against spells and other
@@ -910,24 +959,25 @@ class Dryad(Monster):
       regards the dryad as a trusted friend to be heeded and protected.
       Although the target isn't under the dryad's control, it takes the
       dryad's requests or actions in the most favorable way it can.
-      
+
       Each time the dryad or its allies do anything harmful to the target,
       it can repeat the saving throw, ending the effect on itself on a
       success. Otherwise, the effect lasts 24 hours or until the dryad dies,
       is on a different plane of existence from the target, or ends the
       effect as a bonus action. If a target's saving throw is successful,
       the target is immune to the dryad's Fey Charm for the next 24 hours.
-      
+
       The dryad can have no more than one humanoid and up to three beasts
       charmed at a time.
     """
-    name = 'Dryad'
-    description = 'Medium fey, neutral'
+
+    name = "Dryad"
+    description = "Medium fey, neutral"
     challenge_rating = 1
     armor_class = 11
-    skills = 'Perception +4, Stealth +5'
-    senses = 'Darkvision 60 ft., Passive Perception 14'
-    languages = 'Elvish, Sylvan'
+    skills = "Perception +4, Stealth +5"
+    senses = "Darkvision 60 ft., Passive Perception 14"
+    languages = "Elvish, Sylvan"
     strength = Ability(10)
     dexterity = Ability(12)
     constitution = Ability(11)
@@ -940,11 +990,11 @@ class Dryad(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '5d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -980,13 +1030,14 @@ class Duergar(Monster):
       hour (as if concentrating on a spell). Any equipment the duergar wears
       or carries is invisible with it .
     """
-    name = 'Duergar'
-    description = 'Medium humanoid, lawful evil'
+
+    name = "Duergar"
+    description = "Medium humanoid, lawful evil"
     challenge_rating = 1
     armor_class = 16
-    skills = ''
-    senses = 'Darkvision 120 ft., Passive Perception 10'
-    languages = 'Dwarvish, Undercommon'
+    skills = ""
+    senses = "Darkvision 120 ft., Passive Perception 10"
+    languages = "Dwarvish, Undercommon"
     strength = Ability(14)
     dexterity = Ability(11)
     constitution = Ability(14)
@@ -999,11 +1050,11 @@ class Duergar(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 26
-    hit_dice = '4d8 + 8'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = 'poison'
-    damage_vulnerabilities = ''
+    hit_dice = "4d8 + 8"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = "poison"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1037,13 +1088,14 @@ class DustMephit(Monster):
       other mephits. It remains for 1 minute, until it or its summoner dies,
       or until its summoner dismisses it as an action.
     """
-    name = 'Dust Mephit'
-    description = 'Small elemental, neutral evil'
+
+    name = "Dust Mephit"
+    description = "Small elemental, neutral evil"
     challenge_rating = 0.5
     armor_class = 12
-    skills = 'Perception +2, Stealth +4'
-    senses = 'Darkvision 60 ft., Passive Perception 12'
-    languages = 'Auran, Terran'
+    skills = "Perception +2, Stealth +4"
+    senses = "Darkvision 60 ft., Passive Perception 12"
+    languages = "Auran, Terran"
     strength = Ability(5)
     dexterity = Ability(14)
     constitution = Ability(10)
@@ -1056,9 +1108,9 @@ class DustMephit(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 17
-    hit_dice = '5d6 + 0'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = ''
-    damage_vulnerabilities = 'fire'
+    hit_dice = "5d6 + 0"
+    condition_immunities = "poisoned"
+    damage_immunities = "poison"
+    damage_resistances = ""
+    damage_vulnerabilities = "fire"
     spells = []

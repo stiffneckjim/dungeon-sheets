@@ -275,10 +275,7 @@ class Druid(CharClass):
                     NewMonster = find_content(shape, valid_classes=[monsters.Monster])
                     new_shape = NewMonster()
                 except exceptions.ContentNotFound:
-                    msg = (
-                        f"Wild shape '{shape}' not found. Please add it to"
-                        " ``monsters.py``"
-                    )
+                    msg = f"Wild shape '{shape}' not found. Please add it to ``monsters.py``"
                     raise exceptions.MonsterError(msg)
             actual_shapes.append(new_shape)
         # Save the updated list for later

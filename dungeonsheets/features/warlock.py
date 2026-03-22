@@ -176,6 +176,7 @@ class EldritchVersatility(Feature):
     name = "Eldritch Versatility"
     source = "Warlock"
 
+
 # The Archfey
 class FeyPresence(Feature):
     """Starting at 1st level, your patron bestows upon you the ability to project
@@ -661,6 +662,7 @@ class GraspingTentacles(Feature):
     can't break your concentration on this spell.
 
     """
+
     _name = "Grasping Tentacles"
     source = "Warlock (The Fathomless Patron)"
     spells_known = spells_prepared = (spells.EvardsBlackTentacles,)

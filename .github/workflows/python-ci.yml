@@ -60,8 +60,10 @@ jobs:
     - name: Install dependencies with uv
       run: |
         uv sync --extra dev
-    - name: Run flake
-      run: uv run flake8 dungeonsheets/ --exit-zero
+    - name: Run Ruff lint
+      run: uv run ruff check dungeonsheets/
+    - name: Run Ruff format check
+      run: uv run ruff format --check dungeonsheets/
     - name: Run tests
       run: >
           cd examples/;

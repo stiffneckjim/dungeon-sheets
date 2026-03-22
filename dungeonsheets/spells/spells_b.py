@@ -283,7 +283,7 @@ class BladeBarrier(Spell):
     provides three-quarters cover to creatures behind it, and its space is difficult
     terrain.
 
-     When a creature enters the wall's area for the first time on a turn
+    When a creature enters the wall's area for the first time on a turn
     or starts its turn there, the creature must make a Dexterity saving throw. On a
     failed save, the creature takes 6 d10 slashing damage. On a successful save,
     the creature takes half as much damage.

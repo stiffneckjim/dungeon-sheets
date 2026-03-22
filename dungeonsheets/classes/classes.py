@@ -1,5 +1,4 @@
 import warnings
-
 from collections import defaultdict
 
 from dungeonsheets.features import Feature, FeatureSelector
@@ -85,19 +84,13 @@ class CharClass:
                     fs.append(f(owner=self.owner))
             self.features_by_level[i].extend(fs)
         for attr in ("weapon_proficiencies", "_proficiencies_text"):
-            new_list = tuple(getattr(self, attr, ())) + tuple(
-                getattr(self.subclass, attr, ())
-            )
+            new_list = tuple(getattr(self, attr, ())) + tuple(getattr(self.subclass, attr, ()))
             setattr(self, attr, new_list)
         # All subclass proficiencies transfer, regardless of if this is primary class
         self.multiclass_weapon_proficiencies += tuple(subcls.weapon_proficiencies)
         self._multiclass_proficiencies_text += tuple(subcls._proficiencies_text)
-        self.spellcasting_ability = (
-            self.spellcasting_ability or subcls.spellcasting_ability
-        )
-        self.spell_slots_by_level = (
-            self.spell_slots_by_level or subcls.spell_slots_by_level
-        )
+        self.spellcasting_ability = self.spellcasting_ability or subcls.spellcasting_ability
+        self.spell_slots_by_level = self.spell_slots_by_level or subcls.spell_slots_by_level
         self.spells_known.extend([S() for S in subcls.spells_known])
         self.spells_prepared.extend([S() for S in subcls.spells_prepared])
 

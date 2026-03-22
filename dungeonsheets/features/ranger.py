@@ -979,8 +979,10 @@ class PrimalAwareness(Feature):
     until you finish a long rest.
 
     """
+
     name = "Primal Awareness"
     source = "Tasha's Cauldron of Everything"
+
 
 class NaturesVeil(Feature):
     """This 10th-level feature replaces the Hide in Plain Sight
@@ -997,6 +999,7 @@ class NaturesVeil(Feature):
     finish a long rest.
 
     """
+
     name = "Nature's Veil"
     source = "Tasha's Cauldron of Everything"
 
@@ -1036,5 +1039,6 @@ class PrimalCompanion(Feature):
     beast appears. The beast also vanishes if you die.
 
     """
+
     name = "Primal Companion"
     source = "Beast Master (Tashas's Cauldron of Everything, Pg 61)"

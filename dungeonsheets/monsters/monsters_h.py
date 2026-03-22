@@ -31,13 +31,14 @@ class HalfRedDragonVeteran(Monster):
       must make a DC 15 Dexterity saving throw, taking 24 (7d6) fire damage
       on a failed save, or half as much damage on a successful one.
     """
-    name = 'Half-Red Dragon Veteran'
-    description = 'Medium humanoid, any alignment'
+
+    name = "Half-Red Dragon Veteran"
+    description = "Medium humanoid, any alignment"
     challenge_rating = 5
     armor_class = 18
-    skills = ''
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 12'
-    languages = 'Common, Draconic'
+    skills = ""
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 12"
+    languages = "Common, Draconic"
     strength = Ability(16)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -50,11 +51,11 @@ class HalfRedDragonVeteran(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 65
-    hit_dice = '10d8 + 20'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = 'fire'
-    damage_vulnerabilities = ''
+    hit_dice = "10d8 + 20"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = "fire"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -77,7 +78,7 @@ class Harpy(Monster):
       saving throw or be charmed until the song ends. The harpy must take a
       bonus action on its subsequent turns to continue singing. It can stop
       singing at any time. The song ends if the harpy is incapacitated.
-      
+
       While charmed by the harpy, a target is incapacitated and ignores the
       songs of other harpies. If the charmed target is more than 5 ft. away
       from the harpy, the must move on its turn toward the harpy by the most
@@ -87,17 +88,18 @@ class Harpy(Monster):
       saving throw. A creature can also repeat the saving throw at the end
       of each of its turns. If a creature's saving throw is successful, the
       effect ends on it.
-      
+
       A target that successfully saves is immune to this harpy's song for
       the next 24 hours.
     """
-    name = 'Harpy'
-    description = 'Medium monstrosity, chaotic evil'
+
+    name = "Harpy"
+    description = "Medium monstrosity, chaotic evil"
     challenge_rating = 1
     armor_class = 11
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = 'Common'
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = "Common"
     strength = Ability(12)
     dexterity = Ability(13)
     constitution = Ability(12)
@@ -110,11 +112,11 @@ class Harpy(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 38
-    hit_dice = '7d8 + 7'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "7d8 + 7"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -131,13 +133,14 @@ class Hawk(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1
       slashing damage.
     """
-    name = 'Hawk'
-    description = 'Tiny beast, unaligned'
+
+    name = "Hawk"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0
     armor_class = 13
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
-    languages = ''
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
+    languages = ""
     strength = Ability(5)
     dexterity = Ability(16)
     constitution = Ability(8)
@@ -150,11 +153,11 @@ class Hawk(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 1
-    hit_dice = '1d4 + -1'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + -1"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -179,12 +182,13 @@ class HellHound(Monster):
       must make a DC 12 Dexterity saving throw, taking 21 (6d6) fire damage
       on a failed save, or half as much damage on a successful one.
     """
-    name = 'Hell Hound'
-    description = 'Medium fiend, lawful evil'
+
+    name = "Hell Hound"
+    description = "Medium fiend, lawful evil"
     challenge_rating = 3
     armor_class = 15
-    skills = 'Perception +5'
-    senses = 'Darkvision 60 ft., Passive Perception 15'
+    skills = "Perception +5"
+    senses = "Darkvision 60 ft., Passive Perception 15"
     languages = "understands Infernal but can't speak it"
     strength = Ability(17)
     dexterity = Ability(12)
@@ -198,11 +202,11 @@ class HellHound(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 45
-    hit_dice = '7d8 + 14'
-    condition_immunities = ''
-    damage_immunities = 'fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "7d8 + 14"
+    condition_immunities = ""
+    damage_immunities = "fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -231,22 +235,23 @@ class Hezrou(Monster):
       + 4) slashing damage.
     Variant: Summon Demon.
       The demon chooses what to summon and attempts a magical summoning.
-      
+
       A hezrou has a 30 percent chance of summoning 2d6 dretches or one
       hezrou.
-      
+
       A summoned demon appears in an unoccupied space within 60 feet of its
       summoner, acts as an ally of its summoner, and can't summon other
       demons. It remains for 1 minute, until it or its summoner dies, or
       until its summoner dismisses it as an action.
     """
-    name = 'Hezrou'
-    description = 'Large fiend, chaotic evil'
+
+    name = "Hezrou"
+    description = "Large fiend, chaotic evil"
     challenge_rating = 8
     armor_class = 16
-    skills = ''
-    senses = 'Darkvision 120 ft., Passive Perception 11'
-    languages = 'Abyssal, telepathy 120 ft.'
+    skills = ""
+    senses = "Darkvision 120 ft., Passive Perception 11"
+    languages = "Abyssal, telepathy 120 ft."
     strength = Ability(19)
     dexterity = Ability(17)
     constitution = Ability(20)
@@ -259,11 +264,11 @@ class Hezrou(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 136
-    hit_dice = '13d10 + 65'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "13d10 + 65"
+    condition_immunities = "poisoned"
+    damage_immunities = "poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -281,13 +286,14 @@ class HillGiant(Monster):
       Ranged Weapon Attack: +8 to hit, range 60/240 ft., one target. Hit: 21
       (3d10 + 5) bludgeoning damage.
     """
-    name = 'Hill Giant'
-    description = 'Huge giant, chaotic evil'
+
+    name = "Hill Giant"
+    description = "Huge giant, chaotic evil"
     challenge_rating = 5
     armor_class = 13
-    skills = 'Perception +2'
-    senses = 'Passive Perception 12'
-    languages = 'Giant'
+    skills = "Perception +2"
+    senses = "Passive Perception 12"
+    languages = "Giant"
     strength = Ability(21)
     dexterity = Ability(8)
     constitution = Ability(19)
@@ -300,11 +306,11 @@ class HillGiant(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 105
-    hit_dice = '10d12 + 40'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "10d12 + 40"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -327,13 +333,14 @@ class Hippogriff(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) slashing damage.
     """
-    name = 'Hippogriff'
-    description = 'Large monstrosity, unaligned'
+
+    name = "Hippogriff"
+    description = "Large monstrosity, unaligned"
     challenge_rating = 1
     armor_class = 11
-    skills = 'Perception +5'
-    senses = 'Passive Perception 15'
-    languages = ''
+    skills = "Perception +5"
+    senses = "Passive Perception 15"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(13)
     constitution = Ability(13)
@@ -346,11 +353,11 @@ class Hippogriff(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 19
-    hit_dice = '3d10 + 3'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d10 + 3"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -363,7 +370,7 @@ class HobgoblinCaptain(Monster):
       incapacitated.
 
     # Actions
-    
+
     Multiattack.
       The hobgoblin makes two greatsword attacks.
     Greatsword
@@ -381,13 +388,14 @@ class HobgoblinCaptain(Monster):
       at a time. This effect ends if the hobgoblin is incapacitated.
 
     """
+
     name = "Hobgoblin Captain"
     description = "Medium humanoid (goblinoid), lawful evil"
     challenge_rating = 3
     armor_class = 17
-    skills = ''
-    senses = 'darkvision 60 ft., Passive Perception 10'
-    languages = 'Common, Goblin'
+    skills = ""
+    senses = "darkvision 60 ft., Passive Perception 10"
+    languages = "Common, Goblin"
     strength = Ability(15)
     dexterity = Ability(14)
     constitution = Ability(14)
@@ -400,16 +408,15 @@ class HobgoblinCaptain(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 39
-    hit_dice = '6d8 + 12'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d8 + 12"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
 class Hobgoblin(Monster):
-
     """
 
     Martial Advantage.
@@ -427,13 +434,14 @@ class Hobgoblin(Monster):
       Ranged Weapon Attack: +3 to hit, range 150/600 ft., one target. Hit: 5
       (1d8 + 1) piercing damage.
     """
-    name = 'Hobgoblin'
-    description = 'Medium humanoid, lawful evil'
+
+    name = "Hobgoblin"
+    description = "Medium humanoid, lawful evil"
     challenge_rating = 0.5
     armor_class = 18
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = 'Common, Goblin'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = "Common, Goblin"
     strength = Ability(13)
     dexterity = Ability(12)
     constitution = Ability(12)
@@ -446,11 +454,11 @@ class Hobgoblin(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 11
-    hit_dice = '2d8 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -471,12 +479,13 @@ class Homunculus(Monster):
       5 or more, the target is instead poisoned for 5 (1d10) minutes and
       unconscious while poisoned in this way.
     """
-    name = 'Homunculus'
-    description = 'Tiny construct, neutral'
+
+    name = "Homunculus"
+    description = "Tiny construct, neutral"
     challenge_rating = 0
     armor_class = 13
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
     languages = "understands the languages of its creator but can't speak"
     strength = Ability(4)
     dexterity = Ability(15)
@@ -490,11 +499,11 @@ class Homunculus(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 5
-    hit_dice = '2d4 + 0'
-    condition_immunities = 'charmed, poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d4 + 0"
+    condition_immunities = "charmed, poisoned"
+    damage_immunities = "poison"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -530,13 +539,14 @@ class HornedDevil(Monster):
       (4d6) fire damage. If the target is a flammable object that isn't
       being worn or carried, it also catches fire.
     """
-    name = 'Horned Devil'
-    description = 'Large fiend, lawful evil'
+
+    name = "Horned Devil"
+    description = "Large fiend, lawful evil"
     challenge_rating = 11
     armor_class = 18
-    skills = ''
-    senses = 'Darkvision 120 ft., Passive Perception 13'
-    languages = 'Infernal, telepathy 120 ft.'
+    skills = ""
+    senses = "Darkvision 120 ft., Passive Perception 13"
+    languages = "Infernal, telepathy 120 ft."
     strength = Ability(22)
     dexterity = Ability(17)
     constitution = Ability(21)
@@ -549,11 +559,11 @@ class HornedDevil(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 178
-    hit_dice = '17d10 + 85'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'fire, poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "17d10 + 85"
+    condition_immunities = "poisoned"
+    damage_immunities = "fire, poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -572,13 +582,14 @@ class HunterShark(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8
       + 4) piercing damage.
     """
-    name = 'Hunter Shark'
-    description = 'Large beast, unaligned'
+
+    name = "Hunter Shark"
+    description = "Large beast, unaligned"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Perception +2'
-    senses = 'Darkvision 30 ft., Passive Perception 12'
-    languages = ''
+    skills = "Perception +2"
+    senses = "Darkvision 30 ft., Passive Perception 12"
+    languages = ""
     strength = Ability(18)
     dexterity = Ability(13)
     constitution = Ability(15)
@@ -591,11 +602,11 @@ class HunterShark(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 45
-    hit_dice = '6d10 + 12'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d10 + 12"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -608,10 +619,10 @@ class Hydra(Monster):
       The hydra has five heads. While it has more than one head, the hydra
       has advantage on saving throws against being blinded, charmed,
       deafened, frightened, stunned, and knocked unconscious.
-      
+
       Whenever the hydra takes 25 or more damage in a single turn, one of
       its heads dies. If all its heads die, the hydra dies.
-      
+
       At the end of its turn, it grows two heads for each of its heads that
       died since its last turn, unless it has taken fire damage since its
       last turn. The hydra regains 10 hit points for each head regrown in
@@ -630,13 +641,14 @@ class Hydra(Monster):
       Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 10
       (1d10 + 5) piercing damage.
     """
-    name = 'Hydra'
-    description = 'Huge monstrosity, unaligned'
+
+    name = "Hydra"
+    description = "Huge monstrosity, unaligned"
     challenge_rating = 8
     armor_class = 15
-    skills = 'Perception +6'
-    senses = 'Darkvision 60 ft., Passive Perception 16'
-    languages = ''
+    skills = "Perception +6"
+    senses = "Darkvision 60 ft., Passive Perception 16"
+    languages = ""
     strength = Ability(20)
     dexterity = Ability(12)
     constitution = Ability(20)
@@ -649,11 +661,11 @@ class Hydra(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 172
-    hit_dice = '15d12 + 75'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "15d12 + 75"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -671,13 +683,14 @@ class Hyena(Monster):
       Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6)
       piercing damage.
     """
-    name = 'Hyena'
-    description = 'Medium beast, unaligned'
+
+    name = "Hyena"
+    description = "Medium beast, unaligned"
     challenge_rating = 0
     armor_class = 11
-    skills = 'Perception +3'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(11)
     dexterity = Ability(13)
     constitution = Ability(12)
@@ -690,9 +703,9 @@ class Hyena(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 5
-    hit_dice = '1d8 + 1'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d8 + 1"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

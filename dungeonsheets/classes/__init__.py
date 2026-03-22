@@ -21,11 +21,11 @@ __all__ = (
 from dungeonsheets.classes.artificer import Artificer
 from dungeonsheets.classes.barbarian import Barbarian
 from dungeonsheets.classes.bard import Bard
+from dungeonsheets.classes.bloodhunter import BloodHunter
 from dungeonsheets.classes.classes import CharClass
 from dungeonsheets.classes.cleric import Cleric
 from dungeonsheets.classes.druid import Druid
 from dungeonsheets.classes.fighter import Fighter
-from dungeonsheets.classes.bloodhunter import BloodHunter
 from dungeonsheets.classes.monk import Monk
 from dungeonsheets.classes.paladin import Paladin
 from dungeonsheets.classes.ranger import Ranger, RevisedRanger

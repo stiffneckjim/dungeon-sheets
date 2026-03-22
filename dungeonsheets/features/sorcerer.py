@@ -426,6 +426,7 @@ class EyesOfTheDark(Feature):
     spells_known = (spells.Darkness,)
     spells_prepared = (spells.Darkness,)
 
+
 class SuperiorDarkvisionClass(Feature):
     """Accustomed to life underground, you have superior vision in dark and dim
     conditions. You can see in dim light within 120 feet of you as if it were
@@ -436,6 +437,7 @@ class SuperiorDarkvisionClass(Feature):
 
     name = "Darkvision (120')"
     source = "Sorcerer (Shadow Magic)"
+
 
 class StrengthOfTheGrave(Feature):
     """Starting at 1st level, your existence in a twilight state between life

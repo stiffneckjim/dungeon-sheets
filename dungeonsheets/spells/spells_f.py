@@ -612,9 +612,7 @@ class FlamingSphere(Spell):
     casting_time = "1 action"
     casting_range = "60 feet"
     components = ("V", "S", "M")
-    materials = (
-        """A bit of tallow, a pinch of brimstone, and a dusting of powdered iron"""
-    )
+    materials = """A bit of tallow, a pinch of brimstone, and a dusting of powdered iron"""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Conjuration"
@@ -730,8 +728,7 @@ class Forbiddance(Spell):
     casting_range = "Touch"
     components = ("V", "S", "M")
     materials = (
-        "A sprinkling of holy water, rare incense, and powdered ruby worth at least"
-        " 1,000 gp"
+        "A sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000 gp"
     )
     duration = "1 day"
     ritual = True

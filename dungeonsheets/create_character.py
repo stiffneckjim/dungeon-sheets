@@ -5,12 +5,12 @@
 import logging
 import math
 import os
-from random import randint
 import subprocess
+from random import randint
 
 import npyscreen
 
-from dungeonsheets import character, race, dice, background, classes, weapons, armor
+from dungeonsheets import armor, background, character, classes, dice, race, weapons
 
 log = logging.getLogger(__name__)
 
@@ -98,7 +98,7 @@ class App(npyscreen.NPSAppManaged):
         # Update max HP based on the class
         hit_dice = [dice.read_dice_str(d) for d in self.character.hit_dice.split(" + ")]
         const = int((int(abil.constitution.value) - 10) / 2)
-        hp_max = f"{hit_dice[0].faces + self.character.level*const}"
+        hp_max = f"{hit_dice[0].faces + self.character.level * const}"
         hds = {}
         for i, hd in enumerate(hit_dice):
             num = hd.num
@@ -149,18 +149,14 @@ class App(npyscreen.NPSAppManaged):
         self.character = character.Character()
         self.character.class_list = []
         self.addForm("MAIN", BasicInfoForm, name="Basic Info:", formid="MAIN")
-        self.addForm(
-            "RACE", RaceForm, name="Select your character's race:", formid="RACE"
-        )
+        self.addForm("RACE", RaceForm, name="Select your character's race:", formid="RACE")
         self.addForm(
             "CLASS1",
             CharacterClassForm,
             name="Select your character's primary class:",
             formid="CLASS1",
         )
-        self.addForm(
-            "BACKGROUND", BackgroundForm, name="Choose background:", formid="BACKGROUND"
-        )
+        self.addForm("BACKGROUND", BackgroundForm, name="Choose background:", formid="BACKGROUND")
         self.addForm(
             "ALIGNMENT",
             AlignmentForm,
@@ -173,9 +169,7 @@ class App(npyscreen.NPSAppManaged):
             name="Choose ability scores:",
             formid="ABILITIES",
         )
-        self.addForm(
-            "SKILLS", SkillForm, name="Choose skill proficiencies", formid="SKILLS"
-        )
+        self.addForm("SKILLS", SkillForm, name="Choose skill proficiencies", formid="SKILLS")
         self.addForm("WEAPONS", WeaponForm, name="Choose weapons", formid="WEAPONS")
         self.addForm("ARMOR", ArmorForm, name="Choose armor", formid="ARMOR")
         self.addForm(
@@ -207,12 +201,8 @@ class App(npyscreen.NPSAppManaged):
 
 class BasicInfoForm(LinkedListForm):
     def create(self):
-        self.name = self.add(
-            npyscreen.TitleText, name="Character Name:", use_two_lines=False
-        )
-        self.player_name = self.add(
-            npyscreen.TitleText, name="Player Name:", use_two_lines=False
-        )
+        self.name = self.add(npyscreen.TitleText, name="Character Name:", use_two_lines=False)
+        self.player_name = self.add(npyscreen.TitleText, name="Player Name:", use_two_lines=False)
 
     def on_ok(self):
         # Update the default filename
@@ -220,7 +210,7 @@ class BasicInfoForm(LinkedListForm):
         if name == "":
             filename = "new_character.py"
         else:
-            filename = f'{name.split(" ")[0].lower()}.py'
+            filename = f"{name.split(' ')[0].lower()}.py"
         save_form = self.parentApp.getForm("SAVE")
         save_form.filename.value = filename
         self.parentApp.character.name = self.name.value
@@ -233,9 +223,7 @@ class BasicInfoForm(LinkedListForm):
 
 class RaceForm(LinkedListForm):
     def create(self):
-        self.race = self.add(
-            npyscreen.TitleSelectOne, name="Race:", values=tuple(races.keys())
-        )
+        self.race = self.add(npyscreen.TitleSelectOne, name="Race:", values=tuple(races.keys()))
 
     def on_ok(self):
         if len(self.race.get_selected_objects()) >= 1:
@@ -308,9 +296,7 @@ class CharacterClassForm(LinkedListForm):
                 name="Add Class #{:d}?".format(self.class_num + 1),
                 value=False,
             )
-        self.level = self.add(
-            npyscreen.TitleText, name="Level:", value="1", use_two_lines=False
-        )
+        self.level = self.add(npyscreen.TitleText, name="Level:", value="1", use_two_lines=False)
         self.character_class = self.add(
             npyscreen.TitleSelectOne, name=t, values=tuple(self.class_options)
         )
@@ -366,9 +352,7 @@ class CharacterClassForm(LinkedListForm):
                     f.prune()
             if int(self.level.value) >= selected_class.subclass_select_level:
                 if not self.subclass_page:
-                    self.add_subclass_page(
-                        newclass=selected_class, level=int(self.level.value)
-                    )
+                    self.add_subclass_page(newclass=selected_class, level=int(self.level.value))
             else:
                 if self.subclass_page is not None:
                     f = self.parentApp.getForm(self.next_page)
@@ -405,9 +389,7 @@ class SubclassForm(LinkedListForm):
             self.parentApp.character.class_list = self.parentApp.character.class_list[
                 : self.class_num - 1
             ]
-            self.parentApp.character.add_class(
-                cls=self.parent_class, level=self.level, subclass=sc
-            )
+            self.parentApp.character.add_class(cls=self.parent_class, level=self.level, subclass=sc)
             super().to_next()
 
     def on_cancel(self):
@@ -564,9 +546,7 @@ class AbilityScoreForm(LinkedListForm):
             if race_bonus != 0:
                 name += "({:+d})".format(race_bonus)
             name += ":"
-            new_fld = self.add(
-                npyscreen.TitleText, name=name, begin_entry_at=24, value="10"
-            )
+            new_fld = self.add(npyscreen.TitleText, name=name, begin_entry_at=24, value="10")
             setattr(self, attr, new_fld)
         self.hp_roll_text = self.add(npyscreen.FixedText, editable=False, value="")
         self.hp_reroll_buttom = self.add(
@@ -620,8 +600,7 @@ class SkillForm(LinkedListForm):
             + self.parentApp.character.background.skill_choices
         )
         static_skills = bg_skills + race_skills
-        choices = set([c.title() for c in choices
-                if c.lower() not in static_skills])
+        choices = set([c.title() for c in choices if c.lower() not in static_skills])
         self.skill_proficiencies.set_values(sorted(tuple(choices)))
         self.update_remaining()
 
@@ -638,15 +617,9 @@ class SkillForm(LinkedListForm):
         self.display()
 
     def create(self):
-        self.bg_skills = self.add(
-            npyscreen.TitleText, name="Background:", value="", editable=False
-        )
-        self.race_skills = self.add(
-            npyscreen.TitleText, name="Racial:", value="", editable=False
-        )
-        self.remaining = self.add(
-            npyscreen.TitleText, name="Remaining:", value=0, editable=False
-        )
+        self.bg_skills = self.add(npyscreen.TitleText, name="Background:", value="", editable=False)
+        self.race_skills = self.add(npyscreen.TitleText, name="Racial:", value="", editable=False)
+        self.remaining = self.add(npyscreen.TitleText, name="Remaining:", value=0, editable=False)
         self.skill_proficiencies = self.add(
             npyscreen.TitleMultiSelect,
             name="Skill Proficiencies:",
@@ -677,9 +650,7 @@ class WeaponForm(LinkedListForm):
         self.instructions = self.add(
             npyscreen.FixedText, editable=False, value="Please select your weapons."
         )
-        self.remaining = self.add(
-            npyscreen.TitleText, name="Remaining:", value=3, editable=False
-        )
+        self.remaining = self.add(npyscreen.TitleText, name="Remaining:", value=3, editable=False)
         self.weapons = self.add(
             npyscreen.TitleMultiSelect,
             name="Weapons:",
@@ -798,9 +769,7 @@ class PersonalityForm(LinkedListForm):
             editable=False,
             value="Describe any other notable features or abilities.",
         )
-        self.features = self.add(
-            npyscreen.TitleText, name="Features: ", begin_entry_at=24
-        )
+        self.features = self.add(npyscreen.TitleText, name="Features: ", begin_entry_at=24)
 
     def on_ok(self):
         if self.personality_traits.value:

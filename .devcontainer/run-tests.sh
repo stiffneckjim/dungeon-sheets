@@ -3,6 +3,13 @@ set -e  # Exit immediately if a command exits with a non-zero status
 
 echo ""
 echo "======================================"
+echo "Running Ruff lint and format checks..."
+echo "======================================"
+uv run ruff check dungeonsheets/
+uv run ruff format --check dungeonsheets/
+
+echo ""
+echo "======================================"
 echo "Testing makesheets (standard)..."
 echo "======================================"
 cd examples/

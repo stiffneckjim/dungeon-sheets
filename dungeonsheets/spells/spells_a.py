@@ -43,8 +43,7 @@ class AbsorbElements(Spell):
     name = "Absorb Elements"
     level = 1
     casting_time = (
-        "1 Reaction, which you take when you take "
-        "acid, cold, fire, lightning, or thunder damage"
+        "1 Reaction, which you take when you take acid, cold, fire, lightning, or thunder damage"
     )
     casting_range = "Self"
     components = ("S",)
@@ -812,9 +811,7 @@ class Augury(Spell):
     casting_time = "1 minute"
     casting_range = "Self"
     components = ("V", "S", "M")
-    materials = (
-        """Specially marked sticks, bones, or similar tokens worth at least 25 gp"""
-    )
+    materials = """Specially marked sticks, bones, or similar tokens worth at least 25 gp"""
     duration = "Instantaneous"
     ritual = True
     magic_school = "Divination"

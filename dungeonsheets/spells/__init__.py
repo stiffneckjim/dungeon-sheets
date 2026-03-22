@@ -1,5 +1,5 @@
-from dungeonsheets.spells.spells import Spell, create_spell, all_spells
-
+from dungeonsheets.content_registry import default_content_registry
+from dungeonsheets.spells.spells import Spell, all_spells, create_spell
 from dungeonsheets.spells.spells_a import *
 from dungeonsheets.spells.spells_b import *
 from dungeonsheets.spells.spells_c import *
@@ -26,8 +26,5 @@ from dungeonsheets.spells.spells_w import *
 from dungeonsheets.spells.spells_x import *
 from dungeonsheets.spells.spells_y import *
 from dungeonsheets.spells.spells_z import *
-
-from dungeonsheets.content_registry import default_content_registry
-
 
 default_content_registry.add_module(__name__)

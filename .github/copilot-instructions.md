@@ -140,12 +140,13 @@ Tests run on all supported Python versions (3.10-3.13):
 2. **Test Suite**:
 
    - Runs pytest with coverage reporting
-   - Validates code style with flake8
+   - Validates code style and formatting with Ruff
    - Tests example character generation
 
    ```bash
    pytest --cov=dungeonsheets tests/
-   flake8 dungeonsheets/ --exit-zero
+   ruff check dungeonsheets/
+   ruff format --check dungeonsheets/
    ```
 
 3. **Output Format Validation**:

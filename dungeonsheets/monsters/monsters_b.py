@@ -22,13 +22,14 @@ class Baboon(Monster):
       Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 -
       1) piercing damage.
     """
-    name = 'Baboon'
-    description = 'Small beast, unaligned'
+
+    name = "Baboon"
+    description = "Small beast, unaligned"
     challenge_rating = 0
     armor_class = 12
-    skills = ''
-    senses = 'Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 11"
+    languages = ""
     strength = Ability(8)
     dexterity = Ability(14)
     constitution = Ability(11)
@@ -41,11 +42,11 @@ class Baboon(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 3
-    hit_dice = '1d6 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d6 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -62,13 +63,14 @@ class Badger(Monster):
       Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1
       piercing damage.
     """
-    name = 'Badger'
-    description = 'Tiny beast, unaligned'
+
+    name = "Badger"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0
     armor_class = 10
-    skills = ''
-    senses = 'Darkvision 30 ft., Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 30 ft., Passive Perception 11"
+    languages = ""
     strength = Ability(4)
     dexterity = Ability(11)
     constitution = Ability(12)
@@ -81,11 +83,11 @@ class Badger(Monster):
     climb_speed = 0
     burrow_speed = 5
     hp_max = 3
-    hit_dice = '1d4 + 1'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + 1"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -130,22 +132,23 @@ class Balor(Monster):
       or carrying, up to 120 feet to an unoccupied space it can see.
     Variant: Summon Demon.
       The demon chooses what to summon and attempts a magical summoning.
-      
+
       A balor has a 50 percent chance of summoning 1d8 vrocks, 1d6 hezrous,
       1d4 glabrezus, 1d3 nalfeshnees, 1d2 mariliths, or one goristro.
-      
+
       A summoned demon appears in an unoccupied space within 60 feet of its
       summoner, acts as an ally of its summoner, and can't summon other
       demons. It remains for 1 minute, until it or its summoner dies, or
       until its summoner dismisses it as an action.
     """
-    name = 'Balor'
-    description = 'Huge fiend, chaotic evil'
+
+    name = "Balor"
+    description = "Huge fiend, chaotic evil"
     challenge_rating = 19
     armor_class = 19
-    skills = ''
-    senses = 'Truesight 120 ft., Passive Perception 13'
-    languages = 'Abyssal, telepathy 120 ft.'
+    skills = ""
+    senses = "Truesight 120 ft., Passive Perception 13"
+    languages = "Abyssal, telepathy 120 ft."
     strength = Ability(26)
     dexterity = Ability(15)
     constitution = Ability(22)
@@ -158,11 +161,11 @@ class Balor(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 262
-    hit_dice = '21d12 + 126'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'fire, poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "21d12 + 126"
+    condition_immunities = "poisoned"
+    damage_immunities = "fire, poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -178,13 +181,14 @@ class Bandit(Monster):
       Ranged Weapon Attack: +3 to hit, range 80 ft./320 ft., one target.
       Hit: 5 (1d8 + 1) piercing damage.
     """
-    name = 'Bandit'
-    description = 'Medium humanoid, any non-lawful alignment'
+
+    name = "Bandit"
+    description = "Medium humanoid, any non-lawful alignment"
     challenge_rating = 0.125
     armor_class = 12
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = 'any one language (usually Common)'
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = "any one language (usually Common)"
     strength = Ability(11)
     dexterity = Ability(12)
     constitution = Ability(12)
@@ -197,11 +201,11 @@ class Bandit(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 11
-    hit_dice = '2d8 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -228,13 +232,14 @@ class BanditCaptain(Monster):
       it. To do so, the captain must see the attacker and be wielding a
       melee weapon.
     """
-    name = 'Bandit Captain'
-    description = 'Medium humanoid, any non-lawful alignment'
+
+    name = "Bandit Captain"
+    description = "Medium humanoid, any non-lawful alignment"
     challenge_rating = 2
     armor_class = 15
-    skills = 'Athletics +4, Deception +4'
-    senses = 'Passive Perception 10'
-    languages = 'any two languages'
+    skills = "Athletics +4, Deception +4"
+    senses = "Passive Perception 10"
+    languages = "any two languages"
     strength = Ability(15)
     dexterity = Ability(16)
     constitution = Ability(14)
@@ -247,11 +252,11 @@ class BanditCaptain(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 65
-    hit_dice = '10d8 + 20'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "10d8 + 20"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -283,13 +288,14 @@ class BarbedDevil(Monster):
       (3d6) fire damage. If the target is a flammable object that isn't
       being worn or carried, it also catches fire.
     """
-    name = 'Barbed Devil'
-    description = 'Medium fiend, lawful evil'
+
+    name = "Barbed Devil"
+    description = "Medium fiend, lawful evil"
     challenge_rating = 5
     armor_class = 15
-    skills = 'Deception +5, Insight +5, Perception +8'
-    senses = 'Darkvision 120 ft., Passive Perception 18'
-    languages = 'Infernal, telepathy 120 ft.'
+    skills = "Deception +5, Insight +5, Perception +8"
+    senses = "Darkvision 120 ft., Passive Perception 18"
+    languages = "Infernal, telepathy 120 ft."
     strength = Ability(16)
     dexterity = Ability(17)
     constitution = Ability(18)
@@ -302,11 +308,11 @@ class BarbedDevil(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 110
-    hit_dice = '13d8 + 52'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'fire, poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "13d8 + 52"
+    condition_immunities = "poisoned"
+    damage_immunities = "fire, poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -322,13 +328,13 @@ class Basilisk(Monster):
       of its next turn. On a success, the effect ends. On a failure, the
       creature is petrified until freed by the greater restoration spell or
       other magic.
-      
+
       A creature that isn't surprised can avert its eyes to avoid the saving
       throw at the start of its turn. If it does so, it can't see the
       basilisk until the start of its next turn, when it can avert its eyes
       again. If it looks at the basilisk in the meantime, it must
       immediately make the save.
-      
+
       If the basilisk sees its reflection within 30 ft. of it in bright
       light, it mistakes itself for a rival and targets itself with its
       gaze.
@@ -339,13 +345,14 @@ class Basilisk(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) piercing damage plus 7 (2d6) poison damage.
     """
-    name = 'Basilisk'
-    description = 'Medium monstrosity, unaligned'
+
+    name = "Basilisk"
+    description = "Medium monstrosity, unaligned"
     challenge_rating = 3
     armor_class = 12
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 9'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 9"
+    languages = ""
     strength = Ability(16)
     dexterity = Ability(8)
     constitution = Ability(15)
@@ -358,11 +365,11 @@ class Basilisk(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 52
-    hit_dice = '8d8 + 16'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d8 + 16"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -381,13 +388,14 @@ class Bat(Monster):
       Melee Weapon Attack: +0 to hit, reach 5 ft., one creature. Hit: 1
       piercing damage.
     """
-    name = 'Bat'
-    description = 'Tiny beast, unaligned'
+
+    name = "Bat"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0
     armor_class = 12
-    skills = ''
-    senses = 'Blindsight 60 ft., Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 60 ft., Passive Perception 11"
+    languages = ""
     strength = Ability(2)
     dexterity = Ability(15)
     constitution = Ability(8)
@@ -400,11 +408,11 @@ class Bat(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 1
-    hit_dice = '1d4 + -1'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + -1"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -443,13 +451,14 @@ class BeardedDevil(Monster):
       12 Wisdom (Medicine) check. The wound also closes if the target
       receives magical healing.
     """
-    name = 'Bearded Devil'
-    description = 'Medium fiend, lawful evil'
+
+    name = "Bearded Devil"
+    description = "Medium fiend, lawful evil"
     challenge_rating = 3
     armor_class = 13
-    skills = ''
-    senses = 'Darkvision 120 ft., Passive Perception 10'
-    languages = 'Infernal, telepathy 120 ft.'
+    skills = ""
+    senses = "Darkvision 120 ft., Passive Perception 10"
+    languages = "Infernal, telepathy 120 ft."
     strength = Ability(16)
     dexterity = Ability(15)
     constitution = Ability(15)
@@ -462,11 +471,11 @@ class BeardedDevil(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 52
-    hit_dice = '8d8 + 16'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'fire, poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "8d8 + 16"
+    condition_immunities = "poisoned"
+    damage_immunities = "fire, poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -499,7 +508,7 @@ class Behir(Monster):
       outside the behir, and it takes 21 (6d6) acid damage at the start of
       each of the behir's turns. A behir can have only one creature
       swallowed at a time.
-      
+
       If the behir takes 30 damage or more on a single turn from the
       swallowed creature, the behir must succeed on a DC 14 Constitution
       saving throw at the end of that turn or regurgitate the creature,
@@ -507,13 +516,14 @@ class Behir(Monster):
       dies, a swallowed creature is no longer restrained by it and can
       escape from the corpse by using 15 ft. of movement, exiting prone.
     """
-    name = 'Behir'
-    description = 'Huge monstrosity, neutral evil'
+
+    name = "Behir"
+    description = "Huge monstrosity, neutral evil"
     challenge_rating = 11
     armor_class = 17
-    skills = 'Perception +6, Stealth +7'
-    senses = 'Darkvision 90 ft., Passive Perception 16'
-    languages = 'Draconic'
+    skills = "Perception +6, Stealth +7"
+    senses = "Darkvision 90 ft., Passive Perception 16"
+    languages = "Draconic"
     strength = Ability(23)
     dexterity = Ability(16)
     constitution = Ability(18)
@@ -526,11 +536,11 @@ class Behir(Monster):
     climb_speed = 40
     burrow_speed = 0
     hp_max = 168
-    hit_dice = '16d12 + 64'
-    condition_immunities = ''
-    damage_immunities = 'lightning'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "16d12 + 64"
+    condition_immunities = ""
+    damage_immunities = "lightning"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -548,13 +558,14 @@ class Berserker(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (1d12
       + 3) slashing damage.
     """
-    name = 'Berserker'
-    description = 'Medium humanoid, any chaotic alignment'
+
+    name = "Berserker"
+    description = "Medium humanoid, any chaotic alignment"
     challenge_rating = 2
     armor_class = 13
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = 'any one language (usually Common)'
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = "any one language (usually Common)"
     strength = Ability(16)
     dexterity = Ability(12)
     constitution = Ability(17)
@@ -567,11 +578,11 @@ class Berserker(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 67
-    hit_dice = '9d8 + 27'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "9d8 + 27"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -593,13 +604,14 @@ class BlackBear(Monster):
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 7 (2d4 +
       2) slashing damage.
     """
-    name = 'Black Bear'
-    description = 'Medium beast, unaligned'
+
+    name = "Black Bear"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.5
     armor_class = 11
-    skills = ''
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(10)
     constitution = Ability(14)
@@ -612,11 +624,11 @@ class BlackBear(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 19
-    hit_dice = '3d8 + 6'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d8 + 6"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -637,13 +649,14 @@ class BlackDragonWyrmling(Monster):
       22 (Sd8) acid damage on a failed save, or half as much damage on a
       successful one.
     """
-    name = 'Black Dragon Wyrmling'
-    description = 'Medium dragon, chaotic evil'
+
+    name = "Black Dragon Wyrmling"
+    description = "Medium dragon, chaotic evil"
     challenge_rating = 2
     armor_class = 17
-    skills = 'Perception +4, Stealth +4'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14'
-    languages = 'Draconic'
+    skills = "Perception +4, Stealth +4"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14"
+    languages = "Draconic"
     strength = Ability(15)
     dexterity = Ability(14)
     constitution = Ability(13)
@@ -656,11 +669,11 @@ class BlackDragonWyrmling(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 33
-    hit_dice = '6d8 + 6'
-    condition_immunities = ''
-    damage_immunities = 'acid'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d8 + 6"
+    condition_immunities = ""
+    damage_immunities = "acid"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -701,13 +714,14 @@ class BlackPudding(Monster):
       pudding's, rounded down. New puddings are one size smaller than the
       original pudding.
     """
-    name = 'Black Pudding'
-    description = 'Large ooze, unaligned'
+
+    name = "Black Pudding"
+    description = "Large ooze, unaligned"
     challenge_rating = 4
     armor_class = 7
-    skills = ''
-    senses = 'Blindsight 60 ft. (blind beyond this radius), Passive Perception 8'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 60 ft. (blind beyond this radius), Passive Perception 8"
+    languages = ""
     strength = Ability(16)
     dexterity = Ability(5)
     constitution = Ability(16)
@@ -720,11 +734,11 @@ class BlackPudding(Monster):
     climb_speed = 20
     burrow_speed = 0
     hp_max = 85
-    hit_dice = '10d10 + 30'
-    condition_immunities = 'blinded, charmed, blinded, exhaustion, frightened, prone'
-    damage_immunities = 'acid, cold, lightning, slashing'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "10d10 + 30"
+    condition_immunities = "blinded, charmed, blinded, exhaustion, frightened, prone"
+    damage_immunities = "acid, cold, lightning, slashing"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -745,12 +759,13 @@ class BlinkDog(Monster):
       carrying, up to 40 ft. to an unoccupied space it can see. Before or
       after teleporting, the dog can make one bite attack.
     """
-    name = 'Blink Dog'
-    description = 'Medium fey, lawful good'
+
+    name = "Blink Dog"
+    description = "Medium fey, lawful good"
     challenge_rating = 0.25
     armor_class = 13
-    skills = 'Perception +3, Stealth +5'
-    senses = 'Passive Perception 10'
+    skills = "Perception +3, Stealth +5"
+    senses = "Passive Perception 10"
     languages = "Blink Dog, understands Sylvan but can't speak it"
     strength = Ability(12)
     dexterity = Ability(17)
@@ -764,11 +779,11 @@ class BlinkDog(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '4d8 + 4'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "4d8 + 4"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -789,13 +804,14 @@ class BloodHawk(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
       2) piercing damage.
     """
-    name = 'Blood Hawk'
-    description = 'Small beast, unaligned'
+
+    name = "Blood Hawk"
+    description = "Small beast, unaligned"
     challenge_rating = 0.125
     armor_class = 12
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
-    languages = ''
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
+    languages = ""
     strength = Ability(6)
     dexterity = Ability(14)
     constitution = Ability(10)
@@ -808,11 +824,11 @@ class BloodHawk(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 7
-    hit_dice = '2d6 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d6 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -830,13 +846,14 @@ class BlueDragonWyrmling(Monster):
       taking 22 (4d10) lightning damage on a failed save, or half as much
       damage on a successful one.
     """
-    name = 'Blue Dragon Wyrmling'
-    description = 'Medium dragon, lawful evil'
+
+    name = "Blue Dragon Wyrmling"
+    description = "Medium dragon, lawful evil"
     challenge_rating = 3
     armor_class = 17
-    skills = 'Perception +4, Stealth +2'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14'
-    languages = 'Draconic'
+    skills = "Perception +4, Stealth +2"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14"
+    languages = "Draconic"
     strength = Ability(17)
     dexterity = Ability(10)
     constitution = Ability(15)
@@ -849,11 +866,11 @@ class BlueDragonWyrmling(Monster):
     climb_speed = 0
     burrow_speed = 15
     hp_max = 52
-    hit_dice = '8d8 + 16'
-    condition_immunities = ''
-    damage_immunities = 'lightning'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d8 + 16"
+    condition_immunities = ""
+    damage_immunities = "lightning"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -875,13 +892,14 @@ class Boar(Monster):
       Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1)
       slashing damage.
     """
-    name = 'Boar'
-    description = 'Medium beast, unaligned'
+
+    name = "Boar"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.25
     armor_class = 11
-    skills = ''
-    senses = 'Passive Perception 9'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 9"
+    languages = ""
     strength = Ability(13)
     dexterity = Ability(11)
     constitution = Ability(12)
@@ -894,11 +912,11 @@ class Boar(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 11
-    hit_dice = '2d8 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -926,13 +944,14 @@ class BoneDevil(Monster):
       minute. The target can repeat the saving throw at the end of each of
       its turns, ending the effect on itself on a success .
     """
-    name = 'Bone Devil'
-    description = 'Large fiend, lawful evil'
+
+    name = "Bone Devil"
+    description = "Large fiend, lawful evil"
     challenge_rating = 12
     armor_class = 19
-    skills = 'Deception +7, Insight +6'
-    senses = 'Darkvision 120 ft., Passive Perception 9'
-    languages = 'Infernal, telepathy 120 ft.'
+    skills = "Deception +7, Insight +6"
+    senses = "Darkvision 120 ft., Passive Perception 9"
+    languages = "Infernal, telepathy 120 ft."
     strength = Ability(18)
     dexterity = Ability(16)
     constitution = Ability(18)
@@ -945,11 +964,11 @@ class BoneDevil(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 142
-    hit_dice = '15d10 + 60'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'fire, poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "15d10 + 60"
+    condition_immunities = "poisoned"
+    damage_immunities = "fire, poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -963,25 +982,26 @@ class BrassDragonWyrmling(Monster):
       + 2) piercing damage.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Fire Breath. The dragon exhales fire in an 20-foot line that is 5 feet
       wide. Each creature in that line must make a DC 11 Dexterity saving
       throw, taking 14 (4d6) fire damage on a failed save, or half as much
       damage on a successful one.
-      
+
       Sleep Breath. The dragon exhales sleep gas in a 15-foot cone. Each
       creature in that area must succeed on a DC 11 Constitution saving
       throw or fall unconscious for 1 minute. This effect ends for a
       creature if the creature takes damage or someone uses an action to
       wake it.
     """
-    name = 'Brass Dragon Wyrmling'
-    description = 'Medium dragon, chaotic good'
+
+    name = "Brass Dragon Wyrmling"
+    description = "Medium dragon, chaotic good"
     challenge_rating = 1
     armor_class = 16
-    skills = 'Perception +4, Stealth +2'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14'
-    languages = 'Draconic'
+    skills = "Perception +4, Stealth +2"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14"
+    languages = "Draconic"
     strength = Ability(15)
     dexterity = Ability(10)
     constitution = Ability(13)
@@ -994,11 +1014,11 @@ class BrassDragonWyrmling(Monster):
     climb_speed = 0
     burrow_speed = 15
     hp_max = 16
-    hit_dice = '3d8 + 3'
-    condition_immunities = ''
-    damage_immunities = 'fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d8 + 3"
+    condition_immunities = ""
+    damage_immunities = "fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1015,24 +1035,25 @@ class BronzeDragonWyrmling(Monster):
       + 3) piercing damage.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Lightning Breath. The dragon exhales lightning in a 40-foot line that
       is 5 feet wide. Each creature in that line must make a DC 12 Dexterity
       saving throw, taking 16 (3d10) lightning damage on a failed save, or
       half as much damage on a successful one.
-      
+
       Repulsion Breath. The dragon exhales repulsion energy in a 30-foot
       cone. Each creature in that area must succeed on a DC 12 Strength
       saving throw. On a failed save, the creature is pushed 30 feet away
       from the dragon.
     """
-    name = 'Bronze Dragon Wyrmling'
-    description = 'Medium dragon, lawful good'
+
+    name = "Bronze Dragon Wyrmling"
+    description = "Medium dragon, lawful good"
     challenge_rating = 2
     armor_class = 17
-    skills = 'Perception +4, Stealth +2'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14'
-    languages = 'Draconic'
+    skills = "Perception +4, Stealth +2"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14"
+    languages = "Draconic"
     strength = Ability(17)
     dexterity = Ability(10)
     constitution = Ability(15)
@@ -1045,11 +1066,11 @@ class BronzeDragonWyrmling(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 32
-    hit_dice = '5d8 + 10'
-    condition_immunities = ''
-    damage_immunities = 'lightning'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d8 + 10"
+    condition_immunities = ""
+    damage_immunities = "lightning"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1071,13 +1092,14 @@ class BrownBear(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 11 (2d6
       + 4) slashing damage.
     """
-    name = 'Brown Bear'
-    description = 'Large beast, unaligned'
+
+    name = "Brown Bear"
+    description = "Large beast, unaligned"
     challenge_rating = 1
     armor_class = 11
-    skills = 'Perception +3'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(16)
@@ -1090,11 +1112,11 @@ class BrownBear(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 34
-    hit_dice = '4d10 + 12'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "4d10 + 12"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1119,13 +1141,14 @@ class Bugbear(Monster):
       ft., one target. Hit: 9 (2d6 + 2) piercing damage in melee or 5 (1d6 +
       2) piercing damage at range.
     """
-    name = 'Bugbear'
-    description = 'Medium humanoid, chaotic evil'
+
+    name = "Bugbear"
+    description = "Medium humanoid, chaotic evil"
     challenge_rating = 1
     armor_class = 16
-    skills = 'Stealth +6, Survival +2'
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = 'Common, Goblin'
+    skills = "Stealth +6, Survival +2"
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = "Common, Goblin"
     strength = Ability(15)
     dexterity = Ability(14)
     constitution = Ability(13)
@@ -1138,11 +1161,11 @@ class Bugbear(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 27
-    hit_dice = '5d8 + 5'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d8 + 5"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1170,13 +1193,14 @@ class Bulette(Monster):
       no unoccupied space is within range, the creature instead falls prone
       in the bulette's space.
     """
-    name = 'Bulette'
-    description = 'Large monstrosity, unaligned'
+
+    name = "Bulette"
+    description = "Large monstrosity, unaligned"
     challenge_rating = 5
     armor_class = 17
-    skills = 'Perception +6'
-    senses = 'Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 16'
-    languages = ''
+    skills = "Perception +6"
+    senses = "Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 16"
+    languages = ""
     strength = Ability(19)
     dexterity = Ability(11)
     constitution = Ability(21)
@@ -1189,11 +1213,11 @@ class Bulette(Monster):
     climb_speed = 0
     burrow_speed = 40
     hp_max = 94
-    hit_dice = '9d10 + 45'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "9d10 + 45"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1203,7 +1227,7 @@ class Burrowshark(Monster):
       who ride trained bulettes into battle. While their powerful mounts
       rend and tear foes to pieces, burrowsharks leap to the ground and
       cut down their foes without mercy.
-      
+
       Burrowsharks are much like Black Earth guards, since both have
       uncanny footing and special armor. For burrowsharks, an additional
       gift of Ogremoch's might establishes a magical bond between the
@@ -1231,15 +1255,16 @@ class Burrowshark(Monster):
       When the burrowshark is subjected to an effect that would move
       it, knock it prone, or both, it can use its reaction to be
       neither moved nor knocked prone.
-    
+
     """
-    name = 'Burrowshark'
-    description = 'Medium humanoid (human), neutral evil'
+
+    name = "Burrowshark"
+    description = "Medium humanoid (human), neutral evil"
     challenge_rating = 4
     armor_class = 18
-    skills = 'Animal handling +2, Athletics +6, Intimidation + 3, Perception +2'
-    senses = 'passive Perception 12'
-    languages = 'Common'
+    skills = "Animal handling +2, Athletics +6, Intimidation + 3, Perception +2"
+    senses = "passive Perception 12"
+    languages = "Common"
     strength = Ability(18)
     dexterity = Ability(12)
     constitution = Ability(16)
@@ -1251,4 +1276,4 @@ class Burrowshark(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 82
-    hit_dice = '11d8+33'
+    hit_dice = "11d8+33"

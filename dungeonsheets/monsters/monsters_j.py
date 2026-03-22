@@ -25,13 +25,14 @@ class Jackal(Monster):
       Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 -
       1) piercing damage.
     """
-    name = 'Jackal'
-    description = 'Small beast, unaligned'
+
+    name = "Jackal"
+    description = "Small beast, unaligned"
     challenge_rating = 0
     armor_class = 12
-    skills = 'Perception +3'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(8)
     dexterity = Ability(15)
     constitution = Ability(11)
@@ -44,9 +45,9 @@ class Jackal(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 3
-    hit_dice = '1d6 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d6 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

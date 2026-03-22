@@ -50,7 +50,7 @@ class Aboleth(Monster):
       under the aboleth's control and can't take reactions, and the aboleth
       and the target can communicate telepathically with each other over any
       distance.
-      
+
       Whenever the charmed target takes damage, the target can repeat the
       saving throw. On a success, the effect ends. No more than once every
       24 hours, the target can also repeat the saving throw when it is at
@@ -93,13 +93,14 @@ class Aboleth(Monster):
     row.
 
     """
-    name = 'Aboleth'
-    description = 'Large aberration, lawful evil'
+
+    name = "Aboleth"
+    description = "Large aberration, lawful evil"
     challenge_rating = 10
     armor_class = 17
-    skills = 'History +12, Perception +10'
-    senses = 'Darkvision 120 ft., Passive Perception 20'
-    languages = 'Deep Speech, telepathy 120 ft.'
+    skills = "History +12, Perception +10"
+    senses = "Darkvision 120 ft., Passive Perception 20"
+    languages = "Deep Speech, telepathy 120 ft."
     strength = Ability(21)
     dexterity = Ability(9)
     constitution = Ability(15)
@@ -112,11 +113,11 @@ class Aboleth(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 135
-    hit_dice = '18d10 + 36'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "18d10 + 36"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -135,13 +136,14 @@ class Acolyte(Monster):
       Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4)
       bludgeoning damage.
     """
-    name = 'Acolyte'
-    description = 'Medium humanoid, any alignment'
+
+    name = "Acolyte"
+    description = "Medium humanoid, any alignment"
     challenge_rating = 0.25
     armor_class = 10
-    skills = 'Medicine +4, Religion +2'
-    senses = 'Passive Perception 12'
-    languages = 'any one language (usually Common)'
+    skills = "Medicine +4, Religion +2"
+    senses = "Passive Perception 12"
+    languages = "any one language (usually Common)"
     strength = Ability(10)
     dexterity = Ability(10)
     constitution = Ability(10)
@@ -154,12 +156,12 @@ class Acolyte(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 9
-    hit_dice = '2d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
-    spells = ['light', 'sacred flame', 'thaumaturgy', 'bless', 'cure wounds', 'sanctuary']
+    hit_dice = "2d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
+    spells = ["light", "sacred flame", "thaumaturgy", "bless", "cure wounds", "sanctuary"]
 
 
 class AdultBlackDragon(Monster):
@@ -210,13 +212,14 @@ class AdultBlackDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Adult Black Dragon'
-    description = 'Huge dragon, chaotic evil'
+
+    name = "Adult Black Dragon"
+    description = "Huge dragon, chaotic evil"
     challenge_rating = 14
     armor_class = 19
-    skills = 'Perception +11, Stealth +7'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21'
-    languages = 'Common, Draconic'
+    skills = "Perception +11, Stealth +7"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21"
+    languages = "Common, Draconic"
     strength = Ability(23)
     dexterity = Ability(14)
     constitution = Ability(21)
@@ -229,11 +232,11 @@ class AdultBlackDragon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 195
-    hit_dice = '17d12 + 85'
-    condition_immunities = ''
-    damage_immunities = 'acid'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "17d12 + 85"
+    condition_immunities = ""
+    damage_immunities = "acid"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -283,13 +286,14 @@ class AdultBlueDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Adult Blue Dragon'
-    description = 'Huge dragon, lawful evil'
+
+    name = "Adult Blue Dragon"
+    description = "Huge dragon, lawful evil"
     challenge_rating = 16
     armor_class = 19
-    skills = 'Perception +12, Stealth +5'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22'
-    languages = 'Common, Draconic'
+    skills = "Perception +12, Stealth +5"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22"
+    languages = "Common, Draconic"
     strength = Ability(25)
     dexterity = Ability(10)
     constitution = Ability(23)
@@ -302,11 +306,11 @@ class AdultBlueDragon(Monster):
     climb_speed = 0
     burrow_speed = 30
     hp_max = 225
-    hit_dice = '18d12 + 108'
-    condition_immunities = ''
-    damage_immunities = 'lightning'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "18d12 + 108"
+    condition_immunities = ""
+    damage_immunities = "lightning"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -340,12 +344,12 @@ class AdultBrassDragon(Monster):
       the next 24 hours.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Fire Breath. The dragon exhales fire in an 60-foot line that is 5 feet
       wide. Each creature in that line must make a DC 18 Dexterity saving
       throw, taking 45 (13d6) fire damage on a failed save, or half as much
       damage on a successful one.
-      
+
       Sleep Breath. The dragon exhales sleep gas in a 60-foot cone. Each
       creature in that area must succeed on a DC 18 Constitution saving
       throw or fall unconscious for 10 minutes. This effect ends for a
@@ -364,13 +368,14 @@ class AdultBrassDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Adult Brass Dragon'
-    description = 'Huge dragon, chaotic good'
+
+    name = "Adult Brass Dragon"
+    description = "Huge dragon, chaotic good"
     challenge_rating = 13
     armor_class = 18
-    skills = 'History +7, Perception +11, Persuasion +8, Stealth +5'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21'
-    languages = 'Common, Draconic'
+    skills = "History +7, Perception +11, Persuasion +8, Stealth +5"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21"
+    languages = "Common, Draconic"
     strength = Ability(23)
     dexterity = Ability(10)
     constitution = Ability(21)
@@ -383,11 +388,11 @@ class AdultBrassDragon(Monster):
     climb_speed = 0
     burrow_speed = 40
     hp_max = 172
-    hit_dice = '15d12 + 75'
-    condition_immunities = ''
-    damage_immunities = 'fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "15d12 + 75"
+    condition_immunities = ""
+    damage_immunities = "fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -423,12 +428,12 @@ class AdultBronzeDragon(Monster):
       the next 24 hours.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Lightning Breath. The dragon exhales lightning in a 90-foot line that
       is 5 feet wide. Each creature in that line must make a DC 19 Dexterity
       saving throw, taking 66 (12d10) lightning damage on a failed save, or
       half as much damage on a successful one.
-      
+
       Repulsion Breath. The dragon exhales repulsion energy in a 30-foot
       cone. Each creature in that area must succeed on a DC 19 Strength
       saving throw. On a failed save, the creature is pushed 60 feet away
@@ -446,13 +451,14 @@ class AdultBronzeDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Adult Bronze Dragon'
-    description = 'Huge dragon, lawful good'
+
+    name = "Adult Bronze Dragon"
+    description = "Huge dragon, lawful good"
     challenge_rating = 15
     armor_class = 19
-    skills = 'Insight +7, Perception +12, Stealth +5'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22'
-    languages = 'Common, Draconic'
+    skills = "Insight +7, Perception +12, Stealth +5"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22"
+    languages = "Common, Draconic"
     strength = Ability(25)
     dexterity = Ability(10)
     constitution = Ability(23)
@@ -465,11 +471,11 @@ class AdultBronzeDragon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 212
-    hit_dice = '17d12 + 102'
-    condition_immunities = ''
-    damage_immunities = 'lightning'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "17d12 + 102"
+    condition_immunities = ""
+    damage_immunities = "lightning"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -503,12 +509,12 @@ class AdultCopperDragon(Monster):
       the next 24 hours.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Acid Breath. The dragon exhales acid in an 60-foot line that is 5 feet
       wide. Each creature in that line must make a DC 18 Dexterity saving
       throw, taking 54 (12d8) acid damage on a failed save, or half as much
       damage on a successful one.
-      
+
       Slowing Breath. The dragon exhales gas in a 60-foot cone. Each
       creature in that area must succeed on a DC 18 Constitution saving
       throw. On a failed save, the creature can't use reactions, its speed
@@ -530,13 +536,14 @@ class AdultCopperDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Adult Copper Dragon'
-    description = 'Huge dragon, chaotic good'
+
+    name = "Adult Copper Dragon"
+    description = "Huge dragon, chaotic good"
     challenge_rating = 14
     armor_class = 18
-    skills = 'Deception +8, Perception +12, Stealth +6'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22'
-    languages = 'Common, Draconic'
+    skills = "Deception +8, Perception +12, Stealth +6"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22"
+    languages = "Common, Draconic"
     strength = Ability(23)
     dexterity = Ability(12)
     constitution = Ability(21)
@@ -549,11 +556,11 @@ class AdultCopperDragon(Monster):
     climb_speed = 40
     burrow_speed = 0
     hp_max = 184
-    hit_dice = '16d12 + 80'
-    condition_immunities = ''
-    damage_immunities = 'acid'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "16d12 + 80"
+    condition_immunities = ""
+    damage_immunities = "acid"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -589,12 +596,12 @@ class AdultGoldDragon(Monster):
       the next 24 hours.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Fire Breath. The dragon exhales fire in a 60-foot cone. Each creature
       in that area must make a DC 21 Dexterity saving throw, taking 66
       (12d10) fire damage on a failed save, or half as much damage on a
       successful one.
-      
+
       Weakening Breath. The dragon exhales gas in a 60-foot cone. Each
       creature in that area must succeed on a DC 21 Strength saving throw or
       have disadvantage on Strength-based attack rolls, Strength checks, and
@@ -614,13 +621,14 @@ class AdultGoldDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Adult Gold Dragon'
-    description = 'Huge dragon, lawful good'
+
+    name = "Adult Gold Dragon"
+    description = "Huge dragon, lawful good"
     challenge_rating = 17
     armor_class = 19
-    skills = 'Insight +8, Perception +14, Persuasion +13, Stealth +8'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 24'
-    languages = 'Common, Draconic'
+    skills = "Insight +8, Perception +14, Persuasion +13, Stealth +8"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 24"
+    languages = "Common, Draconic"
     strength = Ability(27)
     dexterity = Ability(14)
     constitution = Ability(25)
@@ -633,11 +641,11 @@ class AdultGoldDragon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 256
-    hit_dice = '19d12 + 133'
-    condition_immunities = ''
-    damage_immunities = 'fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "19d12 + 133"
+    condition_immunities = ""
+    damage_immunities = "fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -689,13 +697,14 @@ class AdultGreenDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Adult Green Dragon'
-    description = 'Huge dragon, lawful evil'
+
+    name = "Adult Green Dragon"
+    description = "Huge dragon, lawful evil"
     challenge_rating = 15
     armor_class = 19
-    skills = 'Deception +8, Insight +7, Perception +12, Persuasion +8, Stealth +6'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22'
-    languages = 'Common, Draconic'
+    skills = "Deception +8, Insight +7, Perception +12, Persuasion +8, Stealth +6"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 22"
+    languages = "Common, Draconic"
     strength = Ability(23)
     dexterity = Ability(12)
     constitution = Ability(21)
@@ -708,11 +717,11 @@ class AdultGreenDragon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 207
-    hit_dice = '18d12 + 90'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "18d12 + 90"
+    condition_immunities = "poisoned"
+    damage_immunities = "poison"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -752,17 +761,17 @@ class AdultRedDragon(Monster):
       On initiative count 20 (losing initiative ties), the dragon takes a
       lair action to cause one of the following effects: the dragon can't
       use the same effect two rounds in a row:
-      
+
       - Magma erupts from a point on the ground the dragon can see within
       120 feet of it, creating a 20-foot-high, 5-foot-radius geyser. Each
       creature in the geyser's area must make a DC 15 Dexterity saving
       throw, taking 21 (6d6) fire damage on a failed save, or half as much
       damage on a successful one.
-      
+
       - A tremor shakes the lair in a 60-foot-radius around the dragon. Each
       creature other than the dragon on the ground in that area must succeed
       on a DC 15 Dexterity saving throw or be knocked prone.
-      
+
       - Volcanic gases form a cloud in a 20-foot-radius sphere centered on a
       point the dragon can see within 120 feet of it. The sphere spreads
       around corners, and its area is lightly obscured. It lasts until
@@ -783,13 +792,14 @@ class AdultRedDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Adult Red Dragon'
-    description = 'Huge dragon, chaotic evil'
+
+    name = "Adult Red Dragon"
+    description = "Huge dragon, chaotic evil"
     challenge_rating = 17
     armor_class = 19
-    skills = 'Perception +13, Stealth +6'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 23'
-    languages = 'Common, Draconic'
+    skills = "Perception +13, Stealth +6"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 23"
+    languages = "Common, Draconic"
     strength = Ability(27)
     dexterity = Ability(10)
     constitution = Ability(25)
@@ -802,11 +812,11 @@ class AdultRedDragon(Monster):
     climb_speed = 40
     burrow_speed = 0
     hp_max = 256
-    hit_dice = '19d12 + 133'
-    condition_immunities = ''
-    damage_immunities = 'fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "19d12 + 133"
+    condition_immunities = ""
+    damage_immunities = "fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -840,12 +850,12 @@ class AdultSilverDragon(Monster):
       the next 24 hours.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Cold Breath. The dragon exhales an icy blast in a 60-foot cone. Each
       creature in that area must make a DC 20 Constitution saving throw,
       taking 58 (13d8) cold damage on a failed save, or half as much damage
       on a successful one.
-      
+
       Paralyzing Breath. The dragon exhales paralyzing gas in a 60-foot
       cone. Each creature in that area must succeed on a DC 20 Constitution
       saving throw or be paralyzed for 1 minute. A creature can repeat the
@@ -864,13 +874,14 @@ class AdultSilverDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Adult Silver Dragon'
-    description = 'Huge dragon, lawful good'
+
+    name = "Adult Silver Dragon"
+    description = "Huge dragon, lawful good"
     challenge_rating = 16
     armor_class = 19
-    skills = 'Arcana +8, History +8, Perception +11, Stealth +5'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21'
-    languages = 'Common, Draconic'
+    skills = "Arcana +8, History +8, Perception +11, Stealth +5"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21"
+    languages = "Common, Draconic"
     strength = Ability(27)
     dexterity = Ability(10)
     constitution = Ability(25)
@@ -883,11 +894,11 @@ class AdultSilverDragon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 243
-    hit_dice = '18d12 + 126'
-    condition_immunities = ''
-    damage_immunities = 'cold'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "18d12 + 126"
+    condition_immunities = ""
+    damage_immunities = "cold"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -941,13 +952,14 @@ class AdultWhiteDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Adult White Dragon'
-    description = 'Huge dragon, chaotic evil'
+
+    name = "Adult White Dragon"
+    description = "Huge dragon, chaotic evil"
     challenge_rating = 13
     armor_class = 18
-    skills = 'Perception +11, Stealth +5'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21'
-    languages = 'Common, Draconic'
+    skills = "Perception +11, Stealth +5"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 21"
+    languages = "Common, Draconic"
     strength = Ability(22)
     dexterity = Ability(10)
     constitution = Ability(22)
@@ -960,11 +972,11 @@ class AdultWhiteDragon(Monster):
     climb_speed = 0
     burrow_speed = 30
     hp_max = 200
-    hit_dice = '16d12 + 96'
-    condition_immunities = ''
-    damage_immunities = 'cold'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "16d12 + 96"
+    condition_immunities = ""
+    damage_immunities = "cold"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -991,17 +1003,18 @@ class AirElemental(Monster):
       for every 10 feet it was thrown. If the target is thrown at another
       creature, that creature must succeed on a DC 13 Dexterity saving throw
       or take the same damage and be knocked prone.
-      
+
       If the saving throw is successful, the target takes half the
       bludgeoning damage and isn't flung away or knocked prone.
     """
-    name = 'Air Elemental'
-    description = 'Large elemental, neutral'
+
+    name = "Air Elemental"
+    description = "Large elemental, neutral"
     challenge_rating = 5
     armor_class = 15
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = 'Auran'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = "Auran"
     strength = Ability(14)
     dexterity = Ability(20)
     constitution = Ability(14)
@@ -1014,11 +1027,13 @@ class AirElemental(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 90
-    hit_dice = '12d10 + 24'
-    condition_immunities = 'exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious'
-    damage_immunities = 'poison'
-    damage_resistances = 'lightning'
-    damage_vulnerabilities = ''
+    hit_dice = "12d10 + 24"
+    condition_immunities = (
+        "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious"
+    )
+    damage_immunities = "poison"
+    damage_resistances = "lightning"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1070,13 +1085,14 @@ class AncientBlackDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Ancient Black Dragon'
-    description = 'Gargantuan dragon, chaotic evil'
+
+    name = "Ancient Black Dragon"
+    description = "Gargantuan dragon, chaotic evil"
     challenge_rating = 21
     armor_class = 22
-    skills = 'Perception +16, Stealth +9'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26'
-    languages = 'Common, Draconic'
+    skills = "Perception +16, Stealth +9"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26"
+    languages = "Common, Draconic"
     strength = Ability(27)
     dexterity = Ability(14)
     constitution = Ability(25)
@@ -1089,11 +1105,11 @@ class AncientBlackDragon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 367
-    hit_dice = '21d20 + 147'
-    condition_immunities = ''
-    damage_immunities = 'acid'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "21d20 + 147"
+    condition_immunities = ""
+    damage_immunities = "acid"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1140,13 +1156,14 @@ class AncientBlueDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Ancient Blue Dragon'
-    description = 'Gargantuan dragon, lawful evil'
+
+    name = "Ancient Blue Dragon"
+    description = "Gargantuan dragon, lawful evil"
     challenge_rating = 23
     armor_class = 22
-    skills = 'Perception +17, Stealth +7'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27'
-    languages = 'Common, Draconic'
+    skills = "Perception +17, Stealth +7"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27"
+    languages = "Common, Draconic"
     strength = Ability(29)
     dexterity = Ability(10)
     constitution = Ability(27)
@@ -1159,11 +1176,11 @@ class AncientBlueDragon(Monster):
     climb_speed = 0
     burrow_speed = 40
     hp_max = 481
-    hit_dice = '26d20 + 208'
-    condition_immunities = ''
-    damage_immunities = 'lightning'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "26d20 + 208"
+    condition_immunities = ""
+    damage_immunities = "lightning"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1197,12 +1214,12 @@ class AncientBrassDragon(Monster):
       the next 24 hours.
     Breath Weapons.
       The dragon uses one of the following breath weapons:
-      
+
       Fire Breath. The dragon exhales fire in an 90-foot line that is 10
       feet wide. Each creature in that line must make a DC 21 Dexterity
       saving throw, taking 56 (16d6) fire damage on a failed save, or half
       as much damage on a successful one.
-      
+
       Sleep Breath. The dragon exhales sleep gas in a 90-foot cone. Each
       creature in that area must succeed on a DC 21 Constitution saving
       throw or fall unconscious for 10 minutes. This effect ends for a
@@ -1213,7 +1230,7 @@ class AncientBrassDragon(Monster):
       challenge rating no higher than its own, or back into its true form.
       It reverts to its true form if it dies. Any equipment it is wearing or
       carrying is absorbed or borne by the new form (the dragon's choice).
-      
+
       In a new form, the dragon retains its alignment, hit points, Hit Dice,
       ability to speak, proficiencies, Legendary Resistance, lair actions,
       and Intelligence, Wisdom, and Charisma scores, as well as this action.
@@ -1232,13 +1249,14 @@ class AncientBrassDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Ancient Brass Dragon'
-    description = 'Gargantuan dragon, chaotic good'
+
+    name = "Ancient Brass Dragon"
+    description = "Gargantuan dragon, chaotic good"
     challenge_rating = 20
     armor_class = 20
-    skills = 'History +9, Perception +14, Persuasion +10, Stealth +6'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 24'
-    languages = 'Common, Draconic'
+    skills = "History +9, Perception +14, Persuasion +10, Stealth +6"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 24"
+    languages = "Common, Draconic"
     strength = Ability(27)
     dexterity = Ability(10)
     constitution = Ability(25)
@@ -1251,11 +1269,11 @@ class AncientBrassDragon(Monster):
     climb_speed = 0
     burrow_speed = 40
     hp_max = 297
-    hit_dice = '17d20 + 119'
-    condition_immunities = ''
-    damage_immunities = 'fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "17d20 + 119"
+    condition_immunities = ""
+    damage_immunities = "fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1291,12 +1309,12 @@ class AncientBronzeDragon(Monster):
       the next 24 hours.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Lightning Breath. The dragon exhales lightning in a 120-foot line that
       is 10 feet wide. Each creature in that line must make a DC 23
       Dexterity saving throw, taking 88 (16d10) lightning damage on a failed
       save, or half as much damage on a successful one.
-      
+
       Repulsion Breath. The dragon exhales repulsion energy in a 30-foot
       cone. Each creature in that area must succeed on a DC 23 Strength
       saving throw. On a failed save, the creature is pushed 60 feet away
@@ -1306,7 +1324,7 @@ class AncientBronzeDragon(Monster):
       challenge rating no higher than its own, or back into its true form.
       It reverts to its true form if it dies. Any equipment it is wearing or
       carrying is absorbed or borne by the new form (the dragon's choice).
-      
+
       In a new form, the dragon retains its alignment, hit points, Hit Dice,
       ability to speak, proficiencies, Legendary Resistance, lair actions,
       and Intelligence, Wisdom, and Charisma scores, as well as this action.
@@ -1325,13 +1343,14 @@ class AncientBronzeDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Ancient Bronze Dragon'
-    description = 'Gargantuan dragon, lawful good'
+
+    name = "Ancient Bronze Dragon"
+    description = "Gargantuan dragon, lawful good"
     challenge_rating = 22
     armor_class = 22
-    skills = 'Insight +10, Perception +17, Stealth +7'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27'
-    languages = 'Common, Draconic'
+    skills = "Insight +10, Perception +17, Stealth +7"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27"
+    languages = "Common, Draconic"
     strength = Ability(29)
     dexterity = Ability(10)
     constitution = Ability(27)
@@ -1344,11 +1363,11 @@ class AncientBronzeDragon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 444
-    hit_dice = '24d20 + 192'
-    condition_immunities = ''
-    damage_immunities = 'lightning'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "24d20 + 192"
+    condition_immunities = ""
+    damage_immunities = "lightning"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1382,12 +1401,12 @@ class AncientCopperDragon(Monster):
       the next 24 hours.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Acid Breath. The dragon exhales acid in an 90-foot line that is 10
       feet wide. Each creature in that line must make a DC 22 Dexterity
       saving throw, taking 63 (14d8) acid damage on a failed save, or half
       as much damage on a successful one.
-      
+
       Slowing Breath. The dragon exhales gas in a 90-foot cone. Each
       creature in that area must succeed on a DC 22 Constitution saving
       throw. On a failed save, the creature can't use reactions, its speed
@@ -1401,7 +1420,7 @@ class AncientCopperDragon(Monster):
       challenge rating no higher than its own, or back into its true form.
       It reverts to its true form if it dies. Any equipment it is wearing or
       carrying is absorbed or borne by the new form (the dragon's choice).
-      
+
       In a new form, the dragon retains its alignment, hit points, Hit Dice,
       ability to speak, proficiencies, Legendary Resistance, lair actions,
       and Intelligence, Wisdom, and Charisma scores, as well as this action.
@@ -1420,13 +1439,14 @@ class AncientCopperDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Ancient Copper Dragon'
-    description = 'Gargantuan dragon, chaotic good'
+
+    name = "Ancient Copper Dragon"
+    description = "Gargantuan dragon, chaotic good"
     challenge_rating = 21
     armor_class = 21
-    skills = 'Deception +11, Perception +17, Stealth +8'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27'
-    languages = 'Common, Draconic'
+    skills = "Deception +11, Perception +17, Stealth +8"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27"
+    languages = "Common, Draconic"
     strength = Ability(27)
     dexterity = Ability(12)
     constitution = Ability(25)
@@ -1439,11 +1459,11 @@ class AncientCopperDragon(Monster):
     climb_speed = 40
     burrow_speed = 0
     hp_max = 350
-    hit_dice = '20d20 + 140'
-    condition_immunities = ''
-    damage_immunities = 'acid'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "20d20 + 140"
+    condition_immunities = ""
+    damage_immunities = "acid"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1479,12 +1499,12 @@ class AncientGoldDragon(Monster):
       the next 24 hours.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Fire Breath. The dragon exhales fire in a 90-foot cone. Each creature
       in that area must make a DC 24 Dexterity saving throw, taking 71
       (13d10) fire damage on a failed save, or half as much damage on a
       successful one.
-      
+
       Weakening Breath. The dragon exhales gas in a 90-foot cone. Each
       creature in that area must succeed on a DC 24 Strength saving throw or
       have disadvantage on Strength-based attack rolls, Strength checks, and
@@ -1496,7 +1516,7 @@ class AncientGoldDragon(Monster):
       challenge rating no higher than its own, or back into its true form.
       It reverts to its true form if it dies. Any equipment it is wearing or
       carrying is absorbed or borne by the new form (the dragon's choice).
-      
+
       In a new form, the dragon retains its alignment, hit points, Hit Dice,
       ability to speak, proficiencies, Legendary Resistance, lair actions,
       and Intelligence, Wisdom, and Charisma scores, as well as this action.
@@ -1515,13 +1535,14 @@ class AncientGoldDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Ancient Gold Dragon'
-    description = 'Gargantuan dragon, lawful good'
+
+    name = "Ancient Gold Dragon"
+    description = "Gargantuan dragon, lawful good"
     challenge_rating = 24
     armor_class = 22
-    skills = 'Insight +10, Perception +17, Persuasion +16, Stealth +9'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27'
-    languages = 'Common, Draconic'
+    skills = "Insight +10, Perception +17, Persuasion +16, Stealth +9"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27"
+    languages = "Common, Draconic"
     strength = Ability(30)
     dexterity = Ability(14)
     constitution = Ability(29)
@@ -1534,11 +1555,11 @@ class AncientGoldDragon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 546
-    hit_dice = '28d20 + 252'
-    condition_immunities = ''
-    damage_immunities = 'fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "28d20 + 252"
+    condition_immunities = ""
+    damage_immunities = "fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1590,13 +1611,14 @@ class AncientGreenDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Ancient Green Dragon'
-    description = 'Gargantuan dragon, lawful evil'
+
+    name = "Ancient Green Dragon"
+    description = "Gargantuan dragon, lawful evil"
     challenge_rating = 22
     armor_class = 21
-    skills = 'Deception +11, Insight +10, Perception +17, Persuasion +11, Stealth +8'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27'
-    languages = 'Common, Draconic'
+    skills = "Deception +11, Insight +10, Perception +17, Persuasion +11, Stealth +8"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 27"
+    languages = "Common, Draconic"
     strength = Ability(27)
     dexterity = Ability(12)
     constitution = Ability(25)
@@ -1609,11 +1631,11 @@ class AncientGreenDragon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 385
-    hit_dice = '22d20 + 154'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "22d20 + 154"
+    condition_immunities = "poisoned"
+    damage_immunities = "poison"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1662,13 +1684,14 @@ class AncientRedDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Ancient Red Dragon'
-    description = 'Gargantuan dragon, chaotic evil'
+
+    name = "Ancient Red Dragon"
+    description = "Gargantuan dragon, chaotic evil"
     challenge_rating = 24
     armor_class = 22
-    skills = 'Perception +16, Stealth +7'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26'
-    languages = 'Common, Draconic'
+    skills = "Perception +16, Stealth +7"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26"
+    languages = "Common, Draconic"
     strength = Ability(30)
     dexterity = Ability(10)
     constitution = Ability(29)
@@ -1681,11 +1704,11 @@ class AncientRedDragon(Monster):
     climb_speed = 40
     burrow_speed = 0
     hp_max = 546
-    hit_dice = '28d20 + 252'
-    condition_immunities = ''
-    damage_immunities = 'fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "28d20 + 252"
+    condition_immunities = ""
+    damage_immunities = "fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1719,12 +1742,12 @@ class AncientSilverDragon(Monster):
       the next 24 hours.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Cold Breath. The dragon exhales an icy blast in a 90-foot cone. Each
       creature in that area must make a DC 24 Constitution saving throw,
       taking 67 (15d8) cold damage on a failed save, or half as much damage
       on a successful one.
-      
+
       Paralyzing Breath. The dragon exhales paralyzing gas in a 90- foot
       cone. Each creature in that area must succeed on a DC 24 Constitution
       saving throw or be paralyzed for 1 minute. A creature can repeat the
@@ -1735,7 +1758,7 @@ class AncientSilverDragon(Monster):
       challenge rating no higher than its own, or back into its true form.
       It reverts to its true form if it dies. Any equipment it is wearing or
       carrying is absorbed or borne by the new form (the dragon's choice).
-      
+
       In a new form, the dragon retains its alignment, hit points, Hit Dice,
       ability to speak, proficiencies, Legendary Resistance, lair actions,
       and Intelligence, Wisdom, and Charisma scores, as well as this action.
@@ -1754,13 +1777,14 @@ class AncientSilverDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Ancient Silver Dragon'
-    description = 'Gargantuan dragon, lawful good'
+
+    name = "Ancient Silver Dragon"
+    description = "Gargantuan dragon, lawful good"
     challenge_rating = 23
     armor_class = 22
-    skills = 'Arcana +11, History +11, Perception +16, Stealth +7'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26'
-    languages = 'Common, Draconic'
+    skills = "Arcana +11, History +11, Perception +16, Stealth +7"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26"
+    languages = "Common, Draconic"
     strength = Ability(30)
     dexterity = Ability(10)
     constitution = Ability(29)
@@ -1773,11 +1797,11 @@ class AncientSilverDragon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 487
-    hit_dice = '25d20 + 225'
-    condition_immunities = ''
-    damage_immunities = 'cold'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "25d20 + 225"
+    condition_immunities = ""
+    damage_immunities = "cold"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1831,13 +1855,14 @@ class AncientWhiteDragon(Monster):
       bludgeoning damage and be knocked prone. The dragon can then fly up to
       half its flying speed.
     """
-    name = 'Ancient White Dragon'
-    description = 'Gargantuan dragon, chaotic evil'
+
+    name = "Ancient White Dragon"
+    description = "Gargantuan dragon, chaotic evil"
     challenge_rating = 20
     armor_class = 20
-    skills = 'Perception +13, Stealth +6'
-    senses = 'Blindsight 60 ft., Darkvision 120 ft., Passive Perception 23'
-    languages = 'Common, Draconic'
+    skills = "Perception +13, Stealth +6"
+    senses = "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 23"
+    languages = "Common, Draconic"
     strength = Ability(26)
     dexterity = Ability(10)
     constitution = Ability(26)
@@ -1850,11 +1875,11 @@ class AncientWhiteDragon(Monster):
     climb_speed = 0
     burrow_speed = 40
     hp_max = 333
-    hit_dice = '18d20 + 144'
-    condition_immunities = ''
-    damage_immunities = 'cold'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "18d20 + 144"
+    condition_immunities = ""
+    damage_immunities = "cold"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1891,23 +1916,23 @@ class Androsphinx(Monster):
       long rest, the roar is louder and the effect is different, as detailed
       below. Each creature within 500 feet of the sphinx and able to hear
       the roar must make a saving throw.
-      
-  
-      
+
+
+
       First Roar. Each creature that fails a DC 18 Wisdom saving throw is
       frightened for 1 minute. A frightened creature can repeat the saving
       throw at the end of each of its turns, ending the effect on itself on
       a success.
-      
-  
-      
+
+
+
       Second Roar. Each creature that fails a DC 18 Wisdom saving throw is
       deafened and frightened for 1 minute. A frightened creature is
       paralyzed and can repeat the saving throw at the end of each of its
       turns, ending the effect on itself on a success.
-      
-  
-      
+
+
+
       Third Roar. Each creature makes a DC 18 Constitution saving throw. On
       a failed save, a creature takes 44 (8d10) thunder damage and is
       knocked prone. On a successful save, the creature takes half as much
@@ -1924,13 +1949,14 @@ class Androsphinx(Monster):
       The sphinx casts a spell from its list of prepared spells, using a
       spell slot as normal.
     """
-    name = 'Androsphinx'
-    description = 'Large monstrosity, lawful neutral'
+
+    name = "Androsphinx"
+    description = "Large monstrosity, lawful neutral"
     challenge_rating = 17
     armor_class = 17
-    skills = 'Arcana +9, Perception +10, Religion +15'
-    senses = 'Truesight 120 ft., Passive Perception 20'
-    languages = 'Common, Sphinx'
+    skills = "Arcana +9, Perception +10, Religion +15"
+    senses = "Truesight 120 ft., Passive Perception 20"
+    languages = "Common, Sphinx"
     strength = Ability(22)
     dexterity = Ability(10)
     constitution = Ability(20)
@@ -1943,12 +1969,28 @@ class Androsphinx(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 199
-    hit_dice = '19d10 + 95'
-    condition_immunities = 'charmed, frightened'
-    damage_immunities = 'psychic, bludgeoning, piercing, and slashing from nonmagical weapons'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
-    spells = ['sacred flame', 'spare the dying', 'thaumaturgy', 'command', 'detect evil and good', 'detect magic', 'lesser restoration', 'zone of truth', 'dispel magic', 'tongues', 'banishment', 'freedom of movement', 'flame strike', 'greater restoration', "heroes' feast"]
+    hit_dice = "19d10 + 95"
+    condition_immunities = "charmed, frightened"
+    damage_immunities = "psychic, bludgeoning, piercing, and slashing from nonmagical weapons"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
+    spells = [
+        "sacred flame",
+        "spare the dying",
+        "thaumaturgy",
+        "command",
+        "detect evil and good",
+        "detect magic",
+        "lesser restoration",
+        "zone of truth",
+        "dispel magic",
+        "tongues",
+        "banishment",
+        "freedom of movement",
+        "flame strike",
+        "greater restoration",
+        "heroes' feast",
+    ]
 
 
 class AnimatedArmor(Monster):
@@ -1971,13 +2013,14 @@ class AnimatedArmor(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
       2) bludgeoning damage.
     """
-    name = 'Animated Armor'
-    description = 'Medium construct, unaligned'
+
+    name = "Animated Armor"
+    description = "Medium construct, unaligned"
     challenge_rating = 1
     armor_class = 18
-    skills = ''
-    senses = 'Blindsight 60 ft. (blind beyond this radius), Passive Perception 6'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 60 ft. (blind beyond this radius), Passive Perception 6"
+    languages = ""
     strength = Ability(14)
     dexterity = Ability(11)
     constitution = Ability(13)
@@ -1990,11 +2033,13 @@ class AnimatedArmor(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 33
-    hit_dice = '6d8 + 6'
-    condition_immunities = 'blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned'
-    damage_immunities = 'poison, psychic'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d8 + 6"
+    condition_immunities = (
+        "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned"
+    )
+    damage_immunities = "poison, psychic"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2015,13 +2060,14 @@ class Ankheg(Monster):
       must make a DC 13 Dexterity saving throw, taking 10 (3d6) acid damage
       on a failed save, or half as much damage on a successful one.
     """
-    name = 'Ankheg'
-    description = 'Large monstrosity, unaligned'
+
+    name = "Ankheg"
+    description = "Large monstrosity, unaligned"
     challenge_rating = 2
     armor_class = 14
-    skills = ''
-    senses = 'Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 60 ft., Tremorsense 60 ft., Passive Perception 11"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(11)
     constitution = Ability(13)
@@ -2034,11 +2080,11 @@ class Ankheg(Monster):
     climb_speed = 0
     burrow_speed = 10
     hp_max = 39
-    hit_dice = '6d10 + 6'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d10 + 6"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2047,9 +2093,9 @@ class Ankylosaurus(Monster):
       Thick armor plating covers the body of the plant-eating dinosaur
       ankylosaurus, which defends itself against predators with a
       knobbed tail that delivers a devastating strike.
-    
+
     # Actions
-    
+
     Tail.
       Melee Weapon Attack: +7 to hit, reach 10 ft., one
       target. Hit: 18 (4d6+4) bludgeoning damage. If the target is a
@@ -2057,12 +2103,13 @@ class Ankylosaurus(Monster):
       knocked prone.
 
     """
-    name = 'Ankylosaurus'
-    description = 'Huge beast, unaligned'
+
+    name = "Ankylosaurus"
+    description = "Huge beast, unaligned"
     challenge_rating = 3
     armor_class = 15
-    skills = ''
-    senses = 'passive Perception 11'
+    skills = ""
+    senses = "passive Perception 11"
     strength = Ability(19)
     dexterity = Ability(11)
     constitution = Ability(15)
@@ -2074,7 +2121,7 @@ class Ankylosaurus(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 68
-    hit_dice = '8d12+16'
+    hit_dice = "8d12+16"
 
 
 class Ape(Monster):
@@ -2091,13 +2138,14 @@ class Ape(Monster):
       Ranged Weapon Attack: +5 to hit, range 25/50 ft., one target. Hit: 6
       (1d6 + 3) bludgeoning damage.
     """
-    name = 'Ape'
-    description = 'Medium beast, unaligned'
+
+    name = "Ape"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.5
     armor_class = 12
-    skills = 'Athletics +5, Perception +3'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Athletics +5, Perception +3"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(16)
     dexterity = Ability(14)
     constitution = Ability(14)
@@ -2110,11 +2158,11 @@ class Ape(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 19
-    hit_dice = '3d8 + 6'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d8 + 6"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2146,13 +2194,14 @@ class Archmage(Monster):
       Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 20/60
       ft., one target. Hit: 4 (1d4 + 2) piercing damage.
     """
-    name = 'Archmage'
-    description = 'Medium humanoid, any alignment'
+
+    name = "Archmage"
+    description = "Medium humanoid, any alignment"
     challenge_rating = 12
     armor_class = 12
-    skills = 'Arcana +13, History +13'
-    senses = 'Passive Perception 12'
-    languages = 'any six languages'
+    skills = "Arcana +13, History +13"
+    senses = "Passive Perception 12"
+    languages = "any six languages"
     strength = Ability(10)
     dexterity = Ability(14)
     constitution = Ability(12)
@@ -2165,12 +2214,40 @@ class Archmage(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 99
-    hit_dice = '18d8 + 18'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = 'damage from spells'
-    damage_vulnerabilities = ''
-    spells = ['disguise self', 'invisibility', 'fire bolt', 'light', 'mage hand', 'prestidigitation', 'shocking grasp', 'detect magic', 'identify', 'mage armor', 'magic missile', 'detect thoughts', 'mirror image', 'misty step', 'counterspell', 'fly', 'lightning bolt', 'banishment', 'fire shield', 'stoneskin', 'cone of cold', 'scrying', 'wall of force', 'globe of invulnerability', 'teleport', 'mind blank', 'time stop']
+    hit_dice = "18d8 + 18"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = "damage from spells"
+    damage_vulnerabilities = ""
+    spells = [
+        "disguise self",
+        "invisibility",
+        "fire bolt",
+        "light",
+        "mage hand",
+        "prestidigitation",
+        "shocking grasp",
+        "detect magic",
+        "identify",
+        "mage armor",
+        "magic missile",
+        "detect thoughts",
+        "mirror image",
+        "misty step",
+        "counterspell",
+        "fly",
+        "lightning bolt",
+        "banishment",
+        "fire shield",
+        "stoneskin",
+        "cone of cold",
+        "scrying",
+        "wall of force",
+        "globe of invulnerability",
+        "teleport",
+        "mind blank",
+        "time stop",
+    ]
 
 
 class Assassin(Monster):
@@ -2207,12 +2284,13 @@ class Assassin(Monster):
       Constitution saving throw, taking 24 (7d6) poison damage on a failed
       save, or half as much damage on a successful one.
     """
-    name = 'Assassin'
-    description = 'Medium humanoid, any non-good alignment'
+
+    name = "Assassin"
+    description = "Medium humanoid, any non-good alignment"
     challenge_rating = 8
     armor_class = 15
-    skills = 'Acrobatics +6, Deception +3, Perception +3, Stealth +9'
-    senses = 'Passive Perception 13'
+    skills = "Acrobatics +6, Deception +3, Perception +3, Stealth +9"
+    senses = "Passive Perception 13"
     languages = "Thieves' cant plus any two languages"
     strength = Ability(11)
     dexterity = Ability(16)
@@ -2226,11 +2304,11 @@ class Assassin(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 78
-    hit_dice = '12d8 + 24'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = 'poison'
-    damage_vulnerabilities = ''
+    hit_dice = "12d8 + 24"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = "poison"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2247,13 +2325,14 @@ class AwakenedShrub(Monster):
       Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 -
       1) slashing damage.
     """
-    name = 'Awakened Shrub'
-    description = 'Small plant, unaligned'
+
+    name = "Awakened Shrub"
+    description = "Small plant, unaligned"
     challenge_rating = 0
     armor_class = 9
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = 'one language known by its creator'
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = "one language known by its creator"
     strength = Ability(3)
     dexterity = Ability(8)
     constitution = Ability(11)
@@ -2266,11 +2345,11 @@ class AwakenedShrub(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 10
-    hit_dice = '3d6 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = 'piercing'
-    damage_vulnerabilities = 'fire'
+    hit_dice = "3d6 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = "piercing"
+    damage_vulnerabilities = "fire"
     spells = []
 
 
@@ -2287,13 +2366,14 @@ class AwakenedTree(Monster):
       Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 14 (3d6
       + 4) bludgeoning damage.
     """
-    name = 'Awakened Tree'
-    description = 'Huge plant, unaligned'
+
+    name = "Awakened Tree"
+    description = "Huge plant, unaligned"
     challenge_rating = 2
     armor_class = 13
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = 'one language known by its creator'
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = "one language known by its creator"
     strength = Ability(19)
     dexterity = Ability(6)
     constitution = Ability(15)
@@ -2306,11 +2386,11 @@ class AwakenedTree(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 59
-    hit_dice = '7d12 + 14'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = 'bludgeoning'
-    damage_vulnerabilities = 'fire'
+    hit_dice = "7d12 + 14"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = "bludgeoning"
+    damage_vulnerabilities = "fire"
     spells = []
 
 
@@ -2323,13 +2403,14 @@ class AxeBeak(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 +
       2) slashing damage.
     """
-    name = 'Axe Beak'
-    description = 'Large beast, unaligned'
+
+    name = "Axe Beak"
+    description = "Large beast, unaligned"
     challenge_rating = 0.25
     armor_class = 11
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = ""
     strength = Ability(14)
     dexterity = Ability(12)
     constitution = Ability(12)
@@ -2342,11 +2423,11 @@ class AxeBeak(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 19
-    hit_dice = '3d10 + 3'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d10 + 3"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2370,13 +2451,14 @@ class Azer(Monster):
       3) bludgeoning damage, or 8 (1d10 + 3) bludgeoning damage if used with
       two hands to make a melee attack, plus 3 (1d6) fire damage.
     """
-    name = 'Azer'
-    description = 'Medium elemental, lawful neutral'
+
+    name = "Azer"
+    description = "Medium elemental, lawful neutral"
     challenge_rating = 2
     armor_class = 17
-    skills = ''
-    senses = 'Passive Perception 11'
-    languages = 'Ignan'
+    skills = ""
+    senses = "Passive Perception 11"
+    languages = "Ignan"
     strength = Ability(17)
     dexterity = Ability(12)
     constitution = Ability(15)
@@ -2389,9 +2471,9 @@ class Azer(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 39
-    hit_dice = '6d8 + 12'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'fire, poison'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d8 + 12"
+    condition_immunities = "poisoned"
+    damage_immunities = "fire, poison"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

@@ -1,5 +1,7 @@
 """Tools for describing a player character."""
+
 from __future__ import annotations  # To support python 3.10 annotation in older version
+
 import logging
 import math
 import os
@@ -7,7 +9,7 @@ import re
 import warnings
 from pathlib import Path
 from types import ModuleType
-from typing import Sequence, Union, MutableMapping
+from typing import MutableMapping, Sequence, Union
 
 import jinja2
 
@@ -98,9 +100,7 @@ class Character(Creature):
     equipment_weight_dict = {}
 
     # Characteristics
-    personality_traits = (
-        "TODO: Describe how your character behaves, interacts with others"
-    )
+    personality_traits = "TODO: Describe how your character behaves, interacts with others"
     ideals = "TODO: Describe what values your character believes in."
     bonds = "TODO: Describe your character's commitments or ongoing quests."
     flaws = "TODO: Describe your character's interesting flaws."
@@ -256,9 +256,7 @@ class Character(Creature):
             try:
                 cls = getattr(classes, cls)
             except AttributeError:
-                raise AttributeError(
-                    "class was not recognized from classes.py: {:s}".format(cls)
-                )
+                raise AttributeError("class was not recognized from classes.py: {:s}".format(cls))
         if isinstance(level, str):
             level = int(level)
         self.class_list.append(
@@ -280,11 +278,7 @@ class Character(Creature):
         """
         if isinstance(classes_list, str):
             classes_list = [classes_list]
-        if (
-            isinstance(levels, int)
-            or isinstance(levels, float)
-            or isinstance(levels, str)
-        ):
+        if isinstance(levels, int) or isinstance(levels, float) or isinstance(levels, str):
             levels = [levels]
         if len(levels) == 0:
             levels = [1] * len(classes_list)
@@ -293,15 +287,15 @@ class Character(Creature):
         if len(subclasses) < len(classes_list):
             for count in range(0, (len(classes_list) - len(subclasses))):
                 subclasses.append(None)
-        assert len(classes_list) == len(
-            levels
-        ), "the length of classes {:d} does not match length of levels {:d}".format(
-            len(classes), len(levels)
+        assert len(classes_list) == len(levels), (
+            "the length of classes {:d} does not match length of levels {:d}".format(
+                len(classes), len(levels)
+            )
         )
-        assert len(classes_list) == len(
-            subclasses
-        ), "the length of classes {:d} does not match length of subclasses {:d}".format(
-            len(classes_list), len(subclasses)
+        assert len(classes_list) == len(subclasses), (
+            "the length of classes {:d} does not match length of subclasses {:d}".format(
+                len(classes_list), len(subclasses)
+            )
         )
         for cls, lvl, sub in zip(classes_list, levels, subclasses):
             params = {}
@@ -321,9 +315,7 @@ class Character(Creature):
             self._race = newrace(owner=self)
         elif isinstance(newrace, str):
             try:
-                self._race = find_content(newrace, valid_classes=[race.Race])(
-                    owner=self
-                )
+                self._race = find_content(newrace, valid_classes=[race.Race])(owner=self)
             except exceptions.ContentNotFound:
                 msg = f'Race "{newrace}" not defined. Please add it to ``race.py``'
                 self._race = race.Race(owner=self)
@@ -344,13 +336,11 @@ class Character(Creature):
             self._background = bg(owner=self)
         elif isinstance(bg, str):
             try:
-                self._background = find_content(
-                    bg, valid_classes=[background.Background]
-                )(owner=self)
-            except exceptions.ContentNotFound:
-                msg = (
-                    f'Background "{bg}" not defined. Please add it to ``background.py``'
+                self._background = find_content(bg, valid_classes=[background.Background])(
+                    owner=self
                 )
+            except exceptions.ContentNotFound:
+                msg = f'Background "{bg}" not defined. Please add it to ``background.py``'
                 self._background = background.Background(owner=self)
                 warnings.warn(msg)
 
@@ -386,8 +376,9 @@ class Character(Creature):
         self.primary_class.level = new_level
         if self.num_classes > 1:
             warnings.warn(
-                "Unable to tell which level to set. Updating "
-                "level of primary class {:s}".format(self.primary_class.name)
+                "Unable to tell which level to set. Updating level of primary class {:s}".format(
+                    self.primary_class.name
+                )
             )
 
     @property
@@ -478,10 +469,7 @@ class Character(Creature):
         if self.primary_class is None:
             return self._saving_throw_proficiencies
         else:
-            return (
-                self._saving_throw_proficiencies
-                or self.primary_class.saving_throw_proficiencies
-            )
+            return self._saving_throw_proficiencies or self.primary_class.saving_throw_proficiencies
 
     @saving_throw_proficiencies.setter
     def saving_throw_proficiencies(self, vals):
@@ -535,10 +523,7 @@ class Character(Creature):
                 if eff_level == 0:
                     return warlock_slots
                 else:
-                    return (
-                        multiclass_spellslots_by_level[eff_level][spell_level]
-                        + warlock_slots
-                    )
+                    return multiclass_spellslots_by_level[eff_level][spell_level] + warlock_slots
 
     @property
     def spells(self):
@@ -578,10 +563,7 @@ class Character(Creature):
                 if isinstance(val, str):
                     val = [val]
                 for mitem in val:
-                    msg = (
-                        f'Magic Item "{mitem}" not defined. '
-                        "Please add it to ``magic_items.py``"
-                    )
+                    msg = f'Magic Item "{mitem}" not defined. Please add it to ``magic_items.py``'
                     ThisMagicItem = self._resolve_mechanic(
                         mechanic=mitem,
                         SuperClass=magic_items.MagicItem,
@@ -593,9 +575,7 @@ class Character(Creature):
                 msg = 'Magic Item "{}" not defined. Please add it to ``weapons.py``'
                 wps = set(
                     [
-                        self._resolve_mechanic(
-                            w, SuperClass=weapons.Weapon, warning_message=msg
-                        )
+                        self._resolve_mechanic(w, SuperClass=weapons.Weapon, warning_message=msg)
                         for w in val
                     ]
                 )
@@ -643,10 +623,7 @@ class Character(Creature):
                 if hasattr(self, "Artificer"):
                     _infusions = []
                     for infusion_name in val:
-                        msg = (
-                            "Infusion '{}' not defined. Please add it to"
-                            " ``infusions.py``"
-                        )
+                        msg = "Infusion '{}' not defined. Please add it to ``infusions.py``"
                         ThisInfusion = self._resolve_mechanic(
                             mechanic=infusion_name,
                             SuperClass=infusions.Infusion,
@@ -659,9 +636,7 @@ class Character(Creature):
                 # Some other generic attribute
                 is_unknown = not hasattr(self, attr) and not attr.startswith("_")
                 if is_unknown:
-                    warnings.warn(
-                        f"Setting unknown character attribute {attr}", RuntimeWarning
-                    )
+                    warnings.warn(f"Setting unknown character attribute {attr}", RuntimeWarning)
                 # Lookup general attributes
                 setattr(self, attr, val)
 
@@ -708,7 +683,7 @@ class Character(Creature):
         if hasattr(self, "features_and_traits"):
             info_list = []
             N = 30
-            if re.search(r'\S',  self.features_and_traits):
+            if re.search(r"\S", self.features_and_traits):
                 info_list = ["**Other Features**"]
                 info_list += [
                     text.strip()
@@ -768,9 +743,7 @@ class Character(Creature):
         eq_list = []
         if hasattr(self, "equipment") and len(self.equipment.strip()) > 0:
             eq_list += [
-                text.strip()
-                for text in self.equipment.split("\n\n")
-                if not (text.isspace())
+                text.strip() for text in self.equipment.split("\n\n") if not (text.isspace())
             ]
         if hasattr(self, "magic_items") and len(self.magic_items) > 0:
             sub_list = "**Magic Items:** "
@@ -816,32 +789,33 @@ class Character(Creature):
         # Add armor proficiencies and shields
         armor_types = ["all armor", "light armor", "medium armor", "heavy armor"]
         prof_dict["Armor"] = [ar.title() for ar in armor_types if ar in prof_set]
-        if len(prof_dict["Armor"]) > 2 or 'all armor' in prof_set:
+        if len(prof_dict["Armor"]) > 2 or "all armor" in prof_set:
             prof_dict["Armor"] = ["All Armor"]
-        if 'shields (druids will not wear armor or use shields made of metal)' in prof_set:
+        if "shields (druids will not wear armor or use shields made of metal)" in prof_set:
             prof_dict["Armor"] += [
-                    "Shields (druids will not wear armor or use shields made of metal)"]
-        elif 'shields' in prof_set:
+                "Shields (druids will not wear armor or use shields made of metal)"
+            ]
+        elif "shields" in prof_set:
             prof_dict["Armor"] += ["Shields"]
         prof_dict["Armor"] = ", ".join(prof_dict["Armor"])
         # Backward compatibility with chosen_tools
-        if not self.chosen_tools == "" :
+        if not self.chosen_tools == "":
             prof_set.update(self.chosen_tools.split(","))
         # Extract "Other" proficiencies (artisan's tools, musical instruments, ... )
         prof_dict["Other"] = []
         for prof in prof_set:
             if not (
                 # Anything other than weapons, armor, shields or options
-                any (re.search(w.name.lower(), prof) for w in w_pro)
-                or any (ar in prof for ar in armor_types)
+                any(re.search(w.name.lower(), prof) for w in w_pro)
+                or any(ar in prof for ar in armor_types)
                 or "shields" in prof
             ):
                 prof_dict["Other"].append(prof)
         prof_dict["Other"] = ", ".join(prof_dict["Other"])
         # Nice capitalization
-        prof_dict["Other"] = re.sub(r"[A-Za-z]+('[A-Za-z]+)?",
-                                   lambda word: word.group(0).capitalize(),
-                                   prof_dict["Other"])
+        prof_dict["Other"] = re.sub(
+            r"[A-Za-z]+('[A-Za-z]+)?", lambda word: word.group(0).capitalize(), prof_dict["Other"]
+        )
         return prof_dict
 
     @property
@@ -865,26 +839,16 @@ class Character(Creature):
                     [c.name + " " + str(c.level) for c in self.spellcasting_classes]
                 ),
                 "abilities": " / ".join(
-                    [
-                        c.spellcasting_ability.upper()[:3]
-                        for c in self.spellcasting_classes
-                    ]
+                    [c.spellcasting_ability.upper()[:3] for c in self.spellcasting_classes]
                 ),
-                "DCs": " / ".join(
-                    [str(self.spell_save_dc(c)) for c in self.spellcasting_classes]
-                ),
+                "DCs": " / ".join([str(self.spell_save_dc(c)) for c in self.spellcasting_classes]),
                 "bonuses": " / ".join(
-                    [
-                        "{:+d}".format(self.spell_attack_bonus(c))
-                        for c in self.spellcasting_classes
-                    ]
+                    ["{:+d}".format(self.spell_attack_bonus(c)) for c in self.spellcasting_classes]
                 ),
             }
         }
         slots = {
-            level_names[k]: self.spell_slots(k)
-            for k in range(1, 10)
-            if self.spell_slots(k) > 0
+            level_names[k]: self.spell_slots(k) for k in range(1, 10) if self.spell_slots(k) > 0
         }
         spell_info["slots"] = slots
         spell_list = {}
@@ -898,9 +862,7 @@ class Character(Creature):
 
     @property
     def magic_items_text(self):
-        s = ", ".join(
-            [f.name for f in sorted(self.magic_items, key=(lambda x: x.name))]
-        )
+        s = ", ".join([f.name for f in sorted(self.magic_items, key=(lambda x: x.name))])
         if s:
             s += ", "
         return s
@@ -940,9 +902,7 @@ class Character(Creature):
         """
         if shield not in ("", "None", None):
             msg = 'Unknown shield "{}". Please ad it to ``shields.py``.'
-            NewShield = self._resolve_mechanic(
-                shield, SuperClass=armor.Shield, warning_message=msg
-            )
+            NewShield = self._resolve_mechanic(shield, SuperClass=armor.Shield, warning_message=msg)
             self.shield = NewShield()
 
     def wield_weapon(self, weapon):
@@ -1037,7 +997,7 @@ class Character(Creature):
 
     @ranger_beast.setter
     def ranger_beast(self, beast):
-        msg = f"Companion '{beast}' not found. Please add it to" " ``monsters.py``"
+        msg = f"Companion '{beast}' not found. Please add it to ``monsters.py``"
         beast = self._resolve_mechanic(beast, monsters.Monster, msg)
         self.Ranger.ranger_beast = (beast(), self.proficiency_bonus)
 
@@ -1054,7 +1014,7 @@ class Character(Creature):
         companions_list = []
         # Retrieve the actual monster classes if possible
         for compa in compas:
-            msg = f"Companion '{compa}' not found. Please add it to" " ``monsters.py``"
+            msg = f"Companion '{compa}' not found. Please add it to ``monsters.py``"
             new_compa = self._resolve_mechanic(compa, monsters.Monster, msg)
             companions_list.append(new_compa())
         # Save the updated list for later
@@ -1090,13 +1050,11 @@ class Character(Creature):
         classes = char_props.get("classes", [])
         # backwards compatability
         if (len(classes) == 0) and ("character_class" in char_props):
-            char_props["classes"] = [
-                char_props.pop("character_class").lower().capitalize()
-            ]
+            char_props["classes"] = [char_props.pop("character_class").lower().capitalize()]
             char_props["levels"] = [str(char_props.pop("level"))]
-        if 'Sorceror' in classes:
-            classes.remove('Sorceror')
-            classes.append('Sorcerer')
+        if "Sorceror" in classes:
+            classes.remove("Sorceror")
+            classes.append("Sorcerer")
         # Create the character with loaded properties
         char = Cls(**char_props)
         log.info(f"Imported character: {char}")
