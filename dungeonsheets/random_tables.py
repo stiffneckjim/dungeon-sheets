@@ -1069,7 +1069,7 @@ class MagicItemTableF(RandomTable):
 
 
 class MagicItemTableG(RandomTable):
-    """ "
+    """
     +-------+-------------------------------------------+
     |  d100 | Magic Item                                |
     +=======+===========================================+
