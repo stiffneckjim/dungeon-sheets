@@ -32,11 +32,13 @@ def read_dice_str(dice_str):
     dice = Dice(num, faces, modifier)
     return dice
 
+
 def _dice_mean(dice, force_min=True):
     """Support function for calculating dice string mean."""
     dmg_min = dice.num + dice.modifier
-    dmg_max = dice.num*dice.faces + dice.modifier
-    return (dmg_max - dmg_min)/2.0 + dmg_min
+    dmg_max = dice.num * dice.faces + dice.modifier
+    return (dmg_max - dmg_min) / 2.0 + dmg_min
+
 
 def combine_dice(dice_str):
     """Condense a dice string into its simplest representation.
@@ -47,7 +49,7 @@ def combine_dice(dice_str):
     =======
     new_dice_str
       A new, condensed string for the given dice.
-    
+
     """
     dice = []
     bonuses = 0
@@ -67,15 +69,16 @@ def combine_dice(dice_str):
     new_dice_str = " + ".join(new_parts)
     return new_dice_str
 
+
 def roll(a, b=None):
     """roll(20) means roll 1d20, roll(2, 6) means roll 2d6"""
     if b is None:
         return random.randint(1, a)
     else:
         return sum([random.randint(1, b) for _ in range(a)])
-    
+
+
 def dice_roll_mean(dice_text):
     """Takes a dice string like '3d6 +3' and returns its average roll."""
     dice = read_dice_str(dice_text)
     return round(_dice_mean(dice))
-

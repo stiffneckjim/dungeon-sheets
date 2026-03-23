@@ -7,10 +7,11 @@ from collections import defaultdict
 from dungeonsheets import features, spells, weapons
 from dungeonsheets.classes.classes import CharClass, SubClass
 from dungeonsheets.stats import (
-    attack_text_locator,
     att_dmg_modifier,
+    attack_text_locator,
     skill_modifier,
 )
+
 
 # PHB
 class Hunter(SubClass):
@@ -258,13 +259,13 @@ class Ranger(CharClass):
 
     @ranger_beast.setter
     def ranger_beast(self, beast_tuple):
-        """Takes a tuple (monster, proficiency) to setup a 
+        """Takes a tuple (monster, proficiency) to setup a
         companion with adjusted stats."""
         beast, prof_bonus = beast_tuple
         desc_split = beast.description.split()
         size = desc_split[0]
-        size_condition = size.lower() in ['tiny', 'small', 'medium']
-        cr_condition = beast.challenge_rating <= .25
+        size_condition = size.lower() in ["tiny", "small", "medium"]
+        cr_condition = beast.challenge_rating <= 0.25
         if beast.is_beast and size_condition and cr_condition:
             companion = beast
             description, actions = beast.__doc__.split("# Actions")
@@ -281,15 +282,13 @@ class Ranger(CharClass):
                 companion.__doc__ = description + "# Actions" + new_actions
             companion.armor_class = beast.armor_class + prof_bonus
             companion.skills = skill_modifier(beast.skills, prof_bonus)
-            companion.saving_throws = skill_modifier(beast.saving_throws, 
-                                                     prof_bonus)
-            companion.hp_max = max(beast.hp_max, 4*self.level)
+            companion.saving_throws = skill_modifier(beast.saving_throws, prof_bonus)
+            companion.hp_max = max(beast.hp_max, 4 * self.level)
             self._beast = companion
         else:
-            msg = (
-                f"{beast.name} does not satisfy criteria to be Ranger's Companion."
-            )
+            msg = f"{beast.name} does not satisfy criteria to be Ranger's Companion."
             warnings.warn(msg)
+
 
 # Revised Ranger
 class BeastConclave(SubClass):

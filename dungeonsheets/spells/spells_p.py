@@ -278,8 +278,7 @@ class PlaneShift(Spell):
     casting_range = "Touch"
     components = ("V", "S", "M")
     materials = (
-        "A forked, metal rod worth at least 250 gp, attuned to a particular plane of"
-        " existence"
+        "A forked, metal rod worth at least 250 gp, attuned to a particular plane of existence"
     )
     duration = "Instantaneous"
     ritual = False

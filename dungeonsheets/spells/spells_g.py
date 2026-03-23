@@ -290,9 +290,7 @@ class GlyphOfWarding(Spell):
     casting_time = "1 hour"
     casting_range = "Touch"
     components = ("V", "S", "M")
-    materials = (
-        "Incense and powdered diamond worth at least 200 gp, which the spell consumes"
-    )
+    materials = "Incense and powdered diamond worth at least 200 gp, which the spell consumes"
     duration = "Until dispelled or triggered"
     ritual = False
     magic_school = "Abjuration"

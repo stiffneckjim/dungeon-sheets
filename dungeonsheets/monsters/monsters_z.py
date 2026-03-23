@@ -23,12 +23,13 @@ class Zombie(Monster):
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 +
       1) bludgeoning damage.
     """
-    name = 'Zombie'
-    description = 'Medium undead, neutral evil'
+
+    name = "Zombie"
+    description = "Medium undead, neutral evil"
     challenge_rating = 0.25
     armor_class = 8
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 8'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 8"
     languages = "understands all languages it spoke in life but can't speak"
     strength = Ability(13)
     dexterity = Ability(6)
@@ -42,9 +43,9 @@ class Zombie(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '3d8 + 9'
-    condition_immunities = 'poisoned'
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d8 + 9"
+    condition_immunities = "poisoned"
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

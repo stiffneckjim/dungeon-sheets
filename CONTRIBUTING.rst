@@ -33,12 +33,9 @@ Before submitting pull requests, please check the following:
 - All tests in ``tests/`` pass.
 - All example character sheets in the ``examples/`` directory build
   properly, both with and without the ``--fancy`` option.
-- The submission passes linting by `flake8`_ (optional).
-- The submission is formatted by `black`_ (optional).
+- The submission passes linting by `ruff`_ and is properly formatted.
 
-.. _flake8: https://flake8.pycqa.org/en/latest/
-
-.. _black: https://pypi.org/project/black/
+.. _ruff: https://docs.astral.sh/ruff/
 
 Adding Features
 ---------------
@@ -90,6 +87,13 @@ using *pytest*, run the following from a console:
     uv sync --extra dev
     uv run pytest
 
+To run linting and formatting checks:
+
+.. code:: bash
+
+    uv run ruff check dungeonsheets/
+    uv run ruff format --check dungeonsheets/
+
 You can also run a sub-set of the tests, which can be convenient for
 development. For example, to run just the tests related to dice
 mechanics, use ``uv run pytest tests/test_dice.py``. Dungeonsheets defines
@@ -113,7 +117,7 @@ environment), use the ``dungeon-sheets-test`` target:
 
 The Docker test container will:
 
-- Run flake8 linting checks
+- Run Ruff lint and format checks
 - Test makesheets with different output formats (standard, fancy, epub)
 - Run the full pytest suite with coverage reporting
 - Display clear section headers for each test phase

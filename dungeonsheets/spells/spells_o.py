@@ -69,8 +69,7 @@ class OtilukesResilientSphere(Spell):
     casting_range = "30 feet"
     components = ("V", "S", "M")
     materials = (
-        "A hemispherical piece of clear crystal and a matching hemispherical piece of"
-        " gum arabic"
+        "A hemispherical piece of clear crystal and a matching hemispherical piece of gum arabic"
     )
     duration = "Concentration, up to 1 minute"
     ritual = False

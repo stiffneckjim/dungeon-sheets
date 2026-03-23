@@ -4,7 +4,6 @@ from dungeonsheets import features as feats
 from dungeonsheets import weapons
 from dungeonsheets.content_registry import default_content_registry
 
-
 default_content_registry.add_module(__name__)
 
 
@@ -36,9 +35,7 @@ class Race:
         self.features = tuple([f(owner=self.owner) for f in cls.features])
         self.features_by_level = defaultdict(list)
         for i in range(1, 21):
-            self.features_by_level[i] = [
-                f(owner=self.owner) for f in cls.features_by_level[i]
-            ]
+            self.features_by_level[i] = [f(owner=self.owner) for f in cls.features_by_level[i]]
 
     def __str__(self):
         return self.name
@@ -596,9 +593,7 @@ RFTLW_races = [Kalashtar]
 # Guildmaster's Guide to Ravnica
 GGTR_races = [Goblin]
 
-available_races = (
-    PHB_races + VOLO_races + EE_races + MONSTER_races + RFTLW_races + GGTR_races
-)
+available_races = PHB_races + VOLO_races + EE_races + MONSTER_races + RFTLW_races + GGTR_races
 
 __all__ = tuple([r.name for r in available_races]) + (
     "available_races",

@@ -20,11 +20,11 @@ class Unicorn(Monster):
       The unicorn's innate spellcasting ability is Charisma (spell save DC
       14). The unicorn can innately cast the following spells, requiring no
       components:
-      
-  
-      
+
+
+
       At will: detect evil and good, druidcraft, pass without trace
-      
+
       1/day each: calm emotions, dispel evil and good, entangle
     Magic Resistance.
       The unicorn has advantage on saving throws against spells and other
@@ -65,13 +65,14 @@ class Unicorn(Monster):
     Heal Self (Costs 3 Actions).
       The unicorn magically regains 11 (2d8 + 2) hit points.
     """
-    name = 'Unicorn'
-    description = 'Large celestial, lawful good'
+
+    name = "Unicorn"
+    description = "Large celestial, lawful good"
     challenge_rating = 5
     armor_class = 12
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 13'
-    languages = 'Celestial, Elvish, Sylvan, telepathy 60 ft.'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 13"
+    languages = "Celestial, Elvish, Sylvan, telepathy 60 ft."
     strength = Ability(18)
     dexterity = Ability(14)
     constitution = Ability(15)
@@ -84,9 +85,9 @@ class Unicorn(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 67
-    hit_dice = '9d10 + 18'
-    condition_immunities = 'charmed, paralyzed, poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "9d10 + 18"
+    condition_immunities = "charmed, paralyzed, poisoned"
+    damage_immunities = "poison"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

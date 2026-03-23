@@ -33,8 +33,10 @@ class UnknownOutputFormat(RuntimeError):
 class ContentNotFound(ValueError):
     """The requested content could not be resolved."""
 
+
 class AmbiguousContent(ValueError):
     """Multiple valid content entries were found."""
+
 
 class InvalidContentType(ValueError):
     """Trying to resolve content that is either not a string, or not

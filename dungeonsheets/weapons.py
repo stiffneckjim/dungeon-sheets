@@ -1,6 +1,5 @@
 from dungeonsheets.content_registry import default_content_registry
 
-
 default_content_registry.add_module(__name__)
 
 
@@ -14,8 +13,9 @@ class Weapon:
     ==========
     wielder
       The character (or NPC) that is using the weapon.
-    
+
     """
+
     name = ""
     cost = "0 gp"
     base_damage = "1d4"
@@ -54,9 +54,7 @@ class Weapon:
             return 0
         else:
             if self.is_finesse:
-                return max(
-                    self.wielder.strength.modifier, self.wielder.dexterity.modifier
-                )
+                return max(self.wielder.strength.modifier, self.wielder.dexterity.modifier)
             else:
                 return getattr(self.wielder, self.ability).modifier
 

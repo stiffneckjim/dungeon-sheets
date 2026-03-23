@@ -4,20 +4,20 @@ from typing import Sequence
 from dungeonsheets.content import Content
 from dungeonsheets.content_registry import default_content_registry
 
-
 default_content_registry.add_module(__name__)
 
 
 class SubtableFactory(ABCMeta):
     """Meta class to append subtables to the docstring of a RandomTable..
-    
+
     For classes using this metaclass, the *subtables* attribute, if
     present, should be a list of subtables that are to be
     included. For each entry on that list, it will first be resolved
     into a RandomTable class, if appropriate, then its docstring will
     be added to the docstring of the calling class.
-    
+
     """
+
     def __init__(self, name, bases, attrs):
         # Resolve subtables to RandomTable classes
         for idx, subtable in enumerate(self.subtables):
@@ -45,8 +45,9 @@ class RandomTable(Content, metaclass=SubtableFactory):
     subtables
       A sequence of other random tables that will be included in this
       table.
-    
+
     """
+
     name = "Generic Random Table"
     subtables: Sequence = []
 
@@ -64,7 +65,7 @@ class ConjureAnimals(RandomTable):
     +-----+-----------------------------------------------+
     | 4   | Eight beasts of challenge rating 1/4 or lower |
     +-----+-----------------------------------------------+
-    
+
     +-------+---------------------------+
     | 1d20  | CR2 Beasts                |
     +=======+===========================+
@@ -90,7 +91,7 @@ class ConjureAnimals(RandomTable):
     +-------+---------------------------+
     | 20    | Roll on CR 1 Beast Table  |
     +-------+---------------------------+
-    
+
     +------+----------------------------+
     | 1d12 | Challenge Rating 1 Beasts  |
     +======+============================+
@@ -118,7 +119,7 @@ class ConjureAnimals(RandomTable):
     +------+----------------------------+
     | 12   | Roll on CR 1/2 Beast Table |
     +------+----------------------------+
-    
+
     +-------+---------------------------------+
     | 1d20  | Challenge Rating 1/2 Beasts     |
     +=======+=================================+
@@ -144,7 +145,7 @@ class ConjureAnimals(RandomTable):
     +-------+---------------------------------+
     | 20    | Roll on Lesser Beast Menu Table |
     +-------+---------------------------------+
-    
+
     +-----+------------------+
     | 1d6 | Swarm of Insects |
     +=====+==================+
@@ -160,7 +161,7 @@ class ConjureAnimals(RandomTable):
     +-----+------------------+
     | 6   | Wasps            |
     +-----+------------------+
-    
+
     +-----+------------------------------+
     | 1d6 | CR 1/4 and Lesser Beast Menu |
     +=====+==============================+
@@ -170,7 +171,7 @@ class ConjureAnimals(RandomTable):
     +-----+------------------------------+
     | 5-6 | Menu C                       |
     +-----+------------------------------+
-    
+
     +------+---------------------+
     | 1d20 | Lesser Beast Menu A |
     +======+=====================+
@@ -214,11 +215,11 @@ class ConjureAnimals(RandomTable):
     +------+---------------------+
     | 20   | Giant Centipede     |
     +------+---------------------+
-    
+
     ¹Chicken
       Raven stats with Advantage on checks to wake up targets instead
       of mimicry
-    
+
     +------+--------------------------+
     | 1d20 | Lesser Beast Menu B      |
     +======+==========================+
@@ -262,7 +263,7 @@ class ConjureAnimals(RandomTable):
     +------+--------------------------+
     | 20   | Octopus, Cascadian Tree⁴ |
     +------+--------------------------+
-    
+
     ²Lemur
       Weasel stats with a common Climb speed instead of a bite attack
     ³Newt
@@ -270,7 +271,7 @@ class ConjureAnimals(RandomTable):
     ⁴Octopus, Cascadian Tree:
       Octopus stats with Amphibious and a 10 ft land speed instead of
       camouflage
-    
+
     +------+---------------------+
     | 1d20 | Lesser Beast Menu C |
     +======+=====================+
@@ -314,14 +315,15 @@ class ConjureAnimals(RandomTable):
     +------+---------------------+
     | 20   | Wolf                |
     +------+---------------------+
-    
+
     ⁵Shocker Lizard
       Lizard stats with Static Electricity ranged attack of 1d6
       Electricity damage Close/Medium.
     ⁶Turtle
       Lizard stats with 14 natural armor and no climb speed.
-    
+
     """
+
     # https://the-azure-triskele.obsidianportal.com/wikis/conjure-animals-table
     name = "Conjure Animals"
 
@@ -341,8 +343,9 @@ class IndividualTreasure0To4(RandomTable):
     +-------+----------+----------+----------+----------+---------+
     | 96‒00 | –        | –        | –        | –        | 1d6 (3) |
     +-------+----------+----------+----------+----------+---------+
-    
+
     """
+
     name = "Individual Treasure: Challenge 0–4"
 
 
@@ -361,8 +364,9 @@ class IndividualTreasure5To10(RandomTable):
     +-------+--------------------+----------------+----------------+----------------+----------+
     | 96‒00 | –                  | –              | –              | 2d6 × 10 (70)  | 3d6 (10) |
     +-------+--------------------+----------------+----------------+----------------+----------+
-    
+
     """
+
     name = "Individual Treasure: Challenge 5‒10"
 
 
@@ -379,8 +383,9 @@ class IndividualTreasure11To16(RandomTable):
     +-------+----+-------------------+-----------------+----------------+----------------+
     | 75‒00 | –  | –                 | –               | 2d6 × 100 (700) | 2d6 × 10 (70) |
     +-------+----+-------------------+-----------------+----------------+----------------+
-    
+
     """
+
     name = "Individual Treasure: Challenge 11‒16"
 
 
@@ -395,16 +400,22 @@ class IndividualTreasure17Plus(RandomTable):
     +-------+----+----+---------------------+---------------------+-----------------+
     | 56‒00 | –  | –  | –                   | 1d6 × 1,000 (3,500) | 2d6 × 100 (700) |
     +-------+----+----+---------------------+---------------------+-----------------+
-    
+
     """
+
     name = "Individual Treasure: Challenge 17+"
 
 
 class IndividualTreasure(RandomTable):
     """"""
+
     name = "Individual Treasure"
-    subtables = [IndividualTreasure0To4, IndividualTreasure5To10,
-                 IndividualTreasure11To16, IndividualTreasure17Plus]
+    subtables = [
+        IndividualTreasure0To4,
+        IndividualTreasure5To10,
+        IndividualTreasure11To16,
+        IndividualTreasure17Plus,
+    ]
 
 
 class HoardTreasure0To4(RandomTable):
@@ -414,7 +425,7 @@ class HoardTreasure0To4(RandomTable):
     +=======+===================+===================+====+===============+====+
     | Coins | 6d6 × 100 (2,100) | 3d6 × 100 (1,050) | –  | 2d6 × 10 (70) | –  |
     +-------+-------------------+-------------------+----+---------------+----+
-    
+
     +-------+---------------------------+---------------------------------------+
     | d100  | Gems or Art Objects       | Magic Items                           |
     +=======+===========================+=======================================+
@@ -452,8 +463,9 @@ class HoardTreasure0To4(RandomTable):
     +-------+---------------------------+---------------------------------------+
     | 00    | 2d6 (7) 50 gp gems        | Roll once on Magic Item Table G.      |
     +-------+---------------------------+---------------------------------------+
-    
+
     """
+
     name = "Hoard Treasure: Challenge 0‒4"
 
 
@@ -464,7 +476,7 @@ class HoardTreasure5To10(RandomTable):
     +=======+=================+=====================+====+===================+===============+
     | Coins | 2d6 × 100 (700) | 2d6 × 1,000 (7,000) | –  | 6d6 × 100 (2,100) | 3d6 × 10 (105 |
     +-------+-----------------+---------------------+----+-------------------+---------------+
-    
+
     +-------+----------------------------+---------------------------------------+
     | d100  | Gems or Art 0bjects        | Magic Items                           |
     +=======+============================+=======================================+
@@ -526,8 +538,9 @@ class HoardTreasure5To10(RandomTable):
     +-------+----------------------------+---------------------------------------+
     | 00    | 2d4 (5) 250 gp art objects | Roll once on Magic Item Table H.      |
     +-------+----------------------------+---------------------------------------+
-    
+
     """
+
     name = "Treasure Hoard: Challenge 5‒10"
 
 
@@ -538,7 +551,7 @@ class HoardTreasure11To16(RandomTable):
     +=======+====+====+====+===================+==================+
     | Coins | –  | –  | –  | 4d6 × 1000 (1400) | 5d6 × 100 (1750) |
     +-------+----+----+----+-------------------+------------------+
-    
+
     +-------+----------------------------+---------------------------------------------------------------------------+
     | d100  | Gems or Art Objects        | Magic Items                                                               |
     +=======+============================+===========================================================================+
@@ -608,8 +621,9 @@ class HoardTreasure11To16(RandomTable):
     +-------+----------------------------+---------------------------------------------------------------------------+
     | 99–00 | 3d6 (10) 1,000 gp gems     | Roll once on Magic Item Table I.                                          |
     +-------+----------------------------+---------------------------------------------------------------------------+
-    
+
     """
+
     name = "Treasure Hoard: Challenge 11‒16"
 
 
@@ -674,8 +688,9 @@ class HoardTreasure17Plus(RandomTable):
     +--------+-------------------------------+----------------------------------------------------------------------+
     | 96–100 | 1d8 (4) 5,000 gp gems         | Roll 1d4 times on Magic Item Table I.                                |
     +--------+-------------------------------+----------------------------------------------------------------------+
-    
+
     """
+
     name = "Treasure Hoard: Challenge 17+"
 
 
@@ -700,8 +715,9 @@ class MagicItemTableA(RandomTable):
     +-------+---------------------------+
     | 00    | Driftglobe                |
     +-------+---------------------------+
-    
+
     """
+
     name = "Magic Item Table A"
 
 
@@ -780,8 +796,9 @@ class MagicItemTableB(RandomTable):
     +-------+---------------------------------+
     | 100   | Wand of secrets                 |
     +-------+---------------------------------+
-    
+
     """
+
     name = "Magic Item Table B"
 
 
@@ -846,8 +863,9 @@ class MagicItemTableC(RandomTable):
     +-------+--------------------------------+
     | 100   | Sending Stones                 |
     +-------+--------------------------------+
-    
+
     """
+
     name = "Magic Item Table C"
 
 
@@ -888,8 +906,9 @@ class MagicItemTableD(RandomTable):
     +-------+--------------------------------+
     | 100   | Portable hole                  |
     +-------+--------------------------------+
-    
+
     """
+
     name = "Magic Item Table D"
 
 
@@ -912,8 +931,9 @@ class MagicItemTableE(RandomTable):
     +--------+--------------------------------+
     | 99-100 | Sovereign glue                 |
     +--------+--------------------------------+
-    
+
     """
+
     name = "Magic Item Table E"
 
 
@@ -1042,13 +1062,14 @@ class MagicItemTableF(RandomTable):
     +-------+------------------------------------------------+
     |   100 | Winged boots                                   |
     +-------+------------------------------------------------+
-    
+
     """
+
     name = "Magic Item Table F"
 
 
 class MagicItemTableG(RandomTable):
-    """"
+    """
     +-------+-------------------------------------------+
     |  d100 | Magic Item                                |
     +=======+===========================================+
@@ -1242,8 +1263,9 @@ class MagicItemTableG(RandomTable):
     +-------+-------------------------------------------+
     |   100 | Wings of flying                           |
     +-------+-------------------------------------------+
-    
+
     """
+
     name = "Magic Item Table G"
 
 
@@ -1390,8 +1412,9 @@ class MagicItemTableH(RandomTable):
     +-------+---------------------------------------------+
     |   100 | Tome of understanding                       |
     +-------+---------------------------------------------+
-    
+
     """
+
     name = "Magic Item Table H"
 
 
@@ -1518,21 +1541,35 @@ class MagicItemTableI(RandomTable):
     +-------+---------------------------------------+
     |   100 | Tome of the stilled tongue            |
     +-------+---------------------------------------+
-    
+
     """
+
     name = "Magic Item Table I"
 
 
 class Treasure(RandomTable):
     """"""
+
     name = "Treasure"
-    subtables = [IndividualTreasure0To4, IndividualTreasure5To10,
-                 IndividualTreasure11To16, IndividualTreasure17Plus,
-                 HoardTreasure0To4, HoardTreasure5To10,
-                 HoardTreasure11To16, HoardTreasure17Plus,
-                 MagicItemTableA, MagicItemTableB, MagicItemTableC,
-                 MagicItemTableD, MagicItemTableE, MagicItemTableF,
-                 MagicItemTableG, MagicItemTableH, MagicItemTableI]
+    subtables = [
+        IndividualTreasure0To4,
+        IndividualTreasure5To10,
+        IndividualTreasure11To16,
+        IndividualTreasure17Plus,
+        HoardTreasure0To4,
+        HoardTreasure5To10,
+        HoardTreasure11To16,
+        HoardTreasure17Plus,
+        MagicItemTableA,
+        MagicItemTableB,
+        MagicItemTableC,
+        MagicItemTableD,
+        MagicItemTableE,
+        MagicItemTableF,
+        MagicItemTableG,
+        MagicItemTableH,
+        MagicItemTableI,
+    ]
 
 
 class Curses(RandomTable):
@@ -1638,6 +1675,7 @@ class Curses(RandomTable):
     - 98: This player has been cursed to be afraid of the sun.
     - 99: This curse makes the player compelled to hug all characters they come across, even if it would be inappropriate or awkward.
     - 100: This curse makes the character forcibly say gibberish every time they cast a spell.
-    
+
     """
+
     name = "Curses"

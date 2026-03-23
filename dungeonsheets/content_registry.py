@@ -24,7 +24,7 @@ character file::
 
     from content_registry import import_homebrew
     import_homebrew("my_homebrew.py")
-    
+
     weapons = ["paper sword"]
 
 If homebrew content shares a name with canonical content, then lookup
@@ -33,17 +33,16 @@ content can be used directly from *import_homebrew*::
 
     from content_registry import import_homebrew
     campaign = import_homebrew("my_homebrew.py")
-    
+
     weapons = [campaign.PaperSword]
 
 """
 
-
-import sys
-from pathlib import Path
-from functools import lru_cache
 import importlib.util
-from typing import Union, List, Optional
+import sys
+from functools import lru_cache
+from pathlib import Path
+from typing import List, Optional, Union
 
 from dungeonsheets import exceptions
 
@@ -68,14 +67,16 @@ class ContentRegistry:
             # Register the module
             registry = ContentRegistry()
             registry.add_module(__name__)
-        
+
         """
         # Try and look up the module by name
         try:
             new_module = sys.modules[new_module]
         except KeyError:
             if isinstance(new_module, str):
-                raise exceptions.ContentNotFound(f"Module could not be resolved: {repr(new_module)}")
+                raise exceptions.ContentNotFound(
+                    f"Module could not be resolved: {repr(new_module)}"
+                )
         # Add the imported module to the list for later
         if new_module not in self.modules:
             self.modules.append(new_module)
@@ -94,7 +95,7 @@ class ContentRegistry:
         # Come up with several options
         try:
             name = name.strip()
-        except AttributeError as e:
+        except AttributeError:
             # Probably not a string
             raise ValueError('content "%s" is not a valid identifier string.' % name)
         # check for +X weapons, armor, shields
@@ -104,9 +105,7 @@ class ContentRegistry:
                 bonus = i
                 name = name.replace(f"+{i}", "").replace(f"+ {i}", "")
                 break
-        py_name = (
-            name.replace("-", "_").replace(" ", "_").replace("'", "").replace("/", "")
-        )
+        py_name = name.replace("-", "_").replace(" ", "_").replace("'", "").replace("/", "")
         camel_case = "".join([s.capitalize() for s in py_name.split("_")])
         # Check each module in the registry
         found_attrs = []
@@ -122,9 +121,7 @@ class ContentRegistry:
             is_valid = [False for attr in found_attrs]
             for cls in valid_classes:
                 is_valid = [
-                    v
-                    or isinstance(attr, cls)
-                    or (isinstance(attr, type) and issubclass(attr, cls))
+                    v or isinstance(attr, cls) or (isinstance(attr, type) and issubclass(attr, cls))
                     for v, attr in zip(is_valid, found_attrs)
                 ]
             found_attrs = [attr for attr, v in zip(found_attrs, is_valid) if v]
@@ -136,7 +133,7 @@ class ContentRegistry:
         else:
             attr = found_attrs[0]
         # Apply weapon/etc. bonuses
-        if bonus > 0 and hasattr(attr, 'improved_version'):
+        if bonus > 0 and hasattr(attr, "improved_version"):
             attr = attr.improved_version(bonus)
         return attr
 

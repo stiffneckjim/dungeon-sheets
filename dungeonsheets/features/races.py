@@ -146,7 +146,18 @@ class DrowMagic(Feature):
     ability for these spells.
 
     """
-    _spells = {1: [spells.DancingLights,], 3: [spells.FaerieFire,], 5: [spells.Darkness,]}
+
+    _spells = {
+        1: [
+            spells.DancingLights,
+        ],
+        3: [
+            spells.FaerieFire,
+        ],
+        5: [
+            spells.Darkness,
+        ],
+    }
     spells_known = []
     spells_prepared = []
 
@@ -211,6 +222,7 @@ class StoutResilience(Feature):
 
 
 # Humans
+
 
 # Dragonborn
 class DraconicAncestry(Feature):
@@ -353,6 +365,7 @@ class StoneCamouflage(Feature):
 
 # Half-Elves
 
+
 # Half-Orcs
 class RelentlessEndurance(Feature):
     """When you are reduced to 0 hit points but not killed outright, you can drop
@@ -392,7 +405,14 @@ class InfernalLegacy(Feature):
 
     """
 
-    _spells = {1: [spells.Thaumaturgy,], 3: [spells.HellishRebuke,]}
+    _spells = {
+        1: [
+            spells.Thaumaturgy,
+        ],
+        3: [
+            spells.HellishRebuke,
+        ],
+    }
     spells_known = []
     spells_prepared = []
 
@@ -517,7 +537,10 @@ class FirbolgMagic(Feature):
 
     name = "Firbolg Magic"
     source = "Race (Firbolg)"
-    spells_known = spells_prepared = (spells.DetectMagic, spells.DisguiseSelf,)
+    spells_known = spells_prepared = (
+        spells.DetectMagic,
+        spells.DisguiseSelf,
+    )
 
 
 class HiddenStep(Feature):
@@ -673,7 +696,18 @@ class ControlAirAndWater(Feature):
     rest. Charisma is your spellcasting ability for these spells.
 
     """
-    _spells = {1: [spells.FogCloud,], 3: [spells.GustOfWind,], 5: [spells.WallOfWater,]}
+
+    _spells = {
+        1: [
+            spells.FogCloud,
+        ],
+        3: [
+            spells.GustOfWind,
+        ],
+        5: [
+            spells.WallOfWater,
+        ],
+    }
     spells_known = []
     spells_prepared = []
 
@@ -714,6 +748,7 @@ class GuardiansOfTheDepths(Feature):
 
 
 # Aarakocra
+
 
 # Genasi
 class UnendingBreath(Feature):
@@ -773,7 +808,15 @@ class ReachToTheBlaze(Feature):
     rest. Constitution is your spellcasting ability for these spells.
 
     """
-    _spells = {1: [spells.ProduceFlame,], 3: [spells.BurningHands,]}
+
+    _spells = {
+        1: [
+            spells.ProduceFlame,
+        ],
+        3: [
+            spells.BurningHands,
+        ],
+    }
     spells_known = []
     spells_prepared = []
 
@@ -808,7 +851,13 @@ class CallToTheWave(Feature):
     spells.
 
     """
-    _spells = {1: [spells.ShapeWater,], 3: [spells.CreateOrDestroyWater]}
+
+    _spells = {
+        1: [
+            spells.ShapeWater,
+        ],
+        3: [spells.CreateOrDestroyWater],
+    }
     spells_known = []
     spells_prepared = []
 
@@ -999,7 +1048,16 @@ class InnateSpellcasting(Feature):
     your spellcasting ability for these spells.
 
     """
-    _spells = {1: [spells.PoisonSpray, spells.AnimalFriendship,], 3: [spells.Suggestion,]}
+
+    _spells = {
+        1: [
+            spells.PoisonSpray,
+            spells.AnimalFriendship,
+        ],
+        3: [
+            spells.Suggestion,
+        ],
+    }
     spells_known = []
     spells_prepared = []
 

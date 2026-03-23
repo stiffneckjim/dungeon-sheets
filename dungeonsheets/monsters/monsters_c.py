@@ -370,9 +370,7 @@ class ClayGolem(Monster):
     burrow_speed = 0
     hp_max = 133
     hit_dice = "14d10 + 56"
-    condition_immunities = (
-        "charmed, exhaustion, frightened, paralyzed, petrified, poisoned"
-    )
+    condition_immunities = "charmed, exhaustion, frightened, paralyzed, petrified, poisoned"
     damage_immunities = "acid, poison, psychic, bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine"
     damage_resistances = ""
     damage_vulnerabilities = ""
@@ -762,9 +760,7 @@ class Couatl(Monster):
     hp_max = 97
     hit_dice = "13d8 + 39"
     condition_immunities = ""
-    damage_immunities = (
-        "psychic, bludgeoning, piercing, and slashing from nonmagical weapons"
-    )
+    damage_immunities = "psychic, bludgeoning, piercing, and slashing from nonmagical weapons"
     damage_resistances = "radiant"
     damage_vulnerabilities = ""
     spells = []

@@ -1,19 +1,17 @@
-from typing import Mapping
-from html.parser import HTMLParser
 import re
+from html.parser import HTMLParser
 from pathlib import Path
+from typing import Mapping
 
-from ebooklib import epub, ITEM_STYLE
 from docutils import core
-from sphinx.util.docstrings import prepare_docstring
 from docutils.writers.html5_polyglot import Writer as HTMLWriter
+from ebooklib import epub
+from sphinx.util.docstrings import prepare_docstring
 
 from dungeonsheets.forms import dice_re, jinja_environment
 
 
-def create_epub(
-    chapters: Mapping, title: str, basename: str, use_dnd_decorations: bool = False
-):
+def create_epub(chapters: Mapping, title: str, basename: str, use_dnd_decorations: bool = False):
     """Prepare an EPUB file from the list of chapters.
 
     Parameters
@@ -51,9 +49,7 @@ def create_epub(
         "magic-item-details": 13.5,
         "monster-details": 15,
     }
-    style = css_template.render(
-        use_dnd_decorations=use_dnd_decorations, dl_widths=dl_widths
-    )
+    style = css_template.render(use_dnd_decorations=use_dnd_decorations, dl_widths=dl_widths)
     css = epub.EpubItem(
         uid="style_default",
         file_name="style/gm_sheet.css",
@@ -87,11 +83,7 @@ def create_epub(
         book.add_item(chapter)
         html_chapters.append(chapter)
         # Add entries for the table of contents
-        toc.append(
-            toc_from_headings(
-                html=content, filename=chap_fname, chapter_title=chap_title
-            )
-        )
+        toc.append(toc_from_headings(html=content, filename=chap_fname, chapter_title=chap_title))
     # Add the table of contents
     book.toc = toc
     book.spine = ("nav", *html_chapters)
@@ -130,11 +122,7 @@ class HeadingParser(HTMLParser):
 
     def handle_endtag(self, tag):
         this_level = self.heading_level(tag)
-        if (
-            this_level is not None
-            and this_level == self._curr_level
-            and self._curr_id is not None
-        ):
+        if this_level is not None and this_level == self._curr_level and self._curr_id is not None:
             heading = {
                 "level": this_level,
                 "id": self._curr_id,
@@ -152,9 +140,7 @@ class HeadingParser(HTMLParser):
             self._curr_title = data
 
 
-def toc_from_headings(
-    html: str, filename: str = "", chapter_title: str = "Sheet"
-) -> list:
+def toc_from_headings(html: str, filename: str = "", chapter_title: str = "Sheet") -> list:
     """Accept a chapter of HTML, and extract a table of contents segment.
 
     Parameters
@@ -193,9 +179,7 @@ def toc_from_headings(
             # Add a leaf or branch depending on the heading structure
             if is_leaf:
                 parent_section[1].append(
-                    epub.Link(
-                        href=href, title=heading["title"], uid=href.replace("#", ":")
-                    )
+                    epub.Link(href=href, title=heading["title"], uid=href.replace("#", ":"))
                 )
             else:
                 new_section = (epub.Section(href=href, title=heading["title"]), [])

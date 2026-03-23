@@ -128,8 +128,7 @@ class MagicCircle(Spell):
     casting_range = "10 feet"
     components = ("V", "S", "M")
     materials = (
-        "Holy water or powdered silver and iron worth at least 100 gp, which the spell"
-        " consumes"
+        "Holy water or powdered silver and iron worth at least 100 gp, which the spell consumes"
     )
     duration = "1 hour"
     ritual = False
@@ -187,8 +186,7 @@ class MagicJar(Spell):
     casting_range = "Self"
     components = ("V", "S", "M")
     materials = (
-        "A gem, crystal, reliquary, or some other ornamental container worth at least"
-        " 500 gp"
+        "A gem, crystal, reliquary, or some other ornamental container worth at least 500 gp"
     )
     duration = "Until dispelled"
     ritual = False
@@ -251,8 +249,7 @@ class MagicMouth(Spell):
     casting_range = "30 feet"
     components = ("V", "S", "M")
     materials = (
-        "A small bit of honeycomb and jade dust worth at least 10 gp, which the spell"
-        " consumes"
+        "A small bit of honeycomb and jade dust worth at least 10 gp, which the spell consumes"
     )
     duration = "Until dispelled"
     ritual = True
@@ -491,9 +488,7 @@ class MassSuggestion(Spell):
     casting_time = "1 action"
     casting_range = "60 feet"
     components = ("V", "M")
-    materials = (
-        """A snake's tongue and either a bit of honeycomb or a drop of sweet oil"""
-    )
+    materials = """A snake's tongue and either a bit of honeycomb or a drop of sweet oil"""
     duration = "24 hours"
     ritual = False
     magic_school = "Enchantment"
@@ -1131,9 +1126,7 @@ class Moonbeam(Spell):
     casting_time = "1 action"
     casting_range = "120 feet"
     components = ("V", "S", "M")
-    materials = (
-        """Several seeds of any moonseed plant and a piece of opalescent feldspar"""
-    )
+    materials = """Several seeds of any moonseed plant and a piece of opalescent feldspar"""
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
@@ -1275,10 +1268,7 @@ class MordenkainensSword(Spell):
     casting_time = "1 action"
     casting_range = "60 feet"
     components = ("V", "S", "M")
-    materials = (
-        "A miniature platinum sword with a grip and pommel of copper and zinc, worth"
-        " 250 gp"
-    )
+    materials = "A miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Evocation"
@@ -1317,10 +1307,7 @@ class MoveEarth(Spell):
     casting_time = "1 action"
     casting_range = "120 feet"
     components = ("V", "S", "M")
-    materials = (
-        "An iron blade and a small bag containing a mixture of soils-clay, loam, and"
-        " sand"
-    )
+    materials = "An iron blade and a small bag containing a mixture of soils-clay, loam, and sand"
     duration = "Concentration, up to 2 hours"
     ritual = False
     magic_school = "Transmutation"

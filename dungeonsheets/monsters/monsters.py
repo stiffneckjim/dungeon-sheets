@@ -5,10 +5,8 @@ shape forms.
 
 from abc import ABCMeta
 
-
 from dungeonsheets.content import Creature
 from dungeonsheets.spells import Spell
-
 
 xp_by_challenge_rating = {
     0: 10,
@@ -59,14 +57,15 @@ def challenge_rating_to_xp(cr):
 
 class SpellFactory(ABCMeta):
     """Meta class to resolve spell strings into the ``spells.Spell``.
-    
+
     For classes using this metaclass, the *spell* attribute, if
     present, should be a list of spells that the entity knows. For
     each entry on that list, anything that is not already a spell
     class (so probably a string) will be resolved into the
     corresponding ``spells.Spell`` class.
-    
+
     """
+
     def __init__(self, name, bases, attrs):
         for idx, spell in enumerate(self.spells):
             TheSpell = self._resolve_mechanic(spell, SuperClass=Spell)
@@ -74,7 +73,6 @@ class SpellFactory(ABCMeta):
 
 
 class Monster(Creature, metaclass=SpellFactory):
-
     """A monster that may be encountered when adventuring."""
 
     name = "Generic Monster"
@@ -106,7 +104,7 @@ class Monster(Creature, metaclass=SpellFactory):
 
     def has_feature(self, *args, **kwargs):
         return False
-    
+
     @property
     def is_spellcaster(self):
         return len(self.spells) > 0

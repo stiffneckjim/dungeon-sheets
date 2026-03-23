@@ -1,7 +1,6 @@
 from dungeonsheets import features as feats
 from dungeonsheets.content_registry import default_content_registry
 
-
 default_content_registry.add_module(__name__)
 
 

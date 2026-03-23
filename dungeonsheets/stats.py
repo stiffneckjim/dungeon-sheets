@@ -1,14 +1,14 @@
-import re
+import logging
 import math
+import re
 from collections import namedtuple
 from math import ceil
-import logging
 
 from dungeonsheets.armor import HeavyArmor, NoArmor, NoShield
 from dungeonsheets.dice import dice_roll_mean
 from dungeonsheets.features import (
-    AmbushMaster,
     Alert,
+    AmbushMaster,
     Defense,
     DraconicResilience,
     DreadAmbusher,
@@ -28,7 +28,6 @@ from dungeonsheets.features import (
     UnarmoredDefenseMonk,
     UnarmoredMovement,
 )
-
 
 log = logging.getLogger(__name__)
 skill_text_locator = re.compile(r"\S+ [+-]\d+")
@@ -117,9 +116,7 @@ class Ability:
         modifier = math.floor((score - 10) / 2)
         # Check for proficiency
         saving_throw = modifier
-        if self.ability_name is not None and hasattr(
-            actor, "saving_throw_proficiencies"
-        ):
+        if self.ability_name is not None and hasattr(actor, "saving_throw_proficiencies"):
             is_proficient = self.ability_name in actor.saving_throw_proficiencies
             if is_proficient:
                 saving_throw += actor.proficiency_bonus
@@ -199,9 +196,7 @@ class Skill:
 
     @property
     def is_jack_of_all_trades(self):
-        already_proficient = (
-            self.is_proficient or self.is_expertise or self.is_remarkable_athlete
-        )
+        already_proficient = self.is_proficient or self.is_expertise or self.is_remarkable_athlete
         if self.actor.has_feature(JackOfAllTrades) and not already_proficient:
             return True
         else:
@@ -210,9 +205,7 @@ class Skill:
     @property
     def is_proficient(self):
         # Check for proficiency
-        proficiencies = [
-            p.replace("_", " ").lower() for p in self.actor.skill_proficiencies
-        ]
+        proficiencies = [p.replace("_", " ").lower() for p in self.actor.skill_proficiencies]
         is_proficient = self.skill_name.lower() in proficiencies
         return is_proficient
 
@@ -395,9 +388,7 @@ def att_dmg_modifier(text, prof):
         dmg_avg_value = dice_roll_mean(new_dmg_text)
         _dmg_avg_re = damage_avg.search(new_dmg_text)
         dmg_avg_text = _dmg_avg_re.group()
-        new_dmg_avg_text = re.sub(
-            r"(\d+)", "{:d}".format(dmg_avg_value), dmg_avg_text, 1
-        )
+        new_dmg_avg_text = re.sub(r"(\d+)", "{:d}".format(dmg_avg_value), dmg_avg_text, 1)
         new_dmg_text = re.sub(damage_avg, new_dmg_avg_text, new_dmg_text)
         text = re.sub(damage, new_dmg_text, text)
     else:

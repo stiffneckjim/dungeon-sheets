@@ -1,17 +1,15 @@
 """Base classes for the various D&D 5e content types."""
 
-
-import warnings
 import importlib.metadata
-
+import warnings
 from abc import ABC
-from pathlib import Path
 
 from dungeonsheets import exceptions
-from dungeonsheets.stats import Ability, ArmorClass, Initiative, Speed, Skill
 from dungeonsheets.content_registry import find_content
+from dungeonsheets.stats import Ability, ArmorClass, Initiative, Skill, Speed
 
 __version__ = importlib.metadata.version(__package__)
+
 
 class Content(ABC):
     """A base class for all D&D 5e content types.
@@ -20,6 +18,7 @@ class Content(ABC):
     have this base class in its inheritance tree.
 
     """
+
     dungeonsheets_version = __version__
     name = "Generic content"
 
@@ -74,9 +73,7 @@ class Content(ABC):
           well behaved, but this is not enforced.
 
         """
-        is_already_resolved = isinstance(mechanic, type) and issubclass(
-            mechanic, SuperClass
-        )
+        is_already_resolved = isinstance(mechanic, type) and issubclass(mechanic, SuperClass)
         if is_already_resolved:
             Mechanic = mechanic
         elif SuperClass is not None and isinstance(mechanic, SuperClass):
@@ -101,8 +98,7 @@ class Content(ABC):
                     class_name = "".join([s.title() for s in mechanic.split("_")])
                 except AttributeError:
                     raise exceptions.InvalidContentType(
-                        f"``{mechanic}`` must either be string-like, "
-                        f"or inherit from {SuperClass}. "
+                        f"``{mechanic}`` must either be string-like, or inherit from {SuperClass}. "
                     )
                 mechanic_name = mechanic.replace("_", " ").title()
                 attrs = {"name": mechanic_name, "__doc__": msg, "source": "Unknown"}
@@ -115,6 +111,7 @@ class Creature(Content):
     directly!
 
     """
+
     # General attributes
     alignment = "Neutral"
     _race = None
@@ -204,18 +201,38 @@ class Creature(Content):
 
     @property
     def abilities(self):
-        return [self.strength, self.dexterity, self.constitution,
-                self.intelligence, self.wisdom, self.charisma]
+        return [
+            self.strength,
+            self.dexterity,
+            self.constitution,
+            self.intelligence,
+            self.wisdom,
+            self.charisma,
+        ]
 
     @property
     def skills(self):
-        return [self.acrobatics, self.animal_handling, self.arcana,
-                self.athletics, self.deception, self.history,
-                self.insight, self.intimidation, self.investigation,
-                self.medicine, self.nature, self.perception,
-                self.performance, self.persuasion, self.religion,
-                self.sleight_of_hand, self.stealth, self.survival]
-    
+        return [
+            self.acrobatics,
+            self.animal_handling,
+            self.arcana,
+            self.athletics,
+            self.deception,
+            self.history,
+            self.insight,
+            self.intimidation,
+            self.investigation,
+            self.medicine,
+            self.nature,
+            self.perception,
+            self.performance,
+            self.persuasion,
+            self.religion,
+            self.sleight_of_hand,
+            self.stealth,
+            self.survival,
+        ]
+
     @property
     def is_spellcaster(self):
         raise NotImplementedError

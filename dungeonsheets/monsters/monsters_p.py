@@ -30,13 +30,14 @@ class Panther(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
       2) slashing damage.
     """
-    name = 'Panther'
-    description = 'Medium beast, unaligned'
+
+    name = "Panther"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.25
     armor_class = 12
-    skills = 'Perception +4, Stealth +6'
-    senses = 'Passive Perception 14'
-    languages = ''
+    skills = "Perception +4, Stealth +6"
+    senses = "Passive Perception 14"
+    languages = ""
     strength = Ability(14)
     dexterity = Ability(15)
     constitution = Ability(10)
@@ -49,11 +50,11 @@ class Panther(Monster):
     climb_speed = 40
     burrow_speed = 0
     hp_max = 13
-    hit_dice = '3d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -66,12 +67,13 @@ class Pegasus(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6
       + 4) bludgeoning damage.
     """
-    name = 'Pegasus'
-    description = 'Large celestial, chaotic good'
+
+    name = "Pegasus"
+    description = "Large celestial, chaotic good"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Perception +6'
-    senses = 'Passive Perception 16'
+    skills = "Perception +6"
+    senses = "Passive Perception 16"
     languages = "understands Celestial, Common, Elvish, and Sylvan but can't speak"
     strength = Ability(18)
     dexterity = Ability(15)
@@ -85,11 +87,11 @@ class Pegasus(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 59
-    hit_dice = '7d10 + 21'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "7d10 + 21"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -116,13 +118,14 @@ class PhaseSpider(Monster):
       for 1 hour, even after regaining hit points, and is paralyzed while
       poisoned in this way.
     """
-    name = 'Phase Spider'
-    description = 'Large monstrosity, unaligned'
+
+    name = "Phase Spider"
+    description = "Large monstrosity, unaligned"
     challenge_rating = 3
     armor_class = 13
-    skills = 'Stealth +6'
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = ''
+    skills = "Stealth +6"
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -135,11 +138,11 @@ class PhaseSpider(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 32
-    hit_dice = '5d10 + 5'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d10 + 5"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -162,6 +165,7 @@ class Piercer(Monster):
       damage for the distance fallen.
 
     """
+
     name = "Piercer"
     description = "Medium monstrosity, unaligned"
     armor_class = 15
@@ -199,9 +203,9 @@ class PitFiend(Monster):
       The pit fiend's spellcasting ability is Charisma (spell save DC 21).
       The pit fiend can innately cast the following spells, requiring no
       material components:
-      
+
       At will: detect magic, fireball
-      
+
       3/day each: hold monster, wall of fire
 
     # Actions
@@ -227,13 +231,14 @@ class PitFiend(Monster):
       Melee Weapon Attack: +14 to hit, reach 10ft., one target. Hit: 24
       (3d1O + 8) bludgeoning damage.
     """
-    name = 'Pit Fiend'
-    description = 'Large fiend, lawful evil'
+
+    name = "Pit Fiend"
+    description = "Large fiend, lawful evil"
     challenge_rating = 20
     armor_class = 19
-    skills = ''
-    senses = 'Truesight 120 ft., Passive Perception 14'
-    languages = 'Infernal, telepathy 120 ft.'
+    skills = ""
+    senses = "Truesight 120 ft., Passive Perception 14"
+    languages = "Infernal, telepathy 120 ft."
     strength = Ability(26)
     dexterity = Ability(14)
     constitution = Ability(24)
@@ -246,11 +251,11 @@ class PitFiend(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 300
-    hit_dice = '24d10 + 168'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'fire, poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "24d10 + 168"
+    condition_immunities = "poisoned"
+    damage_immunities = "fire, poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -267,12 +272,12 @@ class Planetar(Monster):
       The planetar's spellcasting ability is Charisma (spell save DC 20).
       The planetar can innately cast the following spells, requiring no
       material components:
-      
+
       At will: detect evil and good, invisibility (self only)
-      
+
       3/day each: blade barrier, dispel evil and good, flame strike, raise
       dead
-      
+
       1/day each: commune, control weather, insect plague
     Magic Resistance.
       The planetar has advantage on saving throws against spells and other
@@ -290,13 +295,14 @@ class Planetar(Monster):
       (6d8 + 3) hit points and is freed from any curse, disease, poison,
       blindness, or deafness.
     """
-    name = 'Planetar'
-    description = 'Large celestial, lawful good'
+
+    name = "Planetar"
+    description = "Large celestial, lawful good"
     challenge_rating = 16
     armor_class = 19
-    skills = 'Perception +11'
-    senses = 'Truesight 120 ft., Passive Perception 21'
-    languages = 'all, telepathy 120 ft.'
+    skills = "Perception +11"
+    senses = "Truesight 120 ft., Passive Perception 21"
+    languages = "all, telepathy 120 ft."
     strength = Ability(24)
     dexterity = Ability(20)
     constitution = Ability(24)
@@ -309,11 +315,11 @@ class Planetar(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 200
-    hit_dice = '16d10 + 112'
-    condition_immunities = 'charmed, exhaustion, frightened'
-    damage_immunities = ''
-    damage_resistances = 'radiant'
-    damage_vulnerabilities = ''
+    hit_dice = "16d10 + 112"
+    condition_immunities = "charmed, exhaustion, frightened"
+    damage_immunities = ""
+    damage_resistances = "radiant"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -329,13 +335,14 @@ class Plesiosaurus(Monster):
       Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 14 (3d6
       + 4) piercing damage.
     """
-    name = 'Plesiosaurus'
-    description = 'Large beast, unaligned'
+
+    name = "Plesiosaurus"
+    description = "Large beast, unaligned"
     challenge_rating = 2
     armor_class = 13
-    skills = 'Perception +3, Stealth +4'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3, Stealth +4"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(18)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -348,11 +355,11 @@ class Plesiosaurus(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 68
-    hit_dice = '8d10 + 24'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d10 + 24"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -367,13 +374,14 @@ class PoisonousSnake(Monster):
       throw, taking 5 (2d4) poison damage on a failed save, or half as much
       damage on a successful one.
     """
-    name = 'Poisonous Snake'
-    description = 'Tiny beast, unaligned'
+
+    name = "Poisonous Snake"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0.125
     armor_class = 13
-    skills = ''
-    senses = 'Blindsight 10 ft., Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 10 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(2)
     dexterity = Ability(16)
     constitution = Ability(11)
@@ -386,11 +394,11 @@ class PoisonousSnake(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 2
-    hit_dice = '1d4 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -412,13 +420,14 @@ class PolarBear(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 12 (2d6
       + 5) slashing damage.
     """
-    name = 'Polar Bear'
-    description = 'Large beast, unaligned'
+
+    name = "Polar Bear"
+    description = "Large beast, unaligned"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Perception +3'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(20)
     dexterity = Ability(10)
     constitution = Ability(16)
@@ -431,11 +440,11 @@ class PolarBear(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 42
-    hit_dice = '5d10 + 15'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d10 + 15"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -448,13 +457,14 @@ class Pony(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 +
       2) bludgeoning damage.
     """
-    name = 'Pony'
-    description = 'Medium beast, unaligned'
+
+    name = "Pony"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.125
     armor_class = 10
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(10)
     constitution = Ability(13)
@@ -467,11 +477,11 @@ class Pony(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 11
-    hit_dice = '2d8 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -498,13 +508,14 @@ class Priest(Monster):
       Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6)
       bludgeoning damage.
     """
-    name = 'Priest'
-    description = 'Medium humanoid, any alignment'
+
+    name = "Priest"
+    description = "Medium humanoid, any alignment"
     challenge_rating = 2
     armor_class = 13
-    skills = 'Medicine +7, Persuasion +3, Religion +4'
-    senses = 'Passive Perception 13'
-    languages = 'any two languages'
+    skills = "Medicine +7, Persuasion +3, Religion +4"
+    senses = "Passive Perception 13"
+    languages = "any two languages"
     strength = Ability(10)
     dexterity = Ability(10)
     constitution = Ability(12)
@@ -517,12 +528,23 @@ class Priest(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 27
-    hit_dice = '5d8 + 5'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
-    spells = ['light', 'sacred flame', 'thaumaturgy', 'cure wounds', 'guiding bolt', 'sanctuary', 'lesser restoration', 'spiritual weapon', 'dispel magic', 'spirit guardians']
+    hit_dice = "5d8 + 5"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
+    spells = [
+        "light",
+        "sacred flame",
+        "thaumaturgy",
+        "cure wounds",
+        "guiding bolt",
+        "sanctuary",
+        "lesser restoration",
+        "spiritual weapon",
+        "dispel magic",
+        "spirit guardians",
+    ]
 
 
 class Pseudodragon(Monster):
@@ -561,12 +583,13 @@ class Pseudodragon(Monster):
       duration, or until it takes damage or another creature uses an action
       to shake it awake.
     """
-    name = 'Pseudodragon'
-    description = 'Tiny dragon, neutral good'
+
+    name = "Pseudodragon"
+    description = "Tiny dragon, neutral good"
     challenge_rating = 0.25
     armor_class = 13
-    skills = 'Perception +3, Stealth +4'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 13'
+    skills = "Perception +3, Stealth +4"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 13"
     languages = "understands Common and Draconic but can't speak"
     strength = Ability(6)
     dexterity = Ability(15)
@@ -580,11 +603,11 @@ class Pseudodragon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 7
-    hit_dice = '2d4 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d4 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -607,7 +630,7 @@ class PurpleWorm(Monster):
       worm. A swallowed creature is blinded and restrained, it has total
       cover against attacks and other effects outside the worm, and it takes
       21 (6d6) acid damage at the start of each of the worm's turns.
-      
+
       If the worm takes 30 damage or more on a single turn from a creature
       inside it, the worm must succeed on a DC 21 Constitution saving throw
       at the end of that turn or regurgitate all swallowed creatures, which
@@ -620,13 +643,14 @@ class PurpleWorm(Monster):
       Constitution saving throw, taking 42 (12d6) poison damage on a failed
       save, or half as much damage on a successful one.
     """
-    name = 'Purple Worm'
-    description = 'Gargantuan monstrosity, unaligned'
+
+    name = "Purple Worm"
+    description = "Gargantuan monstrosity, unaligned"
     challenge_rating = 15
     armor_class = 18
-    skills = ''
-    senses = 'Blindsight 30 ft., Tremorsense 60 ft., Passive Perception 9'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 30 ft., Tremorsense 60 ft., Passive Perception 9"
+    languages = ""
     strength = Ability(28)
     dexterity = Ability(7)
     constitution = Ability(22)
@@ -639,9 +663,9 @@ class PurpleWorm(Monster):
     climb_speed = 0
     burrow_speed = 30
     hp_max = 247
-    hit_dice = '15d20 + 90'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "15d20 + 90"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

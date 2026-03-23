@@ -99,9 +99,7 @@ class Hallow(Spell):
     casting_time = "24 hours"
     casting_range = "Touch"
     components = ("V", "S", "M")
-    materials = (
-        """Herbs, oils, and incense worth at least 1,000 gp, which the spell consumes"""
-    )
+    materials = """Herbs, oils, and incense worth at least 1,000 gp, which the spell consumes"""
     duration = "Until dispelled"
     ritual = False
     magic_school = "Evocation"
@@ -331,9 +329,7 @@ class HeroesFeast(Spell):
     casting_time = "10 minutes"
     casting_range = "30 feet"
     components = ("V", "S", "M")
-    materials = (
-        """A gem-encrusted bowl worth at least 1,000 gp, which the spell consumes"""
-    )
+    materials = """A gem-encrusted bowl worth at least 1,000 gp, which the spell consumes"""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Conjuration"
@@ -571,10 +567,7 @@ class HypnoticPattern(Spell):
     casting_time = "1 action"
     casting_range = "120 feet"
     components = ("S", "M")
-    materials = (
-        "A glowing stick of incense or a crystal vial filled with phosphorescent"
-        " material"
-    )
+    materials = "A glowing stick of incense or a crystal vial filled with phosphorescent material"
     duration = "Concentration, up to 1 minute"
     ritual = False
     magic_school = "Illusion"

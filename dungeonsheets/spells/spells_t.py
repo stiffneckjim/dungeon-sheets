@@ -222,8 +222,7 @@ class TeleportationCircle(Spell):
     casting_range = "10 feet"
     components = ("V", "M")
     materials = (
-        "Rare chalks and inks infused with precious gems with 50 gp, which the spell"
-        " consumes"
+        "Rare chalks and inks infused with precious gems with 50 gp, which the spell consumes"
     )
     duration = "1 round"
     ritual = False
@@ -804,8 +803,7 @@ class TrueResurrection(Spell):
     casting_range = "Touch"
     components = ("V", "S", "M")
     materials = (
-        "A sprinkle of holy water and diamonds worth at least 25,000 gp, which the"
-        " spell consumes"
+        "A sprinkle of holy water and diamonds worth at least 25,000 gp, which the spell consumes"
     )
     duration = "Instantaneous"
     ritual = False

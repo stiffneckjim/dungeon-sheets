@@ -1232,10 +1232,7 @@ class StoneShape(Spell):
     casting_time = "1 action"
     casting_range = "Touch"
     components = ("V", "S", "M")
-    materials = (
-        "Soft clay, which must be worked into roughly the desired shape of the stone"
-        " object"
-    )
+    materials = "Soft clay, which must be worked into roughly the desired shape of the stone object"
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"
@@ -1368,9 +1365,7 @@ class Suggestion(Spell):
     casting_time = "1 action"
     casting_range = "30 feet"
     components = ("V", "M")
-    materials = (
-        """A snake's tongue and either a bit of honeycomb or a drop of sweet oil"""
-    )
+    materials = """A snake's tongue and either a bit of honeycomb or a drop of sweet oil"""
     duration = "Concentration, up to 8 hours"
     ritual = False
     magic_school = "Enchantment"

@@ -579,9 +579,7 @@ class Invulnerability(Spell):
     casting_time = "1 action"
     casting_range = "Self"
     components = ("V", "S", "M")
-    materials = (
-        "A small piece of adamantine worth at least 500 gp, which the spell consumes"
-    )
+    materials = "A small piece of adamantine worth at least 500 gp, which the spell consumes"
     duration = "Concentration, up to 10 minutes"
     ritual = False
     magic_school = "Abjuration"

@@ -13,8 +13,8 @@ Dragons 5th edition (D&D 5e).
    :target: https://github.com/stiffneckjim/dungeon-sheets/actions/workflows/python-ci.yml
    :alt: Python CI Status
 
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
+.. image:: https://img.shields.io/badge/linting-ruff-46a758.svg
+    :target: https://docs.astral.sh/ruff/
 
 Documentation
 =============

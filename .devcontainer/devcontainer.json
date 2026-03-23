@@ -21,13 +21,15 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-python.debugpy",
-        "ms-python.black-formatter",
+        "charliermarsh.ruff",
         "ms-azuretools.vscode-containers",
         "ms-python.vscode-python-envs",
         "ms-vscode-remote.remote-containers"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
         "python.testing.pytestEnabled": true,
         "python.testing.unittestEnabled": false
       }

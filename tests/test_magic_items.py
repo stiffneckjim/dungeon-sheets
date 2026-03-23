@@ -1,7 +1,15 @@
+"""
+Unit tests for magic items in dungeonsheets. These tests cover the
+functionality of the MagicItem base class, as well as specific magic items like
+the Staff of the Adder and Javelin of Lightning.
+
+The tests verify that saving throw bonuses are calculated correctly based on
+item properties and character attributes, and that specific magic items are
+properly registered in the content registry with their expected attributes.
+"""
+
 import unittest
 
-
-from dungeonsheets.stats import Ability
 from dungeonsheets import magic_items
 from dungeonsheets.character import Character
 from dungeonsheets.content_registry import find_content

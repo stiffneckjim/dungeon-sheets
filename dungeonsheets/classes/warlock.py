@@ -223,7 +223,16 @@ class Warlock(CharClass):
     features_by_level[4] = [features.EldritchVersatility]
     features_by_level[11] = [features.MysticArcanum]
     features_by_level[20] = [features.EldritchMaster]
-    subclasses_available = (Archfey, Fiend, GreatOldOne, Undying, Celestial, Hexblade, Fathomless, Genie)
+    subclasses_available = (
+        Archfey,
+        Fiend,
+        GreatOldOne,
+        Undying,
+        Celestial,
+        Hexblade,
+        Fathomless,
+        Genie,
+    )
     spellcasting_ability = "charisma"
     spell_slots_by_level = {
         1: (2, 1, 0, 0, 0, 0, 0, 0, 0, 0),

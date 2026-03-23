@@ -422,6 +422,7 @@ class KeptInStyle(Feature):
     name = "Kept in Style"
     source = "Background (Waterdhavian Noble)"
 
+
 class FacelessPersona(Feature):
     """A faceless character adventures behind the mask of a public persona.
     This persona is as natural to them as their hidden, true face, but it

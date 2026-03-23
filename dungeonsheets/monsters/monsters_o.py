@@ -33,13 +33,14 @@ class OchreJelly(Monster):
       jelly's, rounded down. New jellies are one size smaller than the
       original jelly.
     """
-    name = 'Ochre Jelly'
-    description = 'Large ooze, unaligned'
+
+    name = "Ochre Jelly"
+    description = "Large ooze, unaligned"
     challenge_rating = 2
     armor_class = 8
-    skills = ''
-    senses = 'Blindsight 60 ft. (blind beyond this radius), Passive Perception 8'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 60 ft. (blind beyond this radius), Passive Perception 8"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(6)
     constitution = Ability(14)
@@ -52,11 +53,11 @@ class OchreJelly(Monster):
     climb_speed = 10
     burrow_speed = 0
     hp_max = 45
-    hit_dice = '6d10 + 12'
-    condition_immunities = 'blinded, charmed, blinded, exhaustion, frightened, prone'
-    damage_immunities = 'lightning, slashing'
-    damage_resistances = 'acid'
-    damage_vulnerabilities = ''
+    hit_dice = "6d10 + 12"
+    condition_immunities = "blinded, charmed, blinded, exhaustion, frightened, prone"
+    damage_immunities = "lightning, slashing"
+    damage_resistances = "acid"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -84,13 +85,14 @@ class Octopus(Monster):
       significant current can disperse the ink. After releasing the ink, the
       octopus can use the Dash action as a bonus action.
     """
-    name = 'Octopus'
-    description = 'Small beast, unaligned'
+
+    name = "Octopus"
+    description = "Small beast, unaligned"
     challenge_rating = 0
     armor_class = 12
-    skills = 'Perception +2, Stealth +4'
-    senses = 'Darkvision 30 ft., Passive Perception 12'
-    languages = ''
+    skills = "Perception +2, Stealth +4"
+    senses = "Darkvision 30 ft., Passive Perception 12"
+    languages = ""
     strength = Ability(4)
     dexterity = Ability(15)
     constitution = Ability(11)
@@ -103,11 +105,11 @@ class Octopus(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 3
-    hit_dice = '1d6 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d6 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -123,13 +125,14 @@ class Ogre(Monster):
       Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 30/120
       ft., one target. Hit: 11 (2d6 + 4) piercing damage.
     """
-    name = 'Ogre'
-    description = 'Large giant, chaotic evil'
+
+    name = "Ogre"
+    description = "Large giant, chaotic evil"
     challenge_rating = 2
     armor_class = 11
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 8'
-    languages = 'Common, Giant'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 8"
+    languages = "Common, Giant"
     strength = Ability(19)
     dexterity = Ability(8)
     constitution = Ability(16)
@@ -142,11 +145,11 @@ class Ogre(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 59
-    hit_dice = '7d10 + 21'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "7d10 + 21"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -165,12 +168,13 @@ class OgreZombie(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8
       + 4) bludgeoning damage.
     """
-    name = 'Ogre Zombie'
-    description = 'Large undead, neutral evil'
+
+    name = "Ogre Zombie"
+    description = "Large undead, neutral evil"
     challenge_rating = 2
     armor_class = 8
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 8'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 8"
     languages = "understands Common and Giant but can't speak"
     strength = Ability(19)
     dexterity = Ability(6)
@@ -184,11 +188,11 @@ class OgreZombie(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 85
-    hit_dice = '9d10 + 36'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "9d10 + 36"
+    condition_immunities = "poisoned"
+    damage_immunities = "poison"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -199,11 +203,11 @@ class Oni(Monster):
       The oni's innate spellcasting ability is Charisma (spell save DC 13).
       The oni can innately cast the following spells, requiring no material
       components:
-      
-  
-      
+
+
+
       At will: darkness, invisibility
-      
+
       1/day each: charm person, cone of cold, gaseous form, sleep
     Magic Weapons.
       The oni's weapon attacks are magical.
@@ -230,13 +234,14 @@ class Oni(Monster):
       humanoid form. If the oni dies, it reverts to its true form, and its
       glaive reverts to its normal size.
     """
-    name = 'Oni'
-    description = 'Large giant, lawful evil'
+
+    name = "Oni"
+    description = "Large giant, lawful evil"
     challenge_rating = 7
     armor_class = 16
-    skills = 'Arcana +5, Deception +8, Perception +4'
-    senses = 'Darkvision 60 ft., Passive Perception 14'
-    languages = 'Common, Giant'
+    skills = "Arcana +5, Deception +8, Perception +4"
+    senses = "Darkvision 60 ft., Passive Perception 14"
+    languages = "Common, Giant"
     strength = Ability(19)
     dexterity = Ability(11)
     constitution = Ability(16)
@@ -249,11 +254,11 @@ class Oni(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 110
-    hit_dice = '13d10 + 39'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "13d10 + 39"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -273,13 +278,14 @@ class Orc(Monster):
       Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 30/120
       ft., one target. Hit: 6 (1d6 + 3) piercing damage.
     """
-    name = 'Orc'
-    description = 'Medium humanoid, chaotic evil'
+
+    name = "Orc"
+    description = "Medium humanoid, chaotic evil"
     challenge_rating = 0.5
     armor_class = 13
-    skills = 'Intimidation +2'
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = 'Common, Orc'
+    skills = "Intimidation +2"
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = "Common, Orc"
     strength = Ability(16)
     dexterity = Ability(12)
     constitution = Ability(16)
@@ -292,11 +298,11 @@ class Orc(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 15
-    hit_dice = '2d8 + 6'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 6"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -336,13 +342,14 @@ class Otyugh(Monster):
       end of the otyugh's next turn. On a successful save, the target takes
       half the bludgeoning damage and isn't stunned.
     """
-    name = 'Otyugh'
-    description = 'Large aberration, neutral'
+
+    name = "Otyugh"
+    description = "Large aberration, neutral"
     challenge_rating = 5
     armor_class = 14
-    skills = ''
-    senses = 'Darkvision 120 ft., Passive Perception 11'
-    languages = 'Otyugh'
+    skills = ""
+    senses = "Darkvision 120 ft., Passive Perception 11"
+    languages = "Otyugh"
     strength = Ability(16)
     dexterity = Ability(11)
     constitution = Ability(19)
@@ -355,11 +362,11 @@ class Otyugh(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 114
-    hit_dice = '12d10 + 48'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "12d10 + 48"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -379,13 +386,14 @@ class Owl(Monster):
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 1
       slashing damage.
     """
-    name = 'Owl'
-    description = 'Tiny beast, unaligned'
+
+    name = "Owl"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0
     armor_class = 11
-    skills = 'Perception +3, Stealth +3'
-    senses = 'Darkvision 120 ft., Passive Perception 13'
-    languages = ''
+    skills = "Perception +3, Stealth +3"
+    senses = "Darkvision 120 ft., Passive Perception 13"
+    languages = ""
     strength = Ability(3)
     dexterity = Ability(13)
     constitution = Ability(8)
@@ -398,11 +406,11 @@ class Owl(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 1
-    hit_dice = '1d4 + -1'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + -1"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -425,13 +433,14 @@ class Owlbear(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8
       + 5) slashing damage.
     """
-    name = 'Owlbear'
-    description = 'Large monstrosity, unaligned'
+
+    name = "Owlbear"
+    description = "Large monstrosity, unaligned"
     challenge_rating = 3
     armor_class = 13
-    skills = 'Perception +3'
-    senses = 'Darkvision 60 ft., Passive Perception 13'
-    languages = ''
+    skills = "Perception +3"
+    senses = "Darkvision 60 ft., Passive Perception 13"
+    languages = ""
     strength = Ability(20)
     dexterity = Ability(12)
     constitution = Ability(17)
@@ -444,9 +453,9 @@ class Owlbear(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 59
-    hit_dice = '7d10 + 21'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "7d10 + 21"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []

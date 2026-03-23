@@ -4,7 +4,7 @@ import subprocess
 import warnings
 
 from fdfgen import forge_fdf
-from pypdf import PdfWriter, PdfReader
+from pypdf import PdfReader, PdfWriter
 
 from dungeonsheets.forms import mod_str
 
@@ -20,9 +20,7 @@ def text_box(string):
     # remove multiple whitespace without removing linebreaks
     new_string = " ".join(string.replace("\n", r"\m").split())
     # Remove *single* line breaks, swap *multi* line breaks to single (fdf: \r)
-    new_string = (
-        new_string.replace(r"\m \m", "\r").replace(r"\m\m", "\r").replace(r"\m", " ")
-    )
+    new_string = new_string.replace(r"\m \m", "\r").replace(r"\m\m", "\r").replace(r"\m", " ")
     return new_string
 
 
@@ -85,18 +83,14 @@ def create_character_pdf_template(character, basename, flatten=False):
         # Hit points
         "HDTotal": character.hit_dice,
         "HPMax": str(character.hp_max),
-        "HPCurrent": (
-            str(character.hp_current) if character.hp_current is not None else ""
-        ),
+        "HPCurrent": (str(character.hp_current) if character.hp_current is not None else ""),
         "HPTemp": str(character.hp_temp) if character.hp_temp > 0 else "",
         # Personality traits and other features
         "PersonalityTraits ": text_box(character.personality_traits),
         "Ideals": text_box(character.ideals),
         "Bonds": text_box(character.bonds),
         "Flaws": text_box(character.flaws),
-        "Features and Traits": text_box(
-            character.features_text + character.features_and_traits
-        ),
+        "Features and Traits": text_box(character.features_text + character.features_and_traits),
         # Inventory
         "CP": character.cp,
         "SP": character.sp,
@@ -215,14 +209,9 @@ def create_spells_pdf_template(character, basename, flatten=False):
     abilities = " / ".join(
         [c.spellcasting_ability.upper()[:3] for c in character.spellcasting_classes]
     )
-    DCs = " / ".join(
-        [str(character.spell_save_dc(c)) for c in character.spellcasting_classes]
-    )
+    DCs = " / ".join([str(character.spell_save_dc(c)) for c in character.spellcasting_classes])
     bonuses = " / ".join(
-        [
-            mod_str(character.spell_attack_bonus(c))
-            for c in character.spellcasting_classes
-        ]
+        [mod_str(character.spell_attack_bonus(c)) for c in character.spellcasting_classes]
     )
 
     def spell_level(x):
@@ -345,9 +334,7 @@ def create_spells_pdf_template(character, basename, flatten=False):
 
         # The first page has len(field_numbers) spells, the further pages have
         # len(field_numbers - 1)
-        for page, page_spells in enumerate(
-            spell_paginator(spells, len(spell_fields[level]))
-        ):
+        for page, page_spells in enumerate(spell_paginator(spells, len(spell_fields[level]))):
             if page not in fields_per_page:
                 fields_per_page[page] = {}
             # Build the list of PDF controls to set/toggle
@@ -362,9 +349,7 @@ def create_spells_pdf_template(character, basename, flatten=False):
             for spell, field, chk_field in zip(page_spells, field_names, prep_names):
                 fields_per_page[page][field] = str(spell)
                 is_prepared = any([spell == Spl for Spl in character.spells_prepared])
-                fields_per_page[page][chk_field] = (
-                    CHECKBOX_ON if is_prepared else CHECKBOX_OFF
-                )
+                fields_per_page[page][chk_field] = CHECKBOX_ON if is_prepared else CHECKBOX_OFF
             # # Uncomment to post field names instead:
             # for field in field_names:
             #     fields.append((field, field))

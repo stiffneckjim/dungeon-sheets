@@ -194,9 +194,7 @@ class Reincarnate(Spell):
     casting_time = "1 hour"
     casting_range = "Touch"
     components = ("V", "S", "M")
-    materials = (
-        """Rare oils and unguents worth at least 1,000 gp, which the spell consumes"""
-    )
+    materials = """Rare oils and unguents worth at least 1,000 gp, which the spell consumes"""
     duration = "Instantaneous"
     ritual = False
     magic_school = "Transmutation"

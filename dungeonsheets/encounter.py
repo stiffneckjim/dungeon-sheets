@@ -33,7 +33,8 @@ def xp_thresholds(party):
     thresholds = []
     for member in party:
         xp_th = xp_thresholds_by_character_level.get(
-            getattr(member, 'level', 0), XPThreshold(0, 0, 0, 0))
+            getattr(member, "level", 0), XPThreshold(0, 0, 0, 0)
+        )
         thresholds.append(xp_th)
     final_thresholds = XPThreshold(
         easy=sum(th.easy for th in thresholds),

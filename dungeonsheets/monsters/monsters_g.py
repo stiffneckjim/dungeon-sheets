@@ -27,13 +27,14 @@ class Gargoyle(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
       2) slashing damage.
     """
-    name = 'Gargoyle'
-    description = 'Medium elemental, chaotic evil'
+
+    name = "Gargoyle"
+    description = "Medium elemental, chaotic evil"
     challenge_rating = 2
     armor_class = 15
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = 'Terran'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = "Terran"
     strength = Ability(15)
     dexterity = Ability(11)
     constitution = Ability(16)
@@ -46,11 +47,13 @@ class Gargoyle(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 52
-    hit_dice = '7d8 + 21'
-    condition_immunities = 'exhaustion, petrified, poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = "bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine"
-    damage_vulnerabilities = ''
+    hit_dice = "7d8 + 21"
+    condition_immunities = "exhaustion, petrified, poisoned"
+    damage_immunities = "poison"
+    damage_resistances = (
+        "bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine"
+    )
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -61,14 +64,14 @@ class GelatinousCube(Monster):
       The cube takes up its entire space. Other creatures can enter the
       space, but a creature that does so is subjected to the cube's Engulf
       and has disadvantage on the saving throw.
-      
+
       Creatures inside the cube can be seen but have total cover.
-      
+
       A creature within 5 feet of the cube can take an action to pull a
       creature or object out of the cube. Doing so requires a successful DC
       12 Strength check, and the creature making the attempt takes 10 (3d6)
       acid damage.
-      
+
       The cube can hold only one Large creature or up to four Medium or
       smaller creatures inside it at a time.
     Transparent.
@@ -86,28 +89,29 @@ class GelatinousCube(Monster):
       The cube moves up to its speed. While doing so, it can enter Large or
       smaller creatures' spaces. Whenever the cube enters a creature's
       space, the creature must make a DC 12 Dexterity saving throw.
-      
+
       On a successful save, the creature can choose to be pushed 5 feet back
       or to the side of the cube. A creature that chooses not to be pushed
       suffers the consequences of a failed saving throw.
-      
+
       On a failed save, the cube enters the creature's space, and the
       creature takes 10 (3d6) acid damage and is engulfed. The engulfed
       creature can't breathe, is restrained, and takes 21 (6d6) acid damage
       at the start of each of the cube's turns. When the cube moves, the
       engulfed creature moves with it.
-      
+
       An engulfed creature can try to escape by taking an action to make a
       DC 12 Strength check. On a success, the creature escapes and enters a
       space of its choice within 5 feet of the cube.
     """
-    name = 'Gelatinous Cube'
-    description = 'Large ooze, unaligned'
+
+    name = "Gelatinous Cube"
+    description = "Large ooze, unaligned"
     challenge_rating = 2
     armor_class = 6
-    skills = ''
-    senses = 'Blindsight 60 ft. (blind beyond this radius), Passive Perception 8'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 60 ft. (blind beyond this radius), Passive Perception 8"
+    languages = ""
     strength = Ability(14)
     dexterity = Ability(3)
     constitution = Ability(20)
@@ -120,11 +124,11 @@ class GelatinousCube(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 84
-    hit_dice = '8d10 + 40'
-    condition_immunities = 'blinded, charmed, blinded, exhaustion, frightened, prone'
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d10 + 40"
+    condition_immunities = "blinded, charmed, blinded, exhaustion, frightened, prone"
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -152,13 +156,14 @@ class Ghast(Monster):
       paralyzed for 1 minute. The target can repeat the saving throw at the
       end of each of its turns, ending the effect on itself on a success.
     """
-    name = 'Ghast'
-    description = 'Medium undead, chaotic evil'
+
+    name = "Ghast"
+    description = "Medium undead, chaotic evil"
     challenge_rating = 2
     armor_class = 13
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = 'Common'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = "Common"
     strength = Ability(16)
     dexterity = Ability(17)
     constitution = Ability(10)
@@ -171,11 +176,11 @@ class Ghast(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 36
-    hit_dice = '8d8 + 0'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'necrotic'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d8 + 0"
+    condition_immunities = "poisoned"
+    damage_immunities = "necrotic"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -221,7 +226,7 @@ class Ghost(Monster):
       charmed and frightened. It otherwise uses the possessed target's
       statistics, but doesn't gain access to the target's knowledge, class
       features, or proficiencies.
-      
+
       The possession lasts until the body drops to 0 hit points, the ghost
       ends it as a bonus action, or the ghost is turned or forced out by an
       effect like the dispel evil and good spell. When the possession ends,
@@ -229,13 +234,14 @@ class Ghost(Monster):
       The target is immune to this ghost's Possession for 24 hours after
       succeeding on the saving throw or after the possession ends.
     """
-    name = 'Ghost'
-    description = 'Medium undead, any alignment'
+
+    name = "Ghost"
+    description = "Medium undead, any alignment"
     challenge_rating = 4
     armor_class = 11
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 11'
-    languages = 'any languages it knew in life'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 11"
+    languages = "any languages it knew in life"
     strength = Ability(7)
     dexterity = Ability(13)
     constitution = Ability(10)
@@ -248,11 +254,11 @@ class Ghost(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 45
-    hit_dice = '10d8 + 0'
-    condition_immunities = 'charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained'
-    damage_immunities = 'cold, necrotic, poison'
-    damage_resistances = 'acid'
-    damage_vulnerabilities = ''
+    hit_dice = "10d8 + 0"
+    condition_immunities = "charmed, exhaustion, frightened, grappled, paralyzed, petrified, poisoned, prone, restrained"
+    damage_immunities = "cold, necrotic, poison"
+    damage_resistances = "acid"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -271,13 +277,14 @@ class Ghoul(Monster):
       paralyzed for 1 minute. The target can repeat the saving throw at the
       end of each of its turns, ending the effect on itself on a success.
     """
-    name = 'Ghoul'
-    description = 'Medium undead, chaotic evil'
+
+    name = "Ghoul"
+    description = "Medium undead, chaotic evil"
     challenge_rating = 1
     armor_class = 12
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = 'Common'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = "Common"
     strength = Ability(13)
     dexterity = Ability(15)
     constitution = Ability(10)
@@ -290,11 +297,11 @@ class Ghoul(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '5d8 + 0'
-    condition_immunities = 'poisoned'
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d8 + 0"
+    condition_immunities = "poisoned"
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -312,13 +319,14 @@ class GiantApe(Monster):
       Ranged Weapon Attack: +9 to hit, range 50/100 ft., one target. Hit: 30
       (7d6 + 6) bludgeoning damage.
     """
-    name = 'Giant Ape'
-    description = 'Huge beast, unaligned'
+
+    name = "Giant Ape"
+    description = "Huge beast, unaligned"
     challenge_rating = 7
     armor_class = 12
-    skills = 'Athletics +9, Perception +4'
-    senses = 'Passive Perception 14'
-    languages = ''
+    skills = "Athletics +9, Perception +4"
+    senses = "Passive Perception 14"
+    languages = ""
     strength = Ability(23)
     dexterity = Ability(14)
     constitution = Ability(18)
@@ -331,11 +339,11 @@ class GiantApe(Monster):
     climb_speed = 40
     burrow_speed = 0
     hp_max = 157
-    hit_dice = '15d12 + 60'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "15d12 + 60"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -358,13 +366,14 @@ class GiantBadger(Monster):
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 +
       1) slashing damage.
     """
-    name = 'Giant Badger'
-    description = 'Medium beast, unaligned'
+
+    name = "Giant Badger"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.25
     armor_class = 10
-    skills = ''
-    senses = 'Darkvision 30 ft., Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 30 ft., Passive Perception 11"
+    languages = ""
     strength = Ability(13)
     dexterity = Ability(10)
     constitution = Ability(15)
@@ -377,11 +386,11 @@ class GiantBadger(Monster):
     climb_speed = 0
     burrow_speed = 10
     hp_max = 13
-    hit_dice = '2d8 + 4'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 4"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -400,13 +409,14 @@ class GiantBat(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6
       + 2) piercing damage.
     """
-    name = 'Giant Bat'
-    description = 'Large beast, unaligned'
+
+    name = "Giant Bat"
+    description = "Large beast, unaligned"
     challenge_rating = 0.25
     armor_class = 13
-    skills = ''
-    senses = 'Blindsight 60 ft., Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 60 ft., Passive Perception 11"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(16)
     constitution = Ability(11)
@@ -419,11 +429,11 @@ class GiantBat(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '4d10 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "4d10 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -445,13 +455,14 @@ class GiantBoar(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) slashing damage.
     """
-    name = 'Giant Boar'
-    description = 'Large beast, unaligned'
+
+    name = "Giant Boar"
+    description = "Large beast, unaligned"
     challenge_rating = 2
     armor_class = 12
-    skills = ''
-    senses = 'Passive Perception 8'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 8"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(10)
     constitution = Ability(16)
@@ -464,11 +475,11 @@ class GiantBoar(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 42
-    hit_dice = '5d10 + 15'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d10 + 15"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -485,13 +496,14 @@ class GiantCentipede(Monster):
       but poisoned for 1 hour, even after regaining hit points, and is
       paralyzed while poisoned in this way.
     """
-    name = 'Giant Centipede'
-    description = 'Small beast, unaligned'
+
+    name = "Giant Centipede"
+    description = "Small beast, unaligned"
     challenge_rating = 0.25
     armor_class = 13
-    skills = ''
-    senses = 'Blindsight 30 ft., Passive Perception 8'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 30 ft., Passive Perception 8"
+    languages = ""
     strength = Ability(5)
     dexterity = Ability(14)
     constitution = Ability(12)
@@ -504,11 +516,11 @@ class GiantCentipede(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 4
-    hit_dice = '1d6 + 1'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d6 + 1"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -526,13 +538,14 @@ class GiantConstrictorSnake(Monster):
       16). Until this grapple ends, the creature is restrained, and the
       snake can't constrict another target.
     """
-    name = 'Giant Constrictor Snake'
-    description = 'Huge beast, unaligned'
+
+    name = "Giant Constrictor Snake"
+    description = "Huge beast, unaligned"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Perception +2'
-    senses = 'Blindsight 10 ft., Passive Perception 12'
-    languages = ''
+    skills = "Perception +2"
+    senses = "Blindsight 10 ft., Passive Perception 12"
+    languages = ""
     strength = Ability(19)
     dexterity = Ability(14)
     constitution = Ability(12)
@@ -545,11 +558,11 @@ class GiantConstrictorSnake(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 60
-    hit_dice = '8d12 + 8'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d12 + 8"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -566,13 +579,14 @@ class GiantCrab(Monster):
       1) bludgeoning damage, and the target is grappled (escape DC 11). The
       crab has two claws, each of which can grapple only one target.
     """
-    name = 'Giant Crab'
-    description = 'Medium beast, unaligned'
+
+    name = "Giant Crab"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.125
     armor_class = 15
-    skills = 'Stealth +4'
-    senses = 'Blindsight 30 ft., Passive Perception 9'
-    languages = ''
+    skills = "Stealth +4"
+    senses = "Blindsight 30 ft., Passive Perception 9"
+    languages = ""
     strength = Ability(13)
     dexterity = Ability(15)
     constitution = Ability(11)
@@ -585,11 +599,11 @@ class GiantCrab(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 13
-    hit_dice = '3d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -615,13 +629,14 @@ class GiantCrocodile(Monster):
       is a creature, it must succeed on a DC 16 Strength saving throw or be
       knocked prone.
     """
-    name = 'Giant Crocodile'
-    description = 'Huge beast, unaligned'
+
+    name = "Giant Crocodile"
+    description = "Huge beast, unaligned"
     challenge_rating = 5
     armor_class = 14
-    skills = 'Stealth +5'
-    senses = 'Passive Perception 10'
-    languages = ''
+    skills = "Stealth +5"
+    senses = "Passive Perception 10"
+    languages = ""
     strength = Ability(21)
     dexterity = Ability(9)
     constitution = Ability(17)
@@ -634,11 +649,11 @@ class GiantCrocodile(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 85
-    hit_dice = '9d12 + 27'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "9d12 + 27"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -661,12 +676,13 @@ class GiantEagle(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) slashing damage.
     """
-    name = 'Giant Eagle'
-    description = 'Large beast, neutral good'
+
+    name = "Giant Eagle"
+    description = "Large beast, neutral good"
     challenge_rating = 1
     armor_class = 13
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
     languages = "Giant Eagle, understands Common and Auran but can't speak"
     strength = Ability(16)
     dexterity = Ability(17)
@@ -680,11 +696,11 @@ class GiantEagle(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 26
-    hit_dice = '4d10 + 4'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "4d10 + 4"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -706,12 +722,13 @@ class GiantElk(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one prone creature. Hit:
       22 (4d8 + 4) bludgeoning damage.
     """
-    name = 'Giant Elk'
-    description = 'Huge beast, unaligned'
+
+    name = "Giant Elk"
+    description = "Huge beast, unaligned"
     challenge_rating = 2
     armor_class = 15
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
     languages = "Giant Elk, understands Common, Elvish, and Sylvan but can't speak"
     strength = Ability(19)
     dexterity = Ability(16)
@@ -725,11 +742,11 @@ class GiantElk(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 42
-    hit_dice = '5d12 + 10'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d12 + 10"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -746,13 +763,14 @@ class GiantFireBeetle(Monster):
       Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 2 (1d6 -
       1) slashing damage.
     """
-    name = 'Giant Fire Beetle'
-    description = 'Small beast, unaligned'
+
+    name = "Giant Fire Beetle"
+    description = "Small beast, unaligned"
     challenge_rating = 0
     armor_class = 13
-    skills = ''
-    senses = 'Blindsight 30 ft., Passive Perception 8'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 30 ft., Passive Perception 8"
+    languages = ""
     strength = Ability(8)
     dexterity = Ability(10)
     constitution = Ability(12)
@@ -765,11 +783,11 @@ class GiantFireBeetle(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 4
-    hit_dice = '1d6 + 1'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d6 + 1"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -799,13 +817,14 @@ class GiantFrog(Monster):
       dies, a swallowed creature is no longer restrained by it and can
       escape from the corpse using 5 ft. of movement, exiting prone.
     """
-    name = 'Giant Frog'
-    description = 'Medium beast, unaligned'
+
+    name = "Giant Frog"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.25
     armor_class = 11
-    skills = 'Perception +2, Stealth +3'
-    senses = 'Darkvision 30 ft., Passive Perception 12'
-    languages = ''
+    skills = "Perception +2, Stealth +3"
+    senses = "Darkvision 30 ft., Passive Perception 12"
+    languages = ""
     strength = Ability(12)
     dexterity = Ability(13)
     constitution = Ability(11)
@@ -818,11 +837,11 @@ class GiantFrog(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 18
-    hit_dice = '4d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "4d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -844,13 +863,14 @@ class GiantGoat(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 +
       3) bludgeoning damage.
     """
-    name = 'Giant Goat'
-    description = 'Large beast, unaligned'
+
+    name = "Giant Goat"
+    description = "Large beast, unaligned"
     challenge_rating = 0.5
     armor_class = 11
-    skills = ''
-    senses = 'Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 11"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(11)
     constitution = Ability(12)
@@ -863,11 +883,11 @@ class GiantGoat(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 19
-    hit_dice = '3d10 + 3'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d10 + 3"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -885,13 +905,14 @@ class GiantHyena(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) piercing damage.
     """
-    name = 'Giant Hyena'
-    description = 'Large beast, unaligned'
+
+    name = "Giant Hyena"
+    description = "Large beast, unaligned"
     challenge_rating = 1
     armor_class = 12
-    skills = 'Perception +3'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(16)
     dexterity = Ability(14)
     constitution = Ability(14)
@@ -904,11 +925,11 @@ class GiantHyena(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 45
-    hit_dice = '6d10 + 12'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d10 + 12"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -928,13 +949,14 @@ class GiantLizard(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 +
       2) piercing damage.
     """
-    name = 'Giant Lizard'
-    description = 'Large beast, unaligned'
+
+    name = "Giant Lizard"
+    description = "Large beast, unaligned"
     challenge_rating = 0.25
     armor_class = 12
-    skills = ''
-    senses = 'Darkvision 30 ft., Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 30 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(12)
     constitution = Ability(13)
@@ -947,11 +969,11 @@ class GiantLizard(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 19
-    hit_dice = '3d10 + 3'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d10 + 3"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -979,13 +1001,14 @@ class GiantOctopus(Monster):
       significant current can disperse the ink. After releasing the ink, the
       octopus can use the Dash action as a bonus action.
     """
-    name = 'Giant Octopus'
-    description = 'Large beast, unaligned'
+
+    name = "Giant Octopus"
+    description = "Large beast, unaligned"
     challenge_rating = 1
     armor_class = 11
-    skills = 'Perception +4, Stealth +5'
-    senses = 'Darkvision 60 ft., Passive Perception 14'
-    languages = ''
+    skills = "Perception +4, Stealth +5"
+    senses = "Darkvision 60 ft., Passive Perception 14"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(13)
     constitution = Ability(13)
@@ -998,11 +1021,11 @@ class GiantOctopus(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 52
-    hit_dice = '8d10 + 8'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d10 + 8"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1022,12 +1045,13 @@ class GiantOwl(Monster):
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 8 (2d6 +
       1) slashing damage.
     """
-    name = 'Giant Owl'
-    description = 'Large beast, neutral'
+
+    name = "Giant Owl"
+    description = "Large beast, neutral"
     challenge_rating = 0.25
     armor_class = 12
-    skills = 'Perception +5, Stealth +4'
-    senses = 'Darkvision 120 ft., Passive Perception 15'
+    skills = "Perception +5, Stealth +4"
+    senses = "Darkvision 120 ft., Passive Perception 15"
     languages = "Giant Owl, understands Common, Elvish, and Sylvan but can't speak"
     strength = Ability(13)
     dexterity = Ability(15)
@@ -1041,11 +1065,11 @@ class GiantOwl(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 19
-    hit_dice = '3d10 + 3'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d10 + 3"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1060,13 +1084,14 @@ class GiantPoisonousSnake(Monster):
       saving throw, taking 10 (3d6) poison damage on a failed save, or half
       as much damage on a successful one.
     """
-    name = 'Giant Poisonous Snake'
-    description = 'Medium beast, unaligned'
+
+    name = "Giant Poisonous Snake"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.25
     armor_class = 14
-    skills = 'Perception +2'
-    senses = 'Blindsight 10 ft., Passive Perception 12'
-    languages = ''
+    skills = "Perception +2"
+    senses = "Blindsight 10 ft., Passive Perception 12"
+    languages = ""
     strength = Ability(10)
     dexterity = Ability(18)
     constitution = Ability(13)
@@ -1079,11 +1104,11 @@ class GiantPoisonousSnake(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 11
-    hit_dice = '2d8 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1104,13 +1129,14 @@ class GiantRat(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
       2) piercing damage.
     """
-    name = 'Giant Rat'
-    description = 'Small beast, unaligned'
+
+    name = "Giant Rat"
+    description = "Small beast, unaligned"
     challenge_rating = 0.125
     armor_class = 12
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(7)
     dexterity = Ability(15)
     constitution = Ability(11)
@@ -1123,11 +1149,11 @@ class GiantRat(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 7
-    hit_dice = '2d6 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d6 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1145,13 +1171,14 @@ class GiantRatDiseased(Monster):
       24 hours. If the target's hit point maximum drops to 0 as a result of
       this disease, the target dies.
     """
-    name = 'Giant Rat (Diseased)'
-    description = 'Small beast, unaligned'
+
+    name = "Giant Rat (Diseased)"
+    description = "Small beast, unaligned"
     challenge_rating = 0.125
     armor_class = 12
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(7)
     dexterity = Ability(15)
     constitution = Ability(11)
@@ -1164,11 +1191,11 @@ class GiantRatDiseased(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 7
-    hit_dice = '2d6 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d6 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1190,13 +1217,14 @@ class GiantScorpion(Monster):
       Constitution saving throw, taking 22 (4d10) poison damage on a failed
       save, or half as much damage on a successful one.
     """
-    name = 'Giant Scorpion'
-    description = 'Large beast, unaligned'
+
+    name = "Giant Scorpion"
+    description = "Large beast, unaligned"
     challenge_rating = 3
     armor_class = 15
-    skills = ''
-    senses = 'Blindsight 60 ft., Passive Perception 9'
-    languages = ''
+    skills = ""
+    senses = "Blindsight 60 ft., Passive Perception 9"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(13)
     constitution = Ability(15)
@@ -1209,11 +1237,11 @@ class GiantScorpion(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 52
-    hit_dice = '7d10 + 14'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "7d10 + 14"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1234,13 +1262,14 @@ class GiantSeaHorse(Monster):
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 +
       1) bludgeoning damage.
     """
-    name = 'Giant Sea Horse'
-    description = 'Large beast, unaligned'
+
+    name = "Giant Sea Horse"
+    description = "Large beast, unaligned"
     challenge_rating = 0.5
     armor_class = 13
-    skills = ''
-    senses = 'Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 11"
+    languages = ""
     strength = Ability(12)
     dexterity = Ability(15)
     constitution = Ability(11)
@@ -1253,11 +1282,11 @@ class GiantSeaHorse(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 16
-    hit_dice = '3d10 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d10 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1276,13 +1305,14 @@ class GiantShark(Monster):
       Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 22 (3d10 + 6)
       piercing damage.
     """
-    name = 'Giant Shark'
-    description = 'Huge beast, unaligned'
+
+    name = "Giant Shark"
+    description = "Huge beast, unaligned"
     challenge_rating = 5
     armor_class = 13
-    skills = 'Perception +3'
-    senses = 'Blindsight 60 ft., Passive Perception 13'
-    languages = ''
+    skills = "Perception +3"
+    senses = "Blindsight 60 ft., Passive Perception 13"
+    languages = ""
     strength = Ability(23)
     dexterity = Ability(11)
     constitution = Ability(21)
@@ -1295,11 +1325,11 @@ class GiantShark(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 126
-    hit_dice = '11d12 + 55'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "11d12 + 55"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1333,13 +1363,14 @@ class GiantSpider(Monster):
       vulnerability to fire damage; immunity to bludgeoning, poison, and
       psychic damage).
     """
-    name = 'Giant Spider'
-    description = 'Large beast, unaligned'
+
+    name = "Giant Spider"
+    description = "Large beast, unaligned"
     challenge_rating = 1
     armor_class = 14
-    skills = 'Stealth +7'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 10'
-    languages = ''
+    skills = "Stealth +7"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(14)
     dexterity = Ability(16)
     constitution = Ability(12)
@@ -1352,11 +1383,11 @@ class GiantSpider(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 26
-    hit_dice = '4d10 + 4'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "4d10 + 4"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1383,18 +1414,19 @@ class GiantToad(Monster):
       total cover against attacks and other effects outside the toad, and it
       takes 10 (3d6) acid damage at the start of each of the toad's turns.
       The toad can have only one target swallowed at a time.
-      
+
       If the toad dies, a swallowed creature is no longer restrained by it
       and can escape from the corpse using 5 feet of movement, exiting
       prone.
     """
-    name = 'Giant Toad'
-    description = 'Large beast, unaligned'
+
+    name = "Giant Toad"
+    description = "Large beast, unaligned"
     challenge_rating = 1
     armor_class = 11
-    skills = ''
-    senses = 'Darkvision 30 ft., Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 30 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(13)
     constitution = Ability(13)
@@ -1407,11 +1439,11 @@ class GiantToad(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 39
-    hit_dice = '6d10 + 6'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d10 + 6"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1438,12 +1470,13 @@ class GiantVulture(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 +
       2) slashing damage.
     """
-    name = 'Giant Vulture'
-    description = 'Large beast, neutral evil'
+
+    name = "Giant Vulture"
+    description = "Large beast, neutral evil"
     challenge_rating = 1
     armor_class = 10
-    skills = 'Perception +3'
-    senses = 'Passive Perception 13'
+    skills = "Perception +3"
+    senses = "Passive Perception 13"
     languages = "understands Common but can't speak"
     strength = Ability(15)
     dexterity = Ability(10)
@@ -1457,11 +1490,11 @@ class GiantVulture(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '3d10 + 6'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d10 + 6"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1479,13 +1512,14 @@ class GiantWasp(Monster):
       for 1 hour, even after regaining hit points, and is paralyzed while
       poisoned in this way.
     """
-    name = 'Giant Wasp'
-    description = 'Medium beast, unaligned'
+
+    name = "Giant Wasp"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.5
     armor_class = 12
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = ""
     strength = Ability(10)
     dexterity = Ability(14)
     constitution = Ability(10)
@@ -1498,11 +1532,11 @@ class GiantWasp(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 13
-    hit_dice = '3d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1519,13 +1553,14 @@ class GiantWeasel(Monster):
       Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3)
       piercing damage.
     """
-    name = 'Giant Weasel'
-    description = 'Medium beast, unaligned'
+
+    name = "Giant Weasel"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.125
     armor_class = 13
-    skills = 'Perception +3, Stealth +5'
-    senses = 'Darkvision 60 ft., Passive Perception 13'
-    languages = ''
+    skills = "Perception +3, Stealth +5"
+    senses = "Darkvision 60 ft., Passive Perception 13"
+    languages = ""
     strength = Ability(11)
     dexterity = Ability(16)
     constitution = Ability(10)
@@ -1538,11 +1573,11 @@ class GiantWeasel(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 9
-    hit_dice = '2d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1568,13 +1603,14 @@ class GiantWolfSpider(Monster):
       0 hit points, the target is stable but poisoned for 1 hour, even after
       regaining hit points, and is paralyzed while poisoned in this way.
     """
-    name = 'Giant Wolf Spider'
-    description = 'Medium beast, unaligned'
+
+    name = "Giant Wolf Spider"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.25
     armor_class = 13
-    skills = 'Perception +3, Stealth +7'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 13'
-    languages = ''
+    skills = "Perception +3, Stealth +7"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 13"
+    languages = ""
     strength = Ability(12)
     dexterity = Ability(16)
     constitution = Ability(13)
@@ -1587,11 +1623,11 @@ class GiantWolfSpider(Monster):
     climb_speed = 40
     burrow_speed = 0
     hp_max = 11
-    hit_dice = '2d8 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1631,13 +1667,14 @@ class GibberingMouther(Monster):
       creature within 5 feet of the flash must succeed on a DC 13 Dexterity
       saving throw or be blinded until the end of the mouther's next turn.
     """
-    name = 'Gibbering Mouther'
-    description = 'Medium aberration, neutral'
+
+    name = "Gibbering Mouther"
+    description = "Medium aberration, neutral"
     challenge_rating = 2
     armor_class = 9
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = ""
     strength = Ability(10)
     dexterity = Ability(8)
     constitution = Ability(16)
@@ -1650,11 +1687,11 @@ class GibberingMouther(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 67
-    hit_dice = '9d8 + 27'
-    condition_immunities = 'prone'
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "9d8 + 27"
+    condition_immunities = "prone"
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1665,9 +1702,9 @@ class Glabrezu(Monster):
       The glabrezu's spellcasting ability is Intelligence (spell save DC
       16). The glabrezu can innately cast the following spells, requiring no
       material components:
-      
+
       At will: darkness, detect magic, dispel magic
-      
+
       1/day each: confusion, fly, power word stun
     Magic Resistance.
       The glabrezu has advantage on saving throws against spells and other
@@ -1689,22 +1726,23 @@ class Glabrezu(Monster):
       2) bludgeoning damage.
     Variant: Summon Demon.
       The demon chooses what to summon and attempts a magical summoning.
-      
+
       A glabrezu has a 30 percent chance of summoning 1d3 vrocks, 1d2
       hezrous, or one glabrezu.
-      
+
       A summoned demon appears in an unoccupied space within 60 feet of its
       summoner, acts as an ally of its summoner, and can't summon other
       demons. It remains for 1 minute, until it or its summoner dies, or
       until its summoner dismisses it as an action.
     """
-    name = 'Glabrezu'
-    description = 'Large fiend, chaotic evil'
+
+    name = "Glabrezu"
+    description = "Large fiend, chaotic evil"
     challenge_rating = 9
     armor_class = 17
-    skills = ''
-    senses = 'Truesight 120 ft., Passive Perception 13'
-    languages = 'Abyssal, telepathy 120 ft.'
+    skills = ""
+    senses = "Truesight 120 ft., Passive Perception 13"
+    languages = "Abyssal, telepathy 120 ft."
     strength = Ability(20)
     dexterity = Ability(15)
     constitution = Ability(21)
@@ -1717,11 +1755,11 @@ class Glabrezu(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 157
-    hit_dice = '15d10 + 75'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = 'cold'
-    damage_vulnerabilities = ''
+    hit_dice = "15d10 + 75"
+    condition_immunities = "poisoned"
+    damage_immunities = "poison"
+    damage_resistances = "cold"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1755,13 +1793,14 @@ class Gladiator(Monster):
       it. To do so, the gladiator must see the attacker and be wielding a
       melee weapon.
     """
-    name = 'Gladiator'
-    description = 'Medium humanoid, any alignment'
+
+    name = "Gladiator"
+    description = "Medium humanoid, any alignment"
     challenge_rating = 5
     armor_class = 16
-    skills = 'Athletics +10, Intimidation +5'
-    senses = 'Passive Perception 11'
-    languages = 'any one language (usually Common)'
+    skills = "Athletics +10, Intimidation +5"
+    senses = "Passive Perception 11"
+    languages = "any one language (usually Common)"
     strength = Ability(18)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -1774,11 +1813,11 @@ class Gladiator(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 112
-    hit_dice = '15d8 + 45'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "15d8 + 45"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1803,13 +1842,14 @@ class Gnoll(Monster):
       Ranged Weapon Attack: +3 to hit, range 150/600 ft., one target. Hit: 5
       (1d8 + 1) piercing damage.
     """
-    name = 'Gnoll'
-    description = 'Medium humanoid, chaotic evil'
+
+    name = "Gnoll"
+    description = "Medium humanoid, chaotic evil"
     challenge_rating = 0.5
     armor_class = 15
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = 'Gnoll'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = "Gnoll"
     strength = Ability(14)
     dexterity = Ability(12)
     constitution = Ability(11)
@@ -1822,11 +1862,11 @@ class Gnoll(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '5d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1848,13 +1888,14 @@ class Goat(Monster):
       Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 +
       1) bludgeoning damage.
     """
-    name = 'Goat'
-    description = 'Medium beast, unaligned'
+
+    name = "Goat"
+    description = "Medium beast, unaligned"
     challenge_rating = 0
     armor_class = 10
-    skills = ''
-    senses = 'Passive Perception 10'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 10"
+    languages = ""
     strength = Ability(12)
     dexterity = Ability(10)
     constitution = Ability(11)
@@ -1867,11 +1908,11 @@ class Goat(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 4
-    hit_dice = '1d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1891,13 +1932,14 @@ class Goblin(Monster):
       Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5
       (1d6 + 2) piercing damage.
     """
-    name = 'Goblin'
-    description = 'Small humanoid, neutral evil'
+
+    name = "Goblin"
+    description = "Small humanoid, neutral evil"
     challenge_rating = 0.25
     armor_class = 15
-    skills = 'Stealth +6'
-    senses = 'Darkvision 60 ft., Passive Perception 9'
-    languages = 'Common, Goblin'
+    skills = "Stealth +6"
+    senses = "Darkvision 60 ft., Passive Perception 9"
+    languages = "Common, Goblin"
     strength = Ability(8)
     dexterity = Ability(14)
     constitution = Ability(10)
@@ -1910,11 +1952,11 @@ class Goblin(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 7
-    hit_dice = '2d6 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d6 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1931,12 +1973,12 @@ class GoldDragonWyrmling(Monster):
       + 4) piercing damage.
     Breath Weapons.
       The dragon uses one of the following breath weapons.
-      
+
       Fire Breath. The dragon exhales fire in a 15-foot cone. Each creature
       in that area must make a DC 13 Dexterity saving throw, taking 22
       (4d10) fire damage on a failed save, or half as much damage on a
       successful one.
-      
+
       Weakening Breath. The dragon exhales gas in a 15-foot cone. Each
       creature in that area must succeed on a DC 13 Strength saving throw or
       have disadvantage on Strength-based attack rolls, Strength checks, and
@@ -1944,13 +1986,14 @@ class GoldDragonWyrmling(Monster):
       throw at the end of each of its turns, ending the effect on itself on
       a success.
     """
-    name = 'Gold Dragon Wyrmling'
-    description = 'Medium dragon, lawful good'
+
+    name = "Gold Dragon Wyrmling"
+    description = "Medium dragon, lawful good"
     challenge_rating = 3
     armor_class = 17
-    skills = 'Perception +4, Stealth +4'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14'
-    languages = 'Draconic'
+    skills = "Perception +4, Stealth +4"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14"
+    languages = "Draconic"
     strength = Ability(19)
     dexterity = Ability(14)
     constitution = Ability(17)
@@ -1963,11 +2006,11 @@ class GoldDragonWyrmling(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 60
-    hit_dice = '8d8 + 24'
-    condition_immunities = ''
-    damage_immunities = 'fire'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "8d8 + 24"
+    condition_immunities = ""
+    damage_immunities = "fire"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1998,13 +2041,14 @@ class Gorgon(Monster):
       target is petrified until freed by the greater restoration spell or
       other magic.
     """
-    name = 'Gorgon'
-    description = 'Large monstrosity, unaligned'
+
+    name = "Gorgon"
+    description = "Large monstrosity, unaligned"
     challenge_rating = 5
     armor_class = 19
-    skills = 'Perception +4'
-    senses = 'Darkvision 60 ft., Passive Perception 14'
-    languages = ''
+    skills = "Perception +4"
+    senses = "Darkvision 60 ft., Passive Perception 14"
+    languages = ""
     strength = Ability(20)
     dexterity = Ability(11)
     constitution = Ability(18)
@@ -2017,11 +2061,11 @@ class Gorgon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 114
-    hit_dice = '12d10 + 48'
-    condition_immunities = 'petrified'
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "12d10 + 48"
+    condition_immunities = "petrified"
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2037,7 +2081,7 @@ class GrayOoze(Monster):
       to damage rolls. If its penalty drops to -5, the weapon is destroyed.
       Nonmagical ammunition made of metal that hits the ooze is destroyed
       after dealing damage.
-      
+
       The ooze can eat through 2-inch-thick, nonmagical metal in 1 round.
     False Appearance.
       While the ooze remains motionless, it is indistinguishable from an
@@ -2052,13 +2096,14 @@ class GrayOoze(Monster):
       a permanent and cumulative -1 penalty to the AC it offers. The armor
       is destroyed if the penalty reduces its AC to 10.
     """
-    name = 'Gray Ooze'
-    description = 'Medium ooze, unaligned'
+
+    name = "Gray Ooze"
+    description = "Medium ooze, unaligned"
     challenge_rating = 0.5
     armor_class = 8
-    skills = 'Stealth +2'
-    senses = 'Blindsight 60 ft. (blind beyond this radius), Passive Perception 8'
-    languages = ''
+    skills = "Stealth +2"
+    senses = "Blindsight 60 ft. (blind beyond this radius), Passive Perception 8"
+    languages = ""
     strength = Ability(12)
     dexterity = Ability(6)
     constitution = Ability(16)
@@ -2071,11 +2116,11 @@ class GrayOoze(Monster):
     climb_speed = 10
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '3d8 + 9'
-    condition_immunities = 'blinded, charmed, deafened, exhaustion, frightened, prone'
-    damage_immunities = ''
-    damage_resistances = 'acid'
-    damage_vulnerabilities = ''
+    hit_dice = "3d8 + 9"
+    condition_immunities = "blinded, charmed, deafened, exhaustion, frightened, prone"
+    damage_immunities = ""
+    damage_resistances = "acid"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2096,13 +2141,14 @@ class GreenDragonWyrmling(Monster):
       poison damage on a failed save, or half as much damage on a successful
       one.
     """
-    name = 'Green Dragon Wyrmling'
-    description = 'Medium dragon, lawful evil'
+
+    name = "Green Dragon Wyrmling"
+    description = "Medium dragon, lawful evil"
     challenge_rating = 2
     armor_class = 17
-    skills = 'Perception +4, Stealth +3'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14'
-    languages = 'Draconic'
+    skills = "Perception +4, Stealth +3"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14"
+    languages = "Draconic"
     strength = Ability(15)
     dexterity = Ability(12)
     constitution = Ability(13)
@@ -2115,11 +2161,11 @@ class GreenDragonWyrmling(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 38
-    hit_dice = '7d8 + 7'
-    condition_immunities = 'poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "7d8 + 7"
+    condition_immunities = "poisoned"
+    damage_immunities = "poison"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2132,9 +2178,9 @@ class GreenHag(Monster):
       The hag's innate spellcasting ability is Charisma (spell save DC 12).
       She can innately cast the following spells, requiring no material
       components:
-      
-  
-      
+
+
+
       At will: dancing lights, minor illusion, vicious mockery
     Mimicry.
       The hag can mimic animal sounds and humanoid voices. A creature that
@@ -2151,7 +2197,7 @@ class GreenHag(Monster):
       magical illusion that makes her look like another creature of her
       general size and humanoid shape. The illusion ends if the hag takes a
       bonus action to end it or if she dies.
-      
+
       The changes wrought by this effect fail to hold up to physical
       inspection. For example, the hag could appear to have smooth skin, but
       someone touching her would feel her rough flesh. Otherwise, a creature
@@ -2165,13 +2211,14 @@ class GreenHag(Monster):
       she can be tracked only by magic. Any equipment she wears or carries
       is invisible with her.
     """
-    name = 'Green Hag'
-    description = 'Medium fey, neutral evil'
+
+    name = "Green Hag"
+    description = "Medium fey, neutral evil"
     challenge_rating = 3
     armor_class = 17
-    skills = 'Arcana +3, Deception +4, Perception +4, Stealth +3'
-    senses = 'Darkvision 60 ft., Passive Perception 14'
-    languages = 'Common, Draconic, Sylvan'
+    skills = "Arcana +3, Deception +4, Perception +4, Stealth +3"
+    senses = "Darkvision 60 ft., Passive Perception 14"
+    languages = "Common, Draconic, Sylvan"
     strength = Ability(18)
     dexterity = Ability(12)
     constitution = Ability(16)
@@ -2184,11 +2231,11 @@ class GreenHag(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 82
-    hit_dice = '11d8 + 33'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "11d8 + 33"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2211,13 +2258,14 @@ class Grick(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
       2) piercing damage.
     """
-    name = 'Grick'
-    description = 'Medium monstrosity, neutral'
+
+    name = "Grick"
+    description = "Medium monstrosity, neutral"
     challenge_rating = 2
     armor_class = 14
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 12'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 12"
+    languages = ""
     strength = Ability(14)
     dexterity = Ability(14)
     constitution = Ability(11)
@@ -2230,11 +2278,11 @@ class Grick(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 27
-    hit_dice = '6d8 + 0'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = 'bludgeoning, piercing, and slashing damage from nonmagical weapons'
-    damage_vulnerabilities = ''
+    hit_dice = "6d8 + 0"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = "bludgeoning, piercing, and slashing damage from nonmagical weapons"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2257,13 +2305,14 @@ class Griffon(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6
       + 4) slashing damage.
     """
-    name = 'Griffon'
-    description = 'Large monstrosity, unaligned'
+
+    name = "Griffon"
+    description = "Large monstrosity, unaligned"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Perception +5'
-    senses = 'Darkvision 60 ft., Passive Perception 15'
-    languages = ''
+    skills = "Perception +5"
+    senses = "Darkvision 60 ft., Passive Perception 15"
+    languages = ""
     strength = Ability(18)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -2276,11 +2325,11 @@ class Griffon(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 59
-    hit_dice = '7d10 + 21'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "7d10 + 21"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2303,13 +2352,14 @@ class Grimlock(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 +
       3) bludgeoning damage plus 2 (1d4) piercing damage.
     """
-    name = 'Grimlock'
-    description = 'Medium humanoid, neutral evil'
+
+    name = "Grimlock"
+    description = "Medium humanoid, neutral evil"
     challenge_rating = 0.25
     armor_class = 11
-    skills = 'Athletics +5, Perception +3, Stealth +3'
-    senses = 'Blindsight 30 ft. or 10 ft. while deafened (blind beyond this radius), Passive Perception 13'
-    languages = 'Undercommon'
+    skills = "Athletics +5, Perception +3, Stealth +3"
+    senses = "Blindsight 30 ft. or 10 ft. while deafened (blind beyond this radius), Passive Perception 13"
+    languages = "Undercommon"
     strength = Ability(16)
     dexterity = Ability(12)
     constitution = Ability(12)
@@ -2322,11 +2372,11 @@ class Grimlock(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 11
-    hit_dice = '2d8 + 2'
-    condition_immunities = 'blinded'
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 2"
+    condition_immunities = "blinded"
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2340,13 +2390,14 @@ class Guard(Monster):
       ft., one target. Hit: 4 (1d6 + 1) piercing damage or 5 (1d8 + 1)
       piercing damage if used with two hands to make a melee attack.
     """
-    name = 'Guard'
-    description = 'Medium humanoid, any alignment'
+
+    name = "Guard"
+    description = "Medium humanoid, any alignment"
     challenge_rating = 0.125
     armor_class = 16
-    skills = 'Perception +2'
-    senses = 'Passive Perception 12'
-    languages = 'any one language (usually Common)'
+    skills = "Perception +2"
+    senses = "Passive Perception 12"
+    languages = "any one language (usually Common)"
     strength = Ability(13)
     dexterity = Ability(12)
     constitution = Ability(12)
@@ -2359,11 +2410,11 @@ class Guard(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 11
-    hit_dice = '2d8 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2397,13 +2448,14 @@ class GuardianNaga(Monster):
       (10d8) poison damage on a failed save, or half as much damage on a
       successful one.
     """
-    name = 'Guardian Naga'
-    description = 'Large monstrosity, lawful good'
+
+    name = "Guardian Naga"
+    description = "Large monstrosity, lawful good"
     challenge_rating = 10
     armor_class = 18
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 14'
-    languages = 'Celestial, Common'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 14"
+    languages = "Celestial, Common"
     strength = Ability(19)
     dexterity = Ability(18)
     constitution = Ability(16)
@@ -2416,12 +2468,28 @@ class GuardianNaga(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 127
-    hit_dice = '15d10 + 45'
-    condition_immunities = 'charmed, poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
-    spells = ['mending', 'sacred flame', 'thaumaturgy', 'command', 'cure wounds', 'shield of faith', 'calm emotions', 'hold person', 'bestow curse', 'clairvoyance', 'banishment', 'freedom of movement', 'flame strike', 'geas', 'true seeing']
+    hit_dice = "15d10 + 45"
+    condition_immunities = "charmed, poisoned"
+    damage_immunities = "poison"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
+    spells = [
+        "mending",
+        "sacred flame",
+        "thaumaturgy",
+        "command",
+        "cure wounds",
+        "shield of faith",
+        "calm emotions",
+        "hold person",
+        "bestow curse",
+        "clairvoyance",
+        "banishment",
+        "freedom of movement",
+        "flame strike",
+        "geas",
+        "true seeing",
+    ]
 
 
 class Gynosphinx(Monster):
@@ -2463,13 +2531,14 @@ class Gynosphinx(Monster):
       The sphinx casts a spell from its list of prepared spells, using a
       spell slot as normal.
     """
-    name = 'Gynosphinx'
-    description = 'Large monstrosity, lawful neutral'
+
+    name = "Gynosphinx"
+    description = "Large monstrosity, lawful neutral"
     challenge_rating = 11
     armor_class = 17
-    skills = 'Arcana +12, History +12, Perception +8, Religion +8'
-    senses = 'Truesight 120 ft., Passive Perception 18'
-    languages = 'Common, Sphinx'
+    skills = "Arcana +12, History +12, Perception +8, Religion +8"
+    senses = "Truesight 120 ft., Passive Perception 18"
+    languages = "Common, Sphinx"
     strength = Ability(18)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -2482,9 +2551,25 @@ class Gynosphinx(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 136
-    hit_dice = '16d10 + 48'
-    condition_immunities = 'charmed, frightened'
-    damage_immunities = 'psychic'
-    damage_resistances = 'bludgeoning, piercing, and slashing from nonmagical weapons'
-    damage_vulnerabilities = ''
-    spells = ['mage hand', 'minor illusion', 'prestidigitation', 'detect magic', 'identify', 'shield', 'darkness', 'locate object', 'suggestion', 'dispel magic', 'remove curse', 'tongues', 'banishment', 'greater invisibility', 'legend lore']
+    hit_dice = "16d10 + 48"
+    condition_immunities = "charmed, frightened"
+    damage_immunities = "psychic"
+    damage_resistances = "bludgeoning, piercing, and slashing from nonmagical weapons"
+    damage_vulnerabilities = ""
+    spells = [
+        "mage hand",
+        "minor illusion",
+        "prestidigitation",
+        "detect magic",
+        "identify",
+        "shield",
+        "darkness",
+        "locate object",
+        "suggestion",
+        "dispel magic",
+        "remove curse",
+        "tongues",
+        "banishment",
+        "greater invisibility",
+        "legend lore",
+    ]

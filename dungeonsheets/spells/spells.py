@@ -57,7 +57,7 @@ class Spell:
         ]
         requirements.extend([letter for letter, is_active in indicators if is_active])
         if len(requirements):
-            s += f' ({"/".join(requirements)})'
+            s += f" ({'/'.join(requirements)})"
         return s
 
     def __repr__(self):
@@ -71,7 +71,7 @@ class Spell:
 
     @property
     def component_string(self):
-        s = f'{", ".join(self.components)}'
+        s = f"{', '.join(self.components)}"
         if "M" in self.components:
             s += f" ({self.materials})"
         return s

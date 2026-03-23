@@ -164,6 +164,7 @@ class Soulknife(SubClass):
     to manifest your power.
 
     """
+
     name = "Soulknife"
     features_by_level = defaultdict(list)
     features_by_level[3] = [features.PsionicPower, features.PsychicBlades]

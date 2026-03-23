@@ -24,13 +24,14 @@ class Warhorse(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6
       + 4) bludgeoning damage.
     """
-    name = 'Warhorse'
-    description = 'Large beast, unaligned'
+
+    name = "Warhorse"
+    description = "Large beast, unaligned"
     challenge_rating = 0.5
     armor_class = 11
-    skills = ''
-    senses = 'Passive Perception 11'
-    languages = ''
+    skills = ""
+    senses = "Passive Perception 11"
+    languages = ""
     strength = Ability(18)
     dexterity = Ability(12)
     constitution = Ability(13)
@@ -43,11 +44,11 @@ class Warhorse(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 19
-    hit_dice = '3d10 + 3'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d10 + 3"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -60,13 +61,14 @@ class WarhorseSkeleton(Monster):
       Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6
       + 4) bludgeoning damage.
     """
-    name = 'Warhorse Skeleton'
-    description = 'Large undead, lawful evil'
+
+    name = "Warhorse Skeleton"
+    description = "Large undead, lawful evil"
     challenge_rating = 0.5
     armor_class = 13
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 9'
-    languages = ''
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 9"
+    languages = ""
     strength = Ability(18)
     dexterity = Ability(12)
     constitution = Ability(15)
@@ -79,11 +81,11 @@ class WarhorseSkeleton(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '3d10 + 6'
-    condition_immunities = 'exhaustion, poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = ''
-    damage_vulnerabilities = 'bludgeoning'
+    hit_dice = "3d10 + 6"
+    condition_immunities = "exhaustion, poisoned"
+    damage_immunities = "poison"
+    damage_resistances = ""
+    damage_vulnerabilities = "bludgeoning"
     spells = []
 
 
@@ -111,7 +113,7 @@ class WaterElemental(Monster):
       Until this grapple ends, the target is restrained and unable to
       breathe unless it can breathe water. If the saving throw is
       successful, the target is pushed out of the elemental's space.
-      
+
       The elemental can grapple one Large creature or up to two Medium or
       smaller creatures at one time. At the start of each of the elemental's
       turns, each target grappled by it takes 13 (2d8 + 4) bludgeoning
@@ -119,13 +121,14 @@ class WaterElemental(Monster):
       or object out of it by taking an action to make a DC 14 Strength and
       succeeding.
     """
-    name = 'Water Elemental'
-    description = 'Large elemental, neutral'
+
+    name = "Water Elemental"
+    description = "Large elemental, neutral"
     challenge_rating = 5
     armor_class = 14
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 10'
-    languages = 'Aquan'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 10"
+    languages = "Aquan"
     strength = Ability(18)
     dexterity = Ability(14)
     constitution = Ability(18)
@@ -138,11 +141,13 @@ class WaterElemental(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 114
-    hit_dice = '12d10 + 48'
-    condition_immunities = 'exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious'
-    damage_immunities = 'poison'
-    damage_resistances = 'acid'
-    damage_vulnerabilities = ''
+    hit_dice = "12d10 + 48"
+    condition_immunities = (
+        "exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious"
+    )
+    damage_immunities = "poison"
+    damage_resistances = "acid"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -159,13 +164,14 @@ class Weasel(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 1
       piercing damage.
     """
-    name = 'Weasel'
-    description = 'Tiny beast, unaligned'
+
+    name = "Weasel"
+    description = "Tiny beast, unaligned"
     challenge_rating = 0
     armor_class = 13
-    skills = 'Perception +3, Stealth +5'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3, Stealth +5"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(3)
     dexterity = Ability(16)
     constitution = Ability(8)
@@ -178,11 +184,11 @@ class Weasel(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 1
-    hit_dice = '1d4 + -1'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "1d4 + -1"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -214,13 +220,14 @@ class WerebearBearForm(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
       + 4) slashing damage.
     """
-    name = 'Werebear, Bear Form'
-    description = 'Medium humanoid, neutral good'
+
+    name = "Werebear, Bear Form"
+    description = "Medium humanoid, neutral good"
     challenge_rating = 5
     armor_class = 10
-    skills = 'Perception +7'
-    senses = 'Passive Perception 17'
-    languages = ''
+    skills = "Perception +7"
+    senses = "Passive Perception 17"
+    languages = ""
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -233,11 +240,13 @@ class WerebearBearForm(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 135
-    hit_dice = '18d8 + 54'
-    condition_immunities = ''
-    damage_immunities = 'bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "18d8 + 54"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -265,13 +274,14 @@ class WerebearBearform(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
       + 4) slashing damage.
     """
-    name = 'Werebear, Bear form'
-    description = 'Medium humanoid, neutral good'
+
+    name = "Werebear, Bear form"
+    description = "Medium humanoid, neutral good"
     challenge_rating = 5
     armor_class = 10
-    skills = 'Perception +7'
-    senses = 'Passive Perception 17'
-    languages = ''
+    skills = "Perception +7"
+    senses = "Passive Perception 17"
+    languages = ""
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -283,7 +293,7 @@ class WerebearBearform(Monster):
     fly_speed = 0
     climb_speed = 30
     hp_max = 135
-    hit_dice = '18d8'
+    hit_dice = "18d8"
     spells = []
 
 
@@ -310,13 +320,14 @@ class WerebearHumanForm(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12
       + 4) slashing damage.
     """
-    name = 'Werebear, Human Form'
-    description = 'Medium humanoid, neutral good'
+
+    name = "Werebear, Human Form"
+    description = "Medium humanoid, neutral good"
     challenge_rating = 5
     armor_class = 10
-    skills = 'Perception +7'
-    senses = 'Passive Perception 17'
-    languages = 'Common'
+    skills = "Perception +7"
+    senses = "Passive Perception 17"
+    languages = "Common"
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -329,11 +340,13 @@ class WerebearHumanForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 135
-    hit_dice = '18d8 + 54'
-    condition_immunities = ''
-    damage_immunities = 'bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "18d8 + 54"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -356,13 +369,14 @@ class WerebearHumanform(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12
       + 4) slashing damage.
     """
-    name = 'Werebear, Human form'
-    description = 'Medium humanoid, neutral good'
+
+    name = "Werebear, Human form"
+    description = "Medium humanoid, neutral good"
     challenge_rating = 5
     armor_class = 10
-    skills = 'Perception +7'
-    senses = 'Passive Perception 17'
-    languages = 'Common'
+    skills = "Perception +7"
+    senses = "Passive Perception 17"
+    languages = "Common"
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -374,7 +388,7 @@ class WerebearHumanform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 135
-    hit_dice = '18d8'
+    hit_dice = "18d8"
     spells = []
 
 
@@ -409,13 +423,14 @@ class WerebearHybridForm(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12
       + 4) slashing damage.
     """
-    name = 'Werebear, Hybrid Form'
-    description = 'Medium humanoid, neutral good'
+
+    name = "Werebear, Hybrid Form"
+    description = "Medium humanoid, neutral good"
     challenge_rating = 5
     armor_class = 10
-    skills = 'Perception +7'
-    senses = 'Passive Perception 17'
-    languages = 'Common'
+    skills = "Perception +7"
+    senses = "Passive Perception 17"
+    languages = "Common"
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -428,11 +443,13 @@ class WerebearHybridForm(Monster):
     climb_speed = 30
     burrow_speed = 0
     hp_max = 135
-    hit_dice = '18d8 + 54'
-    condition_immunities = ''
-    damage_immunities = 'bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "18d8 + 54"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing from nonmagical attacks not made with silvered weapons"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -463,13 +480,14 @@ class WerebearHybridform(Monster):
       Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12
       + 4) slashing damage.
     """
-    name = 'Werebear, Hybrid form'
-    description = 'Medium humanoid, neutral good'
+
+    name = "Werebear, Hybrid form"
+    description = "Medium humanoid, neutral good"
     challenge_rating = 5
     armor_class = 10
-    skills = 'Perception +7'
-    senses = 'Passive Perception 17'
-    languages = 'Common'
+    skills = "Perception +7"
+    senses = "Passive Perception 17"
+    languages = "Common"
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(17)
@@ -481,7 +499,7 @@ class WerebearHybridform(Monster):
     fly_speed = 0
     climb_speed = 30
     hp_max = 135
-    hit_dice = '18d8'
+    hit_dice = "18d8"
     spells = []
 
 
@@ -511,13 +529,14 @@ class WereboarBoarForm(Monster):
       a DC 12 Constitution saving throw or be cursed with wereboar
       lycanthropy.
     """
-    name = 'Wereboar, Boar Form'
-    description = 'Medium humanoid, neutral evil'
+
+    name = "Wereboar, Boar Form"
+    description = "Medium humanoid, neutral evil"
     challenge_rating = 4
     armor_class = 10
-    skills = 'Perception +2'
-    senses = 'Passive Perception 12'
-    languages = ''
+    skills = "Perception +2"
+    senses = "Passive Perception 12"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(10)
     constitution = Ability(15)
@@ -530,11 +549,13 @@ class WereboarBoarForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 78
-    hit_dice = '12d8 + 24'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "12d8 + 24"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -560,13 +581,14 @@ class WereboarBoarform(Monster):
       a DC 12 Constitution saving throw or be cursed with wereboar
       lycanthropy.
     """
-    name = 'Wereboar, Boar form'
-    description = 'Medium humanoid, neutral evil'
+
+    name = "Wereboar, Boar form"
+    description = "Medium humanoid, neutral evil"
     challenge_rating = 4
     armor_class = 10
-    skills = 'Perception +2'
-    senses = 'Passive Perception 12'
-    languages = ''
+    skills = "Perception +2"
+    senses = "Passive Perception 12"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(10)
     constitution = Ability(15)
@@ -578,7 +600,7 @@ class WereboarBoarform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 78
-    hit_dice = '12d8'
+    hit_dice = "12d8"
     spells = []
 
 
@@ -604,12 +626,13 @@ class WereboarHumanForm(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) bludgeoning damage.
     """
-    name = 'Wereboar, Human Form'
-    description = 'Medium humanoid, neutral evil'
+
+    name = "Wereboar, Human Form"
+    description = "Medium humanoid, neutral evil"
     challenge_rating = 4
     armor_class = 10
-    skills = 'Perception +2'
-    senses = 'Passive Perception 12'
+    skills = "Perception +2"
+    senses = "Passive Perception 12"
     languages = "Common (can't speak in boar form)"
     strength = Ability(17)
     dexterity = Ability(10)
@@ -623,11 +646,13 @@ class WereboarHumanForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 78
-    hit_dice = '12d8 + 24'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "12d8 + 24"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -649,12 +674,13 @@ class WereboarHumanform(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
       + 3) bludgeoning damage.
     """
-    name = 'Wereboar, Human form'
-    description = 'Medium humanoid, neutral evil'
+
+    name = "Wereboar, Human form"
+    description = "Medium humanoid, neutral evil"
     challenge_rating = 4
     armor_class = 10
-    skills = 'Perception +2'
-    senses = 'Passive Perception 12'
+    skills = "Perception +2"
+    senses = "Passive Perception 12"
     languages = "Common (can't speak in boar form)"
     strength = Ability(17)
     dexterity = Ability(10)
@@ -667,7 +693,7 @@ class WereboarHumanform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 78
-    hit_dice = '12d8'
+    hit_dice = "12d8"
     spells = []
 
 
@@ -703,13 +729,14 @@ class WereboarHybridForm(Monster):
       a DC 12 Constitution saving throw or be cursed with wereboar
       lycanthropy.
     """
-    name = 'Wereboar, Hybrid Form'
-    description = 'Medium humanoid, neutral evil'
+
+    name = "Wereboar, Hybrid Form"
+    description = "Medium humanoid, neutral evil"
     challenge_rating = 4
     armor_class = 10
-    skills = 'Perception +2'
-    senses = 'Passive Perception 12'
-    languages = 'Common'
+    skills = "Perception +2"
+    senses = "Passive Perception 12"
+    languages = "Common"
     strength = Ability(17)
     dexterity = Ability(10)
     constitution = Ability(15)
@@ -722,11 +749,13 @@ class WereboarHybridForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 78
-    hit_dice = '12d8 + 24'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "12d8 + 24"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -758,13 +787,14 @@ class WereboarHybridform(Monster):
       a DC 12 Constitution saving throw or be cursed with wereboar
       lycanthropy.
     """
-    name = 'Wereboar, Hybrid form'
-    description = 'Medium humanoid, neutral evil'
+
+    name = "Wereboar, Hybrid form"
+    description = "Medium humanoid, neutral evil"
     challenge_rating = 4
     armor_class = 10
-    skills = 'Perception +2'
-    senses = 'Passive Perception 12'
-    languages = 'Common'
+    skills = "Perception +2"
+    senses = "Passive Perception 12"
+    languages = "Common"
     strength = Ability(17)
     dexterity = Ability(10)
     constitution = Ability(15)
@@ -776,7 +806,7 @@ class WereboarHybridform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 78
-    hit_dice = '12d8'
+    hit_dice = "12d8"
     spells = []
 
 
@@ -804,13 +834,14 @@ class WereratHumanForm(Monster):
       Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5
       (1d6 + 2) piercing damage.
     """
-    name = 'Wererat, Human Form'
-    description = 'Medium humanoid, lawful evil'
+
+    name = "Wererat, Human Form"
+    description = "Medium humanoid, lawful evil"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Perception +2, Stealth +4'
-    senses = 'Passive Perception 12'
-    languages = 'Common'
+    skills = "Perception +2, Stealth +4"
+    senses = "Passive Perception 12"
+    languages = "Common"
     strength = Ability(10)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -823,11 +854,13 @@ class WereratHumanForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 33
-    hit_dice = '6d8 + 6'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d8 + 6"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -851,13 +884,14 @@ class WereratHumanform(Monster):
       Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5
       (1d6 + 2) piercing damage.
     """
-    name = 'Wererat, Human form'
-    description = 'Medium humanoid, lawful evil'
+
+    name = "Wererat, Human form"
+    description = "Medium humanoid, lawful evil"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Perception +2, Stealth +4'
-    senses = 'Passive Perception 12'
-    languages = 'Common'
+    skills = "Perception +2, Stealth +4"
+    senses = "Passive Perception 12"
+    languages = "Common"
     strength = Ability(10)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -869,7 +903,7 @@ class WereratHumanform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 33
-    hit_dice = '6d8'
+    hit_dice = "6d8"
     spells = []
 
 
@@ -901,13 +935,14 @@ class WereratHybridForm(Monster):
       Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5
       (1d6 + 2) piercing damage.
     """
-    name = 'Wererat, Hybrid Form'
-    description = 'Medium humanoid, lawful evil'
+
+    name = "Wererat, Hybrid Form"
+    description = "Medium humanoid, lawful evil"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Perception +2, Stealth +4'
-    senses = 'Passive Perception 12'
-    languages = 'Common'
+    skills = "Perception +2, Stealth +4"
+    senses = "Passive Perception 12"
+    languages = "Common"
     strength = Ability(10)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -920,11 +955,13 @@ class WereratHybridForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 33
-    hit_dice = '6d8 + 6'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d8 + 6"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -952,13 +989,14 @@ class WereratHybridform(Monster):
       Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5
       (1d6 + 2) piercing damage.
     """
-    name = 'Wererat, Hybrid form'
-    description = 'Medium humanoid, lawful evil'
+
+    name = "Wererat, Hybrid form"
+    description = "Medium humanoid, lawful evil"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Perception +2, Stealth +4'
-    senses = 'Passive Perception 12'
-    languages = 'Common'
+    skills = "Perception +2, Stealth +4"
+    senses = "Passive Perception 12"
+    languages = "Common"
     strength = Ability(10)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -970,7 +1008,7 @@ class WereratHybridform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 33
-    hit_dice = '6d8'
+    hit_dice = "6d8"
     spells = []
 
 
@@ -994,13 +1032,14 @@ class WereratRatForm(Monster):
       2) piercing damage. If the target is a humanoid, it must succeed on a
       DC 11 Constitution saving throw or be cursed with wererat lycanthropy.
     """
-    name = 'Wererat, Rat Form'
-    description = 'Medium humanoid, lawful evil'
+
+    name = "Wererat, Rat Form"
+    description = "Medium humanoid, lawful evil"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Perception +2, Stealth +4'
-    senses = 'Darkvision 60 ft., Passive Perception 12'
-    languages = ''
+    skills = "Perception +2, Stealth +4"
+    senses = "Darkvision 60 ft., Passive Perception 12"
+    languages = ""
     strength = Ability(10)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -1013,11 +1052,13 @@ class WereratRatForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 33
-    hit_dice = '6d8 + 6'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "6d8 + 6"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1037,13 +1078,14 @@ class WereratRatform(Monster):
       2) piercing damage. If the target is a humanoid, it must succeed on a
       DC 11 Constitution saving throw or be cursed with wererat lycanthropy.
     """
-    name = 'Wererat, Rat form'
-    description = 'Medium humanoid, lawful evil'
+
+    name = "Wererat, Rat form"
+    description = "Medium humanoid, lawful evil"
     challenge_rating = 2
     armor_class = 12
-    skills = 'Perception +2, Stealth +4'
-    senses = 'Darkvision 60 ft., Passive Perception 12'
-    languages = ''
+    skills = "Perception +2, Stealth +4"
+    senses = "Darkvision 60 ft., Passive Perception 12"
+    languages = ""
     strength = Ability(10)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -1055,7 +1097,7 @@ class WereratRatform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 33
-    hit_dice = '6d8'
+    hit_dice = "6d8"
     spells = []
 
 
@@ -1085,13 +1127,14 @@ class WeretigerHumanForm(Monster):
       Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
       (1d8 + 2) piercing damage.
     """
-    name = 'Weretiger, Human Form'
-    description = 'Medium humanoid, neutral'
+
+    name = "Weretiger, Human Form"
+    description = "Medium humanoid, neutral"
     challenge_rating = 4
     armor_class = 12
-    skills = 'Perception +5, Stealth +4'
-    senses = 'Darkvision 60 ft., Passive Perception 15'
-    languages = 'Common'
+    skills = "Perception +5, Stealth +4"
+    senses = "Darkvision 60 ft., Passive Perception 15"
+    languages = "Common"
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -1104,11 +1147,13 @@ class WeretigerHumanForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 120
-    hit_dice = '16d8 + 48'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "16d8 + 48"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1134,13 +1179,14 @@ class WeretigerHumanform(Monster):
       Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
       (1d8 + 2) piercing damage.
     """
-    name = 'Weretiger, Human form'
-    description = 'Medium humanoid, neutral'
+
+    name = "Weretiger, Human form"
+    description = "Medium humanoid, neutral"
     challenge_rating = 4
     armor_class = 12
-    skills = 'Perception +5, Stealth +4'
-    senses = 'Darkvision 60 ft., Passive Perception 15'
-    languages = 'Common'
+    skills = "Perception +5, Stealth +4"
+    senses = "Darkvision 60 ft., Passive Perception 15"
+    languages = "Common"
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -1152,7 +1198,7 @@ class WeretigerHumanform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 120
-    hit_dice = '16d8'
+    hit_dice = "16d8"
     spells = []
 
 
@@ -1196,13 +1242,14 @@ class WeretigerHybridForm(Monster):
       Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
       (1d8 + 2) piercing damage.
     """
-    name = 'Weretiger, Hybrid Form'
-    description = 'Medium humanoid, neutral'
+
+    name = "Weretiger, Hybrid Form"
+    description = "Medium humanoid, neutral"
     challenge_rating = 4
     armor_class = 12
-    skills = 'Perception +5, Stealth +4'
-    senses = 'Darkvision 60 ft., Passive Perception 15'
-    languages = 'Common'
+    skills = "Perception +5, Stealth +4"
+    senses = "Darkvision 60 ft., Passive Perception 15"
+    languages = "Common"
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -1215,11 +1262,13 @@ class WeretigerHybridForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 120
-    hit_dice = '16d8 + 48'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "16d8 + 48"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1259,13 +1308,14 @@ class WeretigerHybridform(Monster):
       Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
       (1d8 + 2) piercing damage.
     """
-    name = 'Weretiger, Hybrid form'
-    description = 'Medium humanoid, neutral'
+
+    name = "Weretiger, Hybrid form"
+    description = "Medium humanoid, neutral"
     challenge_rating = 4
     armor_class = 12
-    skills = 'Perception +5, Stealth +4'
-    senses = 'Darkvision 60 ft., Passive Perception 15'
-    languages = 'Common'
+    skills = "Perception +5, Stealth +4"
+    senses = "Darkvision 60 ft., Passive Perception 15"
+    languages = "Common"
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -1277,7 +1327,7 @@ class WeretigerHybridform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 120
-    hit_dice = '16d8'
+    hit_dice = "16d8"
     spells = []
 
 
@@ -1311,13 +1361,14 @@ class WeretigerTigerForm(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
       3) slashing damage.
     """
-    name = 'Weretiger, Tiger Form'
-    description = 'Medium humanoid, neutral'
+
+    name = "Weretiger, Tiger Form"
+    description = "Medium humanoid, neutral"
     challenge_rating = 4
     armor_class = 12
-    skills = 'Perception +5, Stealth +4'
-    senses = 'Darkvision 60 ft., Passive Perception 15'
-    languages = ''
+    skills = "Perception +5, Stealth +4"
+    senses = "Darkvision 60 ft., Passive Perception 15"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -1330,11 +1381,13 @@ class WeretigerTigerForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 120
-    hit_dice = '16d8 + 48'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "16d8 + 48"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1364,13 +1417,14 @@ class WeretigerTigerform(Monster):
       Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
       3) slashing damage.
     """
-    name = 'Weretiger, Tiger form'
-    description = 'Medium humanoid, neutral'
+
+    name = "Weretiger, Tiger form"
+    description = "Medium humanoid, neutral"
     challenge_rating = 4
     armor_class = 12
-    skills = 'Perception +5, Stealth +4'
-    senses = 'Darkvision 60 ft., Passive Perception 15'
-    languages = ''
+    skills = "Perception +5, Stealth +4"
+    senses = "Darkvision 60 ft., Passive Perception 15"
+    languages = ""
     strength = Ability(17)
     dexterity = Ability(15)
     constitution = Ability(16)
@@ -1382,7 +1436,7 @@ class WeretigerTigerform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 120
-    hit_dice = '16d8'
+    hit_dice = "16d8"
     spells = []
 
 
@@ -1409,13 +1463,14 @@ class WerewolfHumanForm(Monster):
       ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2)
       piercing damage if used with two hands to make a melee attack.
     """
-    name = 'Werewolf, Human Form'
-    description = 'Medium humanoid, chaotic evil'
+
+    name = "Werewolf, Human Form"
+    description = "Medium humanoid, chaotic evil"
     challenge_rating = 3
     armor_class = 11
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
-    languages = 'Common'
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
+    languages = "Common"
     strength = Ability(15)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -1428,11 +1483,13 @@ class WerewolfHumanForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 58
-    hit_dice = '9d8 + 18'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "9d8 + 18"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1455,13 +1512,14 @@ class WerewolfHumanform(Monster):
       ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2)
       piercing damage if used with two hands to make a melee attack.
     """
-    name = 'Werewolf, Human form'
-    description = 'Medium humanoid, chaotic evil'
+
+    name = "Werewolf, Human form"
+    description = "Medium humanoid, chaotic evil"
     challenge_rating = 3
     armor_class = 11
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
-    languages = 'Common'
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
+    languages = "Common"
     strength = Ability(15)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -1473,7 +1531,7 @@ class WerewolfHumanform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 58
-    hit_dice = '9d8'
+    hit_dice = "9d8"
     spells = []
 
 
@@ -1504,13 +1562,14 @@ class WerewolfHybridForm(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d4
       + 2) slashing damage.
     """
-    name = 'Werewolf, Hybrid Form'
-    description = 'Medium humanoid, chaotic evil'
+
+    name = "Werewolf, Hybrid Form"
+    description = "Medium humanoid, chaotic evil"
     challenge_rating = 3
     armor_class = 11
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
-    languages = 'Common'
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
+    languages = "Common"
     strength = Ability(15)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -1523,11 +1582,13 @@ class WerewolfHybridForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 58
-    hit_dice = '9d8 + 18'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "9d8 + 18"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1554,13 +1615,14 @@ class WerewolfHybridform(Monster):
       Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d4
       + 2) slashing damage.
     """
-    name = 'Werewolf, Hybrid form'
-    description = 'Medium humanoid, chaotic evil'
+
+    name = "Werewolf, Hybrid form"
+    description = "Medium humanoid, chaotic evil"
     challenge_rating = 3
     armor_class = 11
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
-    languages = 'Common'
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
+    languages = "Common"
     strength = Ability(15)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -1572,7 +1634,7 @@ class WerewolfHybridform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 58
-    hit_dice = '9d8'
+    hit_dice = "9d8"
     spells = []
 
 
@@ -1597,13 +1659,14 @@ class WerewolfWolfForm(Monster):
       DC 12 Constitution saving throw or be cursed with werewolf
       lycanthropy.
     """
-    name = 'Werewolf, Wolf Form'
-    description = 'Medium humanoid, chaotic evil'
+
+    name = "Werewolf, Wolf Form"
+    description = "Medium humanoid, chaotic evil"
     challenge_rating = 3
     armor_class = 11
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
-    languages = ''
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -1616,11 +1679,13 @@ class WerewolfWolfForm(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 58
-    hit_dice = '9d8 + 18'
-    condition_immunities = ''
-    damage_immunities = "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "9d8 + 18"
+    condition_immunities = ""
+    damage_immunities = (
+        "bludgeoning, piercing, and slashing damage from nonmagical weapons that aren't silvered"
+    )
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1641,13 +1706,14 @@ class WerewolfWolfform(Monster):
       DC 12 Constitution saving throw or be cursed with werewolf
       lycanthropy.
     """
-    name = 'Werewolf, Wolf form'
-    description = 'Medium humanoid, chaotic evil'
+
+    name = "Werewolf, Wolf form"
+    description = "Medium humanoid, chaotic evil"
     challenge_rating = 3
     armor_class = 11
-    skills = 'Perception +4'
-    senses = 'Passive Perception 14'
-    languages = ''
+    skills = "Perception +4"
+    senses = "Passive Perception 14"
+    languages = ""
     strength = Ability(15)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -1659,7 +1725,7 @@ class WerewolfWolfform(Monster):
     fly_speed = 0
     climb_speed = 0
     hp_max = 58
-    hit_dice = '9d8'
+    hit_dice = "9d8"
     spells = []
 
 
@@ -1677,13 +1743,14 @@ class WhiteDragonWyrmling(Monster):
       taking 22 (5d8) cold damage on a failed save, or half as much damage
       on a successful one.
     """
-    name = 'White Dragon Wyrmling'
-    description = 'Medium dragon, chaotic evil'
+
+    name = "White Dragon Wyrmling"
+    description = "Medium dragon, chaotic evil"
     challenge_rating = 2
     armor_class = 16
-    skills = 'Perception +4, Stealth +2'
-    senses = 'Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14'
-    languages = 'Draconic'
+    skills = "Perception +4, Stealth +2"
+    senses = "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 14"
+    languages = "Draconic"
     strength = Ability(14)
     dexterity = Ability(10)
     constitution = Ability(14)
@@ -1696,11 +1763,11 @@ class WhiteDragonWyrmling(Monster):
     climb_speed = 0
     burrow_speed = 15
     hp_max = 32
-    hit_dice = '5d8 + 10'
-    condition_immunities = ''
-    damage_immunities = 'cold'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "5d8 + 10"
+    condition_immunities = ""
+    damage_immunities = "cold"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1723,7 +1790,7 @@ class Wight(Monster):
       the damage taken. This reduction lasts until the target finishes a
       long rest. The target dies if this effect reduces its hit point
       maximum to 0.
-      
+
       A humanoid slain by this attack rises 24 hours later as a zombie under
       the wight's control, unless the humanoid is restored to life or its
       body is destroyed. The wight can have no more than twelve zombies
@@ -1736,13 +1803,14 @@ class Wight(Monster):
       Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6
       (1d8 + 2) piercing damage.
     """
-    name = 'Wight'
-    description = 'Medium undead, neutral evil'
+
+    name = "Wight"
+    description = "Medium undead, neutral evil"
     challenge_rating = 3
     armor_class = 14
-    skills = 'Perception +3, Stealth +4'
-    senses = 'Darkvision 60 ft., Passive Perception 13'
-    languages = 'the languages it knew in life'
+    skills = "Perception +3, Stealth +4"
+    senses = "Darkvision 60 ft., Passive Perception 13"
+    languages = "the languages it knew in life"
     strength = Ability(15)
     dexterity = Ability(14)
     constitution = Ability(16)
@@ -1755,11 +1823,11 @@ class Wight(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 45
-    hit_dice = '6d8 + 18'
-    condition_immunities = 'exhaustion, poisoned'
-    damage_immunities = 'poison'
-    damage_resistances = 'necrotic'
-    damage_vulnerabilities = ''
+    hit_dice = "6d8 + 18"
+    condition_immunities = "exhaustion, poisoned"
+    damage_immunities = "poison"
+    damage_resistances = "necrotic"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1793,13 +1861,14 @@ class WilloWisp(Monster):
       attacks or uses its Consume Life, or until its concentration ends (as
       if concentrating on a spell).
     """
+
     name = "Will-o'-Wisp"
-    description = 'Tiny undead, chaotic evil'
+    description = "Tiny undead, chaotic evil"
     challenge_rating = 2
     armor_class = 19
-    skills = ''
-    senses = 'Darkvision 120 ft., Passive Perception 12'
-    languages = 'the languages it knew in life'
+    skills = ""
+    senses = "Darkvision 120 ft., Passive Perception 12"
+    languages = "the languages it knew in life"
     strength = Ability(1)
     dexterity = Ability(28)
     constitution = Ability(10)
@@ -1812,11 +1881,13 @@ class WilloWisp(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 22
-    hit_dice = '9d4 + 0'
-    condition_immunities = 'exhaustion, grappled, paralyzed, poisoned, prone, restrained, unconscious'
-    damage_immunities = 'lightning, poison'
-    damage_resistances = 'acid'
-    damage_vulnerabilities = ''
+    hit_dice = "9d4 + 0"
+    condition_immunities = (
+        "exhaustion, grappled, paralyzed, poisoned, prone, restrained, unconscious"
+    )
+    damage_immunities = "lightning, poison"
+    damage_resistances = "acid"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1840,13 +1911,14 @@ class WingedKobold(Monster):
       kobold. Hit: 6 (1d6 + 3) bludgeoning damage.
 
     """
-    name = 'Winged Kobold'
-    description = 'Small humanoid (kobold), lawful evil'
+
+    name = "Winged Kobold"
+    description = "Small humanoid (kobold), lawful evil"
     challenge_rating = 1 / 4
     armor_class = 13
-    skills = ''
-    senses = 'Darkvision 60 ft., passive Perception 8'
-    languages = 'Common, Draconic'
+    skills = ""
+    senses = "Darkvision 60 ft., passive Perception 8"
+    languages = "Common, Draconic"
     strength = Ability(7)
     dexterity = Ability(16)
     constitution = Ability(9)
@@ -1859,11 +1931,11 @@ class WingedKobold(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 7
-    hit_dice = '3d6 - 3'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "3d6 - 3"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1893,13 +1965,14 @@ class WinterWolf(Monster):
       18 (4d8) cold damage on a failed save, or half as much damage on a
       successful one.
     """
-    name = 'Winter Wolf'
-    description = 'Large monstrosity, neutral evil'
+
+    name = "Winter Wolf"
+    description = "Large monstrosity, neutral evil"
     challenge_rating = 3
     armor_class = 13
-    skills = 'Perception +5, Stealth +3'
-    senses = 'Passive Perception 15'
-    languages = 'Common, Giant, Winter Wolf'
+    skills = "Perception +5, Stealth +3"
+    senses = "Passive Perception 15"
+    languages = "Common, Giant, Winter Wolf"
     strength = Ability(18)
     dexterity = Ability(13)
     constitution = Ability(14)
@@ -1912,11 +1985,11 @@ class WinterWolf(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 75
-    hit_dice = '10d10 + 20'
-    condition_immunities = ''
-    damage_immunities = 'cold'
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "10d10 + 20"
+    condition_immunities = ""
+    damage_immunities = "cold"
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1938,13 +2011,14 @@ class Wolf(Monster):
       2) piercing damage. If the target is a creature, it must succeed on a
       DC 11 Strength saving throw or be knocked prone.
     """
-    name = 'Wolf'
-    description = 'Medium beast, unaligned'
+
+    name = "Wolf"
+    description = "Medium beast, unaligned"
     challenge_rating = 0.25
     armor_class = 13
-    skills = 'Perception +3, Stealth +4'
-    senses = 'Passive Perception 13'
-    languages = ''
+    skills = "Perception +3, Stealth +4"
+    senses = "Passive Perception 13"
+    languages = ""
     strength = Ability(12)
     dexterity = Ability(15)
     constitution = Ability(12)
@@ -1957,11 +2031,11 @@ class Wolf(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 11
-    hit_dice = '2d8 + 2'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "2d8 + 2"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -1979,13 +2053,14 @@ class Worg(Monster):
       + 3) piercing damage. If the target is a creature, it must succeed on
       a DC 13 Strength saving throw or be knocked prone.
     """
-    name = 'Worg'
-    description = 'Large monstrosity, neutral evil'
+
+    name = "Worg"
+    description = "Large monstrosity, neutral evil"
     challenge_rating = 0.5
     armor_class = 13
-    skills = 'Perception +4'
-    senses = 'Darkvision 60 ft., Passive Perception 14'
-    languages = 'Goblin, Worg'
+    skills = "Perception +4"
+    senses = "Darkvision 60 ft., Passive Perception 14"
+    languages = "Goblin, Worg"
     strength = Ability(16)
     dexterity = Ability(13)
     constitution = Ability(13)
@@ -1998,11 +2073,11 @@ class Worg(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 26
-    hit_dice = '4d10 + 4'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "4d10 + 4"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2034,13 +2109,14 @@ class Wraith(Monster):
       wraith can have no more than seven specters under its control at one
       time.
     """
-    name = 'Wraith'
-    description = 'Medium undead, neutral evil'
+
+    name = "Wraith"
+    description = "Medium undead, neutral evil"
     challenge_rating = 5
     armor_class = 13
-    skills = ''
-    senses = 'Darkvision 60 ft., Passive Perception 12'
-    languages = 'the languages it knew in life'
+    skills = ""
+    senses = "Darkvision 60 ft., Passive Perception 12"
+    languages = "the languages it knew in life"
     strength = Ability(6)
     dexterity = Ability(16)
     constitution = Ability(16)
@@ -2053,11 +2129,13 @@ class Wraith(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 67
-    hit_dice = '9d8 + 27'
-    condition_immunities = 'charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained'
-    damage_immunities = 'necrotic, poison'
-    damage_resistances = 'acid'
-    damage_vulnerabilities = ''
+    hit_dice = "9d8 + 27"
+    condition_immunities = (
+        "charmed, exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained"
+    )
+    damage_immunities = "necrotic, poison"
+    damage_resistances = "acid"
+    damage_vulnerabilities = ""
     spells = []
 
 
@@ -2082,13 +2160,14 @@ class Wyvern(Monster):
       saving throw, taking 24 (7d6) poison damage on a failed save, or half
       as much damage on a successful one.
     """
-    name = 'Wyvern'
-    description = 'Large dragon, unaligned'
+
+    name = "Wyvern"
+    description = "Large dragon, unaligned"
     challenge_rating = 6
     armor_class = 13
-    skills = 'Perception +4'
-    senses = 'Darkvision 60 ft., Passive Perception 14'
-    languages = ''
+    skills = "Perception +4"
+    senses = "Darkvision 60 ft., Passive Perception 14"
+    languages = ""
     strength = Ability(19)
     dexterity = Ability(10)
     constitution = Ability(16)
@@ -2101,9 +2180,9 @@ class Wyvern(Monster):
     climb_speed = 0
     burrow_speed = 0
     hp_max = 110
-    hit_dice = '13d10 + 39'
-    condition_immunities = ''
-    damage_immunities = ''
-    damage_resistances = ''
-    damage_vulnerabilities = ''
+    hit_dice = "13d10 + 39"
+    condition_immunities = ""
+    damage_immunities = ""
+    damage_resistances = ""
+    damage_vulnerabilities = ""
     spells = []
