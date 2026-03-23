@@ -98,6 +98,13 @@ This is the fastest way to mirror the Python package workflow:
 This executes linting, sheet generation checks, and pytest via
 ``.devcontainer/run-tests.sh``.
 
+.. note::
+
+    Coveralls uploads in GitHub Actions come from a single canonical job (Python 3.13)
+    using the official Coveralls GitHub Action. The full Python matrix (3.10-3.13)
+    is still run for compatibility checks, but coverage reporting is intentionally based
+    on that canonical run.
+
 Direct host run (optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
