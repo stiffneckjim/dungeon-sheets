@@ -88,12 +88,12 @@ ignore = [
 
 [tool.setuptools.package-data]
 dungeonsheets = [
-  "forms/*pdf",
-  "forms/*.tex",
-  "forms/*.txt",
-  "modules/DND-5e-LaTeX-Template/*",
-  "modules/DND-5e-LaTeX-Template/lib/*",
-  "modules/DND-5e-LaTeX-Template/img/*",
+    "forms/*pdf",
+    "forms/*.tex",
+    "forms/*.txt",
+    "modules/DND-5e-LaTeX-Template/*",
+    "modules/DND-5e-LaTeX-Template/lib/*",
+    "modules/DND-5e-LaTeX-Template/img/*",
 ]
 
 [tool.setuptools_scm]
