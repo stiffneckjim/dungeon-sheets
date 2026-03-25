@@ -1,0 +1,1 @@
+This file was created while debugging MCP write permissions.
