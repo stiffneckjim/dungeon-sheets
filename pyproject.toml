@@ -89,6 +89,7 @@ ignore = [
 [tool.setuptools.package-data]
 dungeonsheets = [
     "data/*.yaml",
+    "data/spells/*.yaml",
     "forms/*pdf",
     "forms/*.tex",
     "forms/*.txt",

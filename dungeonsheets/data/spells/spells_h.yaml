@@ -1,0 +1,332 @@
+- class_name: HailOfThorns
+  description: "The next time you hit a creature with a ranged weapon attack before the spell\n    ends, this spell creates a rain of thorns that sprouts from your ranged weapon\n    or ammunition. In addition to the normal effect of the attack, the target of the\n    attack and each creature within 5 feet of it must make a Dexterity saving\n    throw. A creature takes 1d10 piercing damage on a failed save, or half as much\n    damage on a successful one.\n\n    **At Higher Levels:** If you cast this spell using a\n    spell slot of 2nd level or higher, the damage increases by 1d10 for each slot\n    level above 1st (to a maximum of 6d10).\n    "
+  name: Hail Of Thorns
+  level: 1
+  casting_time: 1 bonus action
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Ranger
+- class_name: Hallow
+  description: "You touch a point and infuse an area around it with holy (or unholy) power. The\n    area can have a radius up to 60 feet, and the spell fails if the radius includes\n    an area already under the effect a hallow spell. The affected area is subject\n    to the following effects.\n\n    First, celestials, elementals, fey, fiends, and\n    undead can't enter the area, nor can such creatures charm, frighten, or possess\n    creatures within it. Any creature charmed, frightened, or possessed by such a\n    creature is no longer charmed, frightened, or possessed upon entering the area.\n    You can exclude one or more of those types of creatures from this effect.\n\n\n    Second, you can bind an extra effect to the area. Choose the effect from the\n    following list, or choose an effect offered by the DM. Som e of these effects\n    apply to creatures in the area; you can designate whether the effect applies to\n    all creatures, creatures that follow a specific deity or leader,\
+    \ or creatures of\n    a specific sort, such as ores or trolls. When a creature that would be affected\n    enters the spell's area for the first time on a turn or starts its turn there,\n    it can make a Charisma saving throw. On a success, the creature ignores the\n    extra effect until it leaves the area.\n\n    Courage\n    Affected creatures can't be\n    frightened while in the area.\n\n    Darkness\n    Darkness fills the area. Normal light,\n    as well as magical light created by spells of a lower level than the slot you\n    used to cast this spell, can't illuminate the area.\n\n    Daylight\n    Bright light fills\n    the area. Magical darkness created by spells of a lower level than the slot you\n    used to cast this spell can't extinguish the light.\n\n    Energy Protection\n    Affected\n    creatures in the area have resistance to one damage type of your choice, except\n    for bludgeoning, piercing, or slashing.\n\n    Energy Vulnerability\n    Affected\n    creatures\
+    \ in the area have vulnerability to one damage type of your choice,\n    except for bludgeoning, piercing, or slashing.\n\n    Everlasting Rest\n    Dead bodies\n    interred in the area can't be turned into undead.\n\n    Extradimensional Interference\n\n    Affected creatures can't move or travel using teleportation or by\n    extradimensional or interplanar means.\n\n    Fear\n    Affected creatures are frightened\n    while in the area.\n\n    Silence\n    No sound can emanate from within the area, and no\n    sound can reach into it.\n\n    Tongues\n    Affected creatures can communicate with any\n    other creature in the area, even if they don't share a common language.\n    "
+  name: Hallow
+  level: 5
+  casting_time: 24 hours
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Herbs, oils, and incense worth at least 1,000 gp, which the spell consumes
+  duration: Until dispelled
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Cleric
+- class_name: HallucinatoryTerrain
+  description: "You make natural terrain in a 150-foot cube in range look, sound, and smell like\n    some other sort of natural terrain. Thus, open fields or a road can be made to\n    resemble a swamp, hill, crevasse, or some other difficult or impassable terrain.\n    A pond can be made to seem like a grassy meadow, a precipice like a gentle\n    slope, or a rock-strewn gully like a wide and smooth road. Manufactured\n    structures, equipment, and creatures within the area aren't changed in\n    appearance.\n\n    The tactile characteristics of the terrain are unchanged, so\n    creatures entering the area are likely to see through the illusion. If the\n    difference isn't obvious by touch, a creature carefully examining the illusion\n    can attempt an Intelligence (Investigation) check against your spell save DC to\n    disbelieve it. A creature who discerns the illusion for what it is, sees it as a\n    vague image superimposed on the terrain.\n    "
+  name: Hallucinatory Terrain
+  level: 4
+  casting_time: 10 minutes
+  casting_range: 300 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A stone, a twig, and a bit of green plant
+  duration: 24 hours
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Bard
+  - Druid
+  - Warlock
+  - Wizard
+- class_name: Harm
+  description: "You unleash a virulent disease on a creature that you can see within range.\n    The\n    target must make a Constitution saving throw. On a failed save, it takes 14d6\n    necrotic damage, or half as much damage on a successful save. The damage can't\n    reduce the target's hit points below 1. If the target fails the saving throw,\n    its hit point maximum is reduced for 1 hour by an amount equal to the necrotic\n    damage it took. Any effect that removes a disease allows a creature's hit point\n    maximum to return to normal before that time passes.\n    "
+  name: Harm
+  level: 6
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Cleric
+- class_name: Haste
+  description: "Choose a willing creature that you can see within range. Until the spell ends,\n    the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on\n    Dexterity saving throws, and it gains an additional action on each of its turns.\n    That action can be used only to take the Attack (one weapon attack only), Dash,\n    Disengage, Hide, or Use an Object action.\n\n    When the spell ends, the target\n    can't move or take actions until after its next turn, as a wave of lethargy\n    sweeps over it.\n    "
+  name: Haste
+  level: 3
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A shaving of licorice root
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: Heal
+  description: "Choose a creature that you can see within range. A surge of positive energy\n    washes through the creature, causing it to regain 70 hit points. The spell also\n    ends blindness, deafness, and any diseases affecting the target. This spell has\n    no effect on constructs or undead.\n\n    **At Higher Levels:** When you cast this spell\n    using aspell slot of 7th level or higher, the amount of healing increases by 10\n    for each slot level above 6th.\n    "
+  name: Heal
+  level: 6
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Cleric
+  - Druid
+- class_name: HealingSpirit
+  description: "You call forth a nature spirit to soothe the wounded. The intangible spirit\n    appears in a space that is a 5-foot cube you can see within range. The spirit\n    looks like a transparent beast or fey (your choice). Until the spell ends,\n    whenever you or a creature you can see moves into the spirits space for the\n    first time on a turn or starts its turn there, you can cause the spirit to\n    restore 1d6 hit points to that creature (no action required). The spirit can't\n    heal constructs or undead. As a bonus action on your turn, you can move the\n    Spirit up to 30 feet to a space you can see.\n\n    **At Higher Levels:** When you cast\n    this spell using a spell slot of 3rd level or higher, the healing increases 1d6\n    for each slot level above 2nd.\n    "
+  name: Healing Spirit
+  level: 2
+  casting_time: 1 bonus action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Ranger
+- class_name: HealingWord
+  description: "A creature of your choice that you can see within range regains hit points equal\n    to 1d4 + your spellcasting ability modifier.\n    This spell has no effect on undead\n    or constructs.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 2nd level or higher, the healing increases by 1d4 for each slot level above\n    1st.\n    "
+  name: Healing Word
+  level: 1
+  casting_time: 1 bonus action
+  casting_range: 60 feet
+  components:
+  - V
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Bard
+  - Cleric
+  - Druid
+- class_name: HeatMetal
+  description: "Choose a manufactured metal object, such as a metal weapon or a suit of heavy or\n    medium metal armor, that you can see within range. You cause the object to glow\n    red-hot. Any creature in physical contact with the object takes 2d8 fire damage\n    when you cast the spell. Until the spell ends, you can use a bonus action on\n    each of your subsequent turns to cause this damage again.\n\n    If a creature is\n    holding or wearing the object and takes the damage from it, the creature must\n    succeed on a Constitution saving throw or drop the object if it can. If it\n    doesn't drop the object, it has disadvantage on attack rolls and ability checks\n    until the start of your next turn.\n\n    **At Higher Levels:** When you cast this spell\n    using a spell slot of 3rd level or higher, the damage increases by 1d8 for each\n    slot level above 2nd.\n    "
+  name: Heat Metal
+  level: 2
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A piece of iron and a flame
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Bard
+  - Druid
+- class_name: HellishRebuke
+  description: "Reaction: you are being damaged by a creature within 60 feet of you that you can\n    see.\n\n    You point your finger, and the creature that damaged you is momentarily\n    surrounded by hellish flames. The creature must make a Dexterity saving throw.\n    It takes 2d10 fire damage on a failed save, or half as much damage on a\n    successful one.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 2nd level or higher, the damage increases by 1d10 for each slot level above\n    1st.\n    "
+  name: Hellish Rebuke
+  level: 1
+  casting_time: Special
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Warlock
+- class_name: HeroesFeast
+  description: "You bring forth a great feast, including magnificent food and drink. The feast\n    takes 1 hour to consume and disappears at the end of that time, and the\n    beneficial effects don't set in until this hour is over. Up to twelve other\n    creatures can partake of the feast.\n\n    A creature that partakes of the feast gains\n    several benefits. The creature is cured of all diseases and poison, becomes\n    immune to poison and being frightened, and makes all Wisdom saving throws with\n    advantage. Its hit point maximum also increases by 2d10, and it gains the same\n    number of hit points. These benefits last for 24 hours.\n    "
+  name: Heroes Feast
+  level: 6
+  casting_time: 10 minutes
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A gem-encrusted bowl worth at least 1,000 gp, which the spell consumes
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Cleric
+  - Druid
+- class_name: Heroism
+  description: "A willing creature you touch is imbued with bravery.\n    Until the spell ends, the\n    creature is immune to being frightened and gains temporary hit points equal to\n    your spellcasting ability modifier at the start of each of its turns. When the\n    spell ends, the target loses any remaining temporary hit points from this spell.\n\n\n    **At Higher Levels:** When you cast this spell using a spell slot of 2nd level or\n    higher, you can target one additional creature for each slot level above 1st.\n    "
+  name: Heroism
+  level: 1
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Paladin
+- class_name: Hex
+  description: "You place a curse on a creature that you can see within range. Until the spell\n    ends, you deal an extra 1d6 necrotic damage to the target whenever you hit it\n    with an attack. Also, choose one ability when you cast the spell. The target has\n    disadvantage on ability checks made with the chosen ability.\n\n    If the target\n    drops to 0 hit points before this spell ends, you can use a bonus action on a\n    subsequent turn of yours to curse a new creature.\n\n    A remove curse cast on the\n    target ends this spell early.\n\n    **At Higher Levels:** When you cast this spell using\n    a spell slot of 3rd or 4th level, you can maintain your concentration on the\n    spell for up to 8 hours.\n    When you use a spell slot of 5th level or higher, you\n    can maintain your concentration on the spell for up to 24 hours.\n    "
+  name: Hex
+  level: 1
+  casting_time: 1 bonus action
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  - M
+  materials: The petrified eye of a newt
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Warlock
+- class_name: HoldMonster
+  description: "Choose a creature that you can see within range. The target must succeed on a\n    Wisdom saving throw or be paralyzed for the duration. This spell has no effect\n    on undead. At the end of each of its turns, the target can make another Wisdom\n    saving throw. On a success, the spell ends on the target.\n\n    At Higher Levels:\n    When you cast this spell using a spell slot of 6th level or higher, you can\n    target one additional creature for each slot level above 5th. The creatures must\n    be within 30 feet of each other when you target them.\n    "
+  name: Hold Monster
+  level: 5
+  casting_time: 1 action
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A small, straight piece of iron
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: HoldPerson
+  description: "Choose a humanoid that you can see within range. The target must succeed on a\n    Wisdom saving throw or be paralyzed for the duration. At the end of each of its\n    turns, the target can make another Wisdom saving throw. On a success, the spell\n    ends on the target.\n\n    **At Higher Levels:** When you cast this spell using a spell\n    slot of 3rd level or higher, you can target one additional humanoid for each\n    slot level above 2nd. The humanoids must be within 30 feet of each other when\n    you target them.\n    "
+  name: Hold Person
+  level: 2
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A small, straight piece of iron
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Cleric
+  - Druid
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: HolyAura
+  description: "Divine light washes out from you and coalesces in a soft radiance in a 30-foot\n    radius around you.\n    Creatures of your choice in that radius when you cast this\n    spell shed dim light in a 5-foot radius and have advantage on all saving throws,\n    and other creatures have disadvantage on attack rolls against them until the\n    spell ends. In addition, when a fiend or an undead hits an affected creature\n    with a melee attack, the aura flashes with brilliant light. The attacker must\n    succeed on a Constitution saving throw or be blinded until the spell ends.\n    "
+  name: Holy Aura
+  level: 8
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  - M
+  materials: A tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a religious text
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Cleric
+- class_name: HolyWeapon
+  description: "You imbue a weapon you touch with holy power. Until the spell ends, the weapon\n    emits bright light in a 30-foot radius and dim light for an additional 30 feet.\n    In addition, weapon attacks made with it deal an extra 2d8 radiant damage on a\n    hit. If the weapon isn't already a magic weapon, it becomes one for the\n    duration. As a bonus action on your turn, you can dismiss this spell and cause\n    the weapon to emit a burst of radiance. Each creature of your choice that you\n    can see within 30 feet ofyou must make a Constitution saving throw. On a failed\n    save, a creature takes 4d8 radiant damage, and it is blinded for 1 minute. On a\n    successful save, a creature takes half as much damage and isn't blinded. At the\n    end of each Ofits turns, a blinded creature can make a Constitution saving\n    throw, ending the effect on itselfon a success.\n    "
+  name: Holy Weapon
+  level: 5
+  casting_time: 1 bonus action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Cleric
+  - Paladin
+- class_name: HungerOfHadar
+  description: "You open a gateway to the dark between the stars, a region infested with unknown\n    horrors. A 20-foot-radius sphere of blackness and bitter cold appears, centered\n    on a point with range and lasting for the duration. This void is filled with a\n    cacophony of soft whispers and slurping noises that can be heard up to 30 feet\n    away. No light, magical or otherwise, can illuminate the area, and creatures\n    fully within the area are blinded.\n\n    The void creates a warp in the fabric of\n    space, and the area is difficult terrain. Any creature that starts its turn in\n    the area takes 2d6 cold damage. Any creature that ends its turn in the area must\n    succeed on a Dexterity saving throw or take 2d6 acid damage as milky,\n    otherwordly tentacles rub against it.\n    "
+  name: Hunger Of Hadar
+  level: 3
+  casting_time: 1 action
+  casting_range: 150 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A pickled octopus tentacle
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Warlock
+- class_name: HuntersMark
+  description: "You choose a creature you can see within range and mystically mark it as your\n    quarry.\n    Until the spell ends, you deal an extra 1d6 damage to the target\n    whenever you hit it with a weapon attack, and you have advantage on any Wisdom\n    (Perception) or Wisdom (Survival) check you make to find it. If the target drops\n    to 0 hit points before this spell ends, you can use a bonus action on a\n    subsequent turn of yours to mark a new creature.\n\n    **At Higher Levels:** When you\n    cast this spell using a spell slot of 3rd or 4th level, you can maintain your\n    concentration on the spell for up to 8 hours.\n    When you use a spell slot of 5th\n    level or higher, you can maintain your concentration on the spell for up to 24\n    hours.\n    "
+  name: Hunters Mark
+  level: 1
+  casting_time: 1 bonus action
+  casting_range: 90 feet
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Divination
+  classes:
+  - Ranger
+- class_name: HypnoticPattern
+  description: "You create a twisting pattern of colors that weaves through the air inside a\n    30-foot cube within range.\n    The pattern appears for a moment and vanishes. Each\n    creature in the area who sees the pattern must make a Wisdom saving throw. On a\n    failed save, the creature becomes charmed for the duration. While charmed by\n    this spell, the creature is incapacitated and has a speed of 0.\n\n    The spell ends\n    for an affected creature if it takes any damage or if someone else uses an\n    action to shake the creature out of its stupor.\n    "
+  name: Hypnotic Pattern
+  level: 3
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - S
+  - M
+  materials: A glowing stick of incense or a crystal vial filled with phosphorescent material
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard

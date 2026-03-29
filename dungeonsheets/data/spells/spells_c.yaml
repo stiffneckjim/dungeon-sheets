@@ -1,0 +1,935 @@
+- class_name: CallLightning
+  description: "A storm cloud appears in the shape of a cylinder that is 10 feet\n    tall with a 60-foot radius, centered on a point you can see 100\n    feet directly above you. The spell fails if you can't see a point\n    in the air where the storm cloud could appear (for example, if you\n    are in a room that can't accommodate the cloud).\n\n    When you cast the spell, choose a point you can see within\n    range. A bolt of lightning flashes down from the cloud to that\n    point. Each creature within 5 feet of that point must make a\n    Dexterity saving throw. A creature takes 3d10 lightning damage on\n    a failed save, or half as much damage on a successful one.  On\n    each of your turns until the spell ends, you can use your action\n    to call down lightning in this way again, targeting the same point\n    or a different one.\n\n    If you are outdoors in stormy conditions when you cast this spell,\n    the spell gives you control over the existing storm instead of\n    creating\
+    \ a new one. Under such conditions, the spell's damage\n    increases by 1d10.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 4th or higher level, the damage increases by 1d10 for each slot\n    level above 3rd.\n\n    "
+  name: Call Lightning
+  level: 3
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+- class_name: CalmEmotions
+  description: "You attempt to suppress strong emotions in a group of people.  Each\n    humanoid in a 20-foot-radius sphere centered on a point you choose\n    within range must make a Charisma saving throw; a creature can\n    choose to fail this saving throw if it wishes. If a creature fails\n    its saving throw, choose one of the following two effects. You can\n    suppress any effect causing a target to be charmed or\n    frightened. When this spell ends, any suppressed effect resumes,\n    provided that its duration has not expired in the meantime.\n\n    Alternatively, you can make a target indifferent about creatures\n    of your choice that it is hostile toward.  This indifference ends\n    if the target is attacked or harmed by a spell or if it witnesses\n    any of its friends being harmed. When the spell ends, the creature\n    becomes hostile again, unless the DM rules otherwise.\n\n    "
+  name: Calm Emotions
+  level: 2
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Cleric
+- class_name: Catapult
+  description: "Choose one object weighing 1 to 5 pounds within range that isn't\n    being worn or carried. The object flies in a straight line up to\n    90 feet in a direction you choose before falling to the ground,\n    stopping early if it impacts against a solid surface. If the\n    object would strike a creature, that creature must make a\n    Dexterity saving throw. On a failed save, the object strikes the\n    target and stops moving. In either case, both the object and the\n    creature or solid surface take 3d8 bludgeoning damage.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 2nd level or higher, the maximum weight of objects that you can\n    target with this spell increases by 5 pounds, and the damage\n    increases by 1d8, for each slot level above 1st.\n\n    "
+  name: Catapult
+  level: 1
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: Catnap
+  description: "You make a calming gesture, and up to three willing creatures of\n    your choice that you can see within range fall unconscious for the\n    spell's duration. The spell ends on a target early if it takes\n    damage or someone uses an action to shake or slap it awake. If a\n    target remains unconscious for the full duration, that target\n    gains the benefit of a short rest, and it can't be affected by\n    this spell again until it finishes a long rest.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 4th level or higher, you can target one additional willing\n    creature for each slot level above 3rd.\n\n    "
+  name: Catnap
+  level: 3
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - S
+  - M
+  materials: A pinch of sand
+  duration: 10 minutes
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Wizard
+  - Bard
+  - Sorcerer
+- class_name: CauseFear
+  description: "You awaken the sense of mortality in one creature you can see within range. A\n    construct or an undead is immune to this effect. The target must succeed on a\n    Wisdom saving throw or become frightened of you until the spell ends. The\n    frightened target can repeat the saving throw at the end of each of its turns,\n    ending the effect on itself on a success.\n\n    **At Higher Levels:** When you cast this\n    spell using a spell slot of 2nd level or higher, you can target one additional\n    creature for each slot level above 1st. The creatures must be within 30 feet of\n    each other when you target them.\n    "
+  name: Cause Fear
+  level: 1
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Warlock
+  - Wizard
+- class_name: Ceremony
+  description: "You perform a special religious ceremony that is infused with magic. When you\n    cast the spell, choose one of the following rites, the target of which must be\n    within 10 feet of you throughout the casting.\n    Atonement. You touch one willing\n    creature whose alignment has changed, and you make a DC 20 Wisdom (Insight)\n    check. On a successful check, you restore the target to its original alignment.\n\n    Bless Water.\n      You touch one vial of water and cause it to become holy water.\n\n    Coming of Age.\n      You touch one humanoid who is a young adult. For the next 24\n      hours, whenever the target makes an ability check, it can roll a d4 and add the\n      number rolled to the ability check. A creature can benefit from this rite only\n      once.\n\n    Dedication.\n      You touch one humanoid who wishes to be dedicated to your\n      god's service. For the next 24 hours, whenever the target makes a saving throw,\n      it can roll a d4 and add\
+    \ the number rolled to the save. A creature can benefit\n      from this rite only once.\n\n    Funeral Rite.\n      You touch one corpse, and for the next 7\n      days, the target can't become undead by any means short of a wish spell.\n\n    Wedding.\n      You touch adult humanoids willing to be bonded together in marriage.\n      For the next 7 days, each target gains a +2 bonus to AC while they are within 30\n      feet of each other. A creature can benefit from this rite again only if\n      widowed.\n    "
+  name: Ceremony
+  level: 1
+  casting_time: 1 hour
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: 25 gp worth of powdered silver,which the spell consumes
+  duration: Instantaneous
+  ritual: true
+  magic_school: Abjuration
+  classes:
+  - Cleric
+  - Paladin
+- class_name: ChainLightning
+  description: "You create a bolt of lightning that arcs toward a target of your choice that you\n    can see within range. Three bolts then leap from that target to as many as\n    three other targets, each of which must be within 30 feet of the first target. A\n    target can be a creature or an object and can be targeted by only one of the\n    bolts.\n\n    A target must make a Dexterity saving throw. The target takes 10d8\n    lightning damage on a failed save, or half as much on a successful one.\n\n    At\n    Higher Levels: When you cast this spell using a spell slot of 7th level or\n    higher, one additional bolt leaps from the first target to another target for\n    each slot level above 6th.\n    "
+  name: Chain Lightning
+  level: 6
+  casting_time: 1 action
+  casting_range: 150 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: ChaosBolt
+  description: "You hurl an undulating, warbling mass of chaotic energy at one\n    creature in range. Make a ranged spell attack against the\n    target. On a hit, the target takes ``2d8+1d6`` damage. Choose one\n    of the d8s. The number rolled on that die determines the attacks\n    damage type, as shown below.\n\n    == ===========\n    d8 Damage Type\n    == ===========\n    1  Acid\n    2  Cold\n    3  Fire\n    4  Force\n    5  Lightning\n    6  Poison\n    7  Psychic\n    8  Thunder\n    == ===========\n\n    If you roll the same number on both d8s, the chaotic energy leaps\n    from the target to a different creature of your choice within 30\n    feet of it. Make a new attack roll against the new target, and\n    make a new damage roll, which could cause the chaotic energy to\n    leap again. A creature can be targeted only once by each casting\n    of this spell.\n\n    **At Higher Levels:** When you cast this spell using a spell slot of\n    2nd level or higher, each target takes\
+    \ 1d6 extra damage of the\n    type rolled for each slot level above 1st.\n\n    "
+  name: Chaos Bolt
+  level: 1
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+- class_name: CharmMonster
+  description: "You attempt to charm a creature you can see within range. It must\n    make a Wisdom saving throw, and it does so with advantage if you\n    or your companions are fighting it. If it fails the saving throw,\n    it is charmed by you until the spell ends or until you or your\n    companions do anything harmful to it. The charmed creature is\n    friendly to you. When the spell ends, the creature knows it was\n    charmed by you.\n\n    **At Higher Levels:** When you cast this spell using a spell slot of\n    5th level or higher, you can target one additional creature for\n    each slot level above 4th. The creatures must be within 30 feet of\n    each other when you target them.\n\n    "
+  name: Charm Monster
+  level: 4
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 1 hour
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Druid
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: CharmPerson
+  description: "You attempt to charm a humanoid you can see within range.  It must\n    make a Wisdom saving throw, and does so with advantage if you or\n    your companions are fighting it. If it fails the saving throw, it\n    is charmed by you until the spell ends or until you or your\n    companions do anything harmful to it.The charmed creature regards\n    you as a friendly acquaintance. When the spell ends, the creature\n    knows it was charmed by you.\n\n    **At Higher Levels:** When you cast this spell using a spell slot of\n    2nd level or higher, you can target one additional creature for\n    each slot level above 1st. The creatures must be within 30 feet of\n    each other when you target them.\n\n    "
+  name: Charm Person
+  level: 1
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 1 hour
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Druid
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: ChillTouch
+  description: "You create a ghostly, skeletal hand in the space of a creature within range.\n\n    Make a ranged spell attack against the creature to assail it with the chill of\n    the grave. On a hit, the target takes 1d8 necrotic damage, and it can't regain\n    hit points until the start of your next turn. Until then, the hand clings to the\n    target. If you hit an undead target, it also has disadvantage on attack rolls\n    against you until the end of your next turn.\n\n    **At Higher Levels:** This spell's\n    damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and\n    17th level (4d8).\n    "
+  name: Chill Touch
+  level: 0
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 1 round
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: ChromaticOrb
+  description: "You hurl a 4-inch-diameter sphere of energy at a creature that you can see\n    within range. You choose acid, cold, fire, lightning, poison, or thunder for the\n    type of orb you create, and then make a ranged spell attack against the target.\n    If the attack hits, the creature takes 3d8 damage of the type you chose.\n\n    At\n    Higher Levels: When you cast this spell using a spell slot of 2nd level or\n    higher, the damage increases by 1d8 for each slot level above 1st.\n    "
+  name: Chromatic Orb
+  level: 1
+  casting_time: 1 action
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A diamond worth at least 50 gp
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: CircleOfDeath
+  description: "A sphere of negative energy ripples out in a 60-foot-radius sphere from a point\n    within range. Each creature in that area must make a Constitution saving throw.\n    A target takes 8d6 necrotic damage on a failed save, or half as much damage on a\n    successful one.\n\n    **At Higher Levels:** W hen you cast this spell using a spell slot\n    of 7th level or higher, the damage increases by 2d6 for each slot level above\n    6th.\n    "
+  name: Circle Of Death
+  level: 6
+  casting_time: 1 action
+  casting_range: 150 feet
+  components:
+  - V
+  - S
+  - M
+  materials: The powder of a crushed black pearl worth at least 500 gp
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: CircleOfPower
+  description: "Divine energy radiates from you, distorting and diffusing magical energy within\n    30 feet of you.\n    Until the spell ends, the sphere moves with you, centered on\n    you. For the duration, each friendly creature in the area (including you) has\n    advantage on saving throws against spells and other magical effects.\n\n\n    Additionally, when an affected creature succeeds on a saving throw made against\n    a spell or magical effect that allows it to make a saving throw to take only\n    half damage, it instead takes no damage if it succeeds on the saving throws.\n    "
+  name: Circle Of Power
+  level: 5
+  casting_time: 1 action
+  casting_range: Self (30-foot radius)
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Paladin
+- class_name: Clairvoyance
+  description: "You create an invisible sensor within range in a location familiar to you (a\n    place you have visited or seen before) or in an obvious location that is\n    unfamiliar to you (such as behind a door, around a corner, or in a grove of\n    trees). The sensor remains in place for the duration, and it can't be attacked\n    or otherwise interacted with.\n\n    When you cast the spell, you choose seeing or\n    hearing. You can use the chosen sense through the sensor as if you were in its\n    space. As your action, you can switch between seeing and hearing. A creature\n    that can see the sensor (such as a creature benefitting from see invisibility or\n    truesight) sees a luminous, intangible orb about the size of your fist.\n    "
+  name: Clairvoyance
+  level: 3
+  casting_time: 10 minutes
+  casting_range: 1 mile
+  components:
+  - V
+  - S
+  - M
+  materials: A focus worth at least 100 gp, either a jeweled horn for hearing or a glass eye for seeing
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Divination
+  classes:
+  - Bard
+  - Cleric
+  - Sorcerer
+  - Wizard
+- class_name: Clone
+  description: "This spell grows an inert duplicate of a living creature as a safeguard against\n    death.\n    This clone forms inside a sealed vessel and grows to full size and\n    maturity after 120 days; you can also choose to have the clone be a younger\n    version of the same creature. It remains inert and endures indefinitely, as long\n    as its vessel remains undisturbed.\n\n\n    At any time after the clone matures, if\n    the original creature dies, its soul transfers to the clone, provided that the\n    soul is free and willing to return. The clone is physically identical to the\n    original and has the same personality, memories, and abilities, but none of the\n    original's equipment. The original creature's physical remains, if they still\n    exist, becom e inert and can't thereafter be restored to life, since the\n    creature's soul is elsewhere.\n    "
+  name: Clone
+  level: 8
+  casting_time: 1 hour
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A diamond worth at least 1,000 gp and at least 1 cubic inch of flesh of the creature that is to be cloned, which the spell consum es, and a vessel worth at least 2,000 gp that has a sealable lid and is large enough to hold a medium creature, such
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Wizard
+- class_name: CloudOfDaggers
+  description: "You fill the air with spinning daggers in a cube 5 feet on each side, centered\n    on a point you choose within range. A creature takes 4d4 slashing damage when it\n    enters the spell's area for the first time on a turn or starts its turn there.\n\n\n    **At Higher Levels:** When you cast this spell using a spell slot of 3rd level or\n    higher, the damage increases by 2d4 for each slot level above 2nd.\n    "
+  name: Cloud Of Daggers
+  level: 2
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A sliver of glass
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Cloudkill
+  description: "You create a 20-foot-radius sphere of poisonous, yellow-green fog centered on a\n    point you choose within range. The fog spreads around corners. It lasts for the\n    duration or until strong wind dispereses the fog, ending the spell. Its area is\n    heavily obscured.\n\n    When a creature enters the spell's area for the first time\n    on a turn or starts its turn there, that creature must make a Constitution\n    saving throw. The creature takes 5d8 poison damageon a failed save, or half as\n    much damage on a successful one. Creatures are affected even if they hold their\n    breath or don't need to breathe.\n\n    The fog moves 10 feet away from you at the\n    start of each of your turns, rolling along the surface of the ground. The\n    vapors, being heavier than air, sink to the lowest level of the land, even\n    pouring down openings.\n\n    **At Higher Levels:** When you cast this spell using a spell\n    slot of 6th level or higher, the damage increases\
+    \ by 1d8 for each slot level\n    above 5th.\n    "
+  name: Cloudkill
+  level: 5
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: ColorSpray
+  description: "A dazzling array of flashing, colored light springs from your hand.\n    Roll 6d10,\n    the total is how many hit points of creatures this spell can effect. Creatures\n    in a 15-foot cone originating from you are affected in ascending order of their\n    current hit points (ignoring unconscious creatures and creatures that can't\n    see).\n\n    Starting with the creature that has the lowest current hit points, each\n    creature affected by this spell is blinded until the spell ends. Subtract each\n    creature's hit points from the total before moving on to the creature with the\n    next lowest hit points. A creature's hit points must be equal to or less than\n    the remaining total for the creature to be affected.\n\n    **At Higher Levels:** When you\n    cast this spell using a spell slot of 2nd level or higher, roll an additional\n    2d10 for each slot level above 1st.\n    "
+  name: Color Spray
+  level: 1
+  casting_time: 1 action
+  casting_range: Self (15-foot cone)
+  components:
+  - V
+  - S
+  - M
+  materials: ''
+  duration: 1 round
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: Command
+  description: "You speak a one-word command to a creature you can see within\n    range.  The target must succeed on a Wisdom saving throw or follow\n    the command on its next turn.  The spell has no effect if the\n    target is undead, if it doesn't understand your language, or if\n    your command is directly harmful to it.\n\n    Some typical commands and their effects follow. You might issue a\n    command other than one described here. If you do so, the DM\n    determines how the target behaves. If the target can't follow your\n    command, the spell ends.\n\n    Approach.\n      The target moves toward you by the shortest and most direct\n      route, ending its turn if it moves within 5 feet of you.\n    Drop.\n      The target drops whatever it is holding and then ends its turn.\n    Flee.\n      The target spends its turn moving away from you by the fastest\n      available means.\n    Grovel.\n      The target falls prone and then ends its turn.\n    Halt.\n      The target\
+    \ doesn't move and takes no actions. A flying creature\n      stays aloft, provided that it is able to do so. If it must move\n      to stay aloft, it flies the minimum distance needed to remain in\n      the air.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 2nd level or higher, you can affect one additional creature for\n    each slot level above 1st. The creatures must be within 30 feet of\n    each other when you target them\n\n    "
+  name: Command
+  level: 1
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  materials: ''
+  duration: 1 round
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Cleric
+  - Paladin
+- class_name: Commune
+  description: "You contact your deity or a divine proxy and ask up to three questions that can\n    be answered with a yes or no. You must ask your questions before the spell ends.\n    You receive a correct answer for each question.\n\n    Divine beings aren't\n    necessarily omniscient, so you might receive \"unclear\" as an answer if a\n    question pertains to information that lies beyond the deity's knowledge. In a\n    case where a one-word answer could be misleading or contrary to the deity's\n    interests, the DM might offer a short phrase as an answer instead.\n\n    If you cast\n    the spell two or more times before finishing your next long rest, there is a\n    cumulative 25 percent chance for each casting after the first that you get no\n    answer. The DM makes this roll in secret.\n    "
+  name: Commune
+  level: 5
+  casting_time: 1 minute
+  casting_range: Self
+  components:
+  - V
+  - S
+  - M
+  materials: Incense and a vial of holy or unholy water
+  duration: 1 minute
+  ritual: true
+  magic_school: Divination
+  classes:
+  - Cleric
+- class_name: CommuneWithNature
+  description: "You briefly become one with nature and gain knowledge of the\n    surrounding territory.  In the outdoors, the spell gives you\n    knowledge of the land within 3 miles of you. In caves and other\n    natural underground settings, the radius is limited to 300\n    feet. The spell doesn't function where nature has been replaced by\n    construction, such as in dungeons and towns.\n\n    You instantly gain knowledge of up to three facts of your choice\n    about any of the following subjects as they relate to the area:\n\n    - terrain and bodies of water\n    - prevalent plants, minerals, animals, or peoples\n    - powerful celestials, fey, fiends, elementals, or undead\n    - influence from other planes of existence\n    - buildings\n\n    For example, you could determine the location of powerful undead\n    in the area, the location of major sources of safe drinking water,\n    and the location of any nearby towns.\n\n    "
+  name: Commune With Nature
+  level: 5
+  casting_time: 1 minute
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: true
+  magic_school: Divination
+  classes:
+  - Druid
+  - Ranger
+- class_name: CompelledDuel
+  description: "You attempt to compel a creature into a duel.\n    One creature that you can see\n    within range must make a Wisdom saving throw. On a failed save, the creature is\n    drawn to you, compelled by your divine demand. For the duration, it has\n    disadvantage on attack rolls against creatures other than you, and must make a\n    Wisdom saving throw each time it attempts to move to a space that is more than\n    30 feet away from you; if it succeeds on this saving throw, this spell doesn't\n    restrict the target's movement for that turn.\n\n    The spell ends if you attack any\n    other creature, if you cast a spell that targets a hostile creature other than\n    the target, if a creature friendly to you damages the target or casts a harmful\n    spell on it, or if you end your turn more than 30 feet away from the target.\n    "
+  name: Compelled Duel
+  level: 1
+  casting_time: 1 bonus action
+  casting_range: 30 feet
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Paladin
+- class_name: ComprehendLanguages
+  description: "For the duration, you understand the literal meaning of any spoken language that\n    you hear.\n    You also understand any spoken language that you hear. You also\n    understand any written language that you see, but you must be touching the\n    surface of which the words are written. It takes about 1 minute to read one page\n    of text.\n\n    This spell doesn't decode secret messages in a text or glyph, such\n    as an arcane sigil, that isn't part of a written language.\n    "
+  name: Comprehend Languages
+  level: 1
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  - M
+  materials: A pinch of soot and salt
+  duration: 1 hour
+  ritual: true
+  magic_school: Divination
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Compulsion
+  description: "Creatures of your choice that you can see within range and that can hear you\n    must make a Wisdom saving throw.\n    A target automatically succeeds on this saving\n    throw if it can't be charmed. On a failed save, a target is affected by this\n    spell. Until the spell ends, you can use a bonus action on each of your turns to\n    designate a direction that is horizontal to you. Each affected target must use\n    as much of its movement as possible to move in that direction on its next turn.\n    It can take its action before it moves. After moving in this way, it can make\n    another Wisdom saving throw to try to end the effect.\n\n    A target isn't compelled\n    to move into an obviously deadly hazard, such as a fire pit, but it will\n    provoke opportunity attacks to move in the designated direction.\n    "
+  name: Compulsion
+  level: 4
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+- class_name: ConeOfCold
+  description: "A blast of cold air erupts from your hands.\n    Each creature in a 60-foot cone\n    must make a Constitution saving throw.\n\n    A creature takes 8d8 cold damage on a\n    failed save, or half as much damage on a successful one. A creature killed by\n    this spell becomes a frozen statue until it thaws.\n\n    **At Higher Levels:** When you\n    cast this spell using a spell slot of 6th level or higher, the damage increases\n    by 1d8 for each slot level above 5th.\n    "
+  name: Cone Of Cold
+  level: 5
+  casting_time: 1 action
+  casting_range: Self (60-foot cone)
+  components:
+  - V
+  - S
+  - M
+  materials: A small crystal or glass cone
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: Confusion
+  description: "This spell assaults and twists creatures' minds, spawning delusions\n    and provoking uncontrolled actions. Each creature in a\n    10-foot-radius sphere centered on a point you choose within range\n    must succeed on a Wisdom saving throw when you cast this spell or\n    be affected by it.\n\n    An affected target can't take reactions and must roll a d10 at the\n    start of each of its turns to determine its behavior for that\n    turn.\n\n    d10 behavior:\n\n    **1.** The creature uses all its movement to move in a random\n    direction. To determine the direction, roll a d8 and assign a\n    direction to each die face. The creature doesn't take an action\n    this turn.\n\n    **2-6.** The creature doesn't move or take actions this turn.\n\n    **7-8.** The creature uses its action to make a melee attack\n    against a randomly determined creature within its reach. If there\n    is no creature within its reach, the creature does nothing this\n    turn.\n\n    **9-10.**\
+    \ The creature can act and move normally.\n\n    At the end of its turns, an affected target can make a Wisdom\n    saving throw. It it succeeds, this effect ends for that target.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 5th level or higher, the radius of the sphere increases by 5\n    feet for each slot level above 4th\n\n    "
+  name: Confusion
+  level: 4
+  casting_time: 1 action
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  - M
+  materials: Three nut shells
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: ConjureAnimals
+  description: "You summon fey spirits that take the form of beasts and appear in\n    unoccupied spaces that you can see within range.\n\n    Choose one of the following options for what appears:\n\n    - One beast of challenge rating 2 or lower\n    - Two beasts of challenge rating 1 or lower\n    - Four beasts of challenge rating 1/2 or lower\n    - Eight beasts of challenge rating 1/4 or lower\n\n    Each beast is also considered fey, and it disappears when it drops\n    to 0 hit points or when the spell ends.\n\n\n    The summoned creatures are friendly to you and your\n    companions. Roll initiative for the summoned creatures as a group,\n    which has its own turns. They obey any verbal commands that you\n    issue to them (no action required by you). If you don't issue any\n    commands to them, they defend themselves from hostile creatures,\n    but otherwise take no actions.  The DM has the creatures'\n    statistics.\n\n    **At Higher Levels:** When you cast this spell using\
+    \ certain\n    higher-level spell slots, you choose one of the summoning options\n    above, and more creatures appear:\n\n    - twice as many with a 5th-level slot\n    - three times as many with a 7th-level slot\n    - four times as many with a 9th-level slot.\n\n    "
+  name: Conjure Animals
+  level: 3
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Ranger
+- class_name: ConjureBarrage
+  description: "You throw a nonmagical weapon or fire a piece of nonmagical ammunition into the\n    air to create a cone of identical weapons that shoot forward and then disappear.\n    Each creature in a 60-foot cone must succeed on a Dexterity saving throw. A\n    creature takes 3d8 damage on a failed save, or half as much damage on a\n    successful one. The damage type is the same as that of the weapon or ammunition\n    used as a component.\n    "
+  name: Conjure Barrage
+  level: 3
+  casting_time: 1 action
+  casting_range: Self (60-foot cone)
+  components:
+  - V
+  - S
+  - M
+  materials: One piece of ammunition or a thrown weapon
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Ranger
+- class_name: ConjureCelestial
+  description: "You summon a celestial of challenge rating 4 or lower, which appears in an\n    unoccupied space that you can see within range. The celestial disappears when it\n    drops to 0 hit points or when the spell ends.\n\n    The celestial is friendly to\n    you and your companions for the duration. Roll initiative for the celestial,\n    which has its own turns. It obeys any verbal commands that you issue to it (no\n    action required by you), as long as they don't violate its alignment. If you\n    don't issue any commands to the celestial, it defends itself from hostile\n    creatures but otherwise takes no actions\n    The DM has the celestial's statistics.\n\n\n    **At Higher Levels:** When you cast this spell using a 9th-level spell slot, you\n    summon a celestial of challenge rating 5 or lower.\n    "
+  name: Conjure Celestial
+  level: 7
+  casting_time: 1 minute
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Cleric
+- class_name: ConjureElemental
+  description: "You call forth an elemental servant.\n    Choose an area of air, earth, fire, or\n    water that fills a 10-foot cube within range. An elemental of challenge rating 5\n    or lower appropriate to the area you chose appears in an unoccupied space\n    within 10 feet of it. For example, a fire elemental emerges from a bonfire, and\n    an earth elemental rises up from the ground. The elemental disappears when it\n    drops to 0 hit points or when the spell ends.\n\n    The elemental is friendly to you\n    and your companions for the duration. Roll initiative for the elemental, which\n    has its own turns. It obeys any verbal commands that you issue to it (no action\n    required by you). If you don't issue any commands to the elemental, it defends\n    itself from hostile creatures but otherwise takes no actions.\n\n    If your\n    concentration is broken, the elemental doesn't disappear. Instead, you lose\n    control of the elemental, it becom es hostile toward you and\
+    \ your companions,\n    and it might attack. An uncontrolled elemental can't be dismissed by you, and it\n    disappears 1 hour after you summoned it. The DM has the elemental's statistics.\n\n\n    **At Higher Levels:** When you cast this spell using a spell slot of 6th level or\n    higher, the challenge rating increases by 1 for each slot level above 5th.\n    "
+  name: Conjure Elemental
+  level: 5
+  casting_time: 1 minute
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  - M
+  materials: Burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Wizard
+- class_name: ConjureFey
+  description: "You summon a fey creature of challenge rating 6 or lower, or a fey spirit that\n    takes the form of a beast of challenge rating 6 or lower.\n    It appears in an\n    unoccupied space that you can see within range. The fey creature disappears when\n    it drops to 0 hit points or when the spell ends.\n\n    The fey creature is friendly\n    to you and your companions for the duration. Roll initiative for the creature,\n    which has its own turns. It obeys any verbal commands that you issue to it (no\n    action required by you), as long as they don't violate its alignment. If you\n    don't issue any commands to the fey creature, it defends itself from hostile\n    creatures but otherwise takes no actions.\n\n    If your concentration is broken, the\n    fey creature doesn't disappear. Instead, you lose control of the fey creature,\n    it becomes hostile toward you and your companions, and it might attack. An\n    uncontrolled fey creature can't be dismissed by you, and\
+    \ it disappears 1 hour\n    after you summoned it.\n    The DM has the fey creature's statistics.\n\n    At Higher\n    Levels: When you cast this spell using a spell slot of 7th level or higher, the\n    challenge rating increases by 1 for each slot level above 6th\n    "
+  name: Conjure Fey
+  level: 6
+  casting_time: 1 minute
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Warlock
+- class_name: ConjureMinorElementals
+  description: "You summon elementals that appear in unoccupied spaces that you can see within\n    range.\n    You choose one the following options for what appears:\n    -One elemental\n    of challenge rating 2 or lower\n    -Two elementals of challenge rating 1 or lower\n\n    -Four elementals of challenge rating 1/2 or lower\n    -Eight elementals of\n    challenge rating 1/4 or lower.\n\n    An elemental summoned by this spell disappears\n    when it drops to 0 hit points or when the spell ends.\n\n    The summoned creatures\n    are friendly to you and your companions. Roll initiative for the summoned\n    creatures as a group, which has its own turns. They obey any verbal commands\n    that you issue to them (no action required by you). If you don't issue any\n    commands to them, they defend themselves from hostile creatures, but otherwise\n    take no actions.\n    The DM has the creatures' statistics.\n\n    **At Higher Levels:** When\n    you cast this spell using certain higher-level\
+    \ spell slots, you choose one of\n    the summoning options above, and more creatures appear: twice as many with a\n    6th-level slot and three times as many with an 8th-level slot.\n    "
+  name: Conjure Minor Elementals
+  level: 4
+  casting_time: 1 minute
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Wizard
+- class_name: ConjureVolley
+  description: "You fire a piece of nonmagical ammunition from a ranged weapon or throw a\n    nonmagical weapon into the air and choose a point within range.\n    Hundreds of\n    duplicates of the ammunition or weapon fall in a volley from above and then\n    disappear. Each creature in a 40-foot-radius. 20-foot-high cylinder centered on\n    that point must make a Dexterity saving throw. A creature takes 8d8 damage on a\n    failed save, or half as much damage on a successful one. The damage type is the\n    same as that of the ammunition or weapon.\n    "
+  name: Conjure Volley
+  level: 5
+  casting_time: 1 action
+  casting_range: 150 feet
+  components:
+  - V
+  - S
+  - M
+  materials: One piece of ammunition or one thrown weapon
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Ranger
+- class_name: ConjureWoodlandBeings
+  description: "You summon fey creatures that appear in unoccupied spaces that you can see\n    within range.\n\n    Choose one of the following options for what appears:\n    -  One\n    fey creature of challenge rating 2 or lower\n    -  Two fey creatures of challenge\n    rating 1 or lower\n    -  Four fey creatures of challenge rating 1/2 or lower\n    -\n    Eight fey creatures of challenge rating 1/4 or lower\n\n    A summoned creature\n    disappears when it drops to 0 hit points or when the spell ends.\n\n    The summoned\n    creatures are friendly to you and your companions. Roll initiative for the\n    summoned creatures as a group, which have their own turns. They obey any verbal\n    commands that you issue to them (no action required by you). If you don't issue\n    any commands to them, they defend themselves from hostile creatures, but\n    otherwise take no actions.\n    The DM has the creatures' statistics.\n\n    At Higher\n    Levels: When you cast this spell using certain\
+    \ higher-level spell slots, you\n    choose one of the summoning options above, and more creatures appear:\n    twice as\n    many with a 6th-level slot\n    three times as many with an 8th-level slot.\n    "
+  name: Conjure Woodland Beings
+  level: 4
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  - M
+  materials: One holly berry per creature summoned
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Ranger
+- class_name: ContactOtherPlane
+  description: "You mentally contact a demigod, the spirit of a long-dead sage, or some other\n    mysterious entity from another plane.\n    Contacting this extraplanar intelligence\n    can strain or even break your mind. When you cast this spell, make a DC 15\n    Intelligence saving throw. On a failure, you take 6d6 psychic damage and are\n    insane until you finish a long rest. While insane, you can't take actions, can't\n    understand what other creatures say, can't read, and speak only in gibberish. A\n    greater restoration spell cast on you ends this effect.\n\n    On a successful save,\n    you can ask the entity up to five questions. You must ask your questions before\n    the spell ends. The DM answers each question with one word, such as yes,\n    no, maybe, never, irrelevant, or unclear (if the entity doesn't know\n    the answer to the question). If a one-word answer would be misleading, the DM\n    might instead offer a short phrase as an answer.\n    "
+  name: Contact Other Plane
+  level: 5
+  casting_time: 1 minute
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: 1 minute
+  ritual: true
+  magic_school: Divination
+  classes:
+  - Warlock
+  - Wizard
+- class_name: Contagion
+  description: "Your touch inflicts disease.  Make a melee spell attack against a\n    creature within your reach. On a hit, you afflict the creature\n    with a disease of your choice from any of the ones described\n    below.\n\n    At the end of each of the target's turns, it must make a\n    Constitution saving throw. After failing three of these saving\n    throws, the disease's effects last for the duration, and the\n    creature stops making these saves. After succeeding on three of\n    these saving throws, the creature recovers from the disease, and\n    the spell ends.\n\n    Since this spell induces a natural disease in its target, any\n    effect that removes a disease or otherwise ameliorates a disease's\n    effects apply to it.\n\n    Blinding Sickness\n      Pain grips the creature's mind, and its eyes turn milky\n      white. The creature has disadvantage on Wisdom checks and Wisdom\n      saving throws and is blinded.\n    Filth Fever\n      A raging fever sweeps through\
+    \ the creature's body. The creature\n      has disadvantage on Strength checks, Strength saving throws, and\n      attack rolls that use Strength.\n    Flesh Rot\n      The creature's flesh decays. The creature has disadvantage on\n      Charisma checks and vulnerability to all damage.\n    Mindfire\n      The creature's mind becomes feverish. The creature has\n      disadvantage on Intelligence checks and Intelligence saving\n      throws, and the creature behaves as if under the effects of the\n      confusion spell during combat.\n    Seizure\n      The creature is overcome with shaking. The creature has\n      disadvantage on Dexterity checks, Dexterity saving throws, and\n      attack rolls that use Dexterity.\n    Slimy Doom\n      The creature begins to bleed uncontrollably. The creature has\n      disadvantage on Constitution checks and Constitution saving\n      throws. In addition, whenever the creature takes damage, it is\n      stunned until the end of its next turn.\n\n\
+    \    "
+  name: Contagion
+  level: 5
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 7 days
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Cleric
+  - Druid
+- class_name: Contingency
+  description: "Choose a spell of 5th level or lower that you can cast, that has a\n    casting time of 1 action, and that can target you.  You cast that\n    spell called \"the contingent spell\" as part of casting\n    contingency, expending spell slots for both, but the contingent\n    spell doesn't come into effect. Instead, it takes effect when a\n    certain circumstance occurs. You describe that circumstance when\n    you cast the two spells. For example, a contingency cast with\n    water breathing might stipulate that water breathing comes into\n    effect when you are engulfed in water or a similar liquid.\n\n    The contingent spell takes effect immediately after the\n    circumstance is met for the first time, whether or not you want\n    it to. and then contingency ends.\n\n    The contingent spell takes effect only on you, even if it can\n    normally target others. You can use only one contingency spell at\n    a time.  If you cast this spell again, the effect of another\n\
+    \    contingency spell on you ends. Also, contingency ends on you if\n    its material component is ever not on your person.\n\n    "
+  name: Contingency
+  level: 6
+  casting_time: 10 minutes
+  casting_range: Self
+  components:
+  - V
+  - S
+  - M
+  materials: A statuette of yourself carved from ivory and decorated with gems worth at least 1,500 gp
+  duration: 10 days
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Wizard
+- class_name: ContinualFlame
+  description: "A flame, equivalent in brightness to a torch, springs forth from an\n    object that you touch.  The effect looks like a regular flame, but\n    it creates no heat and doesn't use oxygen. A continual flame can\n    be covered or hidden but not smothered or quenched.\n\n    "
+  name: Continual Flame
+  level: 2
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Ruby dust worth 50 gp, which the spell consumes
+  duration: Until dispelled
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Cleric
+  - Wizard
+- class_name: ControlFlames
+  description: "You choose a nonmagical flame that you can see within range and\n    that fits within a 5-foot cube. You affect it in one of the\n    following ways:\n\n    - You instantaneously expand the flame 5 feet in one direction,\n      provided that wood or other fuel is present in the new location.\n    - You instantaneously extinguish the flames within the cube.\n    - You double or halve the area of bright light and dim light cast\n      by the flame, change its color, or both. The change lasts for 1\n      hour.\n    - You cause simple shapes - such as the vague form of a creature,\n      an inanimate object, or a location - to appear within the flames\n      and animate as you like. The shapes last for 1 hour.  If you\n      cast this spell multiple times, you can have up to three\n      non-instantaneous\n\n    "
+  name: Control Flames
+  level: 0
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - S
+  materials: ''
+  duration: Instantaneous or 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: ControlWater
+  description: "Until the spell ends, you control any freestanding water inside an\n    area you choose that is a cube up to 100 feet on a side.  You can\n    choose from any of the following effects when you cast this\n    spell. As an action on your turn, you can repeat the same effect\n    or choose a different one.\n\n    Flood\n      You cause the water level of all standing water in the area to\n      rise by as much as 20 feet. If the area includes a shore, the\n      flooding water spills over onto dry land. If you choose an area\n      in a large body of water, you instead create a 20-foot tall wave\n      that travels from one side of the area to the other and then\n      crashes down. Any Huge or smaller vehicles in the wave's path\n      are carried with it to the other side. Any Huge or smaller\n      vehicles struck by the wave have a 25 percent chance of\n      capsizing.\n\n      The water level remains elevated until the spell ends\n      or you choose a different effect.\
+    \ If this effect produced a\n      wave, the wave repeats on the start of your next turn while the\n      flood effect lasts.\n    Part Water\n      You cause water in the area to move apart and create a\n      trench. The trench extends across the spell's area, and the\n      separated water forms a wall to either side.  The trench remains\n      until the spell ends or you choose a different effect. The water\n      then slowly fills in the trench over the course of the next\n      round until the normal water level is restored.\n    Redirect Flow\n      You cause flowing water in the area to move in a direction you\n      choose, even if the water has to flow over obstacles, up walls,\n      or in other unlikely directions. The water in the area moves as\n      you direct it, but once it moves beyond the spell's area, it\n      resumes its flow based on the terrain conditions. The water\n      continues to move in the direction you chose until the spell\n      ends or you choose a\
+    \ different effect.\n    Whirlpool\n      This effect requires a body of water at least 50 feet square and\n      25 feet deep. You cause a whirlpool to form in the center of the\n      area. The whirlpool forms a vortex that is 5 feet wide at the\n      base, up to 50 feet wide at the top, and 25 feet tall. Any\n      creature or object in the water and within 25 feet of the vortex\n      is pulled 10 feet toward it. A creature can swim away from the\n      vortex by making a Strength (Athletics) check against your spell\n      save DC.\n\n      When a creature enters the vortex for the first time on a turn\n      or starts its turn there, it must make a Strength saving\n      throw. On a failed save, the creature takes 2d8 bludgeoning\n      damage and is caught in the vortex until the spell ends.  On a\n      successful save, the creature takes half damage, and isn't\n      caught in the vortex. A creature caught in the vortex can use\n      its action to try to swim away from the\
+    \ vortex as described\n      above, but has disadvantage on the Strength (Athletics) check to\n      do so.\n\n      The first time each turn that an object enters the\n      vortex, the object takes 2d8 bludgeoning damage,\_this damage\n      occurs each round it remains in the vortex.\n\n    "
+  name: Control Water
+  level: 4
+  casting_time: 1 action
+  casting_range: 300 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A drop of water and a pinch of dust
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Cleric
+  - Druid
+  - Wizard
+- class_name: ControlWeather
+  description: "You take control of the weather within 5 miles of you for the\n    duration.\n\n    You must be outdoors to cast this spell. Moving to a place where\n    you don't have a clear path to the sky ends the spell early.\n\n    When you cast the spell, you change the current weather\n    conditions, which are determined by the DM based on the climate\n    and season. You can change precipitation, temperature, and\n    wind. It takes 1d4 x 10 minutes for the new conditions to take\n    effect. Once they do so, you can change the conditions again. When\n    the spell ends, the weather gradually returns to normal.\n\n    When you change the weather conditions, find a current condition\n    on the following tables and change its stage by one, up or\n    down. When changing the wind, you can change its direction.\n\n    **Precipitation**\n    Stage 1 \u2013 Clear,\n    Stage 2 \u2013 Light clouds,\n    Stage 3 \u2013 Overcast or ground fog,\n    Stage 4 \u2013 Rain, hail or snow,\n\
+    \    Stage 5 \u2013 Torrential rain, driving hail or blizzard\n\n    **Temperature**\n    Stage 1 \u2013 Unbearable heat,\n    Stage 2 \u2013 Hot,\n    Stage 3 \u2013 Warm,\n    Stage 4 \u2013 Cool,\n    Stage 5 \u2013 Cold,\n    Stage 6 \u2013 Arctic cold\n\n    **Wind**\n    Stage 1 \u2013 Calm,\n    Stage 2 \u2013 Moderate wind,\n    Stage 3 \u2013 Strong wind,\n    Stage 4 \u2013 Gale,\n    Stage 5 \u2013 Storm\n\n    "
+  name: Control Weather
+  level: 8
+  casting_time: 10 minutes
+  casting_range: Self (5-mile radius)
+  components:
+  - V
+  - S
+  - M
+  materials: ''
+  duration: Concentration, up to 8 hours
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Cleric
+  - Druid
+  - Wizard
+- class_name: ControlWinds
+  description: "You take control of the air in a 100-foot cube that you can see\n    within range.  Choose one of the following effects when you cast\n    the spell. The effect lasts for the spell's duration, unless you\n    use your action on a later turn to switch to a different\n    effect. You can also use your action to temporarily halt the\n    effect or to restart one you've halted.\n\n    Gusts. A wind picks up within the cube, continually blowing in a\n    horizontal direction that you choose. You choose the intensity of\n    the wind: calm, moderate, or strong. If the wind is moderate or\n    strong, ranged weapon attacks that pass through it or that are\n    made against targets within the cube have disadvantage on their\n    attack rolls. If the wind is strong, any creature moving against\n    the wind must spend 1 extra foot of movement for each foot moved.\n\n    Downdraft. You cause a sustained blast of strong wind to blow\n    downward from the top of the cube. Ranged weapon\
+    \ attacks that pass\n    through the cube or that are made against targets within it have\n    disadvantage on their attack rolls. A creature must make a\n    Strength saving throw if it flies into the cube for the first time\n    on a turn or starts its turn there flying. On a failed save, the\n    creature is knocked prone.\n\n    Updraft. You cause a sustained updraft within the cube, rising\n    upward from the cube's bottom edge. Creatures that end a fall\n    within the cube take only half damage from the fall. When a\n    creature in the cube makes a vertical jump, the creature can jump\n    up to 10 feet higher than normal.\n\n    "
+  name: Control Winds
+  level: 5
+  casting_time: 1 action
+  casting_range: 300 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: CordonOfArrows
+  description: "You plant four pieces of nonmagical ammunition \u2013 arrows or crossbow bolts \u2013 in\n    the ground within range and lay magic upon them to protect an area.\n    Until the\n    spell ends, whenever a creature other than you comes within 30 feet of the\n    ammunition for the first time on a turn or ends its turn there, one piece of\n    ammunition flies up to strike it. The creature must succeed on a Dexterity\n    saving throw or take 1d6 piercing damage. The piece of ammunition is then\n    destroyed. The spell ends when no ammunition remains.\n\n    When you cast this\n    spell, you can designate any creatures you choose, and the spell ignores them.\n\n\n    **At Higher Levels:** When you cast this spell using a spell slot of 3rd level or\n    higher, the amount of ammunition that can be affected increases by two for each\n    slot level above 2nd.\n    "
+  name: Cordon Of Arrows
+  level: 2
+  casting_time: 1 action
+  casting_range: 5 feet
+  components:
+  - V
+  - S
+  - M
+  materials: Four or more arrows or bolts
+  duration: 8 hours
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Ranger
+- class_name: Counterspell
+  description: "1 reaction, which you take when you see a creature within 60 feet of you casting\n    a spell\n\n    You attempt to interrupt a creature in the process of casting a spell.\n    If the creature is casting a spell of 3rd level or lower, its spell fails and\n    has no effect. If it is casting a spell of 4th level or higher, make an ability\n    check using your spellcasting ability.  The DC equals 10+ the spell's level. On\n    a success, the creature's spell fails and has no effect.\n\n    **At Higher Levels:** When\n    you cast this spell using a spell slot of 4th level or higher, the interrupted\n    spell has no effect if its level is less than or equal to the level of the spell\n    slot you used.\n    "
+  name: Counterspell
+  level: 3
+  casting_time: Special
+  casting_range: 60 feet
+  components:
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: CreateBonfire
+  description: "You create a bonfire on ground that you can see within range. Until\n    the spell ends, the magic bonfire fills a 5-foot cube. Any\n    creature in the bonfire's space when you cast the spell must\n    succeed on a Dexterity saving throw or take 1d8 fire damage. A\n    creature must also make the saving throw when it moves into the\n    bonfire's space for the first time on a turn or ends its turn\n    there.  The bonfire ignites flammable objects in its area that\n    aren't being worn or carried.  The spell's damage increases by 1d8\n    when you reach 5th level (2d8), 11th level (3d8), and 17th level\n    (4d8).\n\n    "
+  name: Create Bonfire
+  level: 0
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: CreateFoodAndWater
+  description: "You create 45 pounds of food and 30 gallons of water on the ground or in\n    containers within range, enough to sustain up to fifteen humanoids or five\n    steeds for 24 hours. The food is bland but nourishing, and spoils if uneaten\n    after 24 hours. The water is clean and doesn't go bad.\n    "
+  name: Create Food And Water
+  level: 3
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Cleric
+  - Paladin
+- class_name: CreateHomunculus
+  description: "While speaking an intricate incantation, you cut yourself with a jewel-encrusted\n    dagger, taking 2d4 piercing damage that can't be reduced in any way. You then\n    drip your blood on the spell's other components and touch them, transforming\n    them into a special construct called a homunculus. The statistics of the\n    homunculus are in the Monster Manual. It is your faithful companion, and it dies\n    if you die. Whenever you finish a long rest, you can spend up to half your Hit\n    Dice if the homunculus is on the same plane of existence as you. When you do so,\n    roll each die and add your Constitution modifier to it. Your hit point maximum\n    is reduced by the total, and the homunculus's hit point maximum and current hit\n    points are\n    both increased by it. This process can reduce you to no lower than 1\n    hit point. and the change to your and the homunculus's hit points ends when you\n    finish your next long rest. The reduction to your hit point\
+    \ maximum can't be\n    removed by any means before then, except by the homunculus\u2018s death. You can have\n    only one homunculus at a time. If you cast this spell while your homunculus\n    lives, the spell fails.\n    "
+  name: Create Homunculus
+  level: 6
+  casting_time: 1 hour
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Clay, ash, and mandrake root, all of which the spell consumes, and a jewel-encrusted dagger worth at least 1,000 gp
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Wizard
+- class_name: CreateOrDestroyWater
+  description: "You either create or destroy water.\n\n    Create Water\n      You create up to 10 gallons of clean water within range in an\n      open container. Alternatively, the water falls as rain in a\n      30-foot cube within range, extinguishing exposed flames in the\n      area.\n\n    Destroy Water\n      You destroy up to 10 gallons of water in an open container\n      within range. Alternatively, you destroy fog in a 30-foot cube\n      within range.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 2nd level or higher, you create or destroy 10 additional\n    gallons of water, or the size of the cube increases by 5 feet, for\n    each slot level above 1st.\n\n    "
+  name: Create Or Destroy Water
+  level: 1
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A drop of water if creating water or a few grains of sand if destroying it
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Cleric
+  - Druid
+- class_name: CreateUndead
+  description: "You can cast this spell only at night. Choose up to three corpses of Medium or\n    Small humanoids within range. Each corpse becomes a ghoul under your control.\n    (The DM has game statistics for these creatures.)\n\n    As a bonus action on each of\n    your turns, you can mentally command any creature you animated with this spell\n    if the creature is within 120 feet of you (if you control multiple creatures,\n    you can command any or all of them at the same time, issuing the same command to\n    each one). You decide what action the creature will take and where it will move\n    during its next turn, or you can issue a general command, such as to guard a\n    particular chamber or corridor. If you issue no commands, the creature only\n    defends itself against hostile creatures. Once given an order, the creature\n    continues to follow it until its task is complete.\n\n    The creature is under your\n    control for 24 hours, after which it stops obeying any command\
+    \ you have given\n    it. To maintain control of the creature for another 24 hours, you must cast this\n    spell on the creature before the current 24-hour period ends. This use of the\n    spell reasserts your control over up to three creatures you have animated with\n    this spell, rather than animating new ones.\n\n    **At Higher Levels:** When you cast\n    this spell using a 7th-level spell slot, you can animate or reassert control\n    over four ghouls.\n    When you cast this spell using an 8th-level spell slot, you\n    can animate or reassert control over five ghouls or two ghasts or wights.\n    When\n    you cast this spell using a 9th-level spell slot, you can animate or reassert\n    control over six ghouls, three ghasts or wights, or two mummies.\n    "
+  name: Create Undead
+  level: 6
+  casting_time: 1 minute
+  casting_range: 10 feet
+  components:
+  - V
+  - S
+  - M
+  materials: One clay pot filled with grave dirt, one clay pot filled with brackish water, and one 150 gp black onyx stone for each corpse
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Cleric
+  - Warlock
+  - Wizard
+- class_name: Creation
+  description: "You pull wisps of shadow material from the Shadowfell to create a nonliving\n    object of vegetable matter within range: soft goods, rope, wood, or something\n    similar. You can also use this spell to create mineral objects such as stone,\n    crystal, or metal. The object created must be no larger than a 5-foot cube, and\n    the object must be of a form and material that you have seen before.\n\n    The\n    duration depends on the object's material. If the object is composed of multiple\n    materials, use the shortest duration.\n\n    Material - Duration\n    Vegetable matter - 1 day\n    Stone/crystal - 12 hours\n    Precious metals - 1 hour\n    Gems - 10 minutes\n\n    Adamantine/Mithral - 1 minute\n\n    Using any material created by this spell as another spell's\n    material component causes that spell to fail.\n\n    **At Higher Levels:** When you cast this spell using a spell slot of\n     6th level or higher, the cube increases by 5 feet for each slot\n  \
+    \   level above 5th.\n\n    "
+  name: Creation
+  level: 5
+  casting_time: 1 minute
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A tiny piece of matter of the same type of the item you plan to create
+  duration: Special
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: CrownOfMadness
+  description: "One humanoid of your choice that you can see within range must succeed on a\n    Wisdom saving throw or become charmed by you for the duration.\n    While the target\n    is charmed in this way, a twisted crown of jagged iron appears on its head, and\n    a madness glows in its eyes.\n\n    The charmed target must use its action before\n    moving on each of its turns to make a melee attack against a creature other than\n    itself that you mentally choose. The target can act normally on its turn if you\n    choose no creature or if none are within its reach.\n\n    On your subsequent turns,\n    you must use your action to maintain control over the target, or the spell\n    ends. Also, the target can make a Wisdom saving throw at the end of each of its\n    turns. On a success, the spell ends.\n    "
+  name: Crown Of Madness
+  level: 2
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: CrownOfStars
+  description: "Seven star-like motes of light appear and orbit your head until the\n    spell ends.  You can use a bonus action to send one of the motes\n    streaking toward one creature or object within 120 feet of\n    you. When you do so, make a ranged spell attack. On a hit. the\n    target takes 4d12 radiant damage. Whether you hit or miss, the\n    mote is expended. The spell ends early if you expend the last\n    mote. If you have four or more motes remaining, they shed bright\n    light in a 30-foot radius and dim light for an additional 30\n    feet. Ifyou have one to three motes remaining, they shed dim light\n    in a 30-foot radius.\n\n    **At Higher Levels:** When you cast this spell using a spell slot of\n    8th level or higher, the number of motes created increases by two\n    for each slot level above 7th.\n\n    "
+  name: Crown Of Stars
+  level: 7
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 1 hour
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: CrusadersMantle
+  description: "Holy power radiates from you in an aura with a 30-foot radius,\n    awakening boldness in friendly creatures. Until the spell ends,\n    the aura moves with you, centered on you. While in the aura, each\n    nonhostile creature in the aura (including you) deals an extra 1d4\n    radiant damage when it hits with a weapon attack.\n\n    "
+  name: Crusaders Mantle
+  level: 3
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Paladin
+- class_name: CureWounds
+  description: "A creature you touch regains a number of hit points equal to 1d8 + your\n    spellcasting ability modifier. This spell has no effect on undead or constructs.\n\n\n    **At Higher Levels:** When you cast this spell using a spell slot of 2nd level or\n    higher, the healing increases by 1d8 for each slot level above 1st.\n    "
+  name: Cure Wounds
+  level: 1
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Bard
+  - Cleric
+  - Druid
+  - Paladin
+  - Ranger

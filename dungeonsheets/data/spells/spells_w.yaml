@@ -1,0 +1,443 @@
+- class_name: WallOfFire
+  description: "You create a wall of fire on a solid surface within range. You can\n    make the wall up to 60 feet long, 20 feet high, and 1 foot thick,\n    or a ringed wall up to 20 feet in diameter, 20 feet high, and 1\n    foot thick. The wall is opaque and lasts for the duration.\n\n    When the wall appears, each creature within its area must make a\n    Dexterity saving throw. On a failed save, a creature takes 5d8\n    fire damage, or half as much damage on a successful save.\n\n    One side of the wall, selected by you when you cast this spell,\n    deals 5d8 fire damage to each creature that ends its turn within\n    10 feet of that side or inside the wall. A creature takes the same\n    damage when it enters the wall for the first time on a turn or\n    ends its turn there. The other side of the wall deals no damage.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 5th level or higher, the damage increases by 1d8 for each slot\n    level above\
+    \ 4th.\n\n    "
+  name: Wall Of Fire
+  level: 4
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A small piece of phosphorus
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: WallOfForce
+  description: "An invisible wall of force springs into existence at a point you\n    choose within range.  The wall appears in any orientation you\n    choose, as a horizontal or vertical barrier or at an angle. It can\n    be free floating or resting on a solid surface. You can form it\n    into a hemispherical dome or a sphere with a radius of up to 10\n    feet, or you can shape a flat surface made up of ten\n    10-foot-by-10-foot panels. Each panel must be continguous with\n    another panel. In any form, the wall is 1/4 inch thick. It lasts\n    for the duration. If the wall cuts through a creature's space when\n    it appears, the creature is pushed to one side of the wall (your\n    choice which side).\n\n    Nothing can physically pass through the wall. It is immune to all\n    damage and can't be dispelled by dispel magic. A disintegrate\n    spell destroys the wall instantly, however. The wall also extends\n    into the Ethereal Plane, blocking ethereal travel through the\n \
+    \   wall.\n\n    "
+  name: Wall Of Force
+  level: 5
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A pinch of powder made by crushing a clear gemstone
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Wizard
+- class_name: WallOfIce
+  description: "You create a wall of ice on a solid surface within range. You can\n    form it into a hemispherical dome or a sphere with radius of up to\n    10 feet, or you can shape a flat surfcae made up of ten\n    10-foot-square panels. Each panel must be contiguous with another\n    panel. In any form, the wall is 1 foot thick and lasts for the\n    duration.\n\n    If the wall cuts through a creature's space when it appears, the\n    creature within its area is pushed to one side of the wall and\n    must make a Dexterity saving throw. On a failed save, the creature\n    takes 10d6 cold damage, or half as much damage on a successful\n    save.\n\n    The wall is an object that can be damaged and thus breached. It\n    has AC 12 and 30 hit points per 10-foot section, and it is\n    vulnerable to fire damage. Reducing a 10-foot section of wall to 0\n    hit points destroys it and leaves behind a sheet of frigid air int\n    he space the wall occupied. A creature moving through the\
+    \ sheet of\n    frigid air for the first time on a turn must make a Constitution\n    saaving throw. The creature takes 5f6 cold damage on a failed\n    save, or half as much damage on a successful one.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 7th level or higher, the damage the wall deals when it appears\n    increases by 2d6, and the damage from passing through the sheet of\n    frigid air increases by 1d6, for each slot level above 6th.\n\n    "
+  name: Wall Of Ice
+  level: 6
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A small piece of quartz
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Wizard
+- class_name: WallOfLight
+  description: "A shimmering wall of bright light appears at a point you choose\n    within range.  The wall appears in any orientation you choose:\n    horizontally, vertically, or diagonally. It can be free floating,\n    or it can rest on a solid surface. The wall can be up to 60 feet\n    long, 10 feet high, and 5 feet thick. The wall blocks line of\n    sight, but creatures and objects can pass through it. It emits\n    bright light out to 120 feet and dim light for an additional 120\n    feet.\n\n    When the wall appears, each creature in its area must make a\n    Constitution saving throw. On a failed save, a creature takes 4d8\n    radiant damage, and it is blinded for 1 minute. On a successful\n    save, it takes half as much damage and isn't blinded. A blinded\n    creature can make a Constitution saving throw at the end of each\n    of its turns, ending the effect on itself on a success.\n\n    A creature that ends its turn in the wall's area takes 4d8 radiant\n    damage.  Until\
+    \ the spell ends, you can use an action to launch a\n    beam of radiance from the wall at one creature you can see within\n    60 feet of it. Make a ranged spell attack. On a hit, the target\n    takes 4d8 radiant damage. Whether you hit or miss, reduce the\n    length of the wall by 10 feet. If the wall's length drops to 0\n    feet, the spell ends.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 6th level or higher, the damage increases by 1d8 for each slot\n    level above 5th.\n\n    "
+  name: Wall Of Light
+  level: 5
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A hand mirror
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: WallOfSand
+  description: "You conjure up a wall of swirling sand on the ground at a point you can see\n    within range. You can make the wall up to 30 feet long, 10 feet high, and 10\n    feet thick, and it vanishes when the spell ends. It blocks line of sight but not\n    movement. A creature is blinded while in the wall's space and must spend 3 feet\n    of movement for every 1 foot it moves there.\n    "
+  name: Wall Of Sand
+  level: 3
+  casting_time: 1 action
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A handful of sand
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Wizard
+- class_name: WallOfStone
+  description: "A nonmagical wall of solid stone springs into existence at a point\n    you choose within range.  The wall is 6 inches thick and is\n    composed of ten 10-foot- by-10-foot panels. Each panel must be\n    contiguous with at least on other panel.  Alternatively, you can\n    create 10-foot-by-20-foot panels that are only 3 inches thick.\n\n    If the wall cuts through a creature's space when it appears, the\n    creature is pushed to one side of the wall (your choice). If a\n    creature would be surrounded on all sides by the wall (or the wall\n    and another solid surface), that creature can make a Dexterity\n    saving throw. On a success, it can use its reaction to move up to\n    its speed so that it is no longer enclosed by the wall.\n\n    The wall can have any shape you desire, though it can't occupy the\n    same space as a creature or object. the wall doesn't need to be\n    vertical or resting on any firm foundation. It must, however,\n    merge with and be solidly\
+    \ supported by existing stone. Thus you\n    can use this spell to bridge a chasm or create a ramp.\n\n    If you create a span greater than 20 feet in length, you must\n    halve the size of each panel to create supports. You can crudely\n    shape the wall to create crenellations, battlements, and so on.\n\n    The wall is an object made of stone that can be damaged and thus\n    breached. Each panel has AC 15 and 30 hit points per inch of\n    thickness. Reducing a panel to 0 hit points destroys it and might\n    cause connected panels to collapse at the DM's discretion.\n\n    If you maintain your concentration on this spell for its whole\n    duration, the wall becomes permanent and can't be\n    dispelled. Otherwise, the wall disappears when the spell ends.\n\n    "
+  name: Wall Of Stone
+  level: 5
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A small block of granite
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: WallOfThorns
+  description: "You create a wall of tough, pliable, tangled brush bristling with needle-sharp\n    thorns. The wall appears within range on a solid surface and lasts for the\n    duration. You choose to make the wall up to 60 feet long, 10 feet high, and 5\n    feet thick or a circle that has a 20-foot diameter and is up to 20 feet high and\n    5  feet thick. The wall blocks line of sight.\n\n    When the wall appears, each\n    creature within its area must make a Dexterity saving throw. On a failed save, a\n    creature takes 7d8 piercing damage, or half as much damage on a successful\n    save.\n\n    A creature can move through the wall, albeit slowly and painfully. For\n    every 1 foot a creature moves through the wall, it must spend 4 feet of\n    movement. Furthermore, the first time a creature enters the wall on a turn or\n    ends its turn there, the creature must make a Dexterity saving throw. It takes\n    7d8 slashing damage on a failed save, or half as much on a successful\
+    \ save.\n\n    At\n    Higher Levels: When you cast this spell using a spell slot of 7th level or\n    higher, both types of damage increase by 1d8 for each slot level above 6th.\n    "
+  name: Wall Of Thorns
+  level: 6
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A handful of thorns
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+- class_name: WallOfWater
+  description: "(a drop of water)\n\n    You conjure up a wall of water on the ground at a point you can\n    see within range. You can make the wall up to 30 feet long, 10\n    feet high, and 1 foot thick, or you can make a ringed wall up to\n    20 feet in diameter, 20 feet high, and 1 foot thick. The wall\n    vanishes when the spell ends. The wall's space is difficult\n    terrain.\n\n    Any ranged weapon attack that enters the wall's space has\n    disadvantage on the attack roll, and fire damage is halved if the\n    fire effect passes through the wall to reach its target. Spells\n    that deal cold damage that pass through the wall cause the area of\n    the wall they pass through to freeze solid (at least a 5-foot\n    square section is frozen). Each 5-foot-square frozen section has\n    AC 5 and 15 hit points. Reducing a frozen section to 0 hit points\n    destroys it. When a section is destroyed, the wall\u2019s water doesn\u2019t\n    fill it.\n\n    "
+  name: Wall Of Water
+  level: 3
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  - M
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: WardingBond
+  description: "This spell wards a willing creature you touch and creates a mystic connection\n    between you and the target until the spell ends.\n\n    While the target is within 60\n    feet of you, it gains a +1 bonus to AC and saving throws, and it has resistance\n    to all damage. Also, each time it takes damage, you take the same amount of\n    damage.\n\n    The spell ends if you drop to 0 hit points or if you and the target\n    become separated by more than 60 feet. It also ends if the spell is cast again\n    on either of the connected creatures. You can also dismiss the spell as an\n    action.\n    "
+  name: Warding Bond
+  level: 2
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A pair of platinum rings worth at least 50 gp each, which you and target must wear for the duration
+  duration: 1 hour
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Cleric
+- class_name: WardingWind
+  description: "A strong wind (20 miles per hour) blows around you in a 10-foot\n    radius and moves with you, remaining centered on you. The wind\n    lasts for the spell's duration.\n\n    The wind has the following effects:\n\n    - It deafens you and other creatures in its area.\n    - It extinguishes unprotected flames in its area that are\n      torch-sized or smaller.\n    - The area is difficult terrain for creatures other than you.\n    - The attack rolls of ranged weapon attacks have disadvantage if\n      they pass in or out of the wind.\n    - It hedges out vapor, gas, and fog that can be dispersed by\n      strong wind.\n\n    "
+  name: Warding Wind
+  level: 2
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Bard
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: WaterBreathing
+  description: "This spell grants up to ten willing creatures you can see within range the\n    ability to breathe underwater until the spell ends. Affected creatures also\n    retain their normal mode of respiration.\n    "
+  name: Water Breathing
+  level: 3
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A short reed or piece of straw
+  duration: 24 hours
+  ritual: true
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Ranger
+  - Sorcerer
+  - Wizard
+- class_name: WaterWalk
+  description: "This spell grants the ability to move across any liquid surface \u2013 such as water,\n    acid, mud, snow, quicksand, or lava \u2013 as if it were harmless solid ground\n    (creatures crossing molten lava can still take damage from the heat).\n    Up to ten\n    willing creatures you can see within range gain this ability for the duration.\n\n\n    If you target a creature submerged in a liquid, the spell carries the target to\n    the surface of the liquid at a rate of 60 feet per round.\n    "
+  name: Water Walk
+  level: 3
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A piece of cork
+  duration: 1 hour
+  ritual: true
+  magic_school: Transmutation
+  classes:
+  - Cleric
+  - Druid
+  - Ranger
+  - Sorcerer
+- class_name: WaterySphere
+  description: "You conjure up a sphere of water with a 5-foot radius on a point\n    you can see within range. The sphere can hover in the air, but no\n    more than 10 feet off the ground. The sphere remains for the\n    spell's duration.\n\n    Any creature in the sphere's space must make a Strength saving\n    throw. On a successful save, a creature is ejected from that space\n    to the nearest unoccupied space outside it.  A Huge or larger\n    creature succeeds on the saving throw automatically. On a failed\n    save, a creature is restrained by the sphere and is engulfed by\n    the water. At the end of each of its turns, a restrained target\n    can repeat the saving throw.\n\n    The sphere can restrain a maximum of four Medium or smaller\n    creatures or one Large creature. If the sphere restrains a\n    creature in excess of these numbers, a random creature that was\n    already restrained by the sphere falls out of it and lands prone\n    in a space within 5 feet of it.\n\n\
+    \    As an action, you can move the sphere up to 30 feet in a straight\n    line. If it moves over a pit, cliff, or other drop, it safely\n    descends until it is hovering 10 feet over ground. Any creature\n    restrained by the sphere moves with it. You can ram the sphere\n    into creatures, forcing them to make the saving throw, but no more\n    than once per turn.\n\n    When the spell ends, the sphere falls to the ground and\n    extinguishes all normal flames within 30 feet of it. Any creature\n    restrained by the sphere is knocked prone in the space where it\n    falls.\n\n    "
+  name: Watery Sphere
+  level: 4
+  casting_time: 1 action
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A droplet of water
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: Web
+  description: "You conjure a mass of thick, sticky webbing at a point of your\n    choice within range.  The webs fill a 20-foot cube from that point\n    for the duration. The webs are difficult terrain and lightly\n    obscure their area.\n\n    If the webs aren't anchored between two solid masses (such as\n    walls or trees) or layered across a floor, wall, or ceiling, the\n    conjured web collapses on itself, and the spell ends at the start\n    of your next turn. Webs layered over a flat surface have a depth\n    of 5 feet.\n\n    Each creature that starts its turn in the webs or that enters them\n    during its turn must make a Dexterity saving throw. On a failed\n    save, the creature is restrained as long as it remains in the webs\n    or until it breaks free.\n\n    A creature restrained by the webs can use its action to make a\n    Strength check against your spell save DC. If it succeeds, it is\n    no longer restrained.\n\n    The webs are flammable. Any 5-foot cube of webs\
+    \ exposed to fire\n    burns away in 1 round, dealing 2d4 fire damage to any creature\n    that starts its turn in the fire.\n\n    "
+  name: Web
+  level: 2
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A bit of spiderweb
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: Weird
+  description: "Drawing on the deepest fears of a group of creatures, you create\n    illusory creatures in their minds, visible only to them.  Each\n    creature in a 30-foot-radius sphere centered on a point of your\n    choice within range must make a Wisdom saving throw. On a failed\n    save, a creature becomes frightened for the duration.\n\n    The illusion calls on the creature's deepest fears, manifesting\n    its worst nightmares as an implacable threat. At the end of each\n    of the frightened creature's turns, it must succeed on a Wisdom\n    saving throw or take 4d10 psychic damage. On a successful save,\n    the spell ends for that creature.\n\n    "
+  name: Weird
+  level: 9
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Wizard
+- class_name: Whirlwind
+  description: "A whirlwind howls down to a point that you can see on the ground\n    within range.  The whirlwind is a 10-foot-radius, 30-foot-high\n    cylinder centered on that point.  Until the spell ends, you can\n    use your action to move the whirlwind up to 30 feet in any\n    direction along the ground. The whirlwind sucks up any Medium or\n    smaller objects that aren't secured to anything and that aren't\n    worn or carried by anyone.\n\n    A creature must make a Dexterity saving throw the first time on a\n    turn that it enters the whirlwind or that the whirlwind enters its\n    space, including when the whirlwind first appears. A creature\n    takes 10d6 bludgeoning damage on a failed save, or half as much\n    damage on a successful one. In addition, a Large or smaller\n    creature that fails the save must succeed on a Strength saving\n    throw or become restrained in the whirlwind until the spell\n    ends. When a creature starts its turn restrained by the whirlwind,\n\
+    \    the creature is pulled 5 feet higher inside it, unless the\n    creature is at the top.\n\n    A restrained creature moves with the whirlwind and falls when the\n    spell ends, unless the creature has some means to stay aloft. A\n    restrained creature can use an action to make a Strength or\n    Dexterity check against your spell save DC. If successful, the\n    creature is no longer restrained by the whirlwind and is hurled\n    3d6 x 10 feet away from it in a random direction.\n\n    "
+  name: Whirlwind
+  level: 7
+  casting_time: 1 action
+  casting_range: 300 feet
+  components:
+  - V
+  - M
+  materials: A piece of straw
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Druid
+  - Wizard
+  - Sorcerer
+- class_name: WildCunning
+  description: "You call out to the spirits of nature to aid you. When you cast this\n    spell, choose one of the following effects:\n    -- If there are any tracks on the ground within range, you know where they\n    are, and you make Wisdom (Survival) checks to follow these tracks with\n    advantage for 1 hour or until you cast this spell again.\n\n    -- If there is edible forage within range, you know it and where to find\n    it.\n\n    -- If there is clean drinking water within range, you know it and where to\n    find it.\n\n    -- If there is suitable shelter for you and your companions with range, you\n    know it and where to find it.\n\n    -- Send the spirits to bring back wood for a fire and to set up a campsite\n    in the area using your supplies. The spirits build the fire in a circle of\n    stones, put up tents, unroll bedrolls, and put out any rations and water\n    for consumption.\n\n    -- Have the spirits instantly break down a campsite, which includes putting\n\
+    \    out a fire, taking down tents, packing up bags, and burying any rubbish.\n    "
+  name: Wild Cunning
+  level: 1
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Insantaneous
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Ranger
+- class_name: WindWalk
+  description: "You and up to ten willing creatures you can see within range assume\n    a gaseous form for the duration, appearing as wisps of cloud.\n    While in this cloud form, a creature has a flying speed of 300\n    feet and has resistance to damage from nonmagical weapons. The\n    only actions a creature can take in this form are the Dash action\n    or to revert to its normal form.  Reverting takes 1 minute, during\n    which time a creature is incapacitated and can't move. Until the\n    spell ends, a creature can revert to cloud form, which also\n    requires the 1-minute transformation.\n\n    If a creature is in cloud form and flying when the effect ends,\n    the creature descends 60 feet per round for 1 minute until it\n    lands, which it does safely. If it can't land after 1 minute, the\n    creature falls the remaining distance.\n\n    "
+  name: Wind Walk
+  level: 6
+  casting_time: 1 minute
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: Fire and holy water
+  duration: 8 hours
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+- class_name: WindWall
+  description: "A wall of strong wind rises from the ground at a point you choose\n    within range.\n\n    You can make the wall up to 50 feet long, 15 feet high, and 1 foot\n    thick. You can shape the wall in any way you choose so long as it\n    makes one continuous path along the ground. The wall lasts for the\n    duration.\n\n    When the wall appears, each creature within its area must make a\n    Strength saving throw. A creature takes 3d8 bludgeoning damage on\n    a failed save, or half as much damage on a successful one.\n\n    The strong wind keeps fog, smoke, and other gases at bay. Small or\n    smaller flying creatures or objects can't pass through the\n    wall. Loose, lightweight materials brought into the wall fly\n    upward. Arrows, bolts, and other ordinary projectiles launched at\n    targets behind the wall are deflected upward and automatically\n    miss. (Boulders hurled by giants or siege engines, and similar\n    projectiles, are unaffected.) Creatures in gaseous\
+    \ form can't pass\n    through it.\n\n    "
+  name: Wind Wall
+  level: 3
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A tiny fan and a feather of exotic origin
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Druid
+  - Ranger
+- class_name: Wish
+  description: "Wish is the mightiest spell a mortal creature can cast. By simply\n    speaking aloud, you can alter the very foundations of reality in\n    accord with your desires.\n\n    The basic use of this spell is to duplicate any other spell of 8th\n    level or lower. You don't need to meet any requirements in that\n    spell, including costly components. The spell simply takes effect.\n    Alternatively, you can create one of the following effects of your\n    choice:\n\n    - You create one object of up to 25,000 gp in value that isn't a\n      magic item. The object can be no more than 300 feet in any\n      dimension, and it appears in an unoccupied space you can see on\n      the ground.\n    - You allow up to twenty creatures that you can see to regain all\n      hit points, and you end all effects on them described in the\n      greater restoration spell.\n    - You grant up to ten creatures that you can see resistance to a\n      damage type you choose.\n    - You grant\
+    \ up to ten creatures you can see immunity to a single\n      spell or other magical effect for 8 hours. For instance, you\n      could make yourself and all your com panions immune to a lich's\n      life drain attack.\n    - You undo a single recent event by forcing a reroll of any roll\n      made within the last round (including your last turn). Reality\n      reshapes itself to accommodate the new result. For example, a\n      wish spell could undo an opponent's successful save, a foe's\n      critical hit, or a friend's failed save. You can force the\n      reroll to be made with advantage or disadvantage, and you can\n      choose whether to use the reroll or the original roll.\n\n    You might be able to achieve something beyond the scope of the\n    above examples. State your wish to the DM as precisely as\n    possible.  The DM has great latitude in ruling what occurs in such\n    an instance; the greater the wish, the greater the likelihood that\n    something goes wrong.\
+    \ This spell might simply fail, the effect you\n    desire might only be partly achieved, or you might suffer some\n    unforeseen consequence as a result of how you worded the wish. For\n    example, wishing that a villain were dead might propel you forward\n    in time to a period when that villain is no longer alive,\n    effectively removing you from the game. Similarly, wishing for a\n    legendary magic item or artifact might instantly transport you to\n    the presence of the item's current owner.\n\n    The stress of casting this spell to produce any effect other than\n    duplicating another spell weakens you. After enduring that stress,\n    each time you cast a spell until you finish a long rest, you take\n    1d10 necrotic damage per level of that spell. This damage can't be\n    reduced or prevented in any way. In addition, your Strength drops\n    to 3, if it isn't 3 or lower already, for 2d4 days. For each of\n    those days that you spend resting and doing nothing more\
+    \ than\n    light activity, your remaining recovery time decreases by 2\n    days. Finally, there is a 33 percent chance that you are unable to\n    cast wish ever again if you suffer this stress.\n\n    "
+  name: Wish
+  level: 9
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: WitchBolt
+  description: "A beam of crackling, blue energy lances out toward a creature within range,\n    forming a sustained arc of lightning between you and the target.\n\n    Make a ranged spell attack against that creature. On a hit, the\n    target takes 1d12 lightning damage, and on each of your turns for\n    the duration, you can use your action to deal 1d12 lightning\n    damage to the target automatically. The spell ends if you use your\n    action to do anything else. The spell also ends if the target is\n    ever outside the spell's range or if it has total cover from you.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 2nd level or higher, the initial damage increases by 1d12 for\n    each slot level above 1st.\n\n    "
+  name: Witch Bolt
+  level: 1
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A twig from a tree that has been struck by lightning
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: WordOfRadiance
+  description: "You utter a divine word, and burning radiance erupts from you. Each\n    creature of your choice that you can see within range must succeed\n    on a Constitution saving throw or take 1d6 radiant damage.\n\n    The spell's damage increases by 1d6 when you reach 5th level\n    (2d6), 11th level (3d6), and 17th level (4d6).\n\n    "
+  name: Word Of Radiance
+  level: 0
+  casting_time: 1 action
+  casting_range: 5 feet
+  components:
+  - V
+  - M
+  materials: A holy symbol
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Cleric
+- class_name: WordOfRecall
+  description: "You and up to five willing creatures within 5 feet of you instantly\n    teleport to a previously designated sanctuary.  You and any\n    creatures that teleport with you appear in the nearest unoccupied\n    space to the spot you designated when you prepared your sanctuary\n    (see below). If you cast this spell without first preparing a\n    sanctuary, the spell has no effect.\n\n    You must designate a sanctuary by casting this spell within a\n    location, such as a temple, dedicated to or strongly linked to\n    your deity. If you attempt to cast the spell in this manner in an\n    area that isn\u2019t dedicated to your deity, the spell has no effect.\n\n    "
+  name: Word Of Recall
+  level: 6
+  casting_time: 1 action
+  casting_range: 5 feet
+  components:
+  - V
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Cleric
+- class_name: WrathOfNature
+  description: "You call out to the spirits of nature to rouse them against your enemies. Choose\n    a point you can see within range. The spirits cause trees, rocks, and grasses\n    in a 60-foot cube centered on that point to become animated until the spell\n    ends.\n    Grasses and Undergrowth. Any area of ground in the cube that is covered by\n    grass or undergrowth is difficult terrain for your enemies.\n    Trees. At the start\n    of each of your turns, each of your enemies within 10 feet of any tree in the\n    cube must succeed on a Dexterity saving throw or take 4d6 slashing damage from\n    whipping branches.\n    Roots and Vines. At the end of each of your turns, one\n    creature of your choice that is on the ground in the cube must succeed on a\n    Strength saving throw or become restrained until the spell ends. A restrained\n    creature can use an action to make a Strength (Athletics) check against your\n    spell save DC, ending the effect on itself on a success.\n\
+    \    Rocks. As a bonus\n    action on your turn, you can cause a loose rock in the cube to launch at a\n    creature you can see in the cube. Make a ranged spell attack against the target.\n    On a hit, the target takes 3d8 nonmagical bludgeoning damage, and it must\n    succeed on a Strength saving throw or fall prone.\n    "
+  name: Wrath Of Nature
+  level: 5
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Druid
+  - Ranger
+- class_name: WrathfulSmite
+  description: "The next time you hit with a melee weapon attack during this\n    spell's duration, your attack deals an extra 1d6 psychic damage.\n    Additionally, if the target is a creature, it must make a Wisdom\n    saving throw or be frightened of you until the spell ends. As an\n    action, the creature can make a Wisdom check against your spell\n    save DC to steel its resolve and end this spell.\n    "
+  name: Wrathful Smite
+  level: 1
+  casting_time: 1 bonus action
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Paladin
+- class_name: Wristpocket
+  description: "You flick your wrist, causing one object in your hand to vanish.\n    The object, which only you can be holding and can weigh no more than\n    5 pounds, is transported to an extradimensional space, where it remains for\n    the duration.\n    Until the spell ends, you can use your action to summon the object to your\n    free hand, and you can use your action to return the object to\n    the extradimensional space. An object still in the pocket plane when\n    the spell ends appears in your space, at your feet.\n    "
+  name: Wristpocket
+  level: 2
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: true
+  magic_school: Dunamancy
+  classes:
+  - Wizard

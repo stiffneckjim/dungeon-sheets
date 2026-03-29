@@ -1,0 +1,325 @@
+- class_name: IceKnife
+  description: "You create a shard of ice and fling it at one\n    creature within range. Make a ranged spell attack against the target. On a hit,\n    the target takes 1d10 piercing damage. Hit or miss, the shard then explodes. The\n    target and each creature within 5 feet of the point where the ice exploded must\n    succeed on a Dexterity saving throw or take 2d6 cold damage.\n    At Higher Levels.\n    When you cast this spell using a spell slot of 2nd level or higher, the cold\n    damage increases by 1d6 for each slot level above 1st.\n    "
+  name: Ice Knife
+  level: 1
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - S
+  - M
+  materials: A drop of water or piece of ice
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: IceStorm
+  description: "A hail of rock-hard ice pounds to the ground in a 20-foot-radius, 40-foot-high\n    cylinder centered on a point within range.\n    Each creature in the cylinder must\n    make a Dexterity saving throw. A creature takes 2d8 bludgeoning damage and 4d6\n    cold damage on a failed save, or half as much damage on a successful one.\n\n\n    Hailstones turn the storm's area of effect into difficult terrain until the end\n    of your next turn.\n\n    **At Higher Levels:** When you cast this spell using a spell\n    slot of 5th level or higher, the bludgeoning damage increases by 1d8 for each\n    slot level above 4th.\n    "
+  name: Ice Storm
+  level: 4
+  casting_time: 1 action
+  casting_range: 300 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A pinch of dust and a few drops of water
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: Identify
+  description: "You choose one object that you must touch throughout the casting of the spell.\n    If it is a magic item or some other magic-imbued object, you learn its\n    properties and how to use them, whether it requires attunement to use, and how\n    many charges it has, if any. You learn whether any spells are affecting the item\n    and what they are. If the item was created by a spell, you learn which spell\n    created it.\n\n    If you instead touch a creature throughout the casting, you learn\n    what spells, if any, are currently affecting it.\n    "
+  name: Identify
+  level: 1
+  casting_time: 1 minute
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A pearl worth at least 100 gp and an owl feather
+  duration: Instantaneous
+  ritual: true
+  magic_school: Divination
+  classes:
+  - Bard
+  - Wizard
+- class_name: IdInsinuation
+  description: "You unleash a torrent of conflicting desires in the mind of one creature you can\n    see within range, impairing its ability to make decisions. The target must succeed\n    on a Wisdom saving throw or be incapacitated. At the end of each of its turns, it\n    takes 1d12 psychic damage, and it can then make another Wisdom saving throw. On a\n    success, the spell ends on the target.\n    "
+  name: Id Insinuation
+  level: 1
+  casting_time: 1 action
+  casting_range: 60ft
+  components:
+  - V
+  - S
+  duration: 1 minute
+  magic_school: Enchantment
+  classes: Sorcerer
+- class_name: IllusoryDragon
+  description: "By gathering threads of shadow material from the Shadowfell, you create a Huge\n    shadowy dragon in an unoccupied space that you can see within range. The\n    illusion lasts for the spell's duration and occupies its space, as if it were a\n    creature.\n    When the illusion appears, any of your enemies that can see it must\n    succeed on a Wisdom saving throw or become frightened of it for 1 minute. If a\n    frightened creature ends its turn in a location where it doesn't have line of\n    sight to the illusion, it can repeat the saving throw, ending the effect on\n    itself on a success.\n    As a bonus action on your turn, you can move the illusion\n    up to 60 feet. At any point during its movement, you can cause it to exhale a\n    blast of energy in a 60-foot cone originating from its space. When you create\n    the dragon, choose a damage type: acid, cold, fire, lightning, necrotic, or\n    poison. Each creature in the cone must make an Intelligence saving\
+    \ throw, taking\n    '7d6 damage of the\n    chosen damage type on a failed save, or half as much damage\n    on a successful one.\n    The illusion is tangible because of the shadow stuff used\n    to create it, but attacks miss it automatically. it succeeds on all saving\n    throws, and it is immune to all damage and conditions. A creature that uses an\n    action to examine the dragon can determine that it is an illusion by succeeding\n    on an Intelligence (Investigation) check against your spell save DC. If a\n    creature discerns the illusion for what it is, the creature can see through it\n    and has advantage on saving throws against its breath.\n    "
+  name: Illusory Dragon
+  level: 8
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Wizard
+- class_name: IllusoryScript
+  description: "You write on parchment, paper, or some other suitable writing material and imbue\n    it with a potent illusion that lasts for the duration.\n\n    To you and any\n    creatures you designate when you cast the spell, the writing appears normal,\n    written in your hand, and conveys whatever meaning you intended when you wrote\n    the text. To all others, the writing appears as if it were written in an unknown\n    or magical script that is unintelligible. Alternatively, you can cause the\n    writing to appear to be an entirely different message, written in a different\n    hand and language, though the language must be one you know.\n\n    Should the spell\n    be dispelled, the original script and the illusion both disappear.\n    A creature\n    with truesight can read the hidden message.\n    "
+  name: Illusory Script
+  level: 1
+  casting_time: 1 minute
+  casting_range: Touch
+  components:
+  - S
+  - M
+  materials: A lead-based ink worth at least 10 gp, which the spell consumes
+  duration: 10 days
+  ritual: true
+  magic_school: Illusion
+  classes:
+  - Bard
+  - Warlock
+  - Wizard
+- class_name: Immolation
+  description: "Flames wreathe one creature you can see within range. The target must make a\n    Dexterity saving throw. It takes 8d6 fire damage on a failed save, or half as\n    much damage on a successful one. On a failed save, the target also burns for the\n    spell's duration. The burning target sheds bright light in a 30-foot radius and\n    dim light for an additional 30 feet. At the end of each of its turns, the\n    target repeats the saving throw. It takes 4d6 fire damage on a failed save, and\n    the spell ends on a successful one. These magical flames can't be extinguished\n    by nonmagical means.\n    If damage from this spell kills a target, the target is\n    turned to ash.\n    "
+  name: Immolation
+  level: 5
+  casting_time: 1 action
+  casting_range: 90 feet
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: Imprisonment
+  description: "You create a magical restraint to hold a creature that you can see within range.\n\n    The target must succeed on a Wisdom saving throw or be bound by the spell; if\n    it succeeds, it is immune to this spell if you cast it again. While affected by\n    this spell, the creature doesn't need to breathe, eat, or drink, and it doesn't\n    age. Divination spells can't locate or perceive the target.\n\n    When you cast the\n    spell, you choose one of the following forms of imprisonment.\n\n    Burial\n    The\n    target is entombed far beneath the earth in a sphere of magical force that is\n    just large enough to contain the target. Nothing can pass through the\n    sphere, nor can any creature teleport or use planar travel to get into or out of\n    it.\n    The special component for this version of the spell is a small mithral orb.\n\n\n    Chaining\n    Heavy chains, firmly rooted in the ground, hold the target in place.\n    The target is restrained until the spell\
+    \ ends, and it can't move or be moved by\n    any means until then.\n    The special component for this version of the spell is\n    a fine chain of precious metal.\n\n    Hedged Prison\n    The spell transports the target\n    into a tiny demiplane that is warded against teleportation and planar travel.\n    The demiplane can be a labyrinth, a cage, a tower, or any similar confined\n    structure or area of your choice.\n    The special component for this version of the\n    spell is a miniature representation of the prison made from jade.\n\n    Minimus\n    Containment\n    The target shrinks to a height of 1 inch and is imprisoned inside a\n    gemstone or similarobject. Light can pass through the gemstone\n    normally (allowing the target to see out and other creatures to see in), but\n    nothing else can pass through, even by means of teleportation or planar travel.\n    The gemstone can't be cut or broken while the spell remains in effect.\n    The\n    special component for\
+    \ this version of the spell is a large, transparent\n    gemstone, such as a corundum, diamond, or ruby.\n\n    Slumber\n    The target falls asleep\n    and can't be awoken.\n    The special component for this version of the\n    spell consists of rare soporific herbs.\n\n    Ending the Spell\n    During the casting of\n    the spell, in any of its versions, you can specify a condition that will cause\n    the spell to end and release the target. The condition can be as specific or as\n    elaborate as you choose, but the DM must agree that the condition is reasonable\n    and has a likelihood of coming to pass. The conditions can be based on a\n    creature's name, identity, or deity but otherwise must be based on\n    observable actions or qualities and not based on intangibles such as level,\n    class, or hit points.\n\n    A dispel magic spell can end the spell only if it is\n    cast as a 9th-level spell, targeting either the prison or the special component\n    used to create\
+    \ it.\n\n    You can use a particular special component to create only one\n    prison at a time. If you cast the spell again using the same\n    component, the target of the first casting is immediately freed\n    from its binding.\n\n    "
+  name: Imprisonment
+  level: 9
+  casting_time: 1 minute
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A vellum depiction or a carved statuette in the likeness of the target, and a special component that varies according to the version of the spell you choose, worth at least 500 gp per hit die of the target
+  duration: Until dispelled
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Warlock
+  - Wizard
+- class_name: IncendiaryCloud
+  description: "A swirling cloud of smoke shot through with white-hot embers appears in a\n    20-foot-radius sphere centered on a point within range.\n    The cloud spreads around\n    corners and is heavily obscured. It lasts for the duration or until a wind of\n    moderate or greater speed (at least 10 miles per hour) disperses it.\n\n    When the\n    cloud appears, each creature in it must make a Dexterity saving throw. A\n    creature takes 10d8 fire damage on a failed save, or half as much damage on a\n    successful one. A creature must also make this saving throw when it enters the\n    spell's area for the first time on a turn or ends its turn there.\n\n    The cloud\n    moves 10 feet directly away from you in a direction that you choose at the start\n    of each of your turns.\n    "
+  name: Incendiary Cloud
+  level: 8
+  casting_time: 1 action
+  casting_range: 150 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: InfernalCalling
+  description: "Uttering a dark incantation, you summon a devil from the Nine Hells. You choose\n    the devil's type, which must be one of challenge rating 6 or lower, such as a\n    barbed devil or a bearded devil. The devil appears in an unoccupied space that\n    you can see within range. The devil disappears when it drops to 0 hit points or\n    when the spell ends.\n    The devil is unfriendly toward you and your companions.\n    Roll initiative for the devil, which has its own turns. It is under the Dungeon\n    Master's control and acts according to its nature on each of its turns, which\n    might result in its attacking you if it thinks it can prevail, or trying to\n    tempt you to undertake an evil act in exchange for limited service. The DM has\n    the creature's statistics.\n    On each of your turns, you can try to issue a verbal\n    command to the devil (no action required by you). It obeys the command if the\n    likely outcome is in accordance with its desires, especially\
+    \ if the result would\n    draw you toward evil. Otherwise, you must make a Charisma (Deception,\n    Intimidation, or Persuasion) check contested by its Wisdom (Insight) check. You\n    make the check with advantage if you say the devil's true name. Ifyour check\n    fails, the devil becomes immune to your verbal commands for the duration of the\n    spell, though it can still carry out your commands if it chooses. If your check\n    succeeds, the devil carries out your command- such as \"attack my enemies,\"\n    \"explore the room ahead,\" or \"bear this message to the queen\"-until it completes\n    the activity, at which point it returns to you to report having done so.\n    If\n    your concentration ends before the spell reaches its full duration, the devil\n    doesn\u2018t disappear if it has become immune to your verbal commands. Instead, it\n    acts in whatever manner it chooses for 3d6 minutes, and then it disappears.\n    If\n    you possess an individual devil's talisman,\
+    \ you can summon that devil if it is\n    of the appropriate challenge\n    rating plus 1, and it obeys all your commands, with\n    no Charisma checks required.\n\n    **At Higher Levels:** When you cast this spell using\n    a spell slot of 6th level or higher, the challenge rating increases by 1 for\n    each slot level above 5th.\n    "
+  name: Infernal Calling
+  level: 5
+  casting_time: 1 minute
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A ruby worth at least 999 gp
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Warlock
+  - Wizard
+- class_name: Infestation
+  description: "You cause a cloud of mites, fleas, and other parasites to appear momentarily on\n    one creature you can see within range. The target must succeed on a Constitution\n    saving throw, or it takes 1d6 poison damage and moves 5 feet in a random\n    direction if it can move and its speed is at least 5 feet. Roll a d4 for the\n    direction: 1., north; 2, south; 3, east; or 4, west. This movement doesn't\n    provoke opportunity attacks, and if the direction rolled is blocked, the target\n    doesn't move.\n    The spell's damage increases by 1d6 when you reach 5th level\n    (2d6), 11th level (3d6), and 17th level (4d6).\n    "
+  name: Infestation
+  level: 0
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A living flea
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: InflictWounds
+  description: "Make a melee spell attack against a creature you can reach. On a hit, the target\n    takes 3d10 necrotic damage.\n\n    **At Higher Levels:** When you cast this spell using a\n    spell slot of 2nd level or higher, the damage increases by 1d10 for each slot\n    level above 1st.\n    "
+  name: Inflict Wounds
+  level: 1
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Cleric
+- class_name: InsectPlague
+  description: "Swarming, biting locusts fill a 20-foot-radius sphere centered on a point you\n    choose within range. The sphere spreads around corners. The sphere remains for\n    the duration, and its area is lightly obscured. The sphere's area is difficult\n    terrain.\n\n    When the area appears, each creature in it must make a Constitution\n    saving throw. A creature takes 4d10 piercing damage on a failed save, or half as\n    much damage on a successful one. A creature must also make this saving throw\n    when it enters the spell's area for the first time on a turn or ends its turn\n    there.\n\n    **At Higher Levels:** When you cast this spell using a spell slot of 6th\n    level or higher, the damage increases by 1d10 for each slot level above 5th.\n    "
+  name: Insect Plague
+  level: 5
+  casting_time: 1 action
+  casting_range: 300 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A few grains of sugar, some kernels of grain, and a smear of fat
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Cleric
+  - Druid
+  - Sorcerer
+- class_name: InvestitureOfFlame
+  description: "Flames race across your body, shedding bright light in a 30-foot radius and dim\n    light for an additional 30 feet for the spell's duration. The flames don't harm\n    you. Until the spell ends, you gain the following benefits:\n    - You are immune to\n    fire damage and have resistance to cold damage.\n    - Any creature that moves within\n    5 feet of you for the first time on a turn or ends its turn there takes 1d10\n    fire damage.\n    - You can use your action to create a line of fire 15 feet long and\n    5 feet wide extending from you in a direc- tion you choose. Each creature in\n    the line must make a Dexterity saving throw. A creature takes 4d8 fire damage on\n    a failed save, or half as much damage on a successful one.\n    "
+  name: Investiture Of Flame
+  level: 6
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: InvestitureOfIce
+  description: "Until the spell ends, ice rimes your body, and you gain the\n    following benefits:\n\n    - You are immune to cold damage and have resistance to fire\n      damage.\n    - You can move across difficult terrain created by ice or snow\n      without spending extra movement.\n    - The ground in a 10-foot radius around you is icy and is\n      difficult terrain for creatures other than you. The radius moves\n      with you.\n    - You can use your action to create a 15-foot cone of freezing\n      wind extending from your outstretched hand in a direction you\n      choose. Each creature in the cone must make a Constitution\n      saving throw. A creature takes 4d6 cold damage on a failed save,\n      or half as much damage on a successful one. A creature that\n      fails its save against this effect has its speed halved until\n      the start of your next turn.\n\n    "
+  name: Investiture Of Ice
+  level: 6
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: InvestitureOfStone
+  description: "Until the spell ends, bits of rock spread across your body, and you gain the\n    following benefits:\n\n    - You have resistance to bludgeoning, piercing, and slashing\n      damage from nonmagical weapons.\n    - You can use your action to create a small earthquake on the\n      ground in a 15-foot radius centered on you. Other creatures on\n      that ground must succeed on a Dexterity saving throw or be\n      knocked prone.\n    - You can move across difficult terrain made of earth or stone\n      without spending extra movement. You can move through solid\n      earth or stone as if it was air and without destabilizing it,\n      but you can't end your movement there. If you do so, you are\n      ejected to the nearest unoccupied space, this spell ends, and\n      you are stunned until the end of your next turn.\n\n    "
+  name: Investiture Of Stone
+  level: 6
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: InvestitureOfWind
+  description: "Until the spell ends, wind whirls around you, and you gain the following\n    benefits:\n    - Ranged weapon attacks made against you have disad- vantage on the\n    attack roll.\n    - You gain a flying speed of 60 feet. If you are still flying when\n    the spell ends, you fall, unless you can some- how prevent it.\n    - You can use\n    your action to create a 15-foot cube of swirling wind centered on a point you\n    can see within 60 feet of you. Each creature in that area must make a\n    Constitution saving throw. A creature takes 2d10 bludgeoning damage on a failed\n    save, or half as much damage on a successful one. If a Large or smaller creature\n    fails the save, that creature is also pushed up to 10 feet away from the center\n    of the cube.\n    "
+  name: Investiture Of Wind
+  level: 6
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Invisibility
+  description: "A creature you touch becomes invisible until the spell ends. Anything the target\n    is wearing or carrying is invisible as long as it is on the target's person.\n    The spell ends for a target that attacks or casts a spell.\n\n    At Higher Levels:\n    When you cast this spell using a spell slot of 3rd level or higher, you can\n    target one additional creature for each slot level above 2nd.\n    "
+  name: Invisibility
+  level: 2
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: An eyelash encased in gum arabic
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Invulnerability
+  description: You are immune to all damage until the spell ends.
+  name: Invulnerability
+  level: 9
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  - M
+  materials: A small piece of adamantine worth at least 500 gp, which the spell consumes
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Wizard

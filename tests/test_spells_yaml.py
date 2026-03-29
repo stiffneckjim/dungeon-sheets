@@ -30,7 +30,7 @@ class TestYamlBackedSpells(TestCase):
         shield_cls = find_content("shield", valid_classes=[spells.Spell])
         self.assertIs(shield_cls, spells.Shield)
 
-    def test_non_migrated_spell_still_uses_python_fallback(self):
-        """Spells not in YAML should continue to come from Python definitions."""
-        self.assertFalse(hasattr(spells.MageArmor, "data_source"))
+    def test_mage_armor_loaded_from_yaml(self):
+        """Mage Armor should now resolve to the YAML-backed spell class."""
+        self.assertEqual(spells.MageArmor.data_source, "yaml")
         self.assertEqual(spells.MageArmor.level, 1)

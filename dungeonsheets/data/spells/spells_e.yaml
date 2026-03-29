@@ -1,0 +1,310 @@
+- class_name: EarthTremor
+  description: "You cause a tremor in the ground in a 10-foot radius. Each creature other than\n    you in that area must make a Dexterity saving throw. On a failed save, a\n    creature takes 1d6 bludgeoning damage and is knocked prone. If the ground in\n    that area is loose earth or stone, it becomes difficult terrain until cleared.\n    At Higher Levels. When you cast this spell using a spell slot of 2nd level or\n    higher, the damage increases by 1d6 for each slot level above 1st.\n    "
+  name: Earth Tremor
+  level: 1
+  casting_time: 1 action
+  casting_range: Self (10-foot radius)
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Bard
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: Earthbind
+  description: "Choose one creature you can see within range. Yellow strips of magical energy\n    loop around the creature. The target must succeed on a Strength saving throw or\n    its flying speed (if any) is reduced to 0 feet for the spell's duration. An\n    airborne creature affected by this spell descends at 60 feet per round until it\n    reaches the ground or the spell ends.\n    "
+  name: Earthbind
+  level: 2
+  casting_time: 1 action
+  casting_range: 300 feet
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Earthquake
+  description: "You create a seismic disturbance at a point on the ground that you can see\n    within range.\n    For the duration, an intense tremor rips through the ground in a\n    100-foot- radius circle centered on that point and shakes creatures and\n    structures in contact with the ground in that area.\n\n    The ground in the area\n    becomes difficult terrain. Each creature on the ground that is concentrating\n    must make a Constitution saving throw. On a failed save, the creature's\n    concentration is broken.\n\n    When you cast this spell and at the end of each turn\n    you spend concentrating on it, each creature on the ground in the area must make\n    a Dexterity saving throw. On a failed save, the creature is knocked prone.\n\n\n    This spell can have additional effects depending on the terrain in the area, as\n    determined by the DM.\n\n    Fissures.\n      Fissures open throughout the spell's area at\n      the start of your next turn after you cast the spell.\
+    \ A total of 1d6 such\n      fissures open in locations chosen by the DM. Each is 1d10 x 10 feet deep, 10\n      feet wide, and extends from one edge of the spell's area to the opposite side. A\n      creature standing on a spot where a fissure opens must succeed on a Dexterity\n      saving throw or fall in. A creature that successfully saves moves with the\n      fissure's edge as it opens.\n\n      A fissure that opens beneath a structure causes it\n      to automatically collapse (see below).\n\n    Structures.\n      The tremor deals 50\n      bludgeoning damage to any structure in contact with the ground in the area when\n      you cast the spell and at the start of each of your turns until the spell ends.\n      If a structure drops to 0 hit points, it collapses and potentially damages\n      nearby creatures. A creature within half the distance of a structure's height\n      must make a Dexterity saving throw. On a failed save, the creature takes 5d6\n      bludgeoning damage,\
+    \ is knocked prone, and is buried in the rubble, requiring a\n      DC 20 Strength (Athletics) check as an action to escape. The DM can adjust the\n      DC higher or lower, depending on the nature of the rubble. On a successful save,\n      the creature takes half as much damage and doesn't fall prone or become buried.\n    "
+  name: Earthquake
+  level: 8
+  casting_time: 1 action
+  casting_range: 500 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A pinch of dirt, a piece of rock, and a lump of clay
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Cleric
+  - Druid
+  - Sorcerer
+- class_name: EldritchBlast
+  description: "A beam of crackling energy streaks toward a creature within range. Make a ranged\n    spell attack against the target. On a hit, the target takes 1d10 force damage.\n\n\n    **At Higher Levels:** The spell creates more than one beam when you reach higher\n    levels:\n    Two beams at 5th level\n    Three beams at 11th level\n    Four beams at 17th\n    level.\n    You can direct the beams at the same target or at different ones. Make\n    a separate attack roll for each beam.\n    "
+  name: Eldritch Blast
+  level: 0
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Warlock
+- class_name: ElementalBane
+  description: "Choose one creature you can see within range, and choose one of the following\n    damage types: acid, cold, fire, lightning, or thunder.\n    The target must succeed\n    on a Constitution saving throw or be affected by the spell for its duration. The\n    first time each turn the affected target takes damage of the chosen type, the\n    target takes an extra 2d6 damage of that type. Moreover, the target loses any\n    resistance to that damage type until the spell ends.\n\n    **At Higher Levels:** When you\n    cast this spell using a spell slot of 5th level or higher, you can target one\n    additional creature for each slot level above 4th. The creatures must be within\n    30 feet of each other when you target them.\n    "
+  name: Elemental Bane
+  level: 4
+  casting_time: 1 action
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Wizard
+  - Warlock
+- class_name: ElementalWeapon
+  description: "A nonmagical weapon you touch becomes a magic weapon.\n    Choose one of the\n    following damage types: acid, cold, fire, lightning, or thunder. For the\n    duration, the weapon has a +1 bonus to attack rolls and deals an extra 1d4\n    damage of the chosen type when it hits.\n\n    **At Higher Levels:** When you cast this\n    spell using a spell slot of 5th or 6th level, the bonus to attack rolls\n    increases to +2 and the extra damage increases to 2d4.\n    When you use a spell\n    slot of 7th level or higher, the bonus increases to +3 and the extra damage\n    increases to 3d4.\n    "
+  name: Elemental Weapon
+  level: 3
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Paladin
+- class_name: EnemiesAbound
+  description: "You reach into the mind of one creature you can see and force it to make an\n    Intelligence saving throw. A creature automatically succeeds if it is immune to\n    being frightened. On a failed save, the target loses the ability to distinguish\n    friend from foe, regarding all creatures it can see as enemies until the spell\n    ends. Each time the target takes damage, it can repeat the saving throw, ending\n    the effect on itself on a success. Whenever the affected creature chooses\n    another creature as a target, it must choose the target at random from among the\n    creatures it can see within range of the attack, spell, or other ability it's\n    using. If an enemy provokes an opportunity attack from the affected creature,\n    the creature must make that attack if it is able to.\n    "
+  name: Enemies Abound
+  level: 3
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Enervation
+  description: "A tendril of inky darkness reaches out from you, touching a creature you can see\n    within range to drain life from it. The target must make a Dexterity saving\n    throw. On a successful save, the target takes 2d8 necrotic damage, and the spell\n    ends. On a failed save, the target takes 4d8 necrotic damage, and until the\n    spell ends, you can use your action on each of your turns to automatically deal\n    4d8 necrotic damage to the target. The spell ends ifyou use your action to do\n    anything else, if the target is ever outside the spell's range, or if the target\n    has total cover from you. Whenever the spell deals damage to a target, you\n    regain hit points equal to half the amount of necrotic damage the target takes.\n\n\n    **At Higher Levels:** When you cast this spell using a spell slot of 6th level or\n    higher, the damage increases by 1d8 for each slot level above 5th.\n    "
+  name: Enervation
+  level: 5
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: EnhanceAbility
+  description: "You touch a creature and bestow upon it a magical enhancement. Choose one of the\n    following effects: the target gains the effect until the spell ends.\n\n    - **Bear's Endurance.** The target has advantage on Constitution checks. It also gains 2d6\n      temporary hit points, which are lost when the spell ends.\n    - **Bull's Strength.** The\n      target has advantage on Strength checks, and his or her carrying capacity\n      doubles.\n    - **Cat's Grace.** The target has advantage on Dexterity checks. It also\n      doesn't take damage from falling 20 feet or less if it isn't incapacitated.\n    - **Eagle's Splendor.** The target has advantage on Charisma checks.\n    - **Fox's Cunning.**\n      The target thas advantage on Intelligence checks.\n    - **Owl's Wisdom.** The target has\n      advantage on Wisdom checks.\n\n    **At Higher Levels:** When you cast this spell using a\n    spell slot of 3rd level or higher, you can target one additional creature for\n\
+    \    each slot level above 2nd.\n    "
+  name: Enhance Ability
+  level: 2
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Fur or a feather from a beast
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Bard
+  - Cleric
+  - Druid
+  - Sorcerer
+- class_name: Enlargereduce
+  description: "You cause a creature or an object you can see within range to grow larger or\n    smaller for the duration. Choose either a creature or an object that is neither\n    worn nor carried. If the target is unwilling, it can make a Constitution saving\n    throw. On a success, the spell has no effect.\n\n    If the target is a creature,\n    everything it is wearing and carrying changes size with it. Any item dropped by\n    an affected creature returns to normal size at once.\n\n    Enlarge\n    The target's\n    size doubles in all dimensions, and its weight is multiplied by eight. This\n    growth increases its size by one category \u2013 from Medium to Large, for example.\n    If there isn't enough room for the target to double its size, the creature or\n    object attains the maximum possible size in the space available. Until the spell\n    ends, the target also has advantage on Strength checks and Strength saving\n    throws. The target's weapons also grow to match its\
+    \ new size. While these\n    weapons are enlarged, the target's attack with them deal 1d4 extra damage.\n\n\n    Reduce\n    The target's size is halved in all dimensions, and its weight is reduced\n    to one-eighth of normal. This reduction decreases its size by one category \u2013\n    from Medium to Small, for example. Until the spell ends, the target also has\n    disadvantage on Strength checks and Strength saving throws. The target's weapons\n    also shrink to match its new size. While these weapons are reduced, the\n    target's attacks with them deal 1d4 less damage (this can't reduce the damage\n    below 1).\n    "
+  name: Enlarge/Reduce
+  level: 2
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A pinch of powdered iron
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: EnsnaringStrike
+  description: "The next time you hit a creature with a weapon attack before this spell ends, a\n    writhing mass of thorny vines appears at the point of impact, and the target\n    must succeed on a Strength saving throw or be restrained by the magical vines\n    until the spell ends. A Large or larger creature has advantage on this saving\n    throw. If the target succeeds on the save, the vines shrivel away.\n\n    While\n    restrained by this spell, the target takes 1d6 piercing damage at the start of\n    each of its turns. A creature restrained by the vines or one that can touch the\n    creature can use its action to make a Strength check against your spell save DC.\n    On a success, the target is freed.\n\n    **At Higher Levels:** If you cast this spell\n    using a spell slot of 2nd level or higher, the damage increases by 1d6 for each\n    slot level above 1st.\n    "
+  name: Ensnaring Strike
+  level: 1
+  casting_time: 1 bonus action
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Ranger
+- class_name: Entangle
+  description: "Grasping weeds and vines sprout from the ground in a 20-foot square starting\n    from a point within range. For the duration, these plants turn the ground in the\n    area into difficult terrain.\n\n    A creature in the area when you cast the spell\n    must succeed on a Strength saving throw or be restrained by the entangling\n    plants until the spell ends. A creature restrained by the plants can use its\n    action to make a Strength check against your spell save DC. On a success, it\n    frees itself.\n\n    When the spell ends, the conjured plants wilt away.\n    "
+  name: Entangle
+  level: 1
+  casting_time: 1 action
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+- class_name: Enthrall
+  description: "You weave a distracting string of words, causing creatures of your choice that\n    you can see within range and that can hear you to make a Wisdom saving throw.\n    Any creature that can't be charmed succeeds on this saving throw automatically,\n    and if you or your companions are fighting a creature, it has advantage on the\n    save. On a failed save, the target has disadvantage on Wisdom (Perception)\n    checks made to perceive any creature other than you until the spell ends or\n    until the target can no longer hear you. The spell ends if you are incapacitated\n    or can no longer speak.\n    "
+  name: Enthrall
+  level: 2
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Warlock
+- class_name: EruptingEarth
+  description: "Choose a point you can see on the ground within range. A fountain of churned\n    earth and stone erupts in a 20-foot cube centered on that point. Each creature\n    in that area must make a Dexterity saving throw. A creature takes 3d12\n    bludgeoning damage on a failed save, or half as much damage on a successful one.\n    Additionally, the ground in that area becomes difficult terrain until cleared\n    away. Each 5-foot-square portion of the area requires at least 1 minute to clear\n    by hand.\n\n    **At Higher Levels:** When you cast this spell using a spell slot of 4rd\n    level or higher, the damage increases by 1d12 for each slot level above 3rd.\n    "
+  name: Erupting Earth
+  level: 3
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A piece of obsidian
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: Etherealness
+  description: "You step into the border regions of the Ethereal Plane, in the area where it\n    overlaps with your current plane. You remain in the Border Ethereal for the\n    duration or until you use your action to dismiss the spell. During this time,\n    you can move in any direction. If you move up or down, every foot of movement\n    costs an extra foot. You can see and hear the plan you originated from, but\n    everything there looks gray, and you can't see anything more than 60 feet away.\n\n\n    While on the Ethereal Plane, you can only affect and be affected by other\n    creatures on that plane. Creatures that aren't on the Ethereal Plance can't\n    perceive you and can't interact with you, unless a special ability or magic has\n    given them the ability to do so.\n\n    You ignore all objects and effects that\n    aren't on the Ethereal Plane, allowing you to move through objects you perceive\n    on the plan you originated from. When the spell ends, you immediately return\
+    \ to\n    the plane you originiated from in teh spot you currently occupy. If you occupy\n    the same spot as a solid object or creature when this happens, you are\n    imediately shunted to the neares unoccupied space that you can occupy and take\n    force damage equal to twice the number of feet you are moved.\n\n    This spell has\n    no effect if you cast it while you are on the Ethereal Plane or a plane that\n    doesn't border it, such as one of the Outer Planes.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 8th level or higher, you can target up to three willing\n    creatures (including you) for each slot level above 7th. The\n    creatures must be within 10 feet of you when you cast the spell.\n\n    "
+  name: Etherealness
+  level: 7
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Up to 8 hours
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Bard
+  - Cleric
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: EvardsBlackTentacles
+  description: "Squirming, ebony tentacles fill a 20-foot square on ground that you can see\n    within range. For the duration, these tentacles turn the ground in the area into\n    difficult terrain.\n\n    When a creature enters the affected area for the first\n    time on a turn or starts its turn there, the creature must succeed on a\n    Dexterity saving throw or take 3d6 bludgeoning damage and be restrained by the\n    tentacles until the spell ends. A creature that starts its turn in the area and\n    is already restrained by the tentacles takes 3d6 bludgeoning damage.\n\n    A\n    creature restrained by the tentacles can use its action to make a Strength or\n    Dexterity check (its choice) against your spell save DC. On a success, it frees\n    itself.\n    "
+  name: Evards Black Tentacles
+  level: 4
+  casting_time: 1 action
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A piece of tentacle from a giant octopus or a giant squid
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Wizard
+- class_name: ExpeditiousRetreat
+  description: "This spell allows you to move at an incredible pace. When you cast this spell,\n    and then as a bonus action on each of your turns until the spell ends, you can\n    take the Dash action.\n    "
+  name: Expeditious Retreat
+  level: 1
+  casting_time: 1 bonus action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Eyebite
+  description: "For the spell's duration, your eyes become an inky void imbued with\n    dread power.  One creature of your choice within 60 feet of you\n    that you can see must succeed on a Wisdom saving throw or be\n    affected by one of the following effects of your choice for the\n    duration. On each of your turns until the spell ends, you can use\n    your action to target another creature but can't target a creature\n    again if it has succeeded on a saving throw against this casting\n    of eyebite.\n\n    Asleep\n      The target falls unconscious. It wakes up if it takes any damage\n      or if another creature uses its action to shake the sleeper\n      awake.\n\n    Panicked\n      The target is frightened of you. On each of its turns, the\n      frightened creature must take the Dash action and move away from\n      you by the safest and shortest available route, unless there is\n      nowhere to move. If the target moves to a place at least 60 feet\n      away from you\
+    \ where it can no longer see you, this effect ends.\n\n    Sickened\n      The target has disadvantage on attack rolls and ability\n      checks. At the end of each of its turns, it can make another\n      Wisdom saving throw. If it succeeds, the effect ends.\n\n    "
+  name: Eyebite
+  level: 6
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard

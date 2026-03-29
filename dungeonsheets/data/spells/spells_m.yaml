@@ -1,0 +1,716 @@
+- class_name: MaddeningDarkness
+  description: "Magical darkness spreads from a point you choose within range to fill a\n    60-foot-radius sphere until the spell ends. The darkness spreads around corners.\n    A creature with darkvision can't see through this darkness. Nonmagical light,\n    as well as light created by spells of 8th level or lower, can't illuminate the\n    area. Shrieks, gibbering, and mad laughter can be heard within the sphere.\n    Whenever a creature starts its turn in the sphere, it must make a Wisdom saving\n    throw, taking 8d8 psychic damage on a failed save, or half as much damage on a\n    successful one.\n    "
+  name: Maddening Darkness
+  level: 8
+  casting_time: 1 action
+  casting_range: 150 feet
+  components:
+  - V
+  - M
+  materials: A drop of pitch mixed with a drop of mercury
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Warlock
+  - Wizard
+- class_name: Maelstrom
+  description: "(paper or leaf in the shape of a funnel)\n    A mass of 5-foot-deep water appears and\n    swirls in a 30-foot radius centered on a point you can see within range. The\n    point must be on ground or in a body of water. Until the spell ends, that area\n    is difficult terrain, and any creature that starts its turn there must succeed\n    on a Strength saving throw or take 6d6 bludgeoning damage and be pulled 10 feet\n    toward the center.\n    "
+  name: Maelstrom
+  level: 5
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Druid
+- class_name: MageArmor
+  description: "You touch a willing creature who isn't wearing armor, and a protective magical\n    force surrounds it until the spell ends. The target's base AC becomes 13 + its\n    Dexterity modifier. The spell ends it if the target dons armor or if you dismiss\n    the spell as an action.\n    "
+  name: Mage Armor
+  level: 1
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A piece of cured leather
+  duration: 8 hours
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: MageHand
+  description: "A spectral, floating hand appears at a point you choose within range.\n    The hand\n    lasts for the duration or until you dismiss it as an action. The hand vanishes\n    if it is ever more than 30 feet away from you or if you cast this spell again.\n\n\n    You can use your action to control the hand. You can use the hand to manipulate\n    an object, open an unlocked door or container, stow or retrieve an item from an\n    open container, or pour the contents out of a vial. You can move the hand up to\n    30 feet each time you use it.\n\n    The hand can't attack, activate magical items, or\n    carry more than 10 pounds.\n    "
+  name: Mage Hand
+  level: 0
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: MagicCircle
+  description: "You create a 10-foot-radius, 20-foot-tall cylinder of magical energy centered on\n    a point on the ground that you can see within range. Glowing runes appear\n    wherever the cylinder intersects with the floor or other surface.\n\n    Choose one or more of the following types of creatures:\n    celestials, elementals, fey, fiends, or undead. The circle affects\n    a creature of the chosen type in the following ways:\n\n    - The creature can't willingly enter the cylinder by nonmagical\n      means. If the creature tries to use teleportation or interplanar\n      travel to do so, it must first succeed on a Charisma saving\n      throw.\n    - The creature has disadvantage on attack rolls against targets\n      within the cylinder.\n    - Targets within the cylinder can't be charmed, frightened, or\n      possessed by the creature.\n\n    When you cast this spell, you can elect to cause its magic to\n    operate in the reverse direction, preventing a creature of the\n\
+    \    specified type from leaving the cylinder and protecting targets\n    outside it.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 4th level or higher, the duration increases by 1 hour for each\n    slot level above 3rd.\n\n    "
+  name: Magic Circle
+  level: 3
+  casting_time: 1 minute
+  casting_range: 10 feet
+  components:
+  - V
+  - S
+  - M
+  materials: Holy water or powdered silver and iron worth at least 100 gp, which the spell consumes
+  duration: 1 hour
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Cleric
+  - Paladin
+  - Warlock
+  - Wizard
+- class_name: MagicJar
+  description: "Your body falls into a catatonic state as your soul leaves it and enters the\n    container you used for the spell's material component. While your soul inhabits\n    the container, you are aware of your surroundings as if you were in the\n    container's space. You can't move or use reactions. The only action you can take\n    is to project your soul up to 100 feet out of the container, either returning\n    to your living body (and ending the spell) or attempting to possess a humanoids\n    body.\n\n    You can attempt to possess any humanoid within 100 feet of you that you\n    can see (creatures warded by a protection from evil and good or magic circle\n    spells can't be possessed). The target must make a Charisma saving throw. On a\n    failure, your soul moves into the target's body, and the target's soul becomes\n    trapped in the container. On a success, the target resists your efforts to\n    possess it, and you can't attempt to possess it again for 24 hours.\n\
+    \n    Once you\n    possess a creature's body, you control it. Your game statistics are replaced by\n    the statistics of the creature though you retain your alignment and your\n    Intelligence, Wisom, and Charisma scores. You retain the benefit of your own\n    class feature. If the target has any class levels, you can't use any of its\n    class features.\n\n    Meanwhile, the possessed creature's soul can perceive from the\n    container using its own senses, but it can't move or take actions at all.\n\n    While\n    possessing a body, you can use your action to return from the host body to the\n    container if it is within 100 feet of you, returning the host creature's soul to\n    its body. If the host body dies while you're in it, the creature dies, and you\n    must make a Charisma saving throw against your own spellcasting DC. On a\n    success, you return to the container if it is within 100 feet of you. Otherwise,\n    you die.\n\n    If the container is destroyed or the\
+    \ spell ends, your soul\n    immediately returns to your body. If your body is more than 100 feet away from\n    you, or if your body is dead when you attempt to return to it, you die. If\n    another creature's soul is in the container when it is destroyed, the creature's\n    soul returns to its body if the body is alive and within 100 feet. Otherwise,\n    that creature dies.\n\n    When the spell ends, the container is destroyed.\n    "
+  name: Magic Jar
+  level: 6
+  casting_time: 1 minute
+  casting_range: Self
+  components:
+  - V
+  - S
+  - M
+  materials: A gem, crystal, reliquary, or some other ornamental container worth at least 500 gp
+  duration: Until dispelled
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Wizard
+- class_name: MagicMissile
+  description: "You create three glowing darts of magical force. Each dart hits a\n    creature of your choice that you can see within range. A dart\n    deals 1d4 + 1 force damage to its target. The darts all strike\n    simultaneously and you can direct them to hit one creature or\n    several.\n\n    **At Higher Levels:** When you cast this spell using a spell slot of\n    2nd level or higher, the spell creates one more dart for each slot\n    level above 1st.\n\n    "
+  name: Magic Missile
+  level: 1
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: MagicMouth
+  description: "You implant a message within an object in range, a message that is uttered when\n    a trigger condition is met.\n    Choose an object that you can see and that isn't\n    being worn or carried by another creature. Then speak the message, which must be\n    25 words or less, though it can be delivered over as long as 10 minutes.\n    Finally, determine the circumstance that will trigger the spell to deliver your\n    message.\n\n    When that circumstance occurs, a magical mouth appears on the object\n    and recites the message in your voice and at the same volume you spoke. If the\n    object you chose has a mouth or something that looks like a mouth (for example,\n    the mouth of a statue), the magical mouth appears there so that words appear to\n    come from the object's mouth. When you cast this spell, you can have the spell\n    end after it delivers its message, or it can remain and repeats its message\n    whenever the trigger occurs.\n\n    The triggering circumstance\
+    \ can be as general or\n    as detailed as you like, though it must be based on visual or audible conditions\n    that occur within 30 feet of the object. For example, you could instruct the\n    mouth to speak when any creature moves within 30 feet of the object or when a\n    silver bell rings within 30 feet of it.\n    "
+  name: Magic Mouth
+  level: 2
+  casting_time: 1 minute
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A small bit of honeycomb and jade dust worth at least 10 gp, which the spell consumes
+  duration: Until dispelled
+  ritual: true
+  magic_school: Illusion
+  classes:
+  - Bard
+  - Wizard
+- class_name: MagicStone
+  description: "You touch one to three pebbles and imbue them with magic. You or someone else\n    can make a ranged spell attack with one of the pebbles by throwing it or hurling\n    it with a sling. If thrown, a pebble has a range of 60 feet. If someone else\n    attacks with a pebble, that attacker adds your spellcasting ability modifier,\n    not the attacker's, to the attack roll. On a hit, the target takes bludgeoning\n    damage equal to 1d6 + your spellcasting ability modifier. Whether the attack\n    hits or misses, the spell then ends on the stone.\n    If you cast this spell again,\n    the spell ends on any pebbles still affected by your previous casting.\n    "
+  name: Magic Stone
+  level: 0
+  casting_time: 1 bonus action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 1 minute
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Warlock
+- class_name: MagicWeapon
+  description: "You touch a nonmagical weapon. Until the spell ends, that weapon becomes a magic\n    weapon with a +1 bonus to attack rolls and damage rolls.\n\n    At Higher Levels:\n    When you cast this spell using a spell slot of 4th level or higher, the bonus\n    increases to +2.\n    When you use a spell slot of 6th level or higher, the bonus\n    increases to +3.\n    "
+  name: Magic Weapon
+  level: 2
+  casting_time: 1 bonus action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Paladin
+  - Wizard
+- class_name: MajorImage
+  description: "You create the image of an object, a creature, or some other visible phenomenon\n    that is no larger than a 20-foot cube.\n    The image appears at a spot that you can\n    see within range and lasts for the duration. It seems completely real, including\n    sounds, smells, and temperature appropriate to the thing depicted. You can't\n    create sufficient heat or cold to cause damage, a sound loud enough to deal\n    thunder damage or deafen a creature, or a smell that might sicken a creature\n    (like a troglodyte's stench).\n\n    As long as you are within range of the illusion,\n    you can use your action to cause the image to move to any other spot within\n    range. As the image changes location, you can alter its appearance so that its\n    movements appear natural for the image. For example, if you create an image of a\n    creature and move it, you can alter the image so that it appears to be walking.\n    Similarly, you can cause the illusion to make different\
+    \ sounds at different\n    times, even making it carry on a conversation, for example.\n\n    Physical\n    interaction with the image reveals it to be an illusion, because things can pass\n    through it. A creature that uses its action to examine the image can determine\n    that it is an illusion with a successful Intelligence (Investigation) check\n    against your spell save DC. If a creature discerns the illusion for what it is,\n    the creature can see through the image, and its other sensory qualities become\n    faint to the creature.\n\n    **At Higher Levels:** When you cast this spell using a spell\n    slot of 6th level or higher, the spell lasts until dispelled, without requiring\n    your concentration.\n    "
+  name: Major Image
+  level: 3
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A bit of fleece
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: MassCureWounds
+  description: "A wave of healing energy washes out from a point of your choice within range.\n\n    Choose up to six creatures in a 30-foot-radius sphere centered on that point.\n    Each target regains hit points equal to 3d8 + your spellcasting ability\n    modifier. This spell has no effect on undead or constructs.\n\n    At Higher Levels:\n    When you cast this spell using a spell slot of 6th level or higher, the healing\n    increases by 1d8 for each slot level above 5th.\n    "
+  name: Mass Cure Wounds
+  level: 5
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Bard
+  - Cleric
+  - Druid
+- class_name: MassHeal
+  description: "A flood of healing energy flows from you into injured creatures around you. You\n    restore up to 700 hit points, divided as you choose among any number of\n    creatures that you can see within range. Creatures healed by this spell are also\n    cured of all diseases and any effect making them blinded or deafened. This\n    spell has no effect on undead or constructs.\n    "
+  name: Mass Heal
+  level: 9
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Cleric
+- class_name: MassHealingWord
+  description: "As you call out words of restoration, up to six creatures of your choice that\n    you can see within range regain hit points equal to 1d4 + your spellcasting\n    ability modifier. This spell has no effect on undead or constructs.\n\n    At Higher\n    Levels: When you cast this spell using a spell slot of 4th level or higher, the\n    healing increases by 1d4 for each slot level above 3rd.\n    "
+  name: Mass Healing Word
+  level: 3
+  casting_time: 1 bonus action
+  casting_range: 60 feet
+  components:
+  - V
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Cleric
+- class_name: MassPolymorph
+  description: "You transform up to ten creatures of your choice that you can see within range.\n    An unwilling target must succeed on a Wisdom saving throw to resist the\n    transformation. An unwilling shapechanger automatically succeeds on the save.\n\n    Each target assumes a beast form of your choice, and you can choose the same\n    form or different ones for each target. The new form can be any beast you have\n    seen whose challenge rating is equal to or less than the target's (or half the\n    target's level, if the target doesn't have a challenge rating). The target's\n    game statistics, including mental ability scores, are replaced by the statistics\n    of the chosen beast, but the target retains its hit points, alignment, and\n    personality.\n    Each target gains a number of temporary hit points equal to the hit\n    points of its new form. These temporary hit points can't be replaced by\n    temporary hit points from another source. A target reverts to its normal\
+    \ form\n    when it has no more temporary hit points or it dies. If the spell ends before\n    then, the creature loses all its temporary hit points and reverts to its normal\n    form.\n    The creature is limited in the actions it can perform by the nature of its\n    new form. It can't speak, cast spells, or do anything else that requires hands\n    or speech. The target's gear melds into the new form.\n    The target can't activate,\n    use, wield, or otherwise benefit from any of its equipment.\n    "
+  name: Mass Polymorph
+  level: 9
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V.S
+  - M
+  materials: A caterpillar cocoon
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Sorcerer
+  - Wizard
+  - Bard
+- class_name: MassSuggestion
+  description: "You suggest a course of activity (limited to a sentence or two) and magically\n    influence up to twelve creatures of your choice that you can see within range\n    and that can hear and understand you.\n    Creatures that can't be charmed are immune\n    to this effect. The suggestion must be worded in such a manner as to make the\n    course of action sound reasonable. Asking the creature to stab itself, throw\n    itself onto a spear, immolate itself, or do some other obviously harmful act\n    automatically negates the effect of the spell.\n\n    Each target must make a Wisdom\n    saving throw. On a failed save, it pursues the course of action you described to\n    the best of its ability. The suggested course of action can continue for the\n    entire duration. If the suggested activity can be completed in a shorter time,\n    the spell ends when the subject finishes what it was asked to do.\n\n    You can also\n    specify conditions that will trigger a special activity\
+    \ during the duration. For\n    example, you might suggest that a group of soldiers give all their money to the\n    first beggar they meet. If the condition isn't met before the spell ends, the\n    activity isn't performed.\n\n    If you or any of your companions damage a creature\n    affected by this spell, the spell ends for that creature.\n\n    At Higher Levels:\n    When you cast this spell using a 7th-level spell slot, the duration is 10 days.\n\n    When you use an 8th-level spell slot, the duration is 30 days.\n    When you use a\n    9th-level spell slot, the duration is a year and a day.\n    "
+  name: Mass Suggestion
+  level: 6
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - M
+  materials: A snake's tongue and either a bit of honeycomb or a drop of sweet oil
+  duration: 24 hours
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: MaximiliansEarthenGrasp
+  description: "You choose a 5-foot-square unoccupied space on the ground that you can see\n    within range. A Medium hand made from compacted soil rises there and reaches\n    for\n    one creature you can see within 5 feet of it. The target must make a Strength\n    saving throw. On a failed save, the target takes 2d6 bludgeoning damage and is\n    restrained for the spell's duration.\n    As an action, you can cause the hand to\n    crush the restrained target, who must make a Strength saving throw. It takes 2d6\n    bludgeoning damage on a failed save, or half as much damage on a successful\n    one.\n    To break out, the restrained target can make a Strength check against your\n    spell save DC. On a success, the target escapes and is no longer restrained by\n    the hand.\n    As an action, you can cause the hand to reach for a different creature\n    or to move to a different unoccupied space within range. The hand releases a\n    restrained target if you do either.\n    "
+  name: Maximilians Earthen Grasp
+  level: 2
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A miniature hand sculpted from clay
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: Maze
+  description: "You banish a creature that you can see within range into a labyrinthine\n    demiplane. The target remains there for the duration or until it escapes the\n    maze.\n\n    The target can use its action to attempt to escape. When it does so, it\n    makes a DC 20 Intelligence check. If it succeeds, it escapes, and the spell ends\n    (a minotaur or goristro demon automatically succeeds).\n\n    When the spell ends,\n    the target reappears in the space it left or, if that space is occupied, in the\n    nearest unoccupied space.\n    "
+  name: Maze
+  level: 8
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Wizard
+- class_name: MeldIntoStone
+  description: "You step into a stone object or surface large enough to fully contain your body,\n    melding yourself and all the equipment you carry with the stone for the\n    duration.\n    Using your movement, you step into the stone at a point you can touch.\n    Nothing of your presence remains visible or otherwise detectable by nonmagical\n    senses.\n\n    While merged with the stone, you can't see what occurs outside it, and\n    any Wisdom (Perception) checks you make to hear sounds outside it are made with\n    disadvantage. You remain aware of the passage of time and can cast spells on\n    yourself while merged in the stone. You can use your movement to leave the stone\n    where you entered it, which ends the spell. You otherwise can't move.\n\n    Minor\n    physical damage to the stone doesn't harm you, but its partial destruction or a\n    change in its shape (to the extent that you no longer fit within it) expels you\n    and deals 6d6 bludgeoning damage to you. The stone's\
+    \ complete destruction (or\n    transmutation into a different substance) expels you and deals 50 bludgeoning\n    damage to you. If expelled, you fall prone in an unoccupied space closest to\n    where you first entered.\n    "
+  name: Meld Into Stone
+  level: 3
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 8 hours
+  ritual: true
+  magic_school: Transmutation
+  classes:
+  - Cleric
+  - Druid
+- class_name: MelfsAcidArrow
+  description: "A shimmering green arrow streaks toward a target within range and bursts in a\n    spray of acid.\n    Make a ranged spell attack against the target. On a hit, the\n    target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its\n    next turn. On a miss, the arrow splashes the target with acid for half as much\n    of the initial damage and no damage at the end of its next turn.\n\n    At Higher\n    Levels: When you cast this spell using a spell slot of 3rd level or higher, the\n    damage (both initial and later) increases by 1d4 for each slot level above 2nd.\n    "
+  name: Melfs Acid Arrow
+  level: 2
+  casting_time: 1 action
+  casting_range: 90 feet
+  components:
+  - V
+  - S
+  - M
+  materials: Powdered rhubarb leaf and an adder's stomach
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Wizard
+- class_name: MelfsMinuteMeteors
+  description: "(niter, sulfur, and pine tar formed into a bead)\n    You create six tiny meteors in\n    your space. They float in the air and orbit you for the spell's duration. When\n    you cast the spell-and as a bonus action on each of your turns thereafter-you\n    can expend one or two of the meteors, sending them streaking toward a point or\n    points you choose within 120 feet of you. Once a meteor reaches its destination\n    or impacts against a solid surface, the meteor explodes. Each creature within 5\n    feet of the point where the meteor explodes must make a Dexterity saving throw.\n    A creature takes 2d6 fire damage on a failed save, or half as much damage on a\n    successful one.\n    At Higher Levels. When you cast this spell using a spell slot of\n    4th level or higher, the number of meteors created increases by two for each\n    slot level above 3rd.\n    "
+  name: Melfs Minute Meteors
+  level: 3
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  - M
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: Mending
+  description: "This spell repairs a single break or tear in an object you touch, such as broken\n    chain link, two halves of a broken key, a torn cloack, or a leaking wineskin.\n\n    As long as the break or tear is no larger than 1 foot in any dimension, you mend\n    it, leaving no trace of the former damage.\n\n    This spell can physically repair a\n    magic item or construct, but the spell can't restore magic to such an object.\n    "
+  name: Mending
+  level: 0
+  casting_time: 1 minute
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Two lodestones
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Bard
+  - Cleric
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: MentalPrison
+  description: "You attempt to bind a creature within an illusory cell that only it perceives.\n    One creature you can see within range must make an Intelligence saving throw.\n    The target succeeds automatically if it is immune to being charmed. On a\n    successful save, the target takes 5d10 psychic damage, and the spell ends. On a\n    failed save, the target takes 5d10 psychic damage, and you make the area\n    immediately around the target's space appear dangerous to it in some way. You\n    might cause the target to perceive itself as being surrounded by fire, floating\n    razors, or hideous maws filled with dripping teeth. Whatever form the illusion\n    takes, the target can't see or hear anything beyond it and is restrained for the\n    spell's duration. If the target is moved out of the illusion, makes a melee\n    attack through it, or reaches any part of its body through it, the target takes\n    10d10 psychic damage, and the spell ends.\n    "
+  name: Mental Prison
+  level: 6
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Message
+  description: "You point your finger toward a creature within range and whisper a message.\n    The\n    target (and only the target) hears the message and can reply in a whisper that\n    only you can hear.\n\n    You can cast this spell through solid objects if you are\n    familiar with the target and know it is beyond the barrier. Magical silence, 1\n    foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood\n    blocks the spell. The spell doesn't have to follow a straight line and can\n    travel freely around corners or through openings.\n    "
+  name: Message
+  level: 0
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A short piece of copper wire
+  duration: 1 round
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Bard
+  - Sorcerer
+  - Wizard
+- class_name: MeteorSwarm
+  description: "Blazing orbs of fire plummet to the ground at four different points you can see\n    within range.\n    Each creature in a 40-foot-radius sphere centered on each point\n    you choose must make a Dexterity saving throw. The sphere spreads around\n    corners. A creature takes 20d6 fire damage and 20d6 bludgeoning damage on a\n    failed save, or half as much damage on a sucessful one. A creature in the area\n    of more than one fiery burst is affected only once.\n\n    The spell damages objects\n    in the area and ignites flammable objects that aren't being worn or carried.\n    "
+  name: Meteor Swarm
+  level: 9
+  casting_time: 1 action
+  casting_range: 1 mile
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: MightyFortress
+  description: "A fortress of stone erupts from a square area of ground of your choice that you\n    can see within range. The area is 120 feet on each side, and it must not have\n    any buildings or other structures on it. Any creatures in the area are\n    harmlessly lifted up as the fortress rises.\n    The fortress has four turrets with\n    square bases, each one 20 feet on a side and 30 feet tall, with one turret on\n    each corner. The turrets are connected to each other by stone walls that are\n    each 80 feet long, creating an enclosed area. Each wall is 1 foot thick and is\n    composed of panels that are 10 feet wide and 20 feet tall. Each panel is\n    contiguous with two other panels or one other panel and a turret. You can place\n    up to four stone doors in the fortress's outer wall.\n    A small keep stands inside\n    the enclosed area. The keep has a square base that is 50 feet on each side, and\n    it has three floors with 10-foot-high ceilings. Each of the floors\
+    \ can be\n    divided into as many rooms as you like, provided each room is at least 5 feet on\n    each side. The floors of the keep are connected by stone staircases, its walls\n    are 6 inches thick, and interior rooms can have stone doors or open archways as\n    you choose. The keep is furnished and decorated however you like, and it\n    contains sufficient food to serve a nine-course banquet for up to 100 people\n    each day. Furnishings, food, and other objects created by this spell crumble to\n    dust if removed from the fortress.\n    A staff of one hundred invisible servants\n    obeys anycommand given to them by creatures you designate when you cast the\n    spell. Each servant functions as if created by the unseen servant spell.\n    The\n    walls, turrets, and keep are all made of stone that can be damaged. Each\n    10-foot-bya10-foot section of stone has AC 15 and 30 hit points per inch of\n    thickness. It is immune to poison and psychic damage. Reducing a section\
+    \ of\n    stone to 0 hit points destroys it and might cause connected sections to buckle\n    and collapse at the DM's discretion.\n    After 7 days or when you cast this spell\n    somewhere else, the fortress harmlessly crumbles and sinks back into the ground,\n    leaving any creatures that were inside it safely on the ground.\n    Casting this\n    spell on the same spot once every 7 days for a year makes the fortress\n    permanent.\n    "
+  name: Mighty Fortress
+  level: 8
+  casting_time: 1 minute
+  casting_range: 1 mile
+  components:
+  - V
+  - S
+  - M
+  materials: A diamond worth at least 500 gp, which the spell consumes
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Wizard
+- class_name: MindBlank
+  description: "Until the spell ends, one willing creature you touch is immune to psychic\n    damage, any effect that would sense its emotions or read its thoughts,\n    divination spells, and the charmed condition. The spell even foils wish spells\n    and spells or effects of similar power used to affect the target's mind or to\n    gain information about the target.\n    "
+  name: Mind Blank
+  level: 8
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 24 hours
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Bard
+  - Wizard
+- class_name: MindSliver
+  description: "You drive a disorienting spike of psychic energy into the mind of one\n    creature you can see within range. The target must succeed on\n    an Intelligence saving throw or take 1d6 psychic damage and subtract 1d4\n    from the next saving throw it makes before the end of your next turn.\n\n    **At Higher Levels:** This spell\u2019s damage increases by 1d6 when you reach\n    certain levels: 5th level (2d6), 11th level (3d6), and 17th level (4d6).\n    "
+  name: Mind Sliver
+  level: 0
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  materials: ''
+  duration: 1 round
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: MindSpike
+  description: "You reach into the mind of one creature you can see within range. The target\n    must make a Wisdom saving throw, taking 3d8 psychic damage on a failed save, or\n    half as much damage on a successful one. On a failed save, you also always know\n    the target's location until the spell ends, but only while the two of you are on\n    the same plane of existence. While you have this knowledge, the target can't\n    become hidden from you, and if it's invisible, it gains no benefit from that\n    condition against you.\n\n    **At Higher Levels:** When you cast this spell using a spell\n    slot of 3rd level or higher, the damage increases by 1d8 for each slot level\n    above 2nd.\n    "
+  name: Mind Spike
+  level: 2
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Divination
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: MinorIllusion
+  description: "You create a sound or an image of an object within range that lasts for the\n    duration. The illusion also ends if you dismiss it as an action or cast this\n    spell again.\n\n    If you create a sound, its volume can range from a whisper to a\n    scream. It can be your voice, someone else's voice, a lion's roar, a beating of\n    drums, or any other sound you choose. The sound continues unabated throughout\n    the duration, or you can make discrete sounds at different times before the\n    spell ends.\n\n    If you create an image of an object such as a chair, muddy\n    footprints, or a small chest it must be no larger than a 5-foot cube. The image\n    can't create sound, light, smell, or any other sensory effect. Physical\n    interaction with the image reveals it to be an illusion, because things can pass\n    through it.\n\n    If a creature uses its action to examine the sound or image, the\n    creature can determine that it is an illusion with a successful Intelligence\n\
+    \    (Investigation) check against your spell save DC. If a creature discerns the\n    illusion for what it is, the illusion becomes faint to the creature.\n    "
+  name: Minor Illusion
+  level: 0
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - S
+  - M
+  materials: A bit of fleece
+  duration: 1 minute
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: MirageArcane
+  description: "You make terrain in an area up to 1 mile square look, sound, smell, and even\n    feel like some other sort of terrain.\n    The terrain's general shape remains the\n    same, however. Open fields or a road could be made to resemble a swamp, hill,\n    crevasse, or some other difficult or impassable terrain. A pond can be made to\n    seem like a grassy meadow, a precipice like a gentle slope, or a rock-strewn\n    gully like a wide and smooth road.\n\n    Similarly, you can alter the appearance of\n    structures, or add them where none are present. The spell doesn't disguise,\n    conceal, or add creatures.\n\n    The illusion includes audible, visual, tactile, and\n    olfactory elements, so it can turn clear ground into difficult terrain (or vice\n    versa) or otherwise impede movement through the area. Any piece of the illusory\n    terrain (such as a rock or stick) that is removed from the spell's area\n    disappears immediately.\n\n    Creatures with truesight can\
+    \ see through the illusion\n    to the terrain's true form\_however, all other elements\_of the illusion remain,\n    so while the creature is aware of\_the illusion's presence, the creature can\n    still physically\_interact with the illusion.\n    "
+  name: Mirage Arcane
+  level: 7
+  casting_time: 10 minutes
+  casting_range: Sight
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 10 days
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Bard
+  - Druid
+  - Wizard
+- class_name: MirrorImage
+  description: "Three illusory duplicates of yourself appear in your space.\n    Until the spell\n    ends, the duplicates move with you and mimic your actions, shifting position so\n    it's impossible to track which image is real. You can use your action to dismiss\n    the illusory duplicates.\n\n    Each time a creature targets you with an attack\n    during the spell's duration, roll a d20 to determine whether the attack instead\n    targets one of your duplicates.\n\n    If you have three duplicates, you must roll a 6\n    or higher to change the attack's target to a duplicate. With two duplicates,\n    you must roll an 8 or higher. With one duplicate, you must roll an 11 or higher.\n\n\n    A duplicate's AC equals 10 + your Dexterity modifier. If an attack hits a\n    duplicate, the duplicate is destroyed. A duplicate can be destroyed only by an\n    attack that hits it. It ignores all other damage and effects. The spell ends\n    when all three duplicates are destroyed.\n\n    A\
+    \ creature is unaffected by this spell\n    if it can't see, if it relies on senses other than sight, such as blindsight,\n    or if it can perceive illusions as false, as with truesight.\n    "
+  name: Mirror Image
+  level: 2
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 1 minute
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Mislead
+  description: "You become invisible at the same time that an illusory double of you appears\n    where you are standing. The double lasts for the duration, but the invisibility\n    ends if you attack or cast a spell.\n\n    You can use your action to move your\n    illusory double up to twice your speed and make it gesture, speak, and behave in\n    whatever way you choose.\n\n    You can see through its eyes and hear through its\n    ears as if you were located where it is. On each of your turns as a bonus\n    action, you can switch from using its senses to using your own, or back again.\n    While you are using its senses, you are blinded and deafened in regard to your\n    own surroundings.\n    "
+  name: Mislead
+  level: 5
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Bard
+  - Wizard
+- class_name: MistyStep
+  description: "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied\n    space that you can see.\n    "
+  name: Misty Step
+  level: 2
+  casting_time: 1 bonus action
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: ModifyMemory
+  description: "You attempt to reshape another creature's memories.\n    One creature that you can\n    see must make a Wisdom saving throw. If you are fighting the creature, it has\n    advantage on the saving throw. On a failed save, the target becomes charmed by\n    you for the duration. The charmed target is incapacitated and unaware of its\n    surroundings, though it can still hear you. If it takes any damage or is\n    targeted by another spell, this spell ends, and none of the target's memories\n    are modified.\n\n    While this charm lasts, you can affect the target's memory of an\n    event that it experienced within the last 24 hours and that lasted no more than\n    10 minutes. You can permanently eliminate all memory of the event, allow the\n    target to recall the event with perfect clarity and exacting detail, change its\n    memory of the details of the event, or create a memory of some other event.\n\n    You\n    must speak to the target to describe how its memories\
+    \ are affected, and it must\n    be able to understand your language for the modified memories to take root. Its\n    mind fills in any gaps in the details of your description. If the spell ends\n    before you have finished describing the modified memories, the creature's memory\n    isn't altered. Otherwise, the modified memories take hold when the spell ends.\n\n\n    A modified memory doesn't necessarily affect how a creature behaves,\n    particularly if the memory contradicts the creature's natural inclinations,\n    alignment, or beliefs. An illogical modified memory, such as implanting a memory\n    of how much the creature enjoyed dousing itself in acid, is dismissed, perhaps\n    as a bad dream. The DM might deem a modified memory too nonsensical to affect a\n    creature in a significant manner.\n\n    A remove curse or greater restoration spell\n    cast on the target restores the creature's true memory.\n\n    **At Higher Levels:** If\n    you cast this spell using a spell\
+    \ slot of 6th level or higher, you can alter the\n    target's memories of an event that took place up to 7 days ago (6th level), 30\n    days ago (7th level), 1 year ago (8th level), or any time in the creature's past\n    (9th level).\n    "
+  name: Modify Memory
+  level: 5
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Wizard
+- class_name: MoldEarth
+  description: "You choose a portion of dirt or stone that you can see within range and that\n    fits within a 5-foot cube. You manipulate it in one of the following ways:\n    - If\n    you target an area of loose earth, you can instantaneously excavate it, move it\n    along the ground, and deposit it up to 5 feet away. This movement doesn't have\n    enough force to cause damage.\n    - You cause shapes, colors, or both to appear on\n    the dirt or stone, spelling out words, creating images, or shaping patterns. The\n    changes last for 1 hour.\n    - If the dirt or stone you target is on the ground,\n    you cause it to become difficult terrain. Alternatively, you can cause the\n    ground to become normal terrain if it is already difficult terrain. This change\n    lasts for 1 hour. If you cast this spell multiple times, you can have no more\n    than two of its non-instantaneous effects active at a time, and you can dismiss\n    such an effect as an action.\n    "
+  name: Mold Earth
+  level: 0
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - S
+  materials: ''
+  duration: Instantaneous or 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: Moonbeam
+  description: "A silvery beam of pale light shines down in a 5-footradius,\n    40-foot-high cylinder centered on a point within range. Until the\n    spell ends, dim light fills the cylinder.\n\n    When a creature enters the spell's area for the first time on a\n    turn or starts its turn there, it is engulfed in ghostly flames\n    that cause searing pain, and it must make a Constitution saving\n    throw. It takes 2d10 radiant damage on a failed save, or half as\n    much damage on a successful one.\n\n    A shapechanger makes its saving throw with disadvantage. If it\n    fails, it also instantly reverts to its original form and can't\n    assume a different form until it leaves the spell's light.\n\n    On each of your turns after you cast this spell, you can use an\n    action to move the beam 60 feet in any direction.\n\n    **At Higher Levels:** When you cast this spell using aspell slot\n    of 3rd level or higher, the damage increases by 1d10 for each slot\n    level above 2nd.\n\
+    \n    "
+  name: Moonbeam
+  level: 2
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: Several seeds of any moonseed plant and a piece of opalescent feldspar
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Druid
+- class_name: MordenkainensFaithfulHound
+  description: "You conjure a phantom watchdog in an unoccupied space that you can see within\n    range, where it remains for the duration, until you dismiss it as an action, or\n    until you move more than 100 feet away from it.\n\n    The hound is invisible to all\n    creatures except you and can't be harmed. When a Small or larger creature comes\n    within 30 feet of it without first speaking the password that you specify when\n    you cast this spell, the hound starts barking loudly. The hound sees invisible\n    creatures and can see into the Ethereal Plane. It ignores illusions.\n\n    At the\n    start of each of your turns, the hound attempts to bite one creature within 5\n    feet of it that is hostile to you. The hound's attack bonus is equal to your\n    spellcasting ability modifier + your proficiency bonus. On a hit, it deals 4d8\n    piercing damage.\n    "
+  name: Mordenkainens Faithful Hound
+  level: 4
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A tiny silver whistle, a piece of bone, and a thread
+  duration: 8 hours
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Wizard
+- class_name: MordenkainensMagnificentMansion
+  description: "You conjure an extradimensional dwelling in range that lasts for the duration.\n\n    You choose where its one entrance is located. The entrance shimmers faintly and\n    is 5 feet w ide and 10 feet tall. You and any creature you designate when you\n    cast the spell can enter the extradimensional dwelling as long as the portal\n    remains open. You can open or close the portal if you are within 30 feet of it.\n    While closed, the portal is invisible.\n\n    Beyond the portal is a magnificent foyer\n    with numerous chambers beyond. The atmosphere is clean, fresh, and warm.\n\n    You\n    can create any floor plan you like, but the space can't exceed 50 cubes, each\n    cube being 10 feet on each side. The place is furnished and decorated as you\n    choose. It contains sufficient food to serve a ninecourse banquet for up to 100\n    people. A staff of 100 near-transparent servants attends all who enter. You\n    decide the visual appearance of these servants and their\
+    \ attire. They are\n    completely obedient to your orders. Each servant can perform any task a normal\n    human servant could perform, but they can't attack or take any action that would\n    directly harm another creature. Thus the servants can fetch things, clean,\n    mend, fold clothes, light fires, serve food, pour wine, and so on. The servants\n    can go anywhere in the mansion but can't leave it. Furnishings and other objects\n    created by this spell dissipate into smoke if removed from the mansion. When\n    the spell ends, any creatures inside the extradimensional space are expelled\n    into the open spaces nearest to the entrance.\n    "
+  name: Mordenkainens Magnificent Mansion
+  level: 7
+  casting_time: 1 minute
+  casting_range: 300 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A miniature portal carved from ivory, a small piece of polished marble, and a tiny silver spoon, each item worth at least 5 gp
+  duration: 24 hours
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Bard
+  - Wizard
+- class_name: MordenkainensPrivateSanctum
+  description: "You make an area within range magically secure.\n    The area is a cube that can be\n    as small as 5 feet to as large as 100 feet on each side. The spell lasts for the\n    duration or until you use an action to dismiss it.\n\n    When you cast the spell,\n    you decide what sort of security the spell provides, choosing any or all of the\n    following properties:\n    * Sound can't pass through the barrier at the edge of the\n    warded area.\n    * The barrier of the warded area appears dark and foggy, preventing\n    vision (including darkvision) through it.\n    * Sensors created by divination\n    spells can't appear inside the protected area or pass through the barrier at its\n    perimeter.\n    * Creatures in the area can't be targeted by divination spells.\n    *\n    Nothing can teleport into or out of the warded area.\n    * Planar travel is blocked\n    within the warded area.\n\n    Casting this spell on the same spot every day for a\n    year makes this effect\
+    \ permanent.\n\n    **At Higher Levels:** When you cast this spell\n    using a spell slot of 5th level or higher, you can increase the size of the cube\n    by 100 feet for each slot level beyond 4th. Thus you could protect a cube that\n    can be up to 200 feet on one side by using a spell slot of 5th level.\n    "
+  name: Mordenkainens Private Sanctum
+  level: 4
+  casting_time: 10 minutes
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A thin sheet of lead, a piece of opaque glass, a wad of cotton or cloth, and powdered chrysolite
+  duration: 24 hours
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Wizard
+- class_name: MordenkainensSword
+  description: "You create a sword-shaped plane of force that hovers within range. It lasts for\n    the duration.\n\n    When the sword appears, you make a melee spell attack against a\n    target of your choice within 5 feet of the sword. On a hit. the target takes\n    3d10 force damage. Until the spell ends, you can use a bonus action on each of\n    your turns to move the sword up to 20 feet to a spot you can see and repeat this\n    attack against the same target or a different one.\n    "
+  name: Mordenkainens Sword
+  level: 7
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Bard
+  - Wizard
+- class_name: MoveEarth
+  description: "Choose an area of terrain no larger than 40 feet on a side within range. You can\n    reshape dirt, sand, or clay in the area in any manner you choose for the\n    duration. You can raise or lower the area's elevation, create or fill in a\n    trench, erect or flatten a wall, or form a pillar. The extent of any such\n    changes can't exceed half the area's largest dimension. So, if you affect a\n    40-foot square, you can create a pillar up to 20 feet high, raise or lower the\n    square's elevation by up to 20 feet, dig a trench up to 20 feet deep, and so on.\n    It takes 10 minutes for these changes to complete.\n\n    At the end of every 10\n    minutes you spend concentrating on the spell, you can choose a new area of\n    terrain to affect.\n\n    Because the terrain's transformation occurs slowly,\n    creatures in the area can't usually be trapped or injured by the ground's\n    movement.\n\n    This spell can't manipulate natural stone or stone construction.\n\
+    \    Rocks and structures shift to accommodate the new terrain. If the way you shape\n    the terrain would make a structure unstable, it might collapse.\n\n    Similarly, this\n    spell doesn't directly affect plant growth. The moved earth carries any plants\n    along with it.\n    "
+  name: Move Earth
+  level: 6
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: An iron blade and a small bag containing a mixture of soils-clay, loam, and sand
+  duration: Concentration, up to 2 hours
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
