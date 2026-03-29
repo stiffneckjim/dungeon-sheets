@@ -137,61 +137,8 @@
   ritual: false
   magic_school: Abjuration
   classes:
-  - you
-  - cast
-  - this
-  - spell
-  - using
-  - a
-  - spell
-  - slot
-  - of
-  - 4th
-  - level
-  - or
-  - higher
-  - the
-  - damage
-  - of
-  - an
-  - explosive
-  - runes
-  - glyph
-  - increases
-  - by
-  - 1d8
-  - for
-  - each
-  - slot
-  - level
-  - above
-  - 3rd.
-  - If
-  - you
-  - create
-  - a
-  - spell
-  - glyph
-  - you
-  - can
-  - store
-  - any
-  - spell
-  - of
-  - up
-  - to
-  - the
-  - same
-  - level
-  - as
-  - the
-  - slot
-  - you
-  - use
-  - for
-  - the
-  - glyph
-  - of
+  - Cleric
+  - Wizard
 - class_name: Goodberry
   description: "Up to ten berries appear in your hand and are infused with magic for the\n    duration. A creature can use its action to eat one berry. Eating a berry\n    restores 1 hit point, and the berry provides enough nourishment to sustain a\n    creature for one day.\n    The berries lose their potency if they have not been\n    consumed within 24 hours of the casting of this spell.\n    "
   name: Goodberry
