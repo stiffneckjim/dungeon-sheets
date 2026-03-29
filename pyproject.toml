@@ -32,6 +32,7 @@ dependencies = [
     "reportlab",
     "docutils",
     "pypdf>=5.2.0",
+    "PyYAML>=6.0",
 ]
 
 [project.optional-dependencies]
@@ -87,6 +88,7 @@ ignore = [
 
 [tool.setuptools.package-data]
 dungeonsheets = [
+    "data/*.yaml",
     "forms/*pdf",
     "forms/*.tex",
     "forms/*.txt",
