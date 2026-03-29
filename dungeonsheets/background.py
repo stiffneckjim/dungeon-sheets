@@ -290,6 +290,7 @@ globals().update(
         Path(__file__).with_name("data").joinpath("backgrounds.yaml"),
         Background,
         feats,
+        module=__name__,
     )
 )
 

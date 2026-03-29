@@ -41,6 +41,7 @@ globals().update(
     load_yaml_spell_classes(
         _SPELLS_YAML_SOURCE,
         Spell,
+        module=__name__,
     )
 )
 

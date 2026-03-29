@@ -88,3 +88,90 @@ class TestSplitYamlLoader(TestCase):
 
             with self.assertRaises(ValueError):
                 load_yaml_spell_classes(yaml_dir, Spell)
+
+    def test_spell_loader_sets_module_on_generated_classes(self):
+        with TemporaryDirectory() as tmp_dir:
+            yaml_dir = Path(tmp_dir)
+            yaml_dir.joinpath("spells_a.yaml").write_text(
+                """
+- class_name: ArcaneWhisper
+  name: Arcane Whisper
+  level: 1
+  classes:
+    - Wizard
+""".lstrip(),
+                encoding="utf-8",
+            )
+
+            generated = load_yaml_spell_classes(yaml_dir, Spell, module="dungeonsheets.spells")
+
+            self.assertEqual(generated["ArcaneWhisper"].__module__, "dungeonsheets.spells")
+
+    def test_spell_loader_default_module_is_yaml_content(self):
+        with TemporaryDirectory() as tmp_dir:
+            yaml_dir = Path(tmp_dir)
+            yaml_dir.joinpath("spells_a.yaml").write_text(
+                """
+- class_name: ArcaneWhisper
+  name: Arcane Whisper
+  level: 1
+""".lstrip(),
+                encoding="utf-8",
+            )
+
+            generated = load_yaml_spell_classes(yaml_dir, Spell)
+
+            # When module is not passed, __module__ is set by type() to the
+            # frame where the class is created — yaml_content.
+            self.assertEqual(generated["ArcaneWhisper"].__module__, "dungeonsheets.yaml_content")
+
+    def test_spell_loader_raises_on_string_classes_field(self):
+        with TemporaryDirectory() as tmp_dir:
+            yaml_dir = Path(tmp_dir)
+            yaml_dir.joinpath("spells_a.yaml").write_text(
+                """
+- class_name: BadSpell
+  name: Bad Spell
+  classes: Wizard
+""".lstrip(),
+                encoding="utf-8",
+            )
+
+            with self.assertRaises(ValueError) as ctx:
+                load_yaml_spell_classes(yaml_dir, Spell)
+
+            self.assertIn("classes", str(ctx.exception))
+
+    def test_spell_loader_raises_on_string_components_field(self):
+        with TemporaryDirectory() as tmp_dir:
+            yaml_dir = Path(tmp_dir)
+            yaml_dir.joinpath("spells_a.yaml").write_text(
+                """
+- class_name: BadSpell
+  name: Bad Spell
+  components: V
+""".lstrip(),
+                encoding="utf-8",
+            )
+
+            with self.assertRaises(ValueError) as ctx:
+                load_yaml_spell_classes(yaml_dir, Spell)
+
+            self.assertIn("components", str(ctx.exception))
+
+    def test_magic_item_loader_raises_on_string_linked_spells_field(self):
+        with TemporaryDirectory() as tmp_dir:
+            yaml_dir = Path(tmp_dir)
+            yaml_dir.joinpath("items_a.yaml").write_text(
+                """
+- class_name: BadWand
+  name: Bad Wand
+  linked_spells: Fireball
+""".lstrip(),
+                encoding="utf-8",
+            )
+
+            with self.assertRaises(ValueError) as ctx:
+                load_yaml_magic_item_classes(yaml_dir, MagicItem)
+
+            self.assertIn("linked_spells", str(ctx.exception))

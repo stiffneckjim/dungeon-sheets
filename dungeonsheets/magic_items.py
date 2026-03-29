@@ -1175,5 +1175,6 @@ globals().update(
             else Path(__file__).with_name("data").joinpath("magic_items.yaml")
         ),
         MagicItem,
+        module=__name__,
     )
 )

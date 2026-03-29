@@ -5,6 +5,21 @@ from pathlib import Path
 import yaml
 
 
+def _validate_list_field(entry, field, yaml_file):
+    """Raise ValueError if *field* exists in *entry* but is not a list.
+
+    Catches the common YAML authoring mistake of writing a bare string instead
+    of a single-element list, which would otherwise silently iterate over the
+    string's characters when converted to a tuple.
+    """
+    value = entry.get(field)
+    if value is not None and not isinstance(value, list):
+        raise ValueError(
+            f"Field '{field}' in '{entry.get('class_name', '?')}' must be a list "
+            f"(got {type(value).__name__!r}) in {yaml_file}"
+        )
+
+
 def _resolve_yaml_sources(yaml_path):
     """Resolve YAML source files from either a file path or directory path.
 
@@ -34,7 +49,7 @@ def _load_yaml_list_entries(yaml_file, content_label):
     return raw_data
 
 
-def load_yaml_background_classes(yaml_path, base_class, features_module):
+def load_yaml_background_classes(yaml_path, base_class, features_module, module=None):
     """Build background classes from a YAML file.
 
     Parameters
@@ -45,6 +60,10 @@ def load_yaml_background_classes(yaml_path, base_class, features_module):
         The base background class to inherit from.
     features_module : module
         Module containing feature classes referenced by name.
+    module : str, optional
+        Value to assign to ``__module__`` on each generated class. Pass
+        ``__name__`` from the calling module so that introspection and repr
+        reflect where the class is actually injected, not this helper module.
 
     Returns
     -------
@@ -63,6 +82,16 @@ def load_yaml_background_classes(yaml_path, base_class, features_module):
                 )
             class_sources[class_name] = yaml_file
 
+            for list_field in (
+                "skill_proficiencies",
+                "weapon_proficiencies",
+                "proficiencies_text",
+                "skill_choices",
+                "languages",
+                "features",
+            ):
+                _validate_list_field(entry, list_field, yaml_file)
+
             attrs = {
                 "__doc__": entry.get(
                     "description", f"{entry.get('name', class_name)} background loaded from YAML."
@@ -80,12 +109,14 @@ def load_yaml_background_classes(yaml_path, base_class, features_module):
                 ),
                 "data_source": "yaml",
             }
+            if module is not None:
+                attrs["__module__"] = module
             generated_classes[class_name] = type(class_name, (base_class,), attrs)
 
     return generated_classes
 
 
-def load_yaml_spell_classes(yaml_path, base_class):
+def load_yaml_spell_classes(yaml_path, base_class, module=None):
     """Build spell classes from a YAML file.
 
     Parameters
@@ -94,6 +125,10 @@ def load_yaml_spell_classes(yaml_path, base_class):
         Location of the YAML file containing spell definitions.
     base_class : type
         The base spell class to inherit from.
+    module : str, optional
+        Value to assign to ``__module__`` on each generated class. Pass
+        ``__name__`` from the calling module so that introspection and repr
+        reflect where the class is actually injected, not this helper module.
 
     Returns
     -------
@@ -112,6 +147,9 @@ def load_yaml_spell_classes(yaml_path, base_class):
                 )
             class_sources[class_name] = yaml_file
 
+            for list_field in ("classes", "components"):
+                _validate_list_field(entry, list_field, yaml_file)
+
             attrs = {
                 "__doc__": entry.get(
                     "description", f"{entry.get('name', class_name)} spell loaded from YAML."
@@ -128,12 +166,14 @@ def load_yaml_spell_classes(yaml_path, base_class):
                 "classes": tuple(entry.get("classes", [])),
                 "data_source": "yaml",
             }
+            if module is not None:
+                attrs["__module__"] = module
             generated_classes[class_name] = type(class_name, (base_class,), attrs)
 
     return generated_classes
 
 
-def load_yaml_magic_item_classes(yaml_path, base_class):
+def load_yaml_magic_item_classes(yaml_path, base_class, module=None):
     """Build magic item classes from a YAML file.
 
     Parameters
@@ -142,6 +182,10 @@ def load_yaml_magic_item_classes(yaml_path, base_class):
         Location of the YAML file containing magic item definitions.
     base_class : type
         The base magic item class to inherit from.
+    module : str, optional
+        Value to assign to ``__module__`` on each generated class. Pass
+        ``__name__`` from the calling module so that introspection and repr
+        reflect where the class is actually injected, not this helper module.
 
     Returns
     -------
@@ -159,6 +203,8 @@ def load_yaml_magic_item_classes(yaml_path, base_class):
                     f"{class_sources[class_name]} and {yaml_file}"
                 )
             class_sources[class_name] = yaml_file
+
+            _validate_list_field(entry, "linked_spells", yaml_file)
 
             attrs = {
                 "__doc__": entry.get(
@@ -185,6 +231,8 @@ def load_yaml_magic_item_classes(yaml_path, base_class):
                 "charge_recharge_rule": entry.get("charge_recharge_rule", ""),
                 "data_source": "yaml",
             }
+            if module is not None:
+                attrs["__module__"] = module
             generated_classes[class_name] = type(class_name, (base_class,), attrs)
 
     return generated_classes
