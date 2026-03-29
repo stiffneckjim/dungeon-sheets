@@ -1,0 +1,377 @@
+- class_name: Acolyte
+  name: Acolyte
+  description: Acolyte background loaded from YAML.
+  skill_proficiencies:
+    - insight
+    - religion
+  languages:
+    - "[choose one]"
+    - "[choose one]"
+  features:
+    - ShelterOfTheFaithful
+
+- class_name: Charlatan
+  name: Charlatan
+  description: Charlatan background loaded from YAML.
+  skill_proficiencies:
+    - deception
+    - sleight of hand
+  features:
+    - FalseIdentity
+
+- class_name: Criminal
+  name: Criminal
+  description: Criminal background loaded from YAML.
+  skill_proficiencies:
+    - deception
+    - stealth
+  features:
+    - CriminalContact
+
+- class_name: Spy
+  name: Spy
+  description: Spy background loaded from YAML.
+  skill_proficiencies:
+    - deception
+    - stealth
+  features:
+    - CriminalContact
+
+- class_name: Entertainer
+  name: Entertainer
+  description: Entertainer background loaded from YAML.
+  skill_proficiencies:
+    - acrobatics
+    - performance
+  features:
+    - ByPopularDemand
+
+- class_name: Gladiator
+  name: Gladiator
+  description: Gladiator background loaded from YAML.
+  skill_proficiencies:
+    - acrobatics
+    - performance
+  features:
+    - ByPopularDemand
+
+- class_name: Farmer
+  name: Farmer
+  description: Farmer background loaded from YAML.
+  skill_proficiencies:
+    - animal handling
+    - nature
+  proficiencies_text:
+    - Carpenter's Tools
+  features:
+    - Tough
+
+- class_name: FolkHero
+  name: Folk Hero
+  description: Folk Hero background loaded from YAML.
+  skill_proficiencies:
+    - animal handling
+    - survival
+  features:
+    - RusticHospitality
+
+- class_name: GuildArtisan
+  name: Guild Artisan
+  description: Guild Artisan background loaded from YAML.
+  skill_proficiencies:
+    - insight
+    - persuasion
+  languages:
+    - "[choose one]"
+    - "[choose one]"
+  features:
+    - GuildMembership
+
+- class_name: GuildMerchant
+  name: Guild Merchant
+  description: Guild Merchant background loaded from YAML.
+  skill_proficiencies:
+    - insight
+    - persuasion
+  languages:
+    - "[choose one]"
+    - "[choose one]"
+  features:
+    - GuildMembership
+
+- class_name: Hermit
+  name: Hermit
+  description: Hermit background loaded from YAML.
+  skill_proficiencies:
+    - medicine
+    - religion
+  languages:
+    - "[choose one]"
+  features:
+    - Discovery
+
+- class_name: Noble
+  name: Noble
+  description: Noble background loaded from YAML.
+  skill_proficiencies:
+    - history
+    - persuasion
+  languages:
+    - "[choose one]"
+  features:
+    - PositionOfPrivilege
+
+- class_name: Knight
+  name: Knight
+  description: Knight background loaded from YAML.
+  skill_proficiencies:
+    - history
+    - persuasion
+  languages:
+    - "[choose one]"
+  features:
+    - PositionOfPrivilege
+
+- class_name: Outlander
+  name: Outlander
+  description: Outlander background loaded from YAML.
+  skill_proficiencies:
+    - athletics
+    - survival
+  languages:
+    - "[choose one]"
+  features:
+    - Wanderer
+
+- class_name: RivalIntern
+  name: Rival Intern
+  description: Rival Intern background loaded from YAML.
+  skill_proficiencies:
+    - history
+    - investigation
+  proficiencies_text:
+    - One type of artisan's tools
+  languages:
+    - "[choose one]"
+  features:
+    - InsideInformant
+
+- class_name: Sage
+  name: Sage
+  description: Sage background loaded from YAML.
+  skill_proficiencies:
+    - arcana
+    - history
+  languages:
+    - "[choose one]"
+    - "[choose one]"
+  features:
+    - Researcher
+
+- class_name: Sailor
+  name: Sailor
+  description: Sailor background loaded from YAML.
+  skill_proficiencies:
+    - athletics
+    - perception
+  features:
+    - ShipsPassage
+
+- class_name: Pirate
+  name: Pirate
+  description: Pirate background loaded from YAML.
+  skill_proficiencies:
+    - athletics
+    - perception
+  features:
+    - ShipsPassage
+
+- class_name: Soldier
+  name: Soldier
+  description: Soldier background loaded from YAML.
+  skill_proficiencies:
+    - athletics
+    - intimidation
+  features:
+    - MilitaryRank
+
+- class_name: Urchin
+  name: Urchin
+  description: Urchin background loaded from YAML.
+  skill_proficiencies:
+    - sleight of hand
+    - stealth
+  features:
+    - CitySecrets
+
+- class_name: CityWatch
+  name: City Watch
+  description: City Watch background loaded from YAML.
+  skill_proficiencies:
+    - athletics
+    - insight
+  languages:
+    - "[choose one]"
+    - "[choose one]"
+  features:
+    - WatchersEye
+
+- class_name: ClanCrafter
+  name: Clan Crafter
+  description: Clan Crafter background loaded from YAML.
+  skill_proficiencies:
+    - history
+    - insight
+  languages:
+    - Dwarvish
+  features:
+    - RespectOfTheStoutFolk
+
+- class_name: CloisteredScholar
+  name: Cloistered Scholar
+  description: Cloistered Scholar background loaded from YAML.
+  skill_proficiencies:
+    - history
+  skill_choices:
+    - arcana
+    - nature
+    - religion
+  num_skill_choices: 1
+  languages:
+    - "[choose one]"
+    - "[choose one]"
+  features:
+    - LibraryAccess
+
+- class_name: Courtier
+  name: Courtier
+  description: Courtier background loaded from YAML.
+  skill_proficiencies:
+    - insight
+    - persuasion
+  languages:
+    - "[choose one]"
+    - "[choose one]"
+  features:
+    - CourtFunctionary
+
+- class_name: FactionAgent
+  name: Faction Agent
+  description: Faction Agent background loaded from YAML.
+  skill_proficiencies:
+    - insight
+  skill_choices:
+    - animal handling
+    - arcana
+    - deception
+    - history
+    - intimidation
+    - investigation
+    - medicine
+    - nature
+    - perception
+    - performance
+    - persuasion
+    - religion
+    - survival
+  num_skill_choices: 1
+  languages:
+    - "[choose one]"
+    - "[choose one]"
+  features:
+    - SafeHaven
+
+- class_name: FarTraveler
+  name: Far Traveler
+  description: Far Traveler background loaded from YAML.
+  skill_proficiencies:
+    - insight
+    - perception
+  languages:
+    - "[choose one]"
+  features:
+    - AllEyesOnYou
+
+- class_name: Inheritor
+  name: Inheritor
+  description: Inheritor background loaded from YAML.
+  skill_proficiencies:
+    - survival
+  skill_choices:
+    - arcana
+    - history
+    - religion
+  num_skill_choices: 1
+  languages:
+    - "[choose one]"
+  features:
+    - Inheritance
+
+- class_name: KnightOfTheOrder
+  name: Knight of the Order
+  description: Knight of the Order background loaded from YAML.
+  skill_proficiencies:
+    - persuasion
+  skill_choices:
+    - arcana
+    - history
+    - nature
+    - religion
+  num_skill_choices: 1
+  languages:
+    - "[choose one]"
+  features:
+    - KnightlyRegard
+
+- class_name: MercenaryVeteran
+  name: Mercenary Veteran
+  description: Mercenary Veteran background loaded from YAML.
+  skill_proficiencies:
+    - athletics
+    - persuasion
+  features:
+    - MercenaryLife
+
+- class_name: UrbanBountyHunter
+  name: Urban Bounty Hunter
+  description: Urban Bounty Hunter background loaded from YAML.
+  skill_choices:
+    - Deception
+    - Insight
+    - Persuasion
+    - Stealth
+  num_skill_choices: 2
+  features:
+    - EarToTheGround
+
+- class_name: UthgardtTribeMember
+  name: Uthgardt Tribe Member
+  description: Uthgardt Tribe Member background loaded from YAML.
+  skill_proficiencies:
+    - athletics
+    - survival
+  languages:
+    - "[choose one]"
+  features:
+    - UthgardtHeritage
+
+- class_name: WaterdhavianNoble
+  name: Waterdhavian Noble
+  description: Waterdhavian Noble background loaded from YAML.
+  skill_proficiencies:
+    - history
+    - persuasion
+  languages:
+    - "[choose one]"
+  features:
+    - KeptInStyle
+
+- class_name: Faceless
+  name: Faceless
+  description: Faceless background loaded from YAML.
+  skill_proficiencies:
+    - Deception
+    - Intimidation
+  features:
+    - FacelessPersona
+    - DualPersonalities

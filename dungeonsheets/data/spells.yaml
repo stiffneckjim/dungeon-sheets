@@ -1,0 +1,51 @@
+- class_name: MagicMissile
+  name: Magic Missile
+  description: Magic Missile spell loaded from YAML.
+  level: 1
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+    - V
+    - S
+  materials: ""
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+    - Sorcerer
+    - Wizard
+
+- class_name: Fireball
+  name: Fireball
+  description: Fireball spell loaded from YAML.
+  level: 3
+  casting_time: 1 action
+  casting_range: 150 feet
+  components:
+    - V
+    - S
+    - M
+  materials: A tiny ball of bat guano and sulfur
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+    - Sorcerer
+    - Wizard
+
+- class_name: Shield
+  name: Shield
+  description: Shield spell loaded from YAML.
+  level: 1
+  casting_time: 1 reaction, which you take when you are hit by an attack or targeted by the magic missile spell.
+  casting_range: Self
+  components:
+    - V
+    - S
+  materials: ""
+  duration: 1 round
+  ritual: false
+  magic_school: Abjuration
+  classes:
+    - Sorcerer
+    - Wizard
