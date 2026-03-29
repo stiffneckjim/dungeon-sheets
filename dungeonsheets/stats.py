@@ -275,7 +275,9 @@ class ArmorClass:
                 ac += 1
         # Check if any magic items add to AC
         for mitem in actor.magic_items:
-            if hasattr(mitem, "ac_bonus"):
+            if hasattr(mitem, "ac_bonus_total"):
+                ac += mitem.ac_bonus_total()
+            elif hasattr(mitem, "ac_bonus"):
                 ac += mitem.ac_bonus
         return ac
 

@@ -1,0 +1,46 @@
+- class_name: ScrollOfShield
+  name: Scroll of Shield
+  description: Scroll of Shield magic item loaded from YAML.
+  rarity: Common
+  item_type: Scroll
+  linked_spells:
+    - shield
+
+- class_name: PotionOfHealing
+  name: Potion of Healing
+  description: Potion of Healing magic item loaded from YAML.
+  rarity: Common
+  item_type: Potion
+  passive_effect_description: Regain 2d4 + 2 hit points when consumed
+  passive_effect_value: 10
+
+- class_name: StaffOfSpells
+  name: Staff of Spells
+  description: Staff of Spells magic item loaded from YAML.
+  rarity: Very Rare
+  item_type: Staff
+  requires_attunement: true
+  linked_spells:
+    - magic missile
+    - fireball
+    - lightning bolt
+    - polymorph
+  charge_pool_max: 50
+  charge_recharge_rule: 4d6 + 2 at dawn
+
+- class_name: JavelinOfLightning
+  name: Javelin of Lightning
+  description: Javelin of Lightning magic item loaded from YAML.
+  rarity: Uncommon
+  item_type: Weapon
+  requires_attunement: true
+  weapon_attack_bonus: 1
+  weapon_damage_bonus: 1
+
+- class_name: CloakOfProtection
+  name: Cloak of Protection
+  description: Cloak of Protection magic item loaded from YAML.
+  rarity: Uncommon
+  requires_attunement: true
+  ac_bonus: 1
+  st_bonus_all: 1
