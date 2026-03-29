@@ -87,6 +87,14 @@ using *pytest*, run the following from a console:
     uv sync --extra dev
     uv run pytest
 
+.. note::
+
+    Some local test failures in ``tests/test_make_sheets.py`` can be
+    expected if required PDF/LaTeX system tools (notably ``pdflatex``)
+    are not installed on your machine. In that case, use the Docker test
+    workflow below as the source of truth, since it includes all required
+    system dependencies.
+
 To run linting and formatting checks:
 
 .. code:: bash
@@ -132,6 +140,10 @@ You can verify success with:
 This approach ensures a consistent test environment with all system
 dependencies (pdftk, texlive) properly installed, which is particularly
 useful for testing on systems where these dependencies are difficult to install.
+
+For pull requests, prefer the Docker test run as the final validation
+step, especially when local ``pytest`` failures appear to be caused by
+missing PDF/LaTeX tooling.
 
 .. code-block:: python
    :caption: dice.py

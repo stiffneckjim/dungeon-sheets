@@ -1,0 +1,222 @@
+- class_name: RaiseDead
+  description: "You return a dead creature you touch to life, provided that it has been dead no\n    longer than 10 days. If the creature's soul is both willing and at liberty to\n    rejoin the body, the creature returns to life with 1 hit point.\n\n    This spell also\n    neutralizes any poison and cures nonmagical diseases that affected the creature\n    at the time it died. This spell doesn't, however, remove magical diseases,\n    curses, or similar effects; if these aren't first removed prior to casting the\n    spell, they take effect when the creature returns to life. The spell can't\n    return an undead creature to life.\n\n    This spell closes all mortal wounds, but it\n    doesn't restore missing body parts. If the creature is lacking body parts or\n    organs integral for its survival \u2013 its head, for instance \u2013 the spell\n    automatically fails.\n\n    Coming back from the dead is an ordeal. The target takes a\n    -4 penalty to all attack rolls, saving throws,\
+    \ and ability checks. Every time\n    the target finishes a long rest, the penalty is reduced by 1 until it\n    disappears.\n    "
+  name: Raise Dead
+  level: 5
+  casting_time: 1 hour
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A diamond worth at least 500 gp, which the spell consumes
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Bard
+  - Cleric
+  - Paladin
+- class_name: RarysTelepathicBond
+  description: "You forge a telepathic link among up to eight willing creatures of your choice\n    within range, psychically linking each creature to all the others for the\n    duration. Creatures with Intelligence scores of 2 or less aren't affected by\n    this spell.\n\n    Until the spell ends, the targets can communicated telepathically\n    through the bond whether or not they have a common language. The communication\n    is possible over any distance, though it can't extend to other planes of\n    existence.\n    "
+  name: Rarys Telepathic Bond
+  level: 5
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: Pieces of eggshell from two different kinds of creatures
+  duration: 1 hour
+  ritual: true
+  magic_school: Divination
+  classes:
+  - Wizard
+- class_name: RayOfEnfeeblement
+  description: "A black beam of enervating energy springs from your finger toward a creature\n    within range.\n    Make a ranged spell attack against the target. On a hit, the\n    target deals only half damage with weapon attacks that use Strength until the\n    spell ends.\n\n    At the end of each of the target's turns, it can make a\n    Constitution saving throw against the spell. On a success, the spell ends.\n    "
+  name: Ray Of Enfeeblement
+  level: 2
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Warlock
+  - Wizard
+- class_name: RayOfFrost
+  description: "A frigid beam of blue-white light streaks toward a creature within range. Make a\n    ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and\n    its speed is reduced by 10 feet until the start of your next turn.\n\n    At Higher\n    Levels: The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th\n    level (3d8), and 17th level (4d8).\n    "
+  name: Ray Of Frost
+  level: 0
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: RayOfSickness
+  description: "A ray of sickening greenish energy lashes out toward a creature within range.\n\n    Make a ranged spell attack against the target. On a hit, the target takes 2d8\n    poison damage and must make a Constitution saving throw. On a failed save, it is\n    also poisoned until the end of your next turn.\n\n    **At Higher Levels:** When you cast\n    this spell using a spell slot of 2nd level or higher, the damage increases by\n    1d8 for each slot level above 1st.\n    "
+  name: Ray Of Sickness
+  level: 1
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: Regenerate
+  description: "You touch a creature and stimulate its natural healing ability.\n    The target\n    regains 4d8 + 15 hit points. For the duration of the spell, the target regains 1\n    hit point at the start of each of its turns (10 hit points each minute).\n\n    The\n    target's severed body members (fingers, legs, tails, and so on), if any, are\n    restored after 2 minutes. If you have the severed part and hold it to the stump,\n    the spell instantaneously causes the limb to knit to the stump.\n    "
+  name: Regenerate
+  level: 7
+  casting_time: 1 minute
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A prayer wheel and holy water
+  duration: 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Bard
+  - Cleric
+  - Druid
+- class_name: Reincarnate
+  description: "You touch a dead humanoid or a piece of a dead humanoid. Provided that the\n    creature has been dead no longer than 10 days, the spell forms a new adult body\n    for it and then calls the soul to enter that body. If the target's soul isn't\n    free or willing to do so, the spell fails.\n\n    The magic fashions a new body for\n    the creature to inhabit, which likely causes the creature's race to change. The\n    DM rolls a d 100 and consults the following table to determine what form the\n    creature takes when restored to life, or the DM chooses a form.\n\n    d100 \_Race\n\n    01-04 Dragonborn\n    05-13 Dwarf, hill\n    14-21 Dwarf, mountain\n    22-25 Elf, dark\n    26-34\n    Elf, high\n    35-42 Elf, wood\n    43-46 Gnome, forest\n    47-52 Gnome, rock\n    53-56  Half-elf\n\n    57-60 Half-orc\n    61-68 Halfling, lightfoot\n    69-76 Halfling, stout\n    77-96 Human\n    97-00\n    Tiefling\n\n    The reincarnated creature recalls its former life and experiences.\
+    \ It\n    retains the capabilities it had in its original form, except it exchanges its\n    original race for the new one and changes its racial traits accordingly.\n    "
+  name: Reincarnate
+  level: 5
+  casting_time: 1 hour
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Rare oils and unguents worth at least 1,000 gp, which the spell consumes
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+- class_name: RemoveCurse
+  description: "At your touch, all curses affecting one creature or object end. If the object is\n    a cursed magic item, its curse remains, but the spell breaks its owner's\n    attunement to the object so it can be removed or discarded.\n    "
+  name: Remove Curse
+  level: 3
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Cleric
+  - Paladin
+  - Warlock
+  - Wizard
+- class_name: Resistance
+  description: "You touch one willing creature. Once before the spell ends, the target can roll\n    a d4 and add the number rolled to one saving throw of its choice. It can roll\n    the die before or after the saving throw. The spell then ends.\n    "
+  name: Resistance
+  level: 0
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A miniature cloak
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Cleric
+  - Druid
+- class_name: Resurrection
+  description: "You touch a dead creature that has been dead for no more than a century, that\n    didn't die of old age, and that isn't undead. If its soul is free and willing,\n    the target returns to life with all its hit points.\n\n    This spell neutralizes any\n    poisons and cures normal diseases afflicting the creature when it died. It\n    doesn't, however, remove magical diseases, curses, and the like; if such affects\n    aren't removed prior to casting the spell, they afflict the target on its\n    return to life.\n\n    This spell closes all mortal wounds and restores any missing\n    body parts.\n\n    Coming back from the dead is an ordeal. The target takes a -4\n    penalty to all attack rolls, saving throws, and ability checks. Every time the\n    target finishes a long rest, the penalty is reduced by 1 until it disappears.\n\n\n    Casting this spell to restore life to a creature that has been dead for one year\n    or longer taxes you greatly. Until you finish a long\
+    \ rest, you can't cast\n    spells again, and you have disadvantage on all attack rolls, ability checks, and\n    saving throws.\n    "
+  name: Resurrection
+  level: 7
+  casting_time: 1 hour
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A diamond worth at least 1,000 gp, which the spell consumes
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Bard
+  - Cleric
+- class_name: ReverseGravity
+  description: "This spell reverses gravity in a 50-foot-radius, 100-foot high cylinder centered\n    on a point within range.\n    All creatures and objects that aren't somehow anchored\n    to the ground in the area fall upward and reach the top of the area when you\n    cast this spell. A creature can make a Dexterity saving throw to grab onto a\n    fixed object it can reach, thus avoiding the fall.\n\n    If some solid object (such\n    as a ceiling) is encountered in this fall, falling objects and creatures strike\n    it just as they would during a normal downward fall. If an object or creature\n    reaches the top of the area without striking anything, it remains there,\n    oscillating slightly, for the duration.\n\n    At the end of the duration, affected\n    objects and creatures fall back down.\n    "
+  name: Reverse Gravity
+  level: 7
+  casting_time: 1 action
+  casting_range: 100 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A lodestone and iron filings
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: Revivify
+  description: "You touch a creature that has died within the last minute. That creature returns\n    to life with 1 hit point. This spell can't return to life a creature that has\n    died of old age, nor can it restore any missing body parts.\n    "
+  name: Revivify
+  level: 3
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Diamonds worth 300 gp, which the spell consumes
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Cleric
+  - Paladin
+- class_name: RopeTrick
+  description: "You touch a length of rope that is up to 60 feet long. One end of the rope then\n    rises into the air until the whole rope hangs perpendicular to the ground. At\n    the upper end of the rope, an invisible entrance opens to an extradimensional\n    space that lasts until the spell ends.\n\n    The extradimensional space can be\n    reached by climbing to the top of the rope. The space can hold as many as eight\n    Medium or smaller creatures. The rope can be pulled into the space, making the\n    rope disappear from view outside the space.\n\n    Attacks and spells can't cross\n    through the entrance into or out of the extradimensional space, but those inside\n    can see out of it as if through a 3-foot-by-5-foot window centered on the rope.\n\n\n    Anything inside the extradimensional space drops out when the spell ends.\n    "
+  name: Rope Trick
+  level: 2
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Powdered corn extract and a twisted loop of parchment
+  duration: 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Wizard

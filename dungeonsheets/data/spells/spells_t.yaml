@@ -1,0 +1,460 @@
+- class_name: TashasHideousLaughter
+  description: "A creature of your choice that you can see within range perceives everything as\n    hilariously funny and falls into fits of laughter if this spell affects it. The\n    target must succeed on a Wisdom saving throw or fall prone, becoming\n    incapacitated and unable to stand up for the duration. A creature with an\n    Intelligence score of 4 or less isn't affected.\n\n    At the end of each of its\n    turns, and each time it takes damage, the target can make another Wisdom saving\n    throw. The target has advantage on the saving throw if it's triggered by damage.\n    On a success, the spell ends.\n    "
+  name: Tashas Hideous Laughter
+  level: 1
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: Tiny tarts and a feather that is waved in the air
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Wizard
+- class_name: Telekinesis
+  description: "You gain the ability to move or manipulate creatures or objects by thought.\n    When\n    you cast the spell, and as your action each round for the duration, you can\n    exert your will on one creature or object that you can see within range, causing\n    the appropriate effect below. You can affect the same target round after round,\n    or choose a new one at any time. If you switch targets, the prior target is no\n    longer affected by the spell.\n\n    Creature\n    You can try to move a Huge or smaller\n    creature. Make an ability check with your spellcasting ability contested by the\n    creature's Strength check. If you win the contest, you move the creature up to\n    30 feet in any direction, including upward but not beyond the range of this\n    spell. Until the end of your next turn, the creature is restrained in your\n    telekinetic grip. A creature lifted upward is suspended in mid-air.\n    On\n    subsequent rounds, you can use your action to attempt\
+    \ to maintain your\n    telekinetic grip on the creature by repeating the contest.\n\n    Object\n    You can try\n    to move an object that weighs up to 1,000 pounds. If the object isn't being worn\n    or carried, you automatically move it up to 30 feet in any direction, but not\n    beyond the range of this spell.\n    If the object is worn or carried by a creature,\n    you must make an ability check with your spellcasting ability contested by that\n    creature's Strength check. If you succeed, you pull the object away from that\n    creature and can move it up to 30 feet in any direction but not beyond the range\n    of this spell.\n    You can exert fine control on objects with your telekinetic\n    grip, such as manipulating a simple tool, opening a door or a container, stowing\n    or retrieving an item from an open container, or pouring the contents from a\n    vial.\n    "
+  name: Telekinesis
+  level: 5
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: Telepathy
+  description: "You create a telepathic link between yourself and a willing creature with which\n    you are familiar.\n    The creature can be anywhere on the same plane of existence as\n    you. The spell ends if you or the target are no longer on the same plane.\n\n\n    Until the spell ends, you and the target can instantaneously share words,\n    images, sounds, and other sensory messages with one another through the link,\n    and the target recognizes you as the creature it is communicating with. The\n    spell enables a creature with an Intelligence score of at least 1 to understand\n    the meaning of your words and take in the scope of any sensory messages you send\n    to it.\n    "
+  name: Telepathy
+  level: 8
+  casting_time: 1 action
+  casting_range: Unlimited
+  components:
+  - V
+  - S
+  - M
+  materials: A pair of linked silver rings
+  duration: 24 hours
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Wizard
+- class_name: Teleport
+  description: "This spell instantly transports you and up to eight willing\n    creatures of your choice that you can see within range, or a\n    single object that you can see within range, to a destination you\n    select. If you target an object, it must be able to fit entirely\n    inside a 10-foot cube, and it can't be held or carried by an\n    unwilling creature.\n\n    The destination you choose must be known to you, and it must be on\n    the same plane of existence as you. Your familiarity with the\n    destination determines whether you arrive there successfully. The\n    DM rolls d100 and consults the table.\n\n    ================== ========== ============ ========== ==========\n    Familiarity        Mishap     Similar Area Off Target On Target\n    ================== ========== ============ ========== ==========\n    Permanent circle   --         --           --         01-100\n    Associated object  --         --           --         01-100\n    Very familiar      01\u2013\
+    05      06\u201313        14\u201324      25\u2013100\n    Seen casually      01\u201333      34\u201343        44\u201353      54\u2013100\n    Viewed once        01\u201343      44\u201353        54\u201373      74\u2013100\n    Description        01\u201343      44\u201353        54\u201373      74\u2013100\n    False destination  01\u201350      51\u2013100       --         --\n    ================== ========== ============ ========== ==========\n\n    Familiarity.\n      \"Permanent circle\" means a permanent teleportation circle whose\n      sigil sequence you know. \"Associated object\" means that you\n      possess an object taken from the desired destination within the\n      last six months, such as a book from a wizard's library, bed\n      linen from a royal suite, or a chunk of marble from a lich's\n      secret tomb.\n\n      \"Very familiar\" is a place you have been very often, a place you\n      have carefully studied, or a place you can see when you cast the\n     \
+    \ spell. \"Seen casually\" is someplace you have seen more than once\n      but with which you aren't very familiar. \"Viewed once\" is a\n      place you have seen once, possibly using magic. \"Description\" is\n      a place whose location and appearance you know through someone\n      else's description, perhaps from a map.\n\n      \"False destination\" is a place that doesn't exist. Perhaps you\n      tried to scry an enemy's sanctum but instead viewed an illusion,\n      or you are attempting to teleport to a familiar location that no\n      longer exists.\n    On Target\n      You and your group (or the target object) appear where you want\n      to.\n    Off Target\n      You and your group (or the target object) appear a random\n      distance away from the destination in a random\n      direction. Distance off target is 1d10 x 1d10 percent of the\n      distance that was to be traveled. For example, if you tried to\n      travel 120 miles, landed off target, and rolled a 5\
+    \ and 3 on the\n      two d10s, then you would be off target by 15 percent, or 18\n      miles. The DM determines the direction off target randomly by\n      rolling a d8 and designating 1 as north, 2 as northeast, 3 as\n      east, and so on around the points of the compass. If you were\n      teleporting to a coastal city and wound up 18 miles out at sea,\n      you could be in trouble.\n    Similar Area\n      You and your group (or the target object) wind up in a different\n      area that's visually or thematically similar to the target\n      area. If you are heading for your home laboratory, for example,\n      you might wind up in another wizard's laboratory or in an\n      alchemical supply shop that has many of the same tools and\n      implements as your laboratory. Generally, you appear in the\n      closest similar place, but since the spell has no range limit,\n      you could conceivably wind up anywhere on the plane.\n    Mishap\n      The spell's unpredictable magic\
+    \ results in a difficult\n      journey. Each teleporting creature (or the target object) takes\n      3d10 force damage, and the DM rerolls on the table to see where\n      you wind up (multiple mishaps can occur, dealing damage each\n      time).\n\n    "
+  name: Teleport
+  level: 7
+  casting_time: 1 action
+  casting_range: 10 feet
+  components:
+  - V
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Bard
+  - Sorcerer
+  - Wizard
+- class_name: TeleportationCircle
+  description: "As you cast the spell, you draw a 10-foot-diameter circle on the ground\n    inscribed with sigils that link your location to a permanent teleportation\n    circle of your choice whose sigil sequence you know and that is on the same\n    plane of existence as you.\n    A shimmering portal opens within the circle you drew\n    and remains open until the end of your next turn. Any creature that enters the\n    portal instantly appears within 5 feet of the destination circle or in the\n    nearest unoccupied space if that space is occupied.\n\n    Many major temples, guilds,\n    and other important places have permanent teleportation circles inscribed\n    somewhere within their confines. Each such circle includes a unique sigil\n    sequence \u2013 a string of magical runes arranged in a particular pattern. When you\n    first gain the ability to cast this spell, you learn the sigil sequences for two\n    destinations on the Material Plane, determined by the DM. You can learn\n\
+    \    additional sigil sequences during your adventures. You can commit a new sigil\n    sequence to memory after studying it for 1 minute.\n\n    You can create a permanent\n    teleportation circle by casting this spell in the same location every day for\n    one year. You need not use the circle to teleport when you cast the spell in\n    this way.\n    "
+  name: Teleportation Circle
+  level: 5
+  casting_time: 1 minute
+  casting_range: 10 feet
+  components:
+  - V
+  - M
+  materials: Rare chalks and inks infused with precious gems with 50 gp, which the spell consumes
+  duration: 1 round
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Bard
+  - Sorcerer
+  - Wizard
+- class_name: TempleOfTheGods
+  description: "You cause a temple to shimmer into existence on ground you can see within range.\n    The temple must fit within an unoccupied cube of space, up to 120 feet on each\n    side. The temple remains until the spell ends. It is dedicated to whatever god,\n    pantheon, or philosophy is represented by the holy symbol used in the casting.\n\n    You make all decisions about the temple's appearance. The interior is enclosed\n    by a floor, walls, and a roof, with one door granting access to the interior and\n    as many windows as you wish. Only you and any creatures you designate when you\n    cast the spell can open or close the door.\n    The temple's interior is an open\n    space with an idol or altar at one end. You decide whether the temple is\n    illuminated and whether that illumination is bright light or dim light. The\n    smell of burning incense fills the air within, and the temperature is mild.\n    The\n    temple opposes types of creatures you choose when you cast\
+    \ this spell. Choose\n    one or more of the following: celestials, elementals, fey, fiends, or undead. If\n    a creature of the chosen type attempts to enter the temple, that creature must\n    make a Charisma saving throw. On a failed save, it can't enter the temple for 24\n    hours. Even if the creature can enter the temple, the magic there hinders it;\n    whenever it makes an attack roll, an ability check, or a saving throw inside the\n    temple, it must roll a d4 and subtract the number rolled from the d20 roll.\n    In\n    addition, the sensors created by divination spells can't appear inside the\n    temple, and creatures within can't be targeted by divination spells.\n    Finally,\n    whenever any creature in the temple regains hit points from a spell of 1st level\n    or higher, the creature regains additional hit points equal to your Wisdom\n    modifier (minimum 1 hit point).\n    The temple is made from opaque magical force\n    that extends into the Ethereal Plane,\
+    \ thus blocking ethereal travel into the\n    temple's interior. Nothing can physically pass through the temple's exterior. It\n    can't be dispelled by dispel magic, and antimagic field has no effect on it. A\n    disintegrate spell destroys the temple instantly.\n    Casting this spell on the same\n    spot every day for a year makes this effect permanent.\n    "
+  name: Temple Of The Gods
+  level: 7
+  casting_time: 1 hour
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A holy symbol worth at least 5 gp
+  duration: 24 hours
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Cleric
+- class_name: TensersFloatingDisk
+  description: "This spell creates a circular, horizontal plane of force, 3 feet in\n    diameter and 1 inch thick, that floats 3 feet above the ground in\n    an unoccupied space of your choice that you can see within range. The disk\n    remains for the duration, and can hold up to 500 pounds. If more weight is\n    placed on it, the spell ends, and everything on the disk falls to\n    the ground.\n\n    The disk is immobile while you are within 20 feet of it. If you move more\n    than 20 feet away from it, the disk follows you so that it remains within\n    20 feet of you. It can more across uneven terrain, up or down stairs, slopes\n    and the like, but it can't cross an elevation change of 10 feet or more. For\n    example, the disk can't move across a 10-foot-deep pit, nor could it leave\n    such a pit if it was created at the bottom.\n\n    If you move more than 100 feet from the disk (typically because it can't\n    move around an obstacle to follow you), the spell ends.\n    "
+  name: Tensers Floating Disk
+  level: 1
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A drop of mercury
+  duration: 1 hour
+  ritual: true
+  magic_school: Conjuration
+  classes:
+  - Wizard
+- class_name: TensersTransformation
+  description: "You endow yourself with endurance and martial prowess fueled by magic. Until the\n    spell ends, you can't cast spells, and you gain the following benefits:\n    - You\n    gain 50 temporary hit points. If any of these remain when the spell ends, they\n    are lost.\n    - You have advantage on attack rolls that you make with simple and\n    martial weapons.\n    - When you hit a target with a weapon attack, that target takes\n    an extra 2d12 force\n    damage.\n    - You have proficiency with all armor, shields,\n    simple weapons, and martial weapons.\n    - You have proficiency in Strength and\n    Constitution saving throws.\n    - You can attack twice, instead of once, when you\n    take the Attack action on your turn. You ignore this benefit if you already have\n    a feature, like Extra Attack, that gives you extra attacks.\n\n    Immediately after\n    the spell ends, you must succeed on a DC 15 Constitution saving throw or suffer\n    one level of exhaustion.\n\
+    \    "
+  name: Tensers Transformation
+  level: 6
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  - M
+  materials: A few hairs from a bull
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Wizard
+- class_name: Thaumaturgy
+  description: "You manifest a minor wonder, a sign of supernatural power, within\n    range. You create one of the following magical effects within\n    range:\n\n    - Your voice booms up to three times as loud as normal for 1\n      minute.\n    - You cause flames to flicker, brighten, dim, or change color for\n      1 minute.\n    - You cause harmless tremors in the ground for 1 minute.\n    - You create an instantaneous sound that originates from a point\n      of your choice within range, such as a rumble of thunder, the\n      cry of a raven, or ominous whispers.\n    - You instantaneously cause an unlocked door or window to fly open\n      or slam shut.\n    - You alter the appearance of your eyes for 1 minute.\n\n    If you cast this spell multiple times, you can have up to three of\n    its 1-minute effects active at a time, and you can dismiss such an\n    effect as an action.\n\n    "
+  name: Thaumaturgy
+  level: 0
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  materials: ''
+  duration: Up to 1 minute
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Cleric
+- class_name: ThornWhip
+  description: "You create a long, vine-like whip covered in thorns that lashes out at your\n    command toward a creature in range. Make a melee spell attack against the\n    target. If the attack hits, the creature takes 1d6 piercing damage, and if the\n    creature is Large or smaller, you pull the creature up to 10 feet closer to you.\n\n\n    **At Higher Levels:** This spell's damage increases by 1d6 when you reach 5th\n    level (2d6), 11th level (3d6), and 17th level (4d6).\n    "
+  name: Thorn Whip
+  level: 0
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: The stem of a plant with thorns
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+- class_name: ThunderStep
+  description: "You teleport yourself to an unoccupied space you can see within range.\n    Immediately after you disappear, a thunderous boom sounds, and each creature\n    within 10 feet of the space you left must make a Constitution saving throw,\n    taking 3d10 thunder damage on a failed save, or half as much damage on a\n    successful one. The thunder can be heard from up to 300 feet away.\n    You can bring\n    along objects as long as their weight doesn't exceed what you can carry. You\n    can also teleport one willing creature of your size or smaller who is carrying\n    gear up to its carrying capacity. The creature must be within 5 feet of you when\n    you cast this spell, and there must be an unoccupied space within 5 feet of\n    your destination space for the creature to appear in; otherwise, the creature is\n    left behind.\n\n    **At Higher Levels:** When you cast this spell using a spell slot of\n    4th level or higher, the damage increases by 1d10 for each slot level\
+    \ above 3rd.\n    "
+  name: Thunder Step
+  level: 3
+  casting_time: 1 action
+  casting_range: 90 feet
+  components:
+  - V
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Thunderclap
+  description: "You create a burst of thunderous sound, which can be heard 100 feet away.\n    Each\n    creature other than you within 5 feet of you must make a Constitution saving\n    throw. On a failed save, the creature takes 1d6 thunder damage.\n    The spell's\n    damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and\n    17th level (4d6).\n    "
+  name: Thunderclap
+  level: 0
+  casting_time: 1 action
+  casting_range: 5 feet
+  components:
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Bard
+  - Sorcerer
+  - Druid
+  - Warlock
+  - Wizard
+- class_name: ThunderousSmite
+  description: "The first time you hit with a melee weapon attack during this spell's duration,\n    your weapon rings with thunder that is audible within 300 feet of you, and the\n    attack deals an extra 2d6 thunder damage to the target. Additionally, if the\n    target is a creature, it must succeed on a Strength saving throw or be pushed 10\n    feet away from you and knocked prone.\n    "
+  name: Thunderous Smite
+  level: 1
+  casting_time: 1 bonus action
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Paladin
+- class_name: Thunderwave
+  description: "A wave of thunderous force sweeps out from you.\n    Each creature in a 15-foot cube\n    originating from you must make a Constitution saving throw. On a failed save, a\n    creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a\n    successful save, the creature takes half as much damage and isn't pushed.\n\n    In\n    addition, unsecured objects that are completely within the area of effect are\n    automatically pushed 10 feet away from you by the spell's effect, and the spell\n    emits a thunderous boom audible out to 300 feet.\n\n    **At Higher Levels:** When you\n    cast this spell using a spell slot of 2nd level or higher, the damage increases\n    by 1d8 for each slot level above 1st.\n    "
+  name: Thunderwave
+  level: 1
+  casting_time: 1 action
+  casting_range: Self (15-foot cube)
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Bard
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: TidalWave
+  description: "You conjure up a wave of water that crashes down on an area within range. The\n    area can be up to 30 feet long, up to 10 feet wide, and up to 10 feet tall. Each\n    creature in that area must make a Dexterity saving throw. On a failed save, a\n    creature takes 4d8 bludgeoning damage and is knocked prone. On a successful\n    save, a creature takes half as much damage and isn't knocked prone. The water\n    then spreads out across the ground in all directions, extinguishing unprotected\n    flames in its area and within 30 feet of it, and then it vanishes.\n    "
+  name: Tidal Wave
+  level: 3
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A drop of water
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Wizard
+  - Sorcerer
+- class_name: TimeStop
+  description: "You briefly stop the flow of time for everyone but yourself. No time passes for\n    other creatures, while you take 1d4 + 1 turns in a row, during which you can use\n    actions and move as normal.\n\n    This spell ends if one of the actions you use\n    during this period, or any effects that you create during this period, affects a\n    creature other than you or an object being worn or carried by someone other\n    than you. In addition, the spell ends if you move to a place more than 1,000\n    feet from the location where you cast it.\n    "
+  name: Time Stop
+  level: 9
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: TinyServant
+  description: "You touch one Tiny, nonmagical object that isn't attached to another object or a\n    surface and isn't being carried by another creature. The target animates and\n    sprouts little arms and legs, becoming a creature under your control until the\n    spell ends or the creature drops to 0 hit points. See the stat block for its\n    statistics.\n    As a bonus action, you can mentally command the creature if it is\n    within 120 feet of you. (If you control multiple creatures with this spell, you\n    can command any or all of them at the same time, issuing the same command to\n    each one.) You decide what action the creature will take and where it will move\n    during its next turn, or you can issue a simple, general command, such as to\n    fetch a key, stand watch, or stack some books. If you issue no commands, the\n    servant does nothing other than defend itself against hostile creatures. Once\n    given an order, the servant continues to follow that order until\
+    \ its task is\n    complete.\n    When the creature drops to 0 hit points, it reverts to its original\n    form, and any remaining damage carries over to that form.\n\n    At Higher Levels:\n    When you cast this spell using a spell slot of 4th level or higher, you can\n    animate two additional objects for each slot level above 3rd.\n    "
+  name: Tiny Servant
+  level: 3
+  casting_time: 1 minute
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 8 hours
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Wizard
+- class_name: TollTheDead
+  description: "You point at one creature you can see within range, and the sound of a dolorous\n    bell fills the air around it for a moment. The target must succeed on a Wisdom\n    saving throw or take 1d8 necrotic damage. If the target is missing any of its\n    hit points, it instead takes 1d12 necrotic damage.\n    The spell's damage increases\n    by one die when you reach 5th level (2d8 or 2d12), 11th level (3d8 or 3d12), and\n    17th level (4d8 or 4d12).\n    "
+  name: Toll The Dead
+  level: 0
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Warlock
+  - Wizard
+  - Cleric
+- class_name: Tongues
+  description: "This spell grants the creature you touch the ability to understand any spoken\n    language it hears. Moreover, when the target speaks, any creature that knows at\n    least one language and can hear the target understands what it says.\n    "
+  name: Tongues
+  level: 3
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - M
+  materials: A small clay model of a ziggurat
+  duration: 1 hour
+  ritual: false
+  magic_school: Divination
+  classes:
+  - Bard
+  - Cleric
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: TransmuteRock
+  description: "You choose an area of stone or mud that you can see that fits within a 40-foot\n    cube and is within range, and choose one of the following effects.\n    Transmute\n    Rock to Mud. Nonmagical rock of any sort in the area becomes an equal volume of\n    thick, flowing mud that remains for the spell's duration.\n    The ground in the\n    spell's area becomes muddy enough that creatures can sink into it. Each foot\n    that a creature moves through the mud costs 4 feet of movement, and any creature\n    on the ground when you cast the spell must make a Strength saving throw. A\n    creature must also make the saving throw when it moves into the area for the\n    first time on a turn or ends its turn there. On a failed save, a creature sinks\n    into the mud and is restrained, though it can use an action to end the\n    restrained condition on itself by pulling itself free of the mud.\n    If you cast\n    the spell on a ceiling, the mud falls. Any creature under the mud\
+    \ when it falls\n    must make a Dexterity saving throw. A creature takes 4d8 bludgeoning damage on a\n    failed save, or half as much damage on a successful one.\n    Transmute Mud to Rock.\n    Nonmagical mud or quicksand in the area no more than 10 feet deep transforms\n    into soft stone for the spell's duration. Any creature in the mud when it\n    transforms must make a Dexterity saving throw. On a successful save, a creature\n    is shunted safely to the surface in an unoccupied space. On a failed save, a\n    creature becomes restrained by the rock. A restrained creature, or another\n    creature within reach, can use an action to try to break the rock by succeeding\n    on a DC 20 Strength check or by dealing damage to it. The rock has AC 15 and 25\n    hit points, and it is immune to poison and psychic damage.\n    "
+  name: Transmute Rock
+  level: 5
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  - M
+  materials: Clay and water
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Wizard
+- class_name: TransportViaPlants
+  description: "This spell creates a magical link between a Large or larger inanimate plant\n    within range and another plant, at any distance, on the same plane of existence.\n    You must have seen or touched the destination plant at least once before. For\n    the duration, any creature can step into the target plant and exit from the\n    destination plant by using 5 feet of movement.\n    "
+  name: Transport Via Plants
+  level: 6
+  casting_time: 1 action
+  casting_range: 10 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 1 round
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+- class_name: TreeStride
+  description: "You gain the ability to enter a tree and move from inside it to inside another\n    tree of the same kind within 500 feet.\n    Both trees must be living and at least\n    the same size as you. You must use 5 feet of movement to enter a tree. You\n    instantly know the location of all other trees of the same kind within 500 feet\n    and, as part of the move used to enter the tree, can either pass into one of\n    those trees or step out of the tree you're in. You appear in a spot of your\n    choice within 5 feet of the destination tree, using another 5 feet of movement.\n    If you have no movement left, you appear within 5 feet of the tree you entered.\n\n\n    You can use this transportation ability once per round for the duration. You\n    must end each turn outside a tree.\n    "
+  name: Tree Stride
+  level: 5
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Ranger
+- class_name: TruePolymorph
+  description: "Choose one creature or nonmagical object that you can see within range. You\n    transform the creature into a different creature, the creature into an object,\n    or the object into a creature (the object must be neither worn nor carried by\n    another creature). The transformation lasts for the duration, or until the\n    target drops to 0 hit points or dies. If you concentrate on this spell for the\n    full duration, the transformation becomes permanent.\n\n    Shapechangers aren't\n    affected by this spell. An unwilling creature can make a Wisdom saving throw,\n    and if it succeeds, it isn't affected by this spell.\n\n    Creature into Creature\n    If\n    you turn a creature into another kind of creature, the new form can be any kind\n    you choose whose challenge rating is equal to or less than the target's (or its\n    level, if the target doesn't have a challenge rating). The target's game\n    statistics, including mental ability scores, are replaced by\
+    \ the statistics of\n    the new form. It retains its alignment and personality.\n    The target assumes the\n    hit points of its new form, and when it reverts to its normal form, the creature\n    returns to the number of hit points it had before it transformed. If it reverts\n    as a result of dropping to 0 hit points, any excess damage carries over to its\n    normal form. As long as the excess damage doesn't reduce the creature's normal\n    form to 0 hit points, it isn't knocked unconscious.\n    The creature is limited in\n    the actions it can perform by the nature of its new form, and it can't speak,\n    cast spells, or take any other action that requires hands or speech unless its\n    new form is capable of such actions.\n    The target's gear melds into the new form.\n    The creature can't activate, use, wield, or otherwise benefit from any of its\n    equipment.\n\n    Object into Creature\n    You can turn an object into any kind of\n    creature, as long as the creature's\
+    \ size is no larger than the object's size and\n    the creature's challenge rating is 9 or lower. The creature is friendly to you\n    and your companions. It acts on each of your turns. You decide what action it\n    takes and how it moves. The DM has the creature's statistics and resolves all of\n    its actions and movement.\n    If the spell becomes permanent, you no longer control\n    the creature. It might remain friendly to you, depending on how you have\n    treated it.\n\n    Creature into Object\n    If you turn a creature into an object, it\n    transforms along with whatever it is wearing and carrying into that form. The\n    creature's statistics become those of the object, and the creature has no memory\n    of time spent in this form, after the spell ends and it returns to its normal\n    form.\n\n    This spell can't affect a target that has 0 hit points.\n    "
+  name: True Polymorph
+  level: 9
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A drop of mercury, a dollop of gum arabic, and a wisp of smoke
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Bard
+  - Warlock
+  - Wizard
+- class_name: TrueResurrection
+  description: "You touch a creature that has been dead for no longer than 200 years and that\n    died for any reason except old age. If the creature's soul is free and willing,\n    the creature is restored to life with all its hit points.\n\n    This spell closes all\n    wounds, neutralizes any poison, cures all diseases, and lifts any curses\n    affecting the creature when it died. The spell replaces damaged or missing\n    organs or limbs.\n\n    The spell can even provide a new body if the original no\n    longer exists, in which case you must speak the creature's name. The creature\n    then appears in an unoccupied space you choose within 10 feet of you.\n    "
+  name: True Resurrection
+  level: 9
+  casting_time: 1 hour
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A sprinkle of holy water and diamonds worth at least 25,000 gp, which the spell consumes
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Cleric
+  - Druid
+- class_name: TrueSeeing
+  description: "This spell gives the willing creature you touch the ability to see things as\n    they actually are. For the duration, the creature has truesight,  notices secret\n    doors hidden by magic, and can see into the Ethereal Plane, all out to a range\n    of 120 feet.\n    "
+  name: True Seeing
+  level: 6
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: An ointment for the eyes that costs 25 gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell
+  duration: 1 hour
+  ritual: false
+  magic_school: Divination
+  classes:
+  - Bard
+  - Cleric
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: TrueStrike
+  description: "You extend your hand and point a finger at a target in range. Your magic grants\n    you a brief insight into the target's defenses. On your next turn, you gain\n    advantage on your first attack roll against the target, provided that this spell\n    hasn't ended.\n    "
+  name: True Strike
+  level: 0
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - S
+  materials: ''
+  duration: Concentration, up to 1 round
+  ritual: false
+  magic_school: Divination
+  classes:
+  - Bard
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Tsunami
+  description: "A wall of water springs into existence at a point you choose within range. You\n    can make the wall up to 300 feet long, 300 feet high, and 50 feet thick. The\n    wall lasts for the duration.\n\n    When the wall appears, each creature within its\n    area must make a Strength saving throw. On a failed save, a creature takes 6d10\n    bludgeoning damage, or half as much damage on a successful save.\n\n    At the start\n    of each of your turns after the wall appears, the wall, along with any creatures\n    in it, moves 50 feet away from you. Any Huge or smaller creature inside the\n    wall or whose space the wall enters when it moves must succeed on a Strength\n    saving throw or take 5d10 bludgeoning damage. A creature can take this damage\n    only once per round. At the end of the turn, the wall's height is reduced by 50\n    feet, and the damage creatures take from the spell on subsequent rounds is\n    reduced by 1d10. When the wall reaches 0 feet in height, the\
+    \ spell ends.\n\n    A\n    creature caught in the wall can move by swimming. Because of the force of the\n    wave, though, the creature must make a successful Strength (Athletics) check\n    against your spell save DC in order to move at all. If it fails the check, it\n    can't move. A creature that moves out of the area falls to the ground.\n    "
+  name: Tsunami
+  level: 8
+  casting_time: 1 minute
+  casting_range: Sight
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 6 rounds
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid

@@ -1,0 +1,374 @@
+- class_name: GaseousForm
+  description: "You transform a willing creature you touch, along with everything it's wearing\n    and carrying, into a misty cloud for the duration. The spell ends if the\n    creature drops to 0 hit points. An incorporeal creature isn't affected.\n\n    While in this form, the target's only method of movement is a\n    flying speed of 10 feet.  The target can enter and occupy the\n    space of another creature. The target has resistance to nonmagical\n    damage, and it has advantage on Strength, Dexterity, and\n    Constitution saving throws. The target can pass through small\n    holes, narrow openings, and even mere cracks, though it treats\n    liquids as though they were solid surfaces. The target can't fall\n    and remains hovering in the air even when stunned or otherwise\n    incapacitated.\n\n    While in the form of a misty cloud, the target can't talk or\n    manipulate objects, and any objects it was carrying or holding\n    can't be dropped, used, or otherwise interacted\
+    \ with. The target\n    can't attack or cast spells.\n\n    "
+  name: Gaseous Form
+  level: 3
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A bit of gauze and a wisp of smoke
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: Gate
+  description: "You conjure a portal linking an unoccupied space you can see within\n    range to a precise location on a different plane of existence. The\n    portal is a circular opening, which you can make 5 to 20 feet in\n    diameter. You can orient the portal in any direction you\n    choose. The portal lasts for the duration.\n\n    The portal has a front and a back on each plane where it\n    appears. Travel through the portal is possible only by moving\n    through its front. Anything that does so is instantly transported\n    to the other plane, appearing in the unoccupied space nearest to\n    the portal.\n\n    Deities and other planar rulers can prevent portals created by\n    this spell from opening in their presence or anywhere within their\n    domains.\n\n    When you cast this spell, you can speak the name of a specific\n    creature (a pseudonym, title, or nickname doesn't work). If that\n    creature is on a plane other than the one you are on, the portal\n    opens\
+    \ in the named creature's immediate vicinity and draws the\n    creature through it to the nearest unoccupied space on your side\n    of the portal. You gain no special power over the creature, and it\n    is free to act as the Dm deems appropriate. It might leave, attack\n    you, or help you.\n\n    "
+  name: Gate
+  level: 9
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A diamond worth at least 5,000 gp
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Cleric
+  - Sorcerer
+  - Wizard
+- class_name: Geas
+  description: "You place a magical command on a creature that you can see within\n    range, forcing it to carry out some service or refrain from some\n    action or course of actiity as you decide.\n\n    If the creature can understand you, it must succeed on a Wisdom\n    saving throw or become charmed by you for the duration. While the\n    creature is charmed by you, it takes 5d10 psychic damage each time\n    it acts in a manner directly counter to your instructions, but no\n    more than once each day. A creature that can't understand you is\n    unaffected by the spell.\n\n    You can issue any command you choose, short of an activity that\n    would result in certain death. Should you issue a suicidal\n    command, the spell ends. You can end the spell early by using an\n    action to dismiss it. A remove curse, greater restoration, or wish\n    spell also ends it.\n\n    **At Higher Levels:** When you cast this spell usinga spell slot of\n    7th or 8th level, the duration is 1\
+    \ year.  When you cast this\n    spell using a spell slot of 9th level, the spell lasts until it is\n    ended by one of the spells mentioned above.\n\n    "
+  name: Geas
+  level: 5
+  casting_time: 1 minute
+  casting_range: 60 feet
+  components:
+  - V
+  materials: ''
+  duration: 30 days
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Cleric
+  - Druid
+  - Paladin
+  - Wizard
+- class_name: GentleRepose
+  description: "You touch a corpse or other remains. For the duration, the target\n    is protected from decay and can't become undead.\n\n    The spell also effectively extends the time limit on raising the\n    target from the dead, since days spent under the influence of this\n    spell don't count against the time limit of spells such as raise\n    dead.\n\n    "
+  name: Gentle Repose
+  level: 2
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A pinch of salt and one copper piece placed on each of the corpse's eyes, which must remain there for the duration
+  duration: 10 days
+  ritual: true
+  magic_school: Necromancy
+  classes:
+  - Cleric
+  - Wizard
+- class_name: GiantInsect
+  description: "You transform up to ten centipedes, three spiders, five wasps, or\n    one scorpion within range into giant versions of their natural\n    forms for the duration. A centipede becomes a giant centipede, a\n    spider becaomes a giant spider, a wasp becomes a giant wasp, and a\n    scorpion becomes a giant scorpion.\n\n    Each creature obeys your verbal commands, and in combat, they act\n    on your turn each round. The DM has the statistics for these\n    creatures and resolves their actions and movement.\n\n    A creature remains in its giant size for the duration, until it\n    drops to 0 hit points, or until you use an action to dismiss the\n    effect on it.\n\n    The DM might allow you to choose different targets. For example,\n    if you transform a bee, its giant version might have the same\n    statistics as a giant wasp.\n\n    "
+  name: Giant Insect
+  level: 4
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+- class_name: Glibness
+  description: "Until the spell ends, when you make a Charisma check, you can\n    replace the number you roll with a 15. Additionally, no matter\n    what you say, magic that would determine if you are telling the\n    truth indicates that you are being truthful.\n\n    "
+  name: Glibness
+  level: 8
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Bard
+  - Warlock
+- class_name: GlobeOfInvulnerability
+  description: "An immobile, faintly shimmering barrier springs into existence in a\n    10-foot radius around you and remains for the duration.\n\n    Any spell of 5th level or lower cast from outside the barrier\n    can't affect creatures or objects within it, even if the spell is\n    cast using a higher level spell slot. Such a spell can target\n    creatures and objects within the barrier, but the spell has no\n    effect on them.  Similarly, the area within the barrier is\n    excluded from the areas affected by such spells.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 7th level or higher, the barrier blocks spells of one level\n    higher for each slot level above 6th.\n\n    "
+  name: Globe Of Invulnerability
+  level: 6
+  casting_time: 1 action
+  casting_range: Self (10-foot radius)
+  components:
+  - V
+  - S
+  - M
+  materials: A glass or crystal bead that shatters when the spell ends
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: GlyphOfWarding
+  description: "When you cast this spell, you inscribe a glyph that harms other\n    creatures, either upon a surface (such as a table or a section of\n    floor or wall) or within an object that can be closed (such as a\n    book, a scroll, or a treasure chest) to conceal the glyph.\n\n    If you choose a surface, the glyph can cover an area of the\n    surface no larger than 10 feet in diameter. If you choose an\n    object, that object must remain in its place; if the object is\n    moved more than 10 feet from where you cast this spell, the glyph\n    is broken, and the spell ends without being triggered.\n\n    The glyph is nearly invisible and requires a successful\n    Intelligence (Investigation) check against your spell save DC to\n    be found.\n\n    You decide what triggers the glyph when you cast the spell. For\n    glyphs inscribed on a surface, the most typical triggers include\n    touching or standing on the glyph, removing another object\n    covering the glyph, approaching\
+    \ within a certain distance of the\n    glyph, or manipulating the object on which the glyph is\n    inscribed. For glyphs inscribed within an object, the most common\n    triggers include opening that object, approaching within a certain\n    distance of the object, or seeing or reading the glyph. Once a\n    glyph is triggered, this spell ends.\n\n    You can further refine the trigger so the spell activates only\n    under certain circumstances or according to physical\n    characteristics (such as height or weight), creature kind (for\n    example, the ward could be set to affect aberrations or drow), or\n    alignment. You can also set conditions for creatures that don't\n    trigger the glyph, such as those who say a certain password.\n\n    When you inscribe the glyph, choose explosive runes or a spell\n    glyph.\n\n    **Explosive Runes**\n    When triggered, the glyph erupts with magical energy in a\n    20-foot-radius sphere centered on the glyph. The sphere spreads\n    around\
+    \ corners. Each creature in the area must make a Dexterity\n    saving throw. A creature takes 5d8 acid, cold, fire, lightning, or\n    thunder damage on a failed saving throw (your choice when you\n    create the glyph), or half as much damage on a successful one.\n\n    **Spell Glyph**\n    You can store a prepared spell of 3rd level or lower in the glyph\n    by casting it as part of creating the glyph. The spell must target\n    a single creature or an area. The spell being stored has no\n    immediate effect when cast in this way. When the glyph is\n    triggered, the stored spell is cast. If the spell has a target, it\n    targets the creature that triggered the glyph. If the spell\n    affects an area, the area is centered on that creature. If the\n    spell summons hostile creatures or creates harmful objects or\n    traps, they appear as close as possible to the intruder and attack\n    it. If the spell requires concentration, it lasts until the end of\n    its full duration.\n\
+    \n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 4th Level or higher, the damage of an explosive runes glyph\n    increases by 1d8 for each slot level above 3rd. If you create a\n    spell glyph, you can store any spell of up to the same level as\n    the slot you use for the glyph of warding.\n\n    "
+  name: Glyph Of Warding
+  level: 3
+  casting_time: 1 hour
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Incense and powdered diamond worth at least 200 gp, which the spell consumes
+  duration: Until dispelled or triggered
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Cleric
+  - Wizard
+- class_name: Goodberry
+  description: "Up to ten berries appear in your hand and are infused with magic for the\n    duration. A creature can use its action to eat one berry. Eating a berry\n    restores 1 hit point, and the berry provides enough nourishment to sustain a\n    creature for one day.\n    The berries lose their potency if they have not been\n    consumed within 24 hours of the casting of this spell.\n    "
+  name: Goodberry
+  level: 1
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: A sprig of mistletoe
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Ranger
+- class_name: GraspingVine
+  description: "You conjure a vine that sprouts from the ground in an unoccupied space of your\n    choice that you can see within range. When you cast this spell, you can direct\n    the vine to lash out at a creature within 30 feet of it that you can see. That\n    creature must succeed on a Dexterity saving throw or be pulled 20 feet directly\n    toward the vine.\n\n    Until the spell ends, you can direct the vine to lash out at\n    the same creature or another one as a bonus action on each of your turns.\n    "
+  name: Grasping Vine
+  level: 4
+  casting_time: 1 bonus action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Druid
+  - Ranger
+- class_name: Grease
+  description: "Slick grease covers the ground in a 10-foot square centered on a point within\n    range and turns it into difficult terrain for the duration.\n\n    When the grease\n    appears, each creature standing in its area must succeed on a Dexterity saving\n    throw or fall prone. A creature that enters the area or ends its turn there must\n    also succeed on a Dexterity saving throw or fall prone.\n    "
+  name: Grease
+  level: 1
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A bit of pork rind or butter
+  duration: 1 minute
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Wizard
+- class_name: GreaterInvisibility
+  description: "You or a creature you touch becomes invisible until the spell\n    ends. Anything the target is wearing or carrying is invisible as\n    long as it is on the target's person.\n\n    "
+  name: Greater Invisibility
+  level: 4
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Illusion
+  classes:
+  - Bard
+  - Sorcerer
+  - Wizard
+- class_name: GreaterRestoration
+  description: "You imbue a creature you touch with positive energy to undo a\n    debilitating effect. You can reduce the target's exhaustion level\n    by one, or end one of the following effects on the target:\n\n    - One effect that charmed or petrified the target\n    - One curse, including the target's attunement to a cursed magic item\n    - Any reduction to one of the target's ability scores\n    - One effect reducing the target's hit point maximum\n\n    "
+  name: Greater Restoration
+  level: 5
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Diamond dust worth at least 100 gp, which the spell consumes
+  duration: Instantaneous
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Bard
+  - Cleric
+  - Druid
+- class_name: GreenFlameBlade
+  description: "As part of the action used to cast this spell, you must make a melee attack with\n    a weapon against one creature within the spell's range, otherwise the spell\n    fails. On a hit, the target suffers the attack's normal effects, and green fire\n    leaps from the target to a different creature of your choice that you can see\n    within 5 feet of it. The second creature takes fire damage equal to your\n    spellcasting ability modifier. This spell's damage increases when you reach\n    higher levels.\n\n    **At Higher Levels:** At 5th level, the melee attack deals an extra\n    1d8 fire damage to the target, and the fire damage to the second creature\n    increases to 1d8 + your spellcasting ability modifier. Both damage rolls\n    increase by 1d8 at 11th level and 17th level.\n    "
+  name: Green-Flame Blade
+  level: 0
+  casting_time: 1 action
+  casting_range: 5 feet
+  components:
+  - V
+  - M
+  materials: A weapon
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: GuardianOfFaith
+  description: "A Large spectral guardian appears and hovers for the duration in an unoccupied\n    space of your choice that you can see within range. The guardian occupies that\n    space and is indistinct except for a gleaming sword and shield emblazoned with\n    the symbol of your deity.\n\n    Any creature hostile to you that moves to a space\n    within 10 feet of the guardian for the firs time on a turn must succeed on a\n    Dexterity saving throw. The creature takes 20 radiant damage on a failed save,\n    or half as much damage on a successful one. The guardian vanishes when it has\n    dealt a total of 60 damage.\n    "
+  name: Guardian Of Faith
+  level: 4
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  materials: ''
+  duration: 8 hours
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Cleric
+- class_name: GuardianOfNature
+  description: "A nature spirit answers your call and transforms you into a\n    powerful guardian. The transformation lasts until the spell\n    ends. You choose one of the following forms to assume: Primal\n    Beast or Great Tree.\n\n    **Primal Beast.** Bestial fur covers your body, your facial\n    features become feral, and you gain the following benefits:\n\n    - Your walking speed increases by 10 feet.\n    - You gain darkvision with a range of 120 feet.\n    - You make Strength-based attack rolls with advantage.\n    - Your melee weapon attacks deal an extra 1d6 force damage on a\n      hit.\n\n    **Great Tree.** Your skin appears barky, leaves sprout from your\n    hair, and you gain the following benefits:\n\n    - You gain 10 temporary hit points.\n    - You make Constitution saving throws with advantage.\n    - You make Dexterity- and Wisdom-based attack rolls with\n      advantage.\n    - While you are on the ground, the ground within 15 feet of you is\n      difficult terrain\
+    \ for your enemies.\n\n    "
+  name: Guardian Of Nature
+  level: 4
+  casting_time: 1 bonus action
+  casting_range: Self
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Ranger
+- class_name: GuardsAndWards
+  description: "You create a ward that protects up to 2,500 square feet of floor\n    space (an area 50 feet square, or one hundred 5-foot squares or\n    twenty-five 10-foot squares). The warded area can be up to 20 feet\n    tall, and shaped as you desire. You can ward several stories of a\n    stronghold by dividing the area among them, as long as you can\n    walk into each contiguous area while you are casting the spell.\n\n    When you cast this spell, you can specify individuals that are\n    unaffected by any or all of the effects that you choose. You can\n    also specify a password that, when spoken aloud, makes the speaker\n    immune to these effects.\n\n    Guards and wards creates the following effects within the warded\n    area.\n\n    - **Corridors.** Fog fills all the warded corridors, making them\n      heavily obscured. In addition, at each intersection or branching\n      passage offering a choice of direction, there is a 50 percent\n      chance that a creature other\
+    \ than you will believe it is going\n      in the opposite direction from the one it chooses.\n    - **Doors.** All doors in the warded area are magically locked, as\n      if sealed by an arcane lock spell. In addition, you can cover up\n      to ten doors with an illusion (equivalent to the illusory object\n      function of the m inor illusion spell) to make them appear as\n      plain sections of wall.\n    - **Stairs.** Webs fill all stairs in the warded area from top to\n      bottom, as the web spell. These strands regrow in 10 minutes if\n      they are burned or torn away while guards and wards lasts.\n    - **Other Spell Effect.** You can place your choice of one of the\n      following magical effects within the warded area of the\n      stronghold.\n\n      - Place dancing lights in four corridors. You can designate a\n        simple program that the lights repeat as long as guards and\n        wards lasts.\n      - Place magic mouth in two locations.\n      - Place stinking\
+    \ cloud in two locations. The vapors appear in\n        the places you designate; they return within 10 minutes if\n        dispersed by wind while guards and wards lasts.\n      - Place a constant gust of wind in one corridor or room.\n      - Place a suggestion in one location. You select an area of up\n        to 5 feet square, and any creature that enters or passes\n        through the area receives the suggestion mentally.\n\n    The whole warded area radiates magic. A dispel magic cast on a\n    specific effect, if successful, removes only that effect.  You can\n    create a permanently guarded and warded structure by casting this\n    spell there every day for one year.\n\n    "
+  name: Guards And Wards
+  level: 6
+  casting_time: 10 minutes
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Burning incense, a small measure of brimstone and oil, a knotted string, a small amount of umber hulk blood, and a small silver rod worth at least 10 gp
+  duration: 24 hours
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Bard
+  - Wizard
+- class_name: Guidance
+  description: "You touch one willing creature. Once before the spell ends, the target can roll\n    a d4 and add the number rolled to one ability check of its choice. It can roll\n    the die before or after making the ability check. The spell then ends.\n    "
+  name: Guidance
+  level: 0
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Divination
+  classes:
+  - Cleric
+  - Druid
+- class_name: GuidingBolt
+  description: "A flash of light streaks toward a creature of your choice within\n    range.  Make a ranged spell attack against the target. On a hit,\n    the target takes 4d6 radiant damage, and the next attack roll made\n    against this target before the end of your next turn has\n    advantage, thanks to the mystical dim light glittering on the\n    target until then.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 2nd level or higher, the damage increases by 1d6 for each slot\n    level above 1st.\n\n    "
+  name: Guiding Bolt
+  level: 1
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: 1 round
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Cleric
+- class_name: GuidingHand
+  description: "You create a Tiny incorporeal hand of shimmering light in an\n    unoccupied space you can see within range. The hand exists for the\n    duration, but it disappears if you teleport or you travel to a\n    different plane of existence.\n\n    When the hand appears, you name one major landmark, such as a\n    city, mountain, castle, or battlefield on the same plane of\n    existence as you.  Someone in history must have visited the site\n    and mapped it. If the landmark appears on no map in existence, the\n    spell fails. Otherwise, whenever you move toward the hand, it\n    moves away from you at the same speed you moved, and it moves in\n    the direction of the landmark, always remaining 5 feet away from\n    you.\n\n    If you don't move toward the hand, it remains in place until you\n    do and beckons for you to follow once every 1d4 minutes.\n\n    "
+  name: Guiding Hand
+  level: 1
+  casting_time: 1 minute
+  casting_range: 5 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 8 hours
+  ritual: true
+  classes:
+  - Bard
+  - Cleric
+  - Druid
+  - Wizard
+- class_name: Gust
+  description: "You seize the air and compel it to create one of the following\n    effects at a point you can see within range:\n\n    - One Medium or smaller creature that you choose must succeed on a\n      Strength saving throw or be pushed up to 5 feet away from you.\n    - You create a small blast of air capable of moving one object\n      that is neither held nor carried and that weighs no more than 5\n      pounds. The object is pushed up to 10 feet away from you. It\n      isn't pushed with enough force to cause damage.\n    - You create a harmless sensory affect using air, such as causing\n      leaves to rustle, wind to slam shutters shut, or your clothing\n      to ripple in a breeze.\n\n    "
+  name: Gust
+  level: 0
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard
+- class_name: GustOfWind
+  description: "A line of strong wind 60 feet long and 10 feet wide blasts from you\n    in a direction you choose for the spell's duration. Each creature\n    that starts its turn in the line must succeed on a Strength saving\n    throw or be pushed 15 feet away from you in a direction following\n    the line.\n\n    Any creature in the line must spend 2 feet of movement for every 1\n    foot it moves when moving closer to you.\n\n    The gust disperses gas or vapor, and it extinguishes candles,\n    torches, and similar unprotected flames in the area. It causes\n    protected flames, such as those of lanterns, to dance wildly and\n    has a 50 percent chance to extinguish them.\n\n    As a bonus action on each of your turns before the spell ends, you\n    can change the direction in which the line blasts from you.\n\n    "
+  name: Gust Of Wind
+  level: 2
+  casting_time: 1 action
+  casting_range: Self (60-foot line)
+  components:
+  - V
+  - S
+  - M
+  materials: A legume seed
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Druid
+  - Sorcerer
+  - Wizard

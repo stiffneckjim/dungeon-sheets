@@ -1,5 +1,8 @@
+from pathlib import Path
+
 from dungeonsheets import features as feats
 from dungeonsheets.content_registry import default_content_registry
+from dungeonsheets.yaml_content import load_yaml_background_classes
 
 default_content_registry.add_module(__name__)
 
@@ -280,6 +283,16 @@ class Faceless(Background):
     name = "Faceless"
     skill_proficiencies = ("Deception", "Intimidation")
     features = (feats.FacelessPersona, feats.DualPersonalities)
+
+
+globals().update(
+    load_yaml_background_classes(
+        Path(__file__).with_name("data").joinpath("backgrounds.yaml"),
+        Background,
+        feats,
+        module=__name__,
+    )
+)
 
 
 PHB_backgrounds = [

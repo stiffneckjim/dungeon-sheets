@@ -1,0 +1,465 @@
+- class_name: AbiDalzimsHorridWilting
+  description: "You draw the moisture from every creature in a 30-foot cube\n    centered on a point you choose within range. Each creature in that\n    area must make a Constitution saving throw. Constructs and undead\n    aren't affected, and plants and water elementals make this saving\n    throw with disadvantage. A creature takes 12d8 necrotic damage on\n    a failed save, or half as much damage on a successful one.\n\n    Nonmagical plants in the area that aren't creatures, such as trees\n    and shrubs, wither and die instantly.\n\n    "
+  name: Abi-Dalzims Horrid Wilting
+  level: 8
+  casting_time: 1 action
+  casting_range: 150 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A bit of sponge
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: AbsorbElements
+  description: "The spell captures some of the incoming energy, lessening its\n    effect on you and storing it for your next melee attack. You have\n    resistance to the triggering damage type until the start of your\n    next turn. Also, the first time you hit with a melee attack on\n    your next turn, the target takes an extra 1d6 damage of the\n    triggering type, and the spell ends.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 2nd level or higher, the extra damage increases by 1d6 for each\n    slot level above 1st.\n\n    "
+  name: Absorb Elements
+  level: 1
+  casting_time: 1 Reaction, which you take when you take acid, cold, fire, lightning, or thunder damage
+  casting_range: Self
+  components:
+  - S
+  materials: ''
+  duration: 1 round
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Druid
+  - Ranger
+  - Wizard
+  - Sorcerer
+- class_name: AcidArrow
+  description: "A shimmering green arrow streaks toward a target within range and\n    bursts in a spray of acid. Make a ranged spell attack against the\n    target. On a hit, the target takes 4d4 acid damage immediately and\n    2d4 acid damage at the end of its next turn. On a miss, the arrow\n    splashes the target with acid for half as much of the initial\n    damage and no damage at the end of its next turn.\n\n    At Higher Levels. When you cast this spell using a spell slot of\n    3rd level or higher, the damage (both initial and later) increases\n    by 1d4 for each slot level above 2nd.\n\n    "
+  level: 2
+  name: Acid Arrow
+  casting_time: 1 action
+  casting_range: 90 ft
+  components:
+  - V
+  - S
+  - M
+  duration: instantaneous
+  magic_school: Evocation
+  classes:
+  - Wizard
+- class_name: AcidSplash
+  description: "You hurl a bubble of acid.  Choose one creature within range, or\n    choose two creatures within range that are within 5 feet of each\n    other. A target must succeed on a Dexterity saving throw or take\n    1d6 acid damage.\n\n    **At Higher Levels:** This spell's damage increases by 1d6 when\n    you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).\n\n    "
+  name: Acid Splash
+  level: 0
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: AganazzarsScorcher
+  description: "A line of roaring flame 30 feet long and 5 feet wide emanates from\n    you in a direction you choose.  Each creature in the line must\n    make a Dexterity saving throw. A creature takes 3d8 fire damage on\n    a failed save, or half as much damage on a successful one.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 3rd level or higher, the damage increases by 1d8 for each slot\n    level above 2nd.\n\n    "
+  name: Aganazzars Scorcher
+  level: 2
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A red dragon's scale
+  duration: Instantaneous
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: Aid
+  description: "Your spell bolsters your allies with toughness and resolve.\n    Choose up to three\n    creatures within range. Each target's hit point maximum and current hit points\n    increase by 5 for the duration.\n\n    **At Higher Levels:** When you cast this spell\n    using a spell slot of 3rd level or higher, a target's hit points increase by an\n    additional 5 for each slot level above 2nd.\n    "
+  name: Aid
+  level: 2
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A tiny strip of white cloth
+  duration: 8 hours
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Cleric
+  - Paladin
+- class_name: Alarm
+  description: "You set an alarm against unwanted intrusion.\n    Choose a door, a window, or an\n    area within range that is no larger than a 20-foot cube. Until the spell ends,\n    an alarm alerts you whenever a tiny or larger creature touches or enters the\n    warded area. When you cast the spell, you can designate creatures that won't set\n    off the alarm. You also choose whether the alarm is mental or audible.\n\n    A mental alarm alerts you with a ping in your mind if you are\n    within 1 mile of the warded area. This ping awakens you if you are\n    sleeping.  An audible alarm produces the sound of a hand bell for\n    10 seconds within 60 feet.\n\n    "
+  name: Alarm
+  level: 1
+  casting_time: 1 minute
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A tiny bell and a piece of fine silver wire
+  duration: 8 hours
+  ritual: true
+  magic_school: Abjuration
+  classes:
+  - Ranger
+  - Wizard
+- class_name: AlterSelf
+  description: "You assume a different form.\n    When you cast the spell, choose one of the\n    following options, the effects of which last for the duration of the spell.\n    While the spell lasts, you can end one option as an action to gain the benefits\n    of a different one.\n\n    Aquatic Adaptation. You adapt your body to an aquatic\n    environment, sprouting gills, and growing webbing between your fingers. You can\n    breathe underwater and gain a swimming speed equal to your walking speed.\n    Change\n    Appearance. You transform your appearance. You decide what you look like,\n    including your height, weight, facial features, sound of your voice, hair\n    length, coloration, and distinguishing characteristics, if any. You can make\n    yourself appear as a member of another race, though none of your statistics\n    change. You also don't appear as a creature of a different size than you, and\n    your basic shape stays the same; if you're bipedal, you can't use this spell\
+    \ to\n    become quadrupedal, for instance. At any time for the duration of the spell, you\n    can use your action to change your appearance in this way again.\n    Natural\n    Weapons. You grow claws, fangs, spines, horns, or a different natural weapon of\n    your choice. Your unarmed strikes deal 1d6 bludgeoning, piercing, or slashing\n    damage, as appropriate to the natural weapon you chose, and you are proficient\n    with your unarmed strikes. Finally, the natural weapon is magic and you have a\n    +1 bonus to the attack and damage rolls you make using it.\n    "
+  name: Alter Self
+  level: 2
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Sorcerer
+  - Wizard
+- class_name: AnimalFriendship
+  description: "This spell lets you convince a beast that you mean it no harm.\n    Choose a beast\n    that you can see within range. It must see and hear you. If the beast's\n    Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed\n    on a Wisdom saving throw or be charmed by you for the spell's duration. If you\n    or one of your companions harms the target, the spell ends.\n\n    At Higher Levels:\n    When you cast this spell using a spell slot of 2nd level or higher, you can\n    affect one additional beast for each slot level above 1st.\n    "
+  name: Animal Friendship
+  level: 1
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A morsel of food
+  duration: 24 hours
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Druid
+  - Ranger
+- class_name: AnimalMessenger
+  description: "By means of this spell, you use an animal to deliver a message.\n    Choose a Tiny\n    beast you can see within range, such as a squirrel, a blue ray, or a bat. You\n    specify a location, which you must have visited, and a recipient who matches a\n    general description, such as a man or woman dressed in the uniform of the town\n    guard or a red-haired dwarf wearing a pointed hat. You also speak a message of\n    up to twenty-five words. The target beast travels for the duration of the spell\n    towards the specified location, covering about 50 miles per 24 hours for a\n    flying messenger or 25 miles for other animals.\n\n    When the messenger arrives, it\n    delivers your message to the creature that you described, replicating the sound\n    of your voice. The messenger speaks only to a creature matching the description\n    you gave. If the messenger doesn't reach its destination before the spell ends,\n    the message is lost, and the beast makes it way back\
+    \ to where you cast this\n    spell.\n\n    **At Higher Levels:** If you cast this spell using a spell slot of 3rd level\n    or higher, the duration of the spell increases by 48 hours for each slot level\n    above 2nd.\n    "
+  name: Animal Messenger
+  level: 2
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A morsel of food
+  duration: 24 hours
+  ritual: true
+  magic_school: Enchantment
+  classes:
+  - Bard
+  - Druid
+  - Ranger
+- class_name: AnimalShapes
+  description: "Your magic turns others into beasts.\n    Choose any number of willing creatures\n    that you can see within range. You transform each target into the form of a\n    large or smaller beast with a challenge rating of 4 or lower. On subsequent\n    turns, you can use your actions to transform affected creatures into new forms.\n\n\n    The transformation lasts for the duration for each target, or until the target\n    drops to 0 hit points or dies. You can choose a different form for each target.\n    A target's game statistics are replaced by the statistics of the chosen beast,\n    though the target retains its alignment and Intelligence, Wisdom, and Charisma\n    scores. The target assumes the hit points of its new form, and when it reverts\n    to its normal form, it returns to the number of hit point it had before it\n    transformed. If it reverts as a result of dropping to 0 hit points, any excess\n    damage carries over to its normal form. As long as the excess damage\
+    \ doesn't\n    reduce the creature's normal form to 0 hit points, it isn't knocked unconcious.\n    The creature is limited in the actions it can perform by the nature of its new\n    form, and it can't speak or cast spells.\n\n    The target's gear melds into the new\n    form. The target can't activate, wield, or otherwise benefit from any of its\n    equipment.\n    "
+  name: Animal Shapes
+  level: 8
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 24 hours
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Druid
+- class_name: AnimateDead
+  description: "This spell creates an undead servant.\n    Choose a pile of bones or a corpse of a\n    Medium or Small humanoid within range. Your spell imbues the target with a foul\n    mimicry of life, raising it as an undead creature. The target becomes a skeleton\n    if you chose bones or a zombie if you chose a corpse (the DM has the creature's\n    game statistics).\n\n    On each of your turns, you can use a bonus action to\n    mentally command any creature you made with this spell if the creature is within\n    60 feet of you (if you control multiple creatures, you can command any or all\n    of them at the same time, issuing the same command to each one). You decide what\n    action the creature will take and where it will move during its next turn, or\n    you can issue a general command, such as to guard a particular chamber or\n    corridor. If you issue no commands, the creature only defends itself against\n    hostile creatures. Once given an order, the creature continues\
+    \ to follow it\n    until its task is complete.\n\n    The creature is under your control for 24 hours,\n    after which it stops obeying any command you've given it. To maintain the\n    control of the creature for another 24 hours, you must cast this spell on the\n    creature again before the current 24-hour period ends. This use of the spell\n    reasserts your control over up to four creatures you have animated with this\n    spell, rather than animating a new one.\n\n    **At Higher Levels:** When you cast this\n    spell using a spell slot of 4th level or higher, you animate or reassert control\n    over two additional undead creatures for each slot level above 3rd. Each of the\n    creatures must come from a different corpse or pile of bones.\n    "
+  name: Animate Dead
+  level: 3
+  casting_time: 1 minute
+  casting_range: 10 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A drop of blood, a piece of flesh, and a pinch of bone dust
+  duration: Instantaneous
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Cleric
+  - Wizard
+- class_name: AnimateObjects
+  description: "Objects come to life at your command. Choose up to ten nonmagical\n    objects within range that are not being worn or carried. Medium\n    targets count as two objects, Large targets count as four objects,\n    Huge targets count as eight objects. You can't animate any object\n    larger than Huge. Each target animates and becomes a creature\n    under your control until the spell ends or until reduced to 0 hit\n    points.\n\n    As a bonus action, you can mentally command any creature you made\n    with this spell if the creature is within 500 feet of you (if you\n    control multiple creatures, you can command any or all of them at\n    the same time, issuing the same command to each one). You decide\n    what action the creature will take and where it will move during\n    its next turn, or you can issue a general command, such as to\n    guard a particular chamber or corridor. If you issue no commands,\n    the creature only defends itself against hostile creatures.\
+    \ Once\n    given an order, the creature continues to follow it until its task\n    is complete.\n\n    **Animated Object Statistics:**\n\n    - Tiny -- HP: 20, AC: 18, Attack: +8 to hit, 1d4 + 4 damage, Str:\n      4, Dex: 18\n    - Small -- HP: 25, AC: 16, Attack: +6 to hit, 1d8 + 2 damage, Str:\n      6, Dex: 14\n    - Medium \u2013 HP: 40, AC: 13, Attack: +5 to hit, 2d6 + 1 damage, Str:\n      10, Dex: 12\n    - Large \u2013 HP: 50, AC: 10, Attack: +6 to hit, 2d10 + 2 damage, Str:\n      14, Dex: 10\n    - Huge \u2013 HP: 80, AC: 10, Attack: +8 to hit, 2d12 + 4 damage, Str:\n      18, Dex: 6\n\n    An animated object is a construct with AC, hit points, attacks,\n    Strength, and Dexterity determine by its size. Its Constitution is\n    10 and its Intelligence and Wisdom are 3, and its Charisma is\n    1. Its speed is 30 feet; if the objects lack legs or other\n    appendages it can use for locomotion, it instead has a flying\n    speed of 30 feet and can hover. If the object is\
+    \ securely attached\n    to a surface or larger object, such as a chain bolted to a wall,\n    its speed is 0.  It has blindsight with a radius of 30 feet and is\n    blind beyond that distance.  When the animated object drops to 0\n    hit points, it reverts to its original object form, and any\n    remaining damage carries over to its original object form.\n\n    If you command an object to attack, it can make a single melee\n    attack against a creature within 5 feet of it. It makes a slam\n    attack with an attack bonus and bludgeoning damage determine by\n    its size. The DM might rule that a specific object inflicts\n    slashing or piercing damage based on its form.\n\n    **At Higher:** If you cast this spell using a spell slot of 6th\n    level or higher, you can animate two additional objects for each\n    slot level above 5th.\n\n    "
+  name: Animate Objects
+  level: 5
+  casting_time: 1 action
+  casting_range: 120 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Bard
+  - Sorcerer
+  - Wizard
+- class_name: AntilifeShell
+  description: "A shimmering barrier extends out from you in a 10-foot radius and moves with\n    you, remaining centered on you and hedging out creatures other than undead and\n    constructs.\n    The barrier lasts for the duration. The barrier prevents an\n    affected creature from passing or reaching through. An affected creature can\n    cast spells or make attacks with ranged or reach weapons through the barrier.\n\n    If you move so that an affect creature is forced to pass through the barrier,\n    the spell ends.\n    "
+  name: Antilife Shell
+  level: 5
+  casting_time: 1 action
+  casting_range: Self (10-foot radius)
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Druid
+- class_name: AntimagicField
+  description: "A 10-foot-radius invisible sphere of antimagic surrounds you.  This\n    area is divorced from the magical energy that suffeses the\n    multiverse. Within the sphere, spells can't be cast, summoned\n    creatures disappear, and even magic items become mundane. Until\n    the spell ends, the spere moves with you, centered on you.\n\n    Spells and other magical effects, except those created by an\n    artifact or a deity, are suppressed in the sphere and can't\n    protrude into it. A slot expended to cast a suppressed spell is\n    consumed. While an effect is suppressed, it doesn't function, but\n    the time it spends suppressed counts against its duration.\n\n    Targeted Effects.\n      Spells and other magical effects, such as magic missle and charm\n      person, that target a creature or an object in the sphere have\n      no effect on that target.\n    Areas of Magic.\n      The area of another spell or magical effect, such as fireball,\n      can't extend into the\
+    \ sphere. If the sphere overlaps an area of\n      magic, the part of the area that is covered by the sphere is\n      suppressed. For example, the flames created by a wall of fire\n      are suppressed within the sphere, creating a gap in the wall if\n      the overlap is large enough.\n    Spells.\n      Any active spell or other magical effect on a creature or an\n      object in the sphere is suppressed while the creature or object\n      is in it.\n    Magic Items.\n      The properties and powers of magic items are suppressed in the\n      sphere. Forexample, a +1 longsword in the sphere functions as a\n      nonmagical longsword. A magic weapon's properties and powers are\n      suppressed if it is used against a target in the sphere or\n      wielded by an attacker in the sphere. If a magic weapon or piece\n      of magic ammunition fully leaves the sphere (For example, if you\n      fire a magic arrow or throw a magic spear at a target outside\n      the sphere), the magic of\
+    \ the item ceases to be supressed as\n      soon as it exits.\n    Magical Travel.\n      Teleportation and planar travel fail to work in the sphere,\n      whether the sphere is the destination or the departure point for\n      such magical travel. A portal to another location, world, or\n      plane of existence, as well as an opening to an extradimensional\n      space such as that created by the rope trick spells, temporarily\n      closes while in the sphere.\n    Creatures and Objects.\n      A creature or object summoned or created by magic temporarily\n      winks out of existence in the sphere. Such a creature instantly\n      reappears once the space the creature occupied is no longer\n      withinthe sphere.\n    Dispel Magic.\n      Spells and magical effects such as dispel magic have no effect\n      on the sphere. Likewise, the spheres created by different\n      antimagic field spells don't nullify each other.\n\n    "
+  name: Antimagic Field
+  level: 8
+  casting_time: 1 action
+  casting_range: Self (10-foot-radius sphere)
+  components:
+  - V
+  - SM
+  materials: A pinch of powdered iron or iron filings
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Cleric
+  - Wizard
+- class_name: Antipathysympathy
+  description: "This spell attracts or repels creatures of your choice.\n    You target something\n    within range, either a Huge or smaller object or creature or an area that is no\n    larger than a 200-foot cube. Then specify a kind of intelligent creature, such\n    as red dragons, goblins, or vampires. You invest the target with an aura that\n    either attracts or repels the specified creatures for the duration. Choose\n    antipathy or sympathy as the aura's effect.\n\n    Antipathy.\n    The enchantment causes\n    creatures of the kind you designated to feel an intense urge to leave the area\n    and avoid the target. When such a creature can see the target or comes within 60\n    feet of it, the creature must succeed on a Wisdom saving throw or\n    become frightened. The creature remains frightened while it can see the target\n    or is within 60 feet of it. While frightened by the target, the creature must\n    use its movement to move to the nearest safe spot from which it\
+    \ can't see the\n    target. If the creature moves more than 60 feet from the target and can't see\n    it, the creature is no longer frightened, but the creature becomes frightened\n    again if it regains sight of the target or moves within 60 feet of it.\n\n\n    Sympathy.\n    The enchantment causes the specified creatures to feel an intense\n    urge to approach the target while within 60 feet of it or able to see it. When\n    such a creature can see the target or comes within 60 feet o fit, the creature\n    must succeed on a Wisdom saving throw or use its movement on each of its turns\n    to enter the area or move within reach of the target. When the creature has done\n    so, it can't willingly move away from the target. If the target damages or\n    otherwise harms an affected creature, the affected creature can make a\n    Wisdom saving throw to end the effect, as described below.\n\n    Ending the Effect.\n\n    If an affected creature ends its turn while not within 60 feet\
+    \ of the target\n    or able to see it, the creature makes a Wisdom saving throw. On a successful\n    save, the creature is no longer affected by the target and recognizes the\n    feeling of repugnance or attraction as magical. In addition, a creature affected\n    by the spell is allowed another Wisdom saving throw every 24 hours while the\n    spell persists.\n    A creature that successfully saves against this effect is\n    immune to it for 1 minute, after which time it can be affected again.\n    "
+  name: Antipathysympathy
+  level: 8
+  casting_time: 1 hour
+  casting_range: 60 feet
+  components:
+  - V
+  - S
+  - M
+  materials: Either a lump of alum soaked in vinegar for the antipathy effect or a drop of honey for the sympathy effect
+  duration: 10 days
+  ritual: false
+  magic_school: Enchantment
+  classes:
+  - Druid
+  - Wizard
+- class_name: ArcaneEye
+  description: "You create an invisible, magical eye within e that hovers in the air for the\n    duration.\n    You mentally receive visual information from the eye, which has\n    normal vision and darkvision out to 30 feet. The eye can look in every\n    direction.\n    As an action, you can move the eye up to 30 feet in any direction.\n    There is no limit to how far away from you the eye can move, but it can't enter\n    another plane of existence. A solid barrier blocks the eye's movement, but the\n    eye can pass through an opening as small as 1 inch in diameter.\n    "
+  name: Arcane Eye
+  level: 4
+  casting_time: 1 action
+  casting_range: 30 feet
+  components:
+  - V
+  - S
+  - M
+  materials: A bit of bat fur
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Divination
+  classes:
+  - Wizard
+- class_name: ArcaneGate
+  description: "You create linked teleportation portals that remain open for\n    the duration.\n\n    Choose two points on the ground that you can see, one point within 10 feet\n    of you and one point within 500 feet of you. A circular portal, 10 feet in\n    diameter, opens over each point. If the portal would open in the space\n    occupied by a creature, the spell fails, and the casting is lost.\n\n    The portals are two-dimensional glowing rings filled with mist, hovering\n    inches from the ground and perpendicular to it at the points you choose.\n    A ring is visible only from one side (your choice), which is the side that\n    functions as a portal.\n\n    Any creature or object entering the portal exits from the other portal as if\n    the two were adjacent to each other; passing through a portal from\n    the nonportal side has no effect. The mist that fills each portal is opaque\n    and blocks vision through it. On your turn, you can rotate the rings as\n    a bonus action\
+    \ so that the active side faces in a different direction.\n    "
+  name: Arcane Gate
+  level: 6
+  casting_time: 1 action
+  casting_range: 500 feet
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Sorcerer
+  - Warlock
+  - Wizard
+- class_name: ArcaneLock
+  description: "You touch a closed door, window, gate, chest, or other entryway, and\n    it becomes locked for the duration. You and the creatures you\n    designate when you cast this spell can open the object normally. You\n    can also set a password that, when spoken within 5 feet of the object,\n    suppresses this spell for 1 minute. Otherwise, it is impassable until\n    it is broken or the spell is dispelled or suppressed. Casting knock\n    on the object suppresses arcane lock for 10 minutes.\n\n    While affected\n    by this spell, the object is more difficult to break or force open;\n    the DC to break it or pick any locks on it increases by 10.\n    "
+  name: Arcane Lock
+  level: 2
+  casting_time: 1 action
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: Gold dust worth at least 25 gp, which the spell consumes
+  duration: Until dispelled
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Wizard
+- class_name: ArcaneWeapon
+  description: "You channel arcane energy into one simple or martial weapon you\u2019re\n    holding, and choose one damage type: acid, cold, fire, lightning, poison,\n    or thunder. Until the spell ends, you deal an extra 1d6 damage of the\n    chosen type to any target you hit with the weapon. If the weapon isn\u2019t\n    magical, it becomes a magic weapon for the spell\u2019s duration.\n\n    As a bonus action, you can change the damage type, choosing from the\n    options above.\n    "
+  name: Arcane Weapon
+  level: 1
+  casting_time: 1 bonus action
+  casting_range: Self
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Concentration, up to 1 hour
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Artificer
+- class_name: ArmorOfAgathys
+  description: "A protective magical force surrounds you, manifesting as a spectral\n    frost that covers you and your gear. You gain 5 temporary hit\n    points for the duration. If a creature hits you with a melee\n    attack while you have these hit points, the creature takes 5 cold\n    damage.\n\n    **At Higher Levels:** When you cast this spell using a spell slot\n    of 2nd level or higher, both the temporary hit points and the cold\n    damage increase by 5 for each slot\n\n    "
+  name: Armor Of Agathys
+  level: 1
+  casting_time: 1 action
+  casting_range: Self
+  components:
+  - V
+  - S
+  - M
+  materials: A cup of water
+  duration: 1 hour
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Warlock
+- class_name: ArmsOfHadar
+  description: "You invoke the power of Hadar, the Dark Hunger.\n    Tendrils of dark energy erupt\n    from you and batter all creatures within 10 feet of you. Each creature in that\n    area must make a Strength saving throw. On a failed save, a target takes 2d6\n    necrotic damage and can't take reactions until its next turn. On a successful\n    save, the creature takes half damage, but suffers no other effect.\n\n    At Higher\n    Levels: When you cast this spell using a spell slot of 2nd level or higher, the\n    damage increases by 1d6 for each slot level above 1st.\n    "
+  name: Arms Of Hadar
+  level: 1
+  casting_time: 1 action
+  casting_range: Self (10-foot radius)
+  components:
+  - V
+  - S
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Conjuration
+  classes:
+  - Warlock
+- class_name: AstralProjection
+  description: "You and up to eight willing creatures within range project your astral bodies\n    into the Astral Plane (the spell fails and the casting is wasted if you are\n    already on that plane).\n    The material body you leave behind is unconscious and\n    in a state of suspended animation; it doesn't need food or air and doesn't age.\n\n\n    Your astral body resembles your mortal form in almost every way, replicating\n    your game statistics and possessions. The principal difference is the addition\n    of a silvery cord that extends from between your shoulder blades and trails\n    behind you, fading to invisibility after 1 foot. This cord is your tether to\n    your material body. As long as the tether remains intact, you can find your\n    way home. If the cord is cut something that can happen only when an effect\n    specifically states that it does your soul and body are separated, killing you\n    instantly.\n\n    Your astral form can freely travel through the Astral\
+    \ Plane and can\n    pass through portals there leading to any other plane. If you enter a new plane\n    or return to the plane you were on when casting this spell, your body\n    and possessions are transported along the silver cord, allowing you to re-enter\n    your body as you enter the new plane. Your astral form is a separate\n    incarnation. Any damage or other effects that apply to it have no effect on\n    your physical body, nor do they persist when you return to it. The spell ends\n    for you and your companions when you use your action to dismiss it. When the\n    spell ends, the affected creature returns to its physical body, and it awakens.\n\n\n    The spell might also end early for you or one of your companions. A successful\n    dispel magic spell used against an astral or physical body ends the spell for\n    that creature. If a creature's original body or its astral form drops to 0 hit\n    points, the spell ends for that creature. If the spell ends and the silver\
+    \ cord\n    is intact, the cord pulls the creature's astral form back to its body, ending\n    its state of suspended animation. If you are returned to your body prematurely,\n    your companions remain in their astral forms and must find their own way back to\n    their bodies, usually by dropping to 0 hit points.\n    "
+  name: Astral Projection
+  level: 9
+  casting_time: 1 hour
+  casting_range: 10 feet
+  components:
+  - V
+  - S
+  - M
+  materials: For each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes
+  duration: Special
+  ritual: false
+  magic_school: Necromancy
+  classes:
+  - Cleric
+  - Warlock
+  - Wizard
+- class_name: Augury
+  description: "By casting gem-inlaid sticks, rolling dragon bones, laying out\n    ornate cards, or employing some other divining tool, you receive\n    an omen from an otherworldly entity about the results of a\n    specific course of action that you plan to take within the next 30\n    minutes. The DM chooses from the following possible omens:\n\n    - Weal, for good results\n    - Woe, for bad results\n    - Weal and woe, for both good and bad results\n    - Nothing, for results that aren't especially good or bad\n\n    The spell doesn't take into account any possible circumstances\n    that might change the outcome, such as the casting of additional\n    spells or the loss or gain of a companion.  If you cast the spell\n    two or more times before completing your next long rest, there is\n    a cumulative 25 percent chance for each casting after the first\n    that you get a random reading. The DM makes this roll in secret.\n\n    "
+  name: Augury
+  level: 2
+  casting_time: 1 minute
+  casting_range: Self
+  components:
+  - V
+  - S
+  - M
+  materials: Specially marked sticks, bones, or similar tokens worth at least 25 gp
+  duration: Instantaneous
+  ritual: true
+  magic_school: Divination
+  classes:
+  - Cleric
+- class_name: AuraOfLife
+  description: "Life-preserving energy radiates from you in an aura with a 30-foot radius.\n\n    Until the spll ends, the aura moves with you, centered on you. Each nonhostile\n    creature in the aura (including you) has resistance to necrotic damage, and its\n    hit point maximum can't be reduced. In addition, a nonhostile, living creature\n    regains 1 hit point when it starts its turn in the arua with 0 hit points.\n    "
+  name: Aura Of Life
+  level: 4
+  casting_time: 1 action
+  casting_range: Self (30-foot radius)
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Paladin
+- class_name: AuraOfPurity
+  description: "Purifying energy radiates from you in an aura with a 30-foot radius.\n    Until the\n    spell ends, the aura moves with you, centered on you. Each nonhostile creature\n    in the aura (including you) can't become diseased, has resistance to poison\n    damage, and has advantage on saving throws against effects that cause any of the\n    following conditions: blnded, charmed, deafended, frightened, paralyzed,\n    poisoned, and stunned.\n    "
+  name: Aura Of Purity
+  level: 4
+  casting_time: 1 action
+  casting_range: Self (30-foot radius)
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 10 minutes
+  ritual: false
+  magic_school: Abjuration
+  classes:
+  - Paladin
+- class_name: AuraOfVitality
+  description: "Healing energy radiates from you in an aura with a 30-foot radius.\n    Until the\n    spell ends, the aura moves with you, centered on you. You can use a bonus action\n    to cause one creature in the aura (including you) to regain 2d6 hit points.\n    "
+  name: Aura Of Vitality
+  level: 3
+  casting_time: 1 action
+  casting_range: Self (30-foot radius)
+  components:
+  - V
+  materials: ''
+  duration: Concentration, up to 1 minute
+  ritual: false
+  magic_school: Evocation
+  classes:
+  - Paladin
+- class_name: Awaken
+  description: "After spending the casting time tracing magical pathways within a precious\n    gemstone, you touch a huge or smaller beast or plant.\n    The target must have\n    either no Intelligence score or an Intelligence of 3 or less. The target gains\n    an Intelligence of 10. The target also gains the ability to speak one language\n    you know. If the target is a plant, it gains the ability to move its limbs,\n    roots, vinces, creepers, and so forth, and it gains senses similar to a huamn's.\n    Your DM chooses statistics appropriate for the awakened plant, such as the\n    statistics for the awakened shrub or the awakened tree.\n\n    The awakened beast or\n    plant is charmed by you for 30 days or until you and your companions do anything\n    harmful to it. When the charmed condition ends, the awakened creature chooses\n    whether to remain friendly to you, based on how you treated it while it was\n    charmed.\n    "
+  name: Awaken
+  level: 5
+  casting_time: 8 hours
+  casting_range: Touch
+  components:
+  - V
+  - S
+  - M
+  materials: An agate worth at least 1,000 gp, which the spell consumes
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Bard
+  - Druid

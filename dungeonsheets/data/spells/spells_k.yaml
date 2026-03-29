@@ -1,0 +1,16 @@
+- class_name: Knock
+  description: "Choose an object that you can see within range. The object can be a door, a box,\n    a chest, a set of manacles, a padlock, or another object that contains a\n    mundane or magical means that prevents access.\n\n    A target that is held shut by a\n    mundane lock or that is stuck or barred becomes unlocked, unstuck, or unbarred.\n    If the object has multiple locks, only one of them is unlocked.\n\n    If you choose a\n    target that is held shut with arcane lock, that spell is suppressed for 10\n    minutes, during which time the target can be opened and shut normally.\n\n    When you\n    cast the spell, a loud knock, audible from as far away as 300 feet, emanates\n    from the target object.\n    "
+  name: Knock
+  level: 2
+  casting_time: 1 action
+  casting_range: 60 feet
+  components:
+  - V
+  materials: ''
+  duration: Instantaneous
+  ritual: false
+  magic_school: Transmutation
+  classes:
+  - Bard
+  - Sorcerer
+  - Wizard
