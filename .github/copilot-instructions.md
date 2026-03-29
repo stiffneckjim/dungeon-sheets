@@ -1,15 +1,35 @@
 # AI Agent Instructions for dungeon-sheets
 
-This document guides AI coding agents on effectively working with the dungeon-sheets codebase, a tool for creating D&D 5e character sheets and session notes.
+dungeon-sheets is a Python package (3.10+) that generates D&D 5e character sheets and GM notes in PDF/ePub formats. Character data is defined in Python files or imported from VTT JSON exports.
 
-## Project Overview
+## Build, Test & Lint Commands
 
-dungeon-sheets is a Python package that:
+Uses **`uv`** for package management — never use `pip` directly.
 
-- Generates character sheets and GM notes for D&D 5th Edition
-- Supports multiple output formats (PDF, ePub)
-- Handles character data from Python files and VTT JSON exports
-- Requires Python 3.10+ and uses modern Python features
+```bash
+uv sync --all-extras        # Install all dependencies (including dev)
+```
+
+```bash
+uv run pytest tests/        # Full test suite
+uv run pytest tests/test_character.py::TestCharacter::test_max_hp  # Single test
+uv run pytest tests/ -k "test_spell_slots"  # Filter by name
+```
+
+```bash
+uv run ruff check dungeonsheets/           # Lint
+uv run ruff format --check dungeonsheets/  # Format check
+uv run ruff format dungeonsheets/          # Apply formatting
+```
+
+Line length is **100 characters** (configured in `pyproject.toml`).
+
+System dependencies required for PDF output (CI uses Ubuntu):
+```bash
+sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+```
+
+Tests use `unittest.TestCase` but are discovered and run via `pytest`.
 
 ## Development Workflow (GitHub Flow)
 
@@ -69,23 +89,38 @@ This project follows the **GitHub Flow** model. All changes must be made on a fe
 
 **Never commit directly to `main`**. Always work on a feature branch and use pull requests for code review and CI validation.
 
-## Core Architecture
+## Architecture
 
-The project follows a modular architecture with these key components:
+### Data Flow
 
-1. **Character Model** (`dungeonsheets/character.py`):
+```
+Character File (.py or .json)
+    ↓ readers.read_sheet_file()
+dict of character properties
+    ↓ Character.load()
+Character instance
+    ↓ set_attrs() → _resolve_mechanic()
+Strings resolved to classes (e.g., "shortsword" → Shortsword)
+    ↓ CharacterRenderer (Jinja2)
+LaTeX / HTML rendered from forms/ templates
+    ↓ pdftk / pypdf / pdflatex
+PDF or ePub output
+```
 
-   - Base `Character` class that other classes inherit from
-   - Handles core character attributes, calculated stats, and feature management
+### Key Modules
 
-2. **Content System** (`dungeonsheets/content_registry.py`, `dungeonsheets/content.py`):
-
-   - Registry pattern for D&D content (spells, items, features)
-   - Use `content_registry.register_X()` for adding new content
-
-3. **Output Generation** (`dungeonsheets/make_sheets.py`):
-   - Entry point for sheet generation via `makesheets` command
-   - Supports PDF (via pdftk/pypdf), LaTeX, and ePub formats
+| Module | Role |
+|--------|------|
+| `character.py` | `Character` class + multiclass logic, computed properties (spell slots, AC, proficiency bonus) |
+| `content_registry.py` | `ContentRegistry` singleton; resolves string names to Python classes |
+| `content.py` | `Content` and `Creature` base classes; `_resolve_mechanic()` for flexible input |
+| `make_sheets.py` | `CharacterRenderer` (Jinja2), entry point `main()`, PDF/ePub pipeline |
+| `readers.py` | Parses Python character files, VTT JSON exports, parent sheet inheritance |
+| `classes/` | `CharClass` subclasses (Wizard, Fighter, Cleric, etc.) — **not** subclasses of `Character` |
+| `features/` | `Feature` subclasses; ~20 modules split by class/race/feat |
+| `spells/` | 800+ spells split alphabetically across `spells_a.py`–`spells_z.py` |
+| `forms/` | Jinja2 templates (`.tex`, `.html`, `.txt`) for output rendering |
+| `data/` | YAML files for backgrounds, magic items, spell data |
 
 ## CI/CD Pipeline
 
@@ -195,63 +230,102 @@ uv lock              # Update uv.lock after changing pyproject.toml
 
 **Important**: Always use `uv` commands instead of `pip` for consistency. The `uv.lock` file ensures reproducible builds and is automatically used in CI/CD and devcontainers.
 
-### Testing
+## Key Conventions
 
-```bash
-uv sync --all-extras # Install dev dependencies
-pytest tests/        # Run test suite
-pytest tests/ -k test_name  # Run specific test
+### Content Registration
+
+New content (spells, features, armor, etc.) is registered by calling `default_content_registry.add_module(__name__)` at module level — **not** with a decorator:
+
+```python
+from dungeonsheets.content_registry import default_content_registry
+
+default_content_registry.add_module(__name__)
+
+class MySpell(Spell):
+    name = "My Spell"
+    level = 2
+    ...
 ```
 
-### Development Setup
+The registry resolves `"my spell"`, `"MySpell"`, or `"my_spell"` to the same class.
 
-```bash
-uv sync              # Install in editable mode with locked dependencies
-sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended  # Optional: PDF dependencies
+### Flexible Input Resolution
+
+`Character.set_attrs()` and most setters accept strings, classes, or instances interchangeably. `_resolve_mechanic()` in `content.py` handles the coercion. This means:
+
+```python
+# All equivalent in a character file:
+armor = "leather armor"
+armor = LeatherArmor
+armor = LeatherArmor()
 ```
+
+### Adding New Content
+
+1. Define your class in the appropriate module (e.g., `features/fighter.py`, `spells/spells_m.py`)
+2. Ensure `default_content_registry.add_module(__name__)` is called in that module
+3. Reference by name string in character files — no explicit import needed
+
+For weapons/armor with bonuses, use the `improved_version()` classmethod pattern:
+```python
+# Creates "+2 Shortsword" dynamically
+weapons = ["+2 shortsword"]
+```
+
+### Character Class vs D&D Class
+
+- `Character` (in `character.py`): the player character object — **not** subclassed for D&D classes
+- `CharClass` (in `classes/`): represents a D&D class (Fighter, Wizard, etc.) — assigned to a character via `add_class()`
+- A `Character` holds a list of `CharClass` instances in `class_list`
+
+### Parent Sheets
+
+Character files can inherit from other character files:
+```python
+# wizard1.py
+parent_sheets = ["base_character.py"]
+name = "Gandalf"
+# Other fields override the parent
+```
+
+### Homebrew Content
+
+```python
+from dungeonsheets import import_homebrew
+campaign = import_homebrew("my_homebrew.py")
+```
+
+### YAML-Generated Content
+
+Backgrounds and some magic items are generated dynamically from YAML files at import time via `yaml_content.py`. Don't expect to find these as explicit Python classes — they're constructed programmatically from `data/backgrounds.yaml` and similar.
 
 ## Project Conventions
 
-1. **Class Creation**:
+1. **D&D Classes** (`classes/`): Subclass `CharClass`; define `name`, `hit_dice`, `spellcasting_ability`, `skill_proficiencies`, and feature lists.
 
-   - Character classes (Fighter, Wizard, etc.) inherit from `Character`
-   - New features should be registered via `content_registry`
-   - Example: See `dungeonsheets/classes/wizard.py`
+2. **Features** (`features/`): Subclass `Feature`; define `name`, `description`, optionally `weapon_func(weapon)` to modify weapon stats. Accept `owner` in `__init__`.
 
-2. **Testing**:
+3. **Testing**: Use `unittest.TestCase`. Mock external binaries (pdftk, pdflatex). Test string-to-class resolution explicitly.
 
-   - Tests are organized by component in `tests/`
-   - Use `TestCase` for test classes
-   - Mock external dependencies (pdftk, latex)
-
-3. **Content Addition**:
-
-   ```python
-   from dungeonsheets.content_registry import register_spell
-
-   @register_spell
-   class NewSpell:
-       """Follow existing spell pattern"""
-       pass
-   ```
+4. **Exceptions**: Use `dungeonsheets.exceptions` — `ContentNotFound`, `AmbiguousContent`, etc. Don't raise raw `ValueError` for missing content.
 
 ## Integration Points
 
 1. **PDF Generation**:
-
-   - Primary: pdftk for form filling
-   - Fallback: pypdf library
-   - LaTeX for spell pages (optional)
+   - Primary: `pdftk` for form filling
+   - Fallback: `pypdf` library
+   - LaTeX (`pdflatex`) for spell pages with `--fancy` flag
 
 2. **Data Import**:
    - Python character files (primary)
-   - VTT JSON exports (supported formats in `dungeonsheets/readers.py`)
+   - VTT JSON exports (see `dungeonsheets/readers.py` for supported formats)
 
 ## Common Pitfalls
 
-1. **PDF Generation**: Always check `pdftk` availability before using PDF-specific features
-2. **Python Files**: Character files require exact class/feature names matching registry
-3. **Dependencies**: Some features need external tools (pdftk, latex) - handle gracefully
+1. **Content not found**: Strings in character files must match a registered class name. Check spelling and that the module containing the class calls `add_module()`.
+2. **D&D class vs Character class**: Never subclass `Character` for a D&D class — use `CharClass`.
+3. **PDF dependencies**: `pdftk` and `pdflatex` are external binaries; tests mock them. Don't assume they're available in all environments.
+4. **Spells split by file**: When adding a spell, add it to the correct alphabetical file (`spells/spells_m.py` for "Magic Missile", etc.).
 
 ## Example Files
 
