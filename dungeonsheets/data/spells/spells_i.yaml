@@ -61,7 +61,8 @@
   - S
   duration: 1 minute
   magic_school: Enchantment
-  classes: Sorcerer
+  classes:
+  - Sorcerer
 - class_name: IllusoryDragon
   description: "By gathering threads of shadow material from the Shadowfell, you create a Huge\n    shadowy dragon in an unoccupied space that you can see within range. The\n    illusion lasts for the spell's duration and occupies its space, as if it were a\n    creature.\n    When the illusion appears, any of your enemies that can see it must\n    succeed on a Wisdom saving throw or become frightened of it for 1 minute. If a\n    frightened creature ends its turn in a location where it doesn't have line of\n    sight to the illusion, it can repeat the saving throw, ending the effect on\n    itself on a success.\n    As a bonus action on your turn, you can move the illusion\n    up to 60 feet. At any point during its movement, you can cause it to exhale a\n    blast of energy in a 60-foot cone originating from its space. When you create\n    the dragon, choose a damage type: acid, cold, fire, lightning, necrotic, or\n    poison. Each creature in the cone must make an Intelligence saving\
     \ throw, taking\n    '7d6 damage of the\n    chosen damage type on a failed save, or half as much damage\n    on a successful one.\n    The illusion is tangible because of the shadow stuff used\n    to create it, but attacks miss it automatically. it succeeds on all saving\n    throws, and it is immune to all damage and conditions. A creature that uses an\n    action to examine the dragon can determine that it is an illusion by succeeding\n    on an Intelligence (Investigation) check against your spell save DC. If a\n    creature discerns the illusion for what it is, the creature can see through it\n    and has advantage on saving throws against its breath.\n    "
