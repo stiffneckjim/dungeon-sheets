@@ -24,10 +24,7 @@ uv run ruff format dungeonsheets/          # Apply formatting
 
 Line length is **100 characters** (configured in `pyproject.toml`).
 
-System dependencies required for PDF output (CI uses Ubuntu):
-```bash
-sudo apt-get -y install pdftk texlive-latex-base texlive-latex-extra texlive-fonts-recommended
-```
+System dependencies required for PDF output: `pdftk` and a working `pdflatex`. The exact provisioning steps differ from a simple `apt-get` install — CI installs TeX Live via the upstream installer and `tlmgr`. See the [workflow file](.github/workflows/python-ci.yml) and [Dockerfile](Dockerfile) for the precise install steps used in CI/Docker.
 
 Tests use `unittest.TestCase` but are discovered and run via `pytest`.
 
@@ -314,7 +311,7 @@ Backgrounds and some magic items are generated dynamically from YAML files at im
 1. **PDF Generation**:
    - Primary: `pdftk` for form filling
    - Fallback: `pypdf` library
-   - LaTeX (`pdflatex`) for spell pages with `--fancy` flag
+   - LaTeX (`pdflatex`) for additional pages (features, subclasses, magic items, spellbook, GM notes); `--fancy` toggles DnD-themed decorations for these LaTeX/HTML-rendered extra pages (spell sheets remain fillable PDF templates)
 
 2. **Data Import**:
    - Python character files (primary)
@@ -322,7 +319,7 @@ Backgrounds and some magic items are generated dynamically from YAML files at im
 
 ## Common Pitfalls
 
-1. **Content not found**: Strings in character files must match a registered class name. Check spelling and that the module containing the class calls `add_module()`.
+1. **Content not found**: Strings in character files should match a registered class name. Unknown strings are typically resolved via `_resolve_mechanic()` to a generic placeholder with a warning, which may lead to incorrect stats or sheet output even if loading appears to succeed. Check spelling and that the module containing the class calls `add_module()`.
 2. **D&D class vs Character class**: Never subclass `Character` for a D&D class — use `CharClass`.
 3. **PDF dependencies**: `pdftk` and `pdflatex` are external binaries; tests mock them. Don't assume they're available in all environments.
 4. **Spells split by file**: When adding a spell, add it to the correct alphabetical file (`spells/spells_m.py` for "Magic Missile", etc.).
