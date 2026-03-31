@@ -1,0 +1,499 @@
+# D&D 5e weapon definitions.
+# weapon_type maps to base-class tuple in weapons.py:
+#   simple melee    -> (SimpleWeapon, MeleeWeapon)
+#   simple ranged   -> (SimpleWeapon, RangedWeapon)
+#   martial melee   -> (MartialWeapon, MeleeWeapon)
+#   martial ranged  -> (MartialWeapon, RangedWeapon)
+#   melee           -> (MeleeWeapon,)
+#   ranged          -> (RangedWeapon,)
+#   firearm         -> (Firearm,)
+#   unarmed         -> (Unarmed,)
+
+# ---------------------------------------------------------------------------
+# Simple melee weapons
+# ---------------------------------------------------------------------------
+- class_name: Club
+  name: Club
+  weapon_type: simple melee
+  base_damage: 1d4
+  damage_type: b
+  weight: 2
+  cost: 1 sp
+  properties: Light
+  ability: strength
+
+- class_name: Dagger
+  name: Dagger
+  weapon_type: simple melee
+  base_damage: 1d4
+  damage_type: p
+  weight: 1
+  cost: 2 gp
+  properties: "Finesse, light, thrown (range 20/60)"
+  is_finesse: true
+  ability: strength
+
+- class_name: Greatclub
+  name: Greatclub
+  weapon_type: simple melee
+  base_damage: 1d8
+  damage_type: b
+  weight: 10
+  cost: 2 sp
+  properties: Two-handed
+  ability: strength
+
+- class_name: Handaxe
+  name: Handaxe
+  weapon_type: simple melee
+  base_damage: 1d6
+  damage_type: s
+  weight: 2
+  cost: 5 gp
+  properties: "Light, thrown (range 20/60)"
+  ability: strength
+
+- class_name: Javelin
+  name: Javelin
+  weapon_type: simple melee
+  base_damage: 1d6
+  damage_type: p
+  weight: 2
+  cost: 5 sp
+  properties: Thrown (range 30/120)
+  ability: strength
+
+- class_name: LightHammer
+  name: Light Hammer
+  weapon_type: simple melee
+  base_damage: 1d4
+  damage_type: b
+  weight: 2
+  cost: 2 gp
+  properties: "Light, thrown (range 20/60)"
+  ability: strength
+
+- class_name: Mace
+  name: Mace
+  weapon_type: simple melee
+  base_damage: 1d6
+  damage_type: b
+  weight: 4
+  cost: 5 gp
+  properties: ""
+  ability: strength
+
+- class_name: Quarterstaff
+  name: Quarterstaff
+  weapon_type: simple melee
+  base_damage: 1d6
+  damage_type: b
+  weight: 4
+  cost: 2 sp
+  properties: Versatile (1d8)
+  ability: strength
+
+- class_name: Sickle
+  name: Sickle
+  weapon_type: simple melee
+  base_damage: 1d4
+  damage_type: s
+  weight: 2
+  cost: 1 gp
+  properties: Light
+  ability: strength
+
+- class_name: Spear
+  name: Spear
+  weapon_type: simple melee
+  base_damage: 1d6
+  damage_type: p
+  weight: 3
+  cost: 1 gp
+  properties: "Thrown (range 20/60), versatile (1d8)"
+  ability: strength
+
+# ---------------------------------------------------------------------------
+# Simple ranged weapons
+# ---------------------------------------------------------------------------
+- class_name: LightCrossbow
+  name: Light Crossbow
+  weapon_type: simple ranged
+  base_damage: 1d8
+  damage_type: p
+  weight: 5
+  cost: 25 gp
+  properties: "Ammunition (range 80/320), loading, two-handed"
+  ability: dexterity
+
+- class_name: Dart
+  name: Dart
+  weapon_type: simple ranged
+  base_damage: 1d4
+  damage_type: p
+  weight: 0.25
+  cost: 5 cp
+  properties: "Finesse, thrown (range 20/60)"
+  is_finesse: true
+  ability: dexterity
+
+- class_name: Shortbow
+  name: Shortbow
+  weapon_type: simple ranged
+  base_damage: 1d6
+  damage_type: p
+  weight: 2
+  cost: 25 gp
+  properties: "Ammunition (range 80/320), two-handed"
+  ability: dexterity
+
+- class_name: Sling
+  name: Sling
+  weapon_type: simple ranged
+  base_damage: 1d4
+  damage_type: b
+  weight: 0
+  cost: 1 sp
+  properties: Ammunition (range 30/120)
+  ability: dexterity
+
+# ---------------------------------------------------------------------------
+# Martial melee weapons
+# ---------------------------------------------------------------------------
+- class_name: Battleaxe
+  name: Battleaxe
+  weapon_type: martial melee
+  base_damage: 1d8
+  damage_type: s
+  weight: 4
+  cost: 10 gp
+  properties: Versatile (1d10)
+  ability: strength
+
+- class_name: Flail
+  name: Flail
+  weapon_type: martial melee
+  base_damage: 1d8
+  damage_type: b
+  weight: 2
+  cost: 10 gp
+  properties: ""
+  ability: strength
+
+- class_name: Glaive
+  name: Glaive
+  weapon_type: martial melee
+  base_damage: 1d10
+  damage_type: s
+  weight: 6
+  cost: 20 gp
+  properties: "Heavy, reach, two-handed"
+  ability: strength
+
+- class_name: Greataxe
+  name: Greataxe
+  weapon_type: martial melee
+  base_damage: 1d12
+  damage_type: s
+  weight: 7
+  cost: 30 gp
+  properties: "Heavy, two-handed"
+  ability: strength
+
+- class_name: Greatsword
+  name: Greatsword
+  weapon_type: martial melee
+  base_damage: 2d6
+  damage_type: s
+  weight: 6
+  cost: 50 gp
+  properties: "Heavy, two-handed"
+  ability: strength
+
+- class_name: Halberd
+  name: Halberd
+  weapon_type: martial melee
+  base_damage: 1d10
+  damage_type: s
+  weight: 6
+  cost: 20 gp
+  properties: "Heavy, reach, two-handed"
+  ability: strength
+
+- class_name: Lance
+  name: Lance
+  weapon_type: martial melee
+  base_damage: 1d12
+  damage_type: p
+  weight: 6
+  cost: 10 gp
+  properties: "Reach, special"
+  ability: strength
+
+- class_name: Longsword
+  name: Longsword
+  weapon_type: martial melee
+  base_damage: 1d8
+  damage_type: s
+  weight: 3
+  cost: 15 gp
+  properties: Versatile (1d10)
+  ability: strength
+
+- class_name: Maul
+  name: Maul
+  weapon_type: martial melee
+  base_damage: 2d6
+  damage_type: b
+  weight: 10
+  cost: 10 gp
+  properties: "Heavy, two-handed"
+  ability: strength
+
+- class_name: Morningstar
+  name: Morningstar
+  weapon_type: martial melee
+  base_damage: 1d8
+  damage_type: p
+  weight: 4
+  cost: 15 gp
+  properties: ""
+  ability: strength
+
+- class_name: Pike
+  name: Pike
+  weapon_type: martial melee
+  base_damage: 1d10
+  damage_type: p
+  weight: 18
+  cost: 5 gp
+  properties: "Heavy, reach, two-handed"
+  ability: strength
+
+- class_name: Rapier
+  name: Rapier
+  weapon_type: martial melee
+  base_damage: 1d8
+  damage_type: p
+  weight: 2
+  cost: 25 gp
+  properties: Finesse
+  is_finesse: true
+  ability: strength
+
+- class_name: Scimitar
+  name: Scimitar
+  weapon_type: martial melee
+  base_damage: 1d6
+  damage_type: s
+  weight: 3
+  cost: 25 gp
+  properties: "Finesse, light"
+  is_finesse: true
+  ability: strength
+
+- class_name: Shortsword
+  name: Shortsword
+  weapon_type: martial melee
+  base_damage: 1d6
+  damage_type: p
+  weight: 2
+  cost: 10 gp
+  properties: "Finesse, light"
+  is_finesse: true
+  ability: strength
+
+- class_name: ThrowingHammer
+  name: Throwing Hammer
+  weapon_type: martial melee
+  base_damage: 1d6
+  damage_type: b
+  weight: 4
+  cost: 15 gp
+  properties: Thrown (range 60/120)
+  ability: strength
+
+- class_name: Trident
+  name: Trident
+  weapon_type: martial melee
+  base_damage: 1d6
+  damage_type: p
+  weight: 4
+  cost: 5 gp
+  properties: "Thrown (range 20/60), versatile (1d8)"
+  ability: strength
+
+- class_name: WarPick
+  name: War Pick
+  weapon_type: martial melee
+  base_damage: 1d8
+  damage_type: p
+  weight: 2
+  cost: 5 gp
+  properties: ""
+  ability: strength
+
+- class_name: Warhammer
+  name: Warhammer
+  weapon_type: martial melee
+  base_damage: 1d8
+  damage_type: b
+  weight: 2
+  cost: 15 gp
+  properties: Versatile (1d10)
+  ability: strength
+
+- class_name: Whip
+  name: Whip
+  weapon_type: martial melee
+  base_damage: 1d4
+  damage_type: s
+  weight: 3
+  cost: 2 gp
+  properties: "Finesse, reach"
+  is_finesse: true
+  ability: strength
+
+# ---------------------------------------------------------------------------
+# Martial ranged weapons
+# ---------------------------------------------------------------------------
+- class_name: Blowgun
+  name: Blowgun
+  weapon_type: martial ranged
+  base_damage: "1"
+  damage_type: p
+  weight: 1
+  cost: 10 gp
+  properties: "Ammunition (range 25/100), loading"
+  ability: dexterity
+
+- class_name: HandCrossbow
+  name: Hand Crossbow
+  weapon_type: martial ranged
+  base_damage: 1d6
+  damage_type: p
+  weight: 3
+  cost: 75 gp
+  properties: "Ammunition (range 30/120), light, loading"
+  ability: dexterity
+
+- class_name: HeavyCrossbow
+  name: Heavy Crossbow
+  weapon_type: martial ranged
+  base_damage: 1d10
+  damage_type: p
+  weight: 18
+  cost: 50 gp
+  properties: "Ammunition (range 100/400), heavy, loading, two-handed"
+  ability: dexterity
+
+- class_name: Longbow
+  name: Longbow
+  weapon_type: martial ranged
+  base_damage: 1d8
+  damage_type: p
+  weight: 2
+  cost: 50 gp
+  properties: "Ammunition (range 150/600), heavy, two-handed"
+  ability: dexterity
+
+- class_name: Net
+  name: Net
+  weapon_type: martial ranged
+  base_damage: "-"
+  damage_type: ""
+  weight: 3
+  cost: 1 gp
+  properties: "Special, thrown (range 5/15)"
+  ability: strength
+
+# ---------------------------------------------------------------------------
+# Other / special weapons
+# ---------------------------------------------------------------------------
+- class_name: SunBolt
+  name: Sun Bolt
+  weapon_type: ranged
+  base_damage: 1d4
+  damage_type: r
+  weight: 0
+  cost: 0 gp
+  properties: (range 20/60)
+  ability: dexterity
+
+# ---------------------------------------------------------------------------
+# Firearms (inherit from Firearm)
+# ---------------------------------------------------------------------------
+- class_name: Blunderbuss
+  name: Blunderbuss
+  weapon_type: firearm
+  base_damage: 2d8
+  damage_type: p
+  weight: 10
+  cost: 300 gp
+  properties: "Ammunition (range 15/60), Reload 1, Misfire 2"
+  ability: dexterity
+
+- class_name: Pistol
+  name: Pistol
+  weapon_type: firearm
+  base_damage: 1d10
+  damage_type: p
+  weight: 3
+  cost: 150 gp
+  properties: "Ammunition (range 60/240), Reload 4, Misfire 1"
+  ability: dexterity
+
+- class_name: Musket
+  name: Musket
+  weapon_type: firearm
+  base_damage: 1d12
+  damage_type: p
+  weight: 10
+  cost: 300 gp
+  properties: "Ammunition (range 120/480), Two-Handed, Reload 1, Misfire 2"
+  ability: dexterity
+
+# ---------------------------------------------------------------------------
+# Custom / natural weapons (inherit from Unarmed)
+# ---------------------------------------------------------------------------
+- class_name: HeavyPunch
+  name: Heavy Punch
+  weapon_type: unarmed
+  base_damage: 1d4
+  damage_type: b
+  weight: 0
+  cost: 0 gp
+  properties: ""
+  ability: strength
+  damage_bonus: 10
+  attack_bonus: -5
+
+- class_name: Bite
+  name: Bite
+  weapon_type: unarmed
+  base_damage: 1d4
+  damage_type: p
+  weight: 0
+  cost: 0 gp
+  properties: ""
+  ability: strength
+
+- class_name: Talons
+  name: Talons
+  weapon_type: unarmed
+  base_damage: 1d4
+  damage_type: s
+  weight: 0
+  cost: 0 gp
+  properties: ""
+  ability: strength
+
+- class_name: Claws
+  name: Claws
+  weapon_type: unarmed
+  base_damage: 1d4
+  damage_type: s
+  weight: 0
+  cost: 0 gp
+  properties: ""
+  ability: strength

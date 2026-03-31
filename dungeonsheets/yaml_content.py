@@ -404,3 +404,68 @@ def load_yaml_magic_item_classes(yaml_path, base_class, module=None):
             generated_classes[class_name] = type(class_name, (base_class,), attrs)
 
     return generated_classes
+
+
+def load_yaml_weapon_classes(yaml_path, base_class, type_map=None, module=None):
+    """Build weapon classes from a YAML file.
+
+    Parameters
+    ----------
+    yaml_path : PathLike
+        Location of the YAML file containing weapon definitions.
+    base_class : type
+        Fallback base class when a weapon's ``weapon_type`` is absent or not
+        in *type_map*.
+    type_map : dict[str, tuple[type, ...]], optional
+        Mapping from ``weapon_type`` strings (e.g. ``"simple melee"``,
+        ``"firearm"``) to a tuple of base classes to inherit from.  When
+        provided, entries whose ``weapon_type`` matches will use the
+        corresponding tuple instead of *(base_class,)*.
+    module : str, optional
+        Value to assign to ``__module__`` on each generated class. Pass
+        ``__name__`` from the calling module so that introspection and repr
+        reflect where the class is actually injected, not this helper module.
+
+    Returns
+    -------
+    dict[str, type]
+        Mapping of generated class names to generated weapon classes.
+    """
+    generated_classes = {}
+    class_sources = {}
+    for yaml_file in _resolve_yaml_sources(yaml_path):
+        for entry in _load_yaml_list_entries(yaml_file, "weapon"):
+            class_name = entry["class_name"]
+            if class_name in class_sources:
+                raise ValueError(
+                    f"Duplicate weapon class_name '{class_name}' found in "
+                    f"{class_sources[class_name]} and {yaml_file}"
+                )
+            class_sources[class_name] = yaml_file
+
+            weapon_type = entry.get("weapon_type", "")
+            if type_map is not None and weapon_type in type_map:
+                bases = type_map[weapon_type]
+            else:
+                bases = (base_class,)
+
+            attrs = {
+                "name": entry.get("name", class_name),
+                "base_damage": str(entry.get("base_damage", "1d4")),
+                "damage_type": entry.get("damage_type", ""),
+                "weight": entry.get("weight", 0),
+                "cost": str(entry.get("cost", "0 gp")),
+                "properties": entry.get("properties", ""),
+                "ability": entry.get("ability", "strength"),
+                "is_finesse": entry.get("is_finesse", False),
+                "damage_bonus": entry.get("damage_bonus", 0),
+                "attack_bonus": entry.get("attack_bonus", 0),
+                "data_source": "yaml",
+            }
+            if module is not None:
+                attrs["__module__"] = module
+            else:
+                attrs["__module__"] = __name__
+            generated_classes[class_name] = type(class_name, bases, attrs)
+
+    return generated_classes
