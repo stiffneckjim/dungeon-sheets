@@ -52,7 +52,7 @@ class TestYamlBackedMagicItems(TestCase):
         self.assertIs(shield_scroll_cls, magic_items.ScrollOfShield)
         self.assertIs(cloak_cls, magic_items.CloakOfProtection)
 
-    def test_non_migrated_item_still_uses_python_fallback(self):
-        """Items not in YAML should continue to come from Python definitions."""
-        self.assertFalse(hasattr(magic_items.StaffOfTheAdder, "data_source"))
+    def test_all_items_now_use_yaml(self):
+        """All items should now come from YAML definitions."""
+        self.assertEqual(magic_items.StaffOfTheAdder.data_source, "yaml")
         self.assertEqual(magic_items.StaffOfTheAdder.rarity, "Uncommon")
