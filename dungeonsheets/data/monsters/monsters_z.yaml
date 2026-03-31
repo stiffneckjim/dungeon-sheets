@@ -1,0 +1,35 @@
+- class_name: Zombie
+  name: Zombie
+  creature_type: Medium undead, neutral evil
+  challenge_rating: 0.25
+  armor_class: 8
+  hp_max: 22
+  speed: 20 ft.
+  strength: 13
+  dexterity: 6
+  constitution: 16
+  intelligence: 3
+  wisdom: 6
+  charisma: 5
+  senses: Darkvision 60 ft., Passive Perception 8
+  languages: understands all languages it spoke in life but can't speak
+  condition_immunities: poisoned
+  description: |
+    Undead Fortitude.
+      If damage reduces the zombie to 0 hit points, it must make a
+      Constitution saving throw with a DC of 5+the damage taken, unless the
+      damage is radiant or from a critical hit. On a success, the zombie
+      drops to 1 hit point instead.
+
+    # Actions
+
+    Slam.
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 +
+      1) bludgeoning damage.
+  traits: 
+  - name: Undead Fortitude
+    description: If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5+the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.
+  actions: 
+  - name: Slam
+    description: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage."
+
