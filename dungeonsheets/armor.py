@@ -1,4 +1,7 @@
+from pathlib import Path
+
 from dungeonsheets.content_registry import default_content_registry
+from dungeonsheets.yaml_content import load_yaml_armor_classes
 
 default_content_registry.add_module(__name__)
 
@@ -116,115 +119,24 @@ class HeavyArmor(Armor):
     dexterity_applied = False
 
 
-class PaddedArmor(LightArmor):
-    name = "Padded Armor"
-    cost = "5 gp"
-    base_armor_class = 11
-    weight = 8
-    stealth_disadvantage = True
+# ---------------------------------------------------------------------------
+# Load all concrete armor definitions from YAML
+# ---------------------------------------------------------------------------
+_yaml_armors = load_yaml_armor_classes(
+    Path(__file__).with_name("data") / "armor.yaml",
+    Armor,
+    type_map={
+        "light": LightArmor,
+        "medium": MediumArmor,
+        "heavy": HeavyArmor,
+    },
+    module=__name__,
+)
+globals().update(_yaml_armors)
 
-
-class LeatherArmor(LightArmor):
-    name = "Leather Armor"
-    cost = "10 gp"
-    base_armor_class = 11
-    weight = 10
-
-
-class StuddedLeatherArmor(LightArmor):
-    name = "Studded Leather Armor"
-    cost = "45 gp"
-    base_armor_class = 12
-    weight = 13
-
-
-class HideArmor(MediumArmor):
-    name = "Hide Armor"
-    cost = "10 gp"
-    base_armor_class = 12
-    dexterity_mod_max = 2
-    weight = 12
-
-
-class ChainShirt(MediumArmor):
-    name = "Chain Shirt"
-    cost = "50 gp"
-    base_armor_class = 13
-    dexterity_mod_max = 2
-    weight = 20
-
-
-class ScaleMail(MediumArmor):
-    name = "Scale Mail"
-    cost = "50 gp"
-    base_armor_class = 14
-    dexterity_mod_max = 2
-    stealth_disadvantage = True
-    weight = 45
-
-
-class Breastplate(MediumArmor):
-    name = "Breastplate"
-    cost = "400 gp"
-    base_armor_class = 14
-    dexterity_mod_max = 2
-    weight = 20
-
-
-class HalfPlate(MediumArmor):
-    name = "Half Plate"
-    cost = "750 gp"
-    base_armor_class = 15
-    dexterity_mod_max = 2
-    stealth_disadvantage = True
-    weight = 40
-
-
-class RingMail(HeavyArmor):
-    name = "Ring Mail"
-    cost = "30 gp"
-    base_armor_class = 14
-    stealth_disadvantage = True
-    weight = 40
-
-
-class ChainMail(HeavyArmor):
-    name = "Chain Mail"
-    cost = "75 gp"
-    base_armor_class = 16
-    strength_required = 13
-    stealth_disadvantage = True
-    weight = 55
-
-
-class SplintArmor(HeavyArmor):
-    name = "Splint Armor"
-    cost = "200 gp"
-    base_armor_class = 17
-    strength_required = 15
-    stealth_disadvantage = True
-    weight = 60
-
-
-class PlateMail(HeavyArmor):
-    name = "Plate Mail"
-    cost = "1,500 gp"
-    base_armor_class = 18
-    strength_required = 15
-    stealth_disadvantage = True
-    weight = 65
-
-
-# Custom Armor
-class ElvenChain(MediumArmor):
-    name = "Elven Chain"
-    cost = "5,000 gp"
-    base_armor_class = 14
-    dexerity_mod_max = 2
-    weight = 20
-
-
-light_armors = [PaddedArmor, LeatherArmor, StuddedLeatherArmor]
-medium_armors = [HideArmor, ChainShirt, ScaleMail, Breastplate, HalfPlate]
-heavy_armors = [RingMail, ChainMail, SplintArmor, PlateMail]
+light_armors = [_yaml_armors[n] for n in ("PaddedArmor", "LeatherArmor", "StuddedLeatherArmor")]
+medium_armors = [
+    _yaml_armors[n] for n in ("HideArmor", "ChainShirt", "ScaleMail", "Breastplate", "HalfPlate")
+]
+heavy_armors = [_yaml_armors[n] for n in ("RingMail", "ChainMail", "SplintArmor", "PlateMail")]
 all_armors = light_armors + medium_armors + heavy_armors

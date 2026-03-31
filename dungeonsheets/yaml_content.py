@@ -469,3 +469,71 @@ def load_yaml_weapon_classes(yaml_path, base_class, type_map=None, module=None):
             generated_classes[class_name] = type(class_name, bases, attrs)
 
     return generated_classes
+
+
+def load_yaml_armor_classes(yaml_path, base_class, module=None, type_map=None):
+    """Build armor classes from a YAML file.
+
+    Parameters
+    ----------
+    yaml_path : PathLike
+        Location of the YAML file containing armor definitions.
+    base_class : type
+        The default base armor class to inherit from when *armor_type* is not
+        present in *type_map* or is absent.
+    module : str, optional
+        Value to assign to ``__module__`` on each generated class. Pass
+        ``__name__`` from the calling module so that introspection and repr
+        reflect where the class is actually injected, not this helper module.
+    type_map : dict[str, type], optional
+        Mapping from ``armor_type`` string values (e.g. ``"light"``,
+        ``"medium"``, ``"heavy"``) to the concrete base class to inherit from.
+        When provided, YAML entries whose ``armor_type`` key matches will
+        inherit from the corresponding class instead of *base_class*.
+
+    Returns
+    -------
+    dict[str, type]
+        Mapping of generated class names to generated armor classes.
+    """
+    generated_classes = {}
+    class_sources = {}
+    for yaml_file in _resolve_yaml_sources(yaml_path):
+        for entry in _load_yaml_list_entries(yaml_file, "armor"):
+            class_name = entry["class_name"]
+            if class_name in class_sources:
+                raise ValueError(
+                    f"Duplicate armor class_name '{class_name}' found in "
+                    f"{class_sources[class_name]} and {yaml_file}"
+                )
+            class_sources[class_name] = yaml_file
+
+            armor_type = entry.get("armor_type", "")
+            parent = base_class
+            if type_map is not None:
+                parent = type_map.get(armor_type, base_class)
+
+            attrs = {
+                "__doc__": entry.get(
+                    "description",
+                    f"{entry.get('name', class_name)} armor loaded from YAML.",
+                ),
+                "name": entry.get("name", class_name),
+                "base_armor_class": entry.get(
+                    "base_armor_class", getattr(parent, "base_armor_class", 10)
+                ),
+                "dexterity_mod_max": entry.get(
+                    "dexterity_mod_max", getattr(parent, "dexterity_mod_max", None)
+                ),
+                "strength_required": entry.get("strength_required"),
+                "stealth_disadvantage": entry.get("stealth_disadvantage", False),
+                "weight": entry.get("weight", 0),
+                "cost": entry.get("cost", "0 gp"),
+                "armor_type": armor_type,
+                "data_source": "yaml",
+            }
+            if module is not None:
+                attrs["__module__"] = module
+            generated_classes[class_name] = type(class_name, (parent,), attrs)
+
+    return generated_classes
