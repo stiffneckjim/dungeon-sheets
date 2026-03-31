@@ -1,5 +1,6 @@
 """Helpers for loading canonical content definitions from YAML files."""
 
+import re
 from pathlib import Path
 
 import yaml
@@ -47,6 +48,69 @@ def _load_yaml_list_entries(yaml_file, content_label):
     if not isinstance(raw_data, list):
         raise ValueError(f"Expected a list of {content_label} definitions in {yaml_file}")
     return raw_data
+
+
+def _parse_monster_speeds(speed_str):
+    """Parse a speed string into component speed fields.
+
+    Parameters
+    ----------
+    speed_str : str
+        Speed string from YAML, e.g. ``"30 ft."`` or ``"40 ft., fly 80 ft., swim 30 ft."``.
+
+    Returns
+    -------
+    dict
+        Keys: ``speed``, ``fly_speed``, ``swim_speed``, ``climb_speed``, ``burrow_speed``
+        (all integers).
+    """
+    result = {"speed": 0, "fly_speed": 0, "swim_speed": 0, "climb_speed": 0, "burrow_speed": 0}
+    if not speed_str:
+        return result
+    named = re.compile(r"(fly|swim|climb|burrow)\s+(\d+)", re.IGNORECASE)
+    for match in named.finditer(speed_str):
+        kind, value = match.group(1).lower(), int(match.group(2))
+        result[f"{kind}_speed"] = value
+    base = re.match(r"(\d+)", speed_str)
+    if base:
+        result["speed"] = int(base.group(1))
+    return result
+
+
+def _build_monster_docstring(description, traits, actions, legendary_actions, reactions):
+    """Build a structured monster docstring matching the format used by Python monster classes.
+
+    The format mirrors the existing docstrings in the ``monsters_*.py`` files:
+    description text, then traits, then a ``# Actions`` section divider, then
+    actions, and optionally ``# Legendary Actions`` and ``# Reactions`` sections.
+
+    Parameters
+    ----------
+    description : str
+    traits : list[dict]
+    actions : list[dict]
+    legendary_actions : list[dict]
+    reactions : list[dict]
+
+    Returns
+    -------
+    str
+    """
+    parts = [description or ""]
+    for trait in traits:
+        parts.append(f"\n{trait['name']}.\n  {trait['description']}")
+    parts.append("\n# Actions")
+    for action in actions:
+        parts.append(f"\n{action['name']}.\n  {action['description']}")
+    if legendary_actions:
+        parts.append("\n# Legendary Actions")
+        for la in legendary_actions:
+            parts.append(f"\n{la['name']}.\n  {la['description']}")
+    if reactions:
+        parts.append("\n# Reactions")
+        for reaction in reactions:
+            parts.append(f"\n{reaction['name']}.\n  {reaction['description']}")
+    return "\n".join(parts)
 
 
 def load_yaml_background_classes(yaml_path, base_class, features_module, module=None):
@@ -168,6 +232,110 @@ def load_yaml_spell_classes(yaml_path, base_class, module=None):
             }
             if module is not None:
                 attrs["__module__"] = module
+            generated_classes[class_name] = type(class_name, (base_class,), attrs)
+
+    return generated_classes
+
+
+def load_yaml_monster_classes(yaml_path, base_class, module=None):
+    """Build monster classes from a YAML file.
+
+    Parameters
+    ----------
+    yaml_path : PathLike
+        Location of the YAML file (or directory of YAML files) containing monster definitions.
+    base_class : type
+        The base monster class to inherit from.
+    module : str, optional
+        Value to assign to ``__module__`` on each generated class. Pass
+        ``__name__`` from the calling module so that introspection and repr
+        reflect where the class is actually injected, not this helper module.
+
+    Returns
+    -------
+    dict[str, type]
+        Mapping of generated class names to generated monster classes.
+    """
+    from dungeonsheets.stats import Ability
+
+    generated_classes = {}
+    class_sources = {}
+    for yaml_file in _resolve_yaml_sources(yaml_path):
+        for entry in _load_yaml_list_entries(yaml_file, "monster"):
+            class_name = entry["class_name"]
+            if class_name in class_sources:
+                raise ValueError(
+                    f"Duplicate monster class_name '{class_name}' found in "
+                    f"{class_sources[class_name]} and {yaml_file}"
+                )
+            class_sources[class_name] = yaml_file
+
+            for list_field in ("traits", "actions", "legendary_actions", "reactions"):
+                _validate_list_field(entry, list_field, yaml_file)
+
+            description_text = entry.get(
+                "description", f"{entry.get('name', class_name)} monster loaded from YAML."
+            )
+            traits_list = [
+                {"name": t.get("name", ""), "description": t.get("description", "")}
+                for t in entry.get("traits", [])
+            ]
+            actions_list = [
+                {"name": a.get("name", ""), "description": a.get("description", "")}
+                for a in entry.get("actions", [])
+            ]
+            legendary_actions_list = [
+                {"name": la.get("name", ""), "description": la.get("description", "")}
+                for la in entry.get("legendary_actions", [])
+            ]
+            reactions_list = [
+                {"name": r.get("name", ""), "description": r.get("description", "")}
+                for r in entry.get("reactions", [])
+            ]
+            speeds = _parse_monster_speeds(entry.get("speed", ""))
+
+            attrs = {
+                "description": description_text,
+                "__doc__": _build_monster_docstring(
+                    description_text,
+                    traits_list,
+                    actions_list,
+                    legendary_actions_list,
+                    reactions_list,
+                ),
+                "name": entry.get("name", class_name),
+                "challenge_rating": entry.get("challenge_rating", 0),
+                "armor_class": entry.get("armor_class", 10),
+                "hp_max": entry.get("hp_max", 1),
+                "speed": speeds["speed"],
+                "fly_speed": speeds["fly_speed"],
+                "swim_speed": speeds["swim_speed"],
+                "climb_speed": speeds["climb_speed"],
+                "burrow_speed": speeds["burrow_speed"],
+                "strength": Ability(int(entry.get("strength", 10))),
+                "dexterity": Ability(int(entry.get("dexterity", 10))),
+                "constitution": Ability(int(entry.get("constitution", 10))),
+                "intelligence": Ability(int(entry.get("intelligence", 10))),
+                "wisdom": Ability(int(entry.get("wisdom", 10))),
+                "charisma": Ability(int(entry.get("charisma", 10))),
+                "skills": entry.get("skills", entry.get("skill_str", "")),
+                "saving_throws": entry.get("saving_throws", ""),
+                "damage_immunities": entry.get("damage_immunities", ""),
+                "damage_resistances": entry.get("damage_resistances", ""),
+                "damage_vulnerabilities": entry.get("damage_vulnerabilities", ""),
+                "condition_immunities": entry.get("condition_immunities", ""),
+                "senses": entry.get("senses", ""),
+                "languages": entry.get("languages", ""),
+                "traits": traits_list,
+                "actions": actions_list,
+                "legendary_actions": legendary_actions_list,
+                "reactions": reactions_list,
+                "data_source": "yaml",
+            }
+            if module is not None:
+                attrs["__module__"] = module
+            else:
+                attrs["__module__"] = __name__
             generated_classes[class_name] = type(class_name, (base_class,), attrs)
 
     return generated_classes
