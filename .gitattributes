@@ -1,0 +1,19 @@
+# Normalise line endings to LF in the repository
+* text=auto eol=lf
+
+# Explicitly LF for source and data files
+*.py text eol=lf
+*.yaml text eol=lf
+*.rst text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.toml text eol=lf
+*.cfg text eol=lf
+*.tex text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+
+# Binary — no EOL normalisation
+*.jpg binary
+*.png binary
+*.pdf binary
