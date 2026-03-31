@@ -19,6 +19,12 @@ from dungeonsheets.content_registry import default_content_registry
 class TestArmorYamlLoading(unittest.TestCase):
     """Verify that armor classes are loaded correctly from armor.yaml."""
 
+    def assertIsSubclass(self, sub, parent):
+        self.assertTrue(
+            issubclass(sub, parent),
+            f"{sub.__name__} is not a subclass of {parent.__name__}",
+        )
+
     # ------------------------------------------------------------------
     # Light armor
     # ------------------------------------------------------------------
@@ -171,22 +177,6 @@ class TestArmorYamlLoading(unittest.TestCase):
         }
         self.assertEqual(set(armor.all_armors), expected)
 
-
-# ---------------------------------------------------------------------------
-# Helper
-# ---------------------------------------------------------------------------
-
-
-def assertIsSubclass(self, sub, parent):
-    """Convenience so we can call self.assertIsSubclass."""
-    self.assertTrue(
-        issubclass(sub, parent),
-        f"{sub.__name__} is not a subclass of {parent.__name__}",
-    )
-
-
-# Monkey-patch onto TestCase so the self.assertIsSubclass calls work
-unittest.TestCase.assertIsSubclass = assertIsSubclass
 
 
 if __name__ == "__main__":
