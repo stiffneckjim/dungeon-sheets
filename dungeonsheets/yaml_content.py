@@ -173,6 +173,89 @@ def load_yaml_spell_classes(yaml_path, base_class, module=None):
     return generated_classes
 
 
+def load_yaml_monster_classes(yaml_path, base_class, module=None):
+    """Build monster classes from a YAML file.
+
+    Parameters
+    ----------
+    yaml_path : PathLike
+        Location of the YAML file (or directory of YAML files) containing monster definitions.
+    base_class : type
+        The base monster class to inherit from.
+    module : str, optional
+        Value to assign to ``__module__`` on each generated class. Pass
+        ``__name__`` from the calling module so that introspection and repr
+        reflect where the class is actually injected, not this helper module.
+
+    Returns
+    -------
+    dict[str, type]
+        Mapping of generated class names to generated monster classes.
+    """
+    from dungeonsheets.stats import Ability
+
+    generated_classes = {}
+    class_sources = {}
+    for yaml_file in _resolve_yaml_sources(yaml_path):
+        for entry in _load_yaml_list_entries(yaml_file, "monster"):
+            class_name = entry["class_name"]
+            if class_name in class_sources:
+                raise ValueError(
+                    f"Duplicate monster class_name '{class_name}' found in "
+                    f"{class_sources[class_name]} and {yaml_file}"
+                )
+            class_sources[class_name] = yaml_file
+
+            for list_field in ("traits", "actions", "legendary_actions", "reactions"):
+                _validate_list_field(entry, list_field, yaml_file)
+
+            attrs = {
+                "__doc__": entry.get(
+                    "description", f"{entry.get('name', class_name)} monster loaded from YAML."
+                ),
+                "name": entry.get("name", class_name),
+                "challenge_rating": entry.get("challenge_rating", 0),
+                "armor_class": entry.get("armor_class", 10),
+                "hp_max": entry.get("hp_max", 1),
+                "speed": entry.get("speed", "30 ft."),
+                "strength": Ability(int(entry.get("strength", 10))),
+                "dexterity": Ability(int(entry.get("dexterity", 10))),
+                "constitution": Ability(int(entry.get("constitution", 10))),
+                "intelligence": Ability(int(entry.get("intelligence", 10))),
+                "wisdom": Ability(int(entry.get("wisdom", 10))),
+                "charisma": Ability(int(entry.get("charisma", 10))),
+                "skills": entry.get("skill_str", ""),
+                "saving_throws": entry.get("saving_throws", ""),
+                "damage_immunities": entry.get("damage_immunities", ""),
+                "damage_resistances": entry.get("damage_resistances", ""),
+                "damage_vulnerabilities": entry.get("damage_vulnerabilities", ""),
+                "condition_immunities": entry.get("condition_immunities", ""),
+                "senses": entry.get("senses", ""),
+                "languages": entry.get("languages", ""),
+                "traits": [
+                    {"name": t.get("name", ""), "description": t.get("description", "")}
+                    for t in entry.get("traits", [])
+                ],
+                "actions": [
+                    {"name": a.get("name", ""), "description": a.get("description", "")}
+                    for a in entry.get("actions", [])
+                ],
+                "legendary_actions": [
+                    {"name": la.get("name", ""), "description": la.get("description", "")}
+                    for la in entry.get("legendary_actions", [])
+                ],
+                "reactions": [
+                    {"name": r.get("name", ""), "description": r.get("description", "")}
+                    for r in entry.get("reactions", [])
+                ],
+                "data_source": "yaml",
+            }
+            attrs["__module__"] = module if module is not None else __name__
+            generated_classes[class_name] = type(class_name, (base_class,), attrs)
+
+    return generated_classes
+
+
 def load_yaml_magic_item_classes(yaml_path, base_class, module=None):
     """Build magic item classes from a YAML file.
 

@@ -1,0 +1,86 @@
+- class_name: TestGoblin
+  name: Goblin
+  description: Small humanoid (goblinoid), neutral evil
+  challenge_rating: 0.25
+  armor_class: 15
+  hp_max: 7
+  speed: "30 ft."
+  strength: 8
+  dexterity: 14
+  constitution: 10
+  intelligence: 10
+  wisdom: 8
+  charisma: 8
+  skill_str: "Stealth +6"
+  saving_throws: ""
+  senses: "Darkvision 60 ft., Passive Perception 9"
+  languages: "Common, Goblin"
+
+- class_name: TestOgre
+  name: Ogre
+  description: Large giant, chaotic evil
+  challenge_rating: 2
+  armor_class: 11
+  hp_max: 59
+  speed: "40 ft."
+  strength: 19
+  dexterity: 8
+  constitution: 16
+  intelligence: 5
+  wisdom: 7
+  charisma: 7
+  skill_str: ""
+  saving_throws: ""
+  damage_resistances: ""
+  senses: "Darkvision 60 ft., Passive Perception 8"
+  languages: "Common, Giant"
+  traits:
+    - name: Siege Monster
+      description: The ogre deals double damage to objects and structures.
+  actions:
+    - name: Greatclub
+      description: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage."
+    - name: Javelin
+      description: "Melee or Ranged Weapon Attack: +6 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 11 (2d6 + 4) piercing damage."
+
+- class_name: TestAncientDragon
+  name: Ancient Red Dragon
+  description: Gargantuan dragon, chaotic evil
+  challenge_rating: 24
+  armor_class: 22
+  hp_max: 546
+  speed: "40 ft., climb 40 ft., fly 80 ft."
+  strength: 30
+  dexterity: 10
+  constitution: 29
+  intelligence: 18
+  wisdom: 15
+  charisma: 23
+  skill_str: "Perception +16, Stealth +7"
+  saving_throws: "Dex +7, Con +16, Wis +9, Cha +13"
+  damage_immunities: "fire"
+  senses: "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26"
+  languages: "Common, Draconic"
+  traits:
+    - name: Legendary Resistance (3/Day)
+      description: If the dragon fails a saving throw, it can choose to succeed instead.
+    - name: Fire Breath Aura
+      description: >
+        Creatures that start their turn within 10 ft. of the dragon take 10 (3d6) fire damage.
+  actions:
+    - name: Multiattack
+      description: The dragon can use its Frightful Presence. It then makes three attacks; one with its bite and two with its claws.
+    - name: Bite
+      description: "Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) piercing damage plus 14 (4d6) fire damage."
+  legendary_actions:
+    - name: Detect
+      description: The dragon makes a Wisdom (Perception) check.
+    - name: Tail Attack
+      description: "The dragon makes a tail attack."
+    - name: Wing Attack (Costs 2 Actions)
+      description: >
+        The dragon beats its wings. Each creature within 15 ft. must succeed on a DC 25
+        Dexterity saving throw or take 17 (2d6 + 10) bludgeoning damage and be knocked prone.
+  reactions:
+    - name: Tail Lash
+      description: When a creature hits the dragon with a melee attack, the dragon can make one tail attack against that creature.
