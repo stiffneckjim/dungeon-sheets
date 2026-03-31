@@ -384,7 +384,7 @@
   damage_type: p
   weight: 18
   cost: 50 gp
-  properties: "Ammunition (range 100/400), heaving, loading, two-handed"
+  properties: "Ammunition (range 100/400), heavy, loading, two-handed"
   ability: dexterity
 
 - class_name: Longbow
