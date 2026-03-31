@@ -11,7 +11,7 @@
   intelligence: 10
   wisdom: 8
   charisma: 8
-  skill_str: "Stealth +6"
+  skills: "Stealth +6"
   saving_throws: ""
   senses: "Darkvision 60 ft., Passive Perception 9"
   languages: "Common, Goblin"
@@ -29,7 +29,7 @@
   intelligence: 5
   wisdom: 7
   charisma: 7
-  skill_str: ""
+  skills: ""
   saving_throws: ""
   damage_resistances: ""
   senses: "Darkvision 60 ft., Passive Perception 8"
@@ -56,7 +56,7 @@
   intelligence: 18
   wisdom: 15
   charisma: 23
-  skill_str: "Perception +16, Stealth +7"
+  skills: "Perception +16, Stealth +7"
   saving_throws: "Dex +7, Con +16, Wis +9, Cha +13"
   damage_immunities: "fire"
   senses: "Blindsight 60 ft., Darkvision 120 ft., Passive Perception 26"

@@ -49,7 +49,25 @@ class TestLoadYamlMonsterClassesScalars(TestCase):
         self.assertEqual(self.classes["TestGoblin"].hp_max, 7)
 
     def test_goblin_speed(self):
-        self.assertEqual(self.classes["TestGoblin"].speed, "30 ft.")
+        self.assertEqual(self.classes["TestGoblin"].speed, 30)
+
+    def test_goblin_description(self):
+        self.assertEqual(self.classes["TestGoblin"].description, "Small humanoid (goblinoid), neutral evil")
+
+    def test_goblin_docstring_has_actions_section(self):
+        self.assertIn("# Actions", self.classes["TestGoblin"].__doc__)
+
+    def test_dragon_base_speed_is_integer(self):
+        self.assertEqual(self.classes["TestAncientDragon"].speed, 40)
+
+    def test_dragon_fly_speed(self):
+        self.assertEqual(self.classes["TestAncientDragon"].fly_speed, 80)
+
+    def test_dragon_climb_speed(self):
+        self.assertEqual(self.classes["TestAncientDragon"].climb_speed, 40)
+
+    def test_goblin_swim_speed_defaults_to_zero(self):
+        self.assertEqual(self.classes["TestGoblin"].swim_speed, 0)
 
     def test_goblin_ability_scores(self):
         goblin = self.classes["TestGoblin"]()
