@@ -1,0 +1,357 @@
+- class_name: FireElemental
+  name: Fire Elemental
+  creature_type: Large elemental, neutral
+  challenge_rating: 5
+  armor_class: 13
+  hp_max: 102
+  speed: 50 ft.
+  strength: 10
+  dexterity: 17
+  constitution: 16
+  intelligence: 6
+  wisdom: 10
+  charisma: 7
+  senses: Darkvision 60 ft., Passive Perception 10
+  languages: Ignan
+  damage_immunities: fire, poison
+  damage_resistances: bludgeoning, piercing, and slashing from nonmagical weapons
+  condition_immunities: exhaustion, grappled, paralyzed, petrified, poisoned, prone, restrained, unconscious
+  description: |
+    Fire Form.
+      The elemental can move through a space as narrow as 1 inch wide
+      without squeezing. A creature that touches the elemental or hits it
+      with a melee attack while within 5 ft. of it takes 5 (1d10) fire
+      damage. In addition, the elemental can enter a hostile creature's
+      space and stop there. The first time it enters a creature's space on a
+      turn, that creature takes 5 (1d10) fire damage and catches fire; until
+      someone takes an action to douse the fire, the creature takes 5 (1d10)
+      fire damage at the start of each of its turns.
+    Illumination.
+      The elemental sheds bright light in a 30-foot radius and dim light in
+      an additional 30 ft..
+    Water Susceptibility.
+      For every 5 ft. the elemental moves in water, or for every gallon of
+      water splashed on it, it takes 1 cold damage.
+
+    # Actions
+
+    Multiattack.
+      The elemental makes two touch attacks.
+    Touch.
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) fire damage. If the target is a creature or a flammable object,
+      it ignites. Until a creature takes an action to douse the fire, the
+      target takes 5 (1d10) fire damage at the start of each of its turns.
+  traits: 
+  - name: Fire Form
+    description: The elemental can move through a space as narrow as 1 inch wide without squeezing. A creature that touches the elemental or hits it with a melee attack while within 5 ft. of it takes 5 (1d10) fire damage. In addition, the elemental can enter a hostile creature's space and stop there. The first time it enters a creature's space on a turn, that creature takes 5 (1d10) fire damage and catches fire; until someone takes an action to douse the fire, the creature takes 5 (1d10) fire damage at the start of each of its turns.
+  - name: Illumination
+    description: The elemental sheds bright light in a 30-foot radius and dim light in an additional 30 ft..
+  - name: Water Susceptibility
+    description: For every 5 ft. the elemental moves in water, or for every gallon of water splashed on it, it takes 1 cold damage.
+  actions: 
+  - name: Multiattack
+    description: The elemental makes two touch attacks.
+  - name: Touch
+    description: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 5 (1d10) fire damage at the start of each of its turns."
+
+- class_name: FireGiant
+  name: Fire Giant
+  creature_type: Huge giant, lawful evil
+  challenge_rating: 9
+  armor_class: 18
+  hp_max: 162
+  speed: 30 ft.
+  strength: 25
+  dexterity: 9
+  constitution: 23
+  intelligence: 10
+  wisdom: 14
+  charisma: 13
+  skill_str: Athletics +11, Perception +6
+  senses: Passive Perception 16
+  languages: Giant
+  damage_immunities: fire
+  description: |
+    # Actions
+
+    Multiattack.
+      The giant makes two greatsword attacks.
+    Greatsword.
+      Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 28
+      (6d6 + 7) slashing damage.
+    Rock.
+      Ranged Weapon Attack: +11 to hit, range 60/240 ft., one target. Hit:
+      29 (4d10 + 7) bludgeoning damage.
+  traits: []
+  actions: 
+  - name: Multiattack
+    description: The giant makes two greatsword attacks.
+  - name: Greatsword
+    description: "Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 28 (6d6 + 7) slashing damage."
+  - name: Rock
+    description: "Ranged Weapon Attack: +11 to hit, range 60/240 ft., one target. Hit: 29 (4d10 + 7) bludgeoning damage."
+
+- class_name: FireSnake
+  name: Fire Snake
+  creature_type: Medium elemental, neutral evil
+  challenge_rating: 1
+  armor_class: 14
+  hp_max: 22
+  speed: 30 ft.
+  strength: 12
+  dexterity: 14
+  constitution: 11
+  intelligence: 7
+  wisdom: 10
+  charisma: 8
+  senses: darkvision 60 ft., passive Perception 10
+  languages: understands Ignan but can't speak
+  damage_immunities: fire
+  damage_resistances: bludgeoning, piercing, and slashing from nonmagical attacks
+  damage_vulnerabilities: cold
+  description: |
+    Heated Body.
+      A creature that touches the snake or hits it with
+      a melee attack while within 5 feet of it takes 3 (1d6) fire
+      damage.
+
+    # ACTIONS
+
+    Multiattack.
+      The snake makes two attacks: one with its bite
+      and one with its tail.
+
+    Bite.
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one
+      target. Hit: 3 (1d4 + 1) piercing damage plus 3 (1d6) fire
+      damage.
+
+    Tail.
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one
+      target. Hit: 3 (1d4 + 1) bludgeoning damage plus 3 (1d6) fire
+      damage.
+  traits: 
+  - name: Heated Body
+    description: A creature that touches the snake or hits it with a melee attack while within 5 feet of it takes 3 (1d6) fire damage.
+  - name: "# ACTIONS"
+    description: ""
+  - name: Multiattack
+    description: "The snake makes two attacks: one with its bite and one with its tail."
+  - name: Bite
+    description: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) piercing damage plus 3 (1d6) fire damage."
+  - name: Tail
+    description: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage plus 3 (1d6) fire damage."
+  actions: []
+
+- class_name: FleshGolem
+  name: Flesh Golem
+  creature_type: Medium construct, neutral
+  challenge_rating: 5
+  armor_class: 9
+  hp_max: 93
+  speed: 30 ft.
+  strength: 19
+  dexterity: 9
+  constitution: 18
+  intelligence: 6
+  wisdom: 10
+  charisma: 5
+  senses: Darkvision 60 ft., Passive Perception 10
+  languages: understands the languages of its creator but can't speak
+  damage_immunities: lightning, poison, bludgeoning, piercing, and slashing from nonmagical weapons that aren't adamantine
+  condition_immunities: charmed, exhaustion, frightened, paralyzed, petrified, poisoned
+  description: |
+    Berserk.
+      Whenever the golem starts its turn with 40 hit points or fewer, roll a
+      d6. On a 6, the golem goes berserk. On each of its turns while
+      berserk, the golem attacks the nearest creature it can see. If no
+      creature is near enough to move to and attack, the golem attacks an
+      object, with preference for an object smaller than itself. Once the
+      golem goes berserk, it continues to do so until it is destroyed or
+      regains all its hit points.
+
+      The golem's creator, if within 60 feet of the berserk golem, can try
+      to calm it by speaking firmly and persuasively. The golem must be able
+      to hear its creator, who must take an action to make a DC 15 Charisma
+      (Persuasion) check. If the check succeeds, the golem ceases being
+      berserk. If it takes damage while still at 40 hit points or fewer, the
+      golem might go berserk again.
+    Aversion of Fire.
+      If the golem takes fire damage, it has disadvantage on attack rolls
+      and ability checks until the end of its next turn.
+    Immutable Form.
+      The golem is immune to any spell or effect that would alter its form.
+    Lightning Absorption.
+      Whenever the golem is subjected to lightning damage, it takes no
+      damage and instead regains a number of hit points equal to the
+      lightning damage dealt.
+    Magic Resistance.
+      The golem has advantage on saving throws against spells and other
+      magical effects.
+    Magic Weapons.
+      The golem's weapon attacks are magical.
+
+    # Actions
+
+    Multiattack.
+      The golem makes two slam attacks.
+    Slam.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8
+      + 4) bludgeoning damage.
+  traits: 
+  - name: Berserk
+    description: Whenever the golem starts its turn with 40 hit points or fewer, roll a d6. On a 6, the golem goes berserk. On each of its turns while berserk, the golem attacks the nearest creature it can see. If no creature is near enough to move to and attack, the golem attacks an object, with preference for an object smaller than itself. Once the golem goes berserk, it continues to do so until it is destroyed or regains all its hit points. The golem's creator, if within 60 feet of the berserk golem, can try to calm it by speaking firmly and persuasively. The golem must be able to hear its creator, who must take an action to make a DC 15 Charisma (Persuasion) check. If the check succeeds, the golem ceases being berserk. If it takes damage while still at 40 hit points or fewer, the golem might go berserk again.
+  - name: Aversion of Fire
+    description: If the golem takes fire damage, it has disadvantage on attack rolls and ability checks until the end of its next turn.
+  - name: Immutable Form
+    description: The golem is immune to any spell or effect that would alter its form.
+  - name: Lightning Absorption
+    description: Whenever the golem is subjected to lightning damage, it takes no damage and instead regains a number of hit points equal to the lightning damage dealt.
+  - name: Magic Resistance
+    description: The golem has advantage on saving throws against spells and other magical effects.
+  - name: Magic Weapons
+    description: The golem's weapon attacks are magical.
+  actions: 
+  - name: Multiattack
+    description: The golem makes two slam attacks.
+  - name: Slam
+    description: "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage."
+
+- class_name: FlyingSnake
+  name: Flying Snake
+  creature_type: Tiny beast, unaligned
+  challenge_rating: 0.125
+  armor_class: 14
+  hp_max: 5
+  speed: 30 ft.
+  strength: 4
+  dexterity: 18
+  constitution: 11
+  intelligence: 2
+  wisdom: 12
+  charisma: 5
+  senses: Blindsight 10 ft., Passive Perception 11
+  description: |
+    Flyby.
+      The snake doesn't provoke opportunity attacks when it flies out of an
+      enemy's reach.
+
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 1
+      piercing damage plus 7 (3d4) poison damage.
+  traits: 
+  - name: Flyby
+    description: The snake doesn't provoke opportunity attacks when it flies out of an enemy's reach.
+  actions: 
+  - name: Bite
+    description: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 1 piercing damage plus 7 (3d4) poison damage."
+
+- class_name: FlyingSword
+  name: Flying Sword
+  creature_type: Small construct, unaligned
+  challenge_rating: 0.25
+  armor_class: 17
+  hp_max: 17
+  speed: 0 ft.
+  strength: 12
+  dexterity: 15
+  constitution: 11
+  intelligence: 1
+  wisdom: 5
+  charisma: 1
+  senses: Blindsight 60 ft. (blind beyond this radius), Passive Perception 7
+  damage_immunities: poison, psychic
+  condition_immunities: blinded, charmed, blinded, frightened, paralyzed, petrified, poisoned
+  description: |
+    Antimagic Susceptibility.
+      The sword is incapacitated while in the area of an antimagic field. If
+      targeted by dispel magic, the sword must succeed on a Constitution
+      saving throw against the caster's spell save DC or fall unconscious
+      for 1 minute.
+    False Appearance.
+      While the sword remains motionless and isn't flying, it is
+      indistinguishable from a normal sword.
+
+    # Actions
+
+    Longsword.
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 +
+      1) slashing damage.
+  traits: 
+  - name: Antimagic Susceptibility
+    description: The sword is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the sword must succeed on a Constitution saving throw against the caster's spell save DC or fall unconscious for 1 minute.
+  - name: False Appearance
+    description: While the sword remains motionless and isn't flying, it is indistinguishable from a normal sword.
+  actions: 
+  - name: Longsword
+    description: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) slashing damage."
+
+- class_name: Frog
+  name: Frog
+  creature_type: Tiny beast, unaligned
+  challenge_rating: 0
+  armor_class: 11
+  hp_max: 1
+  speed: 20 ft.
+  strength: 1
+  dexterity: 13
+  constitution: 8
+  intelligence: 1
+  wisdom: 8
+  charisma: 3
+  skill_str: Perception +1, Stealth +3
+  senses: Darkvision 30 ft., Passive Perception 11
+  description: |
+    Amphibious.
+      The frog can breathe air and water
+
+    Standing Leap.
+      The frog's long jump is up to 10 ft. and its high jump is up to 5 ft.,
+      with or without a running start.
+  traits: 
+  - name: Amphibious
+    description: The frog can breathe air and water
+  - name: Standing Leap
+    description: The frog's long jump is up to 10 ft. and its high jump is up to 5 ft., with or without a running start.
+  actions: []
+
+- class_name: FrostGiant
+  name: Frost Giant
+  creature_type: Huge giant, neutral evil
+  challenge_rating: 8
+  armor_class: 15
+  hp_max: 138
+  speed: 40 ft.
+  strength: 23
+  dexterity: 9
+  constitution: 21
+  intelligence: 9
+  wisdom: 10
+  charisma: 12
+  skill_str: Athletics +9, Perception +3
+  senses: Passive Perception 13
+  languages: Giant
+  damage_immunities: cold
+  description: |
+    # Actions
+
+    Multiattack.
+      The giant makes two greataxe attacks.
+    Greataxe.
+      Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 25
+      (3d12 + 6) slashing damage.
+    Rock.
+      Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28
+      (4d10 + 6) bludgeoning damage.
+  traits: []
+  actions: 
+  - name: Multiattack
+    description: The giant makes two greataxe attacks.
+  - name: Greataxe
+    description: "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 25 (3d12 + 6) slashing damage."
+  - name: Rock
+    description: "Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage."
+
