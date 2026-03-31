@@ -295,7 +295,6 @@ def load_yaml_monster_classes(yaml_path, base_class, module=None):
             speeds = _parse_monster_speeds(entry.get("speed", ""))
 
             attrs = {
-                "description": description_text,
                 "__doc__": _build_monster_docstring(
                     description_text,
                     traits_list,
@@ -304,6 +303,7 @@ def load_yaml_monster_classes(yaml_path, base_class, module=None):
                     reactions_list,
                 ),
                 "name": entry.get("name", class_name),
+                "description": entry.get("creature_type") or description_text,
                 "challenge_rating": entry.get("challenge_rating", 0),
                 "armor_class": entry.get("armor_class", 10),
                 "hp_max": entry.get("hp_max", 1),
