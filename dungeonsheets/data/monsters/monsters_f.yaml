@@ -134,15 +134,13 @@
   traits: 
   - name: Heated Body
     description: A creature that touches the snake or hits it with a melee attack while within 5 feet of it takes 3 (1d6) fire damage.
-  - name: "# ACTIONS"
-    description: ""
+  actions:
   - name: Multiattack
     description: "The snake makes two attacks: one with its bite and one with its tail."
   - name: Bite
     description: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) piercing damage plus 3 (1d6) fire damage."
   - name: Tail
     description: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage plus 3 (1d6) fire damage."
-  actions: []
 
 - class_name: FleshGolem
   name: Flesh Golem
