@@ -287,7 +287,7 @@
   wisdom: 3
   charisma: 1
   senses: Blindsight 30 ft. (blind beyond this radius), Passive Perception 6
-  condition_immunities: blinded, blinded, frightened
+  condition_immunities: blinded, frightened
   description: |
     False Appearance.
       While the violet fungus remains motionless, it is indistinguishable
