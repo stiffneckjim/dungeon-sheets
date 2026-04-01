@@ -109,6 +109,8 @@ COPY .devcontainer/.zshrc /home/$USERNAME/.zshrc
 FROM dungeon-sheets-base AS dungeon-sheets-test
 WORKDIR /workspace
 
+# Enable PDF build tests in the container (pdflatex and pdftk are available here)
+ENV DUNGEONSHEETS_RUN_PDF_BUILDS=1
 
 # Copy dependency files and install deps only (project source not yet available)
 COPY pyproject.toml uv.lock ./

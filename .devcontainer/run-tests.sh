@@ -8,18 +8,26 @@ echo "======================================"
 uv run ruff check dungeonsheets/
 uv run ruff format --check dungeonsheets/
 
-echo ""
-echo "======================================"
-echo "Testing makesheets (standard)..."
-echo "======================================"
 cd examples/
-uv run makesheets --debug
 
-echo ""
-echo "======================================"
-echo "Testing makesheets (fancy)..."
-echo "======================================"
-uv run makesheets --debug --fancy
+if [ "${DUNGEONSHEETS_RUN_PDF_BUILDS:-0}" = "1" ]; then
+    echo ""
+    echo "======================================"
+    echo "Testing makesheets (standard)..."
+    echo "======================================"
+    uv run makesheets --debug
+
+    echo ""
+    echo "======================================"
+    echo "Testing makesheets (fancy)..."
+    echo "======================================"
+    uv run makesheets --debug --fancy
+else
+    echo ""
+    echo "======================================"
+    echo "Skipping PDF build checks (DUNGEONSHEETS_RUN_PDF_BUILDS not set)..."
+    echo "======================================"
+fi
 
 echo ""
 echo "======================================"
