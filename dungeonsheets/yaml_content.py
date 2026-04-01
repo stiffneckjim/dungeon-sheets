@@ -96,7 +96,10 @@ def _build_monster_docstring(description, traits, actions, legendary_actions, re
     -------
     str
     """
-    parts = [description or ""]
+    # Strip any legacy "# Actions" block from the free-text description;
+    # actions are represented by the structured list and appended below.
+    clean_description = (description or "").split("# Actions")[0].rstrip()
+    parts = [clean_description]
     for trait in traits:
         parts.append(f"\n{trait['name']}.\n  {trait['description']}")
     parts.append("\n# Actions")
