@@ -111,7 +111,7 @@ class JSONCharacterReader(BaseCharacterReader):
     @lru_cache()
     def json_data(self):
         # Load the JSON data from disk
-        with open(self.filename, mode="r") as fp:
+        with open(self.filename, mode="r", encoding="utf-8") as fp:
             data = json.load(fp)
         return data
 
