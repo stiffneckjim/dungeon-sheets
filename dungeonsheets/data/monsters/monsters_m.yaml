@@ -32,19 +32,7 @@
       ft., one target. Hit: 4 (1d4 + 2) piercing damage.
   traits: 
   - name: Spellcasting
-    description: "The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared:"
-  - name: "- Cantrips (at will): fire bolt, light, mage hand, prestidigitation"
-    description: ""
-  - name: "- 1st level (4 slots): detect magic, mage armor, magic missile, shield"
-    description: ""
-  - name: "- 2nd level (3 slots): misty step, suggestion"
-    description: ""
-  - name: "- 3rd level (3 slots): counterspell, fireball, fly"
-    description: ""
-  - name: "- 4th level (3 slots): greater invisibility, ice storm"
-    description: ""
-  - name: "- 5th level (1 slot): cone of cold"
-    description: ""
+    description: "The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared: - Cantrips (at will): fire bolt, light, mage hand, prestidigitation - 1st level (4 slots): detect magic, mage armor, magic missile, shield - 2nd level (3 slots): misty step, suggestion - 3rd level (3 slots): counterspell, fireball, fly - 4th level (3 slots): greater invisibility, ice storm - 5th level (1 slot): cone of cold"
   actions: 
   - name: Dagger
     description: "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d4 + 2) piercing damage."

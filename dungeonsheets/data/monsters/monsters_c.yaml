@@ -804,13 +804,7 @@
   - name: Dark Devotion
     description: The fanatic has advantage on saving throws against being charmed or frightened.
   - name: Spellcasting
-    description: "The fanatic is a 4th-level spellcaster. Its spell casting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared:"
-  - name: "Cantrips (at will): light, sacred flame, thaumaturgy"
-    description: ""
-  - name: "- 1st level (4 slots): command, inflict wounds, shield of faith"
-    description: ""
-  - name: "- 2nd level (3 slots): hold person, spiritual weapon"
-    description: ""
+    description: "The fanatic is a 4th-level spellcaster. Its spell casting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared: - Cantrips (at will): light, sacred flame, thaumaturgy - 1st level (4 slots): command, inflict wounds, shield of faith - 2nd level (3 slots): hold person, spiritual weapon"
   actions: 
   - name: Multiattack
     description: The fanatic makes two melee attacks.

@@ -2166,21 +2166,7 @@
   - name: Rejuvenation
     description: If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning.
   - name: Spellcasting
-    description: "The naga is an 11th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following cleric spells prepared:"
-  - name: "- Cantrips (at will): mending, sacred flame, thaumaturgy"
-    description: ""
-  - name: "- 1st level (4 slots): command, cure wounds, shield of faith"
-    description: ""
-  - name: "- 2nd level (3 slots): calm emotions, hold person"
-    description: ""
-  - name: "- 3rd level (3 slots): bestow curse, clairvoyance"
-    description: ""
-  - name: "- 4th level (3 slots): banishment, freedom of movement"
-    description: ""
-  - name: "- 5th level (2 slots): flame strike, geas"
-    description: ""
-  - name: "- 6th level (1 slot): true seeing"
-    description: ""
+    description: "The naga is an 11th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following cleric spells prepared: - Cantrips (at will): mending, sacred flame, thaumaturgy - 1st level (4 slots): command, cure wounds, shield of faith - 2nd level (3 slots): calm emotions, hold person - 3rd level (3 slots): bestow curse, clairvoyance - 4th level (3 slots): banishment, freedom of movement - 5th level (2 slots): flame strike, geas - 6th level (1 slot): true seeing"
   actions: 
   - name: Bite
     description: "Melee Weapon Attack: +8 to hit, reach 10 ft., one creature. Hit: 8 (1d8 + 4) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 45 (10d8) poison damage on a failed save, or half as much damage on a successful one."
@@ -2248,19 +2234,7 @@
   - name: Magic Weapons
     description: The sphinx's weapon attacks are magical.
   - name: Spellcasting
-    description: "The sphinx is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following wizard spells prepared:"
-  - name: "- Cantrips (at will): mage hand, minor illusion, prestidigitation"
-    description: ""
-  - name: "- 1st level (4 slots): detect magic, identify, shield"
-    description: ""
-  - name: "- 2nd level (3 slots): darkness, locate object, suggestion"
-    description: ""
-  - name: "- 3rd level (3 slots): dispel magic, remove curse, tongues"
-    description: ""
-  - name: "- 4th level (3 slots): banishment, greater invisibility"
-    description: ""
-  - name: "- 5th level (1 slot): legend lore"
-    description: ""
+    description: "The sphinx is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following wizard spells prepared: - Cantrips (at will): mage hand, minor illusion, prestidigitation - 1st level (4 slots): detect magic, identify, shield - 2nd level (3 slots): darkness, locate object, suggestion - 3rd level (3 slots): dispel magic, remove curse, tongues - 4th level (3 slots): banishment, greater invisibility - 5th level (1 slot): legend lore"
   actions: 
   - name: Multiattack
     description: The sphinx makes two claw attacks.

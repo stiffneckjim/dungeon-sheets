@@ -2189,21 +2189,7 @@
   - name: Magic Weapons
     description: The sphinx's weapon attacks are magical.
   - name: Spellcasting
-    description: "The sphinx is a 12th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following cleric spells prepared:"
-  - name: "- Cantrips (at will): sacred flame, spare the dying, thaumaturgy"
-    description: ""
-  - name: "- 1st level (4 slots): command, detect evil and good, detect magic"
-    description: ""
-  - name: "- 2nd level (3 slots): lesser restoration, zone of truth"
-    description: ""
-  - name: "- 3rd level (3 slots): dispel magic, tongues"
-    description: ""
-  - name: "- 4th level (3 slots): banishment, freedom of movement"
-    description: ""
-  - name: "- 5th level (2 slots): flame strike, greater restoration"
-    description: ""
-  - name: "- 6th level (1 slot): heroes' feast"
-    description: ""
+    description: "The sphinx is a 12th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 18, +10 to hit with spell attacks). It requires no material components to cast its spells. The sphinx has the following cleric spells prepared: - Cantrips (at will): sacred flame, spare the dying, thaumaturgy - 1st level (4 slots): command, detect evil and good, detect magic - 2nd level (3 slots): lesser restoration, zone of truth - 3rd level (3 slots): dispel magic, tongues - 4th level (3 slots): banishment, freedom of movement - 5th level (2 slots): flame strike, greater restoration - 6th level (1 slot): heroes' feast"
   actions: 
   - name: Multiattack
     description: The sphinx makes two claw attacks.
