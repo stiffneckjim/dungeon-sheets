@@ -1,6 +1,5 @@
 import unittest
 import os
-import subprocess
 from pathlib import Path
 
 from dungeonsheets import make_sheets, character, monsters, random_tables
@@ -10,21 +9,12 @@ EG_DIR = Path(__file__).parent.parent.resolve() / "examples"
 CHARFILE = EG_DIR / "rogue1.py"
 GMFILE = EG_DIR / "gm-session-notes.py"
 
-
-def check_royal_font_available():
-    """Check if Royal font (from cfr-initials package) is available."""
-    try:
-        result = subprocess.run(
-            ['kpsewhich', 'Royal.sty'],
-            capture_output=True,
-            text=True,
-            timeout=5
-        )
-        return result.returncode == 0 and result.stdout.strip()
-    except (FileNotFoundError, subprocess.TimeoutExpired):
-        return False
+# Set DUNGEONSHEETS_RUN_PDF_BUILDS=1 to enable PDF-producing tests.
+# These require pdflatex (and optionally pdftk) to be installed.
+RUN_PDF_BUILDS = os.environ.get("DUNGEONSHEETS_RUN_PDF_BUILDS", "0") == "1"
 
 
+@unittest.skipUnless(RUN_PDF_BUILDS, "Set DUNGEONSHEETS_RUN_PDF_BUILDS=1 to run PDF build tests")
 class MakeSheetsTestCase(unittest.TestCase):
     char_pdf = Path(f"{CHARFILE.stem}.pdf")
     gm_pdf = Path(f"{GMFILE.stem}.pdf").resolve()
@@ -159,6 +149,7 @@ class EpubOutputTestCase(unittest.TestCase):
                         f"{self.char_epub} not created.")
 
 
+@unittest.skipUnless(RUN_PDF_BUILDS, "Set DUNGEONSHEETS_RUN_PDF_BUILDS=1 to run PDF build tests")
 class PdfOutputTestCase(unittest.TestCase):
     basename = "clara"
 
