@@ -85,7 +85,7 @@ jobs:
     needs: [build]
     strategy:
       matrix:
-        build-command: ["", "--fancy --spells-by-level --feats-by-type", "--output-format=epub"]
+        build-command: ["", "--fancy --spells-by-level", "--output-format=epub"]
 
     steps:
     - uses: actions/checkout@v4
