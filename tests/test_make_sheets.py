@@ -1,6 +1,7 @@
 import unittest
 import os
 from pathlib import Path
+from unittest.mock import patch
 
 from dungeonsheets import make_sheets, character, monsters, random_tables
 
@@ -147,6 +148,34 @@ class EpubOutputTestCase(unittest.TestCase):
             char_file=CHARFILE, output_format="epub")
         self.assertTrue(self.char_epub.exists(),
                         f"{self.char_epub} not created.")
+
+
+class TexTemplateOutputTestCase(unittest.TestCase):
+    def test_tex_template_uses_lualatex_for_feature_pages(self):
+        my_char = character.Character(name="Dr. Who")
+
+        with (
+            patch("dungeonsheets.make_sheets.make_character_content", return_value=["a", "b", "c"]),
+            patch("dungeonsheets.make_sheets.latex.create_latex_pdf") as mock_create_latex_pdf,
+            patch("dungeonsheets.make_sheets.merge_pdfs"),
+            patch("dungeonsheets.make_sheets.insert_image_into_pdf"),
+        ):
+            make_sheets.make_character_sheet(
+                char_file=CHARFILE,
+                character=my_char,
+                output_format="pdf",
+                use_tex_template=True,
+                fancy_decorations=True,
+            )
+
+        feature_calls = [
+            call
+            for call in mock_create_latex_pdf.call_args_list
+            if call.kwargs.get("basename", "").endswith("_features")
+        ]
+
+        self.assertEqual(len(feature_calls), 1)
+        self.assertEqual(feature_calls[0].kwargs.get("comm1"), "lualatex")
 
 
 @unittest.skipUnless(RUN_PDF_BUILDS, "Set DUNGEONSHEETS_RUN_PDF_BUILDS=1 to run PDF build tests")

@@ -641,11 +641,13 @@ def make_character_sheet(
         features_base = "{:s}_features".format(basename)
         try:
             if len(content) > 2:
+                feature_tex_engine = "lualatex" if use_tex_template else "pdflatex"
                 latex.create_latex_pdf(
                     tex="".join(content),
                     basename=features_base,
                     keep_temp_files=debug,
                     use_dnd_decorations=fancy_decorations,
+                    comm1=feature_tex_engine,
                 )
                 sheets.append(features_base + ".pdf")
                 final_pdf = f"{basename}.pdf"
