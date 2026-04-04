@@ -96,18 +96,27 @@ def _build_monster_docstring(description, traits, actions, legendary_actions, re
     -------
     str
     """
-    parts = [description or ""]
+    # Strip any legacy "# Actions" block from the free-text description;
+    # actions are represented by the structured list and appended below.
+    raw_desc = (description or "").split("# Actions")[0]
+    # Normalize each line to 0 indentation so RST does not interpret
+    # wrapped continuation lines as definition-list entries, which would
+    # emit \item commands that break LaTeX rendering.
+    clean_description = "\n".join(line.strip() for line in raw_desc.splitlines()).strip()
+    parts = [clean_description]
     for trait in traits:
         parts.append(f"\n{trait['name']}.\n  {trait['description']}")
-    parts.append("\n# Actions")
+    # Use 4-space indent before "#" so RPGtex_monster_info (latex.py) correctly
+    # splits feats from actions when rendering the DnD monster block.
+    parts.append("\n    # Actions")
     for action in actions:
         parts.append(f"\n{action['name']}.\n  {action['description']}")
     if legendary_actions:
-        parts.append("\n# Legendary Actions")
+        parts.append("\n    # Legendary Actions")
         for la in legendary_actions:
             parts.append(f"\n{la['name']}.\n  {la['description']}")
     if reactions:
-        parts.append("\n# Reactions")
+        parts.append("\n    # Reactions")
         for reaction in reactions:
             parts.append(f"\n{reaction['name']}.\n  {reaction['description']}")
     return "\n".join(parts)
@@ -295,7 +304,6 @@ def load_yaml_monster_classes(yaml_path, base_class, module=None):
             speeds = _parse_monster_speeds(entry.get("speed", ""))
 
             attrs = {
-                "description": description_text,
                 "__doc__": _build_monster_docstring(
                     description_text,
                     traits_list,
@@ -304,6 +312,7 @@ def load_yaml_monster_classes(yaml_path, base_class, module=None):
                     reactions_list,
                 ),
                 "name": entry.get("name", class_name),
+                "description": entry.get("creature_type") or description_text,
                 "challenge_rating": entry.get("challenge_rating", 0),
                 "armor_class": entry.get("armor_class", 10),
                 "hp_max": entry.get("hp_max", 1),

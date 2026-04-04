@@ -1,0 +1,643 @@
+- class_name: HalfRedDragonVeteran
+  name: Half-Red Dragon Veteran
+  creature_type: Medium humanoid, any alignment
+  challenge_rating: 5
+  armor_class: 18
+  hp_max: 65
+  speed: 30 ft.
+  strength: 16
+  dexterity: 13
+  constitution: 14
+  intelligence: 10
+  wisdom: 11
+  charisma: 10
+  senses: Blindsight 10 ft., Darkvision 60 ft., Passive Perception 12
+  languages: Common, Draconic
+  damage_resistances: fire
+  description: |
+    # Actions
+
+    Multiattack.
+      The veteran makes two longsword attacks. If it has a shortsword drawn,
+      it can also make a shortsword attack.
+    Longsword.
+      Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3)
+      slashing damage, or 8 (1d10 + 3) slashing damage if used with two
+      hands.
+    Shortsword.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 +
+      3) piercing damage.
+    Heavy Crossbow.
+      Ranged Weapon Attack: +3 to hit, range 100/400 ft., one target. Hit: 6
+      (1d10 + 1) piercing damage.
+    Fire Breath.
+      The veteran exhales fire in a 15-foot cone. Each creature in that area
+      must make a DC 15 Dexterity saving throw, taking 24 (7d6) fire damage
+      on a failed save, or half as much damage on a successful one.
+  traits: []
+  actions: 
+  - name: Multiattack
+    description: The veteran makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack.
+  - name: Longsword
+    description: "Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands."
+  - name: Shortsword
+    description: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage."
+  - name: Heavy Crossbow
+    description: "Ranged Weapon Attack: +3 to hit, range 100/400 ft., one target. Hit: 6 (1d10 + 1) piercing damage."
+  - name: Fire Breath
+    description: The veteran exhales fire in a 15-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 24 (7d6) fire damage on a failed save, or half as much damage on a successful one.
+
+- class_name: Harpy
+  name: Harpy
+  creature_type: Medium monstrosity, chaotic evil
+  challenge_rating: 1
+  armor_class: 11
+  hp_max: 38
+  speed: 20 ft.
+  strength: 12
+  dexterity: 13
+  constitution: 12
+  intelligence: 7
+  wisdom: 10
+  charisma: 13
+  senses: Passive Perception 10
+  languages: Common
+  description: |
+    # Actions
+
+    Multiattack.
+      The harpy makes two attacks: one with its claws and one with its club.
+    Claws.
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 +
+      1) slashing damage.
+    Club.
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 +
+      1) bludgeoning damage.
+    Luring Song.
+      The harpy sings a magical melody. Every humanoid and giant within 300
+      ft. of the harpy that can hear the song must succeed on a DC 11 Wisdom
+      saving throw or be charmed until the song ends. The harpy must take a
+      bonus action on its subsequent turns to continue singing. It can stop
+      singing at any time. The song ends if the harpy is incapacitated.
+
+      While charmed by the harpy, a target is incapacitated and ignores the
+      songs of other harpies. If the charmed target is more than 5 ft. away
+      from the harpy, the must move on its turn toward the harpy by the most
+      direct route. It doesn't avoid opportunity attacks, but before moving
+      into damaging terrain, such as lava or a pit, and whenever it takes
+      damage from a source other than the harpy, a target can repeat the
+      saving throw. A creature can also repeat the saving throw at the end
+      of each of its turns. If a creature's saving throw is successful, the
+      effect ends on it.
+
+      A target that successfully saves is immune to this harpy's song for
+      the next 24 hours.
+  traits: []
+  actions: 
+  - name: Multiattack
+    description: "The harpy makes two attacks: one with its claws and one with its club."
+  - name: Claws
+    description: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) slashing damage."
+  - name: Club
+    description: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage."
+  - name: Luring Song
+    description: The harpy sings a magical melody. Every humanoid and giant within 300 ft. of the harpy that can hear the song must succeed on a DC 11 Wisdom saving throw or be charmed until the song ends. The harpy must take a bonus action on its subsequent turns to continue singing. It can stop singing at any time. The song ends if the harpy is incapacitated. While charmed by the harpy, a target is incapacitated and ignores the songs of other harpies. If the charmed target is more than 5 ft. away from the harpy, the must move on its turn toward the harpy by the most direct route. It doesn't avoid opportunity attacks, but before moving into damaging terrain, such as lava or a pit, and whenever it takes damage from a source other than the harpy, a target can repeat the saving throw. A creature can also repeat the saving throw at the end of each of its turns. If a creature's saving throw is successful, the effect ends on it. A target that successfully saves is immune to this harpy's song for the next 24 hours.
+
+- class_name: Hawk
+  name: Hawk
+  creature_type: Tiny beast, unaligned
+  challenge_rating: 0
+  armor_class: 13
+  hp_max: 1
+  speed: 10 ft.
+  strength: 5
+  dexterity: 16
+  constitution: 8
+  intelligence: 2
+  wisdom: 14
+  charisma: 6
+  skill_str: Perception +4
+  senses: Passive Perception 14
+  description: |
+    Keen Sight.
+      The hawk has advantage on Wisdom (Perception) checks that rely on
+      sight.
+
+    # Actions
+
+    Talons.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1
+      slashing damage.
+  traits: 
+  - name: Keen Sight
+    description: The hawk has advantage on Wisdom (Perception) checks that rely on sight.
+  actions: 
+  - name: Talons
+    description: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 slashing damage."
+
+- class_name: HellHound
+  name: Hell Hound
+  creature_type: Medium fiend, lawful evil
+  challenge_rating: 3
+  armor_class: 15
+  hp_max: 45
+  speed: 50 ft.
+  strength: 17
+  dexterity: 12
+  constitution: 14
+  intelligence: 6
+  wisdom: 13
+  charisma: 6
+  skill_str: Perception +5
+  senses: Darkvision 60 ft., Passive Perception 15
+  languages: understands Infernal but can't speak it
+  damage_immunities: fire
+  description: |
+    Keen Hearing and Smell.
+      The hound has advantage on Wisdom (Perception) checks that rely on
+      hearing or smell.
+    Pack Tactics.
+      The hound has advantage on an attack roll against a creature if at
+      least one of the hound's allies is within 5 ft. of the creature and
+      the ally isn't incapacitated.
+
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 +
+      3) piercing damage plus 7 (2d6) fire damage.
+    Fire Breath.
+      The hound exhales fire in a 15-foot cone. Each creature in that area
+      must make a DC 12 Dexterity saving throw, taking 21 (6d6) fire damage
+      on a failed save, or half as much damage on a successful one.
+  traits: 
+  - name: Keen Hearing and Smell
+    description: The hound has advantage on Wisdom (Perception) checks that rely on hearing or smell.
+  - name: Pack Tactics
+    description: The hound has advantage on an attack roll against a creature if at least one of the hound's allies is within 5 ft. of the creature and the ally isn't incapacitated.
+  actions: 
+  - name: Bite
+    description: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 7 (2d6) fire damage."
+  - name: Fire Breath
+    description: The hound exhales fire in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one.
+
+- class_name: Hezrou
+  name: Hezrou
+  creature_type: Large fiend, chaotic evil
+  challenge_rating: 8
+  armor_class: 16
+  hp_max: 136
+  speed: 30 ft.
+  strength: 19
+  dexterity: 17
+  constitution: 20
+  intelligence: 5
+  wisdom: 12
+  charisma: 13
+  senses: Darkvision 120 ft., Passive Perception 11
+  languages: Abyssal, telepathy 120 ft.
+  damage_immunities: poison
+  damage_resistances: cold
+  condition_immunities: poisoned
+  description: |
+    Magic Resistance.
+      The hezrou has advantage on saving throws against spells and other
+      magical effects.
+    Stench.
+      Any creature that starts its turn within 10 feet of the hezrou must
+      succeed on a DC 14 Constitution saving throw or be poisoned until the
+      start of its next turn. On a successful saving throw, the creature is
+      immune to the hezrou's stench for 24 hours.
+
+    # Actions
+
+    Multiattack.
+      The hezrou makes three attacks: one with its bite and two with its
+      claws.
+    Bite.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10
+      + 4) piercing damage.
+    Claws.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) slashing damage.
+    Variant: Summon Demon.
+      The demon chooses what to summon and attempts a magical summoning.
+
+      A hezrou has a 30 percent chance of summoning 2d6 dretches or one
+      hezrou.
+
+      A summoned demon appears in an unoccupied space within 60 feet of its
+      summoner, acts as an ally of its summoner, and can't summon other
+      demons. It remains for 1 minute, until it or its summoner dies, or
+      until its summoner dismisses it as an action.
+  traits: 
+  - name: Magic Resistance
+    description: The hezrou has advantage on saving throws against spells and other magical effects.
+  - name: Stench
+    description: Any creature that starts its turn within 10 feet of the hezrou must succeed on a DC 14 Constitution saving throw or be poisoned until the start of its next turn. On a successful saving throw, the creature is immune to the hezrou's stench for 24 hours.
+  actions: 
+  - name: Multiattack
+    description: "The hezrou makes three attacks: one with its bite and two with its claws."
+  - name: Bite
+    description: "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage."
+  - name: Claws
+    description: "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage."
+  - name: "Variant: Summon Demon"
+    description: The demon chooses what to summon and attempts a magical summoning. A hezrou has a 30 percent chance of summoning 2d6 dretches or one hezrou. A summoned demon appears in an unoccupied space within 60 feet of its summoner, acts as an ally of its summoner, and can't summon other demons. It remains for 1 minute, until it or its summoner dies, or until its summoner dismisses it as an action.
+
+- class_name: HillGiant
+  name: Hill Giant
+  creature_type: Huge giant, chaotic evil
+  challenge_rating: 5
+  armor_class: 13
+  hp_max: 105
+  speed: 40 ft.
+  strength: 21
+  dexterity: 8
+  constitution: 19
+  intelligence: 5
+  wisdom: 9
+  charisma: 6
+  skill_str: Perception +2
+  senses: Passive Perception 12
+  languages: Giant
+  description: |
+    # Actions
+
+    Multiattack.
+      The giant makes two greatclub attacks.
+    Greatclub.
+      Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 18 (3d8
+      + 5) bludgeoning damage.
+    Rock.
+      Ranged Weapon Attack: +8 to hit, range 60/240 ft., one target. Hit: 21
+      (3d10 + 5) bludgeoning damage.
+  traits: []
+  actions: 
+  - name: Multiattack
+    description: The giant makes two greatclub attacks.
+  - name: Greatclub
+    description: "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 18 (3d8 + 5) bludgeoning damage."
+  - name: Rock
+    description: "Ranged Weapon Attack: +8 to hit, range 60/240 ft., one target. Hit: 21 (3d10 + 5) bludgeoning damage."
+
+- class_name: Hippogriff
+  name: Hippogriff
+  creature_type: Large monstrosity, unaligned
+  challenge_rating: 1
+  armor_class: 11
+  hp_max: 19
+  speed: 40 ft.
+  strength: 17
+  dexterity: 13
+  constitution: 13
+  intelligence: 2
+  wisdom: 12
+  charisma: 8
+  skill_str: Perception +5
+  senses: Passive Perception 15
+  description: |
+    Keen Sight.
+      The hippogriff has advantage on Wisdom (Perception) checks that rely
+      on sight.
+
+    # Actions
+
+    Multiattack.
+      The hippogriff makes two attacks: one with its beak and one with its
+      claws.
+    Beak.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10
+      + 3) piercing damage.
+    Claws.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6
+      + 3) slashing damage.
+  traits: 
+  - name: Keen Sight
+    description: The hippogriff has advantage on Wisdom (Perception) checks that rely on sight.
+  actions: 
+  - name: Multiattack
+    description: "The hippogriff makes two attacks: one with its beak and one with its claws."
+  - name: Beak
+    description: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage."
+  - name: Claws
+    description: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage."
+
+- class_name: Hobgoblin
+  name: Hobgoblin
+  creature_type: Medium humanoid, lawful evil
+  challenge_rating: 0.5
+  armor_class: 18
+  hp_max: 11
+  speed: 30 ft.
+  strength: 13
+  dexterity: 12
+  constitution: 12
+  intelligence: 10
+  wisdom: 10
+  charisma: 9
+  senses: Darkvision 60 ft., Passive Perception 10
+  languages: Common, Goblin
+  description: |
+    Martial Advantage.
+      Once per turn, the hobgoblin can deal an extra 7 (2d6) damage to a
+      creature it hits with a weapon attack if that creature is within 5 ft.
+      of an ally of the hobgoblin that isn't incapacitated.
+
+    # Actions
+
+    Longsword.
+      Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 +
+      1) slashing damage, or 6 (1d10 + 1) slashing damage if used with two
+      hands.
+    Longbow.
+      Ranged Weapon Attack: +3 to hit, range 150/600 ft., one target. Hit: 5
+      (1d8 + 1) piercing damage.
+  traits: 
+  - name: Martial Advantage
+    description: Once per turn, the hobgoblin can deal an extra 7 (2d6) damage to a creature it hits with a weapon attack if that creature is within 5 ft. of an ally of the hobgoblin that isn't incapacitated.
+  actions: 
+  - name: Longsword
+    description: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) slashing damage, or 6 (1d10 + 1) slashing damage if used with two hands."
+  - name: Longbow
+    description: "Ranged Weapon Attack: +3 to hit, range 150/600 ft., one target. Hit: 5 (1d8 + 1) piercing damage."
+
+- class_name: HobgoblinCaptain
+  name: Hobgoblin Captain
+  creature_type: Medium humanoid (goblinoid), lawful evil
+  challenge_rating: 3
+  armor_class: 17
+  hp_max: 39
+  speed: 30 ft.
+  strength: 15
+  dexterity: 14
+  constitution: 14
+  intelligence: 12
+  wisdom: 10
+  charisma: 13
+  senses: darkvision 60 ft., Passive Perception 10
+  languages: Common, Goblin
+  description: |
+    Martial Advantage.
+      Once per turn, the hobgoblin can deal an extra 10 (3d6) damage
+      to a creature it hits with a weapon attack if that creature is
+      within 5 feet of an ally of the hobgoblin that isn't
+      incapacitated.
+
+    # Actions
+
+    Multiattack.
+      The hobgoblin makes two greatsword attacks.
+    Greatsword
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit:
+      9 (2d6 + 2) piercing damage.
+    Javelin.
+      Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range
+      30/120 ft., one target. Hit: 5 (1d6+2) piercing damage.
+    Leadership (Recharges after a Short or Long Rest).
+      For 1 minutes, the hobgoblin can utter a special command or
+      warning whenever a nonhostile creature that it can see within 30
+      feet of it makes an attack roll or a saving throw. The creature
+      can add a d4 to its roll provided it can hear and understand the
+      hobgoblin. A creature can benefit from only one Leadership die
+      at a time. This effect ends if the hobgoblin is incapacitated.
+  traits: 
+  - name: Martial Advantage
+    description: Once per turn, the hobgoblin can deal an extra 10 (3d6) damage to a creature it hits with a weapon attack if that creature is within 5 feet of an ally of the hobgoblin that isn't incapacitated.
+  actions: 
+  - name: Multiattack
+    description: The hobgoblin makes two greatsword attacks.
+  - name: Greatsword
+    description: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) piercing damage."
+  - name: Javelin
+    description: "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 5 (1d6+2) piercing damage."
+  - name: Leadership (Recharges after a Short or Long Rest)
+    description: For 1 minutes, the hobgoblin can utter a special command or warning whenever a nonhostile creature that it can see within 30 feet of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the hobgoblin. A creature can benefit from only one Leadership die at a time. This effect ends if the hobgoblin is incapacitated.
+
+- class_name: Homunculus
+  name: Homunculus
+  creature_type: Tiny construct, neutral
+  challenge_rating: 0
+  armor_class: 13
+  hp_max: 5
+  speed: 20 ft.
+  strength: 4
+  dexterity: 15
+  constitution: 11
+  intelligence: 10
+  wisdom: 10
+  charisma: 7
+  senses: Darkvision 60 ft., Passive Perception 10
+  languages: understands the languages of its creator but can't speak
+  damage_immunities: poison
+  condition_immunities: charmed, poisoned
+  description: |
+    Telepathic Bond.
+      While the homunculus is on the same plane of existence as its master,
+      it can magically convey what it senses to its master, and the two can
+      communicate telepathically.
+
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 1
+      piercing damage, and the target must succeed on a DC 10 Constitution
+      saving throw or be poisoned for 1 minute. If the saving throw fails by
+      5 or more, the target is instead poisoned for 5 (1d10) minutes and
+      unconscious while poisoned in this way.
+  traits: 
+  - name: Telepathic Bond
+    description: While the homunculus is on the same plane of existence as its master, it can magically convey what it senses to its master, and the two can communicate telepathically.
+  actions: 
+  - name: Bite
+    description: "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must succeed on a DC 10 Constitution saving throw or be poisoned for 1 minute. If the saving throw fails by 5 or more, the target is instead poisoned for 5 (1d10) minutes and unconscious while poisoned in this way."
+
+- class_name: HornedDevil
+  name: Horned Devil
+  creature_type: Large fiend, lawful evil
+  challenge_rating: 11
+  armor_class: 18
+  hp_max: 178
+  speed: 20 ft.
+  strength: 22
+  dexterity: 17
+  constitution: 21
+  intelligence: 12
+  wisdom: 16
+  charisma: 17
+  senses: Darkvision 120 ft., Passive Perception 13
+  languages: Infernal, telepathy 120 ft.
+  damage_immunities: fire, poison
+  damage_resistances: cold
+  condition_immunities: poisoned
+  description: |
+    Devil's Sight.
+      Magical darkness doesn't impede the devil's darkvision.
+    Magic Resistance.
+      The devil has advantage on saving throws against spells and other
+      magical effects.
+
+    # Actions
+
+    Multiattack.
+      The devil makes three melee attacks: two with its fork and one with
+      its tail. It can use Hurl Flame in place of any melee attack.
+    Fork.
+      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 15
+      (2d8 + 6) piercing damage.
+    Tail.
+      Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 10
+      (1d8 + 6) piercing damage. If the target is a creature other than an
+      undead or a construct, it must succeed on a DC 17 Constitution saving
+      throw or lose 10 (3d6) hit points at the start of each of its turns
+      due to an infernal wound. Each time the devil hits the wounded target
+      with this attack, the damage dealt by the wound increases by 10 (3d6).
+      Any creature can take an action to stanch the wound with a successful
+      DC 12 Wisdom (Medicine) check. The wound also closes if the target
+      receives magical healing.
+    Hurl Flame.
+      Ranged Spell Attack: +7 to hit, range 150 ft., one target. Hit: 14
+      (4d6) fire damage. If the target is a flammable object that isn't
+      being worn or carried, it also catches fire.
+  traits: 
+  - name: Devil's Sight
+    description: Magical darkness doesn't impede the devil's darkvision.
+  - name: Magic Resistance
+    description: The devil has advantage on saving throws against spells and other magical effects.
+  actions: 
+  - name: Multiattack
+    description: "The devil makes three melee attacks: two with its fork and one with its tail. It can use Hurl Flame in place of any melee attack."
+  - name: Fork
+    description: "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 15 (2d8 + 6) piercing damage."
+  - name: Tail
+    description: "Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 10 (1d8 + 6) piercing damage. If the target is a creature other than an undead or a construct, it must succeed on a DC 17 Constitution saving throw or lose 10 (3d6) hit points at the start of each of its turns due to an infernal wound. Each time the devil hits the wounded target with this attack, the damage dealt by the wound increases by 10 (3d6). Any creature can take an action to stanch the wound with a successful DC 12 Wisdom (Medicine) check. The wound also closes if the target receives magical healing."
+  - name: Hurl Flame
+    description: "Ranged Spell Attack: +7 to hit, range 150 ft., one target. Hit: 14 (4d6) fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire."
+
+- class_name: HunterShark
+  name: Hunter Shark
+  creature_type: Large beast, unaligned
+  challenge_rating: 2
+  armor_class: 12
+  hp_max: 45
+  speed: 0 ft.
+  strength: 18
+  dexterity: 13
+  constitution: 15
+  intelligence: 1
+  wisdom: 10
+  charisma: 4
+  skill_str: Perception +2
+  senses: Darkvision 30 ft., Passive Perception 12
+  description: |
+    Blood Frenzy.
+      The shark has advantage on melee attack rolls against any creature
+      that doesn't have all its hit points.
+    Water Breathing.
+      The shark can breathe only underwater.
+
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8
+      + 4) piercing damage.
+  traits: 
+  - name: Blood Frenzy
+    description: The shark has advantage on melee attack rolls against any creature that doesn't have all its hit points.
+  - name: Water Breathing
+    description: The shark can breathe only underwater.
+  actions: 
+  - name: Bite
+    description: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) piercing damage."
+
+- class_name: Hydra
+  name: Hydra
+  creature_type: Huge monstrosity, unaligned
+  challenge_rating: 8
+  armor_class: 15
+  hp_max: 172
+  speed: 30 ft.
+  strength: 20
+  dexterity: 12
+  constitution: 20
+  intelligence: 2
+  wisdom: 10
+  charisma: 7
+  skill_str: Perception +6
+  senses: Darkvision 60 ft., Passive Perception 16
+  description: |
+    Hold Breath.
+      The hydra can hold its breath for 1 hour.
+    Multiple Heads.
+      The hydra has five heads. While it has more than one head, the hydra
+      has advantage on saving throws against being blinded, charmed,
+      deafened, frightened, stunned, and knocked unconscious.
+
+      Whenever the hydra takes 25 or more damage in a single turn, one of
+      its heads dies. If all its heads die, the hydra dies.
+
+      At the end of its turn, it grows two heads for each of its heads that
+      died since its last turn, unless it has taken fire damage since its
+      last turn. The hydra regains 10 hit points for each head regrown in
+      this way.
+    Reactive Heads.
+      For each head the hydra has beyond one, it gets an extra reaction that
+      can be used only for opportunity attacks.
+    Wakeful.
+      While the hydra sleeps, at least one of its heads is awake.
+
+    # Actions
+
+    Multiattack.
+      The hydra makes as many bite attacks as it has heads.
+    Bite.
+      Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 10
+      (1d10 + 5) piercing damage.
+  traits: 
+  - name: Hold Breath
+    description: The hydra can hold its breath for 1 hour.
+  - name: Multiple Heads
+    description: The hydra has five heads. While it has more than one head, the hydra has advantage on saving throws against being blinded, charmed, deafened, frightened, stunned, and knocked unconscious. Whenever the hydra takes 25 or more damage in a single turn, one of its heads dies. If all its heads die, the hydra dies. At the end of its turn, it grows two heads for each of its heads that died since its last turn, unless it has taken fire damage since its last turn. The hydra regains 10 hit points for each head regrown in this way.
+  - name: Reactive Heads
+    description: For each head the hydra has beyond one, it gets an extra reaction that can be used only for opportunity attacks.
+  - name: Wakeful
+    description: While the hydra sleeps, at least one of its heads is awake.
+  actions: 
+  - name: Multiattack
+    description: The hydra makes as many bite attacks as it has heads.
+  - name: Bite
+    description: "Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 10 (1d10 + 5) piercing damage."
+
+- class_name: Hyena
+  name: Hyena
+  creature_type: Medium beast, unaligned
+  challenge_rating: 0
+  armor_class: 11
+  hp_max: 5
+  speed: 50 ft.
+  strength: 11
+  dexterity: 13
+  constitution: 12
+  intelligence: 2
+  wisdom: 12
+  charisma: 5
+  skill_str: Perception +3
+  senses: Passive Perception 13
+  description: |
+    Pack Tactics.
+      The hyena has advantage on an attack roll against a creature if at
+      least one of the hyena's allies is within 5 ft. of the creature and
+      the ally isn't incapacitated.
+
+    # Actions
+
+    Bite.
+      Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6)
+      piercing damage.
+  traits: 
+  - name: Pack Tactics
+    description: The hyena has advantage on an attack roll against a creature if at least one of the hyena's allies is within 5 ft. of the creature and the ally isn't incapacitated.
+  actions: 
+  - name: Bite
+    description: "Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6) piercing damage."
+

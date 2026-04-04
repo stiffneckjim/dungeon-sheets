@@ -1,0 +1,596 @@
+- class_name: Panther
+  name: Panther
+  creature_type: Medium beast, unaligned
+  challenge_rating: 0.25
+  armor_class: 12
+  hp_max: 13
+  speed: 50 ft.
+  strength: 14
+  dexterity: 15
+  constitution: 10
+  intelligence: 3
+  wisdom: 14
+  charisma: 7
+  skill_str: Perception +4, Stealth +6
+  senses: Passive Perception 14
+  description: |
+    Keen Smell.
+      The panther has advantage on Wisdom (Perception) checks that rely on
+      smell.
+    Pounce.
+      If the panther moves at least 20 ft. straight toward a creature and
+      then hits it with a claw attack on the same turn, that target must
+      succeed on a DC 12 Strength saving throw or be knocked prone. If the
+      target is prone, the panther can make one bite attack against it as a
+      bonus action.
+
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 +
+      2) piercing damage.
+    Claw.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
+      2) slashing damage.
+  traits: 
+  - name: Keen Smell
+    description: The panther has advantage on Wisdom (Perception) checks that rely on smell.
+  - name: Pounce
+    description: If the panther moves at least 20 ft. straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the panther can make one bite attack against it as a bonus action.
+  actions: 
+  - name: Bite
+    description: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage."
+  - name: Claw
+    description: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage."
+
+- class_name: Pegasus
+  name: Pegasus
+  creature_type: Large celestial, chaotic good
+  challenge_rating: 2
+  armor_class: 12
+  hp_max: 59
+  speed: 60 ft.
+  strength: 18
+  dexterity: 15
+  constitution: 16
+  intelligence: 10
+  wisdom: 15
+  charisma: 13
+  skill_str: Perception +6
+  senses: Passive Perception 16
+  languages: understands Celestial, Common, Elvish, and Sylvan but can't speak
+  description: |
+    # Actions
+
+    Hooves.
+      Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6
+      + 4) bludgeoning damage.
+  traits: []
+  actions: 
+  - name: Hooves
+    description: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage."
+
+- class_name: PhaseSpider
+  name: Phase Spider
+  creature_type: Large monstrosity, unaligned
+  challenge_rating: 3
+  armor_class: 13
+  hp_max: 32
+  speed: 30 ft.
+  strength: 15
+  dexterity: 15
+  constitution: 12
+  intelligence: 6
+  wisdom: 10
+  charisma: 6
+  skill_str: Stealth +6
+  senses: Darkvision 60 ft., Passive Perception 10
+  description: |
+    Ethereal Jaunt.
+      As a bonus action, the spider can magically shift from the Material
+      Plane to the Ethereal Plane, or vice versa.
+    Spider Climb.
+      The spider can climb difficult surfaces, including upside down on
+      ceilings, without needing to make an ability check.
+    Web Walker.
+      The spider ignores movement restrictions caused by webbing.
+
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7
+      (1d10 + 2) piercing damage, and the target must make a DC 11
+      Constitution saving throw, taking 18 (4d8) poison damage on a failed
+      save, or half as much damage on a successful one. If the poison damage
+      reduces the target to 0 hit points, the target is stable but poisoned
+      for 1 hour, even after regaining hit points, and is paralyzed while
+      poisoned in this way.
+  traits: 
+  - name: Ethereal Jaunt
+    description: As a bonus action, the spider can magically shift from the Material Plane to the Ethereal Plane, or vice versa.
+  - name: Spider Climb
+    description: The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
+  - name: Web Walker
+    description: The spider ignores movement restrictions caused by webbing.
+  actions: 
+  - name: Bite
+    description: "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (1d10 + 2) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 18 (4d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way."
+
+- class_name: Piercer
+  name: Piercer
+  creature_type: Medium monstrosity, unaligned
+  challenge_rating: 0.5
+  armor_class: 15
+  hp_max: 22
+  speed: 5 ft.
+  strength: 10
+  dexterity: 13
+  constitution: 16
+  intelligence: 1
+  wisdom: 7
+  charisma: 3
+  skill_str: Stealth +5
+  senses: blindsight 30ft., darkvision 60ft., passive Perception 8
+  description: |
+    False Appearance.
+      While the piercer remains motionless on the ceiling, it is
+      indistinguishable from a normal stalactite.
+
+    Spider Climb.
+      The piercer can climb difficult surfaces, including upside down
+      on ceilings, without needing to make an ability check.
+
+    # Actions
+
+    Drop.
+      Melee Weapon Attack: +3 to hit, one creature directly underneath
+      the piercer. Hit: 3 (1d6) piercing damage per 10 feet fallen, up
+      to 21 (6d6). *Miss:* The piercer takes half the normal falling
+      damage for the distance fallen.
+  traits: 
+  - name: False Appearance
+    description: While the piercer remains motionless on the ceiling, it is indistinguishable from a normal stalactite.
+  - name: Spider Climb
+    description: The piercer can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.
+  actions: 
+  - name: Drop
+    description: "Melee Weapon Attack: +3 to hit, one creature directly underneath the piercer. Hit: 3 (1d6) piercing damage per 10 feet fallen, up to 21 (6d6). *Miss:* The piercer takes half the normal falling damage for the distance fallen."
+
+- class_name: PitFiend
+  name: Pit Fiend
+  creature_type: Large fiend, lawful evil
+  challenge_rating: 20
+  armor_class: 19
+  hp_max: 300
+  speed: 30 ft.
+  strength: 26
+  dexterity: 14
+  constitution: 24
+  intelligence: 22
+  wisdom: 18
+  charisma: 24
+  senses: Truesight 120 ft., Passive Perception 14
+  languages: Infernal, telepathy 120 ft.
+  damage_immunities: fire, poison
+  damage_resistances: cold
+  condition_immunities: poisoned
+  description: |
+    Fear Aura.
+      Any creature hostile to the pit fiend that starts its turn within 20
+      feet of the pit fiend must make a DC 21 Wisdom saving throw, unless
+      the pit fiend is incapacitated. On a failed save, the creature is
+      frightened until the start of its next turn. If a creature's saving
+      throw is successful, the creature is immune to the pit fiend's Fear
+      Aura for the next 24 hours.
+    Magic Resistance.
+      The pit fiend has advantage on saving throws against spells and other
+      magical effects.
+    Magic Weapons.
+      The pit fiend's weapon attacks are magical.
+    Innate Spellcasting.
+      The pit fiend's spellcasting ability is Charisma (spell save DC 21).
+      The pit fiend can innately cast the following spells, requiring no
+      material components:
+
+      At will: detect magic, fireball
+
+      3/day each: hold monster, wall of fire
+
+    # Actions
+
+    Multiattack.
+      The pit fiend makes four attacks: one with its bite, one with its
+      claw, one with its mace, and one with its tail.
+    Bite.
+      Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit: 22 (4d6
+      + 8) piercing damage. The target must succeed on a DC 21 Constitution
+      saving throw or become poisoned. While poisoned in this way, the
+      target can't regain hit points, and it takes 21 (6d6) poison damage at
+      the start of each of its turns. The poisoned target can repeat the
+      saving throw at the end of each of its turns, ending the effect on
+      itself on a success.
+    Claw.
+      Melee Weapon Attack: +14 to hit, reach 10 ft. , one target. Hit: 17
+      (2d8 + 8) slashing damage.
+    Mace.
+      Melee Weapon Attack: +14 to hit, reach 10ft., one target. Hit: 15 (2d6
+      + 8) bludgeoning damage plus 21 (6d6) fire damage.
+    Tail.
+      Melee Weapon Attack: +14 to hit, reach 10ft., one target. Hit: 24
+      (3d10 + 8) bludgeoning damage.
+  traits: 
+  - name: Fear Aura
+    description: Any creature hostile to the pit fiend that starts its turn within 20 feet of the pit fiend must make a DC 21 Wisdom saving throw, unless the pit fiend is incapacitated. On a failed save, the creature is frightened until the start of its next turn. If a creature's saving throw is successful, the creature is immune to the pit fiend's Fear Aura for the next 24 hours.
+  - name: Magic Resistance
+    description: The pit fiend has advantage on saving throws against spells and other magical effects.
+  - name: Magic Weapons
+    description: The pit fiend's weapon attacks are magical.
+  - name: Innate Spellcasting
+    description: "The pit fiend's spellcasting ability is Charisma (spell save DC 21). The pit fiend can innately cast the following spells, requiring no material components: At will: detect magic, fireball 3/day each: hold monster, wall of fire"
+  actions: 
+  - name: Multiattack
+    description: "The pit fiend makes four attacks: one with its bite, one with its claw, one with its mace, and one with its tail."
+  - name: Bite
+    description: "Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit: 22 (4d6 + 8) piercing damage. The target must succeed on a DC 21 Constitution saving throw or become poisoned. While poisoned in this way, the target can't regain hit points, and it takes 21 (6d6) poison damage at the start of each of its turns. The poisoned target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+  - name: Claw
+    description: "Melee Weapon Attack: +14 to hit, reach 10 ft. , one target. Hit: 17 (2d8 + 8) slashing damage."
+  - name: Mace
+    description: "Melee Weapon Attack: +14 to hit, reach 10ft., one target. Hit: 15 (2d6 + 8) bludgeoning damage plus 21 (6d6) fire damage."
+  - name: Tail
+    description: "Melee Weapon Attack: +14 to hit, reach 10ft., one target. Hit: 24 (3d1O + 8) bludgeoning damage."
+
+- class_name: Planetar
+  name: Planetar
+  creature_type: Large celestial, lawful good
+  challenge_rating: 16
+  armor_class: 19
+  hp_max: 200
+  speed: 40 ft.
+  strength: 24
+  dexterity: 20
+  constitution: 24
+  intelligence: 19
+  wisdom: 22
+  charisma: 25
+  skill_str: Perception +11
+  senses: Truesight 120 ft., Passive Perception 21
+  languages: all, telepathy 120 ft.
+  damage_resistances: radiant
+  condition_immunities: charmed, exhaustion, frightened
+  description: |
+    Angelic Weapons.
+      The planetar's weapon attacks are magical. When the planetar hits with
+      any weapon, the weapon deals an extra 5d8 radiant damage (included in
+      the attack).
+    Divine Awareness.
+      The planetar knows if it hears a lie.
+    Innate Spellcasting.
+      The planetar's spellcasting ability is Charisma (spell save DC 20).
+      The planetar can innately cast the following spells, requiring no
+      material components:
+
+      At will: detect evil and good, invisibility (self only)
+
+      3/day each: blade barrier, dispel evil and good, flame strike, raise
+      dead
+
+      1/day each: commune, control weather, insect plague
+    Magic Resistance.
+      The planetar has advantage on saving throws against spells and other
+      magical effects.
+
+    # Actions
+
+    Multiattack.
+      The planetar makes two melee attacks.
+    Greatsword.
+      Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 21 (4d6
+      + 7) slashing damage plus 22 (5d8) radiant damage.
+    Healing Touch.
+      The planetar touches another creature. The target magically regains 30
+      (6d8 + 3) hit points and is freed from any curse, disease, poison,
+      blindness, or deafness.
+  traits: 
+  - name: Angelic Weapons
+    description: The planetar's weapon attacks are magical. When the planetar hits with any weapon, the weapon deals an extra 5d8 radiant damage (included in the attack).
+  - name: Divine Awareness
+    description: The planetar knows if it hears a lie.
+  - name: Innate Spellcasting
+    description: "The planetar's spellcasting ability is Charisma (spell save DC 20). The planetar can innately cast the following spells, requiring no material components: At will: detect evil and good, invisibility (self only) 3/day each: blade barrier, dispel evil and good, flame strike, raise dead 1/day each: commune, control weather, insect plague"
+  - name: Magic Resistance
+    description: The planetar has advantage on saving throws against spells and other magical effects.
+  actions: 
+  - name: Multiattack
+    description: The planetar makes two melee attacks.
+  - name: Greatsword
+    description: "Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 21 (4d6 + 7) slashing damage plus 22 (5d8) radiant damage."
+  - name: Healing Touch
+    description: The planetar touches another creature. The target magically regains 30 (6d8 + 3) hit points and is freed from any curse, disease, poison, blindness, or deafness.
+
+- class_name: Plesiosaurus
+  name: Plesiosaurus
+  creature_type: Large beast, unaligned
+  challenge_rating: 2
+  armor_class: 13
+  hp_max: 68
+  speed: 20 ft.
+  strength: 18
+  dexterity: 15
+  constitution: 16
+  intelligence: 2
+  wisdom: 12
+  charisma: 5
+  skill_str: Perception +3, Stealth +4
+  senses: Passive Perception 13
+  description: |
+    Hold Breath.
+      The plesiosaurus can hold its breath for 1 hour.
+
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 14 (3d6
+      + 4) piercing damage.
+  traits: 
+  - name: Hold Breath
+    description: The plesiosaurus can hold its breath for 1 hour.
+  actions: 
+  - name: Bite
+    description: "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 14 (3d6 + 4) piercing damage."
+
+- class_name: PoisonousSnake
+  name: Poisonous Snake
+  creature_type: Tiny beast, unaligned
+  challenge_rating: 0.125
+  armor_class: 13
+  hp_max: 2
+  speed: 30 ft.
+  strength: 2
+  dexterity: 16
+  constitution: 11
+  intelligence: 1
+  wisdom: 10
+  charisma: 3
+  senses: Blindsight 10 ft., Passive Perception 10
+  description: |
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1
+      piercing damage, and the target must make a DC 10 Constitution saving
+      throw, taking 5 (2d4) poison damage on a failed save, or half as much
+      damage on a successful one.
+  traits: []
+  actions: 
+  - name: Bite
+    description: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 piercing damage, and the target must make a DC 10 Constitution saving throw, taking 5 (2d4) poison damage on a failed save, or half as much damage on a successful one."
+
+- class_name: PolarBear
+  name: Polar Bear
+  creature_type: Large beast, unaligned
+  challenge_rating: 2
+  armor_class: 12
+  hp_max: 42
+  speed: 40 ft.
+  strength: 20
+  dexterity: 10
+  constitution: 16
+  intelligence: 2
+  wisdom: 13
+  charisma: 7
+  skill_str: Perception +3
+  senses: Passive Perception 13
+  description: |
+    Keen Smell.
+      The bear has advantage on Wisdom (Perception) checks that rely on
+      smell.
+
+    # Actions
+
+    Multiattack.
+      The bear makes two attacks: one with its bite and one with its claws.
+    Bite.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (1d8 +
+      5) piercing damage.
+    Claws.
+      Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 12 (2d6
+      + 5) slashing damage.
+  traits: 
+  - name: Keen Smell
+    description: The bear has advantage on Wisdom (Perception) checks that rely on smell.
+  actions: 
+  - name: Multiattack
+    description: "The bear makes two attacks: one with its bite and one with its claws."
+  - name: Bite
+    description: "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (1d8 + 5) piercing damage."
+  - name: Claws
+    description: "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage."
+
+- class_name: Pony
+  name: Pony
+  creature_type: Medium beast, unaligned
+  challenge_rating: 0.125
+  armor_class: 10
+  hp_max: 11
+  speed: 40 ft.
+  strength: 15
+  dexterity: 10
+  constitution: 13
+  intelligence: 2
+  wisdom: 11
+  charisma: 7
+  senses: Passive Perception 10
+  description: |
+    # Actions
+
+    Hooves.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 +
+      2) bludgeoning damage.
+  traits: []
+  actions: 
+  - name: Hooves
+    description: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) bludgeoning damage."
+
+- class_name: Priest
+  name: Priest
+  creature_type: Medium humanoid, any alignment
+  challenge_rating: 2
+  armor_class: 13
+  hp_max: 27
+  speed: 25 ft.
+  strength: 10
+  dexterity: 10
+  constitution: 12
+  intelligence: 13
+  wisdom: 16
+  charisma: 13
+  skill_str: Medicine +7, Persuasion +3, Religion +4
+  senses: Passive Perception 13
+  languages: any two languages
+  description: |
+    Divine Eminence.
+      As a bonus action, the priest can expend a spell slot to cause its
+      melee weapon attacks to magically deal an extra 10 (3d6) radiant
+      damage to a target on a hit. This benefit lasts until the end of the
+      turn. If the priest expends a spell slot of 2nd level or higher, the
+      extra damage increases by 1d6 for each level above 1st.
+    Spellcasting.
+      The priest is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 13, +5 to hit with spell attacks). The priest has the following cleric spells prepared:
+
+    - Cantrips (at will): light, sacred flame, thaumaturgy
+    - 1st level (4 slots): cure wounds, guiding bolt, sanctuary
+    - 2nd level (3 slots): lesser restoration, spiritual weapon
+    - 3rd level (2 slots): dispel magic, spirit guardians
+
+    # Actions
+
+    Mace.
+      Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6)
+      bludgeoning damage.
+  traits: 
+  - name: Divine Eminence
+    description: As a bonus action, the priest can expend a spell slot to cause its melee weapon attacks to magically deal an extra 10 (3d6) radiant damage to a target on a hit. This benefit lasts until the end of the turn. If the priest expends a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each level above 1st.
+  - name: Spellcasting
+    description: "The priest is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 13, +5 to hit with spell attacks). The priest has the following cleric spells prepared: - Cantrips (at will): light, sacred flame, thaumaturgy - 1st level (4 slots): cure wounds, guiding bolt, sanctuary - 2nd level (3 slots): lesser restoration, spiritual weapon - 3rd level (2 slots): dispel magic, spirit guardians"
+  actions: 
+  - name: Mace
+    description: "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6) bludgeoning damage."
+
+- class_name: Pseudodragon
+  name: Pseudodragon
+  creature_type: Tiny dragon, neutral good
+  challenge_rating: 0.25
+  armor_class: 13
+  hp_max: 7
+  speed: 15 ft.
+  strength: 6
+  dexterity: 15
+  constitution: 13
+  intelligence: 10
+  wisdom: 12
+  charisma: 10
+  skill_str: Perception +3, Stealth +4
+  senses: Blindsight 10 ft., Darkvision 60 ft., Passive Perception 13
+  languages: understands Common and Draconic but can't speak
+  description: |
+    Keen Senses.
+      The pseudodragon has advantage on Wisdom (Perception) checks that rely
+      on sight, hearing, or smell.
+    Magic Resistance.
+      The pseudodragon has advantage on saving throws against spells and
+      other magical effects.
+    Limited Telepathy.
+      The pseudodragon can magically communicate simple ideas, emotions, and
+      images telepathically with any creature within 100 ft. of it that can
+      understand a language.
+    Variant: Familiar.
+      The pseudodragon can serve another creature as a familiar, forming a
+      magic, telepathic bond with that willing companion. While the two are
+      bonded, the companion can sense what the pseudodragon senses as long
+      as they are within 1 mile of each other. While the pseudodragon is
+      within 10 feet of its companion, the companion shares the
+      pseudodragon's Magic Resistance trait. At any time and for any reason,
+      the pseudodragon can end its service as a familiar, ending the
+      telepathic bond.
+
+    # Actions
+
+    Bite.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 +
+      2) piercing damage.
+    Sting.
+      Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4
+      + 2) piercing damage, and the target must succeed on a DC 11
+      Constitution saving throw or become poisoned for 1 hour. If the saving
+      throw fails by 5 or more, the target falls unconscious for the same
+      duration, or until it takes damage or another creature uses an action
+      to shake it awake.
+  traits: 
+  - name: Keen Senses
+    description: The pseudodragon has advantage on Wisdom (Perception) checks that rely on sight, hearing, or smell.
+  - name: Magic Resistance
+    description: The pseudodragon has advantage on saving throws against spells and other magical effects.
+  - name: Limited Telepathy
+    description: The pseudodragon can magically communicate simple ideas, emotions, and images telepathically with any creature within 100 ft. of it that can understand a language.
+  - name: "Variant: Familiar"
+    description: The pseudodragon can serve another creature as a familiar, forming a magic, telepathic bond with that willing companion. While the two are bonded, the companion can sense what the pseudodragon senses as long as they are within 1 mile of each other. While the pseudodragon is within 10 feet of its companion, the companion shares the pseudodragon's Magic Resistance trait. At any time and for any reason, the pseudodragon can end its service as a familiar, ending the telepathic bond.
+  actions: 
+  - name: Bite
+    description: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage."
+  - name: Sting
+    description: "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or become poisoned for 1 hour. If the saving throw fails by 5 or more, the target falls unconscious for the same duration, or until it takes damage or another creature uses an action to shake it awake."
+
+- class_name: PurpleWorm
+  name: Purple Worm
+  creature_type: Gargantuan monstrosity, unaligned
+  challenge_rating: 15
+  armor_class: 18
+  hp_max: 247
+  speed: 50 ft.
+  strength: 28
+  dexterity: 7
+  constitution: 22
+  intelligence: 1
+  wisdom: 8
+  charisma: 4
+  senses: Blindsight 30 ft., Tremorsense 60 ft., Passive Perception 9
+  description: |
+    Tunneler.
+      The worm can burrow through solid rock at half its burrow speed and
+      leaves a 10-foot-diameter tunnel in its wake.
+
+    # Actions
+
+    Multiattack.
+      The worm makes two attacks: one with its bite and one with its
+      stinger.
+    Bite.
+      Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 22 (3d8
+      + 9) piercing damage. If the target is a Large or smaller creature, it
+      must succeed on a DC 19 Dexterity saving throw or be swallowed by the
+      worm. A swallowed creature is blinded and restrained, it has total
+      cover against attacks and other effects outside the worm, and it takes
+      21 (6d6) acid damage at the start of each of the worm's turns.
+
+      If the worm takes 30 damage or more on a single turn from a creature
+      inside it, the worm must succeed on a DC 21 Constitution saving throw
+      at the end of that turn or regurgitate all swallowed creatures, which
+      fall prone in a space within 10 feet of the worm. If the worm dies, a
+      swallowed creature is no longer restrained by it and can escape from
+      the corpse by using 20 feet of movement, exiting prone.
+    Tail Stinger.
+      Melee Weapon Attack: +9 to hit, reach 10 ft., one creature. Hit: 19
+      (3d6 + 9) piercing damage, and the target must make a DC 19
+      Constitution saving throw, taking 42 (12d6) poison damage on a failed
+      save, or half as much damage on a successful one.
+  traits: 
+  - name: Tunneler
+    description: The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.
+  actions: 
+  - name: Multiattack
+    description: "The worm makes two attacks: one with its bite and one with its stinger."
+  - name: Bite
+    description: "Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 22 (3d8 + 9) piercing damage. If the target is a Large or smaller creature, it must succeed on a DC 19 Dexterity saving throw or be swallowed by the worm. A swallowed creature is blinded and restrained, it has total cover against attacks and other effects outside the worm, and it takes 21 (6d6) acid damage at the start of each of the worm's turns. If the worm takes 30 damage or more on a single turn from a creature inside it, the worm must succeed on a DC 21 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the worm. If the worm dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 20 feet of movement, exiting prone."
+  - name: Tail Stinger
+    description: "Melee Weapon Attack: +9 to hit, reach 10 ft., one creature. Hit: 19 (3d6 + 9) piercing damage, and the target must make a DC 19 Constitution saving throw, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one."
+

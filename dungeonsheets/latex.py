@@ -525,29 +525,36 @@ def RPGtex_monster_info(char):
             subsection = ""
             lines = section.splitlines()
             for line in lines:
-                if re.match(r"^ {4}\S", line):
-                    # New legendary action, remove leading spaces
-                    line = re.sub(r"^ {4}(.+)\.$", r"\\DndMonsterLegendaryAction{\1}{}", line)
-                    subsection += line + "\n"
-                elif re.match(r"^ {6}\S", line):
-                    # Remove leading spaces from other lines
-                    line = re.sub(r"^ {6}(.+)", r"\1", line)
-                    subsection += line + "\n"
-            # Add section header and DndMonsterLegendaryActions environment
-            subsection = (
-                "\n\\DndMonsterSection{Legendary Actions}\n\\begin{DndMonsterLegendaryActions}\n"
-                + subsection
-                + "\\end{DndMonsterLegendaryActions}\n"
-            )
-            # Put the curly braces in place
-            subsection = re.sub(
-                r"}{}\n(.+?)\n\\", r"}\n{\1}\n\\", subsection, re.MULTILINE, re.DOTALL
-            )
-            # Dice
-            subsection = re.sub(
-                r"\((\d+)d(\d+)\s*([+-]*)\s*(\d*)\)",
-                r" (\\texttt{\1d\2\3\4})",
-                subsection,
-            )
-            tex += subsection
+                stripped = line.strip()
+                if not stripped or re.match(r"^legendary actions$", stripped, re.IGNORECASE):
+                    continue
+                # Support both legacy indentation (4/6 spaces) and YAML-generated
+                # formatting where action names are flush-left and descriptions are
+                # indented by two spaces.
+                if re.match(r"^(?: {4})?\S.+\.$", line):
+                    action_name = re.sub(r"^(?: {4})?(.+)\.$", r"\1", line)
+                    subsection += f"\\DndMonsterLegendaryAction{{{action_name}}}{{}}\n"
+                elif re.match(r"^(?: {6}| {2})\S", line):
+                    description = re.sub(r"^(?: {6}| {2})(.+)", r"\1", line)
+                    subsection += description + "\n"
+
+            # Only emit the Legendary Actions environment if we parsed at least one action.
+            if subsection.strip():
+                subsection = (
+                    "\n\\DndMonsterSection{Legendary Actions}\n"
+                    "\\begin{DndMonsterLegendaryActions}\n"
+                    + subsection
+                    + "\\end{DndMonsterLegendaryActions}\n"
+                )
+                # Put the curly braces in place
+                subsection = re.sub(
+                    r"}{}\n(.+?)\n\\", r"}\n{\1}\n\\", subsection, re.MULTILINE, re.DOTALL
+                )
+                # Dice
+                subsection = re.sub(
+                    r"\((\d+)d(\d+)\s*([+-]*)\s*(\d*)\)",
+                    r" (\\texttt{\1d\2\3\4})",
+                    subsection,
+                )
+                tex += subsection
     return tex
