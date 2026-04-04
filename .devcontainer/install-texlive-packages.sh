@@ -40,7 +40,10 @@ TEXLIVE_PACKAGES=(
     initials
     keycommand
     lipsum
+    luatex
     luacolor
+    luaotfload
+    fontspec
     minifp
     multitoc
     xstring

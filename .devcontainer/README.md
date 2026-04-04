@@ -39,9 +39,9 @@ source /etc/profile.d/texlive.sh
 After setup, verify installation:
 
 ```bash
-# Check pdflatex is available
-which pdflatex
-pdflatex --version
+# Check lualatex is available
+which lualatex
+lualatex --version
 
 # Run tests
 pytest tests/

@@ -257,7 +257,7 @@ Optional External dependencies
 ==============================
 
 * You may use **pdftk** to generate the sheets in PDF format.
-* You will need **pdflatex**, and a few latex packages, installed to
+* You will need **lualatex**, and a few latex packages, installed to
   generate the PDF spell pages (optional).
 
 If **pdftk** is available, it will be used for pdf generation. If not,
@@ -269,7 +269,7 @@ pdftk is available in Debian and derivatives as **pdftk**, the package
 is not available in some RPM distributions, such as Fedora and CentOS.
 One alternative would be to build your PC sheets using docker.
 
-If the ``pdflatex`` command is available on your system, spellcasters
+If the ``lualatex`` command is available on your system, spellcasters
 will include a spellbook with descriptions of each spell known. If
 not, then this feature will be skipped.
 
@@ -300,6 +300,117 @@ used, sub-folders will also be parsed.
 
     $ cd examples
     $ makesheets
+
+Command Line Reference
+----------------------
+
+Usage syntax:
+
+.. code:: bash
+
+        $ makesheets [OPTIONS] [filename_or_directory ...]
+
+Positional arguments
+~~~~~~~~~~~~~~~~~~~~
+
+- ``filename_or_directory`` (zero or more)
+    - One or more character files (``.py`` or supported VTT JSON exports), or directories containing them.
+    - If omitted, ``makesheets`` scans the current directory.
+    - Directories are always scanned at the top level; use ``--recursive`` to include nested subdirectories.
+
+Options
+~~~~~~~
+
+- ``-e``, ``--editable``
+    - Keep PDF form fields editable.
+    - Default behavior (without this flag) is to flatten standard fillable PDFs.
+    - Note: if ``pdftk`` is unavailable and fallback ``pypdf`` is used, true flattening is limited by the fallback backend.
+
+- ``-r``, ``--recursive``
+    - Recursively search subdirectories for valid character files.
+    - Useful when pointing to a campaign folder instead of individual files.
+
+- ``-S``, ``--spells-by-level``
+    - Sort spell listings by spell level instead of alphabetical order.
+    - Affects spellbook/features rendering.
+
+- ``-F``, ``--fancy``, ``--fancy-decorations``
+    - Enable D&D-themed decorative LaTeX styling on additional rendered pages.
+    - Requires LaTeX dependencies and the D&D 5e template assets.
+    - This mode is more visually rich, but can run slower due to extra LaTeX rendering work.
+
+- ``-T``, ``--tex-template``
+    - Experimental mode: render the main character sheet from the LaTeX template instead of using fillable PDF forms.
+    - Intended for advanced users; output and compatibility can differ from the default PDF-template pipeline.
+
+- ``-o``, ``--output-format {pdf,epub}``
+    - Choose output format.
+    - ``pdf`` (default): generates merged character sheets as PDF.
+    - ``epub``: generates an EPUB file instead of a PDF.
+
+- ``-p``, ``--paper-size {letter,a4}``
+    - Set paper size for rendered output pages.
+    - Default is ``letter``.
+
+- ``-d``, ``--debug``
+    - Enable verbose logging.
+    - Also forces single-process execution (instead of multiprocessing), which is useful for diagnosing failures but typically slower for bulk generation.
+    - Depending on generation path and failures, intermediate artifacts may be easier to inspect when debugging.
+
+Defaults and behavior summary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Default output format is ``pdf``.
+- Default paper size is ``letter``.
+- Without ``--editable``, standard PDF-form pages are flattened when backend support is available.
+- Without ``--debug``, files are processed with multiprocessing for speed.
+- Spell pages are only generated for spellcasters.
+- Additional features/notes pages are rendered through LaTeX when content is available.
+
+Practical examples
+~~~~~~~~~~~~~~~~~~
+
+Generate all valid sheets in the current folder:
+
+.. code:: bash
+
+        $ makesheets
+
+Generate one specific character file:
+
+.. code:: bash
+
+        $ makesheets examples/wizard1.py
+
+Process a directory tree recursively:
+
+.. code:: bash
+
+        $ makesheets examples --recursive
+
+Generate fancy decorated output with A4 pages:
+
+.. code:: bash
+
+        $ makesheets examples/wizard1.py --fancy --paper-size a4
+
+Keep editable form fields:
+
+.. code:: bash
+
+        $ makesheets examples/cleric1.py --editable
+
+Generate EPUB instead of PDF:
+
+.. code:: bash
+
+        $ makesheets examples/bard1.py --output-format epub
+
+Debug a failing character file with verbose logs:
+
+.. code:: bash
+
+        $ makesheets examples/suspect_character.py --debug
 
 dungeon-sheets contains definitions for standard weapons and spells,
 so attack bonuses and damage can be calculated automatically.
