@@ -1,4 +1,8 @@
 import unittest
+import tempfile
+from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import patch
 
 from dungeonsheets import spells, features, latex
 
@@ -136,3 +140,54 @@ class MarkdownTestCase(unittest.TestCase):
             self.assertNotIn(
                 "DUadmonition", tex, f"feature {feature} is not valid reStructured text"
             )
+
+
+class LatexEnvTestCase(unittest.TestCase):
+    def test_tex_template_environment_paths_are_sanitized(self):
+        captured_env = {}
+
+        def fake_run(*args, **kwargs):
+            captured_env.update(kwargs["env"])
+            return SimpleNamespace(returncode=0)
+
+        with tempfile.TemporaryDirectory() as td:
+            basename = str(Path(td) / "env_sanitize")
+            with (
+                patch("dungeonsheets.latex.subprocess.run", side_effect=fake_run),
+                patch.dict("dungeonsheets.latex.os.environ", {"TEXINPUTS": "::/tmp/tex::"}),
+            ):
+                latex.create_latex_pdf(
+                    tex="\\documentclass{article}\\begin{document}x\\end{document}",
+                    basename=basename,
+                    use_tex_template=True,
+                )
+
+        self.assertIn("TEXINPUTS", captured_env)
+        self.assertIn("TTFONTS", captured_env)
+        self.assertNotIn("::", captured_env["TEXINPUTS"])
+        self.assertNotIn("::", captured_env["TTFONTS"])
+        self.assertIn("/tmp/tex", captured_env["TEXINPUTS"])
+        self.assertNotEqual(captured_env["TTFONTS"], captured_env["TEXINPUTS"])
+
+    def test_standard_environment_omits_empty_texinputs_entries(self):
+        captured_env = {}
+
+        def fake_run(*args, **kwargs):
+            captured_env.update(kwargs["env"])
+            return SimpleNamespace(returncode=0)
+
+        with tempfile.TemporaryDirectory() as td:
+            basename = str(Path(td) / "env_standard")
+            with (
+                patch("dungeonsheets.latex.subprocess.run", side_effect=fake_run),
+                patch.dict("dungeonsheets.latex.os.environ", {"TEXINPUTS": ":/tmp/tex::"}),
+            ):
+                latex.create_latex_pdf(
+                    tex="\\documentclass{article}\\begin{document}x\\end{document}",
+                    basename=basename,
+                    use_tex_template=False,
+                )
+
+        self.assertIn("TEXINPUTS", captured_env)
+        self.assertNotIn("::", captured_env["TEXINPUTS"])
+        self.assertIn("/tmp/tex", captured_env["TEXINPUTS"])

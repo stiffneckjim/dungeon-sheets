@@ -15,6 +15,13 @@ from dungeonsheets.forms import dice_re
 log = logging.getLogger(__name__)
 
 
+def _split_env_paths(raw_value: str, separator: str) -> list[str]:
+    """Split path-like environment variables and drop empty entries."""
+    if not raw_value:
+        return []
+    return [part for part in raw_value.split(separator) if part]
+
+
 class LatexWriter(Writer):
     def __init__(self):
         super().__init__()
@@ -108,24 +115,29 @@ def create_latex_pdf(
 
     environment = os.environ.copy()
     tex_env = environment.get("TEXINPUTS", "")
+    ttf_env = environment.get("TTFONTS", "")
     module_root = Path(__file__).parent / "modules/"
     module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
     separator = ";" if isinstance(module_root, pathlib.WindowsPath) else ":"
+    tex_env_paths = _split_env_paths(tex_env, separator)
+    ttf_env_paths = _split_env_paths(ttf_env, separator)
 
     if use_tex_template:
         # For lualatex with --tex-template, append // to custom paths for recursive subdirectory
         # inclusion (required for font discovery), but preserve tex_env as-is
         custom_paths = [".", *module_dirs, module_root]
         texinputs = [str(path) + "//" for path in custom_paths]
-        # Preserve tex_env by appending it unmodified (may contain trailing separator)
-        if tex_env:
-            texinputs.append(tex_env)
+        texinputs.extend(tex_env_paths)
         environment["TEXINPUTS"] = separator.join(texinputs)
-        environment["TTFONTS"] = environment["TEXINPUTS"]
+
+        # Keep TTFONTS focused on font search paths and avoid empty entries.
+        ttf_paths = [str(module_root / "DND-5e-LaTeX-Template" / "fonts") + "//"]
+        ttf_paths.extend(ttf_env_paths)
+        environment["TTFONTS"] = separator.join(ttf_paths)
     else:
         # For standard lualatex path, use traditional TEXINPUTS without recursive suffix
-        texinputs = [".", *module_dirs, module_root, tex_env]
+        texinputs = [".", *module_dirs, module_root, *tex_env_paths]
         environment["TEXINPUTS"] = separator.join(str(path) for path in texinputs)
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
