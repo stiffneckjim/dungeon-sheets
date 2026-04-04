@@ -116,13 +116,11 @@ def create_latex_pdf(
 
     environment = os.environ.copy()
     tex_env = environment.get("TEXINPUTS", "")
-    ttf_env = environment.get("TTFONTS", "")
     module_root = Path(__file__).parent / "modules/"
     module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
     separator = ";" if isinstance(module_root, pathlib.WindowsPath) else ":"
     tex_env_paths = _split_env_paths(tex_env, separator)
-    ttf_env_paths = _split_env_paths(ttf_env, separator)
 
     latex_working_dir = None
     if use_tex_template:
