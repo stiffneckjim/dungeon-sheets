@@ -72,7 +72,7 @@ def create_latex_pdf(
     ]
 
     # Deal with TEXINPUTS and add paths to latex modules
-    environment = os.environ
+    environment = os.environ.copy()
     tex_env = environment.get('TEXINPUTS', '')
     module_root = Path(__file__).parent / "modules/"
     module_dirs = []
