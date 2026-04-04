@@ -167,6 +167,7 @@ class TexTemplateOutputTestCase(unittest.TestCase):
 
         self.assertEqual(len(feature_calls), 1)
         self.assertEqual(feature_calls[0].kwargs.get("comm1"), "lualatex")
+        self.assertTrue(feature_calls[0].kwargs.get("use_tex_template"))
 
     def test_non_tex_template_uses_lualatex_for_feature_pages(self):
         my_char = character.Character(name="Dr. Who")
@@ -195,6 +196,7 @@ class TexTemplateOutputTestCase(unittest.TestCase):
 
         self.assertEqual(len(feature_calls), 1)
         self.assertEqual(feature_calls[0].kwargs.get("comm1"), "lualatex")
+        self.assertFalse(feature_calls[0].kwargs.get("use_tex_template"))
 
     def test_gm_sheet_uses_lualatex(self):
         gm_props = {

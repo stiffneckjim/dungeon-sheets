@@ -647,6 +647,7 @@ def make_character_sheet(
                     basename=features_base,
                     keep_temp_files=debug,
                     use_dnd_decorations=fancy_decorations,
+                    use_tex_template=use_tex_template,
                     comm1="lualatex",
                 )
                 sheets.append(features_base + ".pdf")
