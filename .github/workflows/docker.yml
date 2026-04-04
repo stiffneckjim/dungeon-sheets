@@ -19,27 +19,39 @@ jobs:
     permissions:
       contents: read
 
-    strategy:
-      matrix:
-        build-command:
-          - ""
-          - "--fancy --spells-by-level"
-          - "--output-format=epub"
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
 
-      - name: Build local test image
-        run: docker build --target dungeon-sheets -t dungeon-sheets:ci .
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-      - name: Run container tests (${{ matrix.build-command || 'default' }})
+      - name: Build test image with cache
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          target: dungeon-sheets
+          load: true
+          tags: dungeon-sheets:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Run tests (default)
         run: |
-          docker run --rm -v "$GITHUB_WORKSPACE/examples:/build" dungeon-sheets:ci --debug ${{ matrix.build-command }}
+          docker run --rm -v "$GITHUB_WORKSPACE/examples:/build" dungeon-sheets:ci --debug
 
-      - name: Validate LuaLaTeX template path
+      - name: Run tests (fancy with spells-by-level)
+        run: |
+          docker run --rm -v "$GITHUB_WORKSPACE/examples:/build" dungeon-sheets:ci --debug --fancy --spells-by-level
+
+      - name: Run tests (epub output)
+        run: |
+          docker run --rm -v "$GITHUB_WORKSPACE/examples:/build" dungeon-sheets:ci --debug --output-format=epub
+
+      - name: Run tests (LuaLaTeX template validation)
         run: |
           docker run --rm -v "$GITHUB_WORKSPACE/examples:/build" dungeon-sheets:ci --debug --tex-template wizard1.py
 
@@ -57,6 +69,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
