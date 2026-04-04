@@ -372,9 +372,10 @@ def make_gm_sheet(
                     basename=basename,
                     keep_temp_files=debug,
                     use_dnd_decorations=fancy_decorations,
+                    comm1="lualatex",
                 )
         except exceptions.LatexNotFoundError:
-            log.warning(f"``pdflatex`` not available. Skipping {basename}")
+            log.warning("``lualatex`` not available. Skipping %s", basename)
     elif output_format == "epub":
         chapters = {session_title: "".join(content)}
         # Make sheets in the epub for each party member
@@ -646,6 +647,8 @@ def make_character_sheet(
                     basename=features_base,
                     keep_temp_files=debug,
                     use_dnd_decorations=fancy_decorations,
+                    use_tex_template=use_tex_template,
+                    comm1="lualatex",
                 )
                 sheets.append(features_base + ".pdf")
                 final_pdf = f"{basename}.pdf"
@@ -653,7 +656,7 @@ def make_character_sheet(
                 for image in character.images:
                     insert_image_into_pdf(final_pdf, *image)
         except exceptions.LatexNotFoundError:
-            log.warning(f"``pdflatex`` not available. Skipping features for {character.name}")
+            log.warning("``lualatex`` not available. Skipping features for %s", character.name)
     elif output_format == "epub":
         epub.create_epub(
             chapters={character.name: "".join(content)},

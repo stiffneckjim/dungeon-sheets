@@ -90,7 +90,7 @@ using *pytest*, run the following from a console:
 .. note::
 
     Some local test failures in ``tests/test_make_sheets.py`` can be
-    expected if required PDF/LaTeX system tools (notably ``pdflatex``)
+    expected if required PDF/LaTeX system tools (notably ``lualatex``)
     are not installed on your machine. In that case, use the Docker test
     workflow below as the source of truth, since it includes all required
     system dependencies.

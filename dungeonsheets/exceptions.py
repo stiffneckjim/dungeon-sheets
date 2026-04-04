@@ -7,11 +7,11 @@ class DiceError(ValueError):
 
 
 class LatexError(OSError):
-    """PDFLatex did not execute correctly."""
+    """A LaTeX engine did not execute correctly."""
 
 
 class LatexNotFoundError(LatexError):
-    """PDFLatex did not execute correctly."""
+    """A required LaTeX engine was not found."""
 
 
 class MonsterError(AttributeError):

@@ -81,7 +81,7 @@ def create_latex_pdf(
     keep_temp_files: bool = False,
     use_dnd_decorations: bool = False,
     use_tex_template: bool = False,
-    comm1: str = "pdflatex",
+    comm1: str = "lualatex",
 ):
     # Fix LaTeX syntax issues with supertabular and textbf
     # docutils generates \textbf{%\nText\n} which newer TeX Live doesn't like in tables
@@ -124,7 +124,7 @@ def create_latex_pdf(
         environment["TEXINPUTS"] = separator.join(texinputs)
         environment["TTFONTS"] = environment["TEXINPUTS"]
     else:
-        # For standard pdflatex path, use traditional TEXINPUTS without recursive suffix
+        # For standard lualatex path, use traditional TEXINPUTS without recursive suffix
         texinputs = [".", *module_dirs, module_root, tex_env]
         environment["TEXINPUTS"] = separator.join(str(path) for path in texinputs)
     passes = 2 if use_dnd_decorations else 1

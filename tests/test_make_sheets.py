@@ -1,6 +1,7 @@
 import unittest
 import os
 from pathlib import Path
+from unittest.mock import patch
 
 from dungeonsheets import make_sheets, character, monsters, random_tables
 
@@ -10,7 +11,7 @@ CHARFILE = EG_DIR / "rogue1.py"
 GMFILE = EG_DIR / "gm-session-notes.py"
 
 # Set DUNGEONSHEETS_RUN_PDF_BUILDS=1 to enable PDF-producing tests.
-# These require pdflatex (and optionally pdftk) to be installed.
+# These require lualatex (and optionally pdftk) to be installed.
 RUN_PDF_BUILDS = os.environ.get("DUNGEONSHEETS_RUN_PDF_BUILDS", "0") == "1"
 
 
@@ -32,69 +33,63 @@ class MakeSheetsTestCase(unittest.TestCase):
         # Character PDF
         make_sheets.make_sheet(sheet_file=CHARFILE)
         # Was the PDF created?
-        self.assertTrue(self.char_pdf.exists(),
-                        f"Character PDF ({self.char_pdf.resolve()}) not created.")
+        self.assertTrue(
+            self.char_pdf.exists(), f"Character PDF ({self.char_pdf.resolve()}) not created."
+        )
         # GM PDF
         make_sheets.make_sheet(sheet_file=GMFILE)
         self.assertTrue(self.gm_pdf.exists)
         # Was the PDF created?
-        self.assertTrue(self.gm_pdf.exists(),
-                        f"GM PDF ({self.gm_pdf.resolve()}) not created.")
+        self.assertTrue(self.gm_pdf.exists(), f"GM PDF ({self.gm_pdf.resolve()}) not created.")
 
     def test_make_fancy_sheets(self):
         # Character PDF
-        make_sheets.make_sheet(sheet_file=CHARFILE,
-                               fancy_decorations=True)
+        make_sheets.make_sheet(sheet_file=CHARFILE, fancy_decorations=True)
         # Was the PDF created?
-        self.assertTrue(self.char_pdf.exists(),
-                        f"Character PDF ({self.char_pdf.resolve()}) not created.")
+        self.assertTrue(
+            self.char_pdf.exists(), f"Character PDF ({self.char_pdf.resolve()}) not created."
+        )
         # GM PDF
-        make_sheets.make_sheet(sheet_file=GMFILE,
-                               fancy_decorations=True)
+        make_sheets.make_sheet(sheet_file=GMFILE, fancy_decorations=True)
         self.assertTrue(self.gm_pdf.exists)
         # Was the PDF created?
-        self.assertTrue(self.gm_pdf.exists(),
-                        f"GM PDF ({self.gm_pdf.resolve()}) not created.")
+        self.assertTrue(self.gm_pdf.exists(), f"GM PDF ({self.gm_pdf.resolve()}) not created.")
 
     def test_make_sheets_a4_paper(self):
         # Character PDF with A4 paper
         make_sheets.make_sheet(sheet_file=CHARFILE, paper_size="a4")
         # Was the PDF created?
-        self.assertTrue(self.char_pdf.exists(),
-                        f"Character PDF ({self.char_pdf.resolve()}) not created.")
+        self.assertTrue(
+            self.char_pdf.exists(), f"Character PDF ({self.char_pdf.resolve()}) not created."
+        )
         # GM PDF with A4 paper
         make_sheets.make_sheet(sheet_file=GMFILE, paper_size="a4")
         # Was the PDF created?
-        self.assertTrue(self.gm_pdf.exists(),
-                        f"GM PDF ({self.gm_pdf.resolve()}) not created.")
+        self.assertTrue(self.gm_pdf.exists(), f"GM PDF ({self.gm_pdf.resolve()}) not created.")
 
     def test_make_sheets_letter_paper(self):
         # Character PDF with letter paper (explicit)
         make_sheets.make_sheet(sheet_file=CHARFILE, paper_size="letter")
         # Was the PDF created?
-        self.assertTrue(self.char_pdf.exists(),
-                        f"Character PDF ({self.char_pdf.resolve()}) not created.")
+        self.assertTrue(
+            self.char_pdf.exists(), f"Character PDF ({self.char_pdf.resolve()}) not created."
+        )
         # GM PDF with letter paper (explicit)
         make_sheets.make_sheet(sheet_file=GMFILE, paper_size="letter")
         # Was the PDF created?
-        self.assertTrue(self.gm_pdf.exists(),
-                        f"GM PDF ({self.gm_pdf.resolve()}) not created.")
+        self.assertTrue(self.gm_pdf.exists(), f"GM PDF ({self.gm_pdf.resolve()}) not created.")
 
     def test_make_fancy_sheets_a4_paper(self):
         # Character PDF with fancy decorations and A4 paper
-        make_sheets.make_sheet(sheet_file=CHARFILE,
-                               fancy_decorations=True,
-                               paper_size="a4")
+        make_sheets.make_sheet(sheet_file=CHARFILE, fancy_decorations=True, paper_size="a4")
         # Was the PDF created?
-        self.assertTrue(self.char_pdf.exists(),
-                        f"Character PDF ({self.char_pdf.resolve()}) not created.")
+        self.assertTrue(
+            self.char_pdf.exists(), f"Character PDF ({self.char_pdf.resolve()}) not created."
+        )
         # GM PDF with fancy decorations and A4 paper
-        make_sheets.make_sheet(sheet_file=GMFILE,
-                               fancy_decorations=True,
-                               paper_size="a4")
+        make_sheets.make_sheet(sheet_file=GMFILE, fancy_decorations=True, paper_size="a4")
         # Was the PDF created?
-        self.assertTrue(self.gm_pdf.exists(),
-                        f"GM PDF ({self.gm_pdf.resolve()}) not created.")
+        self.assertTrue(self.gm_pdf.exists(), f"GM PDF ({self.gm_pdf.resolve()}) not created.")
 
 
 class EpubOutputTestCase(unittest.TestCase):
@@ -110,7 +105,7 @@ class EpubOutputTestCase(unittest.TestCase):
             magic_items=["cloak of protection"],
             spells=["invisibility"],
             wild_shapes=["crocodile"],
-            infusions=["boots of the winding path"]
+            infusions=["boots of the winding path"],
         )
         return char
 
@@ -122,8 +117,7 @@ class EpubOutputTestCase(unittest.TestCase):
     def test_character_html_content(self):
         my_char = self.new_character()
         my_char.magic_items_text
-        html = make_sheets.make_character_content(character=my_char,
-                                                  content_format="html")
+        html = make_sheets.make_character_content(character=my_char, content_format="html")
         html = "".join(html)
         # Make sure the various sections get rendered
         self.assertIn("Subclasses</h1>", html)
@@ -143,10 +137,98 @@ class EpubOutputTestCase(unittest.TestCase):
 
     def test_character_file_created(self):
         # Check that a file is created once the function is run
-        make_sheets.make_character_sheet(
-            char_file=CHARFILE, output_format="epub")
-        self.assertTrue(self.char_epub.exists(),
-                        f"{self.char_epub} not created.")
+        make_sheets.make_character_sheet(char_file=CHARFILE, output_format="epub")
+        self.assertTrue(self.char_epub.exists(), f"{self.char_epub} not created.")
+
+
+class TexTemplateOutputTestCase(unittest.TestCase):
+    def test_tex_template_uses_lualatex_for_feature_pages(self):
+        my_char = character.Character(name="Dr. Who")
+
+        with (
+            patch("dungeonsheets.make_sheets.make_character_content", return_value=["a", "b", "c"]),
+            patch("dungeonsheets.make_sheets.latex.create_latex_pdf") as mock_create_latex_pdf,
+            patch("dungeonsheets.make_sheets.merge_pdfs"),
+            patch("dungeonsheets.make_sheets.insert_image_into_pdf"),
+        ):
+            make_sheets.make_character_sheet(
+                char_file=CHARFILE,
+                character=my_char,
+                output_format="pdf",
+                use_tex_template=True,
+                fancy_decorations=True,
+            )
+
+        feature_calls = [
+            call
+            for call in mock_create_latex_pdf.call_args_list
+            if call.kwargs.get("basename", "").endswith("_features")
+        ]
+
+        self.assertEqual(len(feature_calls), 1)
+        self.assertEqual(feature_calls[0].kwargs.get("comm1"), "lualatex")
+        self.assertTrue(feature_calls[0].kwargs.get("use_tex_template"))
+
+    def test_non_tex_template_uses_lualatex_for_feature_pages(self):
+        my_char = character.Character(name="Dr. Who")
+
+        with (
+            patch("dungeonsheets.make_sheets.make_character_content", return_value=["a", "b", "c"]),
+            patch("dungeonsheets.make_sheets.create_character_pdf_template"),
+            patch("dungeonsheets.make_sheets.create_personality_pdf_template"),
+            patch("dungeonsheets.make_sheets.latex.create_latex_pdf") as mock_create_latex_pdf,
+            patch("dungeonsheets.make_sheets.merge_pdfs"),
+            patch("dungeonsheets.make_sheets.insert_image_into_pdf"),
+        ):
+            make_sheets.make_character_sheet(
+                char_file=CHARFILE,
+                character=my_char,
+                output_format="pdf",
+                use_tex_template=False,
+                fancy_decorations=True,
+            )
+
+        feature_calls = [
+            call
+            for call in mock_create_latex_pdf.call_args_list
+            if call.kwargs.get("basename", "").endswith("_features")
+        ]
+
+        self.assertEqual(len(feature_calls), 1)
+        self.assertEqual(feature_calls[0].kwargs.get("comm1"), "lualatex")
+        self.assertFalse(feature_calls[0].kwargs.get("use_tex_template"))
+
+    def test_gm_sheet_uses_lualatex(self):
+        gm_props = {
+            "dungeonsheets_version": "1.0",
+            "sheet_type": "gm",
+            "source_file_location": str(GMFILE),
+            "session_title": "Test Session",
+            "party": [],
+            "summary": "",
+            "extra_content": [],
+            "monsters": [],
+            "random_tables": [],
+        }
+
+        with (
+            patch("dungeonsheets.make_sheets.readers.read_sheet_file", return_value=gm_props),
+            patch("dungeonsheets.make_sheets.create_party_summary_content", return_value=""),
+            patch("dungeonsheets.make_sheets.create_extra_gm_content", return_value=""),
+            patch("dungeonsheets.make_sheets.create_gm_spellbook", return_value=""),
+            patch("dungeonsheets.make_sheets.create_random_tables_content", return_value=""),
+            patch("dungeonsheets.make_sheets.jinja_env.get_template") as mock_get_template,
+            patch("dungeonsheets.make_sheets.latex.create_latex_pdf") as mock_create_latex_pdf,
+        ):
+            mock_get_template.return_value.render.return_value = ""
+            make_sheets.make_gm_sheet(
+                gm_file=GMFILE,
+                output_format="pdf",
+                fancy_decorations=True,
+            )
+
+        self.assertEqual(mock_create_latex_pdf.call_count, 1)
+        self.assertEqual(mock_create_latex_pdf.call_args.kwargs.get("comm1"), "lualatex")
 
 
 @unittest.skipUnless(RUN_PDF_BUILDS, "Set DUNGEONSHEETS_RUN_PDF_BUILDS=1 to run PDF build tests")
@@ -165,14 +247,13 @@ class PdfOutputTestCase(unittest.TestCase):
         # self.assertFalse(os.path.exists(pdf_name), f'{pdf_name} already exists.')
         char = character.Character(name="Clara")
         char.saving_throw_proficiencies = ["strength"]
-        make_sheets.create_character_pdf_template(
-            character=char, basename=self.basename
-        )
+        make_sheets.create_character_pdf_template(character=char, basename=self.basename)
         self.assertTrue(os.path.exists(pdf_name), f"{pdf_name} not created.")
 
 
 class VashtaNerada(monsters.Monster):
     """Scariest monster ever, but luckily only for testing."""
+
     name = "Vashta Nerada"
     speed = 35
     fly_speed = 45
@@ -197,18 +278,16 @@ class HtmlCreatorTestCase(unittest.TestCase):
             magic_items=["cloak of protection"],
             spells=["invisibility"],
             wild_shapes=["crocodile"],
-            infusions=["boots of the winding path"]
+            infusions=["boots of the winding path"],
         )
         return char
 
     def test_create_monsters_html(self):
         monsters_ = [monsters.Priest()]
-        html = make_sheets.create_monsters_content(
-            monsters=monsters_, suffix="html")
+        html = make_sheets.create_monsters_content(monsters=monsters_, suffix="html")
         self.assertIn(r"Priest", html)
         monsters_ = [VashtaNerada()]
-        html = make_sheets.create_monsters_content(
-            monsters=monsters_, suffix="html")
+        html = make_sheets.create_monsters_content(monsters=monsters_, suffix="html")
         # Check summary table
         self.assertIn("monster-table", html)
         # Check extended properties
@@ -233,37 +312,33 @@ class HtmlCreatorTestCase(unittest.TestCase):
         self.assertIn(r"<dt>Level 9</dt>", html)
         self.assertIn(r"Wish", html)
         # Check fancy extended properties
-        html = make_sheets.create_monsters_content(monsters=monsters_,
-                                                   suffix="html",
-                                                   use_dnd_decorations=True)
+        html = make_sheets.create_monsters_content(
+            monsters=monsters_, suffix="html", use_dnd_decorations=True
+        )
 
     def test_create_party_summary_html(self):
         char = self.new_character()
-        html = make_sheets.create_party_summary_content(
-            party=[char], suffix="html", summary_rst="")
+        html = make_sheets.create_party_summary_content(party=[char], suffix="html", summary_rst="")
         self.assertIn('<h1 id="gm-party">Party</h1>', html)
         self.assertIn(char.name, html)
         # Check for passive perception/insight/investigation
-        self.assertIn('<th>Pass. Per.</th>', html)
+        self.assertIn("<th>Pass. Per.</th>", html)
+        self.assertIn(f'<td class="passive-perception">{10 + char.perception.modifier}</td>', html)
+        self.assertIn("<th>Pass. Ins.</th>", html)
+        self.assertIn(f'<td class="passive-insight">{10 + char.insight.modifier}</td>', html)
+        self.assertIn("<th>Pass. Inv.</th>", html)
         self.assertIn(
-            f'<td class="passive-perception">{10+char.perception.modifier}</td>', html)
-        self.assertIn('<th>Pass. Ins.</th>', html)
-        self.assertIn(
-            f'<td class="passive-insight">{10+char.insight.modifier}</td>', html)
-        self.assertIn('<th>Pass. Inv.</th>', html)
-        self.assertIn(
-            f'<td class="passive-investigation">{10+char.investigation.modifier}</td>', html)
+            f'<td class="passive-investigation">{10 + char.investigation.modifier}</td>', html
+        )
 
     def test_create_extra_gm_content(self):
-        class MySection():
+        class MySection:
             name = "My D&D Homebrew Content"
 
-        html = make_sheets.create_extra_gm_content(
-            sections=[MySection], suffix="html")
+        html = make_sheets.create_extra_gm_content(sections=[MySection], suffix="html")
         self.assertIn('<h1 id="extra-My-DD-Homebrew-Content">', html)
-        tex = make_sheets.create_extra_gm_content(
-            sections=[MySection], suffix="tex")
-        self.assertIn(r'\section*{My D&D Homebrew Content', tex)
+        tex = make_sheets.create_extra_gm_content(sections=[MySection], suffix="tex")
+        self.assertIn(r"\section*{My D&D Homebrew Content", tex)
 
 
 class TexCreatorTestCase(unittest.TestCase):
@@ -278,68 +353,61 @@ class TexCreatorTestCase(unittest.TestCase):
             magic_items=["cloak of protection"],
             spells=["invisibility"],
             wild_shapes=["crocodile"],
-            infusions=["boots of the winding path"]
+            infusions=["boots of the winding path"],
         )
         return char
 
     def test_create_subclasses_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_subclasses_content(
-            character=char, content_suffix="tex")
+        tex = make_sheets.create_subclasses_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Subclasses}", tex)
         self.assertIn(r"\subsection*{Way of the Open Hand}", tex)
 
     def test_create_features_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_features_content(
-            character=char, content_suffix="tex")
+        tex = make_sheets.create_features_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Features}", tex)
         self.assertIn(r"\subsection*{Martial Arts}", tex)
 
     def test_create_magic_items_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_magic_items_content(
-            character=char, content_suffix="tex")
+        tex = make_sheets.create_magic_items_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Magic Items}", tex)
         self.assertIn(r"\subsection*{Cloak of Protection}", tex)
 
     def test_create_spellbook_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_spellbook_content(
-            character=char, content_suffix="tex")
+        tex = make_sheets.create_spellbook_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Spells}", tex)
         self.assertIn(r"\section*{Invisibility}", tex)
 
     def test_create_spellbook_tex(self):
         char = self.new_character()
         tex = make_sheets.create_spellbook_content(
-            character=char, content_suffix="tex", spell_order=True)
+            character=char, content_suffix="tex", spell_order=True
+        )
         self.assertIn(r"\section*{Spells}", tex)
         self.assertIn(r"\subsection*{2nd-Level Spells}", tex)
         self.assertIn(r"\subsubsection*{Invisibility}", tex)
 
     def test_create_infusions_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_infusions_content(
-            character=char, content_suffix="tex")
+        tex = make_sheets.create_infusions_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Infusions}", tex)
         self.assertIn(r"\subsection*{Boots of the Winding Path}", tex)
 
     def test_create_druid_shapes_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_druid_shapes_content(
-            character=char, content_suffix="tex")
+        tex = make_sheets.create_druid_shapes_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Known Beasts}", tex)
         self.assertIn(r"\section*{Crocodile}", tex)
 
     def test_create_monsters_tex(self):
         monsters_ = [monsters.GiantEagle()]
-        tex = make_sheets.create_monsters_content(
-            monsters=monsters_, suffix="tex")
+        tex = make_sheets.create_monsters_content(monsters=monsters_, suffix="tex")
         self.assertIn(r"Giant Eagle", tex)
         monsters_ = [VashtaNerada()]
-        tex = make_sheets.create_monsters_content(
-            monsters=monsters_, suffix="tex")
+        tex = make_sheets.create_monsters_content(monsters=monsters_, suffix="tex")
         # Check that the monster summary table exists
         self.assertIn(r"Vashta Nerada & 10 & 1d6 & 10 & +0", tex)
         # Check extended properties
@@ -359,9 +427,9 @@ class TexCreatorTestCase(unittest.TestCase):
         self.assertIn(r"Languages:", tex)
         self.assertIn(r"Skills:", tex)
         # Check fancy extended properties
-        tex = make_sheets.create_monsters_content(monsters=monsters_,
-                                                  suffix="tex",
-                                                  use_dnd_decorations=True)
+        tex = make_sheets.create_monsters_content(
+            monsters=monsters_, suffix="tex", use_dnd_decorations=True
+        )
         self.assertIn(r"Vashta Nerada", tex)
         self.assertIn(r"35 ft.", tex)
         self.assertIn(r"45 ft. fly", tex)
@@ -372,36 +440,30 @@ class TexCreatorTestCase(unittest.TestCase):
 
     def test_create_party_summary_tex(self):
         char = self.new_character()
-        tex = make_sheets.create_party_summary_content(
-            party=[char], suffix="tex", summary_rst="")
+        tex = make_sheets.create_party_summary_content(party=[char], suffix="tex", summary_rst="")
         self.assertIn(r"\section*{Party}", tex)
         self.assertIn(char.name, tex)
         # Check for passive perception/insight/investigation
-        print(char.passive_insight, char.passive_perception,
-              char.passive_investigation)
-        self.assertIn(f'& {char.passive_insight} % Passive insight', tex)
-        self.assertIn(f'& {char.passive_perception} % Passive perception', tex)
-        self.assertIn(
-            f'& {char.passive_investigation} % Passive investigation', tex)
+        print(char.passive_insight, char.passive_perception, char.passive_investigation)
+        self.assertIn(f"& {char.passive_insight} % Passive insight", tex)
+        self.assertIn(f"& {char.passive_perception} % Passive perception", tex)
+        self.assertIn(f"& {char.passive_investigation} % Passive investigation", tex)
 
     def test_create_party_summary_tex_fancy(self):
         char = self.new_character()
-        tex = make_sheets.create_party_summary_content(party=[char],
-                                                       suffix="tex",
-                                                       summary_rst="",
-                                                       use_dnd_decorations=True)
+        tex = make_sheets.create_party_summary_content(
+            party=[char], suffix="tex", summary_rst="", use_dnd_decorations=True
+        )
         self.assertIn(r"\section*{Party}", tex)
         self.assertIn(char.name, tex)
         # Check for passive perception/insight/investigation
-        self.assertIn(f'& {char.passive_insight} % Passive insight', tex)
-        self.assertIn(f'& {char.passive_perception} % Passive perception', tex)
-        self.assertIn(
-            f'& {char.passive_investigation} % Passive investigation', tex)
+        self.assertIn(f"& {char.passive_insight} % Passive insight", tex)
+        self.assertIn(f"& {char.passive_perception} % Passive perception", tex)
+        self.assertIn(f"& {char.passive_investigation} % Passive investigation", tex)
 
     def test_create_summary_tex(self):
         rst = "The party's create *adventure*."
-        tex = make_sheets.create_party_summary_content(
-            party=[], suffix="tex", summary_rst=rst)
+        tex = make_sheets.create_party_summary_content(party=[], suffix="tex", summary_rst=rst)
         self.assertIn(r"\section*{Summary}", tex)
         # Check that the RST is parsed
         self.assertIn(r"\emph{adventure}", tex)
