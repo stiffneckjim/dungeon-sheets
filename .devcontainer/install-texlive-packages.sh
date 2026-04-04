@@ -10,10 +10,14 @@ TEXLIVE_PACKAGES=(
     enumitem
     lettrine
     kpfonts
+    kpfonts-otf
     bookman
     courier
     gillius
     contour
+    pstricks
+    pst-tools
+    currfile
     avantgar
     needspace
     supertabular
@@ -43,6 +47,7 @@ TEXLIVE_PACKAGES=(
     luatex
     luacolor
     luaotfload
+    luapstricks
     fontspec
     minifp
     multitoc

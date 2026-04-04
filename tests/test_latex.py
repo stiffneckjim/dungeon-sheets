@@ -143,10 +143,15 @@ class MarkdownTestCase(unittest.TestCase):
 
 
 class LatexEnvTestCase(unittest.TestCase):
-    def test_tex_template_environment_paths_are_sanitized(self):
+    def test_tex_template_uses_safe_texinputs_and_template_cwd(self):
         captured_env = {}
+        captured_cwd = None
+        captured_args = None
 
         def fake_run(*args, **kwargs):
+            nonlocal captured_cwd, captured_args
+            captured_args = args
+            captured_cwd = kwargs.get("cwd")
             captured_env.update(kwargs["env"])
             return SimpleNamespace(returncode=0)
 
@@ -163,11 +168,14 @@ class LatexEnvTestCase(unittest.TestCase):
                 )
 
         self.assertIn("TEXINPUTS", captured_env)
-        self.assertIn("TTFONTS", captured_env)
-        self.assertNotIn("::", captured_env["TEXINPUTS"])
-        self.assertNotIn("::", captured_env["TTFONTS"])
+        self.assertNotIn("TTFONTS", captured_env)
+        self.assertTrue(str(captured_cwd).endswith("DND-5e-LaTeX-Character-Sheet-Template"))
+        self.assertIn("DND-5e-LaTeX-Character-Sheet-Template", captured_env["TEXINPUTS"])
+        self.assertNotIn("//", captured_env["TEXINPUTS"])
         self.assertIn("/tmp/tex", captured_env["TEXINPUTS"])
-        self.assertNotEqual(captured_env["TTFONTS"], captured_env["TEXINPUTS"])
+        # Use absolute tex path so input file resolution is independent from cwd.
+        tex_input = captured_args[0][-1]
+        self.assertTrue(Path(tex_input).is_absolute())
 
     def test_standard_environment_omits_empty_texinputs_entries(self):
         captured_env = {}
