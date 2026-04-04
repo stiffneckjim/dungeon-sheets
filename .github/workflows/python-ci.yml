@@ -71,9 +71,9 @@ jobs:
     - name: Run tests
       run: |
           if [ "${{ matrix.python-version }}" = "3.13" ]; then
-            uv run pytest --cov=dungeonsheets --cov-report=term --cov-report=xml:coverage.xml tests/
+            uv run pytest --cov=dungeonsheets --cov-config=pyproject.toml --cov-fail-under=90 --cov-report=term --cov-report=xml:coverage.xml tests/
           else
-            uv run pytest --cov=dungeonsheets tests/
+            uv run pytest --cov=dungeonsheets --cov-config=pyproject.toml --cov-fail-under=90 tests/
           fi
     - name: Upload coverage to Coveralls
       if: matrix.python-version == '3.13'

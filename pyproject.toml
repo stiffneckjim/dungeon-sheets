@@ -86,6 +86,14 @@ ignore = [
     "F401",  # convenience module intentionally re-exports symbols
 ]
 
+[tool.coverage.run]
+omit = [
+    "dungeonsheets/create_character.py",
+    "dungeonsheets/fill_pdf_template.py",
+    "dungeonsheets/pdf_image_insert.py",
+    "dungeonsheets/make_sheets.py",
+]
+
 [tool.setuptools.package-data]
 dungeonsheets = [
     "data/*.yaml",
