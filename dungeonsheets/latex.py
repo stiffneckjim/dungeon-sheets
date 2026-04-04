@@ -105,7 +105,7 @@ def create_latex_pdf(
         str(tex_file),
     ]
 
-    environment = os.environ
+    environment = os.environ.copy()
     tex_env = environment.get("TEXINPUTS", "")
     module_root = Path(__file__).parent / "modules/"
     module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
