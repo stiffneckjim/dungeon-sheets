@@ -55,6 +55,36 @@ jobs:
         run: |
           docker run --rm -v "$GITHUB_WORKSPACE/examples:/build" dungeon-sheets:ci --debug --tex-template wizard1.py
 
+      - name: Run tests (LuaLaTeX template with fancy A4 options)
+        run: |
+          docker run --rm -v "$GITHUB_WORKSPACE/examples:/build" dungeon-sheets:ci --fancy --paper-size a4 --output-format pdf --tex-template
+
+      - name: Print generated LaTeX logs on failure
+        if: failure()
+        run: |
+          shopt -s globstar nullglob
+          logs=("$GITHUB_WORKSPACE"/examples/**/*_char.log)
+          if [ ${#logs[@]} -eq 0 ]; then
+            echo "No generated *_char.log files found under examples/."
+            exit 0
+          fi
+
+          for log in "${logs[@]}"; do
+            echo "::group::$(realpath --relative-to="$GITHUB_WORKSPACE" "$log")"
+            cat "$log"
+            echo "::endgroup::"
+          done
+
+      - name: Upload generated LaTeX artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-latex-debug-artifacts
+          if-no-files-found: ignore
+          path: |
+            examples/**/*_char.log
+            examples/**/*_char.tex
+            examples/**/*_char.aux
   publish_image:
     name: Publish Docker image
     needs: [test_image]

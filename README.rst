@@ -55,6 +55,34 @@ To build the container locally:
 
     $ docker build -t dungeon-sheets .
 
+Docker Naming Convention
+------------------------
+
+To avoid accumulating ambiguous local images/containers, use this naming scheme:
+
+- **Published images**: ``ghcr.io/stiffneckjim/dungeon-sheets:<tag>``
+- **Local runtime image**: ``dungeon-sheets:latest``
+- **Local test image**: ``dungeon-sheets-test:latest``
+- **One-off run container name**: ``ds-run-<sheet-or-folder>`` (with ``--rm``)
+
+Example (local runtime image):
+
+.. code:: bash
+
+    $ docker build --target dungeon-sheets -t dungeon-sheets:latest .
+
+Example (named one-off container):
+
+.. code:: bash
+
+    $ docker run --rm --name ds-run-rogue1 -v $(pwd):/build dungeon-sheets:latest --fancy --paper-size a4 --output-format pdf --tex-template
+
+If you have older local tags from previous debugging sessions, you can list them with:
+
+.. code:: bash
+
+    $ docker image ls | grep dungeon-sheets
+
 Running Tests with Docker
 -------------------------
 

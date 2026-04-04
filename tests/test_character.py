@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 
-from unittest import TestCase, expectedFailure
 import warnings
+from unittest import TestCase
 
-from dungeonsheets import race, monsters, exceptions, spells, infusions
-from dungeonsheets.character import Character, Wizard, Druid, Ranger
-from dungeonsheets.monsters import Panther
-from dungeonsheets.weapons import Weapon, Shortsword, Battleaxe
-from dungeonsheets.magic_items import MagicItem
+from dungeonsheets import exceptions, infusions, monsters, race, spells
 from dungeonsheets.armor import Armor, LeatherArmor, Shield
+from dungeonsheets.character import Character, Druid, Ranger, Wizard
+from dungeonsheets.magic_items import MagicItem
+from dungeonsheets.weapons import Battleaxe, Shortsword, Weapon
 
 
 class TestCharacter(TestCase):
@@ -59,6 +58,17 @@ class TestCharacter(TestCase):
         # Check that proficiencies_text gets included
         char.set_attrs(proficiencies_text=("dull sword",))
         self.assertIn("dull sword", char.proficiencies_by_type["Other"].lower())
+
+    def test_equipment_text_normalizes_indentation(self):
+        char = Character()
+        char.set_attrs(
+            equipment="""Dwarf book from Glasstaff's library,
+                Backpack,
+                50' rope
+            """
+        )
+        self.assertIn("\nBackpack,", char.equipment_text)
+        self.assertNotIn("\n    Backpack,", char.equipment_text)
 
     def test_homebrew_spells(self):
         char = Character()
@@ -276,9 +286,7 @@ class TestCharacter(TestCase):
 
     def test_load_char(self):
         char = Character.load({"name": "Dave", "sheet_type": "character"})
-        self.assertFalse(
-            hasattr(char, "sheet_type"), "'sheet_type' not stripped from char props"
-        )
+        self.assertFalse(hasattr(char, "sheet_type"), "'sheet_type' not stripped from char props")
 
 
 class DruidTestCase(TestCase):
@@ -366,7 +374,6 @@ class DruidTestCase(TestCase):
 
 
 class BeastMasterTestCase(TestCase):
-
     def test_ranger_beast(self):
         char = Ranger(6, subclasses=["Beast Master"])
         char.ranger_beast = "Panther"

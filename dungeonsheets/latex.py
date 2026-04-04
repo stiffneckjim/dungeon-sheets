@@ -15,6 +15,13 @@ from dungeonsheets.forms import dice_re
 log = logging.getLogger(__name__)
 
 
+def _split_env_paths(raw_value: str, separator: str) -> list[str]:
+    """Split path-like environment variables and drop empty entries."""
+    if not raw_value:
+        return []
+    return [part for part in raw_value.split(separator) if part]
+
+
 class LatexWriter(Writer):
     def __init__(self):
         super().__init__()
@@ -93,6 +100,7 @@ def create_latex_pdf(
     tex_file = f"{basename}.tex"
     with open(tex_file, mode="w", encoding="utf-8") as f:
         f.write(tex)
+    tex_file_path = Path(tex_file).resolve()
 
     # Compile the PDF
     pdf_file = Path(f"{basename}.pdf")
@@ -103,7 +111,7 @@ def create_latex_pdf(
         str(output_dir),
         "-halt-on-error",
         "-interaction=nonstopmode",
-        str(tex_file),
+        str(tex_file_path),
     ]
 
     environment = os.environ.copy()
@@ -112,20 +120,32 @@ def create_latex_pdf(
     module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
     separator = ";" if isinstance(module_root, pathlib.WindowsPath) else ":"
+    tex_env_paths = _split_env_paths(tex_env, separator)
 
+    latex_working_dir = None
     if use_tex_template:
-        # For lualatex with --tex-template, append // to custom paths for recursive subdirectory
-        # inclusion (required for font discovery), but preserve tex_env as-is
-        custom_paths = [".", *module_dirs, module_root]
-        texinputs = [str(path) + "//" for path in custom_paths]
-        # Preserve tex_env by appending it unmodified (may contain trailing separator)
-        if tex_env:
-            texinputs.append(tex_env)
-        environment["TEXINPUTS"] = separator.join(texinputs)
-        environment["TTFONTS"] = environment["TEXINPUTS"]
+        # LuaHBTeX on TeX Live 2026 can fail in luaotfload startup with broad
+        # recursive TEXINPUTS/TTFONTS overrides. Keep a narrow, non-recursive
+        # TEXINPUTS for template assets and preserve default search paths.
+        dnd_template_root = module_root / "DND-5e-LaTeX-Template"
+        character_sheet_root = module_root / "DND-5e-LaTeX-Character-Sheet-Template"
+        # Run from the character-sheet template root so dndtemplate's relative
+        # font path (template/fonts) resolves correctly.
+        latex_working_dir = character_sheet_root
+        template_paths = [
+            Path("."),
+            dnd_template_root,
+            dnd_template_root / "lib",
+            character_sheet_root,
+            character_sheet_root / "template",
+        ]
+        texinputs = [str(path) for path in template_paths if path.exists()]
+        texinputs.extend(tex_env_paths)
+        environment["TEXINPUTS"] = separator.join([*texinputs, ""])
+        environment.pop("TTFONTS", None)
     else:
         # For standard lualatex path, use traditional TEXINPUTS without recursive suffix
-        texinputs = [".", *module_dirs, module_root, tex_env]
+        texinputs = [".", *module_dirs, module_root, *tex_env_paths]
         environment["TEXINPUTS"] = separator.join(str(path) for path in texinputs)
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
@@ -137,7 +157,11 @@ def create_latex_pdf(
     try:
         for i in range(passes):
             result = subprocess.run(
-                tex_command_line, stdout=subprocess.DEVNULL, env=environment, timeout=30
+                tex_command_line,
+                stdout=subprocess.DEVNULL,
+                env=environment,
+                timeout=30,
+                cwd=latex_working_dir,
             )
     except FileNotFoundError:
         # Remove temporary files
