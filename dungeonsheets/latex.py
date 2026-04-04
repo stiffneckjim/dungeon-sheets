@@ -80,6 +80,7 @@ def create_latex_pdf(
     basename: str,
     keep_temp_files: bool = False,
     use_dnd_decorations: bool = False,
+    use_tex_template: bool = False,
     comm1: str = "pdflatex",
 ):
     # Fix LaTeX syntax issues with supertabular and textbf
@@ -110,9 +111,22 @@ def create_latex_pdf(
     module_root = Path(__file__).parent / "modules/"
     module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
-    texinputs = [".", *module_dirs, module_root, tex_env]
     separator = ";" if isinstance(module_root, pathlib.WindowsPath) else ":"
-    environment["TEXINPUTS"] = separator.join(str(path) for path in texinputs)
+
+    if use_tex_template:
+        # For lualatex with --tex-template, append // to custom paths for recursive subdirectory
+        # inclusion (required for font discovery), but preserve tex_env as-is
+        custom_paths = [".", *module_dirs, module_root]
+        texinputs = [str(path) + "//" for path in custom_paths]
+        # Preserve tex_env by appending it unmodified (may contain trailing separator)
+        if tex_env:
+            texinputs.append(tex_env)
+        environment["TEXINPUTS"] = separator.join(texinputs)
+        environment["TTFONTS"] = environment["TEXINPUTS"]
+    else:
+        # For standard pdflatex path, use traditional TEXINPUTS without recursive suffix
+        texinputs = [".", *module_dirs, module_root, tex_env]
+        environment["TEXINPUTS"] = separator.join(str(path) for path in texinputs)
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
     log.debug("LaTeX command: %s" % " ".join(tex_command_line))
@@ -153,7 +167,7 @@ def create_latex_pdf(
                 # Log the warning but don't fail
                 logfile = Path(f"{basename}.log")
                 log.warning(
-                    f"pdflatex returned non-zero exit code but PDF was created successfully: {pdf_file}"
+                    f"{comm1} returned non-zero exit code but PDF was created successfully: {pdf_file}"
                 )
                 if not keep_temp_files:
                     _remove_temp_files(basename)
