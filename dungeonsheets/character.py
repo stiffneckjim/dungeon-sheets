@@ -6,6 +6,7 @@ import logging
 import math
 import os
 import re
+import textwrap
 import warnings
 from pathlib import Path
 from types import ModuleType
@@ -742,9 +743,13 @@ class Character(Creature):
     def equipment_text(self):
         eq_list = []
         if hasattr(self, "equipment") and len(self.equipment.strip()) > 0:
-            eq_list += [
-                text.strip() for text in self.equipment.split("\n\n") if not (text.isspace())
-            ]
+            for text in self.equipment.split("\n\n"):
+                if text.isspace():
+                    continue
+                # Normalize indentation from triple-quoted character files so
+                # docutils parses equipment as plain paragraphs, not definition lists.
+                normalized = "\n".join(line.strip() for line in textwrap.dedent(text).splitlines())
+                eq_list.append(normalized.strip())
         if hasattr(self, "magic_items") and len(self.magic_items) > 0:
             sub_list = "**Magic Items:** "
             for item in self.magic_items:
