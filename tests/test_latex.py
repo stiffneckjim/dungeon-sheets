@@ -1,10 +1,10 @@
-import unittest
 import tempfile
+import unittest
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 
-from dungeonsheets import spells, features, latex
+from dungeonsheets import exceptions, features, latex, spells
 
 
 class MarkdownTestCase(unittest.TestCase):
@@ -31,36 +31,28 @@ class MarkdownTestCase(unittest.TestCase):
         text = latex.rst_to_latex(r"\\")
         self.assertEqual(r"\textbackslash{}", text.strip("\n"))
 
-    @unittest.skip(
-        "Headings are all screwed up because it treats them as the document title"
-    )
+    @unittest.skip("Headings are all screwed up because it treats them as the document title")
     def test_headings(self):
         # Simple heading by itself
-        text = latex.rst_to_latex(
-            "Hello, world\n------------\n\nGoodbye, world")
+        text = latex.rst_to_latex("Hello, world\n------------\n\nGoodbye, world")
         self.assertEqual("\\section*{Hello, world}\n", text)
         # Simple heading with leading whitespace
         text = latex.rst_to_latex("    Hello, world\n    ============\n")
         self.assertEqual("\\section*{Hello, world}\n", text)
         # Heading with text after it
-        text = latex.rst_to_latex(
-            "Hello, world\n============\n\nThis is some text")
+        text = latex.rst_to_latex("Hello, world\n============\n\nThis is some text")
         self.assertEqual("\\section*{Hello, world}\n\nThis is some text", text)
         # Heading with text before it
-        text = latex.rst_to_latex(
-            "This is a paragraph\n\nHello, world\n============\n")
-        self.assertEqual(
-            "This is a paragraph\n\n\\section*{Hello, world}\n", text)
+        text = latex.rst_to_latex("This is a paragraph\n\nHello, world\n============\n")
+        self.assertEqual("This is a paragraph\n\n\\section*{Hello, world}\n", text)
         # Check that levels of headings are parsed appropriately
         text = latex.rst_to_latex("Hello, world\n^^^^^^^^^^^^\n")
         self.assertEqual("\\subsubsection*{Hello, world}\n", text)
-        text = latex.rst_to_latex(
-            "Hello, world\n^^^^^^^^^^^^\n", top_heading_level=3)
+        text = latex.rst_to_latex("Hello, world\n^^^^^^^^^^^^\n", top_heading_level=3)
         self.assertEqual("\\subparagraph*{Hello, world}\n", text)
         # This is a bad heading missing with all the underline on one line
         text = latex.rst_to_latex("Hello, world^^^^^^^^^^^^\n")
-        self.assertEqual(
-            "Hello, world\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\n", text)
+        self.assertEqual("Hello, world\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\\^\n", text)
 
     def test_bullet_list(self):
         tex = latex.rst_to_latex("\n- Hello\n- World\n\n")
@@ -130,9 +122,7 @@ class MarkdownTestCase(unittest.TestCase):
     def test_rst_all_spells(self):
         for spell in spells.all_spells():
             tex = latex.rst_to_latex(spell.__doc__)
-            self.assertNotIn(
-                "DUadmonition", tex, f"spell {spell} is not valid reStructured text"
-            )
+            self.assertNotIn("DUadmonition", tex, f"spell {spell} is not valid reStructured text")
 
     def test_rst_all_features(self):
         for feature in features.all_features():
@@ -199,3 +189,51 @@ class LatexEnvTestCase(unittest.TestCase):
         self.assertIn("TEXINPUTS", captured_env)
         self.assertNotIn("::", captured_env["TEXINPUTS"])
         self.assertIn("/tmp/tex", captured_env["TEXINPUTS"])
+
+
+class LatexErrorHintTestCase(unittest.TestCase):
+    def test_tex_template_missing_style_adds_actionable_hint(self):
+        with tempfile.TemporaryDirectory() as td:
+            basename = str(Path(td) / "missing_style")
+            with (
+                patch(
+                    "dungeonsheets.latex.subprocess.run",
+                    return_value=SimpleNamespace(returncode=1),
+                ),
+                patch(
+                    "dungeonsheets.latex.tex_error",
+                    return_value="! LaTeX Error: File `dnd.sty' not found.",
+                ),
+            ):
+                with self.assertRaises(exceptions.LatexError) as ctx:
+                    latex.create_latex_pdf(
+                        tex="\\documentclass{article}\\begin{document}x\\end{document}",
+                        basename=basename,
+                        use_tex_template=True,
+                    )
+
+        error_message = str(ctx.exception)
+        self.assertIn("tex-template assets appear unavailable", error_message)
+        self.assertIn("git submodule update --init --recursive", error_message)
+
+    def test_non_template_error_does_not_add_hint(self):
+        with tempfile.TemporaryDirectory() as td:
+            basename = str(Path(td) / "generic_error")
+            with (
+                patch(
+                    "dungeonsheets.latex.subprocess.run",
+                    return_value=SimpleNamespace(returncode=1),
+                ),
+                patch(
+                    "dungeonsheets.latex.tex_error",
+                    return_value="! LaTeX Error: Undefined control sequence.",
+                ),
+            ):
+                with self.assertRaises(exceptions.LatexError) as ctx:
+                    latex.create_latex_pdf(
+                        tex="\\documentclass{article}\\begin{document}x\\end{document}",
+                        basename=basename,
+                        use_tex_template=True,
+                    )
+
+        self.assertNotIn("git submodule update --init --recursive", str(ctx.exception))
