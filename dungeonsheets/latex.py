@@ -22,6 +22,32 @@ def _split_env_paths(raw_value: str, separator: str) -> list[str]:
     return [part for part in raw_value.split(separator) if part]
 
 
+def _tex_template_hint(module_root: Path, tex_error_msg: str | None) -> str:
+    """Build a targeted hint when tex-template assets are missing."""
+    if not tex_error_msg or "dnd.sty" not in tex_error_msg:
+        return ""
+
+    dnd_template_root = module_root / "DND-5e-LaTeX-Template"
+    character_sheet_root = module_root / "DND-5e-LaTeX-Character-Sheet-Template"
+    expected_paths = [
+        dnd_template_root,
+        dnd_template_root / "dnd.sty",
+        character_sheet_root,
+        character_sheet_root / "dndtemplate.sty",
+    ]
+    missing_paths = [str(path) for path in expected_paths if not path.exists()]
+
+    hint = (
+        " tex-template assets appear unavailable"
+        f" under {module_root}."
+        " Ensure template modules are present"
+        " (for git checkouts: git submodule update --init --recursive)."
+    )
+    if missing_paths:
+        hint += f" Missing paths: {', '.join(missing_paths)}."
+    return hint
+
+
 class LatexWriter(Writer):
     def __init__(self):
         super().__init__()
@@ -117,6 +143,8 @@ def create_latex_pdf(
     environment = os.environ.copy()
     tex_env = environment.get("TEXINPUTS", "")
     module_root = Path(__file__).parent / "modules/"
+    dnd_template_root = module_root / "DND-5e-LaTeX-Template"
+    character_sheet_root = module_root / "DND-5e-LaTeX-Character-Sheet-Template"
     module_dirs = [module_root / mdir for mdir in ["DND-5e-LaTeX-Template"]]
     log.debug(f"Loading additional modules from {module_dirs}.")
     separator = ";" if isinstance(module_root, pathlib.WindowsPath) else ":"
@@ -127,8 +155,6 @@ def create_latex_pdf(
         # LuaHBTeX on TeX Live 2026 can fail in luaotfload startup with broad
         # recursive TEXINPUTS/TTFONTS overrides. Keep a narrow, non-recursive
         # TEXINPUTS for template assets and preserve default search paths.
-        dnd_template_root = module_root / "DND-5e-LaTeX-Template"
-        character_sheet_root = module_root / "DND-5e-LaTeX-Character-Sheet-Template"
         # Run from the character-sheet template root so dndtemplate's relative
         # font path (template/fonts) resolves correctly.
         latex_working_dir = character_sheet_root
@@ -182,6 +208,8 @@ def create_latex_pdf(
                 err_msg = f"Processing of {basename}.tex failed. See {logfile} for details."
                 # Load the log file for more details
                 tex_error_msg = tex_error(logfile)
+                if use_tex_template:
+                    err_msg += _tex_template_hint(module_root, tex_error_msg)
                 if tex_error_msg:
                     for line in tex_error_msg.split("\n"):
                         log.error(line)
