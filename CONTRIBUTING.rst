@@ -102,6 +102,30 @@ To run linting and formatting checks:
     uv run ruff check dungeonsheets/
     uv run ruff format --check dungeonsheets/
 
+To install local git quality gates for commit and push:
+
+.. code:: bash
+
+    uv sync --extra dev
+    uv run pre-commit install --hook-type pre-commit --hook-type pre-push
+
+The configured hooks split checks by cost:
+
+- ``pre-commit`` runs fast repository hygiene checks plus Ruff formatting and linting.
+- ``pre-push`` runs a local smoke suite that exercises core character, reader,
+  YAML-content, magic-item, and LaTeX utility tests without requiring the full
+  PDF toolchain.
+
+You can run the same checks on demand with:
+
+.. code:: bash
+
+    uv run pre-commit run
+    uv run pre-commit run --hook-stage pre-push local-smoke-tests
+
+The first command runs against staged files, which matches normal commit-time
+behavior and avoids dragging unrelated existing lint debt into your branch.
+
 You can also run a sub-set of the tests, which can be convenient for
 development. For example, to run just the tests related to dice
 mechanics, use ``uv run pytest tests/test_dice.py``. Dungeonsheets defines
