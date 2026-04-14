@@ -13,6 +13,7 @@ Welcome to Dungeonsheets's documentation!
    character_files
    gm_notes
    advanced_features
+   architecture_decision_0001
    examples
    contributing
 
