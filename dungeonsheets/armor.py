@@ -1,4 +1,4 @@
-from pathlib import Path
+from importlib.resources import files
 
 from dungeonsheets.content_registry import default_content_registry
 from dungeonsheets.yaml_content import load_yaml_armor_classes
@@ -122,21 +122,50 @@ class HeavyArmor(Armor):
 # ---------------------------------------------------------------------------
 # Load all concrete armor definitions from YAML
 # ---------------------------------------------------------------------------
-_yaml_armors = load_yaml_armor_classes(
-    Path(__file__).with_name("data") / "armor.yaml",
-    Armor,
-    type_map={
-        "light": LightArmor,
-        "medium": MediumArmor,
-        "heavy": HeavyArmor,
-    },
-    module=__name__,
-)
-globals().update(_yaml_armors)
+_yaml_loaded = False
 
-light_armors = [_yaml_armors[n] for n in ("PaddedArmor", "LeatherArmor", "StuddedLeatherArmor")]
-medium_armors = [
-    _yaml_armors[n] for n in ("HideArmor", "ChainShirt", "ScaleMail", "Breastplate", "HalfPlate")
-]
-heavy_armors = [_yaml_armors[n] for n in ("RingMail", "ChainMail", "SplintArmor", "PlateMail")]
-all_armors = light_armors + medium_armors + heavy_armors
+
+def _load_yaml_content():
+    global _yaml_loaded
+    if _yaml_loaded:
+        return
+
+    yaml_armors = load_yaml_armor_classes(
+        files("dungeonsheets.data").joinpath("armor.yaml"),
+        Armor,
+        type_map={
+            "light": LightArmor,
+            "medium": MediumArmor,
+            "heavy": HeavyArmor,
+        },
+        module=__name__,
+    )
+    globals().update(yaml_armors)
+
+    globals()["light_armors"] = [
+        yaml_armors[n] for n in ("PaddedArmor", "LeatherArmor", "StuddedLeatherArmor")
+    ]
+    globals()["medium_armors"] = [
+        yaml_armors[n] for n in ("HideArmor", "ChainShirt", "ScaleMail", "Breastplate", "HalfPlate")
+    ]
+    globals()["heavy_armors"] = [
+        yaml_armors[n] for n in ("RingMail", "ChainMail", "SplintArmor", "PlateMail")
+    ]
+    globals()["all_armors"] = (
+        globals()["light_armors"] + globals()["medium_armors"] + globals()["heavy_armors"]
+    )
+
+    _yaml_loaded = True
+
+
+def __getattr__(name):
+    _load_yaml_content()
+    try:
+        return globals()[name]
+    except KeyError as exc:
+        raise AttributeError(f"module {__name__!r} has no attribute {name!r}") from exc
+
+
+def __dir__():
+    _load_yaml_content()
+    return sorted(globals())

@@ -1,10 +1,15 @@
+from importlib.resources import files
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest import TestCase
 
 from dungeonsheets.magic_items import MagicItem
 from dungeonsheets.spells.spells import Spell
-from dungeonsheets.yaml_content import load_yaml_magic_item_classes, load_yaml_spell_classes
+from dungeonsheets.yaml_content import (
+    _resolve_yaml_sources,
+    load_yaml_magic_item_classes,
+    load_yaml_spell_classes,
+)
 
 
 class TestSplitYamlLoader(TestCase):
@@ -175,3 +180,17 @@ class TestSplitYamlLoader(TestCase):
                 load_yaml_magic_item_classes(yaml_dir, MagicItem)
 
             self.assertIn("linked_spells", str(ctx.exception))
+
+    def test_resolve_yaml_sources_supports_traversable_directory(self):
+        spells_dir = files("dungeonsheets.data").joinpath("spells")
+        sources = _resolve_yaml_sources(spells_dir)
+
+        self.assertGreater(len(sources), 0)
+        self.assertTrue(all(source.name.endswith(".yaml") for source in sources))
+
+    def test_spell_loader_supports_traversable_directory(self):
+        spells_dir = files("dungeonsheets.data").joinpath("spells")
+        generated = load_yaml_spell_classes(spells_dir, Spell)
+
+        self.assertIn("MagicMissile", generated)
+        self.assertEqual(generated["MagicMissile"].data_source, "yaml")
