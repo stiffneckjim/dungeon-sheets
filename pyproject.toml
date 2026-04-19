@@ -78,9 +78,6 @@ ignore = [
     "F401",  # allow explicit re-exports
     "F403",  # allow wildcard imports in package aggregators
 ]
-"dungeonsheets/features/bloodhunter.py" = [
-    "F811",  # legacy duplicate class names are used as alternate feature definitions
-]
 "dungeonsheets/mechanics.py" = [
     "F401",  # convenience module intentionally re-exports symbols
 ]
