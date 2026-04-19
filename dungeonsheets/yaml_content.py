@@ -26,8 +26,9 @@ def _resolve_yaml_sources(yaml_path):
 
     Parameters
     ----------
-    yaml_path : PathLike
-        A YAML file path or a directory containing YAML files.
+    yaml_path : PathLike | Traversable
+        A YAML file path, a directory containing YAML files, or an
+        ``importlib.resources`` Traversable representing either.
 
     Returns
     -------

@@ -376,7 +376,7 @@ def __dir__():
     return sorted(globals())
 
 
-__all__ = (
+_PUBLIC_EXPORTS = (
     "Acolyte",
     "Charlatan",
     "Criminal",
@@ -408,4 +408,9 @@ __all__ = (
     "UrbanBountyHunter",
     "UthgardtTribeMember",
     "WaterdhavianNoble",
+    "PHB_backgrounds",
+    "SCAG_backgrounds",
+    "available_backgrounds",
 )
+
+__all__ = _PUBLIC_EXPORTS
