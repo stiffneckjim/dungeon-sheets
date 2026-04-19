@@ -413,7 +413,7 @@ class BrandOfSundering(Feature):
     source = "Blood HUnter (Order of the Ghostslayer)"
 
 
-class BloodCurseOfTheExorcist(Feature):
+class BloodCurseOfTheExorcistFeature(Feature):
     """At 15th level, you’ve honed your hemocraft to tear wicked influence from your allies, punishing those who would infiltrate their body and mind. You gain the Blood Curse of the Exorcist for your Blood Maledict feature. This doesn’t count against your number of blood curses known."""
 
     name = "Blood Curse of the Exorcist"
@@ -547,7 +547,7 @@ class BrandOfAxiom(Feature):
     source = "Blood Hunter (Order of the Mutant)"
 
 
-class BloodCurseOfCorrosion(Feature):
+class BloodCurseOfCorrosionFeature(Feature):
     """Starting at 15th level, your blood curse can wrack a creature’s body with terrible toxins. You gain the Blood Curse of Corrosion for your Blood Maledict feature. This does not count against your number of blood curses known."""
 
     name = "Blood Curse of Corrosion"
@@ -566,7 +566,7 @@ class ExaltedMutation(Feature):
 
 
 # Formulas
-class Formulas(Feature):
+class FormulaOption(Feature):
     """
     A generic Formula. Add details in features/bloodhunter.py
     """
@@ -591,7 +591,7 @@ class Formulas(Feature):
             self.cast_spell_at_will(s)
 
 
-class Aether(Formulas):
+class Aether(FormulaOption):
     """**Prerequisite: 11th level.**
     You gain a flying speed of 20 feet for 1 hour.
     Side effect. You have disadvantage on Strength and Dexterity ability checks for 1 hour.
@@ -601,7 +601,7 @@ class Aether(Formulas):
     name = "Aether"
 
 
-class Alluring(Formulas):
+class Alluring(FormulaOption):
     """Your skin and voice become malleable, allowing you to slightly enhance your appearance and presence. You have advantage on Charisma ability checks.
     Side effect. You have disadvantage on initiative rolls.
 
@@ -610,7 +610,7 @@ class Alluring(Formulas):
     name = "Alluring"
 
 
-class Celerity(Formulas):
+class Celerity(FormulaOption):
     """Your Dexterity score increases by 3, as does your Dexterity maximum. This bonus increases by 1 at 11th and 18th level.
     Side effect. You have disadvantage on Wisdom saving throws.
 
@@ -619,7 +619,7 @@ class Celerity(Formulas):
     name = "Celerity"
 
 
-class Conversant(Formulas):
+class Conversant(FormulaOption):
     """You gain advantage on Intelligence ability checks.
     Side effect. You have disadvantage on Wisdom ability checks.
 
@@ -628,7 +628,7 @@ class Conversant(Formulas):
     name = "Conversant"
 
 
-class Cruelty(Formulas):
+class Cruelty(FormulaOption):
     """**Prerequisite: 11th level.**
     When you use the Attack action, you can make an additional weapon attack as a bonus action.
     Side effect. You have disadvantage on Intelligence, Wisdom, and Charisma saving throws.
@@ -638,7 +638,7 @@ class Cruelty(Formulas):
     name = "Cruelty"
 
 
-class Deftness(Formulas):
+class Deftness(FormulaOption):
     """You gain advantage on Dexterity ability checks.
     Side effect. You have disadvantage on Wisdom ability checks.
 
@@ -647,7 +647,7 @@ class Deftness(Formulas):
     name = "Deftness"
 
 
-class Embers(Formulas):
+class Embers(FormulaOption):
     """You gain resistance to fire damage.
     Side effect. You gain vulnerability to cold damage.
 
@@ -656,7 +656,7 @@ class Embers(Formulas):
     name = "Embers"
 
 
-class Gelid(Formulas):
+class Gelid(FormulaOption):
     """You gain resistance to cold damage.
     Side effect. You gain vulnerability to fire damage.
 
@@ -665,7 +665,7 @@ class Gelid(Formulas):
     name = "Gelid"
 
 
-class Impermeable(Formulas):
+class Impermeable(FormulaOption):
     """You gain resistance to piercing damage.
     Side effect. You gain vulnerability to slashing damage.
 
@@ -683,7 +683,7 @@ class Mobility(Formulas):
     name = "Mobility"
 
 
-class Nighteye(Formulas):
+class Nighteye(FormulaOption):
     """You gain darkvision for up to 60 feet. If you already have darkvision, this increases its range by 60 additional feet.
     Side effect. You gain sunlight sensitivity (detailed in the Dark Elf section of the Player’s Handbook).
 
@@ -701,7 +701,7 @@ class Percipient(Formulas):
     name = "Percipient"
 
 
-class Potency(Formulas):
+class Potency(FormulaOption):
     """Your Strength score increases by 3, as does your Strength maximum. This bonus increases by 1 at 11th and 18th level.
     Side effect. You have disadvantage on Dexterity saving throws.
 
@@ -710,7 +710,7 @@ class Potency(Formulas):
     name = "Potency"
 
 
-class Precision(Formulas):
+class Precision(FormulaOption):
     """**Prerequisite: 11th level**
     Your weapon attacks score a critical hit on a roll of 19-20.
     Side effect. You have disadvantage on Strength saving throws.
@@ -720,7 +720,7 @@ class Precision(Formulas):
     name = "Precision"
 
 
-class Rapidity(Formulas):
+class Rapidity(FormulaOption):
     """Your speed increases by 10 feet. At 15th level, your speed increases by 15 feet instead.
     Side effect. You have disadvantage on Intelligence ability checks.
 
@@ -729,7 +729,7 @@ class Rapidity(Formulas):
     name = "Rapidity"
 
 
-class Reconstruction(Formulas):
+class Reconstruction(FormulaOption):
     """**Prerequisite: 7th level**
     For 1 hour, at the start of each of your turns, you regain hit points equal to your proficiency bonus if you have at least 1 hit point, but no more than half of your hit points.
     Side effect. Your speed decreases by 10 ft for 1 hour.
@@ -739,7 +739,7 @@ class Reconstruction(Formulas):
     name = "Reconstruction"
 
 
-class Sagacity(Formulas):
+class Sagacity(FormulaOption):
     """Your Intelligence score increases by 3, as does your Intelligence maximum. This bonus increases by 1 at 11th and 18th level.
     Side effect. You have disadvantage on Charisma saving throws.
 
@@ -748,7 +748,7 @@ class Sagacity(Formulas):
     name = "Sagacity"
 
 
-class Shielded(Formulas):
+class Shielded(FormulaOption):
     """You gain resistance to slashing damage.
     Side effect. You gain vulnerability to bludgeoning damage.
 
@@ -757,7 +757,7 @@ class Shielded(Formulas):
     name = "Shielded"
 
 
-class Unbreakable(Formulas):
+class Unbreakable(FormulaOption):
     """You gain resistance to bludgeoning damage.
     Side effect. You gain vulnerability to piercing damage.
 
@@ -766,7 +766,7 @@ class Unbreakable(Formulas):
     name = "Unbreakable"
 
 
-class Vermillion(Formulas):
+class Vermillion(FormulaOption):
     """You gain an additional use of your Blood Maledict feature.
     Side effect. You have disadvantage on death saving throws.
 
@@ -971,7 +971,7 @@ class UnsealedArcana(Feature):
     source = "Blood Hunter (Order of the Profane Soul)"
 
 
-class BloodCurseOfTheSouleater(Feature):
+class BloodCurseOfTheSouleaterFeature(Feature):
     """Starting at 18th level, you’ve learned to siphon the soul from your fallen prey. You gain the Blood Curse of the Souleater for your Blood Maledict feature. This does not count against your number of blood curses known."""
 
     name = "Blood Curse of the Souleater"

@@ -13,7 +13,7 @@ class OrderOfTheGhostslayer(SubClass):
     features_by_level[3] = [features.RiteOfTheDawn, features.CurseSpecialist]
     features_by_level[7] = [features.EtherealStep]
     features_by_level[11] = [features.BrandOfSundering]
-    features_by_level[15] = [features.BloodCurseOfTheExorcist]
+    features_by_level[15] = [features.BloodCurseOfTheExorcistFeature]
     features_by_level[18] = [features.RiteRevival]
 
 
@@ -37,7 +37,7 @@ class OrderOfTheMutant(SubClass):
     features_by_level[3] = [features.Formulas, features.Mutagencraft]
     features_by_level[7] = [features.StrangeMetabolism]
     features_by_level[11] = [features.BrandOfAxiom]
-    features_by_level[15] = [features.BloodCurseOfCorrosion]
+    features_by_level[15] = [features.BloodCurseOfCorrosionFeature]
     features_by_level[18] = [features.ExaltedMutation]
 
 
@@ -50,7 +50,7 @@ class OrderOfTheProfaneSoul(SubClass):
     features_by_level[7] = [features.MysticFrenzy, features.RevealedArcana]
     features_by_level[11] = [features.BrandOfTheSappingScar]
     features_by_level[15] = [features.UnsealedArcana]
-    features_by_level[18] = [features.BloodCurseOfTheSouleater]
+    features_by_level[18] = [features.BloodCurseOfTheSouleaterFeature]
     spellcasting_ability = "intelligence"
     spell_slots_by_level = {
         # char_lvl: (cantrips, 1st, 2nd, 3rd, ...)
