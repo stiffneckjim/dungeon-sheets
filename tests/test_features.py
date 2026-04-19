@@ -2,8 +2,8 @@
 
 from unittest import TestCase
 
-from dungeonsheets import features, character
-from dungeonsheets.features import create_feature, Feature, all_features, bard
+from dungeonsheets import character, features
+from dungeonsheets.features import Feature, all_features, bard, create_feature
 
 
 class TestFeatures(TestCase):
@@ -69,7 +69,7 @@ class BardTests(TestCase):
         char = character.Character(classes=["bard"], levels=[17])
         sor = bard.SongOfRest(owner=char)
         self.assertEqual(sor.name, "Song of Rest (1d12)")
-    
+
     def test_jack_of_all_trades(self):
         # Test that half of proficiency is added to skill checks w/o the proficiency bonus
         char = character.Character(classes=["bard"], levels=[2], dexterity=10)

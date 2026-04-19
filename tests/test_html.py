@@ -1,6 +1,6 @@
 import unittest
 
-from dungeonsheets import spells, features, epub
+from dungeonsheets import epub, features, spells
 
 
 class MarkdownTestCase(unittest.TestCase):
@@ -27,9 +27,7 @@ class MarkdownTestCase(unittest.TestCase):
         text = epub.rst_to_html(r"\\")
         self.assertEqual(r"<p>\</p>", text.strip("\n"))
 
-    @unittest.skip(
-        "Headings are all screwed up because it treats them as the document title"
-    )
+    @unittest.skip("Headings are all screwed up because it treats them as the document title")
     def test_headings(self):
         # Simple heading by itself
         text = epub.rst_to_html("Hello, world\n------------\n\nGoodbye, world")
@@ -66,7 +64,7 @@ class MarkdownTestCase(unittest.TestCase):
         - Secondhand (you have heard of the target) - +5
         - Firsthand (you have met the target) - +0
         - Familiar (you know the target well) - -5
-        
+
         """
         tex = epub.rst_to_html(real_list)
         self.assertIn('<ul class="simple">', tex)
@@ -79,7 +77,7 @@ class MarkdownTestCase(unittest.TestCase):
           the target) - +0
         - Familiar (you know the target
           well) - -5
-        
+
         """
         tex = epub.rst_to_html(md_list)
         self.assertIn('<ul class="simple">', tex)
@@ -102,9 +100,7 @@ class MarkdownTestCase(unittest.TestCase):
     def test_rst_all_spells(self):
         for spell in spells.all_spells():
             tex = epub.rst_to_html(spell.__doc__)
-            self.assertNotIn(
-                "DUadmonition", tex, f"spell {spell} is not valid reStructured text"
-            )
+            self.assertNotIn("DUadmonition", tex, f"spell {spell} is not valid reStructured text")
 
     def test_rst_all_features(self):
         for feature in features.all_features():
