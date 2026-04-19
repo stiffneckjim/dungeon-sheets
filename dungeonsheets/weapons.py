@@ -1,11 +1,9 @@
-from pathlib import Path
+from importlib.resources import files
 
 from dungeonsheets.content_registry import default_content_registry
 from dungeonsheets.yaml_content import load_yaml_weapon_classes
 
 default_content_registry.add_module(__name__)
-
-_DATA_DIR = Path(__file__).parent / "data"
 
 
 class Weapon:
@@ -139,39 +137,6 @@ _TYPE_MAP = {
     "unarmed": (Unarmed,),
 }
 
-_generated = load_yaml_weapon_classes(
-    _DATA_DIR / "weapons.yaml",
-    Weapon,
-    type_map=_TYPE_MAP,
-    module=__name__,
-)
-globals().update(_generated)
-
-# Category tuples rebuilt from loaded classes so existing proficiency checks work.
-simple_melee_weapons = tuple(
-    cls
-    for cls in _generated.values()
-    if issubclass(cls, SimpleWeapon) and issubclass(cls, MeleeWeapon)
-)
-simple_ranged_weapons = tuple(
-    cls
-    for cls in _generated.values()
-    if issubclass(cls, SimpleWeapon) and issubclass(cls, RangedWeapon)
-)
-simple_weapons = simple_melee_weapons + simple_ranged_weapons
-
-martial_melee_weapons = tuple(
-    cls
-    for cls in _generated.values()
-    if issubclass(cls, MartialWeapon) and issubclass(cls, MeleeWeapon)
-)
-martial_ranged_weapons = tuple(
-    cls
-    for cls in _generated.values()
-    if issubclass(cls, MartialWeapon) and issubclass(cls, RangedWeapon)
-)
-martial_weapons = martial_melee_weapons + martial_ranged_weapons
-
 _MONK_WEAPON_NAMES = frozenset(
     (
         "Shortsword",
@@ -187,8 +152,71 @@ _MONK_WEAPON_NAMES = frozenset(
         "SunBolt",
     )
 )
-monk_weapons = (Unarmed,) + tuple(
-    cls for name, cls in _generated.items() if name in _MONK_WEAPON_NAMES
-)
 
-firearms = (Firearm,) + tuple(cls for cls in _generated.values() if issubclass(cls, Firearm))
+_DATA_DIR = files("dungeonsheets.data")
+_yaml_loaded = False
+
+
+def _load_yaml_content():
+    global _yaml_loaded
+    if _yaml_loaded:
+        return
+
+    generated = load_yaml_weapon_classes(
+        _DATA_DIR.joinpath("weapons.yaml"),
+        Weapon,
+        type_map=_TYPE_MAP,
+        module=__name__,
+    )
+    globals().update(generated)
+
+    # Category tuples rebuilt from loaded classes so existing proficiency checks work.
+    globals()["simple_melee_weapons"] = tuple(
+        cls
+        for cls in generated.values()
+        if issubclass(cls, SimpleWeapon) and issubclass(cls, MeleeWeapon)
+    )
+    globals()["simple_ranged_weapons"] = tuple(
+        cls
+        for cls in generated.values()
+        if issubclass(cls, SimpleWeapon) and issubclass(cls, RangedWeapon)
+    )
+    globals()["simple_weapons"] = (
+        globals()["simple_melee_weapons"] + globals()["simple_ranged_weapons"]
+    )
+
+    globals()["martial_melee_weapons"] = tuple(
+        cls
+        for cls in generated.values()
+        if issubclass(cls, MartialWeapon) and issubclass(cls, MeleeWeapon)
+    )
+    globals()["martial_ranged_weapons"] = tuple(
+        cls
+        for cls in generated.values()
+        if issubclass(cls, MartialWeapon) and issubclass(cls, RangedWeapon)
+    )
+    globals()["martial_weapons"] = (
+        globals()["martial_melee_weapons"] + globals()["martial_ranged_weapons"]
+    )
+
+    globals()["monk_weapons"] = (Unarmed,) + tuple(
+        cls for name, cls in generated.items() if name in _MONK_WEAPON_NAMES
+    )
+    globals()["firearms"] = (Firearm,) + tuple(
+        cls for cls in generated.values() if issubclass(cls, Firearm)
+    )
+
+    _yaml_loaded = True
+
+
+def __getattr__(name):
+    _load_yaml_content()
+    try:
+        return globals()[name]
+    except KeyError as exc:
+        raise AttributeError(f"module {__name__!r} has no attribute {name!r}") from exc
+
+
+def __dir__():
+    _load_yaml_content()
+    return sorted(globals())

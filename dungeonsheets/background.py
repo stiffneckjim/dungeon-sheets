@@ -1,4 +1,4 @@
-from pathlib import Path
+from importlib.resources import files
 
 from dungeonsheets import features as feats
 from dungeonsheets.content_registry import default_content_registry
@@ -285,57 +285,132 @@ class Faceless(Background):
     features = (feats.FacelessPersona, feats.DualPersonalities)
 
 
-globals().update(
-    load_yaml_background_classes(
-        Path(__file__).with_name("data").joinpath("backgrounds.yaml"),
+_yaml_loaded = False
+
+
+_LEGACY_BACKGROUNDS = {
+    name: obj
+    for name, obj in list(globals().items())
+    if isinstance(obj, type) and issubclass(obj, Background) and obj is not Background
+}
+
+# Remove concrete background class bindings so first access triggers __getattr__
+# and loads YAML-backed classes before exposing legacy fallbacks.
+for _name in _LEGACY_BACKGROUNDS:
+    globals().pop(_name, None)
+
+
+def _load_yaml_content():
+    global _yaml_loaded
+    if _yaml_loaded:
+        return
+
+    generated = load_yaml_background_classes(
+        files("dungeonsheets.data").joinpath("backgrounds.yaml"),
         Background,
         feats,
         module=__name__,
     )
-)
+
+    globals().update(_LEGACY_BACKGROUNDS)
+    globals().update(generated)
+
+    globals()["PHB_backgrounds"] = [
+        globals()[name]
+        for name in (
+            "Acolyte",
+            "Charlatan",
+            "Criminal",
+            "Spy",
+            "Entertainer",
+            "Gladiator",
+            "Farmer",
+            "FolkHero",
+            "GuildArtisan",
+            "GuildMerchant",
+            "Hermit",
+            "Noble",
+            "Knight",
+            "Outlander",
+            "Sage",
+            "Sailor",
+            "Pirate",
+            "Soldier",
+            "Urchin",
+        )
+    ]
+    globals()["SCAG_backgrounds"] = [
+        globals()[name]
+        for name in (
+            "CityWatch",
+            "ClanCrafter",
+            "CloisteredScholar",
+            "Courtier",
+            "FactionAgent",
+            "FarTraveler",
+            "Inheritor",
+            "KnightOfTheOrder",
+            "MercenaryVeteran",
+            "UrbanBountyHunter",
+            "UthgardtTribeMember",
+            "WaterdhavianNoble",
+        )
+    ]
+    globals()["available_backgrounds"] = (
+        globals()["PHB_backgrounds"] + globals()["SCAG_backgrounds"]
+    )
+
+    _yaml_loaded = True
 
 
-PHB_backgrounds = [
-    Acolyte,
-    Charlatan,
-    Criminal,
-    Spy,
-    Entertainer,
-    Gladiator,
-    Farmer,
-    FolkHero,
-    GuildArtisan,
-    GuildMerchant,
-    Hermit,
-    Noble,
-    Knight,
-    Outlander,
-    Sage,
-    Sailor,
-    Pirate,
-    Soldier,
-    Urchin,
-]
+def __getattr__(name):
+    _load_yaml_content()
+    try:
+        return globals()[name]
+    except KeyError as exc:
+        raise AttributeError(f"module {__name__!r} has no attribute {name!r}") from exc
 
-SCAG_backgrounds = [
-    CityWatch,
-    ClanCrafter,
-    CloisteredScholar,
-    Courtier,
-    FactionAgent,
-    FarTraveler,
-    Inheritor,
-    KnightOfTheOrder,
-    MercenaryVeteran,
-    UrbanBountyHunter,
-    UthgardtTribeMember,
-    WaterdhavianNoble,
-]
 
-available_backgrounds = PHB_backgrounds + SCAG_backgrounds
+def __dir__():
+    _load_yaml_content()
+    return sorted(globals())
 
-__all__ = tuple([b.name for b in available_backgrounds]) + (
+
+_PUBLIC_EXPORTS = (
+    "Acolyte",
+    "Charlatan",
+    "Criminal",
+    "Spy",
+    "Entertainer",
+    "Gladiator",
+    "Farmer",
+    "FolkHero",
+    "GuildArtisan",
+    "GuildMerchant",
+    "Hermit",
+    "Noble",
+    "Knight",
+    "Outlander",
+    "Sage",
+    "Sailor",
+    "Pirate",
+    "Soldier",
+    "Urchin",
+    "CityWatch",
+    "ClanCrafter",
+    "CloisteredScholar",
+    "Courtier",
+    "FactionAgent",
+    "FarTraveler",
+    "Inheritor",
+    "KnightOfTheOrder",
+    "MercenaryVeteran",
+    "UrbanBountyHunter",
+    "UthgardtTribeMember",
+    "WaterdhavianNoble",
     "PHB_backgrounds",
     "SCAG_backgrounds",
     "available_backgrounds",
 )
+
+__all__ = _PUBLIC_EXPORTS

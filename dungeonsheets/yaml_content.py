@@ -26,19 +26,37 @@ def _resolve_yaml_sources(yaml_path):
 
     Parameters
     ----------
-    yaml_path : PathLike
-        A YAML file path or a directory containing YAML files.
+    yaml_path : PathLike | Traversable
+        A YAML file path, a directory containing YAML files, or an
+        ``importlib.resources`` Traversable representing either.
 
     Returns
     -------
-    list[Path]
+    list[Path | Traversable]
         Sorted list of YAML files to load.
     """
-    path = Path(yaml_path)
-    if path.is_dir():
-        return sorted(candidate for candidate in path.glob("*.yaml") if candidate.is_file())
-    if path.exists() and path.is_file():
-        return [path]
+    try:
+        path = Path(yaml_path)
+    except TypeError:
+        path = None
+
+    if path is not None:
+        if path.is_dir():
+            return sorted(candidate for candidate in path.glob("*.yaml") if candidate.is_file())
+        if path.exists() and path.is_file():
+            return [path]
+
+    # Support importlib.resources Traversable objects for non-filesystem imports.
+    traversable = yaml_path
+    if hasattr(traversable, "is_dir") and traversable.is_dir():
+        yaml_files = [
+            candidate
+            for candidate in traversable.iterdir()
+            if candidate.is_file() and candidate.name.endswith(".yaml")
+        ]
+        return sorted(yaml_files, key=lambda candidate: candidate.name)
+    if hasattr(traversable, "is_file") and traversable.is_file():
+        return [traversable]
     return []
 
 
