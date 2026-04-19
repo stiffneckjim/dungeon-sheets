@@ -410,14 +410,14 @@ class BrandOfSundering(Feature):
     """Beginning at 11th level, your Brand of Castigation now exposes a fragment of your foe’s essence, leaving them vulnerable to your Crimson Rite. Whenever you damage a branded creature with your Crimson Rite, your weapon deals one additional hemocraft die of rite damage. In addition, the branded creature can’t move through creatures or objects."""
 
     name = "Brand of Sundering"
-    source = "Blood HUnter (Order of the Ghostslayer)"
+    source = "Blood Hunter (Order of the Ghostslayer)"
 
 
 class BloodCurseOfTheExorcistFeature(Feature):
     """At 15th level, you’ve honed your hemocraft to tear wicked influence from your allies, punishing those who would infiltrate their body and mind. You gain the Blood Curse of the Exorcist for your Blood Maledict feature. This doesn’t count against your number of blood curses known."""
 
     name = "Blood Curse of the Exorcist"
-    source = "Blood Hunter (Order of the Ghostslayer"
+    source = "Blood Hunter (Order of the Ghostslayer)"
 
 
 class RiteRevival(Feature):
@@ -568,11 +568,11 @@ class ExaltedMutation(Feature):
 # Formulas
 class FormulaOption(Feature):
     """
-    A generic Formula. Add details in features/bloodhunter.py
+    A generic mutagen formula option. Add details in features/bloodhunter.py.
     """
 
-    name = "Unnamed rite"
-    source = "BloodHunter (Crimson Rites)"
+    name = "Unnamed Formula"
+    source = "Blood Hunter (Order of the Mutant)"
     at_will_spells = ()
 
     def cast_spell_at_will(self, spell):
@@ -674,7 +674,7 @@ class Impermeable(FormulaOption):
     name = "Impermeable"
 
 
-class Mobility(Formulas):
+class Mobility(FormulaOption):
     """You gain immunity to the grappled and restrained conditions. At 11th level, you also are immune to the paralyzed condition.
     Side effect. You have disadvantage on Strength ability checks.
 
@@ -692,7 +692,7 @@ class Nighteye(FormulaOption):
     name = "Nighteye"
 
 
-class Percipient(Formulas):
+class Percipient(FormulaOption):
     """You gain advantage on Wisdom ability checks.
     Side effect. You have disadvantage on Charisma ability checks.
 
