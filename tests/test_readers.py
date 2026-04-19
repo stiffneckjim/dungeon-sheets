@@ -23,7 +23,7 @@ class PythonReaderTests(unittest.TestCase):
         parent = Path("parent_sheet.py")
         # Write inheritance files
         with open(parent, mode="w") as fp:
-            fp.writelines(
+            fp.write(
                 "\n".join(
                     [
                         "dungeonsheets_version = '0.15.0'",
@@ -33,7 +33,7 @@ class PythonReaderTests(unittest.TestCase):
                 + "\n"
             )
         with open(child, mode="w") as fp:
-            fp.writelines(
+            fp.write(
                 "\n".join(
                     [
                         "dungeonsheets_version = '0.15.0'",
