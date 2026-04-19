@@ -1,12 +1,12 @@
 from unittest import TestCase
 
-from dungeonsheets import stats, character, encounter
+from dungeonsheets import character, encounter
 
 
 class TestStats(TestCase):
     def new_character(self, level=1):
-        return character.Character(classes=['cleric'], levels=[level])
-    
+        return character.Character(classes=["cleric"], levels=[level])
+
     def test_xp_thresholds(self):
         # One level 1 character
         xp_th = encounter.xp_thresholds([self.new_character(1)])
@@ -20,3 +20,4 @@ class TestStats(TestCase):
 class TestEncounter(TestCase):
     def test_encounter_init(self):
         enc = encounter.Encounter()
+        self.assertIsInstance(enc, encounter.Encounter)

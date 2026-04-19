@@ -1,8 +1,7 @@
 from unittest import TestCase
 
-
-from dungeonsheets.content_registry import ContentRegistry
 from dungeonsheets import monsters, weapons
+from dungeonsheets.content_registry import ContentRegistry
 
 
 class TestContentRegistry(TestCase):
@@ -19,8 +18,7 @@ class TestContentRegistry(TestCase):
         creg = ContentRegistry()
         creg.add_module("dungeonsheets.monsters")
         self.assertEqual(len(creg.modules), 1)
-        self.assertFalse(isinstance(creg.modules[0], str),
-                         "String not converted to module.")
+        self.assertFalse(isinstance(creg.modules[0], str), "String not converted to module.")
         # Check if is indempotent
         creg.add_module("dungeonsheets.monsters")
         self.assertEqual(len(creg.modules), 1)
@@ -44,7 +42,7 @@ class TestContentRegistry(TestCase):
         # Check for extra functuation
         self.assertEqual(creg.findattr("my attr"), test_module.my_attr)
         self.assertEqual(creg.findattr("Your/Attr"), test_module.YourAttr)
-        
+
     def test_findattr_valid_classes(self):
         """Check if the function can find attributes."""
 
@@ -61,7 +59,7 @@ class TestContentRegistry(TestCase):
         creg.add_module(TestClassB)
         # Direct access
         self.assertEqual(creg.findattr("my_attr", valid_classes=[int]), test_module.my_attr)
-        
+
     def test_findattr_magic_weapon(self):
         creg = ContentRegistry()
         creg.add_module(weapons)
@@ -70,8 +68,10 @@ class TestContentRegistry(TestCase):
         self.assertIs(shortsword, weapons.Shortsword)
         # Now test with a magical weapon
         magic_shortsword = creg.findattr("shortsword + 1")
-        self.assertTrue(issubclass(magic_shortsword, weapons.Shortsword),
-                        "Improved version is not subclass of base.")
+        self.assertTrue(
+            issubclass(magic_shortsword, weapons.Shortsword),
+            "Improved version is not subclass of base.",
+        )
         self.assertEqual(magic_shortsword.attack_bonus, 1)
         self.assertEqual(magic_shortsword.damage_bonus, 1)
         # Make sure some other item that can't be "improved" still works

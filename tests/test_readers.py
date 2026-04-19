@@ -1,8 +1,8 @@
-import warnings
-from pathlib import Path
-import unittest
 import types
+import unittest
+import warnings
 from contextlib import contextmanager
+from pathlib import Path
 
 from dungeonsheets import exceptions
 from dungeonsheets.readers import read_sheet_file
@@ -23,16 +23,26 @@ class PythonReaderTests(unittest.TestCase):
         parent = Path("parent_sheet.py")
         # Write inheritance files
         with open(parent, mode="w") as fp:
-            fp.writelines("\n".join([
-                "dungeonsheets_version = '0.15.0'",
-                "background = 'entertainer'",
-            ]) + "\n")
+            fp.writelines(
+                "\n".join(
+                    [
+                        "dungeonsheets_version = '0.15.0'",
+                        "background = 'entertainer'",
+                    ]
+                )
+                + "\n"
+            )
         with open(child, mode="w") as fp:
-            fp.writelines("\n".join([
-                "dungeonsheets_version = '0.15.0'",
-                "name = 'Douglass Adams'",
-                f"parent_sheets = ['{str(parent)}']",
-            ]) + "\n")
+            fp.writelines(
+                "\n".join(
+                    [
+                        "dungeonsheets_version = '0.15.0'",
+                        "name = 'Douglass Adams'",
+                        f"parent_sheets = ['{str(parent)}']",
+                    ]
+                )
+                + "\n"
+            )
         # Drop back into the calling code
         yield child, parent
         # Remove temporary files
@@ -44,12 +54,12 @@ class PythonReaderTests(unittest.TestCase):
             char_props = read_sheet_file(child)
         self.assertEqual(char_props["name"], "Douglass Adams")
         self.assertEqual(char_props["background"], "entertainer")
-    
+
     def test_load_python_gm_sheet(self):
         gmfile = GM_PYTHON_FILE
         result = read_sheet_file(gmfile)
         self.assertEqual(result["sheet_type"], "gm")
-    
+
     def test_load_python_character(self):
         charfile = CHAR_PYTHON_FILE
         result = read_sheet_file(charfile)
@@ -106,9 +116,7 @@ class Roll20ReaderTests(unittest.TestCase):
             magic_items=(),
             armor="",
             shield="",
-            personality_traits=(
-                "Can easily dismember a body\n\nKnow fight battle tactics"
-            ),
+            personality_traits=("Can easily dismember a body\n\nKnow fight battle tactics"),
             ideals="Vengence",
             bonds="friends and adventurers.",
             flaws="Bloodthirsty and wants to solve every problem by murder",
@@ -216,7 +224,7 @@ class FoundryReaderTests(unittest.TestCase):
                 "thieves' tools",
                 "vehicle (land or water)",
                 "chopsticks",
-                "juggling balls"
+                "juggling balls",
             ],
             saving_throw_proficiencies=["dexterity", "charisma"],
             languages="common, elvish, law jargon, spanish",
@@ -238,8 +246,31 @@ class FoundryReaderTests(unittest.TestCase):
             ),
             attacks_and_spellcasting="",
             spells_prepared=["Bane", "Faerie Fire", "Thunderwave", "Detect Thoughts"],
-            spells=["Vicious Mockery", "Message", "Prestidigitation", "Bane", "Faerie Fire", "Thunderwave", "Healing Word", "Blindness/Deafness", "Detect Thoughts", "Hold Person", "Fear", "Heat Metal"],
-            features=["jack of all trades", "song of rest", "bard college", "expertise (bard)",  "font of inspiration", "bardic inspiration", "lucky", "jack of all trades", "countercharm"],
+            spells=[
+                "Vicious Mockery",
+                "Message",
+                "Prestidigitation",
+                "Bane",
+                "Faerie Fire",
+                "Thunderwave",
+                "Healing Word",
+                "Blindness/Deafness",
+                "Detect Thoughts",
+                "Hold Person",
+                "Fear",
+                "Heat Metal",
+            ],
+            features=[
+                "jack of all trades",
+                "song of rest",
+                "bard college",
+                "expertise (bard)",
+                "font of inspiration",
+                "bardic inspiration",
+                "lucky",
+                "jack of all trades",
+                "countercharm",
+            ],
         )
         for key, val in expected_data.items():
             this_result = result[key]
@@ -247,7 +278,7 @@ class FoundryReaderTests(unittest.TestCase):
             if isinstance(this_result, types.GeneratorType):
                 this_result = list(this_result)
             self.assertEqual(this_result, val, key)
-    
+
     def test_load_json_spells(self):
         charfile = SPELLCASTER_JSON_FILE
         with warnings.catch_warnings(record=True):
@@ -284,7 +315,7 @@ class FoundryReaderTests(unittest.TestCase):
             if isinstance(this_result, types.GeneratorType):
                 this_result = list(this_result)
             self.assertEqual(this_result, val, key)
-            
+
     def test_load_homebrew_weapon(self):
         """Check that the properties of a homebrew magic weapon get read
         properly.
@@ -294,5 +325,4 @@ class FoundryReaderTests(unittest.TestCase):
         with warnings.catch_warnings(record=True):
             result = read_sheet_file(charfile)
         # Check that some magic items were set
-        self.assertGreater(len(result['magic_items']), 0,
-                           "No magic items imported")
+        self.assertGreater(len(result["magic_items"]), 0, "No magic items imported")
