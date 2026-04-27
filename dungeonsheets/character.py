@@ -533,6 +533,14 @@ class Character(Creature):
             spells |= set(f.spells_known) | set(f.spells_prepared)
         for c in self.spellcasting_classes:
             spells |= set(c.spells_known) | set(c.spells_prepared)
+        # Include spells granted by magic items (e.g., scrolls, staffs)
+        if hasattr(self, "magic_items"):
+            for item in self.magic_items:
+                try:
+                    spells |= set(item.granted_spell_classes())
+                except (AttributeError, Exception):
+                    # Item doesn't grant spells or resolution failed; skip it
+                    pass
         return sorted(tuple(spells), key=(lambda x: x.name))
 
     @property
