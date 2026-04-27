@@ -125,6 +125,28 @@ class ContentRegistry:
                     for v, attr in zip(is_valid, found_attrs)
                 ]
             found_attrs = [attr for attr, v in zip(found_attrs, is_valid) if v]
+        # Fallback: dynamically create a SpellScroll for "scroll of <spell>" patterns
+        if len(found_attrs) == 0 and py_name.lower().startswith("scroll_of_"):
+            spell_part = py_name[len("scroll_of_") :].replace("_", " ")
+            # Late import to avoid circular dependency at module level
+            from dungeonsheets.magic_items import SpellScroll
+
+            is_valid_for_magic_item = len(valid_classes) == 0 or any(
+                issubclass(SpellScroll, cls) for cls in valid_classes if isinstance(cls, type)
+            )
+            if is_valid_for_magic_item:
+                return SpellScroll.scroll_for(spell_part)
+        # Fallback: dynamically create a SpellScroll for "scroll of <spell>" patterns
+        if len(found_attrs) == 0 and py_name.lower().startswith("scroll_of_"):
+            spell_part = py_name[len("scroll_of_") :].replace("_", " ")
+            # Late import to avoid circular dependency at module level
+            from dungeonsheets.magic_items import SpellScroll
+
+            is_valid_for_magic_item = len(valid_classes) == 0 or any(
+                issubclass(SpellScroll, cls) for cls in valid_classes if isinstance(cls, type)
+            )
+            if is_valid_for_magic_item:
+                return SpellScroll.scroll_for(spell_part)
         # Check that we found a valid, unique attribute
         if len(found_attrs) == 0:
             raise exceptions.ContentNotFound(f"Modules {self.modules} have no attribute {name}")

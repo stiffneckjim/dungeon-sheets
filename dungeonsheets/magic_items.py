@@ -470,6 +470,49 @@ class SpellScroll(MagicItem):
     item_type = "Scroll"
     form = MagicItemForm(kind="scroll", base_item="Scroll", is_consumable=True)
 
+    @classmethod
+    def scroll_for(cls, spell_name: str) -> type:
+        """Dynamically create a SpellScroll subclass for any spell by name.
+
+        Analogous to ``Weapon.improved_version()``: resolves the spell name
+        via the content registry to validate it exists, then returns a new
+        ``SpellScroll`` subclass with that spell linked.
+
+        Parameters
+        ----------
+        spell_name : str
+            The spell name as it would appear in a character file
+            (e.g. ``"fireball"``, ``"charm person"``).
+
+        Returns
+        -------
+        type[SpellScroll]
+            A ``SpellScroll`` subclass whose ``linked_spells`` contains
+            *spell_name* and whose ``name`` is ``"Scroll of <Title>"``.  The
+            spell is validated via ``find_content`` so unknown names still
+            raise ``ContentNotFound``.
+        """
+        from dungeonsheets import spells as _spells
+        from dungeonsheets.content_registry import find_content
+
+        # Validate the spell exists — raises ContentNotFound for unknown spells
+        find_content(spell_name, valid_classes=[_spells.Spell])
+
+        title = spell_name.replace("_", " ").title()
+        camel = "".join(
+            s.capitalize() for s in spell_name.replace("-", " ").replace("_", " ").split()
+        )
+
+        new_cls = type(
+            f"ScrollOf{camel}",
+            (cls,),
+            {
+                "name": f"Scroll of {title}",
+                "linked_spells": (spell_name,),
+            },
+        )
+        return new_cls
+
 
 globals().update(
     load_yaml_magic_item_classes(
