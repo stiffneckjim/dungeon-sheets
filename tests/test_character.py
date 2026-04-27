@@ -315,24 +315,23 @@ class DruidTestCase(TestCase):
         # Verify shield spell is in character's available spells
         spell_names = [s.name for s in char.spells]
         self.assertIn("Shield", spell_names)
-        # Verify the Shield spell is in the list
+        # Verify the Shield spell is in the list as an instance
         shield_spells = [s for s in char.spells if s.name == "Shield"]
         self.assertEqual(len(shield_spells), 1)
-        # Shield spell class should be the shield spell
-        self.assertIs(shield_spells[0], spells.Shield)
+        self.assertIsInstance(shield_spells[0], spells.Shield)
 
     def test_spells_from_multiple_magic_items(self):
-        """Characters should aggregate spells from multiple magic items."""
+        """Characters should aggregate spells from all magic items and expose the full set."""
         char = Wizard()
         char.level = 5
-        # Add Staff of Spells which grants multiple spells
-        char.set_attrs(magic_items=["staff of spells"])
+        # Staff of Spells grants 4 spells; adding it and a scroll exercises aggregation
+        char.set_attrs(magic_items=["staff of spells", "scroll of shield"])
         spell_names = [s.name for s in char.spells]
         # Staff of Spells grants: Magic Missile, Fireball, Lightning Bolt, Polymorph
-        staff_spells = {"Magic Missile", "Fireball", "Lightning Bolt", "Polymorph"}
-        found_spells = set(spell_names)
-        # Check that at least some staff spells are present
-        self.assertTrue(found_spells & staff_spells, f"Staff spells not found. Got: {spell_names}")
+        # Scroll of Shield grants: Shield
+        expected_spells = {"Magic Missile", "Fireball", "Lightning Bolt", "Polymorph", "Shield"}
+        missing = expected_spells - set(spell_names)
+        self.assertFalse(missing, f"Expected spells not found: {missing}. Got: {spell_names}")
 
     def test_wild_shapes(self):
         char = Druid()
