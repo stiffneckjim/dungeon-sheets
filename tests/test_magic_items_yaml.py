@@ -44,13 +44,26 @@ class TestYamlBackedMagicItems(TestCase):
         self.assertEqual(item.weapon_attack_bonus_total(), 1)
         self.assertEqual(item.weapon_damage_bonus_total(), 1)
 
+    def test_broom_of_flying_loaded_from_yaml(self):
+        """Broom of Flying should expose YAML-backed item metadata and passive effects."""
+        self.assertEqual(magic_items.BroomOfFlying.data_source, "yaml")
+        self.assertEqual(magic_items.BroomOfFlying.rarity, "Uncommon")
+
+        item = magic_items.BroomOfFlying()
+        self.assertEqual(item.item_type, "Wondrous item")
+        passive_effects = [e for e in item.all_effects if isinstance(e, magic_items.PassiveEffect)]
+        self.assertEqual(len(passive_effects), 1)
+        self.assertIn("Grants flight", passive_effects[0].description)
+
     def test_registry_finds_yaml_items(self):
         """Registry lookups should resolve YAML-backed magic item classes."""
         shield_scroll_cls = find_content("scroll of shield")
         cloak_cls = find_content("cloak of protection")
+        broom_cls = find_content("broom of flying")
 
         self.assertIs(shield_scroll_cls, magic_items.ScrollOfShield)
         self.assertIs(cloak_cls, magic_items.CloakOfProtection)
+        self.assertIs(broom_cls, magic_items.BroomOfFlying)
 
     def test_all_items_now_use_yaml(self):
         """All items should now come from YAML definitions."""
