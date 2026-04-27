@@ -533,6 +533,20 @@ class Character(Creature):
             spells |= set(f.spells_known) | set(f.spells_prepared)
         for c in self.spellcasting_classes:
             spells |= set(c.spells_known) | set(c.spells_prepared)
+        # Include spells granted by magic items (e.g., scrolls, staffs)
+        if hasattr(self, "magic_items"):
+            for item in self.magic_items:
+                granted_spell_classes = getattr(item, "granted_spell_classes", None)
+                if granted_spell_classes is None:
+                    continue
+                if not callable(granted_spell_classes):
+                    warnings.warn(
+                        f"{type(item).__name__}.granted_spell_classes is not callable; "
+                        "skipping granted spells for this item.",
+                        stacklevel=2,
+                    )
+                    continue
+                spells |= {cls() for cls in granted_spell_classes()}
         return sorted(tuple(spells), key=(lambda x: x.name))
 
     @property
