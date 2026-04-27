@@ -258,6 +258,24 @@
   rarity: Uncommon
   requires_attunement: true
 
+- class_name: BroomOfFlying
+  name: Broom of Flying
+  description: |
+    This wooden broom, which weighs 3 pounds, functions like a mundane broom
+    until you stand astride it and speak its command word. It then hovers
+    beneath you and can be ridden through the air.
+
+    The broom has a flying speed of 50 feet and can carry up to 400 pounds.
+    While carrying more than 200 pounds, its flying speed becomes 30 feet.
+
+    You can send the broom to travel alone to a destination within 1 mile,
+    naming a landmark and distance, provided there are no obstacles in the
+    way. The broom can be called back with another command word while within
+    1 mile.
+  rarity: Uncommon
+  item_type: Wondrous item
+  passive_effect_description: Grants flight (50 ft; 30 ft when carrying over 200 lb)
+
 - class_name: CharlatansDie
   name: Charlatan's Die
   description: |
