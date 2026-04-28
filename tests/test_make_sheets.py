@@ -1,10 +1,9 @@
-import unittest
 import os
+import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from dungeonsheets import make_sheets, character, monsters, random_tables
-
+from dungeonsheets import character, make_sheets, monsters, random_tables
 
 EG_DIR = Path(__file__).parent.parent.resolve() / "examples"
 CHARFILE = EG_DIR / "rogue1.py"
@@ -375,13 +374,27 @@ class TexCreatorTestCase(unittest.TestCase):
         self.assertIn(r"\section*{Magic Items}", tex)
         self.assertIn(r"\subsection*{Cloak of Protection}", tex)
 
+    def test_create_magic_items_tex_scroll_includes_spell_name(self):
+        char = character.Character(
+            name="Scroll Tester",
+            classes=["Wizard"],
+            levels=[1],
+            magic_items=["scroll of charm person"],
+        )
+        tex = make_sheets.create_magic_items_content(
+            character=char,
+            content_suffix="tex",
+            use_dnd_decorations=True,
+        )
+        self.assertIn("Scroll (Charm Person),", tex)
+
     def test_create_spellbook_tex(self):
         char = self.new_character()
         tex = make_sheets.create_spellbook_content(character=char, content_suffix="tex")
         self.assertIn(r"\section*{Spells}", tex)
         self.assertIn(r"\section*{Invisibility}", tex)
 
-    def test_create_spellbook_tex(self):
+    def test_create_spellbook_tex_by_level(self):
         char = self.new_character()
         tex = make_sheets.create_spellbook_content(
             character=char, content_suffix="tex", spell_order=True

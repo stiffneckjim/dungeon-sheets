@@ -2,8 +2,9 @@
 
 import unittest
 
-from dungeonsheets import magic_items
+from dungeonsheets import magic_items, spells
 from dungeonsheets.content_registry import find_content
+from dungeonsheets.exceptions import ContentNotFound
 
 
 class PhaseThreeItemTests(unittest.TestCase):
@@ -61,3 +62,48 @@ class PhaseThreeItemTests(unittest.TestCase):
         self.assertEqual(item.name, "Staff of Spells")
         self.assertEqual(item.rarity, "Very Rare")
         self.assertTrue(item.requires_attunement)
+
+
+class DynamicSpellScrollTests(unittest.TestCase):
+    """Test dynamic creation of spell scrolls via 'scroll of <spell>' lookup."""
+
+    def test_scroll_of_fireball_resolves_via_registry(self):
+        """'scroll of fireball' should resolve to a SpellScroll for Fireball."""
+        item_cls = find_content("scroll of fireball")
+        self.assertTrue(issubclass(item_cls, magic_items.SpellScroll))
+        item = item_cls()
+        self.assertEqual(item.name, "Scroll of Fireball")
+        self.assertIn("fireball", item.granted_spell_names)
+        spell_classes = item.granted_spell_classes()
+        self.assertEqual(len(spell_classes), 1)
+        self.assertIs(spell_classes[0], spells.Fireball)
+
+    def test_scroll_of_charm_person_resolves_via_registry(self):
+        """'scroll of charm person' should resolve to a SpellScroll for Charm Person."""
+        item_cls = find_content("scroll of charm person")
+        self.assertTrue(issubclass(item_cls, magic_items.SpellScroll))
+        item = item_cls()
+        self.assertIn("charm person", item.granted_spell_names)
+        spell_classes = item.granted_spell_classes()
+        self.assertEqual(len(spell_classes), 1)
+        self.assertIs(spell_classes[0], spells.CharmPerson)
+
+    def test_scroll_is_consumable(self):
+        """Dynamically created scrolls should be marked as consumable."""
+        item_cls = find_content("scroll of fireball")
+        item = item_cls()
+        self.assertEqual(item.item_type, "Scroll")
+        self.assertTrue(item.form.is_consumable)
+
+    def test_scroll_for_unknown_spell_raises_content_not_found(self):
+        """'scroll of notarealspell' should raise ContentNotFound."""
+        with self.assertRaises(ContentNotFound):
+            find_content("scroll of notarealspell")
+
+    def test_scroll_for_classmethod_returns_subclass(self):
+        """SpellScroll.scroll_for() returns a SpellScroll subclass with spell linked."""
+        cls = magic_items.SpellScroll.scroll_for("magic missile")
+        self.assertTrue(issubclass(cls, magic_items.SpellScroll))
+        item = cls()
+        self.assertIn("magic missile", item.granted_spell_names)
+        self.assertEqual(item.name, "Scroll of Magic Missile")
