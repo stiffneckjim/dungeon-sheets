@@ -370,6 +370,27 @@ class MagicItem:
         spell_effects = [e.spell for e in self._effects if isinstance(e, SpellGrantedEffect)]
         return tuple(spell_effects)
 
+    @property
+    def item_type_display(self) -> str:
+        """Human-readable item type, including linked spell details when present.
+
+        Returns
+        -------
+        str
+            Display label for the item type. For spell-granting items this
+            includes the linked spell names, e.g. ``"Scroll (Charm Person)"``.
+        """
+        base = self.item_type or ""
+        if not base:
+            return ""
+
+        spell_names = self.granted_spell_names
+        if len(spell_names) == 0:
+            return base
+
+        pretty_spells = ", ".join(name.replace("_", " ").title() for name in spell_names)
+        return f"{base} ({pretty_spells})"
+
     def granted_spell_classes(self):
         """Resolve granted spell names to their Spell class definitions.
 
