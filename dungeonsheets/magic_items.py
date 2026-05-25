@@ -370,6 +370,27 @@ class MagicItem:
         spell_effects = [e.spell for e in self._effects if isinstance(e, SpellGrantedEffect)]
         return tuple(spell_effects)
 
+    @property
+    def item_type_display(self) -> str:
+        """Human-readable item type, including linked spell details when present.
+
+        Returns
+        -------
+        str
+            Display label for the item type. For spell-granting items this
+            includes the linked spell names, e.g. ``"Scroll (Charm Person)"``.
+        """
+        base = self.item_type or ""
+        if not base:
+            return ""
+
+        spell_names = self.granted_spell_names
+        if len(spell_names) == 0:
+            return base
+
+        pretty_spells = ", ".join(name.replace("_", " ").title() for name in spell_names)
+        return f"{base} ({pretty_spells})"
+
     def granted_spell_classes(self):
         """Resolve granted spell names to their Spell class definitions.
 
@@ -469,6 +490,71 @@ class SpellScroll(MagicItem):
 
     item_type = "Scroll"
     form = MagicItemForm(kind="scroll", base_item="Scroll", is_consumable=True)
+
+    @classmethod
+    def scroll_for(cls, spell_name: str) -> type:
+        """Dynamically create a SpellScroll subclass for any spell by name.
+
+        Analogous to ``Weapon.improved_version()``: resolves the spell name
+        via the content registry to validate it exists, then returns a new
+        ``SpellScroll`` subclass with that spell linked.
+
+        Parameters
+        ----------
+        spell_name : str
+            The spell name as it would appear in a character file
+            (e.g. ``"fireball"``, ``"charm person"``).
+
+        Returns
+        -------
+        type[SpellScroll]
+            A ``SpellScroll`` subclass whose ``linked_spells`` contains
+            *spell_name* and whose ``name`` is ``"Scroll of <Title>"``.  The
+            spell is validated via ``find_content`` so unknown names still
+            raise ``ContentNotFound``.
+        """
+        from dungeonsheets import spells as _spells
+        from dungeonsheets.content_registry import find_content
+
+        # Validate the spell exists — raises ContentNotFound for unknown spells
+        spell_cls = find_content(spell_name, valid_classes=[_spells.Spell])
+
+        # Derive rarity from spell level per the PHB Spell Scroll table
+        _SCROLL_RARITY = {
+            0: "Common",
+            1: "Common",
+            2: "Uncommon",
+            3: "Uncommon",
+            4: "Rare",
+            5: "Rare",
+            6: "Very Rare",
+            7: "Very Rare",
+            8: "Very Rare",
+            9: "Legendary",
+        }
+        spell_level = getattr(spell_cls, "level", 0)
+        rarity = _SCROLL_RARITY.get(spell_level, "Common")
+
+        title = spell_name.replace("_", " ").title()
+        camel = "".join(
+            s.capitalize() for s in spell_name.replace("-", " ").replace("_", " ").split()
+        )
+        docstring = (
+            f"A spell scroll containing the {title} spell (level {spell_level}). "
+            "A scroll crumbles to dust after a single use."
+        )
+
+        new_cls = type(
+            f"ScrollOf{camel}",
+            (cls,),
+            {
+                "name": f"Scroll of {title}",
+                "linked_spells": (spell_name,),
+                "rarity": rarity,
+                "__doc__": docstring,
+            },
+        )
+        return new_cls
 
 
 globals().update(
