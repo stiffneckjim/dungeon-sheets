@@ -77,6 +77,9 @@ class DynamicSpellScrollTests(unittest.TestCase):
         spell_classes = item.granted_spell_classes()
         self.assertEqual(len(spell_classes), 1)
         self.assertIs(spell_classes[0], spells.Fireball)
+        # Fireball is 3rd-level → Uncommon
+        self.assertEqual(item.rarity, "Uncommon")
+        self.assertIn("Fireball", item.__doc__)
 
     def test_scroll_of_charm_person_resolves_via_registry(self):
         """'scroll of charm person' should resolve to a SpellScroll for Charm Person."""
@@ -87,6 +90,8 @@ class DynamicSpellScrollTests(unittest.TestCase):
         spell_classes = item.granted_spell_classes()
         self.assertEqual(len(spell_classes), 1)
         self.assertIs(spell_classes[0], spells.CharmPerson)
+        # Charm Person is 1st-level → Common
+        self.assertEqual(item.rarity, "Common")
 
     def test_scroll_is_consumable(self):
         """Dynamically created scrolls should be marked as consumable."""
@@ -96,9 +101,10 @@ class DynamicSpellScrollTests(unittest.TestCase):
         self.assertTrue(item.form.is_consumable)
 
     def test_scroll_for_unknown_spell_raises_content_not_found(self):
-        """'scroll of notarealspell' should raise ContentNotFound."""
-        with self.assertRaises(ContentNotFound):
+        """'scroll of notarealspell' should raise ContentNotFound with a useful message."""
+        with self.assertRaises(ContentNotFound) as ctx:
             find_content("scroll of notarealspell")
+        self.assertIn("notarealspell", str(ctx.exception))
 
     def test_scroll_for_classmethod_returns_subclass(self):
         """SpellScroll.scroll_for() returns a SpellScroll subclass with spell linked."""

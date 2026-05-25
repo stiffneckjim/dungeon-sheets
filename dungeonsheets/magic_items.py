@@ -517,11 +517,31 @@ class SpellScroll(MagicItem):
         from dungeonsheets.content_registry import find_content
 
         # Validate the spell exists — raises ContentNotFound for unknown spells
-        find_content(spell_name, valid_classes=[_spells.Spell])
+        spell_cls = find_content(spell_name, valid_classes=[_spells.Spell])
+
+        # Derive rarity from spell level per the PHB Spell Scroll table
+        _SCROLL_RARITY = {
+            0: "Common",
+            1: "Common",
+            2: "Uncommon",
+            3: "Uncommon",
+            4: "Rare",
+            5: "Rare",
+            6: "Very Rare",
+            7: "Very Rare",
+            8: "Very Rare",
+            9: "Legendary",
+        }
+        spell_level = getattr(spell_cls, "level", 0)
+        rarity = _SCROLL_RARITY.get(spell_level, "Common")
 
         title = spell_name.replace("_", " ").title()
         camel = "".join(
             s.capitalize() for s in spell_name.replace("-", " ").replace("_", " ").split()
+        )
+        docstring = (
+            f"A spell scroll containing the {title} spell (level {spell_level}). "
+            "A scroll crumbles to dust after a single use."
         )
 
         new_cls = type(
@@ -530,6 +550,8 @@ class SpellScroll(MagicItem):
             {
                 "name": f"Scroll of {title}",
                 "linked_spells": (spell_name,),
+                "rarity": rarity,
+                "__doc__": docstring,
             },
         )
         return new_cls

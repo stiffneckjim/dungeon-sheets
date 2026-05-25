@@ -137,9 +137,10 @@ class ContentRegistry:
             if is_valid_for_magic_item:
                 try:
                     return SpellScroll.scroll_for(spell_part)
-                except exceptions.ContentNotFound:
-                    # spell_part is not a known spell; fall through to ContentNotFound below
-                    pass
+                except exceptions.ContentNotFound as exc:
+                    raise exceptions.ContentNotFound(
+                        f'"scroll of {spell_part}" could not be created: "{spell_part}" is not a known spell.'
+                    ) from exc
         # Check that we found a valid, unique attribute
         if len(found_attrs) == 0:
             raise exceptions.ContentNotFound(f"Modules {self.modules} have no attribute {name}")
