@@ -122,3 +122,6 @@ add_spell.sh
 
 # VS Code settings
 .vscode/
+
+# Claude Code: local permission overrides and worktree checkouts
+.claude/
