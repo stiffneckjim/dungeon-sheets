@@ -14,18 +14,28 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Pin TeX Live to a specific daily snapshot from the official tlnet archive.
+# tlnet is a rolling release; unpinned builds broke when a later luaotfload
+# revision shipped a broken fontloader (see the 2026-07 CI failures). The
+# archive keeps byte-identical daily snapshots, each with a matching installer,
+# so this gives us a reproducible toolchain at scheme-basic size (~1GB) without
+# resorting to the multi-GB scheme-full versioned base images.
+# To move to a newer toolchain, bump this single date to a known-good snapshot.
+ARG TEXLIVE_SNAPSHOT=2026/05/24
+ENV TEXLIVE_REPO=https://texlive.info/tlnet-archive/${TEXLIVE_SNAPSHOT}/tlnet
+
 # Install vanilla TeX Live with minimal scheme
-# This layer is cached and only rebuilds if texlive.profile changes
+# This layer is cached and only rebuilds if texlive.profile or the pin changes
 COPY texlive.profile /tmp/texlive.profile
-RUN echo "Downloading TeX Live installer..." && \
+RUN echo "Downloading TeX Live installer (snapshot ${TEXLIVE_SNAPSHOT})..." && \
     cd /tmp/ && \
-    wget https://tex.org.uk/systems/texlive/tlnet/install-tl-unx.tar.gz && \
+    wget "${TEXLIVE_REPO}/install-tl-unx.tar.gz" && \
     zcat < install-tl-unx.tar.gz | tar xf - && \
     cd install-tl-2* && \
     echo "Installing TeX Live (this may take a few minutes)..." && \
     perl ./install-tl -v \
     --profile=/tmp/texlive.profile \
-    --repository https://tex.org.uk/systems/texlive/tlnet/ && \
+    --repository "${TEXLIVE_REPO}" && \
     echo "TeX Live installation complete!" && \
     cd .. && rm -rf install-tl-* /tmp/texlive.profile
 
@@ -40,6 +50,7 @@ ENV PATH="/usr/local/texlive/bin/x86_64-linux:/usr/local/texlive/bin/aarch64-lin
 # This layer can be modified without re-downloading/installing base TeX Live
 COPY .devcontainer/install-texlive-packages.sh /tmp/install-texlive-packages.sh
 RUN echo "Configuring tlmgr..." && \
+    tlmgr option repository "${TEXLIVE_REPO}" && \
     tlmgr init-usertree && \
     tlmgr option -- autobackup 0 && \
     PACKAGES=$(bash /tmp/install-texlive-packages.sh) && \
