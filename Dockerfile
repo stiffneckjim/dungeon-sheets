@@ -15,12 +15,13 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Pin TeX Live to a specific daily snapshot from the official tlnet archive.
-# tlnet is a rolling release; unpinned builds broke when a later luaotfload
-# revision shipped a broken fontloader (see the 2026-07 CI failures). The
-# archive keeps byte-identical daily snapshots, each with a matching installer,
-# so this gives us a reproducible toolchain at scheme-basic size (~1GB) without
-# resorting to the multi-GB scheme-full versioned base images.
+# tlnet is a rolling release, so an unpinned install floats to whatever is
+# current on the mirror. The archive keeps byte-identical daily snapshots, each
+# with a matching installer, which gives a reproducible toolchain at
+# scheme-basic size (~1GB) without the multi-GB scheme-full base images.
 # To move to a newer toolchain, bump this single date to a known-good snapshot.
+# (The 2026 luaotfload startup crash was NOT a TeX Live regression: it was a
+# missing trailing separator in TEXINPUTS, fixed in dungeonsheets/latex.py.)
 ARG TEXLIVE_SNAPSHOT=2026/05/24
 ENV TEXLIVE_REPO=https://texlive.info/tlnet-archive/${TEXLIVE_SNAPSHOT}/tlnet
 

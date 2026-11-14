@@ -170,9 +170,13 @@ def create_latex_pdf(
         environment["TEXINPUTS"] = separator.join([*texinputs, ""])
         environment.pop("TTFONTS", None)
     else:
-        # For standard lualatex path, use traditional TEXINPUTS without recursive suffix
+        # For standard lualatex path, use traditional TEXINPUTS without recursive suffix.
+        # The trailing empty entry is load-bearing: kpathsea only appends its
+        # default search path when TEXINPUTS ends with a separator. Without it
+        # the TeX Live tree becomes invisible and luaotfload dies at startup
+        # with "kpse_in_name_ok_silent_extended (string expected, got nil)".
         texinputs = [".", *module_dirs, module_root, *tex_env_paths]
-        environment["TEXINPUTS"] = separator.join(str(path) for path in texinputs)
+        environment["TEXINPUTS"] = separator.join([*(str(path) for path in texinputs), ""])
     passes = 2 if use_dnd_decorations else 1
     log.debug(tex_command_line)
     log.debug("LaTeX command: %s" % " ".join(tex_command_line))

@@ -1,3 +1,4 @@
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -189,6 +190,36 @@ class LatexEnvTestCase(unittest.TestCase):
         self.assertIn("TEXINPUTS", captured_env)
         self.assertNotIn("::", captured_env["TEXINPUTS"])
         self.assertIn("/tmp/tex", captured_env["TEXINPUTS"])
+
+    def test_standard_environment_keeps_default_tex_search_path(self):
+        """TEXINPUTS must end with a separator, or kpathsea drops its defaults.
+
+        Regression test: without the trailing separator the TeX Live tree is
+        invisible to lualatex and luaotfload crashes at startup, which broke
+        every non ``--tex-template`` PDF build from April 2026.
+        """
+        for inherited in ({}, {"TEXINPUTS": "/tmp/tex"}):
+            captured_env = {}
+
+            def fake_run(*args, **kwargs):
+                captured_env.update(kwargs["env"])
+                return SimpleNamespace(returncode=0)
+
+            with tempfile.TemporaryDirectory() as td:
+                basename = str(Path(td) / "env_default_path")
+                with (
+                    patch("dungeonsheets.latex.subprocess.run", side_effect=fake_run),
+                    patch.dict("dungeonsheets.latex.os.environ", inherited, clear=True),
+                ):
+                    latex.create_latex_pdf(
+                        tex="\\documentclass{article}\\begin{document}x\\end{document}",
+                        basename=basename,
+                        use_tex_template=False,
+                    )
+
+            with self.subTest(inherited=inherited):
+                self.assertTrue(captured_env["TEXINPUTS"].endswith(os.pathsep))
+                self.assertNotIn("::", captured_env["TEXINPUTS"])
 
 
 class LatexErrorHintTestCase(unittest.TestCase):

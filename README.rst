@@ -33,7 +33,7 @@ built and published to GitHub Container Registry (GHCR) using GitHub Actions wor
 Available Tags
 --------------
 
-- ``master``: Latest development version from the master branch
+- ``main``: Latest development version from the main branch
 - ``latest``: Latest stable release
 - Specific version tags (e.g. ``v0.19.0``)
 
@@ -44,7 +44,7 @@ Run the following in a directory with valid character files (such as the example
 
 .. code:: bash
 
-    $ docker run -it -v $(pwd):/build ghcr.io/stiffneckjim/dungeon-sheets:master
+    $ docker run -it -v $(pwd):/build ghcr.io/stiffneckjim/dungeon-sheets:main
 
 Building Locally
 ----------------
@@ -317,7 +317,7 @@ JSON) file, which gives many attributes associated with the
 character. See examples_ for more information about the character
 descriptions.
 
-.. _examples: https://github.com/stiffneckjim/dungeon-sheets/tree/master/examples
+.. _examples: https://github.com/stiffneckjim/dungeon-sheets/tree/main/examples
 
 The PDF's can then be generated using the ``makesheets`` command. If
 no filename is given, the current directory will be parsed and any
