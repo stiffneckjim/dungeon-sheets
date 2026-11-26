@@ -3,7 +3,8 @@ Architecture Decision 0001: Renderer Strategy for LaTeX/PDF Pipeline
 
 Status
 ------
-Accepted (Phase 1 spike for issue #27)
+Accepted (Phase 1 spike for issue #27). See the addendum of 2026-11-26 at the
+end of this document, which corrects part of the Context section.
 
 Date
 ----
@@ -148,3 +149,30 @@ References
 - ``dungeonsheets/latex.py``
 - ``dungeonsheets/fill_pdf_template.py``
 - ``dungeonsheets/epub.py``
+
+Addendum (2026-11-26): correction to the Context section
+---------------------------------------------------------
+The Context section above says the lualatex/luaotfload failure seen during
+Phase 0 was "unrelated to app code". That was wrong, and the original text is
+left in place only as a record of what was believed at the time.
+
+The cause was in ``dungeonsheets/latex.py``. For renders that do not use
+``--tex-template``, ``TEXINPUTS`` was set without a trailing path separator.
+kpathsea only appends its default search path when ``TEXINPUTS`` ends with a
+separator, so the TeX Live tree became invisible and luaotfload died at start-up
+with ``kpse_in_name_ok_silent_extended (string expected, got nil)``. TeX Live
+itself had not regressed. The fix and a regression test landed in pull request
+118.
+
+What this changes:
+
+- The "TeX runtime volatility" evidence offered for issue #27 is weaker than
+  stated. The case for moving away from LaTeX now rests on the size of the
+  toolchain and the difficulty of contributor and CI setup, not on upstream
+  instability.
+- TeX Live is now pinned to a dated snapshot of the tlnet archive in both the
+  Dockerfile and the CI workflow, and the example renders run on pull requests
+  as well as on pushes to main, so a rendering regression can no longer merge
+  on a green pull request.
+- Work on a replacement renderer is happening outside this repository. The
+  phased migration described above is not currently planned here.
